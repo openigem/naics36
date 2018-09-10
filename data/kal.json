@@ -1,0 +1,943 @@
+{
+    "name": "standard", 
+    "pars": [], 
+    "sets": [
+        {
+            "elements": [
+                "i01", 
+                "i02", 
+                "i03", 
+                "i04", 
+                "i05", 
+                "i06", 
+                "i07", 
+                "i08", 
+                "i09", 
+                "i10", 
+                "i11", 
+                "i12", 
+                "i13", 
+                "i14", 
+                "i15", 
+                "i16", 
+                "i17", 
+                "i18", 
+                "i19", 
+                "i20", 
+                "i21", 
+                "i22", 
+                "i23", 
+                "i24", 
+                "i25", 
+                "i26", 
+                "i27", 
+                "i28", 
+                "i29", 
+                "i30", 
+                "i31", 
+                "i32", 
+                "i33", 
+                "i34", 
+                "i35", 
+                "i36"
+            ], 
+            "name": "nind"
+        }, 
+        {
+            "alias_of": "inp_o", 
+            "elements": [
+                "k", 
+                "l", 
+                "e", 
+                "m"
+            ], 
+            "name": "s_o"
+        }, 
+        {
+            "alias_of": "inp_e", 
+            "elements": [
+                "c06", 
+                "ff"
+            ], 
+            "name": "s_e"
+        }, 
+        {
+            "alias_of": "inp_m", 
+            "elements": [
+                "ma", 
+                "mm", 
+                "mn", 
+                "ms"
+            ], 
+            "name": "s_m"
+        }, 
+        {
+            "alias_of": "inp_ff", 
+            "elements": [
+                "c04", 
+                "oil", 
+                "gas"
+            ], 
+            "name": "s_ff"
+        }, 
+        {
+            "alias_of": "inp_oil", 
+            "elements": [
+                "c02", 
+                "c23"
+            ], 
+            "name": "s_oil"
+        }, 
+        {
+            "alias_of": "inp_gas", 
+            "elements": [
+                "c03", 
+                "c07"
+            ], 
+            "name": "s_gas"
+        }, 
+        {
+            "alias_of": "inp_ma", 
+            "elements": [
+                "c01", 
+                "c10", 
+                "c20", 
+                "c21"
+            ], 
+            "name": "s_ma"
+        }, 
+        {
+            "alias_of": "inp_mm", 
+            "elements": [
+                "c05", 
+                "c12", 
+                "c13", 
+                "eq"
+            ], 
+            "name": "s_mm"
+        }, 
+        {
+            "alias_of": "inp_mn", 
+            "elements": [
+                "c11", 
+                "c19", 
+                "c22", 
+                "c24"
+            ], 
+            "name": "s_mn"
+        }, 
+        {
+            "alias_of": "inp_ms", 
+            "elements": [
+                "c32", 
+                "tt", 
+                "sv"
+            ], 
+            "name": "s_ms"
+        }, 
+        {
+            "alias_of": "inp_eq", 
+            "elements": [
+                "c14", 
+                "c15", 
+                "c16", 
+                "tr"
+            ], 
+            "name": "s_eq"
+        }, 
+        {
+            "alias_of": "inp_tr", 
+            "elements": [
+                "c17", 
+                "c18"
+            ], 
+            "name": "s_tr"
+        }, 
+        {
+            "alias_of": "inp_tt", 
+            "elements": [
+                "c25", 
+                "c26", 
+                "c27"
+            ], 
+            "name": "s_tt"
+        }, 
+        {
+            "alias_of": "inp_sv", 
+            "elements": [
+                "bl", 
+                "ob", 
+                "os"
+            ], 
+            "name": "s_sv"
+        }, 
+        {
+            "alias_of": "inp_bl", 
+            "elements": [
+                "c08", 
+                "c09", 
+                "c31"
+            ], 
+            "name": "s_bl"
+        }, 
+        {
+            "alias_of": "inp_ob", 
+            "elements": [
+                "c28", 
+                "c29", 
+                "c30"
+            ], 
+            "name": "s_ob"
+        }, 
+        {
+            "alias_of": "inp_os", 
+            "elements": [
+                "c33", 
+                "c34", 
+                "c35", 
+                "c36"
+            ], 
+            "name": "s_os"
+        }, 
+        {
+            "alias_of": "inp_fixed", 
+            "elements": [
+                "long", 
+                "short"
+            ], 
+            "name": "s_fixed"
+        }, 
+        {
+            "alias_of": "inp_long", 
+            "elements": [
+                "c05", 
+                "c09", 
+                "c31"
+            ], 
+            "name": "s_long"
+        }, 
+        {
+            "alias_of": "inp_short", 
+            "elements": [
+                "eit", 
+                "ttsvc"
+            ], 
+            "name": "s_short"
+        }, 
+        {
+            "alias_of": "inp_eit", 
+            "elements": [
+                "mach", 
+                "it", 
+                "trnsp"
+            ], 
+            "name": "s_eit"
+        }, 
+        {
+            "alias_of": "inp_ttsvc", 
+            "elements": [
+                "c27", 
+                "trd", 
+                "serv"
+            ], 
+            "name": "s_ttsvc"
+        }, 
+        {
+            "alias_of": "inp_mach", 
+            "elements": [
+                "c14", 
+                "c16", 
+                "frawm"
+            ], 
+            "name": "s_mach"
+        }, 
+        {
+            "alias_of": "inp_it", 
+            "elements": [
+                "c15", 
+                "c28", 
+                "c29"
+            ], 
+            "name": "s_it"
+        }, 
+        {
+            "alias_of": "inp_tr", 
+            "elements": [
+                "c17", 
+                "c18"
+            ], 
+            "name": "s_trnsp"
+        }, 
+        {
+            "alias_of": "inp_trd", 
+            "elements": [
+                "c25", 
+                "c26"
+            ], 
+            "name": "s_trd"
+        }, 
+        {
+            "alias_of": "inp_serv", 
+            "elements": [
+                "c32", 
+                "mserv"
+            ], 
+            "name": "s_serv"
+        }, 
+        {
+            "alias_of": "inp_frawm", 
+            "elements": [
+                "mrawm", 
+                "furn"
+            ], 
+            "name": "s_frawm"
+        }, 
+        {
+            "alias_of": "inp_mserv", 
+            "elements": [
+                "c22", 
+                "c34", 
+                "c35"
+            ], 
+            "name": "s_mserv"
+        }, 
+        {
+            "alias_of": "inp_mrawm", 
+            "elements": [
+                "c13", 
+                "rawm"
+            ], 
+            "name": "s_mrawm"
+        }, 
+        {
+            "alias_of": "inp_furn", 
+            "elements": [
+                "c19", 
+                "c21", 
+                "c24"
+            ], 
+            "name": "s_furn"
+        }, 
+        {
+            "alias_of": "inp_rawm", 
+            "elements": [
+                "c10", 
+                "c11", 
+                "c12"
+            ], 
+            "name": "s_rawm"
+        }, 
+        {
+            "alias_of": "inp_f", 
+            "elements": [
+                "nd", 
+                "ks", 
+                "cs", 
+                "leis"
+            ], 
+            "name": "s_f"
+        }, 
+        {
+            "alias_of": "inp_nd", 
+            "elements": [
+                "n01", 
+                "n05", 
+                "en", 
+                "cg"
+            ], 
+            "name": "s_nd"
+        }, 
+        {
+            "alias_of": "inp_ks", 
+            "elements": [
+                "n10", 
+                "n36"
+            ], 
+            "name": "s_ks"
+        }, 
+        {
+            "alias_of": "inp_cs", 
+            "elements": [
+                "md", 
+                "fb", 
+                "ho", 
+                "rc"
+            ], 
+            "name": "s_cs"
+        }, 
+        {
+            "alias_of": "inp_en", 
+            "elements": [
+                "n03", 
+                "n04"
+            ], 
+            "name": "s_en"
+        }, 
+        {
+            "alias_of": "inp_cg", 
+            "elements": [
+                "n02", 
+                "n06", 
+                "n09", 
+                "hpg"
+            ], 
+            "name": "s_cg"
+        }, 
+        {
+            "alias_of": "inp_md", 
+            "elements": [
+                "n14", 
+                "n24"
+            ], 
+            "name": "s_md"
+        }, 
+        {
+            "alias_of": "inp_fb", 
+            "elements": [
+                "n22", 
+                "n23", 
+                "n29"
+            ], 
+            "name": "s_fb"
+        }, 
+        {
+            "alias_of": "inp_ho", 
+            "elements": [
+                "n35", 
+                "edn", 
+                "ups", 
+                "trc"
+            ], 
+            "name": "s_ho"
+        }, 
+        {
+            "alias_of": "inp_rc", 
+            "elements": [
+                "n20", 
+                "rcs", 
+                "trv"
+            ], 
+            "name": "s_rc"
+        }, 
+        {
+            "alias_of": "inp_hpg", 
+            "elements": [
+                "n07", 
+                "n08"
+            ], 
+            "name": "s_hpg"
+        }, 
+        {
+            "alias_of": "inp_edn", 
+            "elements": [
+                "n28", 
+                "n34"
+            ], 
+            "name": "s_edn"
+        }, 
+        {
+            "alias_of": "inp_ups", 
+            "elements": [
+                "n11", 
+                "ens", 
+                "hps"
+            ], 
+            "name": "s_ups"
+        }, 
+        {
+            "alias_of": "inp_trc", 
+            "elements": [
+                "n15", 
+                "n16", 
+                "n25", 
+                "cmm"
+            ], 
+            "name": "s_trc"
+        }, 
+        {
+            "alias_of": "inp_rcs", 
+            "elements": [
+                "n17", 
+                "n18", 
+                "n19"
+            ], 
+            "name": "s_rcs"
+        }, 
+        {
+            "alias_of": "inp_trv", 
+            "elements": [
+                "n21", 
+                "n33"
+            ], 
+            "name": "s_trv"
+        }, 
+        {
+            "alias_of": "inp_ens", 
+            "elements": [
+                "n12", 
+                "n13"
+            ], 
+            "name": "s_ens"
+        }, 
+        {
+            "alias_of": "inp_hps", 
+            "elements": [
+                "n30", 
+                "n31", 
+                "n32"
+            ], 
+            "name": "s_hps"
+        }, 
+        {
+            "alias_of": "inp_cmm", 
+            "elements": [
+                "n26", 
+                "n27"
+            ], 
+            "name": "s_cmm"
+        }, 
+        {
+            "elements": [
+                "c01", 
+                "c02", 
+                "c03", 
+                "c04", 
+                "c05", 
+                "c06", 
+                "c07", 
+                "c08", 
+                "c09", 
+                "c10", 
+                "c11", 
+                "c12", 
+                "c13", 
+                "c14", 
+                "c15", 
+                "c16", 
+                "c17", 
+                "c18", 
+                "c19", 
+                "c20", 
+                "c21", 
+                "c22", 
+                "c23", 
+                "c24", 
+                "c25", 
+                "c26", 
+                "c27", 
+                "c28", 
+                "c29", 
+                "c30", 
+                "c31", 
+                "c32", 
+                "c33", 
+                "c34", 
+                "c35", 
+                "c36"
+            ], 
+            "name": "ncom"
+        }
+    ], 
+    "vars": [
+        {
+            "header": "K001", 
+            "name": "kal_version", 
+            "sets": ""
+        }, 
+        {
+            "header": "K002", 
+            "name": "kal_p", 
+            "sets": [
+                "nind"
+            ]
+        }, 
+        {
+            "header": "K003", 
+            "name": "kal_f_o", 
+            "sets": [
+                "s_o", 
+                "nind"
+            ]
+        }, 
+        {
+            "header": "K004", 
+            "name": "kal_f_e", 
+            "sets": [
+                "s_e", 
+                "nind"
+            ]
+        }, 
+        {
+            "header": "K005", 
+            "name": "kal_f_m", 
+            "sets": [
+                "s_m", 
+                "nind"
+            ]
+        }, 
+        {
+            "header": "K006", 
+            "name": "kal_f_ff", 
+            "sets": [
+                "s_ff", 
+                "nind"
+            ]
+        }, 
+        {
+            "header": "K007", 
+            "name": "kal_f_oil", 
+            "sets": [
+                "s_oil", 
+                "nind"
+            ]
+        }, 
+        {
+            "header": "K008", 
+            "name": "kal_f_gas", 
+            "sets": [
+                "s_gas", 
+                "nind"
+            ]
+        }, 
+        {
+            "header": "K009", 
+            "name": "kal_f_ma", 
+            "sets": [
+                "s_ma", 
+                "nind"
+            ]
+        }, 
+        {
+            "header": "K010", 
+            "name": "kal_f_mm", 
+            "sets": [
+                "s_mm", 
+                "nind"
+            ]
+        }, 
+        {
+            "header": "K011", 
+            "name": "kal_f_mn", 
+            "sets": [
+                "s_mn", 
+                "nind"
+            ]
+        }, 
+        {
+            "header": "K012", 
+            "name": "kal_f_ms", 
+            "sets": [
+                "s_ms", 
+                "nind"
+            ]
+        }, 
+        {
+            "header": "K013", 
+            "name": "kal_f_eq", 
+            "sets": [
+                "s_eq", 
+                "nind"
+            ]
+        }, 
+        {
+            "header": "K014", 
+            "name": "kal_f_tr", 
+            "sets": [
+                "s_tr", 
+                "nind"
+            ]
+        }, 
+        {
+            "header": "K015", 
+            "name": "kal_f_tt", 
+            "sets": [
+                "s_tt", 
+                "nind"
+            ]
+        }, 
+        {
+            "header": "K016", 
+            "name": "kal_f_sv", 
+            "sets": [
+                "s_sv", 
+                "nind"
+            ]
+        }, 
+        {
+            "header": "K017", 
+            "name": "kal_f_bl", 
+            "sets": [
+                "s_bl", 
+                "nind"
+            ]
+        }, 
+        {
+            "header": "K018", 
+            "name": "kal_f_ob", 
+            "sets": [
+                "s_ob", 
+                "nind"
+            ]
+        }, 
+        {
+            "header": "K019", 
+            "name": "kal_f_os", 
+            "sets": [
+                "s_os", 
+                "nind"
+            ]
+        }, 
+        {
+            "header": "K020", 
+            "name": "kal_fi_fixed", 
+            "sets": [
+                "s_fixed"
+            ]
+        }, 
+        {
+            "header": "K021", 
+            "name": "kal_fi_long", 
+            "sets": [
+                "s_long"
+            ]
+        }, 
+        {
+            "header": "K022", 
+            "name": "kal_fi_short", 
+            "sets": [
+                "s_short"
+            ]
+        }, 
+        {
+            "header": "K023", 
+            "name": "kal_fi_eit", 
+            "sets": [
+                "s_eit"
+            ]
+        }, 
+        {
+            "header": "K024", 
+            "name": "kal_fi_ttsvc", 
+            "sets": [
+                "s_ttsvc"
+            ]
+        }, 
+        {
+            "header": "K025", 
+            "name": "kal_fi_mach", 
+            "sets": [
+                "s_mach"
+            ]
+        }, 
+        {
+            "header": "K026", 
+            "name": "kal_fi_it", 
+            "sets": [
+                "s_it"
+            ]
+        }, 
+        {
+            "header": "K027", 
+            "name": "kal_fi_trnsp", 
+            "sets": [
+                "s_trnsp"
+            ]
+        }, 
+        {
+            "header": "K028", 
+            "name": "kal_fi_trd", 
+            "sets": [
+                "s_trd"
+            ]
+        }, 
+        {
+            "header": "K029", 
+            "name": "kal_fi_serv", 
+            "sets": [
+                "s_serv"
+            ]
+        }, 
+        {
+            "header": "K030", 
+            "name": "kal_fi_frawm", 
+            "sets": [
+                "s_frawm"
+            ]
+        }, 
+        {
+            "header": "K031", 
+            "name": "kal_fi_mserv", 
+            "sets": [
+                "s_mserv"
+            ]
+        }, 
+        {
+            "header": "K032", 
+            "name": "kal_fi_mrawm", 
+            "sets": [
+                "s_mrawm"
+            ]
+        }, 
+        {
+            "header": "K033", 
+            "name": "kal_fi_furn", 
+            "sets": [
+                "s_furn"
+            ]
+        }, 
+        {
+            "header": "K034", 
+            "name": "kal_fi_rawm", 
+            "sets": [
+                "s_rawm"
+            ]
+        }, 
+        {
+            "header": "K035", 
+            "name": "kal_fh_f", 
+            "sets": [
+                "s_f"
+            ]
+        }, 
+        {
+            "header": "K036", 
+            "name": "kal_fh_nd", 
+            "sets": [
+                "s_nd"
+            ]
+        }, 
+        {
+            "header": "K037", 
+            "name": "kal_fh_ks", 
+            "sets": [
+                "s_ks"
+            ]
+        }, 
+        {
+            "header": "K038", 
+            "name": "kal_fh_cs", 
+            "sets": [
+                "s_cs"
+            ]
+        }, 
+        {
+            "header": "K039", 
+            "name": "kal_fh_en", 
+            "sets": [
+                "s_en"
+            ]
+        }, 
+        {
+            "header": "K040", 
+            "name": "kal_fh_cg", 
+            "sets": [
+                "s_cg"
+            ]
+        }, 
+        {
+            "header": "K041", 
+            "name": "kal_fh_md", 
+            "sets": [
+                "s_md"
+            ]
+        }, 
+        {
+            "header": "K042", 
+            "name": "kal_fh_fb", 
+            "sets": [
+                "s_fb"
+            ]
+        }, 
+        {
+            "header": "K043", 
+            "name": "kal_fh_ho", 
+            "sets": [
+                "s_ho"
+            ]
+        }, 
+        {
+            "header": "K044", 
+            "name": "kal_fh_rc", 
+            "sets": [
+                "s_rc"
+            ]
+        }, 
+        {
+            "header": "K045", 
+            "name": "kal_fh_hpg", 
+            "sets": [
+                "s_hpg"
+            ]
+        }, 
+        {
+            "header": "K046", 
+            "name": "kal_fh_edn", 
+            "sets": [
+                "s_edn"
+            ]
+        }, 
+        {
+            "header": "K047", 
+            "name": "kal_fh_ups", 
+            "sets": [
+                "s_ups"
+            ]
+        }, 
+        {
+            "header": "K048", 
+            "name": "kal_fh_trc", 
+            "sets": [
+                "s_trc"
+            ]
+        }, 
+        {
+            "header": "K049", 
+            "name": "kal_fh_rcs", 
+            "sets": [
+                "s_rcs"
+            ]
+        }, 
+        {
+            "header": "K050", 
+            "name": "kal_fh_trv", 
+            "sets": [
+                "s_trv"
+            ]
+        }, 
+        {
+            "header": "K051", 
+            "name": "kal_fh_ens", 
+            "sets": [
+                "s_ens"
+            ]
+        }, 
+        {
+            "header": "K052", 
+            "name": "kal_fh_hps", 
+            "sets": [
+                "s_hps"
+            ]
+        }, 
+        {
+            "header": "K053", 
+            "name": "kal_fh_cmm", 
+            "sets": [
+                "s_cmm"
+            ]
+        }, 
+        {
+            "header": "K054", 
+            "name": "kal_m", 
+            "sets": [
+                "ncom"
+            ]
+        }, 
+        {
+            "header": "K055", 
+            "name": "kal_x", 
+            "sets": [
+                "ncom"
+            ]
+        }
+    ]
+}

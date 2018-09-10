@@ -1,0 +1,2566 @@
+1 header "X001"
+   longname "exo_baseyear"
+   coefficient exo_baseyear
+   ;
+2005.0
+1 header "X002"
+   longname "exo_version"
+   coefficient exo_version
+   ;
+205.0
+1 header "X003"
+   longname "p_hours"
+   coefficient p_hours
+   ;
+0.75493568
+36 header "X004"
+   longname "exo_pf"
+   coefficient exo_pf(ncom)
+   ;
+2.2721882
+0.36445013
+0.36445013
+1.35171
+1.0521913999999999
+1.5607768999999998
+9.8291883
+9.8291883
+9.8291883
+1.6952866000000002
+1.4517635
+1.6222942
+2.8935931
+2.0318065
+4.1605563
+2.7171552000000005
+1.1456681
+1.0327853999999999
+1.7825499
+1.1800873
+1.8232336999999998
+1.8013337
+0.24187426
+1.9601533
+1.9466709
+9.8291883
+1.1274079
+1.034817
+4.7985115
+0.96846998
+4.9995184
+1.4119628999999998
+4.124131200000001
+6.2963815
+2.7344801
+9.8291883
+1 header "X005"
+   longname "p_numeraire"
+   coefficient p_numeraire
+   ;
+0.1017378
+37 header "X006"
+   longname "pk_scale"
+   coefficient pk_scale(nind_c)
+   ;
+1.0493716
+0.5604462
+0.38525465
+0.36541167
+0.57537633
+0.97592461
+3.8562534
+0.69871122
+0.50742143
+1.3076326
+1.0103155000000001
+0.77581412
+0.45577481
+4.470325900000001
+1.5188547
+2.2966754000000003
+1.4359422
+1.7721936000000003
+0.44264337
+0.80392432
+1.6047296999999998
+1.8743556000000001
+0.13932104
+1.3137618999999998
+2.6200952999999996
+0.96475565
+0.87717175
+2.0334632
+2.4287763
+2.628906
+0.59279484
+3.9631300000000005
+0.62426132
+1.3152743999999998
+0.59084463
+0.6679107
+1.2539076
+36 header "X007"
+   longname "pl_scale"
+   coefficient pl_scale(nind)
+   ;
+0.91651058
+0.89399642
+0.88231444
+0.95880497
+1.1525768
+0.88283271
+0.98997527
+0.99358267
+1.1928849
+1.2046298999999998
+1.1819141000000002
+1.3878182
+1.2245917
+0.90033799
+0.77998394
+0.80310476
+1.1875697
+0.8814714
+0.96464944
+1.1901017
+1.2445723
+1.5325997
+0.60367924
+1.1296068000000001
+1.1182237
+1.007457
+1.2566544
+0.70843005
+0.50596595
+0.57674509
+0.79052532
+0.51257735
+0.51690429
+0.48852170000000006
+1.5368137
+0.57586038
+1 header "X008"
+   longname "pj_scale"
+   coefficient pj_scale
+   ;
+1.0080003
+1 header "X009"
+   longname "inven_fraction"
+   coefficient inven_fraction
+   ;
+0.02648475
+36 header "X010"
+   longname "gov_share"
+   coefficient gov_share(ncom)
+   ;
+3.1824772e-08
+0.0
+2.6894172999999996e-10
+1.5764108000000002e-05
+4.2351778e-05
+7.4496853e-08
+7.4496853e-08
+7.4496853e-08
+0.15023722
+0.00047092323
+1.335744e-08
+0.00045274852999999994
+0.0026452934999999997
+0.0078910571
+0.012699053
+0.006874625600000001
+0.010655671
+0.055714585
+0.0023502691
+1.3070569000000002e-07
+4.9956641e-05
+1.5272843e-05
+1.2030661e-07
+9.380032100000001e-05
+0.0019023278
+-0.00010702141000000002
+0.00098862662
+3.7033276e-06
+1.6342692e-06
+7.3701685e-06
+1.5843627e-05
+3.8028361e-07
+0.14920883
+0.067212403
+0.00018187246
+0.53037488
+1 header "X011"
+   longname "adjust_i"
+   coefficient adjust_i
+   ;
+0.67181242
+1 header "X012"
+   longname "adjust_pk"
+   coefficient adjust_pk
+   ;
+1.4574457
+1 header "X013"
+   longname "adjust_k"
+   coefficient adjust_k
+   ;
+0.12673028
+36 header "X014"
+   longname "inven_share"
+   coefficient inven_share(ncom)
+   ;
+0.15268248
+0.0
+0.008997023100000001
+0.0022412236
+0.011474211000000002
+2.0668272e-06
+2.0668272e-06
+2.0668272e-06
+0.013043104
+0.0080962293
+0.0058012563
+0.027719606
+0.056661539000000004
+0.12866403
+0.035872243
+0.07146021
+0.19115779
+0.071354508
+0.0085843159
+-0.0028343908000000003
+0.042351924000000006
+0.0033214164000000003
+0.078663118
+0.06244323400000001
+0.00073385984
+0.0006177678599999999
+0.013908436000000001
+0.0009299361300000002
+0.0023355582000000002
+0.00020457876
+0.00043917915999999995
+1.0553814e-05
+9.6627273e-06
+3.5860073e-06
+0.0021386866
+0.00090691022
+1 header "X015"
+   longname "income_dist"
+   coefficient income_dist
+   ;
+2.9563019
+11 header "X016"
+   longname "income_share"
+   coefficient income_share(nattr)
+   ;
+0.17845686
+0.17452189
+0.18235332
+0.67025697
+0.23610581
+0.30619302
+0.26115900000000003
+0.15704723
+0.077713355
+0.092752054
+0.29009077
+1 header "X017"
+   longname "kap_oil"
+   coefficient kap_oil
+   ;
+14.078429000000002
+1 header "X018"
+   longname "kap_gas"
+   coefficient kap_gas
+   ;
+14.078429000000002
+1 header "X019"
+   longname "us_surplus"
+   coefficient us_surplus
+   ;
+31.453403
+1 header "X020"
+   longname "raw_us_surp"
+   coefficient raw_us_surp
+   ;
+31.453403
+36 20 header "X021"
+   longname "prd_extern"
+   coefficient prd_extern(nind,nxtr)
+   ;
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+3.3743651
+0.14308585
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+1.0706885
+0.06700597700000001
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+25.595985
+0.86345154
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+36 20 header "X022"
+   longname "imp_extern"
+   coefficient imp_extern(ncom,nxtr)
+   ;
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+3.3743651
+0.14308585
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+1.0706885
+0.06700597700000001
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+25.595985
+0.86345154
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+3.3743651
+0.14308585
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+4 header "X023"
+   longname "dv_hh"
+   coefficient dv_hh(tfac_h)
+   ;
+0.028740829
+-0.007712209100000001
+0.050893039
+-0.071921177
+1 header "X024"
+   longname "risk"
+   coefficient risk
+   ;
+0.0
+1 header "X025"
+   longname "unemp_adj_time"
+   coefficient unemp_adj_time
+   ;
+0.0
+1 header "X026"
+   longname "unemp_adj_scaled"
+   coefficient unemp_adj_scaled
+   ;
+0.0
+1 header "X027"
+   longname "exo_row_interest"
+   coefficient exo_row_interest
+   ;
+31.994009000000002
+1 header "X028"
+   longname "exo_row_int_low"
+   coefficient exo_row_int_low
+   ;
+31.994009000000002
+1 header "X029"
+   longname "exo_row_int_high"
+   coefficient exo_row_int_high
+   ;
+31.994009000000002
+1 header "X030"
+   longname "row_debt_disc"
+   coefficient row_debt_disc
+   ;
+-13.760863
+1 header "X031"
+   longname "row_debt_cg"
+   coefficient row_debt_cg
+   ;
+342.23325
+1 header "X032"
+   longname "exo_gov_interest"
+   coefficient exo_gov_interest
+   ;
+78.633507
+1 header "X033"
+   longname "exo_gov_int_abroad"
+   coefficient exo_gov_int_abroad
+   ;
+0.0
+1 header "X034"
+   longname "exo_gov_int_ss"
+   coefficient exo_gov_int_ss
+   ;
+10.812107000000001
+1 header "X035"
+   longname "gov_surplus"
+   coefficient gov_surplus
+   ;
+-14.743777
+1 header "X036"
+   longname "raw_gov_surp"
+   coefficient raw_gov_surp
+   ;
+-14.743777
+1 header "X037"
+   longname "gov_for_invest"
+   coefficient gov_for_invest
+   ;
+-0.98291886
+1 header "X038"
+   longname "gov_debt_disc"
+   coefficient gov_debt_disc
+   ;
+0.0
+1 header "X039"
+   longname "gov_debt_cg"
+   coefficient gov_debt_cg
+   ;
+25.064823
+1 header "X040"
+   longname "gov_debt_fcg"
+   coefficient gov_debt_fcg
+   ;
+21.582499
+1 header "X041"
+   longname "t"
+   coefficient t
+   ;
+1960.0
+1 header "X042"
+   longname "hours"
+   coefficient hours
+   ;
+11732.493999999999
+1 header "X043"
+   longname "raw_hours"
+   coefficient raw_hours
+   ;
+11732.493999999999
+1 header "X044"
+   longname "hh_equiv"
+   coefficient hh_equiv
+   ;
+0.17958701
+1 header "X045"
+   longname "exo_k"
+   coefficient exo_k
+   ;
+9661.0547
+1 header "X046"
+   longname "exo_gov_debt"
+   coefficient exo_gov_debt
+   ;
+2813.0640000000003
+1 header "X047"
+   longname "exo_gov_debt_f"
+   coefficient exo_gov_debt_f
+   ;
+-70.728439
+1 header "X048"
+   longname "exo_row_debt"
+   coefficient exo_row_debt
+   ;
+164.71448999999998
+1 header "X049"
+   longname "exo_full_con"
+   coefficient exo_full_con
+   ;
+9612.4414
+1 header "X050"
+   longname "exo_tech_level"
+   coefficient exo_tech_level
+   ;
+1.0
+1 header "X051"
+   longname "pk_lag"
+   coefficient pk_lag
+   ;
+0.0
+1 header "X052"
+   longname "hh_equiv_lag"
+   coefficient hh_equiv_lag
+   ;
+0.17958701
+1 header "X053"
+   longname "exo_tax_labor_a"
+   coefficient exo_tax_labor_a
+   ;
+0.11226114
+1 header "X054"
+   longname "exo_tax_labor_m"
+   coefficient exo_tax_labor_m
+   ;
+0.23167841
+1 header "X055"
+   longname "tax_prop"
+   coefficient tax_prop
+   ;
+0.015658703
+36 header "X056"
+   longname "tax_sales"
+   coefficient tax_sales(nind)
+   ;
+-0.015235855
+0.00028556827
+0.0004164892
+0.0025956901
+0.002965169
+0.0079159634
+0.016026083
+0.016159099
+0.002282989
+0.0018477336999999999
+0.001145715
+0.0011239689999999998
+0.0018108671
+0.0084034195
+0.007864275
+0.01182546
+0.042484161
+0.003356942
+0.0059294975
+0.07347200799999999
+0.0010121494
+0.00046340710999999993
+0.0017922807
+0.010898373000000001
+0.32381859
+0.017075991000000002
+0.012725951999999999
+0.044235047
+0.0010456392
+0.03062186
+0.0015863164
+0.047842313
+0.0007612551
+0.0006770032300000001
+0.010459319
+-0.0065361271
+1 header "X057"
+   longname "tax_wealth"
+   coefficient tax_wealth
+   ;
+0.0014074482
+1 header "X058"
+   longname "exo_tax_cap"
+   coefficient exo_tax_cap
+   ;
+0.15482588
+36 header "X059"
+   longname "tariff"
+   coefficient tariff(ncom)
+   ;
+0.074156545
+0.042387113
+0.042387113
+0.0
+0.024684014
+0.0
+0.0
+0.0
+0.0
+0.024265995
+0.10474508
+0.025394646
+0.057958315999999996
+0.068252034
+0.07234861
+0.13436171
+0.07989385
+0.070300326
+0.09841208900000001
+0.070969157
+0.11988781
+0.055910025
+0.024067435
+0.084586121
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+36 header "X060"
+   longname "row_tariff"
+   coefficient row_tariff(ncom)
+   ;
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+1 header "X061"
+   longname "rev_lump"
+   coefficient rev_lump
+   ;
+0.0
+36 header "X062"
+   longname "tax_unit"
+   coefficient tax_unit(nind)
+   ;
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+20 header "X063"
+   longname "tax_extern_v"
+   coefficient tax_extern_v(nxtr)
+   ;
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+20 header "X064"
+   longname "tax_extern_u"
+   coefficient tax_extern_u(nxtr)
+   ;
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+1 header "X065"
+   longname "tax_itc"
+   coefficient tax_itc
+   ;
+0.0
+1 header "X066"
+   longname "tax_cap_hh"
+   coefficient tax_cap_hh
+   ;
+0.0
+1 header "X067"
+   longname "tax_con"
+   coefficient tax_con
+   ;
+0.0
+1 header "X068"
+   longname "tax_con_good"
+   coefficient tax_con_good
+   ;
+0.0
+1 header "X069"
+   longname "tax_con_kap"
+   coefficient tax_con_kap
+   ;
+0.0
+1 header "X070"
+   longname "tax_con_lab"
+   coefficient tax_con_lab
+   ;
+0.0
+1 header "X071"
+   longname "tax_con_gov"
+   coefficient tax_con_gov
+   ;
+0.0
+1 header "X072"
+   longname "tax_con_exempt"
+   coefficient tax_con_exempt
+   ;
+0.0
+36 header "X073"
+   longname "tech_shock"
+   coefficient tech_shock(nind)
+   ;
+1.0
+1.0
+1.0
+1.0
+1.0
+1.0
+1.0
+1.0
+1.0
+1.0
+1.0
+1.0
+1.0
+1.0
+1.0
+1.0
+1.0
+1.0
+1.0
+1.0
+1.0
+1.0
+1.0
+1.0
+1.0
+1.0
+1.0
+1.0
+1.0
+1.0
+1.0
+1.0
+1.0
+1.0
+1.0
+1.0
+1 header "X074"
+   longname "tech_shock_agg"
+   coefficient tech_shock_agg
+   ;
+1.0
+1 header "X075"
+   longname "tech_shock_row"
+   coefficient tech_shock_row
+   ;
+1.0
+1 header "X076"
+   longname "agg_tech_chg"
+   coefficient agg_tech_chg
+   ;
+0.0
+1 header "X077"
+   longname "inv_shock"
+   coefficient inv_shock
+   ;
+1.0
+1 header "X078"
+   longname "inv_exp_shock"
+   coefficient inv_exp_shock
+   ;
+1.0
+37 header "X079"
+   longname "con_shk_qty"
+   coefficient con_shk_qty(ncom_k)
+   ;
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+1 header "X080"
+   longname "tax_gain_h"
+   coefficient tax_gain_h
+   ;
+0.0
+1 header "X081"
+   longname "debt_shr_h"
+   coefficient debt_shr_h
+   ;
+0.28922707
+1 header "X082"
+   longname "inf"
+   coefficient inf
+   ;
+0.018706745
+1 header "X083"
+   longname "exo_r"
+   coefficient exo_r
+   ;
+0.078908592
+1 header "X084"
+   longname "theta_ephi"
+   coefficient theta_ephi
+   ;
+0.0
+1 header "X085"
+   longname "dep_allow_std"
+   coefficient dep_allow_std
+   ;
+0.58945686
+1 header "X086"
+   longname "dep_allow_econ"
+   coefficient dep_allow_econ
+   ;
+0.53878874
+1 header "X087"
+   longname "tax_scale_fac"
+   coefficient tax_scale_fac
+   ;
+1.0
+1 header "X088"
+   longname "exo_gov_transfer"
+   coefficient exo_gov_transfer
+   ;
+77.650581
+1 header "X089"
+   longname "exo_gov_to_foreign"
+   coefficient exo_gov_to_foreign
+   ;
+35.385078
+1 header "X090"
+   longname "exo_rev_nontax"
+   coefficient exo_rev_nontax
+   ;
+2.9487567
+1 header "X091"
+   longname "exo_trans_abroad"
+   coefficient exo_trans_abroad
+   ;
+5.8975134
+1 header "X092"
+   longname "exo_gov_from_ss"
+   coefficient exo_gov_from_ss
+   ;
+5.8975134
+1 header "X093"
+   longname "shr_gov_transfer"
+   coefficient shr_gov_transfer
+   ;
+0.013666565
+1 header "X094"
+   longname "shr_gov_to_foreign"
+   coefficient shr_gov_to_foreign
+   ;
+0.006227801999999999
+1 header "X095"
+   longname "shr_rev_nontax"
+   coefficient shr_rev_nontax
+   ;
+0.00051898352
+1 header "X096"
+   longname "shr_trans_abroad"
+   coefficient shr_trans_abroad
+   ;
+0.0010379669999999999
+1 header "X097"
+   longname "shr_gov_from_ss"
+   coefficient shr_gov_from_ss
+   ;
+0.0010379669999999999
+1 header "X098"
+   longname "hist_nipa_gdp"
+   coefficient hist_nipa_gdp
+   ;
+526.40002
+1 header "X099"
+   longname "hist_nipa_c"
+   coefficient hist_nipa_c
+   ;
+331.79999
+1 header "X100"
+   longname "hist_nipa_c_dur"
+   coefficient hist_nipa_c_dur
+   ;
+45.599998
+1 header "X101"
+   longname "hist_nipa_i"
+   coefficient hist_nipa_i
+   ;
+78.900002
+1 header "X102"
+   longname "hist_nipa_g"
+   coefficient hist_nipa_g
+   ;
+111.5
+1 header "X103"
+   longname "hist_nipa_x"
+   coefficient hist_nipa_x
+   ;
+27.1
+1 header "X104"
+   longname "hist_nipa_m"
+   coefficient hist_nipa_m
+   ;
+22.9
+1 header "X105"
+   longname "hist_nipa_real_gdp"
+   coefficient hist_nipa_real_gdp
+   ;
+2830.7163
+1 header "X106"
+   longname "hist_nipa_real_c"
+   coefficient hist_nipa_real_c
+   ;
+1784.3506
+1 header "X107"
+   longname "hist_nipa_real_i"
+   coefficient hist_nipa_real_i
+   ;
+296.53851000000003
+1 header "X108"
+   longname "hist_nipa_real_g"
+   coefficient hist_nipa_real_g
+   ;
+870.5496800000001
+1 header "X109"
+   longname "hist_nipa_real_x"
+   coefficient hist_nipa_real_x
+   ;
+98.346321
+1 header "X110"
+   longname "hist_nipa_real_m"
+   coefficient hist_nipa_real_m
+   ;
+114.3373
+1 header "X111"
+   longname "hist_nipa_shr_c"
+   coefficient hist_nipa_shr_c
+   ;
+0.54369301
+1 header "X112"
+   longname "hist_nipa_shr_i"
+   coefficient hist_nipa_shr_i
+   ;
+0.23651217
+1 header "X113"
+   longname "hist_nipa_shr_g"
+   coefficient hist_nipa_shr_g
+   ;
+0.21181612
+1 header "X114"
+   longname "hist_nipa_shr_x"
+   coefficient hist_nipa_shr_x
+   ;
+0.051481768
+1 header "X115"
+   longname "hist_nipa_shr_m"
+   coefficient hist_nipa_shr_m
+   ;
+0.043503042
+1 header "X116"
+   longname "hist_dja_shr_c"
+   coefficient hist_dja_shr_c
+   ;
+0.58039862
+1 header "X117"
+   longname "hist_dja_shr_i"
+   coefficient hist_dja_shr_i
+   ;
+0.20517635
+1 header "X118"
+   longname "hist_dja_shr_g"
+   coefficient hist_dja_shr_g
+   ;
+0.21035627
+1 header "X119"
+   longname "hist_dja_shr_x"
+   coefficient hist_dja_shr_x
+   ;
+0.041443221
+1 header "X120"
+   longname "hist_dja_shr_m"
+   coefficient hist_dja_shr_m
+   ;
+0.03737447
+1 header "X121"
+   longname "hist_ws_real_gdp"
+   coefficient hist_ws_real_gdp
+   ;
+2922.2781
+1 header "X122"
+   longname "hist_ws_real_gdp_alt"
+   coefficient hist_ws_real_gdp_alt
+   ;
+3117.738
+1 header "X123"
+   longname "hist_ws_real_c"
+   coefficient hist_ws_real_c
+   ;
+1832.8385
+1 header "X124"
+   longname "hist_ws_real_i"
+   coefficient hist_ws_real_i
+   ;
+389.98624
+1 header "X125"
+   longname "hist_ws_real_g"
+   coefficient hist_ws_real_g
+   ;
+891.00262
+1 header "X126"
+   longname "hist_ws_real_x"
+   coefficient hist_ws_real_x
+   ;
+81.03312700000001
+1 header "X127"
+   longname "hist_ws_real_m"
+   coefficient hist_ws_real_m
+   ;
+77.12236800000001
+1 header "X128"
+   longname "hist_ws_gdp"
+   coefficient hist_ws_gdp
+   ;
+591.9628299999999
+1 header "X129"
+   longname "hist_ws_c"
+   coefficient hist_ws_c
+   ;
+334.76288
+1 header "X130"
+   longname "hist_ws_i"
+   coefficient hist_ws_i
+   ;
+124.6
+1 header "X131"
+   longname "hist_ws_g"
+   coefficient hist_ws_g
+   ;
+128.39996000000002
+1 header "X132"
+   longname "hist_p_fc"
+   coefficient hist_p_fc
+   ;
+0.12546778
+1 header "X133"
+   longname "hist_full_qty"
+   coefficient hist_full_qty
+   ;
+7794.4209
+1 header "X134"
+   longname "hist_p_leisure"
+   coefficient hist_p_leisure
+   ;
+0.07741995900000001
+1 header "X135"
+   longname "hist_leisure"
+   coefficient hist_leisure
+   ;
+8303.1416
+1 header "X136"
+   longname "hist_p_numeraire"
+   coefficient hist_p_numeraire
+   ;
+0.076805495
+1 header "X137"
+   longname "hist_c396"
+   coefficient hist_c396
+   ;
+0.076805495
+1 header "X138"
+   longname "population"
+   coefficient population
+   ;
+180.67116000000001

@@ -1,0 +1,2161 @@
+{
+    "name": "standard", 
+    "pars": [
+        {
+            "header": "P001", 
+            "name": "par_baseyear", 
+            "sets": ""
+        }, 
+        {
+            "header": "P002", 
+            "name": "par_version", 
+            "sets": ""
+        }, 
+        {
+            "header": "P003", 
+            "name": "rho", 
+            "sets": ""
+        }, 
+        {
+            "header": "P004", 
+            "name": "alpha_h_f", 
+            "sets": [
+                "s_f"
+            ]
+        }, 
+        {
+            "header": "P005", 
+            "name": "alpha_h_nd", 
+            "sets": [
+                "s_nd"
+            ]
+        }, 
+        {
+            "header": "P006", 
+            "name": "alpha_h_ks", 
+            "sets": [
+                "s_ks"
+            ]
+        }, 
+        {
+            "header": "P007", 
+            "name": "alpha_h_cs", 
+            "sets": [
+                "s_cs"
+            ]
+        }, 
+        {
+            "header": "P008", 
+            "name": "alpha_h_en", 
+            "sets": [
+                "s_en"
+            ]
+        }, 
+        {
+            "header": "P009", 
+            "name": "alpha_h_cg", 
+            "sets": [
+                "s_cg"
+            ]
+        }, 
+        {
+            "header": "P010", 
+            "name": "alpha_h_md", 
+            "sets": [
+                "s_md"
+            ]
+        }, 
+        {
+            "header": "P011", 
+            "name": "alpha_h_fb", 
+            "sets": [
+                "s_fb"
+            ]
+        }, 
+        {
+            "header": "P012", 
+            "name": "alpha_h_ho", 
+            "sets": [
+                "s_ho"
+            ]
+        }, 
+        {
+            "header": "P013", 
+            "name": "alpha_h_rc", 
+            "sets": [
+                "s_rc"
+            ]
+        }, 
+        {
+            "header": "P014", 
+            "name": "alpha_h_hpg", 
+            "sets": [
+                "s_hpg"
+            ]
+        }, 
+        {
+            "header": "P015", 
+            "name": "alpha_h_edn", 
+            "sets": [
+                "s_edn"
+            ]
+        }, 
+        {
+            "header": "P016", 
+            "name": "alpha_h_ups", 
+            "sets": [
+                "s_ups"
+            ]
+        }, 
+        {
+            "header": "P017", 
+            "name": "alpha_h_trc", 
+            "sets": [
+                "s_trc"
+            ]
+        }, 
+        {
+            "header": "P018", 
+            "name": "alpha_h_rcs", 
+            "sets": [
+                "s_rcs"
+            ]
+        }, 
+        {
+            "header": "P019", 
+            "name": "alpha_h_trv", 
+            "sets": [
+                "s_trv"
+            ]
+        }, 
+        {
+            "header": "P020", 
+            "name": "alpha_h_ens", 
+            "sets": [
+                "s_ens"
+            ]
+        }, 
+        {
+            "header": "P021", 
+            "name": "alpha_h_hps", 
+            "sets": [
+                "s_hps"
+            ]
+        }, 
+        {
+            "header": "P022", 
+            "name": "alpha_h_cmm", 
+            "sets": [
+                "s_cmm"
+            ]
+        }, 
+        {
+            "header": "P023", 
+            "name": "beta_h_f", 
+            "sets": [
+                "s_f", 
+                "p_f"
+            ]
+        }, 
+        {
+            "header": "P024", 
+            "name": "beta_h_nd", 
+            "sets": [
+                "s_nd", 
+                "p_nd"
+            ]
+        }, 
+        {
+            "header": "P025", 
+            "name": "beta_h_ks", 
+            "sets": [
+                "s_ks", 
+                "p_ks"
+            ]
+        }, 
+        {
+            "header": "P026", 
+            "name": "beta_h_cs", 
+            "sets": [
+                "s_cs", 
+                "p_cs"
+            ]
+        }, 
+        {
+            "header": "P027", 
+            "name": "beta_h_en", 
+            "sets": [
+                "s_en", 
+                "p_en"
+            ]
+        }, 
+        {
+            "header": "P028", 
+            "name": "beta_h_cg", 
+            "sets": [
+                "s_cg", 
+                "p_cg"
+            ]
+        }, 
+        {
+            "header": "P029", 
+            "name": "beta_h_md", 
+            "sets": [
+                "s_md", 
+                "p_md"
+            ]
+        }, 
+        {
+            "header": "P030", 
+            "name": "beta_h_fb", 
+            "sets": [
+                "s_fb", 
+                "p_fb"
+            ]
+        }, 
+        {
+            "header": "P031", 
+            "name": "beta_h_ho", 
+            "sets": [
+                "s_ho", 
+                "p_ho"
+            ]
+        }, 
+        {
+            "header": "P032", 
+            "name": "beta_h_rc", 
+            "sets": [
+                "s_rc", 
+                "p_rc"
+            ]
+        }, 
+        {
+            "header": "P033", 
+            "name": "beta_h_hpg", 
+            "sets": [
+                "s_hpg", 
+                "p_hpg"
+            ]
+        }, 
+        {
+            "header": "P034", 
+            "name": "beta_h_edn", 
+            "sets": [
+                "s_edn", 
+                "p_edn"
+            ]
+        }, 
+        {
+            "header": "P035", 
+            "name": "beta_h_ups", 
+            "sets": [
+                "s_ups", 
+                "p_ups"
+            ]
+        }, 
+        {
+            "header": "P036", 
+            "name": "beta_h_trc", 
+            "sets": [
+                "s_trc", 
+                "p_trc"
+            ]
+        }, 
+        {
+            "header": "P037", 
+            "name": "beta_h_rcs", 
+            "sets": [
+                "s_rcs", 
+                "p_rcs"
+            ]
+        }, 
+        {
+            "header": "P038", 
+            "name": "beta_h_trv", 
+            "sets": [
+                "s_trv", 
+                "p_trv"
+            ]
+        }, 
+        {
+            "header": "P039", 
+            "name": "beta_h_ens", 
+            "sets": [
+                "s_ens", 
+                "p_ens"
+            ]
+        }, 
+        {
+            "header": "P040", 
+            "name": "beta_h_hps", 
+            "sets": [
+                "s_hps", 
+                "p_hps"
+            ]
+        }, 
+        {
+            "header": "P041", 
+            "name": "beta_h_cmm", 
+            "sets": [
+                "s_cmm", 
+                "p_cmm"
+            ]
+        }, 
+        {
+            "header": "P042", 
+            "name": "beta_ha", 
+            "sets": [
+                "tfac_h", 
+                "nattr"
+            ]
+        }, 
+        {
+            "header": "P043", 
+            "name": "beta_hm", 
+            "sets": [
+                "tfac_h"
+            ]
+        }, 
+        {
+            "header": "P044", 
+            "name": "denom_rebase", 
+            "sets": ""
+        }, 
+        {
+            "header": "P045", 
+            "name": "io_nipa", 
+            "sets": [
+                "ncom_k", 
+                "nipa_c"
+            ]
+        }, 
+        {
+            "header": "P046", 
+            "name": "pfc_m0", 
+            "sets": ""
+        }, 
+        {
+            "header": "P047", 
+            "name": "alpha0_i", 
+            "sets": ""
+        }, 
+        {
+            "header": "P048", 
+            "longname": true, 
+            "name": "alpha_i_fixed", 
+            "sets": [
+                "s_fixed"
+            ]
+        }, 
+        {
+            "header": "P049", 
+            "name": "alpha_i_long", 
+            "sets": [
+                "s_long"
+            ]
+        }, 
+        {
+            "header": "P050", 
+            "longname": true, 
+            "name": "alpha_i_short", 
+            "sets": [
+                "s_short"
+            ]
+        }, 
+        {
+            "header": "P051", 
+            "name": "alpha_i_eit", 
+            "sets": [
+                "s_eit"
+            ]
+        }, 
+        {
+            "header": "P052", 
+            "longname": true, 
+            "name": "alpha_i_ttsvc", 
+            "sets": [
+                "s_ttsvc"
+            ]
+        }, 
+        {
+            "header": "P053", 
+            "name": "alpha_i_mach", 
+            "sets": [
+                "s_mach"
+            ]
+        }, 
+        {
+            "header": "P054", 
+            "name": "alpha_i_it", 
+            "sets": [
+                "s_it"
+            ]
+        }, 
+        {
+            "header": "P055", 
+            "longname": true, 
+            "name": "alpha_i_trnsp", 
+            "sets": [
+                "s_trnsp"
+            ]
+        }, 
+        {
+            "header": "P056", 
+            "name": "alpha_i_trd", 
+            "sets": [
+                "s_trd"
+            ]
+        }, 
+        {
+            "header": "P057", 
+            "name": "alpha_i_serv", 
+            "sets": [
+                "s_serv"
+            ]
+        }, 
+        {
+            "header": "P058", 
+            "longname": true, 
+            "name": "alpha_i_frawm", 
+            "sets": [
+                "s_frawm"
+            ]
+        }, 
+        {
+            "header": "P059", 
+            "longname": true, 
+            "name": "alpha_i_mserv", 
+            "sets": [
+                "s_mserv"
+            ]
+        }, 
+        {
+            "header": "P060", 
+            "longname": true, 
+            "name": "alpha_i_mrawm", 
+            "sets": [
+                "s_mrawm"
+            ]
+        }, 
+        {
+            "header": "P061", 
+            "name": "alpha_i_furn", 
+            "sets": [
+                "s_furn"
+            ]
+        }, 
+        {
+            "header": "P062", 
+            "name": "alpha_i_rawm", 
+            "sets": [
+                "s_rawm"
+            ]
+        }, 
+        {
+            "header": "P063", 
+            "name": "beta_i_fixed", 
+            "sets": [
+                "s_fixed", 
+                "p_fixed"
+            ]
+        }, 
+        {
+            "header": "P064", 
+            "name": "beta_i_long", 
+            "sets": [
+                "s_long", 
+                "p_long"
+            ]
+        }, 
+        {
+            "header": "P065", 
+            "name": "beta_i_short", 
+            "sets": [
+                "s_short", 
+                "p_short"
+            ]
+        }, 
+        {
+            "header": "P066", 
+            "name": "beta_i_eit", 
+            "sets": [
+                "s_eit", 
+                "p_eit"
+            ]
+        }, 
+        {
+            "header": "P067", 
+            "name": "beta_i_ttsvc", 
+            "sets": [
+                "s_ttsvc", 
+                "p_ttsvc"
+            ]
+        }, 
+        {
+            "header": "P068", 
+            "name": "beta_i_mach", 
+            "sets": [
+                "s_mach", 
+                "p_mach"
+            ]
+        }, 
+        {
+            "header": "P069", 
+            "name": "beta_i_it", 
+            "sets": [
+                "s_it", 
+                "p_it"
+            ]
+        }, 
+        {
+            "header": "P070", 
+            "name": "beta_i_trnsp", 
+            "sets": [
+                "s_trnsp", 
+                "p_trnsp"
+            ]
+        }, 
+        {
+            "header": "P071", 
+            "name": "beta_i_trd", 
+            "sets": [
+                "s_trd", 
+                "p_trd"
+            ]
+        }, 
+        {
+            "header": "P072", 
+            "name": "beta_i_serv", 
+            "sets": [
+                "s_serv", 
+                "p_serv"
+            ]
+        }, 
+        {
+            "header": "P073", 
+            "name": "beta_i_frawm", 
+            "sets": [
+                "s_frawm", 
+                "p_frawm"
+            ]
+        }, 
+        {
+            "header": "P074", 
+            "name": "beta_i_mserv", 
+            "sets": [
+                "s_mserv", 
+                "p_mserv"
+            ]
+        }, 
+        {
+            "header": "P075", 
+            "name": "beta_i_mrawm", 
+            "sets": [
+                "s_mrawm", 
+                "p_mrawm"
+            ]
+        }, 
+        {
+            "header": "P076", 
+            "name": "beta_i_furn", 
+            "sets": [
+                "s_furn", 
+                "p_furn"
+            ]
+        }, 
+        {
+            "header": "P077", 
+            "name": "beta_i_rawm", 
+            "sets": [
+                "s_rawm", 
+                "p_rawm"
+            ]
+        }, 
+        {
+            "header": "P078", 
+            "name": "a0_o", 
+            "sets": [
+                "nind"
+            ]
+        }, 
+        {
+            "header": "P079", 
+            "name": "a0_e", 
+            "sets": [
+                "nind"
+            ]
+        }, 
+        {
+            "header": "P080", 
+            "name": "a0_m", 
+            "sets": [
+                "nind"
+            ]
+        }, 
+        {
+            "header": "P081", 
+            "name": "a0_ff", 
+            "sets": [
+                "nind"
+            ]
+        }, 
+        {
+            "header": "P082", 
+            "name": "a0_oil", 
+            "sets": [
+                "nind"
+            ]
+        }, 
+        {
+            "header": "P083", 
+            "name": "a0_gas", 
+            "sets": [
+                "nind"
+            ]
+        }, 
+        {
+            "header": "P084", 
+            "name": "a0_ma", 
+            "sets": [
+                "nind"
+            ]
+        }, 
+        {
+            "header": "P085", 
+            "name": "a0_mm", 
+            "sets": [
+                "nind"
+            ]
+        }, 
+        {
+            "header": "P086", 
+            "name": "a0_mn", 
+            "sets": [
+                "nind"
+            ]
+        }, 
+        {
+            "header": "P087", 
+            "name": "a0_ms", 
+            "sets": [
+                "nind"
+            ]
+        }, 
+        {
+            "header": "P088", 
+            "name": "a0_eq", 
+            "sets": [
+                "nind"
+            ]
+        }, 
+        {
+            "header": "P089", 
+            "name": "a0_tr", 
+            "sets": [
+                "nind"
+            ]
+        }, 
+        {
+            "header": "P090", 
+            "name": "a0_tt", 
+            "sets": [
+                "nind"
+            ]
+        }, 
+        {
+            "header": "P091", 
+            "name": "a0_sv", 
+            "sets": [
+                "nind"
+            ]
+        }, 
+        {
+            "header": "P092", 
+            "name": "a0_bl", 
+            "sets": [
+                "nind"
+            ]
+        }, 
+        {
+            "header": "P093", 
+            "name": "a0_ob", 
+            "sets": [
+                "nind"
+            ]
+        }, 
+        {
+            "header": "P094", 
+            "name": "a0_os", 
+            "sets": [
+                "nind"
+            ]
+        }, 
+        {
+            "header": "P095", 
+            "name": "alpha_p_o", 
+            "sets": [
+                "s_o", 
+                "nind"
+            ]
+        }, 
+        {
+            "header": "P096", 
+            "name": "alpha_p_e", 
+            "sets": [
+                "s_e", 
+                "nind"
+            ]
+        }, 
+        {
+            "header": "P097", 
+            "name": "alpha_p_m", 
+            "sets": [
+                "s_m", 
+                "nind"
+            ]
+        }, 
+        {
+            "header": "P098", 
+            "name": "alpha_p_ff", 
+            "sets": [
+                "s_ff", 
+                "nind"
+            ]
+        }, 
+        {
+            "header": "P099", 
+            "name": "alpha_p_oil", 
+            "sets": [
+                "s_oil", 
+                "nind"
+            ]
+        }, 
+        {
+            "header": "P100", 
+            "name": "alpha_p_gas", 
+            "sets": [
+                "s_gas", 
+                "nind"
+            ]
+        }, 
+        {
+            "header": "P101", 
+            "name": "alpha_p_ma", 
+            "sets": [
+                "s_ma", 
+                "nind"
+            ]
+        }, 
+        {
+            "header": "P102", 
+            "name": "alpha_p_mm", 
+            "sets": [
+                "s_mm", 
+                "nind"
+            ]
+        }, 
+        {
+            "header": "P103", 
+            "name": "alpha_p_mn", 
+            "sets": [
+                "s_mn", 
+                "nind"
+            ]
+        }, 
+        {
+            "header": "P104", 
+            "name": "alpha_p_ms", 
+            "sets": [
+                "s_ms", 
+                "nind"
+            ]
+        }, 
+        {
+            "header": "P105", 
+            "name": "alpha_p_eq", 
+            "sets": [
+                "s_eq", 
+                "nind"
+            ]
+        }, 
+        {
+            "header": "P106", 
+            "name": "alpha_p_tr", 
+            "sets": [
+                "s_tr", 
+                "nind"
+            ]
+        }, 
+        {
+            "header": "P107", 
+            "name": "alpha_p_tt", 
+            "sets": [
+                "s_tt", 
+                "nind"
+            ]
+        }, 
+        {
+            "header": "P108", 
+            "name": "alpha_p_sv", 
+            "sets": [
+                "s_sv", 
+                "nind"
+            ]
+        }, 
+        {
+            "header": "P109", 
+            "name": "alpha_p_bl", 
+            "sets": [
+                "s_bl", 
+                "nind"
+            ]
+        }, 
+        {
+            "header": "P110", 
+            "name": "alpha_p_ob", 
+            "sets": [
+                "s_ob", 
+                "nind"
+            ]
+        }, 
+        {
+            "header": "P111", 
+            "name": "alpha_p_os", 
+            "sets": [
+                "s_os", 
+                "nind"
+            ]
+        }, 
+        {
+            "header": "P112", 
+            "name": "beta_p_o", 
+            "sets": [
+                "s_o", 
+                "p_o", 
+                "nind"
+            ]
+        }, 
+        {
+            "header": "P113", 
+            "name": "beta_p_e", 
+            "sets": [
+                "s_e", 
+                "p_e", 
+                "nind"
+            ]
+        }, 
+        {
+            "header": "P114", 
+            "name": "beta_p_m", 
+            "sets": [
+                "s_m", 
+                "p_m", 
+                "nind"
+            ]
+        }, 
+        {
+            "header": "P115", 
+            "name": "beta_p_ff", 
+            "sets": [
+                "s_ff", 
+                "p_ff", 
+                "nind"
+            ]
+        }, 
+        {
+            "header": "P116", 
+            "name": "beta_p_oil", 
+            "sets": [
+                "s_oil", 
+                "p_oil", 
+                "nind"
+            ]
+        }, 
+        {
+            "header": "P117", 
+            "name": "beta_p_gas", 
+            "sets": [
+                "s_gas", 
+                "p_gas", 
+                "nind"
+            ]
+        }, 
+        {
+            "header": "P118", 
+            "name": "beta_p_ma", 
+            "sets": [
+                "s_ma", 
+                "p_ma", 
+                "nind"
+            ]
+        }, 
+        {
+            "header": "P119", 
+            "name": "beta_p_mm", 
+            "sets": [
+                "s_mm", 
+                "p_mm", 
+                "nind"
+            ]
+        }, 
+        {
+            "header": "P120", 
+            "name": "beta_p_mn", 
+            "sets": [
+                "s_mn", 
+                "p_mn", 
+                "nind"
+            ]
+        }, 
+        {
+            "header": "P121", 
+            "name": "beta_p_ms", 
+            "sets": [
+                "s_ms", 
+                "p_ms", 
+                "nind"
+            ]
+        }, 
+        {
+            "header": "P122", 
+            "name": "beta_p_eq", 
+            "sets": [
+                "s_eq", 
+                "p_eq", 
+                "nind"
+            ]
+        }, 
+        {
+            "header": "P123", 
+            "name": "beta_p_tr", 
+            "sets": [
+                "s_tr", 
+                "p_tr", 
+                "nind"
+            ]
+        }, 
+        {
+            "header": "P124", 
+            "name": "beta_p_tt", 
+            "sets": [
+                "s_tt", 
+                "p_tt", 
+                "nind"
+            ]
+        }, 
+        {
+            "header": "P125", 
+            "name": "beta_p_sv", 
+            "sets": [
+                "s_sv", 
+                "p_sv", 
+                "nind"
+            ]
+        }, 
+        {
+            "header": "P126", 
+            "name": "beta_p_bl", 
+            "sets": [
+                "s_bl", 
+                "p_bl", 
+                "nind"
+            ]
+        }, 
+        {
+            "header": "P127", 
+            "name": "beta_p_ob", 
+            "sets": [
+                "s_ob", 
+                "p_ob", 
+                "nind"
+            ]
+        }, 
+        {
+            "header": "P128", 
+            "name": "beta_p_os", 
+            "sets": [
+                "s_os", 
+                "p_os", 
+                "nind"
+            ]
+        }, 
+        {
+            "header": "P129", 
+            "name": "alpha_m", 
+            "sets": [
+                "ncom"
+            ]
+        }, 
+        {
+            "header": "P130", 
+            "name": "beta_mm", 
+            "sets": [
+                "ncom"
+            ]
+        }, 
+        {
+            "header": "P131", 
+            "name": "delta", 
+            "sets": ""
+        }, 
+        {
+            "header": "P132", 
+            "name": "alpha_x", 
+            "sets": [
+                "ncom"
+            ]
+        }, 
+        {
+            "header": "P133", 
+            "name": "beta_xx", 
+            "sets": [
+                "ncom"
+            ]
+        }, 
+        {
+            "header": "P134", 
+            "name": "pf_scale_l", 
+            "sets": ""
+        }, 
+        {
+            "header": "P135", 
+            "name": "pf_scale_k", 
+            "sets": ""
+        }, 
+        {
+            "header": "P136", 
+            "name": "pd_gdp_scale", 
+            "sets": ""
+        }, 
+        {
+            "header": "P137", 
+            "name": "pd_con_scale", 
+            "sets": ""
+        }, 
+        {
+            "header": "P138", 
+            "name": "pd_inv_scale", 
+            "sets": ""
+        }, 
+        {
+            "header": "P139", 
+            "name": "pd_gov_scale", 
+            "sets": ""
+        }, 
+        {
+            "header": "P140", 
+            "name": "pd_exp_scale", 
+            "sets": ""
+        }, 
+        {
+            "header": "P141", 
+            "name": "pd_imp_scale", 
+            "sets": ""
+        }, 
+        {
+            "header": "P142", 
+            "name": "p_fc_scale", 
+            "sets": ""
+        }
+    ], 
+    "sets": [
+        {
+            "alias_of": "inp_f", 
+            "elements": [
+                "nd", 
+                "ks", 
+                "cs", 
+                "leis"
+            ], 
+            "name": "s_f"
+        }, 
+        {
+            "alias_of": "inp_nd", 
+            "elements": [
+                "n01", 
+                "n05", 
+                "en", 
+                "cg"
+            ], 
+            "name": "s_nd"
+        }, 
+        {
+            "alias_of": "inp_ks", 
+            "elements": [
+                "n10", 
+                "n36"
+            ], 
+            "name": "s_ks"
+        }, 
+        {
+            "alias_of": "inp_cs", 
+            "elements": [
+                "md", 
+                "fb", 
+                "ho", 
+                "rc"
+            ], 
+            "name": "s_cs"
+        }, 
+        {
+            "alias_of": "inp_en", 
+            "elements": [
+                "n03", 
+                "n04"
+            ], 
+            "name": "s_en"
+        }, 
+        {
+            "alias_of": "inp_cg", 
+            "elements": [
+                "n02", 
+                "n06", 
+                "n09", 
+                "hpg"
+            ], 
+            "name": "s_cg"
+        }, 
+        {
+            "alias_of": "inp_md", 
+            "elements": [
+                "n14", 
+                "n24"
+            ], 
+            "name": "s_md"
+        }, 
+        {
+            "alias_of": "inp_fb", 
+            "elements": [
+                "n22", 
+                "n23", 
+                "n29"
+            ], 
+            "name": "s_fb"
+        }, 
+        {
+            "alias_of": "inp_ho", 
+            "elements": [
+                "n35", 
+                "edn", 
+                "ups", 
+                "trc"
+            ], 
+            "name": "s_ho"
+        }, 
+        {
+            "alias_of": "inp_rc", 
+            "elements": [
+                "n20", 
+                "rcs", 
+                "trv"
+            ], 
+            "name": "s_rc"
+        }, 
+        {
+            "alias_of": "inp_hpg", 
+            "elements": [
+                "n07", 
+                "n08"
+            ], 
+            "name": "s_hpg"
+        }, 
+        {
+            "alias_of": "inp_edn", 
+            "elements": [
+                "n28", 
+                "n34"
+            ], 
+            "name": "s_edn"
+        }, 
+        {
+            "alias_of": "inp_ups", 
+            "elements": [
+                "n11", 
+                "ens", 
+                "hps"
+            ], 
+            "name": "s_ups"
+        }, 
+        {
+            "alias_of": "inp_trc", 
+            "elements": [
+                "n15", 
+                "n16", 
+                "n25", 
+                "cmm"
+            ], 
+            "name": "s_trc"
+        }, 
+        {
+            "alias_of": "inp_rcs", 
+            "elements": [
+                "n17", 
+                "n18", 
+                "n19"
+            ], 
+            "name": "s_rcs"
+        }, 
+        {
+            "alias_of": "inp_trv", 
+            "elements": [
+                "n21", 
+                "n33"
+            ], 
+            "name": "s_trv"
+        }, 
+        {
+            "alias_of": "inp_ens", 
+            "elements": [
+                "n12", 
+                "n13"
+            ], 
+            "name": "s_ens"
+        }, 
+        {
+            "alias_of": "inp_hps", 
+            "elements": [
+                "n30", 
+                "n31", 
+                "n32"
+            ], 
+            "name": "s_hps"
+        }, 
+        {
+            "alias_of": "inp_cmm", 
+            "elements": [
+                "n26", 
+                "n27"
+            ], 
+            "name": "s_cmm"
+        }, 
+        {
+            "alias_of": "inp_f", 
+            "elements": [
+                "nd", 
+                "ks", 
+                "cs", 
+                "leis"
+            ], 
+            "name": "p_f"
+        }, 
+        {
+            "alias_of": "inp_nd", 
+            "elements": [
+                "n01", 
+                "n05", 
+                "en", 
+                "cg"
+            ], 
+            "name": "p_nd"
+        }, 
+        {
+            "alias_of": "inp_ks", 
+            "elements": [
+                "n10", 
+                "n36"
+            ], 
+            "name": "p_ks"
+        }, 
+        {
+            "alias_of": "inp_cs", 
+            "elements": [
+                "md", 
+                "fb", 
+                "ho", 
+                "rc"
+            ], 
+            "name": "p_cs"
+        }, 
+        {
+            "alias_of": "inp_en", 
+            "elements": [
+                "n03", 
+                "n04"
+            ], 
+            "name": "p_en"
+        }, 
+        {
+            "alias_of": "inp_cg", 
+            "elements": [
+                "n02", 
+                "n06", 
+                "n09", 
+                "hpg"
+            ], 
+            "name": "p_cg"
+        }, 
+        {
+            "alias_of": "inp_md", 
+            "elements": [
+                "n14", 
+                "n24"
+            ], 
+            "name": "p_md"
+        }, 
+        {
+            "alias_of": "inp_fb", 
+            "elements": [
+                "n22", 
+                "n23", 
+                "n29"
+            ], 
+            "name": "p_fb"
+        }, 
+        {
+            "alias_of": "inp_ho", 
+            "elements": [
+                "n35", 
+                "edn", 
+                "ups", 
+                "trc"
+            ], 
+            "name": "p_ho"
+        }, 
+        {
+            "alias_of": "inp_rc", 
+            "elements": [
+                "n20", 
+                "rcs", 
+                "trv"
+            ], 
+            "name": "p_rc"
+        }, 
+        {
+            "alias_of": "inp_hpg", 
+            "elements": [
+                "n07", 
+                "n08"
+            ], 
+            "name": "p_hpg"
+        }, 
+        {
+            "alias_of": "inp_edn", 
+            "elements": [
+                "n28", 
+                "n34"
+            ], 
+            "name": "p_edn"
+        }, 
+        {
+            "alias_of": "inp_ups", 
+            "elements": [
+                "n11", 
+                "ens", 
+                "hps"
+            ], 
+            "name": "p_ups"
+        }, 
+        {
+            "alias_of": "inp_trc", 
+            "elements": [
+                "n15", 
+                "n16", 
+                "n25", 
+                "cmm"
+            ], 
+            "name": "p_trc"
+        }, 
+        {
+            "alias_of": "inp_rcs", 
+            "elements": [
+                "n17", 
+                "n18", 
+                "n19"
+            ], 
+            "name": "p_rcs"
+        }, 
+        {
+            "alias_of": "inp_trv", 
+            "elements": [
+                "n21", 
+                "n33"
+            ], 
+            "name": "p_trv"
+        }, 
+        {
+            "alias_of": "inp_ens", 
+            "elements": [
+                "n12", 
+                "n13"
+            ], 
+            "name": "p_ens"
+        }, 
+        {
+            "alias_of": "inp_hps", 
+            "elements": [
+                "n30", 
+                "n31", 
+                "n32"
+            ], 
+            "name": "p_hps"
+        }, 
+        {
+            "alias_of": "inp_cmm", 
+            "elements": [
+                "n26", 
+                "n27"
+            ], 
+            "name": "p_cmm"
+        }, 
+        {
+            "alias_of": "inp_f", 
+            "elements": [
+                "nd", 
+                "ks", 
+                "cs", 
+                "leis"
+            ], 
+            "name": "tfac_h"
+        }, 
+        {
+            "elements": [
+                "at01", 
+                "at02", 
+                "at03", 
+                "at04", 
+                "at05", 
+                "at06", 
+                "at07", 
+                "at08", 
+                "at09", 
+                "at10", 
+                "at11"
+            ], 
+            "name": "nattr"
+        }, 
+        {
+            "elements": [
+                "c01", 
+                "c02", 
+                "c03", 
+                "c04", 
+                "c05", 
+                "c06", 
+                "c07", 
+                "c08", 
+                "c09", 
+                "c10", 
+                "c11", 
+                "c12", 
+                "c13", 
+                "c14", 
+                "c15", 
+                "c16", 
+                "c17", 
+                "c18", 
+                "c19", 
+                "c20", 
+                "c21", 
+                "c22", 
+                "c23", 
+                "c24", 
+                "c25", 
+                "c26", 
+                "c27", 
+                "c28", 
+                "c29", 
+                "c30", 
+                "c31", 
+                "c32", 
+                "c33", 
+                "c34", 
+                "c35", 
+                "c36", 
+                "ck"
+            ], 
+            "name": "ncom_k"
+        }, 
+        {
+            "elements": [
+                "n01", 
+                "n02", 
+                "n03", 
+                "n04", 
+                "n05", 
+                "n06", 
+                "n07", 
+                "n08", 
+                "n09", 
+                "n10", 
+                "n11", 
+                "n12", 
+                "n13", 
+                "n14", 
+                "n15", 
+                "n16", 
+                "n17", 
+                "n18", 
+                "n19", 
+                "n20", 
+                "n21", 
+                "n22", 
+                "n23", 
+                "n24", 
+                "n25", 
+                "n26", 
+                "n27", 
+                "n28", 
+                "n29", 
+                "n30", 
+                "n31", 
+                "n32", 
+                "n33", 
+                "n34", 
+                "n35", 
+                "n36"
+            ], 
+            "name": "nipa_c"
+        }, 
+        {
+            "alias_of": "inp_fixed", 
+            "elements": [
+                "long", 
+                "short"
+            ], 
+            "name": "s_fixed"
+        }, 
+        {
+            "alias_of": "inp_long", 
+            "elements": [
+                "c05", 
+                "c09", 
+                "c31"
+            ], 
+            "name": "s_long"
+        }, 
+        {
+            "alias_of": "inp_short", 
+            "elements": [
+                "eit", 
+                "ttsvc"
+            ], 
+            "name": "s_short"
+        }, 
+        {
+            "alias_of": "inp_eit", 
+            "elements": [
+                "mach", 
+                "it", 
+                "trnsp"
+            ], 
+            "name": "s_eit"
+        }, 
+        {
+            "alias_of": "inp_ttsvc", 
+            "elements": [
+                "c27", 
+                "trd", 
+                "serv"
+            ], 
+            "name": "s_ttsvc"
+        }, 
+        {
+            "alias_of": "inp_mach", 
+            "elements": [
+                "c14", 
+                "c16", 
+                "frawm"
+            ], 
+            "name": "s_mach"
+        }, 
+        {
+            "alias_of": "inp_it", 
+            "elements": [
+                "c15", 
+                "c28", 
+                "c29"
+            ], 
+            "name": "s_it"
+        }, 
+        {
+            "alias_of": "inp_tr", 
+            "elements": [
+                "c17", 
+                "c18"
+            ], 
+            "name": "s_trnsp"
+        }, 
+        {
+            "alias_of": "inp_trd", 
+            "elements": [
+                "c25", 
+                "c26"
+            ], 
+            "name": "s_trd"
+        }, 
+        {
+            "alias_of": "inp_serv", 
+            "elements": [
+                "c32", 
+                "mserv"
+            ], 
+            "name": "s_serv"
+        }, 
+        {
+            "alias_of": "inp_frawm", 
+            "elements": [
+                "mrawm", 
+                "furn"
+            ], 
+            "name": "s_frawm"
+        }, 
+        {
+            "alias_of": "inp_mserv", 
+            "elements": [
+                "c22", 
+                "c34", 
+                "c35"
+            ], 
+            "name": "s_mserv"
+        }, 
+        {
+            "alias_of": "inp_mrawm", 
+            "elements": [
+                "c13", 
+                "rawm"
+            ], 
+            "name": "s_mrawm"
+        }, 
+        {
+            "alias_of": "inp_furn", 
+            "elements": [
+                "c19", 
+                "c21", 
+                "c24"
+            ], 
+            "name": "s_furn"
+        }, 
+        {
+            "alias_of": "inp_rawm", 
+            "elements": [
+                "c10", 
+                "c11", 
+                "c12"
+            ], 
+            "name": "s_rawm"
+        }, 
+        {
+            "alias_of": "inp_fixed", 
+            "elements": [
+                "long", 
+                "short"
+            ], 
+            "name": "p_fixed"
+        }, 
+        {
+            "alias_of": "inp_long", 
+            "elements": [
+                "c05", 
+                "c09", 
+                "c31"
+            ], 
+            "name": "p_long"
+        }, 
+        {
+            "alias_of": "inp_short", 
+            "elements": [
+                "eit", 
+                "ttsvc"
+            ], 
+            "name": "p_short"
+        }, 
+        {
+            "alias_of": "inp_eit", 
+            "elements": [
+                "mach", 
+                "it", 
+                "trnsp"
+            ], 
+            "name": "p_eit"
+        }, 
+        {
+            "alias_of": "inp_ttsvc", 
+            "elements": [
+                "c27", 
+                "trd", 
+                "serv"
+            ], 
+            "name": "p_ttsvc"
+        }, 
+        {
+            "alias_of": "inp_mach", 
+            "elements": [
+                "c14", 
+                "c16", 
+                "frawm"
+            ], 
+            "name": "p_mach"
+        }, 
+        {
+            "alias_of": "inp_it", 
+            "elements": [
+                "c15", 
+                "c28", 
+                "c29"
+            ], 
+            "name": "p_it"
+        }, 
+        {
+            "alias_of": "inp_tr", 
+            "elements": [
+                "c17", 
+                "c18"
+            ], 
+            "name": "p_trnsp"
+        }, 
+        {
+            "alias_of": "inp_trd", 
+            "elements": [
+                "c25", 
+                "c26"
+            ], 
+            "name": "p_trd"
+        }, 
+        {
+            "alias_of": "inp_serv", 
+            "elements": [
+                "c32", 
+                "mserv"
+            ], 
+            "name": "p_serv"
+        }, 
+        {
+            "alias_of": "inp_frawm", 
+            "elements": [
+                "mrawm", 
+                "furn"
+            ], 
+            "name": "p_frawm"
+        }, 
+        {
+            "alias_of": "inp_mserv", 
+            "elements": [
+                "c22", 
+                "c34", 
+                "c35"
+            ], 
+            "name": "p_mserv"
+        }, 
+        {
+            "alias_of": "inp_mrawm", 
+            "elements": [
+                "c13", 
+                "rawm"
+            ], 
+            "name": "p_mrawm"
+        }, 
+        {
+            "alias_of": "inp_furn", 
+            "elements": [
+                "c19", 
+                "c21", 
+                "c24"
+            ], 
+            "name": "p_furn"
+        }, 
+        {
+            "alias_of": "inp_rawm", 
+            "elements": [
+                "c10", 
+                "c11", 
+                "c12"
+            ], 
+            "name": "p_rawm"
+        }, 
+        {
+            "elements": [
+                "i01", 
+                "i02", 
+                "i03", 
+                "i04", 
+                "i05", 
+                "i06", 
+                "i07", 
+                "i08", 
+                "i09", 
+                "i10", 
+                "i11", 
+                "i12", 
+                "i13", 
+                "i14", 
+                "i15", 
+                "i16", 
+                "i17", 
+                "i18", 
+                "i19", 
+                "i20", 
+                "i21", 
+                "i22", 
+                "i23", 
+                "i24", 
+                "i25", 
+                "i26", 
+                "i27", 
+                "i28", 
+                "i29", 
+                "i30", 
+                "i31", 
+                "i32", 
+                "i33", 
+                "i34", 
+                "i35", 
+                "i36"
+            ], 
+            "name": "nind"
+        }, 
+        {
+            "alias_of": "inp_o", 
+            "elements": [
+                "k", 
+                "l", 
+                "e", 
+                "m"
+            ], 
+            "name": "s_o"
+        }, 
+        {
+            "alias_of": "inp_e", 
+            "elements": [
+                "c06", 
+                "ff"
+            ], 
+            "name": "s_e"
+        }, 
+        {
+            "alias_of": "inp_m", 
+            "elements": [
+                "ma", 
+                "mm", 
+                "mn", 
+                "ms"
+            ], 
+            "name": "s_m"
+        }, 
+        {
+            "alias_of": "inp_ff", 
+            "elements": [
+                "c04", 
+                "oil", 
+                "gas"
+            ], 
+            "name": "s_ff"
+        }, 
+        {
+            "alias_of": "inp_oil", 
+            "elements": [
+                "c02", 
+                "c23"
+            ], 
+            "name": "s_oil"
+        }, 
+        {
+            "alias_of": "inp_gas", 
+            "elements": [
+                "c03", 
+                "c07"
+            ], 
+            "name": "s_gas"
+        }, 
+        {
+            "alias_of": "inp_ma", 
+            "elements": [
+                "c01", 
+                "c10", 
+                "c20", 
+                "c21"
+            ], 
+            "name": "s_ma"
+        }, 
+        {
+            "alias_of": "inp_mm", 
+            "elements": [
+                "c05", 
+                "c12", 
+                "c13", 
+                "eq"
+            ], 
+            "name": "s_mm"
+        }, 
+        {
+            "alias_of": "inp_mn", 
+            "elements": [
+                "c11", 
+                "c19", 
+                "c22", 
+                "c24"
+            ], 
+            "name": "s_mn"
+        }, 
+        {
+            "alias_of": "inp_ms", 
+            "elements": [
+                "c32", 
+                "tt", 
+                "sv"
+            ], 
+            "name": "s_ms"
+        }, 
+        {
+            "alias_of": "inp_eq", 
+            "elements": [
+                "c14", 
+                "c15", 
+                "c16", 
+                "tr"
+            ], 
+            "name": "s_eq"
+        }, 
+        {
+            "alias_of": "inp_tr", 
+            "elements": [
+                "c17", 
+                "c18"
+            ], 
+            "name": "s_tr"
+        }, 
+        {
+            "alias_of": "inp_tt", 
+            "elements": [
+                "c25", 
+                "c26", 
+                "c27"
+            ], 
+            "name": "s_tt"
+        }, 
+        {
+            "alias_of": "inp_sv", 
+            "elements": [
+                "bl", 
+                "ob", 
+                "os"
+            ], 
+            "name": "s_sv"
+        }, 
+        {
+            "alias_of": "inp_bl", 
+            "elements": [
+                "c08", 
+                "c09", 
+                "c31"
+            ], 
+            "name": "s_bl"
+        }, 
+        {
+            "alias_of": "inp_ob", 
+            "elements": [
+                "c28", 
+                "c29", 
+                "c30"
+            ], 
+            "name": "s_ob"
+        }, 
+        {
+            "alias_of": "inp_os", 
+            "elements": [
+                "c33", 
+                "c34", 
+                "c35", 
+                "c36"
+            ], 
+            "name": "s_os"
+        }, 
+        {
+            "alias_of": "inp_o", 
+            "elements": [
+                "k", 
+                "l", 
+                "e", 
+                "m"
+            ], 
+            "name": "p_o"
+        }, 
+        {
+            "alias_of": "inp_e", 
+            "elements": [
+                "c06", 
+                "ff"
+            ], 
+            "name": "p_e"
+        }, 
+        {
+            "alias_of": "inp_m", 
+            "elements": [
+                "ma", 
+                "mm", 
+                "mn", 
+                "ms"
+            ], 
+            "name": "p_m"
+        }, 
+        {
+            "alias_of": "inp_ff", 
+            "elements": [
+                "c04", 
+                "oil", 
+                "gas"
+            ], 
+            "name": "p_ff"
+        }, 
+        {
+            "alias_of": "inp_oil", 
+            "elements": [
+                "c02", 
+                "c23"
+            ], 
+            "name": "p_oil"
+        }, 
+        {
+            "alias_of": "inp_gas", 
+            "elements": [
+                "c03", 
+                "c07"
+            ], 
+            "name": "p_gas"
+        }, 
+        {
+            "alias_of": "inp_ma", 
+            "elements": [
+                "c01", 
+                "c10", 
+                "c20", 
+                "c21"
+            ], 
+            "name": "p_ma"
+        }, 
+        {
+            "alias_of": "inp_mm", 
+            "elements": [
+                "c05", 
+                "c12", 
+                "c13", 
+                "eq"
+            ], 
+            "name": "p_mm"
+        }, 
+        {
+            "alias_of": "inp_mn", 
+            "elements": [
+                "c11", 
+                "c19", 
+                "c22", 
+                "c24"
+            ], 
+            "name": "p_mn"
+        }, 
+        {
+            "alias_of": "inp_ms", 
+            "elements": [
+                "c32", 
+                "tt", 
+                "sv"
+            ], 
+            "name": "p_ms"
+        }, 
+        {
+            "alias_of": "inp_eq", 
+            "elements": [
+                "c14", 
+                "c15", 
+                "c16", 
+                "tr"
+            ], 
+            "name": "p_eq"
+        }, 
+        {
+            "alias_of": "inp_tr", 
+            "elements": [
+                "c17", 
+                "c18"
+            ], 
+            "name": "p_tr"
+        }, 
+        {
+            "alias_of": "inp_tt", 
+            "elements": [
+                "c25", 
+                "c26", 
+                "c27"
+            ], 
+            "name": "p_tt"
+        }, 
+        {
+            "alias_of": "inp_sv", 
+            "elements": [
+                "bl", 
+                "ob", 
+                "os"
+            ], 
+            "name": "p_sv"
+        }, 
+        {
+            "alias_of": "inp_bl", 
+            "elements": [
+                "c08", 
+                "c09", 
+                "c31"
+            ], 
+            "name": "p_bl"
+        }, 
+        {
+            "alias_of": "inp_ob", 
+            "elements": [
+                "c28", 
+                "c29", 
+                "c30"
+            ], 
+            "name": "p_ob"
+        }, 
+        {
+            "alias_of": "inp_os", 
+            "elements": [
+                "c33", 
+                "c34", 
+                "c35", 
+                "c36"
+            ], 
+            "name": "p_os"
+        }, 
+        {
+            "elements": [
+                "c01", 
+                "c02", 
+                "c03", 
+                "c04", 
+                "c05", 
+                "c06", 
+                "c07", 
+                "c08", 
+                "c09", 
+                "c10", 
+                "c11", 
+                "c12", 
+                "c13", 
+                "c14", 
+                "c15", 
+                "c16", 
+                "c17", 
+                "c18", 
+                "c19", 
+                "c20", 
+                "c21", 
+                "c22", 
+                "c23", 
+                "c24", 
+                "c25", 
+                "c26", 
+                "c27", 
+                "c28", 
+                "c29", 
+                "c30", 
+                "c31", 
+                "c32", 
+                "c33", 
+                "c34", 
+                "c35", 
+                "c36"
+            ], 
+            "name": "ncom"
+        }
+    ], 
+    "vars": []
+}

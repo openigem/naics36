@@ -1,0 +1,1012 @@
+{
+    "name": "standard", 
+    "pars": [], 
+    "sets": [
+        {
+            "elements": [
+                "c01", 
+                "c02", 
+                "c03", 
+                "c04", 
+                "c05", 
+                "c06", 
+                "c07", 
+                "c08", 
+                "c09", 
+                "c10", 
+                "c11", 
+                "c12", 
+                "c13", 
+                "c14", 
+                "c15", 
+                "c16", 
+                "c17", 
+                "c18", 
+                "c19", 
+                "c20", 
+                "c21", 
+                "c22", 
+                "c23", 
+                "c24", 
+                "c25", 
+                "c26", 
+                "c27", 
+                "c28", 
+                "c29", 
+                "c30", 
+                "c31", 
+                "c32", 
+                "c33", 
+                "c34", 
+                "c35", 
+                "c36"
+            ], 
+            "name": "ncom"
+        }, 
+        {
+            "elements": [
+                "i01", 
+                "i02", 
+                "i03", 
+                "i04", 
+                "i05", 
+                "i06", 
+                "i07", 
+                "i08", 
+                "i09", 
+                "i10", 
+                "i11", 
+                "i12", 
+                "i13", 
+                "i14", 
+                "i15", 
+                "i16", 
+                "i17", 
+                "i18", 
+                "i19", 
+                "i20", 
+                "i21", 
+                "i22", 
+                "i23", 
+                "i24", 
+                "i25", 
+                "i26", 
+                "i27", 
+                "i28", 
+                "i29", 
+                "i30", 
+                "i31", 
+                "i32", 
+                "i33", 
+                "i34", 
+                "i35", 
+                "i36", 
+                "con"
+            ], 
+            "name": "nind_c"
+        }, 
+        {
+            "elements": [
+                "i01", 
+                "i02", 
+                "i03", 
+                "i04", 
+                "i05", 
+                "i06", 
+                "i07", 
+                "i08", 
+                "i09", 
+                "i10", 
+                "i11", 
+                "i12", 
+                "i13", 
+                "i14", 
+                "i15", 
+                "i16", 
+                "i17", 
+                "i18", 
+                "i19", 
+                "i20", 
+                "i21", 
+                "i22", 
+                "i23", 
+                "i24", 
+                "i25", 
+                "i26", 
+                "i27", 
+                "i28", 
+                "i29", 
+                "i30", 
+                "i31", 
+                "i32", 
+                "i33", 
+                "i34", 
+                "i35", 
+                "i36"
+            ], 
+            "name": "nind"
+        }, 
+        {
+            "elements": [
+                "at01", 
+                "at02", 
+                "at03", 
+                "at04", 
+                "at05", 
+                "at06", 
+                "at07", 
+                "at08", 
+                "at09", 
+                "at10", 
+                "at11"
+            ], 
+            "name": "nattr"
+        }, 
+        {
+            "elements": [
+                "ex01", 
+                "ex02", 
+                "ex03", 
+                "ex04", 
+                "ex05", 
+                "ex06", 
+                "ex07", 
+                "ex08", 
+                "ex09", 
+                "ex10", 
+                "ex11", 
+                "ex12", 
+                "ex13", 
+                "ex14", 
+                "ex15", 
+                "ex16", 
+                "ex17", 
+                "ex18", 
+                "ex19", 
+                "ex20"
+            ], 
+            "name": "nxtr"
+        }, 
+        {
+            "alias_of": "inp_f", 
+            "elements": [
+                "nd", 
+                "ks", 
+                "cs", 
+                "leis"
+            ], 
+            "name": "tfac_h"
+        }, 
+        {
+            "elements": [
+                "c01", 
+                "c02", 
+                "c03", 
+                "c04", 
+                "c05", 
+                "c06", 
+                "c07", 
+                "c08", 
+                "c09", 
+                "c10", 
+                "c11", 
+                "c12", 
+                "c13", 
+                "c14", 
+                "c15", 
+                "c16", 
+                "c17", 
+                "c18", 
+                "c19", 
+                "c20", 
+                "c21", 
+                "c22", 
+                "c23", 
+                "c24", 
+                "c25", 
+                "c26", 
+                "c27", 
+                "c28", 
+                "c29", 
+                "c30", 
+                "c31", 
+                "c32", 
+                "c33", 
+                "c34", 
+                "c35", 
+                "c36", 
+                "ck"
+            ], 
+            "name": "ncom_k"
+        }
+    ], 
+    "vars": [
+        {
+            "header": "X001", 
+            "name": "exo_baseyear", 
+            "sets": ""
+        }, 
+        {
+            "header": "X002", 
+            "name": "exo_version", 
+            "sets": ""
+        }, 
+        {
+            "header": "X003", 
+            "name": "p_hours", 
+            "sets": ""
+        }, 
+        {
+            "header": "X004", 
+            "name": "exo_pf", 
+            "sets": [
+                "ncom"
+            ]
+        }, 
+        {
+            "header": "X005", 
+            "name": "p_numeraire", 
+            "sets": ""
+        }, 
+        {
+            "header": "X006", 
+            "name": "pk_scale", 
+            "sets": [
+                "nind_c"
+            ]
+        }, 
+        {
+            "header": "X007", 
+            "name": "pl_scale", 
+            "sets": [
+                "nind"
+            ]
+        }, 
+        {
+            "header": "X008", 
+            "name": "pj_scale", 
+            "sets": ""
+        }, 
+        {
+            "header": "X009", 
+            "longname": true, 
+            "name": "inven_fraction", 
+            "sets": ""
+        }, 
+        {
+            "header": "X010", 
+            "name": "gov_share", 
+            "sets": [
+                "ncom"
+            ]
+        }, 
+        {
+            "header": "X011", 
+            "name": "adjust_i", 
+            "sets": ""
+        }, 
+        {
+            "header": "X012", 
+            "name": "adjust_pk", 
+            "sets": ""
+        }, 
+        {
+            "header": "X013", 
+            "name": "adjust_k", 
+            "sets": ""
+        }, 
+        {
+            "header": "X014", 
+            "name": "inven_share", 
+            "sets": [
+                "ncom"
+            ]
+        }, 
+        {
+            "header": "X015", 
+            "name": "income_dist", 
+            "sets": ""
+        }, 
+        {
+            "header": "X016", 
+            "name": "income_share", 
+            "sets": [
+                "nattr"
+            ]
+        }, 
+        {
+            "header": "X017", 
+            "name": "kap_oil", 
+            "sets": ""
+        }, 
+        {
+            "header": "X018", 
+            "name": "kap_gas", 
+            "sets": ""
+        }, 
+        {
+            "header": "X019", 
+            "name": "us_surplus", 
+            "sets": ""
+        }, 
+        {
+            "header": "X020", 
+            "name": "raw_us_surp", 
+            "sets": ""
+        }, 
+        {
+            "header": "X021", 
+            "name": "prd_extern", 
+            "sets": [
+                "nind", 
+                "nxtr"
+            ]
+        }, 
+        {
+            "header": "X022", 
+            "name": "imp_extern", 
+            "sets": [
+                "ncom", 
+                "nxtr"
+            ]
+        }, 
+        {
+            "header": "X023", 
+            "name": "dv_hh", 
+            "sets": [
+                "tfac_h"
+            ]
+        }, 
+        {
+            "header": "X024", 
+            "name": "risk", 
+            "sets": ""
+        }, 
+        {
+            "header": "X025", 
+            "longname": true, 
+            "name": "unemp_adj_time", 
+            "sets": ""
+        }, 
+        {
+            "header": "X026", 
+            "longname": true, 
+            "name": "unemp_adj_scaled", 
+            "sets": ""
+        }, 
+        {
+            "header": "X027", 
+            "longname": true, 
+            "name": "exo_row_interest", 
+            "sets": ""
+        }, 
+        {
+            "header": "X028", 
+            "longname": true, 
+            "name": "exo_row_int_low", 
+            "sets": ""
+        }, 
+        {
+            "header": "X029", 
+            "longname": true, 
+            "name": "exo_row_int_high", 
+            "sets": ""
+        }, 
+        {
+            "header": "X030", 
+            "longname": true, 
+            "name": "row_debt_disc", 
+            "sets": ""
+        }, 
+        {
+            "header": "X031", 
+            "name": "row_debt_cg", 
+            "sets": ""
+        }, 
+        {
+            "header": "X032", 
+            "longname": true, 
+            "name": "exo_gov_interest", 
+            "sets": ""
+        }, 
+        {
+            "header": "X033", 
+            "longname": true, 
+            "name": "exo_gov_int_abroad", 
+            "sets": ""
+        }, 
+        {
+            "header": "X034", 
+            "longname": true, 
+            "name": "exo_gov_int_ss", 
+            "sets": ""
+        }, 
+        {
+            "header": "X035", 
+            "name": "gov_surplus", 
+            "sets": ""
+        }, 
+        {
+            "header": "X036", 
+            "name": "raw_gov_surp", 
+            "sets": ""
+        }, 
+        {
+            "header": "X037", 
+            "longname": true, 
+            "name": "gov_for_invest", 
+            "sets": ""
+        }, 
+        {
+            "header": "X038", 
+            "longname": true, 
+            "name": "gov_debt_disc", 
+            "sets": ""
+        }, 
+        {
+            "header": "X039", 
+            "name": "gov_debt_cg", 
+            "sets": ""
+        }, 
+        {
+            "header": "X040", 
+            "name": "gov_debt_fcg", 
+            "sets": ""
+        }, 
+        {
+            "header": "X041", 
+            "name": "t", 
+            "sets": ""
+        }, 
+        {
+            "header": "X042", 
+            "name": "hours", 
+            "sets": ""
+        }, 
+        {
+            "header": "X043", 
+            "name": "raw_hours", 
+            "sets": ""
+        }, 
+        {
+            "header": "X044", 
+            "name": "hh_equiv", 
+            "sets": ""
+        }, 
+        {
+            "header": "X045", 
+            "name": "exo_k", 
+            "sets": ""
+        }, 
+        {
+            "header": "X046", 
+            "name": "exo_gov_debt", 
+            "sets": ""
+        }, 
+        {
+            "header": "X047", 
+            "longname": true, 
+            "name": "exo_gov_debt_f", 
+            "sets": ""
+        }, 
+        {
+            "header": "X048", 
+            "name": "exo_row_debt", 
+            "sets": ""
+        }, 
+        {
+            "header": "X049", 
+            "name": "exo_full_con", 
+            "sets": ""
+        }, 
+        {
+            "header": "X050", 
+            "longname": true, 
+            "name": "exo_tech_level", 
+            "sets": ""
+        }, 
+        {
+            "header": "X051", 
+            "name": "pk_lag", 
+            "sets": ""
+        }, 
+        {
+            "header": "X052", 
+            "name": "hh_equiv_lag", 
+            "sets": ""
+        }, 
+        {
+            "header": "X053", 
+            "longname": true, 
+            "name": "exo_tax_labor_a", 
+            "sets": ""
+        }, 
+        {
+            "header": "X054", 
+            "longname": true, 
+            "name": "exo_tax_labor_m", 
+            "sets": ""
+        }, 
+        {
+            "header": "X055", 
+            "name": "tax_prop", 
+            "sets": ""
+        }, 
+        {
+            "header": "X056", 
+            "name": "tax_sales", 
+            "sets": [
+                "nind"
+            ]
+        }, 
+        {
+            "header": "X057", 
+            "name": "tax_wealth", 
+            "sets": ""
+        }, 
+        {
+            "header": "X058", 
+            "name": "exo_tax_cap", 
+            "sets": ""
+        }, 
+        {
+            "header": "X059", 
+            "name": "tariff", 
+            "sets": [
+                "ncom"
+            ]
+        }, 
+        {
+            "header": "X060", 
+            "name": "row_tariff", 
+            "sets": [
+                "ncom"
+            ]
+        }, 
+        {
+            "header": "X061", 
+            "name": "rev_lump", 
+            "sets": ""
+        }, 
+        {
+            "header": "X062", 
+            "name": "tax_unit", 
+            "sets": [
+                "nind"
+            ]
+        }, 
+        {
+            "header": "X063", 
+            "name": "tax_extern_v", 
+            "sets": [
+                "nxtr"
+            ]
+        }, 
+        {
+            "header": "X064", 
+            "name": "tax_extern_u", 
+            "sets": [
+                "nxtr"
+            ]
+        }, 
+        {
+            "header": "X065", 
+            "name": "tax_itc", 
+            "sets": ""
+        }, 
+        {
+            "header": "X066", 
+            "name": "tax_cap_hh", 
+            "sets": ""
+        }, 
+        {
+            "header": "X067", 
+            "name": "tax_con", 
+            "sets": ""
+        }, 
+        {
+            "header": "X068", 
+            "name": "tax_con_good", 
+            "sets": ""
+        }, 
+        {
+            "header": "X069", 
+            "name": "tax_con_kap", 
+            "sets": ""
+        }, 
+        {
+            "header": "X070", 
+            "name": "tax_con_lab", 
+            "sets": ""
+        }, 
+        {
+            "header": "X071", 
+            "name": "tax_con_gov", 
+            "sets": ""
+        }, 
+        {
+            "header": "X072", 
+            "longname": true, 
+            "name": "tax_con_exempt", 
+            "sets": ""
+        }, 
+        {
+            "header": "X073", 
+            "name": "tech_shock", 
+            "sets": [
+                "nind"
+            ]
+        }, 
+        {
+            "header": "X074", 
+            "longname": true, 
+            "name": "tech_shock_agg", 
+            "sets": ""
+        }, 
+        {
+            "header": "X075", 
+            "longname": true, 
+            "name": "tech_shock_row", 
+            "sets": ""
+        }, 
+        {
+            "header": "X076", 
+            "name": "agg_tech_chg", 
+            "sets": ""
+        }, 
+        {
+            "header": "X077", 
+            "name": "inv_shock", 
+            "sets": ""
+        }, 
+        {
+            "header": "X078", 
+            "longname": true, 
+            "name": "inv_exp_shock", 
+            "sets": ""
+        }, 
+        {
+            "header": "X079", 
+            "name": "con_shk_qty", 
+            "sets": [
+                "ncom_k"
+            ]
+        }, 
+        {
+            "header": "X080", 
+            "name": "tax_gain_h", 
+            "sets": ""
+        }, 
+        {
+            "header": "X081", 
+            "name": "debt_shr_h", 
+            "sets": ""
+        }, 
+        {
+            "header": "X082", 
+            "name": "inf", 
+            "sets": ""
+        }, 
+        {
+            "header": "X083", 
+            "name": "exo_r", 
+            "sets": ""
+        }, 
+        {
+            "header": "X084", 
+            "name": "theta_ephi", 
+            "sets": ""
+        }, 
+        {
+            "header": "X085", 
+            "longname": true, 
+            "name": "dep_allow_std", 
+            "sets": ""
+        }, 
+        {
+            "header": "X086", 
+            "longname": true, 
+            "name": "dep_allow_econ", 
+            "sets": ""
+        }, 
+        {
+            "header": "X087", 
+            "longname": true, 
+            "name": "tax_scale_fac", 
+            "sets": ""
+        }, 
+        {
+            "header": "X088", 
+            "longname": true, 
+            "name": "exo_gov_transfer", 
+            "sets": ""
+        }, 
+        {
+            "header": "X089", 
+            "longname": true, 
+            "name": "exo_gov_to_foreign", 
+            "sets": ""
+        }, 
+        {
+            "header": "X090", 
+            "longname": true, 
+            "name": "exo_rev_nontax", 
+            "sets": ""
+        }, 
+        {
+            "header": "X091", 
+            "longname": true, 
+            "name": "exo_trans_abroad", 
+            "sets": ""
+        }, 
+        {
+            "header": "X092", 
+            "longname": true, 
+            "name": "exo_gov_from_ss", 
+            "sets": ""
+        }, 
+        {
+            "header": "X093", 
+            "longname": true, 
+            "name": "shr_gov_transfer", 
+            "sets": ""
+        }, 
+        {
+            "header": "X094", 
+            "longname": true, 
+            "name": "shr_gov_to_foreign", 
+            "sets": ""
+        }, 
+        {
+            "header": "X095", 
+            "longname": true, 
+            "name": "shr_rev_nontax", 
+            "sets": ""
+        }, 
+        {
+            "header": "X096", 
+            "longname": true, 
+            "name": "shr_trans_abroad", 
+            "sets": ""
+        }, 
+        {
+            "header": "X097", 
+            "longname": true, 
+            "name": "shr_gov_from_ss", 
+            "sets": ""
+        }, 
+        {
+            "header": "X098", 
+            "longname": true, 
+            "name": "hist_nipa_gdp", 
+            "sets": ""
+        }, 
+        {
+            "header": "X099", 
+            "name": "hist_nipa_c", 
+            "sets": ""
+        }, 
+        {
+            "header": "X100", 
+            "longname": true, 
+            "name": "hist_nipa_c_dur", 
+            "sets": ""
+        }, 
+        {
+            "header": "X101", 
+            "name": "hist_nipa_i", 
+            "sets": ""
+        }, 
+        {
+            "header": "X102", 
+            "name": "hist_nipa_g", 
+            "sets": ""
+        }, 
+        {
+            "header": "X103", 
+            "name": "hist_nipa_x", 
+            "sets": ""
+        }, 
+        {
+            "header": "X104", 
+            "name": "hist_nipa_m", 
+            "sets": ""
+        }, 
+        {
+            "header": "X105", 
+            "longname": true, 
+            "name": "hist_nipa_real_gdp", 
+            "sets": ""
+        }, 
+        {
+            "header": "X106", 
+            "longname": true, 
+            "name": "hist_nipa_real_c", 
+            "sets": ""
+        }, 
+        {
+            "header": "X107", 
+            "longname": true, 
+            "name": "hist_nipa_real_i", 
+            "sets": ""
+        }, 
+        {
+            "header": "X108", 
+            "longname": true, 
+            "name": "hist_nipa_real_g", 
+            "sets": ""
+        }, 
+        {
+            "header": "X109", 
+            "longname": true, 
+            "name": "hist_nipa_real_x", 
+            "sets": ""
+        }, 
+        {
+            "header": "X110", 
+            "longname": true, 
+            "name": "hist_nipa_real_m", 
+            "sets": ""
+        }, 
+        {
+            "header": "X111", 
+            "longname": true, 
+            "name": "hist_nipa_shr_c", 
+            "sets": ""
+        }, 
+        {
+            "header": "X112", 
+            "longname": true, 
+            "name": "hist_nipa_shr_i", 
+            "sets": ""
+        }, 
+        {
+            "header": "X113", 
+            "longname": true, 
+            "name": "hist_nipa_shr_g", 
+            "sets": ""
+        }, 
+        {
+            "header": "X114", 
+            "longname": true, 
+            "name": "hist_nipa_shr_x", 
+            "sets": ""
+        }, 
+        {
+            "header": "X115", 
+            "longname": true, 
+            "name": "hist_nipa_shr_m", 
+            "sets": ""
+        }, 
+        {
+            "header": "X116", 
+            "longname": true, 
+            "name": "hist_dja_shr_c", 
+            "sets": ""
+        }, 
+        {
+            "header": "X117", 
+            "longname": true, 
+            "name": "hist_dja_shr_i", 
+            "sets": ""
+        }, 
+        {
+            "header": "X118", 
+            "longname": true, 
+            "name": "hist_dja_shr_g", 
+            "sets": ""
+        }, 
+        {
+            "header": "X119", 
+            "longname": true, 
+            "name": "hist_dja_shr_x", 
+            "sets": ""
+        }, 
+        {
+            "header": "X120", 
+            "longname": true, 
+            "name": "hist_dja_shr_m", 
+            "sets": ""
+        }, 
+        {
+            "header": "X121", 
+            "longname": true, 
+            "name": "hist_ws_real_gdp", 
+            "sets": ""
+        }, 
+        {
+            "header": "X122", 
+            "longname": true, 
+            "name": "hist_ws_real_gdp_alt", 
+            "sets": ""
+        }, 
+        {
+            "header": "X123", 
+            "longname": true, 
+            "name": "hist_ws_real_c", 
+            "sets": ""
+        }, 
+        {
+            "header": "X124", 
+            "longname": true, 
+            "name": "hist_ws_real_i", 
+            "sets": ""
+        }, 
+        {
+            "header": "X125", 
+            "longname": true, 
+            "name": "hist_ws_real_g", 
+            "sets": ""
+        }, 
+        {
+            "header": "X126", 
+            "longname": true, 
+            "name": "hist_ws_real_x", 
+            "sets": ""
+        }, 
+        {
+            "header": "X127", 
+            "longname": true, 
+            "name": "hist_ws_real_m", 
+            "sets": ""
+        }, 
+        {
+            "header": "X128", 
+            "name": "hist_ws_gdp", 
+            "sets": ""
+        }, 
+        {
+            "header": "X129", 
+            "name": "hist_ws_c", 
+            "sets": ""
+        }, 
+        {
+            "header": "X130", 
+            "name": "hist_ws_i", 
+            "sets": ""
+        }, 
+        {
+            "header": "X131", 
+            "name": "hist_ws_g", 
+            "sets": ""
+        }, 
+        {
+            "header": "X132", 
+            "name": "hist_p_fc", 
+            "sets": ""
+        }, 
+        {
+            "header": "X133", 
+            "longname": true, 
+            "name": "hist_full_qty", 
+            "sets": ""
+        }, 
+        {
+            "header": "X134", 
+            "longname": true, 
+            "name": "hist_p_leisure", 
+            "sets": ""
+        }, 
+        {
+            "header": "X135", 
+            "name": "hist_leisure", 
+            "sets": ""
+        }, 
+        {
+            "header": "X136", 
+            "longname": true, 
+            "name": "hist_p_numeraire", 
+            "sets": ""
+        }, 
+        {
+            "header": "X137", 
+            "name": "hist_c396", 
+            "sets": ""
+        }, 
+        {
+            "header": "X138", 
+            "name": "population", 
+            "sets": ""
+        }
+    ]
+}
