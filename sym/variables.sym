@@ -1,0 +1,251 @@
+//  IGEM Variables
+
+variable  year  'Calendar years' ;
+
+// Price-related definitions
+
+variable  pc(com)  'Domestic commodity prices'  ;
+variable  pi(ind)  'Industry purchaser prices'  ;
+variable  po(ind)  'Industry producer prices'  ;
+variable  pf(com)  'Commodity import prices, foreign currency'  ;
+variable  pfd(com) 'Commodity import prices, domestic currency'  ;
+variable  ps(com)  'Total commodity supply prices'  ;
+
+variable  pb(inputs,buy) 'Buyer prices with demand-driven externality taxes (if any)'  ;
+
+variable  p_con(ncom_k)  'Household commodity prices, io'  ;
+variable  pcon(ntoth)  'Household commodity prices including leisure and tiers, nipa'  ;
+
+variable  pk_service  'Price of capital services'  ;
+variable  p_hours  'After-tax value of time to households'  ;
+variable  p_leisure  'Price of leisure'  ;
+variable  p_fc  'Price of full consumption'  ;
+
+//  Capital, labor and leisure price scalars
+
+variable  pk_scale(NIND_C)  'Capital price multipliers'  ;
+variable  pl_scale(ind)  'Labor price multipliers'  ;
+variable  pj_scale  'Leisure price multiplier'  ;
+
+//  Tax Rates
+
+variable  tax_labor_m  'Marginal tax rate on labor'  ;
+variable  tax_labor_a  'Average tax rate on labor'  ;
+variable  tax_cap      'Average-marginal tax rate on capital'  ;
+variable  tax_cap_hh   'Average-marginal tax rate on household capital'  ;
+
+//  Ad valorem tax rates
+
+variable  tax_sales(ind) 'Sales tax rate'  ;
+variable  tariff(com)  'Commodity tariff rate'  ;
+
+//  Unit tax rate
+
+variable  tax_unit(ind)  'Unit tax rate'  ;
+
+//  Externality taxes (Unit only, no Ad valorem)
+//  NOTE: A given externality is either supply- or demand-driven, not both
+
+variable  tax_ext_u(nxtr)  'Externality tax rate'  ;
+variable  tax_ext_ind(ind)  'Production tax rate from all externalities'  ;
+variable  tar_ext_com(com)  'Import tariff rate from all externalities'  ;
+
+variable  tax_ext_com(com,buy)  'Consumption tax rate from all externalties'  ; 
+
+// Consumption taxes
+
+variable  tax_con  'Consumption tax on all household expenditures'  ;
+variable  tax_con_good  'Consumption tax on only household goods and services'  ;
+variable  tax_con_kap  'Consumption tax on only household capital services'  ;
+variable  tax_con_gov  'Consumption tax on all government spending'  ;
+variable  tax_con_tot_com  'Total consumption tax on goods and services'  ;
+variable  tax_con_tot_kap  'Total consumption tax on capital services'  ;
+
+//  Supply-driven externality coefficients
+
+variable  prd_ext(ind,nxtr)  'Externality coefficients from production'  ;
+variable  imp_ext(com,nxtr)  'Externality coefficients from imports'  ;
+
+//  Demand-driven externality coefficients
+
+variable  com_ext(com,buy,nxtr)  'Externality coefficients from consumption'  ;
+
+// Energy tier shares
+
+variable  shr_gas(s_gas,ind) 'Input shares, gas' ;
+variable  shr_oil(s_oil,ind) 'Input shares, oil' ;
+variable  shr_ff(s_ff,ind) 'Input shares, ff' ;
+variable  shr_ene(s_ene,ind) 'Input shares, ene' ;
+
+// Energy tier factor biases (exogenous)
+
+variable  kalf_gas(s_gas,ind) 'Input biases, gas' ;
+variable  kalf_oil(s_oil,ind) 'Input biases, oil' ;
+variable  kalf_ff(s_ff,ind) 'Input biases, ff' ;
+variable  kalf_ene(s_ene,ind) 'Input biases, ene' ;
+
+// Services tier shares
+
+variable  shr_bl(s_bl,ind) 'Input shares, bl' ;
+variable  shr_ob(s_ob,ind) 'Input shares, ob' ;
+variable  shr_os(s_os,ind) 'Input shares, os' ;
+variable  shr_sv(s_sv,ind) 'Input shares, sv' ;
+
+// Services tier factor biases (exogenous)
+
+variable  kalf_bl(s_bl,ind) 'Input biases, bl' ;
+variable  kalf_ob(s_ob,ind) 'Input biases, ob' ;
+variable  kalf_os(s_os,ind) 'Input biases, os' ;
+variable  kalf_sv(s_sv,ind) 'Input biases, sv' ;
+
+// Non-aggregate materials tier shares
+
+variable  shr_ma(s_ma,ind) 'Input shares, ma' ;
+variable  shr_mn(s_mn,ind) 'Input shares, mn' ;
+variable  shr_tr(s_tr,ind) 'Input shares, tr' ;
+variable  shr_tt(s_tt,ind) 'Input shares, tt' ;
+
+// Non-aggregate materials tier factor biases (exogenous)
+
+variable  kalf_ma(s_ma,ind) 'Input biases, ma' ;
+variable  kalf_mn(s_mn,ind) 'Input biases, mn' ;
+variable  kalf_tr(s_tr,ind) 'Input biases, tr' ;
+variable  kalf_tt(s_tt,ind) 'Input biases, tt' ;
+
+// Aggregate materials tier shares
+
+variable  shr_eq(s_eq,ind) 'Input shares, eq' ;
+variable  shr_ms(s_ms,ind) 'Input shares, ms' ;
+variable  shr_mm(s_mm,ind) 'Input shares, mm' ;
+variable  shr_mat(s_mat,ind) 'Input shares, mat' ;
+
+// Aggregate materials tier tier factor biases (exogenous)
+
+variable  kalf_eq(s_eq,ind) 'Input biases, eq' ;
+variable  kalf_ms(s_ms,ind) 'Input biases, ms' ;
+variable  kalf_mm(s_mm,ind) 'Input biases, mm' ;
+variable  kalf_mat(s_mat,ind) 'Input biases, mat' ;
+
+// Top tier klem shares
+
+variable  shr_o(s_o,ind) 'Input shares, klem in o' ;
+
+// Top tier klem factor biases and industry TFP (exogenous)
+
+variable  kalf_o(s_o,ind) 'Input biases, klem in o' ;
+variable  kalp(ind)  'Technical change (TFP, Total factor productivity), output'  ;
+
+// Technical change variables
+
+variable  agg_tech_chg  'Economy-wide rate of technological improvement'  ;
+variable  agg_tech_level  'Economy-wide level of technological improvement'  ;
+variable  tech_shock_agg  'Economy-wide technology shock'  ;
+variable  tech_shock(ind) 'Input neutral industry-specific technology shock'  ;
+
+variable  e  'Direct exchange rate, USD/Foreign currency'  ;
+
+variable  kalm_imp(com)  'Import bias'  ;
+variable  amk_imp(com)  'Import share constant'  ;
+
+variable  imp_shr(com)  'Import share of total supply'  ;
+variable  dom_shr(com)  'Domestic share of total supply'  ;
+
+//  Cost shares of intermediate purchases based on producer tier structure
+
+variable  io(com,ind)  'Input-output coefficients in value terms'  ;
+
+// Household non-durables variables - Energy (en), Household and personal goods (hpg), Consumer goods (cg), Non-durables (nd)
+
+variable  shr_en(s_en)  'Household shares, en'  ;
+variable  shr_hpg(s_hpg)  'Household shares, hpg'  ;
+variable  shr_cg(s_cg)  'Household shares, cg'  ;
+variable  shr_nd(s_nd)  'Household shares, nd'  ;
+
+variable  kalh_en(s_en)  'Household biases, en'  ;
+variable  kalh_hpg(s_hpg)  'Household biases, hpg'  ;
+variable  kalh_cg(s_cg)  'Household biases, cg'  ;
+variable  kalh_nd(s_nd)  'Household biases, nd'  ;
+
+// Household services variables - Communications (cmm), Household and personal services (hps),
+//                                Energy utilities (ens), Travel (trv)
+
+variable  shr_cmm(s_cmm)  'Household shares, cmm'  ;
+variable  shr_hps(s_hps)  'Household shares, hps'  ;
+variable  shr_ens(s_ens)  'Household shares, ens'  ;
+variable  shr_trv(s_trv)  'Household shares, trv'  ;
+
+variable  kalh_cmm(s_cmm)  'Household biases, cmm'  ;
+variable  kalh_hps(s_hps)  'Household biases, hps'  ;
+variable  kalh_ens(s_ens)  'Household biases, ens'  ;
+variable  kalh_trv(s_trv)  'Household biases, trv'  ;
+
+// Household services variables - Recreation services (rcs), Education and non-profits (edn),
+//                                Finance and business services (fb), Medical (md)
+
+variable  shr_rcs(s_rcs)  'Household shares, rcs'  ;
+variable  shr_edn(s_edn)  'Household shares, edn'  ;
+variable  shr_fb(s_fb)  'Household shares, fb'  ;
+variable  shr_md(s_md)  'Household shares, md'  ;
+
+variable  kalh_rcs(s_rcs)  'Household biases, rcs'  ;
+variable  kalh_edn(s_edn)  'Household biases, edn'  ;
+variable  kalh_fb(s_fb)  'Household biases, fb'  ;
+variable  kalh_md(s_md)  'Household biases, md'  ;
+
+// Household services variables - Transportation and communication (trc), Utilities and personal services (ups),
+//                                Recreation, travel and meals (rc)), Household operation (ho), Consumer services (cs)
+
+variable  shr_trc(s_trc)  'Household shares, trc'  ;
+variable  shr_ups(s_ups)  'Household shares, ups'  ;
+variable  shr_rc(s_rc)  'Household shares, rc'  ;
+variable  shr_ho(s_ho)  'Household shares, ho'  ;
+variable  shr_cs(s_cs)  'Household shares, cs'  ;
+
+variable  kalh_trc(s_trc)  'Household biases, trc'  ;
+variable  kalh_ups(s_ups)  'Household biases, ups'  ;
+variable  kalh_rc(s_rc)  'Household biases, rc'  ;
+variable  kalh_ho(s_ho)  'Household biases, ho'  ;
+variable  kalh_cs(s_cs)  'Household biases, cs'  ;
+
+// Household capital services variables - Capital (ks)
+
+variable  shr_ks(s_ks)  'Household shares, ks'  ;
+variable  kalh_ks(s_ks)  'Household biases, ks'  ;
+
+// Household full consumption variables - Top tier: nd, ks, cs, r in f
+
+variable  ab_shr_f(s_f)  'Full consumption shares - with only alpha and beta effects, f'  ;
+variable  cex_shr_f(s_f)  'Full consumption shares - with cex expenditure and demographic effects, f'  ;
+variable  shr_f(s_f)  'Full consumption shares - bridged cex-to-nipa'  ;  
+
+variable  denom  'Full consumption share denominator'  ;
+
+variable  full_con  'Full consumption'  ;
+
+variable  income_dist  'income distribution statistic'  ;
+variable  income_share(nattr)  'income shares by attribute'  ;
+
+variable  dv_hh(s_f)  'cex-nipa bridge for full consumption shares'  ;
+
+variable  leisure  'Leisure quantity'  ;
+variable  cshare   'Consumption share of full consumption'  ;
+variable  con_expend  'Consumption expenditure'  ;
+variable  con_share(nipa)  'Commodity shares of consumption expenditure, nipa'  ;
+
+variable  con(ncom_k)  'Consumption expenditures by commodity, io' ;
+
+// Consumer demand shocks - policy variables - io basis
+
+variable  con_shk_qty(ncom_k)  'Consumer demand shocks, io quantities'  ;
+variable  con_shk_val(ncom_k)  'Consumer demand shocks, io values'  ;
+variable  con_shk_expend    'Consumer demand shocks, total value'  ;
+variable  con_expend_net    'Net consumption expenditure'  ;
+
+variable  rev_con  'Consumption tax revenue'  ;
+
+
+
+
+
+
+

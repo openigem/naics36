@@ -1,0 +1,1808 @@
+equation    (default=levels)    ;
+variable    (default=levels)    ;
+coefficient (default=parameter) ;
+
+set buy (i01,i02,i03,i04,i05,i06,i07,i08,i09,i10,i11,i12,i13,i14,i15,i16
+   ,i17,i18,i19,i20,i21,i22,i23,i24,i25,i26,i27,i28,i29,i30,i31,i32,i33,i34
+   ,i35,i36,con,inv,gov) ;
+set com (c01,c02,c03,c04,c05,c06,c07,c08,c09,c10,c11,c12,c13,c14,c15,c16
+   ,c17,c18,c19,c20,c21,c22,c23,c24,c25,c26,c27,c28,c29,c30,c31,c32,c33,c34
+   ,c35,c36) ;
+set hh_cg (n02,n06,n09,hpg) ;
+set hh_cmm (n26,n27) ;
+set hh_cs (md,fb,ho,rc) ;
+set hh_edn (n28,n34) ;
+set hh_en (n03,n04) ;
+set hh_ens (n12,n13) ;
+set hh_f (nd,ks,cs,r) ;
+set hh_fb (n22,n23,n29) ;
+set hh_ho (n35,edn,ups,trc) ;
+set hh_hpg (n07,n08) ;
+set hh_hps (n30,n31,n32) ;
+set hh_ks (n10,n36) ;
+set hh_md (n14,n24) ;
+set hh_nd (n01,n05,en,cg) ;
+set hh_rc (n20,rcs,trv) ;
+set hh_rcs (n17,n18,n19) ;
+set hh_trc (n15,n16,n25,cmm) ;
+set hh_trv (n21,n33) ;
+set hh_ups (n11,ens,hps) ;
+set ind (i01,i02,i03,i04,i05,i06,i07,i08,i09,i10,i11,i12,i13,i14,i15,i16
+   ,i17,i18,i19,i20,i21,i22,i23,i24,i25,i26,i27,i28,i29,i30,i31,i32,i33,i34
+   ,i35,i36) ;
+set inp_bl (c08,c09,c31) ;
+set inp_ene (c06,ff) ;
+set inp_eq (c14,c15,c16,tr) ;
+set inp_ff (c04,oil,gas) ;
+set inp_gas (c03,c07) ;
+set inp_ma (c01,c10,c20,c21) ;
+set inp_mat (ma,mm,mn,ms) ;
+set inp_mm (c05,c12,c13,eq) ;
+set inp_mn (c11,c19,c22,c24) ;
+set inp_ms (c32,tt,sv) ;
+set inp_o (kap,lab,ene,mat) ;
+set inp_ob (c28,c29,c30) ;
+set inp_oil (c02,c23) ;
+set inp_os (c33,c34,c35,c36) ;
+set inp_sv (bl,ob,os) ;
+set inp_tr (c17,c18) ;
+set inp_tt (c25,c26,c27) ;
+set inputs (c01,c02,c03,c04,c05,c06,c07,c08,c09,c10,c11,c12,c13,c14,c15,c16
+   ,c17,c18,c19,c20,c21,c22,c23,c24,c25,c26,c27,c28,c29,c30,c31,c32,c33,c34
+   ,c35,c36,kap,lab,os,ob,bl,tt,tr,mn,ma,gas,oil,sv,eq,ms,mm,ff,mat,ene) ;
+set NATTR (at1,at2,at3,at4,at5,at6,at7,at8,at9,at10,at11) ;
+set NCOM_K (c01,c02,c03,c04,c05,c06,c07,c08,c09,c10,c11,c12,c13,c14,c15,c16
+   ,c17,c18,c19,c20,c21,c22,c23,c24,c25,c26,c27,c28,c29,c30,c31,c32,c33,c34
+   ,c35,c36,kap) ;
+set NIND_C (i01,i02,i03,i04,i05,i06,i07,i08,i09,i10,i11,i12,i13,i14,i15,i16
+   ,i17,i18,i19,i20,i21,i22,i23,i24,i25,i26,i27,i28,i29,i30,i31,i32,i33,i34
+   ,i35,i36,con) ;
+set NINP (c01,c02,c03,c04,c05,c06,c07,c08,c09,c10,c11,c12,c13,c14,c15,c16
+   ,c17,c18,c19,c20,c21,c22,c23,c24,c25,c26,c27,c28,c29,c30,c31,c32,c33,c34
+   ,c35,c36,kap,lab) ;
+set nipa (n01,n02,n03,n04,n05,n06,n07,n08,n09,n10,n11,n12,n13,n14,n15,n16
+   ,n17,n18,n19,n20,n21,n22,n23,n24,n25,n26,n27,n28,n29,n30,n31,n32,n33,n34
+   ,n35,n36) ;
+set nleis (n01,n02,n03,n04,n05,n06,n07,n08,n09,n10,n11,n12,n13,n14,n15,n16
+   ,n17,n18,n19,n20,n21,n22,n23,n24,n25,n26,n27,n28,n29,n30,n31,n32,n33,n34
+   ,n35,n36,r) ;
+set ntoth (n01,n02,n03,n04,n05,n06,n07,n08,n09,n10,n11,n12,n13,n14,n15,n16
+   ,n17,n18,n19,n20,n21,n22,n23,n24,n25,n26,n27,n28,n29,n30,n31,n32,n33,n34
+   ,n35,n36,r,cmm,hps,ens,trv,rcs,edn,hpg,fb,md,en,ks,trc,ups,rc,ho,cg,cs,nd)
+    ;
+set NUSES (i01,i02,i03,i04,i05,i06,i07,i08,i09,i10,i11,i12,i13,i14,i15,i16
+   ,i17,i18,i19,i20,i21,i22,i23,i24,i25,i26,i27,i28,i29,i30,i31,i32,i33,i34
+   ,i35,i36,con,inv,gov,xpt,imp) ;
+set NXTR (ex1,ex2,ex3,ex4,ex5,ex6,ex7,ex8,ex9,ex10,ex11,ex12,ex13,ex14,ex15
+   ,ex16,ex17,ex18,ex19,ex20) ;
+set p_bl (c08,c09,c31) ;
+set p_cg (n02,n06,n09,hpg) ;
+set p_cmm (n26,n27) ;
+set p_cs (md,fb,ho,rc) ;
+set p_edn (n28,n34) ;
+set p_en (n03,n04) ;
+set p_ene (c06,ff) ;
+set p_ens (n12,n13) ;
+set p_eq (c14,c15,c16,tr) ;
+set p_f (nd,ks,cs,r) ;
+set p_fb (n22,n23,n29) ;
+set p_ff (c04,oil,gas) ;
+set p_gas (c03,c07) ;
+set p_ho (n35,edn,ups,trc) ;
+set p_hpg (n07,n08) ;
+set p_hps (n30,n31,n32) ;
+set p_ks (n10,n36) ;
+set p_ma (c01,c10,c20,c21) ;
+set p_mat (ma,mm,mn,ms) ;
+set p_md (n14,n24) ;
+set p_mm (c05,c12,c13,eq) ;
+set p_mn (c11,c19,c22,c24) ;
+set p_ms (c32,tt,sv) ;
+set p_nd (n01,n05,en,cg) ;
+set p_o (kap,lab,ene,mat) ;
+set p_ob (c28,c29,c30) ;
+set p_oil (c02,c23) ;
+set p_os (c33,c34,c35,c36) ;
+set p_rc (n20,rcs,trv) ;
+set p_rcs (n17,n18,n19) ;
+set p_sv (bl,ob,os) ;
+set p_tr (c17,c18) ;
+set p_trc (n15,n16,n25,cmm) ;
+set p_trv (n21,n33) ;
+set p_tt (c25,c26,c27) ;
+set p_ups (n11,ens,hps) ;
+set s_bl (c08,c09,c31) ;
+set s_cg (n02,n06,n09,hpg) ;
+set s_cmm (n26,n27) ;
+set s_cs (md,fb,ho,rc) ;
+set s_edn (n28,n34) ;
+set s_en (n03,n04) ;
+set s_ene (c06,ff) ;
+set s_ens (n12,n13) ;
+set s_eq (c14,c15,c16,tr) ;
+set s_f (nd,ks,cs,r) ;
+set s_fb (n22,n23,n29) ;
+set s_ff (c04,oil,gas) ;
+set s_gas (c03,c07) ;
+set s_ho (n35,edn,ups,trc) ;
+set s_hpg (n07,n08) ;
+set s_hps (n30,n31,n32) ;
+set s_ks (n10,n36) ;
+set s_ma (c01,c10,c20,c21) ;
+set s_mat (ma,mm,mn,ms) ;
+set s_md (n14,n24) ;
+set s_mm (c05,c12,c13,eq) ;
+set s_mn (c11,c19,c22,c24) ;
+set s_ms (c32,tt,sv) ;
+set s_nd (n01,n05,en,cg) ;
+set s_o (kap,lab,ene,mat) ;
+set s_ob (c28,c29,c30) ;
+set s_oil (c02,c23) ;
+set s_os (c33,c34,c35,c36) ;
+set s_rc (n20,rcs,trv) ;
+set s_rcs (n17,n18,n19) ;
+set s_sv (bl,ob,os) ;
+set s_tr (c17,c18) ;
+set s_trc (n15,n16,n25,cmm) ;
+set s_trv (n21,n33) ;
+set s_tt (c25,c26,c27) ;
+set s_ups (n11,ens,hps) ;
+set (intertemporal) time (p0,p1) ;
+set (intertemporal) time_p0m1 (p0) ;
+
+subset buy is subset of NUSES ;
+subset com is subset of NINP ;
+subset hh_cg is subset of ntoth ;
+subset hh_cmm is subset of ntoth ;
+subset hh_cs is subset of ntoth ;
+subset hh_edn is subset of ntoth ;
+subset hh_en is subset of ntoth ;
+subset hh_ens is subset of ntoth ;
+subset hh_f is subset of ntoth ;
+subset hh_fb is subset of ntoth ;
+subset hh_ho is subset of ntoth ;
+subset hh_hpg is subset of ntoth ;
+subset hh_hps is subset of ntoth ;
+subset hh_ks is subset of ntoth ;
+subset hh_md is subset of ntoth ;
+subset hh_nd is subset of ntoth ;
+subset hh_rc is subset of ntoth ;
+subset hh_rcs is subset of ntoth ;
+subset hh_trc is subset of ntoth ;
+subset hh_trv is subset of ntoth ;
+subset hh_ups is subset of ntoth ;
+subset ind is subset of NIND_C ;
+subset inp_bl is subset of inputs ;
+subset inp_ene is subset of inputs ;
+subset inp_eq is subset of inputs ;
+subset inp_ff is subset of inputs ;
+subset inp_gas is subset of inputs ;
+subset inp_ma is subset of inputs ;
+subset inp_mat is subset of inputs ;
+subset inp_mm is subset of inputs ;
+subset inp_mn is subset of inputs ;
+subset inp_ms is subset of inputs ;
+subset inp_o is subset of inputs ;
+subset inp_ob is subset of inputs ;
+subset inp_oil is subset of inputs ;
+subset inp_os is subset of inputs ;
+subset inp_sv is subset of inputs ;
+subset inp_tr is subset of inputs ;
+subset inp_tt is subset of inputs ;
+subset NINP is subset of inputs ;
+subset nipa is subset of nleis ;
+subset nleis is subset of ntoth ;
+subset p_bl is subset of inp_bl ;
+subset p_cg is subset of hh_cg ;
+subset p_cmm is subset of hh_cmm ;
+subset p_cs is subset of hh_cs ;
+subset p_edn is subset of hh_edn ;
+subset p_en is subset of hh_en ;
+subset p_ene is subset of inp_ene ;
+subset p_ens is subset of hh_ens ;
+subset p_eq is subset of inp_eq ;
+subset p_f is subset of hh_f ;
+subset p_fb is subset of hh_fb ;
+subset p_ff is subset of inp_ff ;
+subset p_gas is subset of inp_gas ;
+subset p_ho is subset of hh_ho ;
+subset p_hpg is subset of hh_hpg ;
+subset p_hps is subset of hh_hps ;
+subset p_ks is subset of hh_ks ;
+subset p_ma is subset of inp_ma ;
+subset p_mat is subset of inp_mat ;
+subset p_md is subset of hh_md ;
+subset p_mm is subset of inp_mm ;
+subset p_mn is subset of inp_mn ;
+subset p_ms is subset of inp_ms ;
+subset p_nd is subset of hh_nd ;
+subset p_o is subset of inp_o ;
+subset p_ob is subset of inp_ob ;
+subset p_oil is subset of inp_oil ;
+subset p_os is subset of inp_os ;
+subset p_rc is subset of hh_rc ;
+subset p_rcs is subset of hh_rcs ;
+subset p_sv is subset of inp_sv ;
+subset p_tr is subset of inp_tr ;
+subset p_trc is subset of hh_trc ;
+subset p_trv is subset of hh_trv ;
+subset p_tt is subset of inp_tt ;
+subset p_ups is subset of hh_ups ;
+subset s_bl is subset of inp_bl ;
+subset s_cg is subset of hh_cg ;
+subset s_cmm is subset of hh_cmm ;
+subset s_cs is subset of hh_cs ;
+subset s_edn is subset of hh_edn ;
+subset s_en is subset of hh_en ;
+subset s_ene is subset of inp_ene ;
+subset s_ens is subset of hh_ens ;
+subset s_eq is subset of inp_eq ;
+subset s_f is subset of hh_f ;
+subset s_fb is subset of hh_fb ;
+subset s_ff is subset of inp_ff ;
+subset s_gas is subset of inp_gas ;
+subset s_ho is subset of hh_ho ;
+subset s_hpg is subset of hh_hpg ;
+subset s_hps is subset of hh_hps ;
+subset s_ks is subset of hh_ks ;
+subset s_ma is subset of inp_ma ;
+subset s_mat is subset of inp_mat ;
+subset s_md is subset of hh_md ;
+subset s_mm is subset of inp_mm ;
+subset s_mn is subset of inp_mn ;
+subset s_ms is subset of inp_ms ;
+subset s_nd is subset of hh_nd ;
+subset s_o is subset of inp_o ;
+subset s_ob is subset of inp_ob ;
+subset s_oil is subset of inp_oil ;
+subset s_os is subset of inp_os ;
+subset s_rc is subset of hh_rc ;
+subset s_rcs is subset of hh_rcs ;
+subset s_sv is subset of inp_sv ;
+subset s_tr is subset of inp_tr ;
+subset s_trc is subset of hh_trc ;
+subset s_trv is subset of hh_trv ;
+subset s_tt is subset of inp_tt ;
+subset s_ups is subset of hh_ups ;
+subset time_p0m1 is subset of time ;
+
+coefficient (all,s1,s_cg) ah_cg(s1) ;
+coefficient (all,s2,s_cmm) ah_cmm(s2) ;
+coefficient (all,s3,s_cs) ah_cs(s3) ;
+coefficient (all,s4,s_edn) ah_edn(s4) ;
+coefficient (all,s5,s_en) ah_en(s5) ;
+coefficient (all,s7,s_ens) ah_ens(s7) ;
+coefficient (all,s9,s_f) ah_f(s9) ;
+coefficient (all,s10,s_fb) ah_fb(s10) ;
+coefficient (all,s13,s_ho) ah_ho(s13) ;
+coefficient (all,s14,s_hpg) ah_hpg(s14) ;
+coefficient (all,s15,s_hps) ah_hps(s15) ;
+coefficient (all,s16,s_ks) ah_ks(s16) ;
+coefficient (all,s19,s_md) ah_md(s19) ;
+coefficient (all,s23,s_nd) ah_nd(s23) ;
+coefficient (all,s28,s_rc) ah_rc(s28) ;
+coefficient (all,s29,s_rcs) ah_rcs(s29) ;
+coefficient (all,s32,s_trc) ah_trc(s32) ;
+coefficient (all,s33,s_trv) ah_trv(s33) ;
+coefficient (all,s35,s_ups) ah_ups(s35) ;
+coefficient (all,c,com) am_imp(c) ;
+coefficient (all,i,ind) ap0_bl(i) ;
+coefficient (all,i,ind) ap0_ene(i) ;
+coefficient (all,i,ind) ap0_eq(i) ;
+coefficient (all,i,ind) ap0_ff(i) ;
+coefficient (all,i,ind) ap0_gas(i) ;
+coefficient (all,i,ind) ap0_ma(i) ;
+coefficient (all,i,ind) ap0_mat(i) ;
+coefficient (all,i,ind) ap0_mm(i) ;
+coefficient (all,i,ind) ap0_mn(i) ;
+coefficient (all,i,ind) ap0_ms(i) ;
+coefficient (all,i,ind) ap0_o(i) ;
+coefficient (all,i,ind) ap0_ob(i) ;
+coefficient (all,i,ind) ap0_oil(i) ;
+coefficient (all,i,ind) ap0_os(i) ;
+coefficient (all,i,ind) ap0_sv(i) ;
+coefficient (all,i,ind) ap0_tr(i) ;
+coefficient (all,i,ind) ap0_tt(i) ;
+coefficient (all,s,s_bl) (all,i,ind) ap_bl(s,i) ;
+coefficient (all,s6,s_ene) (all,i,ind) ap_ene(s6,i) ;
+coefficient (all,s8,s_eq) (all,i,ind) ap_eq(s8,i) ;
+coefficient (all,s11,s_ff) (all,i,ind) ap_ff(s11,i) ;
+coefficient (all,s12,s_gas) (all,i,ind) ap_gas(s12,i) ;
+coefficient (all,s17,s_ma) (all,i,ind) ap_ma(s17,i) ;
+coefficient (all,s18,s_mat) (all,i,ind) ap_mat(s18,i) ;
+coefficient (all,s20,s_mm) (all,i,ind) ap_mm(s20,i) ;
+coefficient (all,s21,s_mn) (all,i,ind) ap_mn(s21,i) ;
+coefficient (all,s22,s_ms) (all,i,ind) ap_ms(s22,i) ;
+coefficient (all,s24,s_o) (all,i,ind) ap_o(s24,i) ;
+coefficient (all,s25,s_ob) (all,i,ind) ap_ob(s25,i) ;
+coefficient (all,s26,s_oil) (all,i,ind) ap_oil(s26,i) ;
+coefficient (all,s27,s_os) (all,i,ind) ap_os(s27,i) ;
+coefficient (all,s30,s_sv) (all,i,ind) ap_sv(s30,i) ;
+coefficient (all,s31,s_tr) (all,i,ind) ap_tr(s31,i) ;
+coefficient (all,s34,s_tt) (all,i,ind) ap_tt(s34,i) ;
+coefficient (all,s1,s_cg) (all,p1,p_cg) bh_cg(s1,p1) ;
+coefficient (all,s2,s_cmm) (all,p2,p_cmm) bh_cmm(s2,p2) ;
+coefficient (all,s3,s_cs) (all,p3,p_cs) bh_cs(s3,p3) ;
+coefficient (all,s4,s_edn) (all,p4,p_edn) bh_edn(s4,p4) ;
+coefficient (all,s5,s_en) (all,p5,p_en) bh_en(s5,p5) ;
+coefficient (all,s7,s_ens) (all,p7,p_ens) bh_ens(s7,p7) ;
+coefficient (all,s9,s_f) (all,p9,p_f) bh_f(s9,p9) ;
+coefficient (all,s10,s_fb) (all,p10,p_fb) bh_fb(s10,p10) ;
+coefficient (all,s13,s_ho) (all,p13,p_ho) bh_ho(s13,p13) ;
+coefficient (all,s14,s_hpg) (all,p14,p_hpg) bh_hpg(s14,p14) ;
+coefficient (all,s15,s_hps) (all,p15,p_hps) bh_hps(s15,p15) ;
+coefficient (all,s16,s_ks) (all,p16,p_ks) bh_ks(s16,p16) ;
+coefficient (all,s19,s_md) (all,p19,p_md) bh_md(s19,p19) ;
+coefficient (all,s23,s_nd) (all,p23,p_nd) bh_nd(s23,p23) ;
+coefficient (all,s28,s_rc) (all,p28,p_rc) bh_rc(s28,p28) ;
+coefficient (all,s29,s_rcs) (all,p29,p_rcs) bh_rcs(s29,p29) ;
+coefficient (all,s32,s_trc) (all,p32,p_trc) bh_trc(s32,p32) ;
+coefficient (all,s33,s_trv) (all,p33,p_trv) bh_trv(s33,p33) ;
+coefficient (all,s35,s_ups) (all,p35,p_ups) bh_ups(s35,p35) ;
+coefficient (all,s9,s_f) (all,N,nattr) bha_f(s9,N) ;
+coefficient (all,s9,s_f) bhm_f(s9) ;
+coefficient (all,c,com) bm_imp(c) ;
+coefficient (all,s,s_bl) (all,p,p_bl) (all,i,ind) bp_bl(s,p,i) ;
+coefficient (all,s6,s_ene) (all,p6,p_ene) (all,i,ind) bp_ene(s6,p6,i) ;
+coefficient (all,s8,s_eq) (all,p8,p_eq) (all,i,ind) bp_eq(s8,p8,i) ;
+coefficient (all,s11,s_ff) (all,p11,p_ff) (all,i,ind) bp_ff(s11,p11,i) ;
+coefficient (all,s12,s_gas) (all,p12,p_gas) (all,i,ind) bp_gas(s12,p12,i) ;
+coefficient (all,s17,s_ma) (all,p17,p_ma) (all,i,ind) bp_ma(s17,p17,i) ;
+coefficient (all,s18,s_mat) (all,p18,p_mat) (all,i,ind) bp_mat(s18,p18,i) ;
+coefficient (all,s20,s_mm) (all,p20,p_mm) (all,i,ind) bp_mm(s20,p20,i) ;
+coefficient (all,s21,s_mn) (all,p21,p_mn) (all,i,ind) bp_mn(s21,p21,i) ;
+coefficient (all,s22,s_ms) (all,p22,p_ms) (all,i,ind) bp_ms(s22,p22,i) ;
+coefficient (all,s24,s_o) (all,p24,p_o) (all,i,ind) bp_o(s24,p24,i) ;
+coefficient (all,s25,s_ob) (all,p25,p_ob) (all,i,ind) bp_ob(s25,p25,i) ;
+coefficient (all,s26,s_oil) (all,p26,p_oil) (all,i,ind) bp_oil(s26,p26,i) ;
+coefficient (all,s27,s_os) (all,p27,p_os) (all,i,ind) bp_os(s27,p27,i) ;
+coefficient (all,s30,s_sv) (all,p30,p_sv) (all,i,ind) bp_sv(s30,p30,i) ;
+coefficient (all,s31,s_tr) (all,p31,p_tr) (all,i,ind) bp_tr(s31,p31,i) ;
+coefficient (all,s34,s_tt) (all,p34,p_tt) (all,i,ind) bp_tt(s34,p34,i) ;
+coefficient denom_rebase ;
+coefficient (all,N1,ncom_k) (all,n4,nipa) io_nipa(N1,n4) ;
+coefficient (all,i,ind) (all,c,com) make_col(i,c) ;
+coefficient p_fc_scale ;
+coefficient pf_scale_k ;
+coefficient pf_scale_l ;
+coefficient pfc_m0 ;
+
+file param ;
+
+read (all,s1,s_cg) 
+   ah_cg(s1) from file param header "H000" ;
+read (all,s2,s_cmm) 
+   ah_cmm(s2) from file param header "H001" ;
+read (all,s3,s_cs) 
+   ah_cs(s3) from file param header "H002" ;
+read (all,s4,s_edn) 
+   ah_edn(s4) from file param header "H003" ;
+read (all,s5,s_en) 
+   ah_en(s5) from file param header "H004" ;
+read (all,s7,s_ens) 
+   ah_ens(s7) from file param header "H005" ;
+read (all,s9,s_f) 
+   ah_f(s9) from file param header "H006" ;
+read (all,s10,s_fb) 
+   ah_fb(s10) from file param header "H007" ;
+read (all,s13,s_ho) 
+   ah_ho(s13) from file param header "H008" ;
+read (all,s14,s_hpg) 
+   ah_hpg(s14) from file param header "H009" ;
+read (all,s15,s_hps) 
+   ah_hps(s15) from file param header "H010" ;
+read (all,s16,s_ks) 
+   ah_ks(s16) from file param header "H011" ;
+read (all,s19,s_md) 
+   ah_md(s19) from file param header "H012" ;
+read (all,s23,s_nd) 
+   ah_nd(s23) from file param header "H013" ;
+read (all,s28,s_rc) 
+   ah_rc(s28) from file param header "H014" ;
+read (all,s29,s_rcs) 
+   ah_rcs(s29) from file param header "H015" ;
+read (all,s32,s_trc) 
+   ah_trc(s32) from file param header "H016" ;
+read (all,s33,s_trv) 
+   ah_trv(s33) from file param header "H017" ;
+read (all,s35,s_ups) 
+   ah_ups(s35) from file param header "H018" ;
+read (all,c,com) 
+   am_imp(c) from file param header "H019" ;
+read (all,i,ind) 
+   ap0_bl(i) from file param header "H020" ;
+read (all,i,ind) 
+   ap0_ene(i) from file param header "H021" ;
+read (all,i,ind) 
+   ap0_eq(i) from file param header "H022" ;
+read (all,i,ind) 
+   ap0_ff(i) from file param header "H023" ;
+read (all,i,ind) 
+   ap0_gas(i) from file param header "H024" ;
+read (all,i,ind) 
+   ap0_ma(i) from file param header "H025" ;
+read (all,i,ind) 
+   ap0_mat(i) from file param header "H026" ;
+read (all,i,ind) 
+   ap0_mm(i) from file param header "H027" ;
+read (all,i,ind) 
+   ap0_mn(i) from file param header "H028" ;
+read (all,i,ind) 
+   ap0_ms(i) from file param header "H029" ;
+read (all,i,ind) 
+   ap0_o(i) from file param header "H030" ;
+read (all,i,ind) 
+   ap0_ob(i) from file param header "H031" ;
+read (all,i,ind) 
+   ap0_oil(i) from file param header "H032" ;
+read (all,i,ind) 
+   ap0_os(i) from file param header "H033" ;
+read (all,i,ind) 
+   ap0_sv(i) from file param header "H034" ;
+read (all,i,ind) 
+   ap0_tr(i) from file param header "H035" ;
+read (all,i,ind) 
+   ap0_tt(i) from file param header "H036" ;
+read (all,s,s_bl) (all,i,ind) 
+   ap_bl(s,i) from file param header "H037" ;
+read (all,s6,s_ene) (all,i,ind) 
+   ap_ene(s6,i) from file param header "H038" ;
+read (all,s8,s_eq) (all,i,ind) 
+   ap_eq(s8,i) from file param header "H039" ;
+read (all,s11,s_ff) (all,i,ind) 
+   ap_ff(s11,i) from file param header "H040" ;
+read (all,s12,s_gas) (all,i,ind) 
+   ap_gas(s12,i) from file param header "H041" ;
+read (all,s17,s_ma) (all,i,ind) 
+   ap_ma(s17,i) from file param header "H042" ;
+read (all,s18,s_mat) (all,i,ind) 
+   ap_mat(s18,i) from file param header "H043" ;
+read (all,s20,s_mm) (all,i,ind) 
+   ap_mm(s20,i) from file param header "H044" ;
+read (all,s21,s_mn) (all,i,ind) 
+   ap_mn(s21,i) from file param header "H045" ;
+read (all,s22,s_ms) (all,i,ind) 
+   ap_ms(s22,i) from file param header "H046" ;
+read (all,s24,s_o) (all,i,ind) 
+   ap_o(s24,i) from file param header "H047" ;
+read (all,s25,s_ob) (all,i,ind) 
+   ap_ob(s25,i) from file param header "H048" ;
+read (all,s26,s_oil) (all,i,ind) 
+   ap_oil(s26,i) from file param header "H049" ;
+read (all,s27,s_os) (all,i,ind) 
+   ap_os(s27,i) from file param header "H050" ;
+read (all,s30,s_sv) (all,i,ind) 
+   ap_sv(s30,i) from file param header "H051" ;
+read (all,s31,s_tr) (all,i,ind) 
+   ap_tr(s31,i) from file param header "H052" ;
+read (all,s34,s_tt) (all,i,ind) 
+   ap_tt(s34,i) from file param header "H053" ;
+read (all,s1,s_cg) (all,p1,p_cg) 
+   bh_cg(s1,p1) from file param header "H054" ;
+read (all,s2,s_cmm) (all,p2,p_cmm) 
+   bh_cmm(s2,p2) from file param header "H055" ;
+read (all,s3,s_cs) (all,p3,p_cs) 
+   bh_cs(s3,p3) from file param header "H056" ;
+read (all,s4,s_edn) (all,p4,p_edn) 
+   bh_edn(s4,p4) from file param header "H057" ;
+read (all,s5,s_en) (all,p5,p_en) 
+   bh_en(s5,p5) from file param header "H058" ;
+read (all,s7,s_ens) (all,p7,p_ens) 
+   bh_ens(s7,p7) from file param header "H059" ;
+read (all,s9,s_f) (all,p9,p_f) 
+   bh_f(s9,p9) from file param header "H060" ;
+read (all,s10,s_fb) (all,p10,p_fb) 
+   bh_fb(s10,p10) from file param header "H061" ;
+read (all,s13,s_ho) (all,p13,p_ho) 
+   bh_ho(s13,p13) from file param header "H062" ;
+read (all,s14,s_hpg) (all,p14,p_hpg) 
+   bh_hpg(s14,p14) from file param header "H063" ;
+read (all,s15,s_hps) (all,p15,p_hps) 
+   bh_hps(s15,p15) from file param header "H064" ;
+read (all,s16,s_ks) (all,p16,p_ks) 
+   bh_ks(s16,p16) from file param header "H065" ;
+read (all,s19,s_md) (all,p19,p_md) 
+   bh_md(s19,p19) from file param header "H066" ;
+read (all,s23,s_nd) (all,p23,p_nd) 
+   bh_nd(s23,p23) from file param header "H067" ;
+read (all,s28,s_rc) (all,p28,p_rc) 
+   bh_rc(s28,p28) from file param header "H068" ;
+read (all,s29,s_rcs) (all,p29,p_rcs) 
+   bh_rcs(s29,p29) from file param header "H069" ;
+read (all,s32,s_trc) (all,p32,p_trc) 
+   bh_trc(s32,p32) from file param header "H070" ;
+read (all,s33,s_trv) (all,p33,p_trv) 
+   bh_trv(s33,p33) from file param header "H071" ;
+read (all,s35,s_ups) (all,p35,p_ups) 
+   bh_ups(s35,p35) from file param header "H072" ;
+read (all,s9,s_f) (all,N,nattr) 
+   bha_f(s9,N) from file param header "H073" ;
+read (all,s9,s_f) 
+   bhm_f(s9) from file param header "H074" ;
+read (all,c,com) 
+   bm_imp(c) from file param header "H075" ;
+read (all,s,s_bl) (all,p,p_bl) (all,i,ind) 
+   bp_bl(s,p,i) from file param header "H076" ;
+read (all,s6,s_ene) (all,p6,p_ene) (all,i,ind) 
+   bp_ene(s6,p6,i) from file param header "H077" ;
+read (all,s8,s_eq) (all,p8,p_eq) (all,i,ind) 
+   bp_eq(s8,p8,i) from file param header "H078" ;
+read (all,s11,s_ff) (all,p11,p_ff) (all,i,ind) 
+   bp_ff(s11,p11,i) from file param header "H079" ;
+read (all,s12,s_gas) (all,p12,p_gas) (all,i,ind) 
+   bp_gas(s12,p12,i) from file param header "H080" ;
+read (all,s17,s_ma) (all,p17,p_ma) (all,i,ind) 
+   bp_ma(s17,p17,i) from file param header "H081" ;
+read (all,s18,s_mat) (all,p18,p_mat) (all,i,ind) 
+   bp_mat(s18,p18,i) from file param header "H082" ;
+read (all,s20,s_mm) (all,p20,p_mm) (all,i,ind) 
+   bp_mm(s20,p20,i) from file param header "H083" ;
+read (all,s21,s_mn) (all,p21,p_mn) (all,i,ind) 
+   bp_mn(s21,p21,i) from file param header "H084" ;
+read (all,s22,s_ms) (all,p22,p_ms) (all,i,ind) 
+   bp_ms(s22,p22,i) from file param header "H085" ;
+read (all,s24,s_o) (all,p24,p_o) (all,i,ind) 
+   bp_o(s24,p24,i) from file param header "H086" ;
+read (all,s25,s_ob) (all,p25,p_ob) (all,i,ind) 
+   bp_ob(s25,p25,i) from file param header "H087" ;
+read (all,s26,s_oil) (all,p26,p_oil) (all,i,ind) 
+   bp_oil(s26,p26,i) from file param header "H088" ;
+read (all,s27,s_os) (all,p27,p_os) (all,i,ind) 
+   bp_os(s27,p27,i) from file param header "H089" ;
+read (all,s30,s_sv) (all,p30,p_sv) (all,i,ind) 
+   bp_sv(s30,p30,i) from file param header "H090" ;
+read (all,s31,s_tr) (all,p31,p_tr) (all,i,ind) 
+   bp_tr(s31,p31,i) from file param header "H091" ;
+read (all,s34,s_tt) (all,p34,p_tt) (all,i,ind) 
+   bp_tt(s34,p34,i) from file param header "H092" ;
+read 
+   denom_rebase from file param header "H093" ;
+read (all,N1,ncom_k) (all,n4,nipa) 
+   io_nipa(N1,n4) from file param header "H094" ;
+read (all,i,ind) (all,c,com) 
+   make_col(i,c) from file param header "H095" ;
+read 
+   p_fc_scale from file param header "H096" ;
+read 
+   pf_scale_k from file param header "H097" ;
+read 
+   pf_scale_l from file param header "H098" ;
+read 
+   pfc_m0 from file param header "H099" ;
+
+variable (all,s9,s_f) (all,t,time) ab_shr_f(s9,t) ;
+variable (all,t,time) agg_tech_chg(t) ;
+variable (all,t,time) agg_tech_level(t) ;
+variable (all,c,com) (all,t,time) amk_imp(c,t) ;
+variable (all,s9,s_f) (all,t,time) cex_shr_f(s9,t) ;
+variable (all,c,com) (all,b,buy) (all,N8,nxtr) (all,t,time)
+    com_ext(c,b,N8,t) ;
+variable (all,N1,ncom_k) (all,t,time) con(N1,t) ;
+variable (all,t,time) con_expend(t) ;
+variable (all,t,time) con_expend_net(t) ;
+variable (all,n4,nipa) (all,t,time) con_share(n4,t) ;
+variable (all,t,time) con_shk_expend(t) ;
+variable (all,N1,ncom_k) (all,t,time) con_shk_qty(N1,t) ;
+variable (all,N1,ncom_k) (all,t,time) con_shk_val(N1,t) ;
+variable (all,t,time) cshare(t) ;
+variable (all,t,time) denom(t) ;
+variable (all,c,com) (all,t,time) dom_shr(c,t) ;
+variable (all,s9,s_f) (all,t,time) dv_hh(s9,t) ;
+variable (all,t,time) e(t) ;
+variable (all,t,time) full_con(t) ;
+variable (all,c,com) (all,N8,nxtr) (all,t,time) imp_ext(c,N8,t) ;
+variable (all,c,com) (all,t,time) imp_shr(c,t) ;
+variable (all,t,time) income_dist(t) ;
+variable (all,N,nattr) (all,t,time) income_share(N,t) ;
+variable (all,c,com) (all,i,ind) (all,t,time) io(c,i,t) ;
+variable (all,s,s_bl) (all,i,ind) (all,t,time) kalf_bl(s,i,t) ;
+variable (all,s6,s_ene) (all,i,ind) (all,t,time) kalf_ene(s6,i,t) ;
+variable (all,s8,s_eq) (all,i,ind) (all,t,time) kalf_eq(s8,i,t) ;
+variable (all,s11,s_ff) (all,i,ind) (all,t,time) kalf_ff(s11,i,t) ;
+variable (all,s12,s_gas) (all,i,ind) (all,t,time) kalf_gas(s12,i,t) ;
+variable (all,s17,s_ma) (all,i,ind) (all,t,time) kalf_ma(s17,i,t) ;
+variable (all,s18,s_mat) (all,i,ind) (all,t,time) kalf_mat(s18,i,t) ;
+variable (all,s20,s_mm) (all,i,ind) (all,t,time) kalf_mm(s20,i,t) ;
+variable (all,s21,s_mn) (all,i,ind) (all,t,time) kalf_mn(s21,i,t) ;
+variable (all,s22,s_ms) (all,i,ind) (all,t,time) kalf_ms(s22,i,t) ;
+variable (all,s24,s_o) (all,i,ind) (all,t,time) kalf_o(s24,i,t) ;
+variable (all,s25,s_ob) (all,i,ind) (all,t,time) kalf_ob(s25,i,t) ;
+variable (all,s26,s_oil) (all,i,ind) (all,t,time) kalf_oil(s26,i,t) ;
+variable (all,s27,s_os) (all,i,ind) (all,t,time) kalf_os(s27,i,t) ;
+variable (all,s30,s_sv) (all,i,ind) (all,t,time) kalf_sv(s30,i,t) ;
+variable (all,s31,s_tr) (all,i,ind) (all,t,time) kalf_tr(s31,i,t) ;
+variable (all,s34,s_tt) (all,i,ind) (all,t,time) kalf_tt(s34,i,t) ;
+variable (all,s1,s_cg) (all,t,time) kalh_cg(s1,t) ;
+variable (all,s2,s_cmm) (all,t,time) kalh_cmm(s2,t) ;
+variable (all,s3,s_cs) (all,t,time) kalh_cs(s3,t) ;
+variable (all,s4,s_edn) (all,t,time) kalh_edn(s4,t) ;
+variable (all,s5,s_en) (all,t,time) kalh_en(s5,t) ;
+variable (all,s7,s_ens) (all,t,time) kalh_ens(s7,t) ;
+variable (all,s10,s_fb) (all,t,time) kalh_fb(s10,t) ;
+variable (all,s13,s_ho) (all,t,time) kalh_ho(s13,t) ;
+variable (all,s14,s_hpg) (all,t,time) kalh_hpg(s14,t) ;
+variable (all,s15,s_hps) (all,t,time) kalh_hps(s15,t) ;
+variable (all,s16,s_ks) (all,t,time) kalh_ks(s16,t) ;
+variable (all,s19,s_md) (all,t,time) kalh_md(s19,t) ;
+variable (all,s23,s_nd) (all,t,time) kalh_nd(s23,t) ;
+variable (all,s28,s_rc) (all,t,time) kalh_rc(s28,t) ;
+variable (all,s29,s_rcs) (all,t,time) kalh_rcs(s29,t) ;
+variable (all,s32,s_trc) (all,t,time) kalh_trc(s32,t) ;
+variable (all,s33,s_trv) (all,t,time) kalh_trv(s33,t) ;
+variable (all,s35,s_ups) (all,t,time) kalh_ups(s35,t) ;
+variable (all,c,com) (all,t,time) kalm_imp(c,t) ;
+variable (all,i,ind) (all,t,time) kalp(i,t) ;
+variable (all,t,time) leisure(t) ;
+variable (all,N1,ncom_k) (all,t,time) p_con(N1,t) ;
+variable (all,t,time) p_fc(t) ;
+variable (all,t,time) p_hours(t) ;
+variable (all,t,time) p_leisure(t) ;
+variable (all,i18,inputs) (all,b,buy) (all,t,time) pb(i18,b,t) ;
+variable (all,c,com) (all,t,time) pc(c,t) ;
+variable (all,n6,ntoth) (all,t,time) pcon(n6,t) ;
+variable (all,c,com) (all,t,time) pf(c,t) ;
+variable (all,c,com) (all,t,time) pfd(c,t) ;
+variable (all,i,ind) (all,t,time) pi(i,t) ;
+variable (all,t,time) pj_scale(t) ;
+variable (all,N2,NIND_C) (all,t,time) pk_scale(N2,t) ;
+variable (all,t,time) pk_service(t) ;
+variable (all,i,ind) (all,t,time) pl_scale(i,t) ;
+variable (all,i,ind) (all,t,time) po(i,t) ;
+variable (all,i,ind) (all,N8,nxtr) (all,t,time) prd_ext(i,N8,t) ;
+variable (all,c,com) (all,t,time) ps(c,t) ;
+variable (all,t,time) rev_con(t) ;
+variable (all,s,s_bl) (all,i,ind) (all,t,time) shr_bl(s,i,t) ;
+variable (all,s1,s_cg) (all,t,time) shr_cg(s1,t) ;
+variable (all,s2,s_cmm) (all,t,time) shr_cmm(s2,t) ;
+variable (all,s3,s_cs) (all,t,time) shr_cs(s3,t) ;
+variable (all,s4,s_edn) (all,t,time) shr_edn(s4,t) ;
+variable (all,s5,s_en) (all,t,time) shr_en(s5,t) ;
+variable (all,s6,s_ene) (all,i,ind) (all,t,time) shr_ene(s6,i,t) ;
+variable (all,s7,s_ens) (all,t,time) shr_ens(s7,t) ;
+variable (all,s8,s_eq) (all,i,ind) (all,t,time) shr_eq(s8,i,t) ;
+variable (all,s9,s_f) (all,t,time) shr_f(s9,t) ;
+variable (all,s10,s_fb) (all,t,time) shr_fb(s10,t) ;
+variable (all,s11,s_ff) (all,i,ind) (all,t,time) shr_ff(s11,i,t) ;
+variable (all,s12,s_gas) (all,i,ind) (all,t,time) shr_gas(s12,i,t) ;
+variable (all,s13,s_ho) (all,t,time) shr_ho(s13,t) ;
+variable (all,s14,s_hpg) (all,t,time) shr_hpg(s14,t) ;
+variable (all,s15,s_hps) (all,t,time) shr_hps(s15,t) ;
+variable (all,s16,s_ks) (all,t,time) shr_ks(s16,t) ;
+variable (all,s17,s_ma) (all,i,ind) (all,t,time) shr_ma(s17,i,t) ;
+variable (all,s18,s_mat) (all,i,ind) (all,t,time) shr_mat(s18,i,t) ;
+variable (all,s19,s_md) (all,t,time) shr_md(s19,t) ;
+variable (all,s20,s_mm) (all,i,ind) (all,t,time) shr_mm(s20,i,t) ;
+variable (all,s21,s_mn) (all,i,ind) (all,t,time) shr_mn(s21,i,t) ;
+variable (all,s22,s_ms) (all,i,ind) (all,t,time) shr_ms(s22,i,t) ;
+variable (all,s23,s_nd) (all,t,time) shr_nd(s23,t) ;
+variable (all,s24,s_o) (all,i,ind) (all,t,time) shr_o(s24,i,t) ;
+variable (all,s25,s_ob) (all,i,ind) (all,t,time) shr_ob(s25,i,t) ;
+variable (all,s26,s_oil) (all,i,ind) (all,t,time) shr_oil(s26,i,t) ;
+variable (all,s27,s_os) (all,i,ind) (all,t,time) shr_os(s27,i,t) ;
+variable (all,s28,s_rc) (all,t,time) shr_rc(s28,t) ;
+variable (all,s29,s_rcs) (all,t,time) shr_rcs(s29,t) ;
+variable (all,s30,s_sv) (all,i,ind) (all,t,time) shr_sv(s30,i,t) ;
+variable (all,s31,s_tr) (all,i,ind) (all,t,time) shr_tr(s31,i,t) ;
+variable (all,s32,s_trc) (all,t,time) shr_trc(s32,t) ;
+variable (all,s33,s_trv) (all,t,time) shr_trv(s33,t) ;
+variable (all,s34,s_tt) (all,i,ind) (all,t,time) shr_tt(s34,i,t) ;
+variable (all,s35,s_ups) (all,t,time) shr_ups(s35,t) ;
+variable (all,c,com) (all,t,time) tar_ext_com(c,t) ;
+variable (all,c,com) (all,t,time) tariff(c,t) ;
+variable (all,t,time) tax_cap(t) ;
+variable (all,t,time) tax_cap_hh(t) ;
+variable (all,t,time) tax_con(t) ;
+variable (all,t,time) tax_con_good(t) ;
+variable (all,t,time) tax_con_gov(t) ;
+variable (all,t,time) tax_con_kap(t) ;
+variable (all,t,time) tax_con_tot_com(t) ;
+variable (all,t,time) tax_con_tot_kap(t) ;
+variable (all,c,com) (all,b,buy) (all,t,time) tax_ext_com(c,b,t) ;
+variable (all,i,ind) (all,t,time) tax_ext_ind(i,t) ;
+variable (all,N8,nxtr) (all,t,time) tax_ext_u(N8,t) ;
+variable (all,t,time) tax_labor_a(t) ;
+variable (all,t,time) tax_labor_m(t) ;
+variable (all,i,ind) (all,t,time) tax_sales(i,t) ;
+variable (all,i,ind) (all,t,time) tax_unit(i,t) ;
+variable (all,i,ind) (all,t,time) tech_shock(i,t) ;
+variable (all,t,time) tech_shock_agg(t) ;
+variable (all,t,time) year(t) ;
+
+file base ;
+file exogen ;
+file make ;
+file kalman ;
+
+read (all,s9,s_f) (all,t,time) 
+   ab_shr_f(s9,t) from file base header "H100" ;
+read (all,t,time) 
+   agg_tech_chg(t) from file base header "H101" ;
+read (all,t,time) 
+   agg_tech_level(t) from file base header "H102" ;
+read (all,c,com) (all,t,time) 
+   amk_imp(c,t) from file base header "H103" ;
+read (all,s9,s_f) (all,t,time) 
+   cex_shr_f(s9,t) from file base header "H104" ;
+read (all,c,com) (all,b,buy) (all,N8,nxtr) (all,t,time) 
+   com_ext(c,b,N8,t) from file base header "H105" ;
+read (all,N1,ncom_k) (all,t,time) 
+   con(N1,t) from file base header "H106" ;
+read (all,t,time) 
+   con_expend(t) from file base header "H107" ;
+read (all,t,time) 
+   con_expend_net(t) from file base header "H108" ;
+read (all,n4,nipa) (all,t,time) 
+   con_share(n4,t) from file base header "H109" ;
+read (all,t,time) 
+   con_shk_expend(t) from file base header "H110" ;
+read (all,N1,ncom_k) (all,t,time) 
+   con_shk_qty(N1,t) from file base header "H111" ;
+read (all,N1,ncom_k) (all,t,time) 
+   con_shk_val(N1,t) from file base header "H112" ;
+read (all,t,time) 
+   cshare(t) from file base header "H113" ;
+read (all,t,time) 
+   denom(t) from file base header "H114" ;
+read (all,c,com) (all,t,time) 
+   dom_shr(c,t) from file base header "H115" ;
+read (all,s9,s_f) (all,t,time) 
+   dv_hh(s9,t) from file base header "H116" ;
+read (all,t,time) 
+   e(t) from file base header "H117" ;
+read (all,t,time) 
+   full_con(t) from file base header "H118" ;
+read (all,c,com) (all,N8,nxtr) (all,t,time) 
+   imp_ext(c,N8,t) from file base header "H119" ;
+read (all,c,com) (all,t,time) 
+   imp_shr(c,t) from file base header "H120" ;
+read (all,t,time) 
+   income_dist(t) from file base header "H121" ;
+read (all,N,nattr) (all,t,time) 
+   income_share(N,t) from file base header "H122" ;
+read (all,c,com) (all,i,ind) (all,t,time) 
+   io(c,i,t) from file base header "H123" ;
+read (all,s,s_bl) (all,i,ind) (all,t,time) 
+   kalf_bl(s,i,t) from file base header "H124" ;
+read (all,s6,s_ene) (all,i,ind) (all,t,time) 
+   kalf_ene(s6,i,t) from file base header "H125" ;
+read (all,s8,s_eq) (all,i,ind) (all,t,time) 
+   kalf_eq(s8,i,t) from file base header "H126" ;
+read (all,s11,s_ff) (all,i,ind) (all,t,time) 
+   kalf_ff(s11,i,t) from file base header "H127" ;
+read (all,s12,s_gas) (all,i,ind) (all,t,time) 
+   kalf_gas(s12,i,t) from file base header "H128" ;
+read (all,s17,s_ma) (all,i,ind) (all,t,time) 
+   kalf_ma(s17,i,t) from file base header "H129" ;
+read (all,s18,s_mat) (all,i,ind) (all,t,time) 
+   kalf_mat(s18,i,t) from file base header "H130" ;
+read (all,s20,s_mm) (all,i,ind) (all,t,time) 
+   kalf_mm(s20,i,t) from file base header "H131" ;
+read (all,s21,s_mn) (all,i,ind) (all,t,time) 
+   kalf_mn(s21,i,t) from file base header "H132" ;
+read (all,s22,s_ms) (all,i,ind) (all,t,time) 
+   kalf_ms(s22,i,t) from file base header "H133" ;
+read (all,s24,s_o) (all,i,ind) (all,t,time) 
+   kalf_o(s24,i,t) from file base header "H134" ;
+read (all,s25,s_ob) (all,i,ind) (all,t,time) 
+   kalf_ob(s25,i,t) from file base header "H135" ;
+read (all,s26,s_oil) (all,i,ind) (all,t,time) 
+   kalf_oil(s26,i,t) from file base header "H136" ;
+read (all,s27,s_os) (all,i,ind) (all,t,time) 
+   kalf_os(s27,i,t) from file base header "H137" ;
+read (all,s30,s_sv) (all,i,ind) (all,t,time) 
+   kalf_sv(s30,i,t) from file base header "H138" ;
+read (all,s31,s_tr) (all,i,ind) (all,t,time) 
+   kalf_tr(s31,i,t) from file base header "H139" ;
+read (all,s34,s_tt) (all,i,ind) (all,t,time) 
+   kalf_tt(s34,i,t) from file base header "H140" ;
+read (all,s1,s_cg) (all,t,time) 
+   kalh_cg(s1,t) from file base header "H141" ;
+read (all,s2,s_cmm) (all,t,time) 
+   kalh_cmm(s2,t) from file base header "H142" ;
+read (all,s3,s_cs) (all,t,time) 
+   kalh_cs(s3,t) from file base header "H143" ;
+read (all,s4,s_edn) (all,t,time) 
+   kalh_edn(s4,t) from file base header "H144" ;
+read (all,s5,s_en) (all,t,time) 
+   kalh_en(s5,t) from file base header "H145" ;
+read (all,s7,s_ens) (all,t,time) 
+   kalh_ens(s7,t) from file base header "H146" ;
+read (all,s10,s_fb) (all,t,time) 
+   kalh_fb(s10,t) from file base header "H147" ;
+read (all,s13,s_ho) (all,t,time) 
+   kalh_ho(s13,t) from file base header "H148" ;
+read (all,s14,s_hpg) (all,t,time) 
+   kalh_hpg(s14,t) from file base header "H149" ;
+read (all,s15,s_hps) (all,t,time) 
+   kalh_hps(s15,t) from file base header "H150" ;
+read (all,s16,s_ks) (all,t,time) 
+   kalh_ks(s16,t) from file base header "H151" ;
+read (all,s19,s_md) (all,t,time) 
+   kalh_md(s19,t) from file base header "H152" ;
+read (all,s23,s_nd) (all,t,time) 
+   kalh_nd(s23,t) from file base header "H153" ;
+read (all,s28,s_rc) (all,t,time) 
+   kalh_rc(s28,t) from file base header "H154" ;
+read (all,s29,s_rcs) (all,t,time) 
+   kalh_rcs(s29,t) from file base header "H155" ;
+read (all,s32,s_trc) (all,t,time) 
+   kalh_trc(s32,t) from file base header "H156" ;
+read (all,s33,s_trv) (all,t,time) 
+   kalh_trv(s33,t) from file base header "H157" ;
+read (all,s35,s_ups) (all,t,time) 
+   kalh_ups(s35,t) from file base header "H158" ;
+read (all,c,com) (all,t,time) 
+   kalm_imp(c,t) from file base header "H159" ;
+read (all,i,ind) (all,t,time) 
+   kalp(i,t) from file base header "H160" ;
+read (all,t,time) 
+   leisure(t) from file base header "H161" ;
+read (all,N1,ncom_k) (all,t,time) 
+   p_con(N1,t) from file base header "H162" ;
+read (all,t,time) 
+   p_fc(t) from file base header "H163" ;
+read (all,t,time) 
+   p_hours(t) from file base header "H164" ;
+read (all,t,time) 
+   p_leisure(t) from file base header "H165" ;
+read (all,i18,inputs) (all,b,buy) (all,t,time) 
+   pb(i18,b,t) from file base header "H166" ;
+read (all,c,com) (all,t,time) 
+   pc(c,t) from file base header "H167" ;
+read (all,n6,ntoth) (all,t,time) 
+   pcon(n6,t) from file base header "H168" ;
+read (all,c,com) (all,t,time) 
+   pf(c,t) from file base header "H169" ;
+read (all,c,com) (all,t,time) 
+   pfd(c,t) from file base header "H170" ;
+read (all,i,ind) (all,t,time) 
+   pi(i,t) from file base header "H171" ;
+read (all,t,time) 
+   pj_scale(t) from file base header "H172" ;
+read (all,N2,NIND_C) (all,t,time) 
+   pk_scale(N2,t) from file base header "H173" ;
+read (all,t,time) 
+   pk_service(t) from file base header "H174" ;
+read (all,i,ind) (all,t,time) 
+   pl_scale(i,t) from file base header "H175" ;
+read (all,i,ind) (all,t,time) 
+   po(i,t) from file base header "H176" ;
+read (all,i,ind) (all,N8,nxtr) (all,t,time) 
+   prd_ext(i,N8,t) from file base header "H177" ;
+read (all,c,com) (all,t,time) 
+   ps(c,t) from file base header "H178" ;
+read (all,t,time) 
+   rev_con(t) from file base header "H179" ;
+read (all,s,s_bl) (all,i,ind) (all,t,time) 
+   shr_bl(s,i,t) from file base header "H180" ;
+read (all,s1,s_cg) (all,t,time) 
+   shr_cg(s1,t) from file base header "H181" ;
+read (all,s2,s_cmm) (all,t,time) 
+   shr_cmm(s2,t) from file base header "H182" ;
+read (all,s3,s_cs) (all,t,time) 
+   shr_cs(s3,t) from file base header "H183" ;
+read (all,s4,s_edn) (all,t,time) 
+   shr_edn(s4,t) from file base header "H184" ;
+read (all,s5,s_en) (all,t,time) 
+   shr_en(s5,t) from file base header "H185" ;
+read (all,s6,s_ene) (all,i,ind) (all,t,time) 
+   shr_ene(s6,i,t) from file base header "H186" ;
+read (all,s7,s_ens) (all,t,time) 
+   shr_ens(s7,t) from file base header "H187" ;
+read (all,s8,s_eq) (all,i,ind) (all,t,time) 
+   shr_eq(s8,i,t) from file base header "H188" ;
+read (all,s9,s_f) (all,t,time) 
+   shr_f(s9,t) from file base header "H189" ;
+read (all,s10,s_fb) (all,t,time) 
+   shr_fb(s10,t) from file base header "H190" ;
+read (all,s11,s_ff) (all,i,ind) (all,t,time) 
+   shr_ff(s11,i,t) from file base header "H191" ;
+read (all,s12,s_gas) (all,i,ind) (all,t,time) 
+   shr_gas(s12,i,t) from file base header "H192" ;
+read (all,s13,s_ho) (all,t,time) 
+   shr_ho(s13,t) from file base header "H193" ;
+read (all,s14,s_hpg) (all,t,time) 
+   shr_hpg(s14,t) from file base header "H194" ;
+read (all,s15,s_hps) (all,t,time) 
+   shr_hps(s15,t) from file base header "H195" ;
+read (all,s16,s_ks) (all,t,time) 
+   shr_ks(s16,t) from file base header "H196" ;
+read (all,s17,s_ma) (all,i,ind) (all,t,time) 
+   shr_ma(s17,i,t) from file base header "H197" ;
+read (all,s18,s_mat) (all,i,ind) (all,t,time) 
+   shr_mat(s18,i,t) from file base header "H198" ;
+read (all,s19,s_md) (all,t,time) 
+   shr_md(s19,t) from file base header "H199" ;
+read (all,s20,s_mm) (all,i,ind) (all,t,time) 
+   shr_mm(s20,i,t) from file base header "H200" ;
+read (all,s21,s_mn) (all,i,ind) (all,t,time) 
+   shr_mn(s21,i,t) from file base header "H201" ;
+read (all,s22,s_ms) (all,i,ind) (all,t,time) 
+   shr_ms(s22,i,t) from file base header "H202" ;
+read (all,s23,s_nd) (all,t,time) 
+   shr_nd(s23,t) from file base header "H203" ;
+read (all,s24,s_o) (all,i,ind) (all,t,time) 
+   shr_o(s24,i,t) from file base header "H204" ;
+read (all,s25,s_ob) (all,i,ind) (all,t,time) 
+   shr_ob(s25,i,t) from file base header "H205" ;
+read (all,s26,s_oil) (all,i,ind) (all,t,time) 
+   shr_oil(s26,i,t) from file base header "H206" ;
+read (all,s27,s_os) (all,i,ind) (all,t,time) 
+   shr_os(s27,i,t) from file base header "H207" ;
+read (all,s28,s_rc) (all,t,time) 
+   shr_rc(s28,t) from file base header "H208" ;
+read (all,s29,s_rcs) (all,t,time) 
+   shr_rcs(s29,t) from file base header "H209" ;
+read (all,s30,s_sv) (all,i,ind) (all,t,time) 
+   shr_sv(s30,i,t) from file base header "H210" ;
+read (all,s31,s_tr) (all,i,ind) (all,t,time) 
+   shr_tr(s31,i,t) from file base header "H211" ;
+read (all,s32,s_trc) (all,t,time) 
+   shr_trc(s32,t) from file base header "H212" ;
+read (all,s33,s_trv) (all,t,time) 
+   shr_trv(s33,t) from file base header "H213" ;
+read (all,s34,s_tt) (all,i,ind) (all,t,time) 
+   shr_tt(s34,i,t) from file base header "H214" ;
+read (all,s35,s_ups) (all,t,time) 
+   shr_ups(s35,t) from file base header "H215" ;
+read (all,c,com) (all,t,time) 
+   tar_ext_com(c,t) from file base header "H216" ;
+read (all,c,com) (all,t,time) 
+   tariff(c,t) from file base header "H217" ;
+read (all,t,time) 
+   tax_cap(t) from file base header "H218" ;
+read (all,t,time) 
+   tax_cap_hh(t) from file base header "H219" ;
+read (all,t,time) 
+   tax_con(t) from file base header "H220" ;
+read (all,t,time) 
+   tax_con_good(t) from file base header "H221" ;
+read (all,t,time) 
+   tax_con_gov(t) from file base header "H222" ;
+read (all,t,time) 
+   tax_con_kap(t) from file base header "H223" ;
+read (all,t,time) 
+   tax_con_tot_com(t) from file base header "H224" ;
+read (all,t,time) 
+   tax_con_tot_kap(t) from file base header "H225" ;
+read (all,c,com) (all,b,buy) (all,t,time) 
+   tax_ext_com(c,b,t) from file base header "H226" ;
+read (all,i,ind) (all,t,time) 
+   tax_ext_ind(i,t) from file base header "H227" ;
+read (all,N8,nxtr) (all,t,time) 
+   tax_ext_u(N8,t) from file base header "H228" ;
+read (all,t,time) 
+   tax_labor_a(t) from file base header "H229" ;
+read (all,t,time) 
+   tax_labor_m(t) from file base header "H230" ;
+read (all,i,ind) (all,t,time) 
+   tax_sales(i,t) from file base header "H231" ;
+read (all,i,ind) (all,t,time) 
+   tax_unit(i,t) from file base header "H232" ;
+read (all,i,ind) (all,t,time) 
+   tech_shock(i,t) from file base header "H233" ;
+read (all,t,time) 
+   tech_shock_agg(t) from file base header "H234" ;
+read (all,t,time) 
+   year(t) from file base header "H235" ;
+
+equation EQN1 (all,i,ind) (all,t,time) 
+   tax_ext_ind(i,t) = sum(N8,nxtr,tax_ext_u(N8,t)*prd_ext(i,N8,t)) ;
+
+equation EQN2 (all,c,com) (all,t,time) 
+   tar_ext_com(c,t) = sum(N8,nxtr,tax_ext_u(N8,t)*imp_ext(c,N8,t)) ;
+
+equation EQN3 (all,b,buy) (all,c,com) (all,t,time) 
+   tax_ext_com(c,b,t) = sum(N8,nxtr,tax_ext_u(N8,t)*com_ext(c,b,N8,t)) ;
+
+equation EQN4 (all,t1,time_p0m1) 
+   agg_tech_level(t1+1) = (1-(year(t1+1)-year(t1))*agg_tech_chg(t1))
+   *agg_tech_level(t1) ;
+
+equation EQN5 (all,i,ind) (all,t,time) 
+   pb("kap",i,t) = pk_service(t)*pk_scale(i,t) ;
+
+equation EQN6 (all,i,ind) (all,t,time) 
+   pb("lab",i,t) = (p_hours(t)*pl_scale(i,t))/(1-tax_labor_m(t)) ;
+
+equation EQN7 (all,i,ind) (all,s12,s_gas) (all,t,time) 
+   shr_gas(s12,i,t) = ap_gas(s12,i)+kalf_gas(s12,i,t)
+   +sum(p12,p_gas,bp_gas(s12,p12,i)*loge(pb(p12,i,t))) ;
+
+equation EQN8 (all,i,ind) (all,t,time) 
+   loge(pb("gas",i,t)) = ap0_gas(i)
+   +sum(s12,s_gas,(ap_gas(s12,i)+kalf_gas(s12,i,t))*loge(pb(s12,i,t)))
+   +0.5
+   *sum(p12,p_gas,sum(s12,s_gas,loge(pb(s12,i,t))*bp_gas(s12,p12,i)
+   *loge(pb(p12,i,t)))) ;
+
+equation EQN9 (all,i,ind) (all,s26,s_oil) (all,t,time) 
+   shr_oil(s26,i,t) = ap_oil(s26,i)+kalf_oil(s26,i,t)
+   +sum(p26,p_oil,bp_oil(s26,p26,i)*loge(pb(p26,i,t))) ;
+
+equation EQN10 (all,i,ind) (all,t,time) 
+   loge(pb("oil",i,t)) = ap0_oil(i)
+   +sum(s26,s_oil,(ap_oil(s26,i)+kalf_oil(s26,i,t))*loge(pb(s26,i,t)))
+   +0.5
+   *sum(p26,p_oil,sum(s26,s_oil,loge(pb(s26,i,t))*bp_oil(s26,p26,i)
+   *loge(pb(p26,i,t)))) ;
+
+equation EQN11 (all,i,ind) (all,s11,s_ff) (all,t,time) 
+   shr_ff(s11,i,t) = ap_ff(s11,i)+kalf_ff(s11,i,t)
+   +sum(p11,p_ff,bp_ff(s11,p11,i)*loge(pb(p11,i,t))) ;
+
+equation EQN12 (all,i,ind) (all,t,time) 
+   loge(pb("ff",i,t)) = ap0_ff(i)
+   +sum(s11,s_ff,(ap_ff(s11,i)+kalf_ff(s11,i,t))*loge(pb(s11,i,t)))
+   +0.5
+   *sum(p11,p_ff,sum(s11,s_ff,loge(pb(s11,i,t))*bp_ff(s11,p11,i)
+   *loge(pb(p11,i,t)))) ;
+
+equation EQN13 (all,i,ind) (all,s6,s_ene) (all,t,time) 
+   shr_ene(s6,i,t) = ap_ene(s6,i)+kalf_ene(s6,i,t)
+   +sum(p6,p_ene,bp_ene(s6,p6,i)*loge(pb(p6,i,t))) ;
+
+equation EQN14 (all,i,ind) (all,t,time) 
+   loge(pb("ene",i,t)) = ap0_ene(i)
+   +sum(s6,s_ene,(ap_ene(s6,i)+kalf_ene(s6,i,t))*loge(pb(s6,i,t)))
+   +0.5
+   *sum(p6,p_ene,sum(s6,s_ene,loge(pb(s6,i,t))*bp_ene(s6,p6,i)
+   *loge(pb(p6,i,t)))) ;
+
+equation EQN15 (all,i,ind) (all,s,s_bl) (all,t,time) 
+   shr_bl(s,i,t) = ap_bl(s,i)+kalf_bl(s,i,t)+sum(p,p_bl,bp_bl(s,p,i)
+   *loge(pb(p,i,t))) ;
+
+equation EQN16 (all,i,ind) (all,t,time) 
+   loge(pb("bl",i,t)) = ap0_bl(i)
+   +sum(s,s_bl,(ap_bl(s,i)+kalf_bl(s,i,t))*loge(pb(s,i,t)))
+   +0.5
+   *sum(p,p_bl,sum(s,s_bl,loge(pb(s,i,t))*bp_bl(s,p,i)*loge(pb(p,i,t)))) ;
+
+equation EQN17 (all,i,ind) (all,s25,s_ob) (all,t,time) 
+   shr_ob(s25,i,t) = ap_ob(s25,i)+kalf_ob(s25,i,t)
+   +sum(p25,p_ob,bp_ob(s25,p25,i)*loge(pb(p25,i,t))) ;
+
+equation EQN18 (all,i,ind) (all,t,time) 
+   loge(pb("ob",i,t)) = ap0_ob(i)
+   +sum(s25,s_ob,(ap_ob(s25,i)+kalf_ob(s25,i,t))*loge(pb(s25,i,t)))
+   +0.5
+   *sum(p25,p_ob,sum(s25,s_ob,loge(pb(s25,i,t))*bp_ob(s25,p25,i)
+   *loge(pb(p25,i,t)))) ;
+
+equation EQN19 (all,i,ind) (all,s27,s_os) (all,t,time) 
+   shr_os(s27,i,t) = ap_os(s27,i)+kalf_os(s27,i,t)
+   +sum(p27,p_os,bp_os(s27,p27,i)*loge(pb(p27,i,t))) ;
+
+equation EQN20 (all,i,ind) (all,t,time) 
+   loge(pb("os",i,t)) = ap0_os(i)
+   +sum(s27,s_os,(ap_os(s27,i)+kalf_os(s27,i,t))*loge(pb(s27,i,t)))
+   +0.5
+   *sum(p27,p_os,sum(s27,s_os,loge(pb(s27,i,t))*bp_os(s27,p27,i)
+   *loge(pb(p27,i,t)))) ;
+
+equation EQN21 (all,i,ind) (all,s30,s_sv) (all,t,time) 
+   shr_sv(s30,i,t) = ap_sv(s30,i)+kalf_sv(s30,i,t)
+   +sum(p30,p_sv,bp_sv(s30,p30,i)*loge(pb(p30,i,t))) ;
+
+equation EQN22 (all,i,ind) (all,t,time) 
+   loge(pb("sv",i,t)) = ap0_sv(i)
+   +sum(s30,s_sv,(ap_sv(s30,i)+kalf_sv(s30,i,t))*loge(pb(s30,i,t)))
+   +0.5
+   *sum(p30,p_sv,sum(s30,s_sv,loge(pb(s30,i,t))*bp_sv(s30,p30,i)
+   *loge(pb(p30,i,t)))) ;
+
+equation EQN23 (all,i,ind) (all,s17,s_ma) (all,t,time) 
+   shr_ma(s17,i,t) = ap_ma(s17,i)+kalf_ma(s17,i,t)
+   +sum(p17,p_ma,bp_ma(s17,p17,i)*loge(pb(p17,i,t))) ;
+
+equation EQN24 (all,i,ind) (all,t,time) 
+   loge(pb("ma",i,t)) = ap0_ma(i)
+   +sum(s17,s_ma,(ap_ma(s17,i)+kalf_ma(s17,i,t))*loge(pb(s17,i,t)))
+   +0.5
+   *sum(p17,p_ma,sum(s17,s_ma,loge(pb(s17,i,t))*bp_ma(s17,p17,i)
+   *loge(pb(p17,i,t)))) ;
+
+equation EQN25 (all,i,ind) (all,s21,s_mn) (all,t,time) 
+   shr_mn(s21,i,t) = ap_mn(s21,i)+kalf_mn(s21,i,t)
+   +sum(p21,p_mn,bp_mn(s21,p21,i)*loge(pb(p21,i,t))) ;
+
+equation EQN26 (all,i,ind) (all,t,time) 
+   loge(pb("mn",i,t)) = ap0_mn(i)
+   +sum(s21,s_mn,(ap_mn(s21,i)+kalf_mn(s21,i,t))*loge(pb(s21,i,t)))
+   +0.5
+   *sum(p21,p_mn,sum(s21,s_mn,loge(pb(s21,i,t))*bp_mn(s21,p21,i)
+   *loge(pb(p21,i,t)))) ;
+
+equation EQN27 (all,i,ind) (all,s31,s_tr) (all,t,time) 
+   shr_tr(s31,i,t) = ap_tr(s31,i)+kalf_tr(s31,i,t)
+   +sum(p31,p_tr,bp_tr(s31,p31,i)*loge(pb(p31,i,t))) ;
+
+equation EQN28 (all,i,ind) (all,t,time) 
+   loge(pb("tr",i,t)) = ap0_tr(i)
+   +sum(s31,s_tr,(ap_tr(s31,i)+kalf_tr(s31,i,t))*loge(pb(s31,i,t)))
+   +0.5
+   *sum(p31,p_tr,sum(s31,s_tr,loge(pb(s31,i,t))*bp_tr(s31,p31,i)
+   *loge(pb(p31,i,t)))) ;
+
+equation EQN29 (all,i,ind) (all,s34,s_tt) (all,t,time) 
+   shr_tt(s34,i,t) = ap_tt(s34,i)+kalf_tt(s34,i,t)
+   +sum(p34,p_tt,bp_tt(s34,p34,i)*loge(pb(p34,i,t))) ;
+
+equation EQN30 (all,i,ind) (all,t,time) 
+   loge(pb("tt",i,t)) = ap0_tt(i)
+   +sum(s34,s_tt,(ap_tt(s34,i)+kalf_tt(s34,i,t))*loge(pb(s34,i,t)))
+   +0.5
+   *sum(p34,p_tt,sum(s34,s_tt,loge(pb(s34,i,t))*bp_tt(s34,p34,i)
+   *loge(pb(p34,i,t)))) ;
+
+equation EQN31 (all,i,ind) (all,s8,s_eq) (all,t,time) 
+   shr_eq(s8,i,t) = ap_eq(s8,i)+kalf_eq(s8,i,t)
+   +sum(p8,p_eq,bp_eq(s8,p8,i)*loge(pb(p8,i,t))) ;
+
+equation EQN32 (all,i,ind) (all,t,time) 
+   loge(pb("eq",i,t)) = ap0_eq(i)
+   +sum(s8,s_eq,(ap_eq(s8,i)+kalf_eq(s8,i,t))*loge(pb(s8,i,t)))
+   +0.5
+   *sum(p8,p_eq,sum(s8,s_eq,loge(pb(s8,i,t))*bp_eq(s8,p8,i)
+   *loge(pb(p8,i,t)))) ;
+
+equation EQN33 (all,i,ind) (all,s22,s_ms) (all,t,time) 
+   shr_ms(s22,i,t) = ap_ms(s22,i)+kalf_ms(s22,i,t)
+   +sum(p22,p_ms,bp_ms(s22,p22,i)*loge(pb(p22,i,t))) ;
+
+equation EQN34 (all,i,ind) (all,t,time) 
+   loge(pb("ms",i,t)) = ap0_ms(i)
+   +sum(s22,s_ms,(ap_ms(s22,i)+kalf_ms(s22,i,t))*loge(pb(s22,i,t)))
+   +0.5
+   *sum(p22,p_ms,sum(s22,s_ms,loge(pb(s22,i,t))*bp_ms(s22,p22,i)
+   *loge(pb(p22,i,t)))) ;
+
+equation EQN35 (all,i,ind) (all,s20,s_mm) (all,t,time) 
+   shr_mm(s20,i,t) = ap_mm(s20,i)+kalf_mm(s20,i,t)
+   +sum(p20,p_mm,bp_mm(s20,p20,i)*loge(pb(p20,i,t))) ;
+
+equation EQN36 (all,i,ind) (all,t,time) 
+   loge(pb("mm",i,t)) = ap0_mm(i)
+   +sum(s20,s_mm,(ap_mm(s20,i)+kalf_mm(s20,i,t))*loge(pb(s20,i,t)))
+   +0.5
+   *sum(p20,p_mm,sum(s20,s_mm,loge(pb(s20,i,t))*bp_mm(s20,p20,i)
+   *loge(pb(p20,i,t)))) ;
+
+equation EQN37 (all,i,ind) (all,s18,s_mat) (all,t,time) 
+   shr_mat(s18,i,t) = ap_mat(s18,i)+kalf_mat(s18,i,t)
+   +sum(p18,p_mat,bp_mat(s18,p18,i)*loge(pb(p18,i,t))) ;
+
+equation EQN38 (all,i,ind) (all,t,time) 
+   loge(pb("mat",i,t)) = ap0_mat(i)
+   +sum(s18,s_mat,(ap_mat(s18,i)+kalf_mat(s18,i,t))*loge(pb(s18,i,t)))
+   +0.5
+   *sum(p18,p_mat,sum(s18,s_mat,loge(pb(s18,i,t))*bp_mat(s18,p18,i)
+   *loge(pb(p18,i,t)))) ;
+
+equation EQN39 (all,i,ind) (all,s24,s_o) (all,t,time) 
+   shr_o(s24,i,t) = ap_o(s24,i)+kalf_o(s24,i,t)
+   +sum(p24,p_o,bp_o(s24,p24,i)*loge(pb(p24,i,t))) ;
+
+equation EQN40 (all,i,ind) (all,t,time) 
+   loge(po(i,t)) = ap0_o(i)+kalp(i,t)
+   +loge(
+   agg_tech_level(t)*tech_shock_agg(t)*tech_shock(i,t))
+   +sum(s24,s_o,(ap_o(s24,i)+kalf_o(s24,i,t))*loge(pb(s24,i,t)))
+   +0.5
+   *sum(p24,p_o,sum(s24,s_o,loge(pb(s24,i,t))*bp_o(s24,p24,i)
+   *loge(pb(p24,i,t)))) ;
+
+equation EQN41 (all,i,ind) (all,t,time) 
+   pi(i,t) = po(i,t)*(1+tax_sales(i,t))+tax_unit(i,t)+tax_ext_ind(i,t) ;
+
+equation EQN42 (all,c,com) (all,t,time) 
+   pc(c,t) = sum(i,ind,po(i,t)*make_col(i,c)) ;
+
+equation EQN43 (all,c,com) (all,t,time) 
+   pfd(c,t) = pf(c,t)*e(t)*(1+tariff(c,t))+tar_ext_com(c,t) ;
+
+equation EQN44 (all,c,com) (all,t,time) 
+   amk_imp(c,t) = am_imp(c)+kalm_imp(c,t) ;
+
+equation EQN45 (all,c,com) (all,t,time) 
+   imp_shr(c,t) = amk_imp(c,t)+bm_imp(c)*(loge(pfd(c,t))-loge(pc(c,t))) ;
+
+equation EQN46 (all,c,com) (all,t,time) 
+   dom_shr(c,t) = 1-imp_shr(c,t) ;
+
+equation EQN47 (all,c,com) (all,t,time) 
+   loge(ps(c,t)) = amk_imp(c,t)*loge(pfd(c,t))+(1-amk_imp(c,t))*loge(pc(c,t))
+   +0.5*bm_imp(c)*loge(pfd(c,t))*loge(pfd(c,t))
+   -bm_imp(c)*loge(pfd(c,t))*loge(pc(c,t))
+   +0.5*bm_imp(c)*loge(pc(c,t))*loge(pc(c,t)) ;
+
+equation EQN48 (all,b,buy) (all,c,com) (all,t,time) 
+   pb(c,b,t) = ps(c,t)+tax_ext_com(c,b,t) ;
+
+equation EQN49 (all,i,ind) (all,t,time) 
+   io("c01",i,t) = shr_ma("c01",i,t)*shr_mat("mn",i,t)*shr_o("mat",i,t) ;
+
+equation EQN50 (all,i,ind) (all,t,time) 
+   io("c10",i,t) = shr_ma("c10",i,t)*shr_mat("mn",i,t)*shr_o("mat",i,t) ;
+
+equation EQN51 (all,i,ind) (all,t,time) 
+   io("c20",i,t) = shr_ma("c20",i,t)*shr_mat("mn",i,t)*shr_o("mat",i,t) ;
+
+equation EQN52 (all,i,ind) (all,t,time) 
+   io("c21",i,t) = shr_ma("c21",i,t)*shr_mat("mn",i,t)*shr_o("mat",i,t) ;
+
+equation EQN53 (all,i,ind) (all,t,time) 
+   io("c02",i,t) = shr_oil("c02",i,t)*shr_ff("oil",i,t)*shr_ene("ff",i,t)
+   *shr_o("ene",i,t) ;
+
+equation EQN54 (all,i,ind) (all,t,time) 
+   io("c23",i,t) = shr_oil("c23",i,t)*shr_ff("oil",i,t)*shr_ene("ff",i,t)
+   *shr_o("ene",i,t) ;
+
+equation EQN55 (all,i,ind) (all,t,time) 
+   io("c03",i,t) = shr_gas("c03",i,t)*shr_ff("gas",i,t)*shr_ene("ff",i,t)
+   *shr_o("ene",i,t) ;
+
+equation EQN56 (all,i,ind) (all,t,time) 
+   io("c07",i,t) = shr_gas("c07",i,t)*shr_ff("gas",i,t)*shr_ene("ff",i,t)
+   *shr_o("ene",i,t) ;
+
+equation EQN57 (all,i,ind) (all,t,time) 
+   io("c04",i,t) = shr_ff("c04",i,t)*shr_ene("ff",i,t)*shr_o("ene",i,t) ;
+
+equation EQN58 (all,i,ind) (all,t,time) 
+   io("c06",i,t) = shr_ene("c06",i,t)*shr_o("ene",i,t) ;
+
+equation EQN59 (all,i,ind) (all,t,time) 
+   io("c05",i,t) = shr_mm("c05",i,t)*shr_mat("mm",i,t)*shr_o("mat",i,t) ;
+
+equation EQN60 (all,i,ind) (all,t,time) 
+   io("c12",i,t) = shr_mm("c12",i,t)*shr_mat("mm",i,t)*shr_o("mat",i,t) ;
+
+equation EQN61 (all,i,ind) (all,t,time) 
+   io("c13",i,t) = shr_mm("c13",i,t)*shr_mat("mm",i,t)*shr_o("mat",i,t) ;
+
+equation EQN62 (all,i,ind) (all,t,time) 
+   io("c14",i,t) = shr_eq("c14",i,t)*shr_mm("eq",i,t)^shr_mat("mm",i,t)
+   *shr_o("mat",i,t) ;
+
+equation EQN63 (all,i,ind) (all,t,time) 
+   io("c15",i,t) = shr_eq("c15",i,t)*shr_mm("eq",i,t)^shr_mat("mm",i,t)
+   *shr_o("mat",i,t) ;
+
+equation EQN64 (all,i,ind) (all,t,time) 
+   io("c16",i,t) = shr_eq("c16",i,t)*shr_mm("eq",i,t)^shr_mat("mm",i,t)
+   *shr_o("mat",i,t) ;
+
+equation EQN65 (all,i,ind) (all,t,time) 
+   io("c17",i,t) = shr_tr("c17",i,t)*shr_eq("tr",i,t)*shr_mm("eq",i,t)
+   ^shr_mat("mm",i,t)
+   *shr_o("mat",i,t) ;
+
+equation EQN66 (all,i,ind) (all,t,time) 
+   io("c18",i,t) = shr_tr("c18",i,t)*shr_eq("tr",i,t)*shr_mm("eq",i,t)
+   ^shr_mat("mm",i,t)
+   *shr_o("mat",i,t) ;
+
+equation EQN67 (all,i,ind) (all,t,time) 
+   io("c11",i,t) = shr_mn("c11",i,t)*shr_mat("mn",i,t)*shr_o("mat",i,t) ;
+
+equation EQN68 (all,i,ind) (all,t,time) 
+   io("c19",i,t) = shr_mn("c19",i,t)*shr_mat("mn",i,t)*shr_o("mat",i,t) ;
+
+equation EQN69 (all,i,ind) (all,t,time) 
+   io("c22",i,t) = shr_mn("c22",i,t)*shr_mat("mn",i,t)*shr_o("mat",i,t) ;
+
+equation EQN70 (all,i,ind) (all,t,time) 
+   io("c24",i,t) = shr_mn("c24",i,t)*shr_mat("mn",i,t)*shr_o("mat",i,t) ;
+
+equation EQN71 (all,i,ind) (all,t,time) 
+   io("c32",i,t) = shr_ms("c32",i,t)*shr_mat("ms",i,t)*shr_o("mat",i,t) ;
+
+equation EQN72 (all,i,ind) (all,t,time) 
+   io("c25",i,t) = shr_tt("c25",i,t)*shr_ms("tt",i,t)*shr_mat("ms",i,t)
+   *shr_o("mat",i,t) ;
+
+equation EQN73 (all,i,ind) (all,t,time) 
+   io("c26",i,t) = shr_tt("c26",i,t)*shr_ms("tt",i,t)*shr_mat("ms",i,t)
+   *shr_o("mat",i,t) ;
+
+equation EQN74 (all,i,ind) (all,t,time) 
+   io("c27",i,t) = shr_tt("c27",i,t)*shr_ms("tt",i,t)*shr_mat("ms",i,t)
+   *shr_o("mat",i,t) ;
+
+equation EQN75 (all,i,ind) (all,t,time) 
+   io("c08",i,t) = shr_bl("c08",i,t)*shr_sv("bl",i,t)*shr_ms("sv",i,t)
+   *shr_mat("ms",i,t)
+   *shr_o("mat",i,t) ;
+
+equation EQN76 (all,i,ind) (all,t,time) 
+   io("c09",i,t) = shr_bl("c09",i,t)*shr_sv("bl",i,t)*shr_ms("sv",i,t)
+   *shr_mat("ms",i,t)
+   *shr_o("mat",i,t) ;
+
+equation EQN77 (all,i,ind) (all,t,time) 
+   io("c31",i,t) = shr_bl("c31",i,t)*shr_sv("bl",i,t)*shr_ms("sv",i,t)
+   *shr_mat("ms",i,t)
+   *shr_o("mat",i,t) ;
+
+equation EQN78 (all,i,ind) (all,t,time) 
+   io("c28",i,t) = shr_ob("c28",i,t)*shr_sv("ob",i,t)*shr_ms("sv",i,t)
+   *shr_mat("ms",i,t)
+   *shr_o("mat",i,t) ;
+
+equation EQN79 (all,i,ind) (all,t,time) 
+   io("c29",i,t) = shr_ob("c29",i,t)*shr_sv("ob",i,t)*shr_ms("sv",i,t)
+   *shr_mat("ms",i,t)
+   *shr_o("mat",i,t) ;
+
+equation EQN80 (all,i,ind) (all,t,time) 
+   io("c30",i,t) = shr_ob("c30",i,t)*shr_sv("ob",i,t)*shr_ms("sv",i,t)
+   *shr_mat("ms",i,t)
+   *shr_o("mat",i,t) ;
+
+equation EQN81 (all,i,ind) (all,t,time) 
+   io("c33",i,t) = shr_os("c33",i,t)*shr_sv("os",i,t)*shr_ms("sv",i,t)
+   *shr_mat("ms",i,t)
+   *shr_o("mat",i,t) ;
+
+equation EQN82 (all,i,ind) (all,t,time) 
+   io("c34",i,t) = shr_os("c34",i,t)*shr_sv("os",i,t)*shr_ms("sv",i,t)
+   *shr_mat("ms",i,t)
+   *shr_o("mat",i,t) ;
+
+equation EQN83 (all,i,ind) (all,t,time) 
+   io("c35",i,t) = shr_os("c35",i,t)*shr_sv("os",i,t)*shr_ms("sv",i,t)
+   *shr_mat("ms",i,t)
+   *shr_o("mat",i,t) ;
+
+equation EQN84 (all,i,ind) (all,t,time) 
+   io("c36",i,t) = shr_os("c36",i,t)*shr_sv("os",i,t)*shr_ms("sv",i,t)
+   *shr_mat("ms",i,t)
+   *shr_o("mat",i,t) ;
+
+equation EQN85 (all,t,time) 
+   pb("kap","con",t) = pk_service(t)*pk_scale("con",t)*(1+tax_cap_hh(t)) ;
+
+equation EQN86 (all,t,time) 
+   tax_con_tot_com(t) = tax_con(t)+tax_con_good(t) ;
+
+equation EQN87 (all,t,time) 
+   tax_con_tot_kap(t) = tax_con(t)+tax_con_kap(t) ;
+
+equation EQN88 (all,c,com) (all,t,time) 
+   p_con(c,t) = pb(c,"con",t)*(1+tax_con_tot_com(t)) ;
+
+equation EQN89 (all,t,time) 
+   p_con("kap",t) = pb("kap","con",t)*(1+tax_con_tot_kap(t)) ;
+
+equation EQN90 (all,n4,nipa) (all,t,time) 
+   pcon(n4,t) = sum(N1,ncom_k,p_con(N1,t)*io_nipa(N1,n4)) ;
+
+equation EQN91 (all,t,time) 
+   p_leisure(t) = p_hours(t)*pj_scale(t) ;
+
+equation EQN92 (all,t,time) 
+   pcon("r",t) = p_leisure(t) ;
+
+equation EQN93 (all,s2,s_cmm) (all,t,time) 
+   shr_cmm(s2,t) = ah_cmm(s2)+kalh_cmm(s2,t)
+   +sum(p2,p_cmm,bh_cmm(s2,p2)*loge(pcon(p2,t))) ;
+
+equation EQN94 (all,t,time) 
+   loge(pcon("cmm",t)) = sum(s2,s_cmm,(ah_cmm(s2)+kalh_cmm(s2,t))
+   *loge(pcon(s2,t)))
+   +0.5
+   *sum(p2,p_cmm,sum(s2,s_cmm,loge(pcon(s2,t))*bh_cmm(s2,p2)
+   *loge(pcon(p2,t)))) ;
+
+equation EQN95 (all,s15,s_hps) (all,t,time) 
+   shr_hps(s15,t) = ah_hps(s15)+kalh_hps(s15,t)
+   +sum(p15,p_hps,bh_hps(s15,p15)*loge(pcon(p15,t))) ;
+
+equation EQN96 (all,t,time) 
+   loge(pcon("hps",t)) = sum(s15,s_hps,(ah_hps(s15)+kalh_hps(s15,t))
+   *loge(pcon(s15,t)))
+   +0.5
+   *sum(p15,p_hps,sum(s15,s_hps,loge(pcon(s15,t))*bh_hps(s15,p15)
+   *loge(pcon(p15,t)))) ;
+
+equation EQN97 (all,s7,s_ens) (all,t,time) 
+   shr_ens(s7,t) = ah_ens(s7)+kalh_ens(s7,t)
+   +sum(p7,p_ens,bh_ens(s7,p7)*loge(pcon(p7,t))) ;
+
+equation EQN98 (all,t,time) 
+   loge(pcon("ens",t)) = sum(s7,s_ens,(ah_ens(s7)+kalh_ens(s7,t))
+   *loge(pcon(s7,t)))
+   +0.5
+   *sum(p7,p_ens,sum(s7,s_ens,loge(pcon(s7,t))*bh_ens(s7,p7)
+   *loge(pcon(p7,t)))) ;
+
+equation EQN99 (all,s33,s_trv) (all,t,time) 
+   shr_trv(s33,t) = ah_trv(s33)+kalh_trv(s33,t)
+   +sum(p33,p_trv,bh_trv(s33,p33)*loge(pcon(p33,t))) ;
+
+equation EQN100 (all,t,time) 
+   loge(pcon("trv",t)) = sum(s33,s_trv,(ah_trv(s33)+kalh_trv(s33,t))
+   *loge(pcon(s33,t)))
+   +0.5
+   *sum(p33,p_trv,sum(s33,s_trv,loge(pcon(s33,t))*bh_trv(s33,p33)
+   *loge(pcon(p33,t)))) ;
+
+equation EQN101 (all,s29,s_rcs) (all,t,time) 
+   shr_rcs(s29,t) = ah_rcs(s29)+kalh_rcs(s29,t)
+   +sum(p29,p_rcs,bh_rcs(s29,p29)*loge(pcon(p29,t))) ;
+
+equation EQN102 (all,t,time) 
+   loge(pcon("rcs",t)) = sum(s29,s_rcs,(ah_rcs(s29)+kalh_rcs(s29,t))
+   *loge(pcon(s29,t)))
+   +0.5
+   *sum(p29,p_rcs,sum(s29,s_rcs,loge(pcon(s29,t))*bh_rcs(s29,p29)
+   *loge(pcon(p29,t)))) ;
+
+equation EQN103 (all,s4,s_edn) (all,t,time) 
+   shr_edn(s4,t) = ah_edn(s4)+kalh_edn(s4,t)
+   +sum(p4,p_edn,bh_edn(s4,p4)*loge(pcon(p4,t))) ;
+
+equation EQN104 (all,t,time) 
+   loge(pcon("edn",t)) = sum(s4,s_edn,(ah_edn(s4)+kalh_edn(s4,t))
+   *loge(pcon(s4,t)))
+   +0.5
+   *sum(p4,p_edn,sum(s4,s_edn,loge(pcon(s4,t))*bh_edn(s4,p4)
+   *loge(pcon(p4,t)))) ;
+
+equation EQN105 (all,s14,s_hpg) (all,t,time) 
+   shr_hpg(s14,t) = ah_hpg(s14)+kalh_hpg(s14,t)
+   +sum(p14,p_hpg,bh_hpg(s14,p14)*loge(pcon(p14,t))) ;
+
+equation EQN106 (all,t,time) 
+   loge(pcon("hpg",t)) = sum(s14,s_hpg,(ah_hpg(s14)+kalh_hpg(s14,t))
+   *loge(pcon(s14,t)))
+   +0.5
+   *sum(p14,p_hpg,sum(s14,s_hpg,loge(pcon(s14,t))*bh_hpg(s14,p14)
+   *loge(pcon(p14,t)))) ;
+
+equation EQN107 (all,s10,s_fb) (all,t,time) 
+   shr_fb(s10,t) = ah_fb(s10)+kalh_fb(s10,t)
+   +sum(p10,p_fb,bh_fb(s10,p10)*loge(pcon(p10,t))) ;
+
+equation EQN108 (all,t,time) 
+   loge(pcon("fb",t)) = sum(s10,s_fb,(ah_fb(s10)+kalh_fb(s10,t))
+   *loge(pcon(s10,t)))
+   +0.5
+   *sum(p10,p_fb,sum(s10,s_fb,loge(pcon(s10,t))*bh_fb(s10,p10)
+   *loge(pcon(p10,t)))) ;
+
+equation EQN109 (all,s19,s_md) (all,t,time) 
+   shr_md(s19,t) = ah_md(s19)+kalh_md(s19,t)
+   +sum(p19,p_md,bh_md(s19,p19)*loge(pcon(p19,t))) ;
+
+equation EQN110 (all,t,time) 
+   loge(pcon("md",t)) = sum(s19,s_md,(ah_md(s19)+kalh_md(s19,t))
+   *loge(pcon(s19,t)))
+   +0.5
+   *sum(p19,p_md,sum(s19,s_md,loge(pcon(s19,t))*bh_md(s19,p19)
+   *loge(pcon(p19,t)))) ;
+
+equation EQN111 (all,s5,s_en) (all,t,time) 
+   shr_en(s5,t) = ah_en(s5)+kalh_en(s5,t)
+   +sum(p5,p_en,bh_en(s5,p5)*loge(pcon(p5,t))) ;
+
+equation EQN112 (all,t,time) 
+   loge(pcon("en",t)) = sum(s5,s_en,(ah_en(s5)+kalh_en(s5,t))
+   *loge(pcon(s5,t)))
+   +0.5
+   *sum(p5,p_en,sum(s5,s_en,loge(pcon(s5,t))*bh_en(s5,p5)
+   *loge(pcon(p5,t)))) ;
+
+equation EQN113 (all,s16,s_ks) (all,t,time) 
+   shr_ks(s16,t) = ah_ks(s16)+kalh_ks(s16,t)
+   +sum(p16,p_ks,bh_ks(s16,p16)*loge(pcon(p16,t))) ;
+
+equation EQN114 (all,t,time) 
+   loge(pcon("ks",t)) = sum(s16,s_ks,(ah_ks(s16)+kalh_ks(s16,t))
+   *loge(pcon(s16,t)))
+   +0.5
+   *sum(p16,p_ks,sum(s16,s_ks,loge(pcon(s16,t))*bh_ks(s16,p16)
+   *loge(pcon(p16,t)))) ;
+
+equation EQN115 (all,s32,s_trc) (all,t,time) 
+   shr_trc(s32,t) = ah_trc(s32)+kalh_trc(s32,t)
+   +sum(p32,p_trc,bh_trc(s32,p32)*loge(pcon(p32,t))) ;
+
+equation EQN116 (all,t,time) 
+   loge(pcon("trc",t)) = sum(s32,s_trc,(ah_trc(s32)+kalh_trc(s32,t))
+   *loge(pcon(s32,t)))
+   +0.5
+   *sum(p32,p_trc,sum(s32,s_trc,loge(pcon(s32,t))*bh_trc(s32,p32)
+   *loge(pcon(p32,t)))) ;
+
+equation EQN117 (all,s35,s_ups) (all,t,time) 
+   shr_ups(s35,t) = ah_ups(s35)+kalh_ups(s35,t)
+   +sum(p35,p_ups,bh_ups(s35,p35)*loge(pcon(p35,t))) ;
+
+equation EQN118 (all,t,time) 
+   loge(pcon("ups",t)) = sum(s35,s_ups,(ah_ups(s35)+kalh_ups(s35,t))
+   *loge(pcon(s35,t)))
+   +0.5
+   *sum(p35,p_ups,sum(s35,s_ups,loge(pcon(s35,t))*bh_ups(s35,p35)
+   *loge(pcon(p35,t)))) ;
+
+equation EQN119 (all,s28,s_rc) (all,t,time) 
+   shr_rc(s28,t) = ah_rc(s28)+kalh_rc(s28,t)
+   +sum(p28,p_rc,bh_rc(s28,p28)*loge(pcon(p28,t))) ;
+
+equation EQN120 (all,t,time) 
+   loge(pcon("rc",t)) = sum(s28,s_rc,(ah_rc(s28)+kalh_rc(s28,t))
+   *loge(pcon(s28,t)))
+   +0.5
+   *sum(p28,p_rc,sum(s28,s_rc,loge(pcon(s28,t))*bh_rc(s28,p28)
+   *loge(pcon(p28,t)))) ;
+
+equation EQN121 (all,s13,s_ho) (all,t,time) 
+   shr_ho(s13,t) = ah_ho(s13)+kalh_ho(s13,t)
+   +sum(p13,p_ho,bh_ho(s13,p13)*loge(pcon(p13,t))) ;
+
+equation EQN122 (all,t,time) 
+   loge(pcon("ho",t)) = sum(s13,s_ho,(ah_ho(s13)+kalh_ho(s13,t))
+   *loge(pcon(s13,t)))
+   +0.5
+   *sum(p13,p_ho,sum(s13,s_ho,loge(pcon(s13,t))*bh_ho(s13,p13)
+   *loge(pcon(p13,t)))) ;
+
+equation EQN123 (all,s1,s_cg) (all,t,time) 
+   shr_cg(s1,t) = ah_cg(s1)+kalh_cg(s1,t)
+   +sum(p1,p_cg,bh_cg(s1,p1)*loge(pcon(p1,t))) ;
+
+equation EQN124 (all,t,time) 
+   loge(pcon("cg",t)) = sum(s1,s_cg,(ah_cg(s1)+kalh_cg(s1,t))
+   *loge(pcon(s1,t)))
+   +0.5
+   *sum(p1,p_cg,sum(s1,s_cg,loge(pcon(s1,t))*bh_cg(s1,p1)
+   *loge(pcon(p1,t)))) ;
+
+equation EQN125 (all,s3,s_cs) (all,t,time) 
+   shr_cs(s3,t) = ah_cs(s3)+kalh_cs(s3,t)
+   +sum(p3,p_cs,bh_cs(s3,p3)*loge(pcon(p3,t))) ;
+
+equation EQN126 (all,t,time) 
+   loge(pcon("cs",t)) = sum(s3,s_cs,(ah_cs(s3)+kalh_cs(s3,t))
+   *loge(pcon(s3,t)))
+   +0.5
+   *sum(p3,p_cs,sum(s3,s_cs,loge(pcon(s3,t))*bh_cs(s3,p3)
+   *loge(pcon(p3,t)))) ;
+
+equation EQN127 (all,s23,s_nd) (all,t,time) 
+   shr_nd(s23,t) = ah_nd(s23)+kalh_nd(s23,t)
+   +sum(p23,p_nd,bh_nd(s23,p23)*loge(pcon(p23,t))) ;
+
+equation EQN128 (all,t,time) 
+   loge(pcon("nd",t)) = sum(s23,s_nd,(ah_nd(s23)+kalh_nd(s23,t))
+   *loge(pcon(s23,t)))
+   +0.5
+   *sum(p23,p_nd,sum(s23,s_nd,loge(pcon(s23,t))*bh_nd(s23,p23)
+   *loge(pcon(p23,t)))) ;
+
+equation EQN129 (all,s9,s_f) (all,t,time) 
+   ab_shr_f(s9,t) = ah_f(s9)+sum(p9,p_f,bh_f(s9,p9)*loge(pcon(p9,t))) ;
+
+equation EQN130 (all,t,time) 
+   denom(t) = (-1)+denom_rebase
+   +sum(p9,p_f,sum(s9,s_f,bh_f(s9,p9)*loge(pcon(p9,t)))) ;
+
+equation EQN131 (all,s9,s_f) (all,t,time) 
+   cex_shr_f(s9,t) = (ab_shr_f(s9,t)
+   -bhm_f(s9)*(loge(full_con(t))+income_dist(t))
+   +sum(N,nattr,bha_f(s9,N)*income_share(N,t)))
+   /denom(t) ;
+
+equation EQN132 (all,s9,s_f) (all,t,time) 
+   shr_f(s9,t) = cex_shr_f(s9,t)+dv_hh(s9,t) ;
+
+equation EQN133 (all,t,time) 
+   p_fc(t) = exp(
+   sum(s9,s_f,(ah_f(s9)-sum(p9,p_f,bh_f(s9,p9)*loge(pfc_m0)))
+   *loge(pcon(s9,t)))
+   +(0.5
+   *sum(p9,p_f,sum(s9,s_f,loge(pcon(s9,t))*bh_f(s9,p9)*loge(pcon(p9,t)))))
+   /denom(t))
+   /p_fc_scale ;
+
+equation EQN134 (all,t,time) 
+   leisure(t) = (shr_f("r",t)*full_con(t))/p_leisure(t) ;
+
+equation EQN135 (all,t,time) 
+   cshare(t) = 1-shr_f("r",t) ;
+
+equation EQN136 (all,t,time) 
+   con_expend(t) = cshare(t)*full_con(t) ;
+
+equation EQN137 (all,t,time) 
+   con_share("n01",t) = (shr_nd("n01",t)*shr_f("nd",t))/cshare(t) ;
+
+equation EQN138 (all,t,time) 
+   con_share("n02",t) = (shr_cg("n02",t)*shr_nd("cg",t)*shr_f("nd",t))
+   /cshare(t) ;
+
+equation EQN139 (all,t,time) 
+   con_share("n03",t) = (shr_en("n03",t)*shr_nd("en",t)*shr_f("nd",t))
+   /cshare(t) ;
+
+equation EQN140 (all,t,time) 
+   con_share("n04",t) = (shr_en("n04",t)*shr_nd("en",t)*shr_f("nd",t))
+   /cshare(t) ;
+
+equation EQN141 (all,t,time) 
+   con_share("n05",t) = (shr_nd("n05",t)*shr_f("nd",t))/cshare(t) ;
+
+equation EQN142 (all,t,time) 
+   con_share("n06",t) = (shr_cg("n06",t)*shr_nd("cg",t)*shr_f("nd",t))
+   /cshare(t) ;
+
+equation EQN143 (all,t,time) 
+   con_share("n07",t) = (shr_hpg("n07",t)*shr_cg("hpg",t)*shr_nd("cg",t)
+   *shr_f("nd",t))
+   /cshare(t) ;
+
+equation EQN144 (all,t,time) 
+   con_share("n08",t) = (shr_hpg("n08",t)*shr_cg("hpg",t)*shr_nd("cg",t)
+   *shr_f("nd",t))
+   /cshare(t) ;
+
+equation EQN145 (all,t,time) 
+   con_share("n09",t) = (shr_cg("n09",t)*shr_nd("cg",t)*shr_f("nd",t))
+   /cshare(t) ;
+
+equation EQN146 (all,t,time) 
+   con_share("n10",t) = (shr_ks("n10",t)*shr_f("ks",t))/cshare(t) ;
+
+equation EQN147 (all,t,time) 
+   con_share("n36",t) = (shr_ks("n36",t)*shr_f("ks",t))/cshare(t) ;
+
+equation EQN148 (all,t,time) 
+   con_share("n11",t) = (shr_ups("n11",t)*shr_ho("ups",t)*shr_cs("ho",t)
+   *shr_f("cs",t))
+   /cshare(t) ;
+
+equation EQN149 (all,t,time) 
+   con_share("n12",t) = (shr_ens("n12",t)*shr_ups("ens",t)*shr_ho("ups",t)
+   *shr_cs("ho",t)
+   *shr_f("cs",t))
+   /cshare(t) ;
+
+equation EQN150 (all,t,time) 
+   con_share("n13",t) = (shr_ens("n13",t)*shr_ups("ens",t)*shr_ho("ups",t)
+   *shr_cs("ho",t)
+   *shr_f("cs",t))
+   /cshare(t) ;
+
+equation EQN151 (all,t,time) 
+   con_share("n14",t) = (shr_md("n14",t)^shr_cs("md",t)*shr_f("cs",t))
+   /cshare(t) ;
+
+equation EQN152 (all,t,time) 
+   con_share("n24",t) = (shr_md("n24",t)^shr_cs("md",t)*shr_f("cs",t))
+   /cshare(t) ;
+
+equation EQN153 (all,t,time) 
+   con_share("n15",t) = (shr_trc("n15",t)*shr_ho("trc",t)*shr_cs("ho",t)
+   *shr_f("cs",t))
+   /cshare(t) ;
+
+equation EQN154 (all,t,time) 
+   con_share("n16",t) = (shr_trc("n16",t)*shr_ho("trc",t)*shr_cs("ho",t)
+   *shr_f("cs",t))
+   /cshare(t) ;
+
+equation EQN155 (all,t,time) 
+   con_share("n25",t) = (shr_trc("n25",t)*shr_ho("trc",t)*shr_cs("ho",t)
+   *shr_f("cs",t))
+   /cshare(t) ;
+
+equation EQN156 (all,t,time) 
+   con_share("n26",t) = (shr_cmm("n26",t)*shr_trc("cmm",t)*shr_ho("trc",t)
+   *shr_cs("ho",t)
+   *shr_f("cs",t))
+   /cshare(t) ;
+
+equation EQN157 (all,t,time) 
+   con_share("n27",t) = (shr_cmm("n27",t)*shr_trc("cmm",t)*shr_ho("trc",t)
+   *shr_cs("ho",t)
+   *shr_f("cs",t))
+   /cshare(t) ;
+
+equation EQN158 (all,t,time) 
+   con_share("n17",t) = (shr_rcs("n17",t)*shr_rc("rcs",t)*shr_cs("rc",t)
+   *shr_f("cs",t))
+   /cshare(t) ;
+
+equation EQN159 (all,t,time) 
+   con_share("n18",t) = (shr_rcs("n18",t)*shr_rc("rcs",t)*shr_cs("rc",t)
+   *shr_f("cs",t))
+   /cshare(t) ;
+
+equation EQN160 (all,t,time) 
+   con_share("n19",t) = (shr_rcs("n19",t)*shr_rc("rcs",t)*shr_cs("rc",t)
+   *shr_f("cs",t))
+   /cshare(t) ;
+
+equation EQN161 (all,t,time) 
+   con_share("n20",t) = (shr_rc("n20",t)*shr_cs("rc",t)*shr_f("cs",t))
+   /cshare(t) ;
+
+equation EQN162 (all,t,time) 
+   con_share("n21",t) = (shr_trv("n21",t)*shr_rc("trv",t)*shr_cs("rc",t)
+   *shr_f("cs",t))
+   /cshare(t) ;
+
+equation EQN163 (all,t,time) 
+   con_share("n33",t) = (shr_trv("n33",t)*shr_rc("trv",t)*shr_cs("rc",t)
+   *shr_f("cs",t))
+   /cshare(t) ;
+
+equation EQN164 (all,t,time) 
+   con_share("n22",t) = (shr_fb("n22",t)*shr_cs("fb",t)*shr_f("cs",t))
+   /cshare(t) ;
+
+equation EQN165 (all,t,time) 
+   con_share("n23",t) = (shr_fb("n23",t)*shr_cs("fb",t)*shr_f("cs",t))
+   /cshare(t) ;
+
+equation EQN166 (all,t,time) 
+   con_share("n29",t) = (shr_fb("n29",t)*shr_cs("fb",t)*shr_f("cs",t))
+   /cshare(t) ;
+
+equation EQN167 (all,t,time) 
+   con_share("n28",t) = (shr_edn("n28",t)*shr_ho("edn",t)*shr_cs("ho",t)
+   *shr_f("cs",t))
+   /cshare(t) ;
+
+equation EQN168 (all,t,time) 
+   con_share("n34",t) = (shr_edn("n34",t)*shr_ho("edn",t)*shr_cs("ho",t)
+   *shr_f("cs",t))
+   /cshare(t) ;
+
+equation EQN169 (all,t,time) 
+   con_share("n30",t) = (shr_hps("n30",t)*shr_ups("hps",t)*shr_ho("ups",t)
+   *shr_cs("ho",t)
+   *shr_f("cs",t))
+   /cshare(t) ;
+
+equation EQN170 (all,t,time) 
+   con_share("n31",t) = (shr_hps("n31",t)*shr_ups("hps",t)*shr_ho("ups",t)
+   *shr_cs("ho",t)
+   *shr_f("cs",t))
+   /cshare(t) ;
+
+equation EQN171 (all,t,time) 
+   con_share("n32",t) = (shr_hps("n32",t)*shr_ups("hps",t)*shr_ho("ups",t)
+   *shr_cs("ho",t)
+   *shr_f("cs",t))
+   /cshare(t) ;
+
+equation EQN172 (all,t,time) 
+   con_share("n35",t) = (shr_ho("n35",t)*shr_cs("ho",t)*shr_f("cs",t))
+   /cshare(t) ;
+
+equation EQN173 (all,N1,ncom_k) (all,t,time) 
+   con_shk_val(N1,t) = con_shk_qty(N1,t)*p_con(N1,t) ;
+
+equation EQN174 (all,t,time) 
+   con_shk_expend(t) = sum(N1,ncom_k,con_shk_val(N1,t)) ;
+
+equation EQN175 (all,t,time) 
+   con_expend_net(t) = con_expend(t)-con_shk_expend(t) ;
+
+equation EQN176 (all,c,com) (all,t,time) 
+   con(c,t) = (sum(n4,nipa,io_nipa(c,n4)*con_share(n4,t)*con_expend_net(t))
+   +con_shk_val(c,t))
+   /(1+tax_con_tot_com(t)) ;
+
+equation EQN177 (all,t,time) 
+   con("kap",t) = sum(n4,nipa,io_nipa("kap",n4)*con_share(n4,t)
+   *con_expend_net(t))
+   +con_shk_val("kap",t) ;
+
+equation EQN178 (all,t,time) 
+   rev_con(t) = sum(c,com,tax_con_tot_com(t)*con(c,t)) ;

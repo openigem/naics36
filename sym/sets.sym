@@ -1,0 +1,233 @@
+//  IGEM Sets
+
+set time(p0,p1) 'Time periods'  ;
+
+set com(c01,c02,c03,c04,c05,c06,c07,c08,c09,c10,
+         c11,c12,c13,c14,c15,c16,c17,c18,c19,c20,
+         c21,c22,c23,c24,c25,c26,c27,c28,c29,c30,
+         c31,c32,c33,c34,c35,c36)  'IGEM Commodities'  ;
+
+set nipa(n01,n02,n03,n04,n05,n06,n07,n08,n09,n10,
+         n11,n12,n13,n14,n15,n16,n17,n18,n19,n20,
+         n21,n22,n23,n24,n25,n26,n27,n28,n29,n30,
+         n31,n32,n33,n34,n35,n36)  'NIPA Commodities' ;
+
+set ind(i01,i02,i03,i04,i05,i06,i07,i08,i09,i10,
+         i11,i12,i13,i14,i15,i16,i17,i18,i19,i20,
+         i21,i22,i23,i24,i25,i26,i27,i28,i29,i30,
+         i31,i32,i33,i34,i35,i36)  'IGEM Industries'  ;
+
+set buy = ind + (con,inv,gov)  'Domestic buyers'  ;
+
+set NATTR(at1,at2,at3,at4,at5,at6,at7,at8,at9,at10,at11)  'Demographic attributes'  ;
+set NCOM_K = com + (kap) 'com plus capital'  ;
+set NIND_C = ind + (con) 'ind plus consumption'  ;
+set NINP = com + (kap,lab) 'com plus capital and labor' ;
+set NUSES = buy + (xpt,imp) 'Commodity transactions - interindustry and final demand' ;
+set NXTR(ex1 ,ex2 ,ex3 ,ex4 ,ex5 ,ex6 ,ex7 ,ex8 ,ex9 ,ex10,
+         ex11,ex12,ex13,ex14,ex15,ex16,ex17,ex18,ex19,ex20) 'Externalities'  ;
+
+set inputs = NINP + (os,ob,bl,tt,tr,mn,ma,gas,oil,sv,eq,ms,mm,ff,mat,ene)  'Producer commodities and tiers, io'  ;
+
+set nleis = nipa + (r)  'NIPA commodities plus leisure (r)'  ;
+set ntoth = nleis + (cmm,hps,ens,trv,rcs,edn,hpg,fb,md,en,ks,trc,ups,rc,ho,cg,cs,nd)  'Household commodities and tiers, nipa'  ;
+
+// Producer sub-model sets
+
+// Set definitions Gas, Oil, Fossil fuels and Energy
+
+set  inp_gas = inputs(c03,c07) 'Gas mining and Natural gas distribution' ;
+set  inp_oil = inputs(c02,c23) 'Oil mining and Petroleum and coal products' ;
+set  inp_ff  = inputs(c04,oil,gas) 'Coal mining and Oil and Gas aggregates' ;
+set  inp_ene = inputs(c06,ff) 'Electric utilities and Fossil fuels aggregate' ;
+
+set  s_gas = inp_gas 'Input shares, gas' ;
+set  p_gas = inp_gas 'Input prices, gas' ;
+
+set  s_oil = inp_oil 'Input shares, oil' ;
+set  p_oil = inp_oil 'Input prices, oil ;
+
+set  s_ff  = inp_ff 'Input shares, ff' ;
+set  p_ff  = inp_ff 'Input prices, ff' ;
+
+set  s_ene   = inp_ene 'Input shares, ene' ;
+set  p_ene   = inp_ene 'Input prices, ene' ;
+
+// Set definitions Building services (bl), Other business services (ob),
+//                 Other services (os) and the Services aggregate (sv)  
+
+set  inp_bl = inputs(c08,c09,c31) 'Water and wastewater, Construction, Real estate and leasing' ;
+set  inp_ob = inputs(c28,c29,c30) 'Publishing et al, Software and IT, Finance and insurance' ;
+set  inp_os = inputs(c33,c34,c35,c36) 'Education, Health, Accommodation, Other government' ;
+set  inp_sv = inputs(bl,ob,os) 'Services' ;
+
+set  s_bl = inp_bl 'Input shares, bl' ;
+set  p_bl = inp_bl 'Input prices, bl' ;
+
+set  s_ob = inp_ob 'Input shares, ob' ;
+set  p_ob = inp_ob 'Input prices, ob' ;
+
+set  s_os = inp_os 'Input shares, os' ;
+set  p_os = inp_os 'Input prices, os' ;
+
+set  s_sv = inp_sv 'Input shares, sv' ;
+set  p_sv = inp_sv 'Input prices, sv' ;
+
+// Set definitions for non-aggregate materials tiers
+
+// Set definitions Agricultural intermediates (ma), Non-metallic intermediates (mn),
+//                 Transportation equipment (tr) and Trade and transportation(tt)  
+
+set  inp_ma = inputs(c01,c10,c20,c21) 'Agriculture, Wood and products, Food et al, Textiles et al' ;
+set  inp_mn = inputs(c11,c19,c22,c24) 'Non-metal minerals, Misc mfg, Printing, Chemicals et al' ;
+set  inp_tr = inputs(c17,c18)         'Motor vehicles and parts, Other trans equip' ;
+set  inp_tt = inputs(c25,c26,c27)     'Wholesale and Retail trade, Transportation and warehousing' ;
+
+set  s_ma = inp_ma 'Input shares, ma' ;
+set  p_ma = inp_ma 'input prices, ma' ;
+
+set  s_mn = inp_mn 'Input shares, mn' ;
+set  p_mn = inp_mn 'input prices, mn' ;
+
+set  s_tr = inp_tr 'Input shares, tr' ;
+set  p_tr = inp_tr 'input prices, tr' ;
+
+set  s_tt = inp_tt 'Input shares, tt' ;
+set  p_tt = inp_tt 'input prices, tt' ;
+
+// Set definitions aggregate materials tiers
+
+// Set definitions Equipment (eq), Intermediates services (ms),
+//                 Metallic intermediates (mm) and aggregate Materials (mat)  
+
+set  inp_eq = inputs(c14,c15,c16,tr)  'Machinery, IT equip, Electrical equip, Transportation equip' ;
+set  inp_ms = inputs(c32,tt,sv)       'Business services, Trade and transportation, Other services aggregate' ;
+set  inp_mm = inputs(c05,c12,c13,eq)  'Non-energy mining, Primary and Fabricated metals, Equipment aggregate' ;
+set  inp_mat = inputs(ma,mm,mn,ms)    'Agriculture, Metrals, Non-metals and Services aggregates' ;
+
+set  s_eq = inp_eq 'Input shares, eq' ;
+set  p_eq = inp_eq 'Input prices, eq' ;
+
+set  s_ms = inp_ms 'Input shares, ms' ;
+set  p_ms = inp_ms 'Input prices, ms' ;
+
+set  s_mm = inp_mm 'Input shares, mm' ;
+set  p_mm = inp_mm 'Input prices, mm' ;
+
+set  s_mat = inp_mat 'Input shares, mat' ;
+set  p_mat = inp_mat 'Input prices, mat' ;
+
+// Shares and price for top tier output (o) as a function of inputs (klem - capital, labor, energy, materials)
+//
+
+set  inp_o = inputs(kap,lab,ene,mat) 'Capital, labor, energy, materials, klem in output o'  ;
+
+set  s_o = inp_o 'Input shares, klem in o' ;
+set  p_o = inp_o 'Input prices, klem in o' ;
+
+// Household sub-model sets
+
+// Set definitions Non-durable goods
+// Set definitions Energy goods (en), Consumer goods (cg), Household and personal goods (hpg),
+//                 and Non-durable goods (nd)
+
+set  hh_en = ntoth(n03,n04)  'Gasoline, Other household fuel'  ;
+set  hh_hpg = ntoth(n07,n08)  'Household goods, Personal care products'  ;
+set  hh_cg = ntoth(n02,n06,n09,hpg)  'Clothing & footwear, Recreational goods, Reading materials,
+                                      and Household & personal goods'  ;
+set  hh_nd = ntoth(n01,n05,en,cg)  'Food and tobacco, Pharmaceuticals, Energy aggregate, Consumer goods aggregate'  ;
+
+set  s_en = hh_en 'Household shares, en' ;
+set  p_en = hh_en 'Household prices, en' ;
+
+set  s_hpg = hh_hpg 'Household shares, hpg' ;
+set  p_hpg = hh_hpg 'Household prices, hpg' ;
+
+set  s_cg = hh_cg 'Household shares, cg' ;
+set  p_cg = hh_cg 'Household prices, cg' ;
+
+set  s_nd = hh_nd 'Household shares, nd' ;
+set  p_nd = hh_nd 'Household prices, nd' ;
+
+// Set definitions Consumer services
+// Set definitions Consumer services - Groups without aggregates
+// Set definitions Communications (cmm), Household and personal services (hps), Energy utilities (ens), Travel (trv),
+//                 Recreational services (rcs), Education and non-prifits (edn), Finance and business services (fb),
+//                 and Medical (md)
+
+set  hh_cmm = ntoth(n26,n27)  'Telecommunications, Postal and delivery'  ;
+set  hh_hps = ntoth(n30,n31,n32)  'Personal services, Social services, Household services'  ;
+set  hh_ens = ntoth(n12,n13)  'Electricity, Gas'  ;
+set  hh_trv = ntoth(n21,n33)  'Hotels, Foreign travel'  ;
+set  hh_rcs = ntoth(n17,n18,n19)  'Sports and theaters, Video and IT services, Gambling'  ;
+set  hh_edn = ntoth(n28,n34)  'Education, Non-profit consumption'  ;
+set  hh_fb = ntoth(n22,n23,n29)  'Financial services, Life insurance, Business services'  ;
+set  hh_md = ntoth(n14,n24)  'Health care, Health insurance'  ;
+
+set  s_cmm = hh_cmm 'Household shares, cmm' ;
+set  p_cmm = hh_cmm 'Household prices, cmm' ;
+
+set  s_hps = hh_hps 'Household shares, hps' ;
+set  p_hps = hh_hps 'Household prices, hps' ;
+
+set  s_ens = hh_ens 'Household shares, ens' ;
+set  p_ens = hh_ens 'Household prices, ens' ;
+
+set  s_trv = hh_trv 'Household shares, trv' ;
+set  p_trv = hh_trv 'Household prices, trv' ;
+
+set  s_rcs = hh_rcs 'Household shares, rcs' ;
+set  p_rcs = hh_rcs 'Household prices, rcs' ;
+
+set  s_edn = hh_edn 'Household shares, edn' ;
+set  p_edn = hh_edn 'Household prices, edn' ;
+
+set  s_fb = hh_fb 'Household shares, fb' ;
+set  p_fb = hh_fb 'Household prices, fb' ;
+
+set  s_md = hh_md 'Household shares, md' ;
+set  p_md = hh_md 'Household prices, md' ;
+
+// Set definitions Consumer services - Groups with aggregates
+// Set definitions Transportation and communication (trc), Utilities and personal services (ups),
+//                 Recreation, travel and meals (rc), Household operation (ho), and Consumer services aggregate (cs)
+
+set  hh_trc = ntoth(n15,n16,n25,cmm)  'Own transportation, Transportation, Vehicle insurance, Communications aggregate'  ;
+set  hh_ups = ntoth(n11,ens,hps)  'Water, Energy utilities aggregate, Household and personal services aggregate'  ;
+set  hh_rc  = ntoth(n20,rcs,trv)  'Meals, Recreational services aggregate, Travel aggregate'  ;
+set  hh_ho  = ntoth(n35,edn,ups,trc)  'Owner maintenance, Education aggregate, Utilities aggregate, Transportation aggregate'  ;
+set  hh_cs  = ntoth(md,fb,ho,rc)  'Medical, Finance, Household operation, and Recreation aggregates'  ;
+
+set  s_trc = hh_trc 'Household shares, trc' ;
+set  p_trc = hh_trc 'Household prices, trc' ;
+
+set  s_ups = hh_ups 'Household shares, ups' ;
+set  p_ups = hh_ups 'Household prices, ups' ;
+
+set  s_rc = hh_rc 'Household shares, rc' ;
+set  p_rc = hh_rc 'Household prices, rc' ;
+
+set  s_ho = hh_ho 'Household shares, ho' ;
+set  p_ho = hh_ho 'Household prices, ho' ;
+
+set  s_cs = hh_cs 'Household shares, cs' ;
+set  p_cs = hh_cs 'Household prices, cs' ;
+
+// Set definitions Consumer capital services (ks) and full consumption (f)
+
+set  hh_ks =  ntoth(n10,n36)  'Rental, Household capital flow'  ;
+
+set  hh_f  =  ntoth(nd,ks,cs,r)  'Non-durable goods, Consumer capital services and Consumer services aggregates
+                                     plus leisure'  ;
+									 
+set  s_ks = hh_ks 'Household shares, ks' ;
+set  p_ks = hh_ks 'Household prices, ks' ;
+
+set  s_f = hh_f 'Household shares, f' ;
+set  p_f = hh_f 'Household prices, f' ;
+									 
+// Investment sub-model sets
+
+
+
+									 

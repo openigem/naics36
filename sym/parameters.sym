@@ -1,0 +1,175 @@
+//  IGEM Parameters
+
+// PRODUCER SUB-MODEL
+
+// Parameter definitions - Energy tiers
+
+parameter ap0_gas(ind) 'Price constant, gas' ;
+parameter ap_gas(s_gas,ind) 'Input shares at unit prices, gas' ;
+parameter bp_gas(s_gas,p_gas,ind) 'Share price elasticities, gas' ;
+
+parameter ap0_oil(ind) 'Price constant, oil' ;
+parameter ap_oil(s_oil,ind) 'Input shares at unit prices, oil' ;
+parameter bp_oil(s_oil,p_oil,ind) 'Share price elasticities, oil' ;
+
+parameter ap0_ff(ind) 'Price constant, ff' ;
+parameter ap_ff(s_ff,ind) 'Input shares at unit prices, ff' ;
+parameter bp_ff(s_ff,p_ff,ind) 'Share price elasticities, ff' ;
+
+parameter ap0_ene(ind) 'Price constant, ene' ;
+parameter ap_ene(s_ene,ind) 'Input shares at unit prices, ene' ;
+parameter bp_ene(s_ene,p_ene,ind) 'Share price elasticities, ene' ;
+
+// Parameter definitions - Services tiers
+
+parameter ap0_bl(ind)  'Price constant, bl' ;
+parameter ap_bl(s_bl,ind) 'Input shares at unit prices, bl' ;
+parameter bp_bl(s_bl,p_bl,ind) 'Share price elasticities, bl' ;
+
+parameter ap0_ob(ind) 'Price constant, ob' ;
+parameter ap_ob(s_ob,ind) 'Input shares at unit prices, ob' ;
+parameter bp_ob(s_ob,p_ob,ind) 'Share price elasticities, ob' ;
+
+parameter ap0_os(ind) 'Price constant, os' ;
+parameter ap_os(s_os,ind) 'Input shares at unit prices, os' ;
+parameter bp_os(s_os,p_os,ind) 'Share price elasticities, os' ;
+
+parameter ap0_sv(ind) 'Price constant, sv' ;
+parameter ap_sv(s_sv,ind) 'Input shares at unit prices, sv' ;
+parameter bp_sv(s_sv,p_sv,ind) 'Share price elasticities, sv' ;
+
+// Parameter definitions - Non-aggregate materials tiers
+
+parameter ap0_ma(ind) 'Price constant, ma' ;
+parameter ap_ma(s_ma,ind) 'Input shares at unit prices, ma' ;
+parameter bp_ma(s_ma,p_ma,ind) 'Share price elasticities, ma' ;
+
+parameter ap0_mn(ind) 'Price constant, mn' ;
+parameter ap_mn(s_mn,ind) 'Input shares at unit prices, mn' ;
+parameter bp_mn(s_mn,p_mn,ind) 'Share price elasticities, mn' ;
+
+parameter ap0_tr(ind) 'Price constant, tr' ;
+parameter ap_tr(s_tr,ind) 'Input shares at unit prices, tr' ;
+parameter bp_tr(s_tr,p_tr,ind) 'Share price elasticities, tr' ;
+
+parameter ap0_tt(ind) 'Price constant, tt' ;
+parameter ap_tt(s_tt,ind) 'Input shares at unit prices, tt' ;
+parameter bp_tt(s_tt,p_tt,ind) 'Share price elasticities, tt' ;
+
+// Parameter definitions - Aggregate materials tiers
+
+parameter ap0_eq(ind) 'Price constant, eq' ;
+parameter ap_eq(s_eq,ind) 'Input shares at unit prices, eq' ;
+parameter bp_eq(s_eq,p_eq,ind) 'Share price elasticities, eq' ;
+
+parameter ap0_ms(ind) 'Price constant, ms' ;
+parameter ap_ms(s_ms,ind) 'Input shares at unit prices, ms' ;
+parameter bp_ms(s_ms,p_ms,ind) 'Share price elasticities, ms' ;
+
+parameter ap0_mm(ind) 'Price constant, mm' ;
+parameter ap_mm(s_mm,ind) 'Input shares at unit prices, mm' ;
+parameter bp_mm(s_mm,p_mm,ind) 'Share price elasticities, mm' ;
+
+parameter ap0_mat(ind) 'Price constant, mat' ;
+parameter ap_mat(s_mat,ind) 'Input shares at unit prices, mat' ;
+parameter bp_mat(s_mat,p_mat,ind) 'Share price elasticities, mat' ;
+
+// Parameter definitions - Producer top tier, make table and imports
+
+parameter ap0_o(ind) 'Price constant, output o' ;
+parameter ap_o(s_o,ind) 'Input shares at unit prices, klem in o' ;
+parameter bp_o(s_o,p_o,ind) 'Share price elasticities, klem in o' ;
+
+parameter make_col(ind,com)  'Make table of commodity output shares'  ;
+
+parameter am_imp(com)  'Import share at unit prices'  ;
+parameter bm_imp(com)  'Import share price elasticity'  ; 
+
+// HOUSEHOLD SUB-MODEL
+
+// Parameter definitions - io to nipa price matrix
+
+parameter io_nipa(ncom_k,nipa)  'io to nipa commodity price shares'  ;
+
+// Parameter definitions - Tiers bottom-up
+// Parameter definitions - Communications (cmm), Household and personal services (hps), Energy utilities (ens)
+
+parameter ah_cmm(s_cmm) 'Household shares at unit prices, cmm' ;
+parameter bh_cmm(s_cmm,p_cmm) 'Share price elasticities, cmm' ;
+ 
+parameter ah_hps(s_hps) 'Household shares at unit prices, hps' ;
+parameter bh_hps(s_hps,p_hps) 'Share price elasticities, hps' ;
+
+parameter ah_ens(s_ens) 'Household shares at unit prices, ens' ;
+parameter bh_ens(s_ens,p_ens) 'Share price elasticities, ens' ;
+
+// Parameter definitions - Travel (trv), Recreational services (rcs), Education (edn)
+
+parameter ah_trv(s_trv) 'Household shares at unit prices, trv' ;
+parameter bh_trv(s_trv,p_trv) 'Share price elasticities, trv' ;
+
+parameter ah_rcs(s_rcs) 'Household shares at unit prices, rcs' ;
+parameter bh_rcs(s_rcs,p_rcs) 'Share price elasticities, rcs' ;
+
+parameter ah_edn(s_edn) 'Household shares at unit prices, edn' ;
+parameter bh_edn(s_edn,p_edn) 'Share price elasticities, edn' ;
+
+// Parameter definitions - Household and personal goods (hpg), Finance and business services (fb), Medical (md)
+
+parameter ah_hpg(s_hpg) 'Household shares at unit prices, hpg' ;
+parameter bh_hpg(s_hpg,p_hpg) 'Share price elasticities, hpg' ;
+
+parameter ah_fb(s_fb) 'Household shares at unit prices, fb' ;
+parameter bh_fb(s_fb,p_fb) 'Share price elasticities, fb' ;
+
+parameter ah_md(s_md) 'Household shares at unit prices, md' ;
+parameter bh_md(s_md,p_md) 'Share price elasticities, md' ;
+
+// Parameter definitions - Energy goods (en), Capital (ks), Transportation and communication (trc)
+
+parameter ah_en(s_en) 'Household shares at unit prices, en' ;
+parameter bh_en(s_en,p_en) 'Share price elasticities, en' ;
+
+parameter ah_ks(s_ks) 'Household shares at unit prices, ks' ;
+parameter bh_ks(s_ks,p_ks) 'Share price elasticities, ks' ;
+
+parameter ah_trc(s_trc) 'Household shares at unit prices, trc' ;
+parameter bh_trc(s_trc,p_trc) 'Share price elasticities, trc' ;
+
+// Parameter definitions - Utilities & personal services (ups), Recreation, travel & meals (rc), Household operation (ho)
+
+parameter ah_ups(s_ups) 'Household shares at unit prices, ups' ;
+parameter bh_ups(s_ups,p_ups) 'Share price elasticities, ups' ;
+
+parameter ah_rc(s_rc) 'Household shares at unit prices, rc' ;
+parameter bh_rc(s_rc,p_rc) 'Share price elasticities, rc' ;
+
+parameter ah_ho(s_ho) 'Household shares at unit prices, ho' ;
+parameter bh_ho(s_ho,p_ho) 'Share price elasticities, ho' ;
+
+// Parameter definitions - Consumer goods (cg), Consumer services (cs), Non-durables (nd)
+
+parameter ah_cg(s_cg) 'Household shares at unit prices, cg' ;
+parameter bh_cg(s_cg,p_cg) 'Share price elasticities, cg' ;
+
+parameter ah_cs(s_cs) 'Household shares at unit prices, cs' ;
+parameter bh_cs(s_cs,p_cs) 'Share price elasticities, cs' ;
+
+parameter ah_nd(s_nd) 'Household shares at unit prices, nd' ;
+parameter bh_nd(s_nd,p_nd) 'Share price elasticities, nd' ;
+
+// Parameter definitions - Full consumption (f) - Top tier alpha and beta effects
+//                         Non-durables (nd), Capital (ks), Consumer services (cs), Leisure (r)                                                                 
+
+parameter ah_f(s_f) 'Household shares at unit prices, f' ;
+parameter bh_f(s_f,p_f) 'Share price elasticities, f' ;
+
+parameter bhm_f(s_f) 'CEX share adjustment paramaters - expenditure, f' ;
+parameter bha_f(s_f,nattr) 'CEX share adjustment paramaters - demographic attributes, f' ;
+
+parameter denom_rebase  'Full consumption share denominator re-basing parameter'  ;
+parameter pfc_m0  'Full consumption share normalization parameter'  ;
+
+parameter p_fc_scale   'Full consumption price normalization scalar'  ;
+parameter pf_scale_k  'Scalar - Capital stock'  ;
+parameter pf_scale_l  'Scalar - Value of available hours'  ;
