@@ -1,8 +1,3 @@
----
-title: OpenIGEM NAICS36
-layout: post
----
-
 # Project Overview
 
 OpenIGEM NAICS36 will be an open-source implementation of the IGEM-NAICS 
