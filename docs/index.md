@@ -11,9 +11,12 @@ from the earlier model.
 The OpenIGEM version of the model is coded using Sym, a language for 
 expressing general equilbrium models clearly and concisely. The model is
 solved using GEMPACK, a software suite for general equilibrium modeling
-produced by the Centre for Policy Studies. Links
-to information about Sym and GEMPACK are provided under the "Implementation" 
-section below.
+produced by the Centre for Policy Studies. Links to information about 
+Sym and GEMPACK are provided under the "Implementation" section below.
+
+Implementation of OpenIGEM is underway and not yet complete. All of the files
+on this site, including data, code and documentation, are works in progress and
+will be revised as project evolves.
 
 ## IGEM-NAICS
 
