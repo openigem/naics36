@@ -1,6 +1,6 @@
 # Abstract
 
-OpenIGEM will be an open-source implementation of the IGEM-NAICS general 
+OpenIGEM NAICS36 will be an open-source implementation of the IGEM-NAICS general 
 equilibrium model of the US economy. IGEM-NAICS itself is an updated version of 
 the IGEM model described in _Double Dividend: Environmental Taxes and 
 Fiscal Reform in the United States_ by Jorgenson, Goettle, Ho and Wilcoxen 
