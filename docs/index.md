@@ -6,7 +6,7 @@ detail in its [Technical Work Plan](OpenIGEM_Technical_Work_Plan.pdf). The
 sections below provide additional information on the economic design of
 the IGEM-NAICS model and the open source implementation of it, NAICS36. 
 All of the files on this site, including data, code and documentation, are 
-works in progress and will be revised as project evolves.
+works in progress and will be revised as the project evolves.
 
 # Design of IGEM-NAICS
 
