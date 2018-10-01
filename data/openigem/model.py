@@ -1,255 +1,275 @@
+#  model.py
+#  Aug 18 (PJW)
+
 import sys
 import json
 
 from obj import Obj
 from set import Set
 from var import Var
-from var import Par
 
-#
-#  Read a model from a JSON file and return a model object
-#
 
-def read_json(filename):
-   fh = open(filename,'r')
-   obj = json.load(fh)
-   mod = Model(obj['name'])
-   for v in obj['sets']:
-      mod.newset(v['name'],v['elements'])
-   for v in obj['pars']:
-      mod.newpar(v['name'],v['sets'],v['header'])
-   for v in obj['vars']:
-      mod.newvar(v['name'],v['sets'],v['header'])
-   return mod
+def _add_name(name, namelist):
+    """Add a name to a list, aborting if it is already present.
 
-#
-#  Define the model class
-#
+    Args:
+        name (str): Name to add
+        namelist (list): Current list
+
+    Returns:
+        None
+    """
+    if name in namelist:
+        print 'Error:', name, 'previously added to model'
+        sys.exit(1)
+    namelist.append(name)
+
 
 class Model(Obj):
-   '''OpenIGEM model representation'''
+    """OpenIGEM representation of a model.
 
-   #
-   #  Constructor
-   #
+    A model can contain a collection of Set and Var objects.
+    Var objects can be designated as parameters or variables
+    and retrieved accordingly.
 
-   def __init__(self,name):
-      Obj.__init__(self,'model',name)
-      self.set('sets', {'type':'set',       'obj':[], 'names':[]})
-      self.set('pars', {'type':'parameter', 'obj':[], 'names':[]})
-      self.set('vars', {'type':'variable',  'obj':[], 'names':[]})
+    Args:
+        name: A string giving the name of the model.
 
-   #
-   #  String representation
-   #
+    Attributes:
+        sets (dict) : Dictionary of Sets
+        dats (dict): Dictionary of Vars
+        set_names (list): Names of Sets
+        dat_names (list): Names of all Vars
+        par_names (list): Names of Vars marked as parameters
+        var_names (list): Names of Vars not marked as parameters
+    """
 
-   def __repr__(self):
-      dct = {}
-      dct['name'] = self.name
-      dct['sets'] = self.sets['obj']
-      dct['pars'] = self.pars['obj']
-      dct['vars'] = self.vars['obj']
-      return str(dct)
+    def __init__(self, name):
+        Obj.__init__(self, 'model', name)
 
-   #
-   #  Add a new set
-   #
+        #  keep the actual objects in dictionaries
 
-   def newset(self,name,elements=None):
-      '''Create a new set and add it to the model'''
-      item = Set(name,elements)
-      self._addobj('sets',name,item)
-      return item
+        self.sets = {}
+        self.dats = {}
 
-   #
-   #  Add a new parameter
-   #
+        #  keep a separate list of names, partly to allow the
+        #  sequence of additions to be retained, but also to
+        #  allow parameters and variables to be pulled out of
+        #  the data dictionary separately when needed.
 
-   def newpar(self,name,setnames=None,header=None):
-      '''Create a new parameter and add it to the model'''
-      item = Par(name,setnames,header)
-      self._addobj('pars',name,item)
-      return item
+        self.set_names = []
+        self.par_names = []
+        self.var_names = []
+        self.dat_names = []
 
-   #
-   #  Add a new variables
-   #
+    #
+    #  String representation
+    #
 
-   def newvar(self,name,setnames=None,header=None):
-      '''Create a new variable and add it to the model'''
-      item = Var(name,setnames,header)
-      self._addobj('vars',name,item)
-      return item
+    def __repr__(self):
+        dct = {
+            'name': self.name,
+            'sets': self.list_set_obj(),
+            'pars': self.list_par_obj(),
+            'vars': self.list_var_obj()
+        }
+        return str(dct)
 
-   #
-   #  Look up and return a set, parameter or variable
-   #
+    #
+    #  Add a new set
+    #
 
-   def getsets(self):
-      '''Get a sorted list of all Set objects in the model.
-         Aliases are listed after normal sets.'''
-      names = self.set_names()
-      setlist = []
-      aliases = []
-      for n in sorted(names):
-         this_set = self.getset(n)
-         if this_set.get('alias_of') is not None:
-            aliases.append(n)
-         else:
-            setlist.append(self.getset(n))
-      for n in sorted(aliases):
-         this_set = self.getset(n)
-         setlist.append(self.getset(n))
-      return setlist
+    def newset(self, name, elements=None):
+        """Create a new set and add it to the model.
+        
+        Args:
+            name (str): Name of set
+            elements (list): Elements
+        
+        Returns:
+            Set: new object
+        """
+        _add_name(name, self.set_names)
+        item = Set(name, elements)
+        self.sets[name] = item
+        return item
 
-   def getset(self,name):
-      '''Get a set from the model'''
-      return self._getobj('sets',name)
+    #
+    #  Add a new parameter or variable
+    #
 
-   def elements_of(self,name):
-      this_set = self._getobj('sets',name)
-      alias_of = this_set.get('alias_of')
-      if alias_of is None:
-         return list(this_set.elements)
-      return self.elements_of(alias_of)
+    def newvar(self, name, setnames=None, header=None, par=False):
+        """Create a new variable and add it to the model.
 
-   def getpar(self,name):
-      '''Get a parameter from the model'''
-      return self._getobj('pars',name)
+        Args:
+            name (str): Name of variable or parameter
+            setnames (list): List of set names
+            header (str): GEMPACK header
+            par (bool): True if a parameter
 
-   def getvar(self,name):
-      '''Get a variable from the model'''
-      return self._getobj('vars',name)
+        Returns:
+             Var: new object.
+        """
+        _add_name(name, self.dat_names)
+        item = Var(name, setnames, header, par=par)
+        self.dats[name] = item
+        if par:
+            self.par_names.append(name)
+        else:
+            self.var_names.append(name)
+        return item
 
-   def sets_of(self,name):
-      for t in ['vars','pars']:
-         obj = self._getobj(t,name)
-         if obj is not None:
-            return list(obj.sets)
-      print 'variable or parameter not found:',name
-      sys.exit(1)
+    #
+    #  Return a list of sets
+    #
 
-   #
-   #  Return lists of sets, parameters or variables
-   #
+    def getsets(self):
+        """Return a sorted list of Sets; aliases are listed last."""
+        names = self.set_names
+        setlist = []
+        aliases = []
+        for n in sorted(names):
+            this_set = self.sets[n]
+            if this_set.get('alias_of') is not None:
+                aliases.append(n)
+            else:
+                setlist.append(self.sets[n])
+        for n in sorted(aliases):
+            setlist.append(self.sets[n])
+        return setlist
 
-   def set_names(self):
-      return self.get('sets')['names']
+    #
+    #  Return a single set
+    #
 
-   def par_names(self):
-      return self.get('pars')['names']
+    def getset(self, name):
+        """Return a Set if it exists, otherwise return None."""
+        if name in self.sets:
+            return self.sets[name]
+        return None
 
-   def var_names(self):
-      return self.get('vars')['names']
+    #
+    #  Validate
+    #
 
-   #
-   #  Validate a model
-   #
+    def validate(self):
+        """Validate the model.
 
-   def validate(self):
-      '''Validate the model. Checks for empty sets or parameters and variables
-      that are defined over sets that don't exist.
-      '''
-      errors = 0
+        Check for empty sets or data objects that are defined over
+        sets that don't exist. Prints error messages if any issues
+        are found.
 
-      for o in self.get('sets')['obj']:
-         if len(o.elements)<1:
-            print 'set has no elements:',o.name
-            errors += 1
+        Returns:
+            bool: True if no errors, otherwise False
+        """
 
-      setnames = self.get('sets')['names']
-      for type in ['pars','vars']:
-         info = self.get(type)
-         for o in info['obj']:
-            if len(o.sets)>0:
-               for s in o.sets:
-                  if s not in setnames:
-                     print info['type'],o.name,'uses an undefined set:',s
-                     errors += 1
+        errors = 0
 
-      return errors == 0
+        # sets with no elements?
 
-   #
-   #  Write a model in JSON format
-   #
+        for so in self.list_set_obj():
+            if len(so.elements) < 1:
+                print 'set has no elements:', so.name
+                errors += 1
 
-   def to_json(self,filename,validate=True):
-      '''Write a model to a file in JSON format. By default, the model will be
-      validated first.'''
+        # data objects defined over undeclared sets?
 
-      if validate and not self.validate():
-         print 'file not written'
-         sys.exit(1)
+        for do in self.list_dat_obj():
+            if len(do.sets) > 0:
+                for s in do.sets:
+                    if s not in self.set_names:
+                        print do.name, 'uses an undefined set:', s
+                        errors += 1
 
-      dct = {}
-      dct['name'] = self.name
-      dct['sets'] = [s.save() for s in self.sets_used()]
-      dct['pars'] = [s.save() for s in self.pars['obj']]
-      dct['vars'] = [s.save() for s in self.vars['obj']]
+        return errors == 0
 
-      text = json.dumps(dct,indent=4,sort_keys=True)
+    #
+    #  Write a model in JSON format
+    #
 
-      fh = open(filename,'w')
-      fh.write(text)
-      fh.close()
+    def to_json(self, filename, validate=True):
+        """Write the Model to a file in JSON.
 
-   #
-   #  Set headers
-   #
+        By default, the model will be validated first.
 
-   def set_headers(self,key):
-      num = 1
-      for t in ['pars','vars']:
-         for o in self.get(t,must_exist=True)['obj']:
-            o.set('header','{}{:03d}'.format(key,num))
+        Args:
+            filename (str): Name of file to write.
+            validate (bool): Validate the model first.
+        """
+
+        if validate and not self.validate():
+            print 'file not written'
+            sys.exit(1)
+
+        dct = {
+            'name': self.name,
+            'sets': [s.save() for s in self.sets_used()],
+            'pars': [s.save() for s in self.list_par_obj()],
+            'vars': [s.save() for s in self.list_var_obj()]
+        }
+
+        text = json.dumps(dct, indent=4, sort_keys=True)
+
+        fh = open(filename, 'w')
+        fh.write(text)
+        fh.close()
+
+    #
+    #  Set headers
+    #
+
+    def set_headers(self, key):
+        """
+        Add a GEMPACK header name to every data object.
+
+        Each variable or parameter will have a header that will begin
+        with `key` and end with three digits.
+
+        Args:
+            key (str): A one-character prefix.
+        """
+
+        num = 1
+        for do in self.list_dat_obj():
+            do.header = '{}{:03d}'.format(key, num)
             num += 1
 
-   #
-   #  Find sets actually used
-   #
+    #
+    #  Find sets actually used
+    #
 
-   def sets_used(self):
+    def sets_used(self):
+        """Return a list of Sets actually used in the Model."""
+        used_sets = []
+        used_names = []
 
-      used_sets  = []
-      used_names = []
+        for dn in self.dat_names:
+            do = self.dats[dn]
+            if do.sets is None:
+                continue
+            for name in do.sets:
+                if name not in used_names:
+                    used_sets.append(self.getset(name))
+                    used_names.append(name)
 
-      for t in ['pars','vars']:
-         for obj in self.get(t)['obj']:
-            if obj.sets is None:
-               continue
-            for name in obj.sets:
-               if name not in used_names:
-                  used_sets.append(self.getset(name))
-                  used_names.append(name)
+        return used_sets
 
-      return used_sets
+    #
+    #  Return lists of component objects
+    #
 
-   #
-   #  Private methods
-   #
+    def list_set_obj(self):
+        """Return the list of Set objects."""
+        return [self.sets[n] for n in self.set_names]
 
-   #
-   #  Add an object
-   #
+    def list_par_obj(self):
+        """Return the list of Var objects flagged as parameters."""
+        return [self.dats[n] for n in self.par_names]
 
-   def _addobj(self,kind,name,obj):
-      info = self.get(kind)
-      if name in info['names']:
-         print info['type'],'already in model:',name
-         sys.exit(1)
-      info['obj'].append(obj)
-      info['names'].append(name)
+    def list_var_obj(self):
+        """Return the list of Var objects not flagged as parameters."""
+        return [self.dats[n] for n in self.var_names]
 
-   #
-   #  Look up and return an object
-   #
-
-   def _getobj(self,kind,name):
-      info = self.get(kind)
-      if name not in info['names']:
-         return None
-      for i in info['obj']:
-         if i.name == name:
-            return i
-      assert False
-
+    def list_dat_obj(self):
+        """Return the list of all Var objects."""
+        return [self.dats[n] for n in self.dat_names]
