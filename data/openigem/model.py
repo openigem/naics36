@@ -24,7 +24,7 @@ def _add_name(name, namelist):
     namelist.append(name)
 
 
-class Model():
+class Model:
     """OpenIGEM representation of a model.
 
     A model can contain a collection of Set and Var objects.
@@ -32,9 +32,11 @@ class Model():
     and retrieved accordingly.
 
     Args:
-        name: A string giving the name of the model.
+        name (str): A string giving the name of the model.
 
     Attributes:
+        kind (str): Kind of object
+        desc (str): Debugging description of object
         sets (dict) : Dictionary of Sets
         dats (dict): Dictionary of Vars
         set_names (list): Names of Sets

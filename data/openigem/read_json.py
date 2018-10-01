@@ -2,7 +2,6 @@
 #  Aug 18 (PJW)
 
 import json
-
 from model import Model
 
 

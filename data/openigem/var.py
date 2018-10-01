@@ -5,7 +5,7 @@ import sys
 import pandas as pd
 
 
-class Var():
+class Var:
     """OpenIGEM variable or parameter object.
 
     Args:
@@ -13,18 +13,29 @@ class Var():
         setnames (list): Names of sets over which the variable is defined
         header (str): GEMPACK header
         par (bool): If True, this is a parameter
+
+    Attributes:
+        kind (str): Kind of object
+        desc (str): Debugging description of object
+        sets (list of str): Names of sets over which the variable is defined
+        header (str): GEMPACK header array file header
+        longname (bool): True if this name exceeds GEMPACK's limit
+        stack_set (str): Supports an extension for translating earlier files
     """
 
     def __init__(self, name, setnames=None, header=None, par=False):
-        self.kind = 'var'
+        self.kind = 'var' if not par else 'par'
         self.name = name
         self.desc = self.kind + ' ' + self.name
-        self.set_sets(setnames)
-        self.header = header if header is not None else ''
+        self.sets = None
+        self.header = ''
         self.longname = len(name) > 12
         self.stack_set = None
-        if par:
-            self.kind = 'par'
+
+        if setnames is not None:
+            self.set_sets(setnames)
+        if header is not None:
+            self.header = header
             self.desc = self.kind + ' ' + self.name
 
     # 
@@ -94,17 +105,13 @@ class Var():
     def export(self):
         dct = {
             'header': self.header,
-            'name': self.name
+            'name': self.name,
+            'sets': self.sets
         }
-
-        if self.sets is not None:
-            dct['sets'] = self.sets
-        else:
+        if self.sets is None:
             dct['sets'] = ''
-
         if self.longname:
             dct['longname'] = self.longname
-        
         if self.stack_set is not None:
             dct['stack_set'] = self.stack_set
 

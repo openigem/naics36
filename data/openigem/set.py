@@ -4,7 +4,7 @@
 import sys
 
 
-class Set():
+class Set:
     """OpenIGEM set object.
 
     Args:
@@ -12,7 +12,10 @@ class Set():
         elements (list): Elements of the set
 
     Attributes:
-        elements (list): List of strings
+        kind (str): Kind of object
+        desc (str): Debugging description of object
+        alias_of (str): If not None, the name of the original set
+        longname (bool): True if this name exceeds GEMPACK's limit
     """
 
     def __init__(self, name, elements=None):
@@ -110,16 +113,12 @@ class Set():
     def export(self):
         dct = {
             'name': self.name,
+            'elements': self.elements
         }
-
-        if self.elements is not None:
-            dct['elements'] = self.elements
-        else:
+        if self.elements is None:
             dct['elements'] = ''
-
         if self.alias_of is not None:
             dct['alias_of'] = self.alias_of
-
         if self.longname:
             dct['longname'] = self.longname
 
