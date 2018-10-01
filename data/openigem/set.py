@@ -2,10 +2,9 @@
 #  Aug 18 (PJW)
 
 import sys
-from obj import Obj
 
 
-class Set(Obj):
+class Set():
     """OpenIGEM set object.
 
     Args:
@@ -17,10 +16,12 @@ class Set(Obj):
     """
 
     def __init__(self, name, elements=None):
-        Obj.__init__(self, 'set', name)
+        self.kind = 'set'
+        self.name = name
+        self.desc = self.kind + ' ' + self.name
         self.elements = elements
         self.alias_of = None
-        self.longname = None
+        self.longname = len(name) > 12
 
     #
     # String representation
@@ -96,15 +97,30 @@ class Set(Obj):
         #  flagging names that will be too long for GEMPACK.
 
         text = 'set ' + self.name + ' (' + ',\n      '.join(elems) + ');'
-        if self.longname is not None:
+        if self.longname:
             text += ' // name too long'
 
         fh.write(text + '\n\n')
         return
 
     #
-    #  Override save to filter out some optional attributes
+    #  Make an exportable version
     #
 
-    def save(self):
-        return Obj.save(self,opt=['alias_of'])
+    def export(self):
+        dct = {
+            'name': self.name,
+        }
+
+        if self.elements is not None:
+            dct['elements'] = self.elements
+        else:
+            dct['elements'] = ''
+
+        if self.alias_of is not None:
+            dct['alias_of'] = self.alias_of
+
+        if self.longname:
+            dct['longname'] = self.longname
+
+        return dct

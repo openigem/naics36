@@ -4,7 +4,6 @@
 import sys
 import json
 
-from obj import Obj
 from set import Set
 from var import Var
 
@@ -25,7 +24,7 @@ def _add_name(name, namelist):
     namelist.append(name)
 
 
-class Model(Obj):
+class Model():
     """OpenIGEM representation of a model.
 
     A model can contain a collection of Set and Var objects.
@@ -45,7 +44,9 @@ class Model(Obj):
     """
 
     def __init__(self, name):
-        Obj.__init__(self, 'model', name)
+        self.kind = 'model'
+        self.name = name
+        self.desc = self.kind + ' ' + self.name
 
         #  keep the actual objects in dictionaries
 
@@ -130,7 +131,7 @@ class Model(Obj):
         aliases = []
         for n in sorted(names):
             this_set = self.sets[n]
-            if this_set.get('alias_of') is not None:
+            if this_set.alias_of is not None:
                 aliases.append(n)
             else:
                 setlist.append(self.sets[n])
@@ -203,9 +204,9 @@ class Model(Obj):
 
         dct = {
             'name': self.name,
-            'sets': [s.save() for s in self.sets_used()],
-            'pars': [s.save() for s in self.list_par_obj()],
-            'vars': [s.save() for s in self.list_var_obj()]
+            'sets': [s.export() for s in self.sets_used()],
+            'pars': [s.export() for s in self.list_par_obj()],
+            'vars': [s.export() for s in self.list_var_obj()]
         }
 
         text = json.dumps(dct, indent=4, sort_keys=True)

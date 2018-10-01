@@ -97,8 +97,8 @@ for name in names:
 
 #  Build sym declarations for the data objects
 
-   text = coeff_decl+' '+obj.get('header')+';'
-   if obj.get('longname'):
+   text = coeff_decl+' '+obj.header+';'
+   if obj.longname:
       text += ' // name too long'
    dfh.write(kind+' '+text+'\n')
 

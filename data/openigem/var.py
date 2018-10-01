@@ -2,10 +2,10 @@
 #  Aug 18 (PJW)
 
 import sys
-from obj import Obj
+import pandas as pd
 
 
-class Var(Obj):
+class Var():
     """OpenIGEM variable or parameter object.
 
     Args:
@@ -16,9 +16,13 @@ class Var(Obj):
     """
 
     def __init__(self, name, setnames=None, header=None, par=False):
-        Obj.__init__(self, 'var', name)
+        self.kind = 'var'
+        self.name = name
+        self.desc = self.kind + ' ' + self.name
         self.set_sets(setnames)
-        self.header = header
+        self.header = header if header is not None else ''
+        self.longname = len(name) > 12
+        self.stack_set = None
         if par:
             self.kind = 'par'
             self.desc = self.kind + ' ' + self.name
@@ -32,7 +36,7 @@ class Var(Obj):
         text = self.desc
         if len(self.sets) > 0:
             text += '(' + ','.join(self.sets) + ')'
-        if self.header is not None:
+        if not self.header == '':
             text += ', header "' + self.header + '"'
         return text
 
@@ -62,7 +66,11 @@ class Var(Obj):
 
         if isinstance(setnames, str):
             setnames = [setnames]
-        self.set('sets', setnames)
+
+        if isinstance(setnames, float) and pd.isna(setnames):
+            self.sets = None
+        else:
+            self.sets = setnames
 
     #
     #  Add a header
@@ -77,4 +85,27 @@ class Var(Obj):
             if len(header) < 1 or len(header) > 4:
                 print self.desc, "invalid header: ", header
                 sys.exit(1)
-        self.header = header
+            self.header = header
+
+    #
+    #  Make an exportable version
+    #
+
+    def export(self):
+        dct = {
+            'header': self.header,
+            'name': self.name
+        }
+
+        if self.sets is not None:
+            dct['sets'] = self.sets
+        else:
+            dct['sets'] = ''
+
+        if self.longname:
+            dct['longname'] = self.longname
+        
+        if self.stack_set is not None:
+            dct['stack_set'] = self.stack_set
+
+        return dct
