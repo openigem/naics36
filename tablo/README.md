@@ -1,23 +1,31 @@
 # OpenIGEM TABLO Code
 
-## openigem.tab, openigem.lis
+## naics36.tab
 
-These files were produced by running the following command in the 
-[sym](../sym) directory to convert the model into GEMPACK's TABLO 
-language:
+Input to Tablo. This was produced from the sym version of the
+model via the makefile in the [sym](../sym) directory.
 
-    sym -tablo openigem.sym ../tablo/openigem.tab
+## naics36_build.sti
 
-## openigem.dbg
+Input to Tablo. A GEMPACK stored-input file that is used to
+provide instructions to Tablo when it builds the Fortran version
+of the model. 
 
-This file is not used by GEMPACK but can be helpful for debugging. It was
-produced using the following command:
+## naics36.lis, naics36.inf
 
-    sym -debug openigem.sym ../tablo/openigem.dbg
+Informational output. naics36.lis is produced by sym when 
+the model is converted to Tablo. naics36.inf is produced
+by Tablo when it converts the model to Fortran. Both 
+are included here for reference.
 
-## openigem.html
+## Makefile
 
-This file is not used by GEMPACK but can be useful for documentation. It was
-produced using the following command:
+Provides the commands used to build the Fortran and executable
+versions of the model.
 
-    sym -html openigem.sym ../tablo/openigem.html
+## Fortran files and executable
+
+The Fortran files produced by Tablo are deleted after they are
+linked into the final executable. The executable itself is large
+and stored elsewhere as a binary download.
+
