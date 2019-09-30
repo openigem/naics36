@@ -19,7 +19,6 @@ tax_ext_com = sum(nxtr,tax_ext_u*com_ext(com,buy,nxtr))  'Total externality tax 
 
 //  Compute agg_tech_lvl and industry capital and labor prices
 
-nyears_lead = lead(year) - year   'Leading number of intervening years'  ;
 lead(agg_tech_lvl) = (1 - agg_tech_chg)^nyears_lead * agg_tech_lvl  'Economy-wide level of tech improvement'  ;
 
 pb(kap,indxoilgas) = pk_service*pk_scale(indxoilgas)  'Non-oil,gas industry-specific capital services prices' ;
@@ -169,6 +168,7 @@ pc = sum(ind,po*make_col)  'Commodity prices from make table' ;
 pf = exo_pf * tech_shk_row  'Commodity import prices in foreign currency'  ;
 pfd = pf * exch * (1+tariff) + tar_ext_com  'Commodity import prices in domestic currency'  ;
 
+amk_imp = am_imp + kalm_imp 'Import share constant'  ;
 imp_share = amk_imp + bm_imp*(ln(pfd) - ln(pc)) 'Import share of total supply'  ;
 dom_share = (1 - imp_share) 'Domestic share of total supply'  ;
 

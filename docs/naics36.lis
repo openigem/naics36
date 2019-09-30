@@ -1,16 +1,18 @@
 Run Specifications:
-   Sym build 749 (2019/09/19)
+   Sym build 750 (2019/09/29)
    Target language: html
    Source file: openigem.sym
    Source file: sets.sym
    Source file: variables.sym
    Source file: parameters.sym
+   Source file: tempus.sym
    Source file: producer.sym
    Source file: household.sym
    Source file: investment.sym
    Source file: government.sym
    Source file: trade.sym
    Source file: factors.sym
+   Source file: nipa.sym
 
 Intertemporal Details:
 
@@ -1238,6 +1240,30 @@ Parameters:
       io to nipa commodity price shares (P045)
          ncom_k,nipa
 
+   pd_con_scale
+      Scalar, consumption price deflator (P137)
+         
+
+   pd_exp_scale
+      Scalar, export price deflator (P140)
+         
+
+   pd_gdp_scale
+      Scalar, gdp price deflator (=1) (P136)
+         
+
+   pd_gov_scale
+      Scalar, government price deflator (P139)
+         
+
+   pd_imp_scale
+      Scalar, import price deflator (P141)
+         
+
+   pd_inv_scale
+      Scalar, investment price deflator (P138)
+         
+
    pf_scale_k
       Scalar - Capital stock (P135)
          
@@ -1252,6 +1278,10 @@ Parameters:
 
    pr_fc_scale
       Full consumption price normalization scalar (P142)
+         
+
+   rho
+      Pure rate of time preference (P003)
          
 
 
@@ -1913,6 +1943,14 @@ Variables:
       Quantities of materials bought (N052)
          ind
 
+   nom_gdp
+      Nominal GDP (N149)
+         
+
+   nom_gnp
+      Nominal GNP (N133)
+         
+
    nyears_lag
       Lagged number of intervening years (ZV02)
          
@@ -1933,6 +1971,30 @@ Variables:
       Household commodity prices including leisure and tiers, nipa (N019)
          ntoth
 
+   pd_con
+      Geometric price deflator for con_expend (N151)
+         
+
+   pd_exp
+      Geometric price deflator for export_value (N154)
+         
+
+   pd_gdp
+      Geometric price deflator for nom_gdp (N156)
+         
+
+   pd_gov
+      Geometric price deflator for gov_expend in pd_gdp (N153)
+         
+
+   pd_imp
+      Geometric price deflator for import_value (N155)
+         
+
+   pd_inv
+      Geometric price deflator for inv_total (N152)
+         
+
    pf
       Commodity import prices, foreign currency (N091)
          com
@@ -1940,6 +2002,10 @@ Variables:
    pfd
       Commodity import prices, domestic currency (ZV03)
          com
+
+   pgg
+      Geometric price deflator for gov_expend in gov_real (N157)
+         
 
    pi
       Industry purchaser prices (N034)
@@ -2087,6 +2153,10 @@ Variables:
 
    rev_wealth
       Wealth tax revenue (N103)
+         
+
+   risk
+      Risk premium (X024)
          
 
    row_debt
@@ -2445,6 +2515,10 @@ Variables:
       Trade surplus in foreign currency (N094)
          
 
+   transfer_abr
+      Personal transfers abroad (ZV77)
+         
+
    unemp_scale
       Scalar unemployment adjustment (X026)
          
@@ -2479,330 +2553,337 @@ Unique Elements:
 
 Equations Using Each Parameter:
 
-   ah_cg: 131,132
-   ah_cmm: 101,102
-   ah_cs: 133,134
-   ah_edn: 111,112
-   ah_en: 119,120
-   ah_ens: 105,106
-   ah_f: 137,141
-   ah_fb: 115,116
-   ah_ho: 129,130
-   ah_hpg: 113,114
-   ah_hps: 103,104
-   ah_ks: 121,122
-   ah_md: 117,118
-   ah_nd: 135,136
-   ah_rc: 127,128
-   ah_rcs: 109,110
-   ah_trc: 123,124
-   ah_trv: 107,108
-   ah_ups: 125,126
-   ai_eit: 211,212
-   ai_fixed: 217,218
-   ai_frawm: 203,204
-   ai_furn: 191,192
-   ai_it: 199,200
-   ai_long: 215,216
-   ai_mach: 207,208
-   ai_mrawm: 201,202
-   ai_mserv: 193,194
-   ai_rawm: 189,190
-   ai_serv: 205,206
-   ai_short: 213,214
-   ai_trd: 195,196
-   ai_trnsp: 197,198
-   ai_ttsvc: 209,210
-   am_imp: none
-   ap0_bl: 22
-   ap0_ene: 20
-   ap0_eq: 38
-   ap0_ff: 18
-   ap0_gas: 14
-   ap0_ma: 30
-   ap0_mat: 44
-   ap0_mm: 42
-   ap0_mn: 32
-   ap0_ms: 40
-   ap0_o: 46
-   ap0_ob: 24
-   ap0_oil: 16
-   ap0_os: 26
-   ap0_sv: 28
-   ap0_tr: 34
-   ap0_tt: 36
-   ap_bl: 21,22
-   ap_ene: 19,20
-   ap_eq: 37,38
-   ap_ff: 17,18
-   ap_gas: 13,14
-   ap_ma: 29,30
-   ap_mat: 43,44
-   ap_mm: 41,42
-   ap_mn: 31,32
-   ap_ms: 39,40
-   ap_o: 45,46
-   ap_ob: 23,24
-   ap_oil: 15,16
-   ap_os: 25,26
-   ap_sv: 27,28
-   ap_tr: 33,34
-   ap_tt: 35,36
-   ax_exp: 265
-   bh_cg: 131,132
-   bh_cmm: 101,102
-   bh_cs: 133,134
-   bh_edn: 111,112
-   bh_en: 119,120
-   bh_ens: 105,106
-   bh_f: 137,138,141
-   bh_fb: 115,116
-   bh_ho: 129,130
-   bh_hpg: 113,114
-   bh_hps: 103,104
-   bh_ks: 121,122
-   bh_md: 117,118
-   bh_nd: 135,136
-   bh_rc: 127,128
-   bh_rcs: 109,110
-   bh_trc: 123,124
-   bh_trv: 107,108
-   bh_ups: 125,126
-   bha_f: 139
-   bhm_f: 139
-   bi_eit: 211,212
-   bi_fixed: 217,218
-   bi_frawm: 203,204
-   bi_furn: 191,192
-   bi_it: 199,200
-   bi_long: 215,216
-   bi_mach: 207,208
-   bi_mrawm: 201,202
-   bi_mserv: 193,194
-   bi_rawm: 189,190
-   bi_serv: 205,206
-   bi_short: 213,214
-   bi_trd: 195,196
-   bi_trnsp: 197,198
-   bi_ttsvc: 209,210
-   bm_imp: 51,53
-   bp_bl: 21,22
-   bp_ene: 19,20
-   bp_eq: 37,38
-   bp_ff: 17,18
-   bp_gas: 13,14
-   bp_ma: 29,30
-   bp_mat: 43,44
-   bp_mm: 41,42
-   bp_mn: 31,32
-   bp_ms: 39,40
-   bp_o: 45,46
-   bp_ob: 23,24
-   bp_oil: 15,16
-   bp_os: 25,26
-   bp_sv: 27,28
-   bp_tr: 33,34
-   bp_tt: 35,36
-   bx_exp: 265
-   delta: 281,288,295
-   denom_rebase: 138
-   io_nipa: 184,185,98
+   ah_cg: 133,134
+   ah_cmm: 103,104
+   ah_cs: 135,136
+   ah_edn: 113,114
+   ah_en: 121,122
+   ah_ens: 107,108
+   ah_f: 139,143
+   ah_fb: 117,118
+   ah_ho: 131,132
+   ah_hpg: 115,116
+   ah_hps: 105,106
+   ah_ks: 123,124
+   ah_md: 119,120
+   ah_nd: 137,138
+   ah_rc: 129,130
+   ah_rcs: 111,112
+   ah_trc: 125,126
+   ah_trv: 109,110
+   ah_ups: 127,128
+   ai_eit: 212,213
+   ai_fixed: 218,219
+   ai_frawm: 204,205
+   ai_furn: 192,193
+   ai_it: 200,201
+   ai_long: 216,217
+   ai_mach: 208,209
+   ai_mrawm: 202,203
+   ai_mserv: 194,195
+   ai_rawm: 190,191
+   ai_serv: 206,207
+   ai_short: 214,215
+   ai_trd: 196,197
+   ai_trnsp: 198,199
+   ai_ttsvc: 210,211
+   am_imp: 52
+   ap0_bl: 23
+   ap0_ene: 21
+   ap0_eq: 39
+   ap0_ff: 19
+   ap0_gas: 15
+   ap0_ma: 31
+   ap0_mat: 45
+   ap0_mm: 43
+   ap0_mn: 33
+   ap0_ms: 41
+   ap0_o: 47
+   ap0_ob: 25
+   ap0_oil: 17
+   ap0_os: 27
+   ap0_sv: 29
+   ap0_tr: 35
+   ap0_tt: 37
+   ap_bl: 22,23
+   ap_ene: 20,21
+   ap_eq: 38,39
+   ap_ff: 18,19
+   ap_gas: 14,15
+   ap_ma: 30,31
+   ap_mat: 44,45
+   ap_mm: 42,43
+   ap_mn: 32,33
+   ap_ms: 40,41
+   ap_o: 46,47
+   ap_ob: 24,25
+   ap_oil: 16,17
+   ap_os: 26,27
+   ap_sv: 28,29
+   ap_tr: 34,35
+   ap_tt: 36,37
+   ax_exp: 277
+   bh_cg: 133,134
+   bh_cmm: 103,104
+   bh_cs: 135,136
+   bh_edn: 113,114
+   bh_en: 121,122
+   bh_ens: 107,108
+   bh_f: 139,140,143
+   bh_fb: 117,118
+   bh_ho: 131,132
+   bh_hpg: 115,116
+   bh_hps: 105,106
+   bh_ks: 123,124
+   bh_md: 119,120
+   bh_nd: 137,138
+   bh_rc: 129,130
+   bh_rcs: 111,112
+   bh_trc: 125,126
+   bh_trv: 109,110
+   bh_ups: 127,128
+   bha_f: 141
+   bhm_f: 141
+   bi_eit: 212,213
+   bi_fixed: 218,219
+   bi_frawm: 204,205
+   bi_furn: 192,193
+   bi_it: 200,201
+   bi_long: 216,217
+   bi_mach: 208,209
+   bi_mrawm: 202,203
+   bi_mserv: 194,195
+   bi_rawm: 190,191
+   bi_serv: 206,207
+   bi_short: 214,215
+   bi_trd: 196,197
+   bi_trnsp: 198,199
+   bi_ttsvc: 210,211
+   bm_imp: 53,55
+   bp_bl: 22,23
+   bp_ene: 20,21
+   bp_eq: 38,39
+   bp_ff: 18,19
+   bp_gas: 14,15
+   bp_ma: 30,31
+   bp_mat: 44,45
+   bp_mm: 42,43
+   bp_mn: 32,33
+   bp_ms: 40,41
+   bp_o: 46,47
+   bp_ob: 24,25
+   bp_oil: 16,17
+   bp_os: 26,27
+   bp_sv: 28,29
+   bp_tr: 34,35
+   bp_tt: 36,37
+   bx_exp: 277
+   delta: 295,302,308
+   denom_rebase: 140
+   io_nipa: 100,186,187
+   pd_con_scale: 318
+   pd_exp_scale: 322
+   pd_gdp_scale: 325
+   pd_gov_scale: 321
+   pd_imp_scale: 323
+   pd_inv_scale: 319
    pf_scale_k: none
    pf_scale_l: none
-   pfc_m0: 141
-   pr_fc_scale: 141
+   pfc_m0: 143
+   pr_fc_scale: 143
+   rho: none
 
 Equations Using Each Variable:
 
    ab_shr_f:
-      LHS 137
-      RHS 139
+      LHS 139
+      RHS 141
    adjust_i:
       LHS none
-      RHS 222
+      RHS 223
    adjust_k:
       LHS none
       RHS none
    adjust_pk:
       LHS none
-      RHS 219
+      RHS 220
    agg_tech_chg:
       LHS none
-      RHS 8
+      RHS 9
    agg_tech_lvl:
-      LHS 8
-      RHS 46,8
+      LHS 9
+      RHS 47,9
    amk_imp:
-      LHS none
-      RHS 51,53
+      LHS 52
+      RHS 53,55
    capgain:
-      LHS 295
-      RHS 296
+      LHS 308
+      RHS 309
    cex_shr_f:
-      LHS 139
-      RHS 140
+      LHS 141
+      RHS 142
    cg_rate:
-      LHS 296
-      RHS 297
+      LHS 309
+      RHS 310
    com_ext:
       LHS none
-      RHS 6
+      RHS 8
    com_out:
       LHS none
       RHS none
    com_qty:
       LHS none
-      RHS 266,267,269
+      RHS 278,279,281
    con:
-      LHS 184,185
-      RHS 186,187,286
+      LHS 186,187
+      RHS 188,269,300,318
    con_expend:
-      LHS 144
-      RHS 183
+      LHS 146
+      RHS 185,318,324,325,328
    con_qty:
-      LHS 186
-      RHS 283
+      LHS 188
+      RHS 297
    con_share:
-      LHS 145,146,147,148,149,150,151,152,153,154,155,156,157,158,159,160,161,162,163,164,165,166,167,168,169,170,171,172,173,174,175,176,177,178,179,180
-      RHS 184,185
+      LHS 147,148,149,150,151,152,153,154,155,156,157,158,159,160,161,162,163,164,165,166,167,168,169,170,171,172,173,174,175,176,177,178,179,180,181,182
+      RHS 186,187
    con_shk_qty:
       LHS none
-      RHS 181
-   con_shk_val:
-      LHS 181
-      RHS 182,184,185
-   con_shk_xpnd:
-      LHS 182
       RHS 183
-   con_xpnd_net:
+   con_shk_val:
       LHS 183
-      RHS 184,185
+      RHS 184,186,187
+   con_shk_xpnd:
+      LHS 184
+      RHS 185
+   con_xpnd_net:
+      LHS 185
+      RHS 186,187
    cshare:
-      LHS 143
-      RHS 144,145,146,147,148,149,150,151,152,153,154,155,156,157,158,159,160,161,162,163,164,165,166,167,168,169,170,171,172,173,174,175,176,177,178,179,180
+      LHS 145
+      RHS 146,147,148,149,150,151,152,153,154,155,156,157,158,159,160,161,162,163,164,165,166,167,168,169,170,171,172,173,174,175,176,177,178,179,180,181,182
    denom:
-      LHS 138
-      RHS 139,141
+      LHS 140
+      RHS 141,143
    deprec:
-      LHS 288
+      LHS 302
       RHS none
    div_rate:
-      LHS 292
-      RHS 297
+      LHS 306
+      RHS 310
    dividend:
-      LHS 291
-      RHS 292,304
+      LHS 305
+      RHS 306,317
    dom_share:
-      LHS 52
-      RHS 269
+      LHS 54
+      RHS 281
    dv_hh:
       LHS none
-      RHS 140
+      RHS 142
    ene:
       LHS none
       RHS none
    exch:
       LHS none
-      RHS 265,273,50
+      RHS 268,277,285,323,51
    exo_pf:
       LHS none
-      RHS 49
+      RHS 50
    exo_tax_cap:
       LHS none
-      RHS 3
+      RHS 5
    exo_tax_laba:
       LHS none
-      RHS 2
+      RHS 4
    exo_tax_labm:
       LHS none
-      RHS 1
+      RHS 3
    exp_qty:
-      LHS 267
+      LHS 279
       RHS none
    exp_share:
-      LHS 265
-      RHS 266,267
+      LHS 277
+      RHS 278,279
    export_real:
       LHS none
       RHS none
    export_value:
-      LHS 268
-      RHS 272
+      LHS 280
+      RHS 284,322,324,325
    exports:
-      LHS 266
-      RHS 268
+      LHS 278
+      RHS 280,322
    finwealth:
-      LHS 301
-      RHS 302
+      LHS 314
+      RHS 315
    fixed_inv:
-      LHS 223
-      RHS 224,261
+      LHS 224
+      RHS 225,262
    full_con:
       LHS none
-      RHS 139,142,144
+      RHS 141,144,146
    full_qty:
       LHS none
       RHS none
    gov:
-      LHS 263
-      RHS 264
+      LHS 264
+      RHS 265
    gov_debt:
-      LHS none
-      RHS 298,299,301
+      LHS 275
+      RHS 275,311,312,314
    gov_debt_cg:
       LHS none
-      RHS none
+      RHS 275
    gov_debt_dsc:
       LHS none
-      RHS none
+      RHS 275
    gov_debt_f:
-      LHS none
-      RHS none
+      LHS 276
+      RHS 276
    gov_debt_fcg:
       LHS none
-      RHS none
+      RHS 276
    gov_expend:
       LHS none
-      RHS 263
+      RHS 264,270,274,324,325
    gov_for_nvst:
       LHS none
-      RHS none
+      RHS 275,276,287
    gov_from_ss:
       LHS none
-      RHS 299
+      RHS 274,312
    gov_int_abr:
       LHS none
-      RHS none
+      RHS 274,286,326
    gov_int_adj:
-      LHS 299
-      RHS 303,304
+      LHS 312
+      RHS 316,317
    gov_int_ss:
       LHS none
-      RHS 299
+      RHS 274,312
    gov_interest:
       LHS none
-      RHS 299
+      RHS 274,312
    gov_kap_inc:
-      LHS 293
-      RHS 304
+      LHS 307
+      RHS 274,317
    gov_qty:
-      LHS 264
+      LHS 265
       RHS none
    gov_real:
       LHS none
       RHS none
    gov_share:
       LHS none
-      RHS 263
+      RHS 264,320
    gov_surplus:
-      LHS none
-      RHS none
+      LHS 274
+      RHS 275
    gov_transabr:
       LHS none
-      RHS none
+      RHS 274,286
    gov_transdom:
       LHS none
-      RHS none
+      RHS 274,327
    grossout:
       LHS none
       RHS none
@@ -2814,649 +2895,679 @@ Equations Using Each Variable:
       RHS none
    hours:
       LHS none
-      RHS 274
+      RHS 288
    hours_adjust:
-      LHS 274
-      RHS 278
+      LHS 288
+      RHS 292
    imp_ext:
       LHS none
-      RHS 5
+      RHS 7
    imp_qty:
-      LHS 270
-      RHS none
+      LHS 282
+      RHS 268,272,323
    imp_share:
-      LHS 51
-      RHS 269,52
+      LHS 53
+      RHS 281,54
    import_real:
       LHS none
       RHS none
    import_value:
-      LHS 271
-      RHS 272
+      LHS 283
+      RHS 284,323,324,325
    imports:
-      LHS 269
-      RHS 270,271
+      LHS 281
+      RHS 282,283
    income:
-      LHS none
-      RHS none
+      LHS 327
+      RHS 328
    income_dist:
       LHS none
-      RHS 139
+      RHS 141
    income_share:
       LHS none
-      RHS 139
+      RHS 141
    ind_out:
       LHS none
-      RHS 275,282
+      RHS 266,289,296
    ind_qty:
       LHS none
-      RHS none
+      RHS 267,272
    inf:
       LHS none
       RHS none
    int_qty:
       LHS none
-      RHS none
+      RHS 272
    int_val:
       LHS none
       RHS none
    interest:
-      LHS 298
-      RHS 303,304
+      LHS 311
+      RHS 316,317
    inv:
-      LHS 261
-      RHS 262
+      LHS 262
+      RHS 263,319
    inv_exp_shk:
       LHS none
-      RHS 222
+      RHS 223
    inv_expend:
       LHS none
-      RHS 220
+      RHS 221,269
    inv_qty:
-      LHS 262
+      LHS 263
       RHS none
    inv_real:
-      LHS 222
-      RHS 281
+      LHS 223
+      RHS 295
    inv_share:
-      LHS 225,226,227,228,229,230,231,232,233,234,235,236,237,238,239,240,241,242,243,244,245,246,247,248,249,250,251,252,253,254,255,256,257,258,259,260
-      RHS 261
+      LHS 226,227,228,229,230,231,232,233,234,235,236,237,238,239,240,241,242,243,244,245,246,247,248,249,250,251,252,253,254,255,256,257,258,259,260,261
+      RHS 262
    inv_shock:
       LHS none
-      RHS 218
+      RHS 219
    inv_total:
-      LHS 220
-      RHS 221,222,223,224
+      LHS 221
+      RHS 222,223,224,225,319,324,325
    inven_fract:
       LHS none
-      RHS 223
+      RHS 224
    inven_inv:
-      LHS 224
-      RHS 261
+      LHS 225
+      RHS 262
    inven_share:
       LHS none
-      RHS 261
+      RHS 262
    io:
-      LHS 55,56,57,58,59,60,61,62,63,64,65,66,67,68,69,70,71,72,73,74,75,76,77,78,79,80,81,82,83,84,85,86,87,88,89,90,91,92
-      RHS 275,282
+      LHS 57,58,59,60,61,62,63,64,65,66,67,68,69,70,71,72,73,74,75,76,77,78,79,80,81,82,83,84,85,86,87,88,89,90,91,92,93,94
+      RHS 289,296
    k:
-      LHS 281
-      RHS 281,287
+      LHS 295
+      RHS 295,301
    k_value:
-      LHS 287
-      RHS 288,289,292,295,296,301
+      LHS 301
+      RHS 302,303,306,308,309,314
    kalf_bl:
       LHS none
-      RHS 21,22
+      RHS 22,23
    kalf_ene:
       LHS none
-      RHS 19,20
+      RHS 20,21
    kalf_eq:
       LHS none
-      RHS 37,38
+      RHS 38,39
    kalf_ff:
       LHS none
-      RHS 17,18
+      RHS 18,19
    kalf_gas:
       LHS none
-      RHS 13,14
+      RHS 14,15
    kalf_ma:
       LHS none
-      RHS 29,30
+      RHS 30,31
    kalf_mat:
       LHS none
-      RHS 43,44
+      RHS 44,45
    kalf_mm:
       LHS none
-      RHS 41,42
+      RHS 42,43
    kalf_mn:
       LHS none
-      RHS 31,32
+      RHS 32,33
    kalf_ms:
       LHS none
-      RHS 39,40
+      RHS 40,41
    kalf_o:
       LHS none
-      RHS 45,46
+      RHS 46,47
    kalf_ob:
       LHS none
-      RHS 23,24
+      RHS 24,25
    kalf_oil:
       LHS none
-      RHS 15,16
+      RHS 16,17
    kalf_os:
       LHS none
-      RHS 25,26
+      RHS 26,27
    kalf_sv:
       LHS none
-      RHS 27,28
+      RHS 28,29
    kalf_tr:
       LHS none
-      RHS 33,34
+      RHS 34,35
    kalf_tt:
       LHS none
-      RHS 35,36
+      RHS 36,37
    kalh_cg:
       LHS none
-      RHS 131,132
+      RHS 133,134
    kalh_cmm:
       LHS none
-      RHS 101,102
+      RHS 103,104
    kalh_cs:
       LHS none
-      RHS 133,134
+      RHS 135,136
    kalh_edn:
       LHS none
-      RHS 111,112
+      RHS 113,114
    kalh_en:
       LHS none
-      RHS 119,120
+      RHS 121,122
    kalh_ens:
       LHS none
-      RHS 105,106
+      RHS 107,108
    kalh_fb:
       LHS none
-      RHS 115,116
+      RHS 117,118
    kalh_ho:
       LHS none
-      RHS 129,130
+      RHS 131,132
    kalh_hpg:
       LHS none
-      RHS 113,114
+      RHS 115,116
    kalh_hps:
       LHS none
-      RHS 103,104
+      RHS 105,106
    kalh_ks:
       LHS none
-      RHS 121,122
+      RHS 123,124
    kalh_md:
       LHS none
-      RHS 117,118
+      RHS 119,120
    kalh_nd:
       LHS none
-      RHS 135,136
+      RHS 137,138
    kalh_rc:
       LHS none
-      RHS 127,128
+      RHS 129,130
    kalh_rcs:
       LHS none
-      RHS 109,110
+      RHS 111,112
    kalh_trc:
       LHS none
-      RHS 123,124
+      RHS 125,126
    kalh_trv:
       LHS none
-      RHS 107,108
+      RHS 109,110
    kalh_ups:
       LHS none
-      RHS 125,126
+      RHS 127,128
    kali_eit:
       LHS none
-      RHS 211,212
+      RHS 212,213
    kali_fixed:
       LHS none
-      RHS 217,218
+      RHS 218,219
    kali_frawm:
       LHS none
-      RHS 203,204
+      RHS 204,205
    kali_furn:
       LHS none
-      RHS 191,192
+      RHS 192,193
    kali_it:
       LHS none
-      RHS 199,200
+      RHS 200,201
    kali_long:
       LHS none
-      RHS 215,216
+      RHS 216,217
    kali_mach:
       LHS none
-      RHS 207,208
+      RHS 208,209
    kali_mrawm:
       LHS none
-      RHS 201,202
+      RHS 202,203
    kali_mserv:
       LHS none
-      RHS 193,194
+      RHS 194,195
    kali_rawm:
       LHS none
-      RHS 189,190
+      RHS 190,191
    kali_serv:
       LHS none
-      RHS 205,206
+      RHS 206,207
    kali_short:
       LHS none
-      RHS 213,214
+      RHS 214,215
    kali_trd:
       LHS none
-      RHS 195,196
+      RHS 196,197
    kali_trnsp:
       LHS none
-      RHS 197,198
+      RHS 198,199
    kali_ttsvc:
       LHS none
-      RHS 209,210
+      RHS 210,211
    kalm_imp:
       LHS none
-      RHS none
+      RHS 52
    kalp:
       LHS none
-      RHS 46
+      RHS 47
    kalx_exp:
       LHS none
-      RHS 265
+      RHS 277
    kap:
-      LHS 282,283
-      RHS 284,285,286,293
+      LHS 296,297
+      RHS 298,299,300,307
    kap_demand:
-      LHS 284
+      LHS 298
       RHS none
    kap_gas:
       LHS none
       RHS none
    kap_inc_net:
-      LHS 304
-      RHS none
+      LHS 317
+      RHS 327
    kap_income:
-      LHS 286
-      RHS 290
+      LHS 300
+      RHS 269,304
    kap_oil:
       LHS none
       RHS none
    kap_taxable:
-      LHS 290
-      RHS 291,303
+      LHS 304
+      RHS 305,316
    lab:
-      LHS 275
-      RHS 276,277
+      LHS 289
+      RHS 290,291
    lab_demand:
-      LHS 276
+      LHS 290
       RHS none
    lab_inc_net:
-      LHS 278
-      RHS none
+      LHS 292
+      RHS 327
    lab_income:
-      LHS 277
-      RHS 279,280
+      LHS 291
+      RHS 293,294
    leisure:
-      LHS 142
-      RHS 278
+      LHS 144
+      RHS 292
    make_col:
       LHS none
-      RHS 48
+      RHS 49
    mat:
       LHS none
       RHS none
+   nom_gdp:
+      LHS 324
+      RHS 325,326
+   nom_gnp:
+      LHS 326
+      RHS none
    nyears_lag:
-      LHS 294
-      RHS 295
+      LHS 2
+      RHS 308
    nyears_lead:
-      LHS 7
-      RHS 281,8
+      LHS 1
+      RHS 275,276,287,295,9
    pb:
-      LHS 10,11,12,14,16,18,20,22,24,26,28,30,32,34,36,38,40,42,44,54,9,93
-      RHS 13,14,15,16,17,18,188,19,20,21,22,23,24,25,26,264,27,275,277,28,282,285,286,29,293,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,96,97
+      LHS 10,11,12,13,15,17,19,21,23,25,27,29,31,33,35,37,39,41,43,45,56,95
+      RHS 14,15,16,17,18,189,19,20,21,22,23,24,25,26,265,27,28,289,29,291,296,299,30,300,307,31,32,320,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,98,99
    pc:
-      LHS 48
-      RHS 265,266,269,51,53
-   pcon:
-      LHS 100,102,104,106,108,110,112,114,116,118,120,122,124,126,128,130,132,134,136,98
-      RHS 101,102,103,104,105,106,107,108,109,110,111,112,113,114,115,116,117,118,119,120,121,122,123,124,125,126,127,128,129,130,131,132,133,134,135,136,137,138,141
-   pf:
       LHS 49
-      RHS 265,50
-   pfd:
+      RHS 277,278,281,322,53,55
+   pcon:
+      LHS 100,102,104,106,108,110,112,114,116,118,120,122,124,126,128,130,132,134,136,138
+      RHS 103,104,105,106,107,108,109,110,111,112,113,114,115,116,117,118,119,120,121,122,123,124,125,126,127,128,129,130,131,132,133,134,135,136,137,138,139,140,143
+   pd_con:
+      LHS 318
+      RHS 325
+   pd_exp:
+      LHS 322
+      RHS 325
+   pd_gdp:
+      LHS 325
+      RHS none
+   pd_gov:
+      LHS 321
+      RHS 325
+   pd_imp:
+      LHS 323
+      RHS 325
+   pd_inv:
+      LHS 319
+      RHS 325
+   pf:
       LHS 50
-      RHS 270,51,53
+      RHS 268,277,323,51
+   pfd:
+      LHS 51
+      RHS 282,53,55
+   pgg:
+      LHS 320
+      RHS 321
    pi:
-      LHS 47
+      LHS 48
       RHS none
    pii:
-      LHS 218
-      RHS 219,222
+      LHS 219
+      RHS 220,223
    pj_scale:
       LHS none
-      RHS 99
+      RHS 101
    pk:
-      LHS 219
-      RHS 287,295
+      LHS 220
+      RHS 301,308
    pk_scale:
       LHS none
-      RHS 284,9,93
+      RHS 10,298,95
    pk_service:
       LHS none
-      RHS 9,93
+      RHS 10,95
    pl_scale:
       LHS none
-      RHS 12,276
+      RHS 13,290
    po:
-      LHS 46
-      RHS 47,48
+      LHS 47
+      RHS 48,49
    pr_con:
-      LHS 96,97
-      RHS 181,186,98
+      LHS 98,99
+      RHS 100,183,188,318
    pr_fc:
-      LHS 141
+      LHS 143
       RHS none
    pr_hours:
       LHS none
-      RHS 12,278,99
+      RHS 101,13,292
    pr_inv:
-      LHS 188,190,192,194,196,198,200,202,204,206,208,210,212,214,216
-      RHS 189,190,191,192,193,194,195,196,197,198,199,200,201,202,203,204,205,206,207,208,209,210,211,212,213,214,215,216,217,218,262
+      LHS 189,191,193,195,197,199,201,203,205,207,209,211,213,215,217
+      RHS 190,191,192,193,194,195,196,197,198,199,200,201,202,203,204,205,206,207,208,209,210,211,212,213,214,215,216,217,218,219,263,319
    pr_kap_gas:
       LHS none
-      RHS 11
+      RHS 12
    pr_kap_oil:
       LHS none
-      RHS 10
+      RHS 11
    pr_leisure:
-      LHS 99
-      RHS 100,142,278
+      LHS 101
+      RHS 102,144,292
    prd_ext:
       LHS none
-      RHS 4
+      RHS 6
    ps:
-      LHS 53
-      RHS 54
+      LHS 55
+      RHS 56
    qty_extern:
       LHS none
       RHS none
    r:
-      LHS 297
-      RHS 298,299,300
+      LHS 310
+      RHS 311,312,313
    rev_cap:
-      LHS 303
-      RHS none
+      LHS 316
+      RHS 273
    rev_cap_hh:
-      LHS 285
-      RHS 286
+      LHS 299
+      RHS 269,273,300
    rev_com_ext:
       LHS none
       RHS none
    rev_con:
-      LHS 187
-      RHS none
+      LHS 269
+      RHS 273
    rev_con_gov:
-      LHS none
-      RHS none
+      LHS 270
+      RHS 273
    rev_con_rbt:
-      LHS none
-      RHS none
+      LHS 271
+      RHS 273,327
    rev_extern:
-      LHS none
-      RHS none
+      LHS 272
+      RHS 273
    rev_hcap:
       LHS none
       RHS none
    rev_itc:
-      LHS 221
-      RHS none
+      LHS 222
+      RHS 273,328
    rev_labor:
-      LHS 279
-      RHS 280
+      LHS 293
+      RHS 273,294
    rev_lump:
       LHS none
-      RHS none
+      RHS 273,327
    rev_nontax:
       LHS none
-      RHS none
+      RHS 273,328
    rev_prop:
-      LHS 289
-      RHS 290
+      LHS 303
+      RHS 273,304
    rev_sales:
-      LHS none
-      RHS none
+      LHS 266
+      RHS 273
    rev_tariff:
-      LHS none
-      RHS none
+      LHS 268
+      RHS 273,326
    rev_total:
-      LHS none
-      RHS none
+      LHS 273
+      RHS 274
    rev_unit:
+      LHS 267
+      RHS 273
+   rev_wealth:
+      LHS 315
+      RHS 273,317
+   risk:
       LHS none
       RHS none
-   rev_wealth:
-      LHS 302
-      RHS 304
    row_debt:
-      LHS none
-      RHS 298,300,301
+      LHS 287
+      RHS 287,311,313,314
    row_debt_cg:
       LHS none
-      RHS none
+      RHS 287
    row_debt_dsc:
       LHS none
-      RHS none
+      RHS 287
    row_int_adj:
-      LHS 300
-      RHS 303,304
+      LHS 313
+      RHS 316,317
    row_interest:
       LHS none
-      RHS 300
+      RHS 286,313,326
    row_tariff:
       LHS none
-      RHS 265
+      RHS 277
    save:
-      LHS none
+      LHS 328
       RHS none
    shr_bl:
-      LHS 21
-      RHS 81,82,83
+      LHS 22
+      RHS 83,84,85
    shr_cg:
-      LHS 131
-      RHS 146,150,151,152,153
-   shr_cmm:
-      LHS 101
-      RHS 164,165
-   shr_cs:
       LHS 133
-      RHS 156,157,158,159,160,161,162,163,164,165,166,167,168,169,170,171,172,173,174,175,176,177,178,179,180
-   shr_edn:
-      LHS 111
-      RHS 175,176
-   shr_eit:
-      LHS 211
-      RHS 228,229,230,231,232,233,239,240,241,242,243,244,246,247
-   shr_en:
-      LHS 119
-      RHS 147,148
-   shr_ene:
-      LHS 19
-      RHS 59,60,61,62,63,64
-   shr_ens:
-      LHS 105
-      RHS 157,158
-   shr_eq:
-      LHS 37
-      RHS 68,69,70,71,72
-   shr_f:
-      LHS 140
-      RHS 142,143,145,146,147,148,149,150,151,152,153,154,155,156,157,158,159,160,161,162,163,164,165,166,167,168,169,170,171,172,173,174,175,176,177,178,179,180
-   shr_fb:
-      LHS 115
-      RHS 172,173,174
-   shr_ff:
-      LHS 17
-      RHS 59,60,61,62,63
-   shr_fixed:
-      LHS 217
-      RHS 225,226,227,228,229,230,231,232,233,234,235,236,237,238,239,240,241,242,243,244,245,246,247,248
-   shr_frawm:
-      LHS 203
-      RHS 228,229,230,231,232,233,244
-   shr_furn:
-      LHS 191
-      RHS 231,232,233
-   shr_gas:
-      LHS 13
-      RHS 61,62
-   shr_ho:
-      LHS 129
-      RHS 156,157,158,161,162,163,164,165,175,176,177,178,179,180
-   shr_hpg:
-      LHS 113
-      RHS 151,152
-   shr_hps:
+      RHS 148,152,153,154,155
+   shr_cmm:
       LHS 103
-      RHS 177,178,179
-   shr_it:
-      LHS 199
-      RHS 241,242,243
-   shr_ks:
-      LHS 121
-      RHS 154,155
-   shr_long:
-      LHS 215
-      RHS 225,226,227
-   shr_ma:
-      LHS 29
-      RHS 55,56,57,58
-   shr_mach:
-      LHS 207
-      RHS 228,229,230,231,232,233,244,246,247
-   shr_mat:
-      LHS 43
-      RHS 55,56,57,58,65,66,67,68,69,70,71,72,73,74,75,76,77,78,79,80,81,82,83,84,85,86,87,88,89,90
-   shr_md:
-      LHS 117
-      RHS 159,160
-   shr_mm:
-      LHS 41
-      RHS 65,66,67,68,69,70,71,72
-   shr_mn:
-      LHS 31
-      RHS 73,74,75,76
-   shr_mrawm:
-      LHS 201
-      RHS 228,229,230,244
-   shr_ms:
-      LHS 39
-      RHS 77,78,79,80,81,82,83,84,85,86,87,88,89,90
-   shr_mserv:
-      LHS 193
-      RHS 234,235,236
-   shr_nd:
+      RHS 166,167
+   shr_cs:
       LHS 135
-      RHS 145,146,147,148,149,150,151,152,153
-   shr_o:
-      LHS 45
-      RHS 55,56,57,58,59,60,61,62,63,64,65,66,67,68,69,70,71,72,73,74,75,76,77,78,79,80,81,82,83,84,85,86,87,88,89,90,91,92
-   shr_ob:
-      LHS 23
-      RHS 84,85,86
-   shr_oil:
-      LHS 15
-      RHS 59,60
-   shr_os:
-      LHS 25
-      RHS 87,88,89,90
-   shr_rawm:
-      LHS 189
-      RHS 228,229,230
-   shr_rc:
-      LHS 127
-      RHS 166,167,168,169,170,171
-   shr_rcs:
-      LHS 109
-      RHS 166,167,168
-   shr_serv:
-      LHS 205
-      RHS 234,235,236,245
-   shr_short:
-      LHS 213
-      RHS 228,229,230,231,232,233,234,235,236,237,238,239,240,241,242,243,244,245,246,247,248
-   shr_sv:
-      LHS 27
-      RHS 81,82,83,84,85,86,87,88,89,90
-   shr_tr:
-      LHS 33
-      RHS 71,72
-   shr_trc:
-      LHS 123
-      RHS 161,162,163,164,165
-   shr_trd:
-      LHS 195
-      RHS 237,238
-   shr_trnsp:
-      LHS 197
-      RHS 239,240
-   shr_trv:
+      RHS 158,159,160,161,162,163,164,165,166,167,168,169,170,171,172,173,174,175,176,177,178,179,180,181,182
+   shr_edn:
+      LHS 113
+      RHS 177,178
+   shr_eit:
+      LHS 212
+      RHS 229,230,231,232,233,234,240,241,242,243,244,245,247,248
+   shr_en:
+      LHS 121
+      RHS 149,150
+   shr_ene:
+      LHS 20
+      RHS 61,62,63,64,65,66
+   shr_ens:
       LHS 107
-      RHS 170,171
-   shr_tt:
-      LHS 35
-      RHS 78,79,80
-   shr_ttsvc:
-      LHS 209
-      RHS 234,235,236,237,238,245,248
-   shr_ups:
+      RHS 159,160
+   shr_eq:
+      LHS 38
+      RHS 70,71,72,73,74
+   shr_f:
+      LHS 142
+      RHS 144,145,147,148,149,150,151,152,153,154,155,156,157,158,159,160,161,162,163,164,165,166,167,168,169,170,171,172,173,174,175,176,177,178,179,180,181,182
+   shr_fb:
+      LHS 117
+      RHS 174,175,176
+   shr_ff:
+      LHS 18
+      RHS 61,62,63,64,65
+   shr_fixed:
+      LHS 218
+      RHS 226,227,228,229,230,231,232,233,234,235,236,237,238,239,240,241,242,243,244,245,246,247,248,249
+   shr_frawm:
+      LHS 204
+      RHS 229,230,231,232,233,234,245
+   shr_furn:
+      LHS 192
+      RHS 232,233,234
+   shr_gas:
+      LHS 14
+      RHS 63,64
+   shr_ho:
+      LHS 131
+      RHS 158,159,160,163,164,165,166,167,177,178,179,180,181,182
+   shr_hpg:
+      LHS 115
+      RHS 153,154
+   shr_hps:
+      LHS 105
+      RHS 179,180,181
+   shr_it:
+      LHS 200
+      RHS 242,243,244
+   shr_ks:
+      LHS 123
+      RHS 156,157
+   shr_long:
+      LHS 216
+      RHS 226,227,228
+   shr_ma:
+      LHS 30
+      RHS 57,58,59,60
+   shr_mach:
+      LHS 208
+      RHS 229,230,231,232,233,234,245,247,248
+   shr_mat:
+      LHS 44
+      RHS 57,58,59,60,67,68,69,70,71,72,73,74,75,76,77,78,79,80,81,82,83,84,85,86,87,88,89,90,91,92
+   shr_md:
+      LHS 119
+      RHS 161,162
+   shr_mm:
+      LHS 42
+      RHS 67,68,69,70,71,72,73,74
+   shr_mn:
+      LHS 32
+      RHS 75,76,77,78
+   shr_mrawm:
+      LHS 202
+      RHS 229,230,231,245
+   shr_ms:
+      LHS 40
+      RHS 79,80,81,82,83,84,85,86,87,88,89,90,91,92
+   shr_mserv:
+      LHS 194
+      RHS 235,236,237
+   shr_nd:
+      LHS 137
+      RHS 147,148,149,150,151,152,153,154,155
+   shr_o:
+      LHS 46
+      RHS 57,58,59,60,61,62,63,64,65,66,67,68,69,70,71,72,73,74,75,76,77,78,79,80,81,82,83,84,85,86,87,88,89,90,91,92,93,94
+   shr_ob:
+      LHS 24
+      RHS 86,87,88
+   shr_oil:
+      LHS 16
+      RHS 61,62
+   shr_os:
+      LHS 26
+      RHS 89,90,91,92
+   shr_rawm:
+      LHS 190
+      RHS 229,230,231
+   shr_rc:
+      LHS 129
+      RHS 168,169,170,171,172,173
+   shr_rcs:
+      LHS 111
+      RHS 168,169,170
+   shr_serv:
+      LHS 206
+      RHS 235,236,237,246
+   shr_short:
+      LHS 214
+      RHS 229,230,231,232,233,234,235,236,237,238,239,240,241,242,243,244,245,246,247,248,249
+   shr_sv:
+      LHS 28
+      RHS 83,84,85,86,87,88,89,90,91,92
+   shr_tr:
+      LHS 34
+      RHS 73,74
+   shr_trc:
       LHS 125
-      RHS 156,157,158,177,178,179
+      RHS 163,164,165,166,167
+   shr_trd:
+      LHS 196
+      RHS 238,239
+   shr_trnsp:
+      LHS 198
+      RHS 240,241
+   shr_trv:
+      LHS 109
+      RHS 172,173
+   shr_tt:
+      LHS 36
+      RHS 80,81,82
+   shr_ttsvc:
+      LHS 210
+      RHS 235,236,237,238,239,246,249
+   shr_ups:
+      LHS 127
+      RHS 158,159,160,179,180,181
    tar_ext_com:
-      LHS 5
-      RHS 50
+      LHS 7
+      RHS 272,51
    tariff:
       LHS none
-      RHS 50
+      RHS 268,51
    tax_cap:
-      LHS 3
-      RHS 291,293,299,300,303,304
+      LHS 5
+      RHS 305,307,312,313,316,317
    tax_cap_hh:
       LHS none
-      RHS 285,93
+      RHS 299,95
    tax_con:
       LHS none
-      RHS 94,95
+      RHS 271,96,97
    tax_con_good:
       LHS none
-      RHS 94
+      RHS 96
    tax_con_gov:
       LHS none
-      RHS 263
+      RHS 265,270,320
    tax_con_kap:
       LHS none
-      RHS 95
+      RHS 97
    tax_con_lab:
       LHS none
       RHS none
    tax_con_totc:
-      LHS 94
-      RHS 184,187,96
+      LHS 96
+      RHS 269,98
    tax_con_totk:
-      LHS 95
-      RHS 97
+      LHS 97
+      RHS 269,99
    tax_con_xmpt:
       LHS none
-      RHS none
+      RHS 271
    tax_ext_com:
-      LHS 6
-      RHS 54
+      LHS 8
+      RHS 272,56
    tax_ext_ind:
-      LHS 4
-      RHS 47
+      LHS 6
+      RHS 272,48
    tax_ext_u:
       LHS none
-      RHS 4,5,6
+      RHS 6,7,8
    tax_full:
       LHS none
       RHS none
@@ -3465,64 +3576,67 @@ Equations Using Each Variable:
       RHS none
    tax_itc:
       LHS none
-      RHS 219,220,221
+      RHS 220,221,222
    tax_labor_a:
-      LHS 2
-      RHS 278,279
+      LHS 4
+      RHS 292,293
    tax_labor_m:
-      LHS 1
-      RHS 12,278,280
+      LHS 3
+      RHS 13,292,294
    tax_labor_z:
-      LHS 280
+      LHS 294
       RHS none
    tax_prop:
       LHS none
-      RHS 289
+      RHS 303
    tax_sales:
       LHS none
-      RHS 47
+      RHS 266,48
    tax_scale:
       LHS none
-      RHS 1,2,3
+      RHS 3,4,5
    tax_unit:
       LHS none
-      RHS 47
+      RHS 267,48
    tax_wealth:
       LHS none
-      RHS 302
+      RHS 315
    tech_shk_agg:
       LHS none
-      RHS 46
+      RHS 47
    tech_shk_row:
       LHS none
-      RHS 49
+      RHS 50
    tech_shock:
       LHS none
-      RHS 46
+      RHS 47
    trade_surp:
-      LHS 272
-      RHS 273
+      LHS 284
+      RHS 285,286
    trade_surpfc:
-      LHS 273
+      LHS 285
       RHS none
+   transfer_abr:
+      LHS none
+      RHS 328
    unemp_scale:
       LHS none
-      RHS 274
+      RHS 288
    unemp_time:
       LHS none
       RHS none
    us_surplus:
-      LHS none
-      RHS none
+      LHS 286
+      RHS 287
    year:
       LHS none
-      RHS 294,7
+      RHS 1,2
 
 Unused Parameters:
 
-   am_imp
    pf_scale_k
    pf_scale_l
+   rho
 
 Unused Variables:
 
@@ -3531,103 +3645,84 @@ Unused Variables:
    ene
    export_real
    full_qty
-   gov_debt_cg
-   gov_debt_dsc
-   gov_debt_f
-   gov_debt_fcg
-   gov_for_nvst
-   gov_int_abr
    gov_real
-   gov_surplus
-   gov_transabr
-   gov_transdom
    grossout
    hh_equiv
    hh_equiv_lag
    import_real
-   income
-   ind_qty
    inf
-   int_qty
    int_val
-   kalm_imp
    kap_gas
    kap_oil
    mat
    qty_extern
    rev_com_ext
-   rev_con_gov
-   rev_con_rbt
-   rev_extern
    rev_hcap
-   rev_lump
-   rev_nontax
-   rev_sales
-   rev_tariff
-   rev_total
-   rev_unit
-   row_debt_cg
-   row_debt_dsc
-   save
+   risk
    tax_con_lab
-   tax_con_xmpt
    tax_full
    tax_gain_h
    unemp_time
-   us_surplus
 
 
 Equation 1
-----------
-
-   tax_labor_m=exo_tax_labm*tax_scale
-
-
-Equation 2
-----------
-
-   tax_labor_a=exo_tax_laba*tax_scale
-
-
-Equation 3
-----------
-
-   tax_cap=exo_tax_cap*tax_scale
-
-
-Equation 4
-----------
-Domain: ind
-Count: 36 (4 to 39)
-
-   tax_ext_ind=sum(nxtr,tax_ext_u*prd_ext(ind,nxtr))
-
-
-Equation 5
-----------
-Domain: com
-Count: 36 (40 to 75)
-
-   tar_ext_com=sum(nxtr,tax_ext_u*imp_ext(com,nxtr))
-
-
-Equation 6
-----------
-Domain: buy,com
-Count: 1404 (76 to 1479)
-
-   tax_ext_com
-   =sum(nxtr,tax_ext_u*com_ext(com,buy,nxtr))
-
-
-Equation 7
 ----------
 Relative Time: [0,1]
 
    nyears_lead=lead(year)-year
 
 
+Equation 2
+----------
+Relative Time: [-1,0]
+
+   nyears_lag=year-lag(year)
+
+
+Equation 3
+----------
+
+   tax_labor_m=exo_tax_labm*tax_scale
+
+
+Equation 4
+----------
+
+   tax_labor_a=exo_tax_laba*tax_scale
+
+
+Equation 5
+----------
+
+   tax_cap=exo_tax_cap*tax_scale
+
+
+Equation 6
+----------
+Domain: ind
+Count: 36 (6 to 41)
+
+   tax_ext_ind=sum(nxtr,tax_ext_u*prd_ext(ind,nxtr))
+
+
+Equation 7
+----------
+Domain: com
+Count: 36 (42 to 77)
+
+   tar_ext_com=sum(nxtr,tax_ext_u*imp_ext(com,nxtr))
+
+
 Equation 8
+----------
+Domain: buy,com
+Count: 1404 (78 to 1481)
+
+   tax_ext_com
+   =sum(nxtr,tax_ext_u*com_ext(com,buy,nxtr))
+
+
+Equation 9
 ----------
 Relative Time: [0,1]
 
@@ -3635,51 +3730,51 @@ Relative Time: [0,1]
    =(1-agg_tech_chg)^nyears_lead*agg_tech_lvl
 
 
-Equation 9
-----------
+Equation 10
+-----------
 Domain: indxoilgas,kap
-Count: 34 (1482 to 1515)
+Count: 34 (1483 to 1516)
 
    pb(kap,indxoilgas)=pk_service*pk_scale(indxoilgas)
 
 
-Equation 10
+Equation 11
 -----------
 Domain: i02,kap
-Count: 1 (1516 to 1516)
+Count: 1 (1517 to 1517)
 
    pb(kap,i02)=pr_kap_oil
 
 
-Equation 11
+Equation 12
 -----------
 Domain: i03,kap
-Count: 1 (1517 to 1517)
+Count: 1 (1518 to 1518)
 
    pb(kap,i03)=pr_kap_gas
 
 
-Equation 12
+Equation 13
 -----------
 Domain: ind,lab
-Count: 36 (1518 to 1553)
+Count: 36 (1519 to 1554)
 
    pb(lab,ind)=(pr_hours*pl_scale(ind))/(1-tax_labor_m)
 
 
-Equation 13
+Equation 14
 -----------
 Domain: ind,s_gas
-Count: 72 (1554 to 1625)
+Count: 72 (1555 to 1626)
 
    shr_gas
    =ap_gas+kalf_gas+sum(pr_gas,bp_gas*log(pb(pr_gas,ind)))
 
 
-Equation 14
+Equation 15
 -----------
 Domain: gas,ind
-Count: 36 (1626 to 1661)
+Count: 36 (1627 to 1662)
 
    log(pb(gas,ind))
    =ap0_gas
@@ -3688,19 +3783,19 @@ Count: 36 (1626 to 1661)
    *sum(pr_gas,sum(s_gas,log(pb(s_gas,ind))*bp_gas*log(pb(pr_gas,ind))))
 
 
-Equation 15
+Equation 16
 -----------
 Domain: ind,s_oil
-Count: 72 (1662 to 1733)
+Count: 72 (1663 to 1734)
 
    shr_oil
    =ap_oil+kalf_oil+sum(pr_oil,bp_oil*log(pb(pr_oil,ind)))
 
 
-Equation 16
+Equation 17
 -----------
 Domain: ind,oil
-Count: 36 (1734 to 1769)
+Count: 36 (1735 to 1770)
 
    log(pb(oil,ind))
    =ap0_oil
@@ -3709,19 +3804,19 @@ Count: 36 (1734 to 1769)
    *sum(pr_oil,sum(s_oil,log(pb(s_oil,ind))*bp_oil*log(pb(pr_oil,ind))))
 
 
-Equation 17
+Equation 18
 -----------
 Domain: ind,s_ff
-Count: 108 (1770 to 1877)
+Count: 108 (1771 to 1878)
 
    shr_ff
    =ap_ff+kalf_ff+sum(pr_ff,bp_ff*log(pb(pr_ff,ind)))
 
 
-Equation 18
+Equation 19
 -----------
 Domain: ff,ind
-Count: 36 (1878 to 1913)
+Count: 36 (1879 to 1914)
 
    log(pb(ff,ind))
    =ap0_ff
@@ -3730,19 +3825,19 @@ Count: 36 (1878 to 1913)
    *sum(pr_ff,sum(s_ff,log(pb(s_ff,ind))*bp_ff*log(pb(pr_ff,ind))))
 
 
-Equation 19
+Equation 20
 -----------
 Domain: ind,s_ene
-Count: 72 (1914 to 1985)
+Count: 72 (1915 to 1986)
 
    shr_ene
    =ap_ene+kalf_ene+sum(pr_ene,bp_ene*log(pb(pr_ene,ind)))
 
 
-Equation 20
+Equation 21
 -----------
 Domain: ene,ind
-Count: 36 (1986 to 2021)
+Count: 36 (1987 to 2022)
 
    log(pb(ene,ind))
    =ap0_ene
@@ -3751,19 +3846,19 @@ Count: 36 (1986 to 2021)
    *sum(pr_ene,sum(s_ene,log(pb(s_ene,ind))*bp_ene*log(pb(pr_ene,ind))))
 
 
-Equation 21
+Equation 22
 -----------
 Domain: ind,s_bl
-Count: 108 (2022 to 2129)
+Count: 108 (2023 to 2130)
 
    shr_bl
    =ap_bl+kalf_bl+sum(pr_bl,bp_bl*log(pb(pr_bl,ind)))
 
 
-Equation 22
+Equation 23
 -----------
 Domain: bl,ind
-Count: 36 (2130 to 2165)
+Count: 36 (2131 to 2166)
 
    log(pb(bl,ind))
    =ap0_bl
@@ -3772,19 +3867,19 @@ Count: 36 (2130 to 2165)
    *sum(pr_bl,sum(s_bl,log(pb(s_bl,ind))*bp_bl*log(pb(pr_bl,ind))))
 
 
-Equation 23
+Equation 24
 -----------
 Domain: ind,s_ob
-Count: 108 (2166 to 2273)
+Count: 108 (2167 to 2274)
 
    shr_ob
    =ap_ob+kalf_ob+sum(pr_ob,bp_ob*log(pb(pr_ob,ind)))
 
 
-Equation 24
+Equation 25
 -----------
 Domain: ind,ob
-Count: 36 (2274 to 2309)
+Count: 36 (2275 to 2310)
 
    log(pb(ob,ind))
    =ap0_ob
@@ -3793,19 +3888,19 @@ Count: 36 (2274 to 2309)
    *sum(pr_ob,sum(s_ob,log(pb(s_ob,ind))*bp_ob*log(pb(pr_ob,ind))))
 
 
-Equation 25
+Equation 26
 -----------
 Domain: ind,s_os
-Count: 144 (2310 to 2453)
+Count: 144 (2311 to 2454)
 
    shr_os
    =ap_os+kalf_os+sum(pr_os,bp_os*log(pb(pr_os,ind)))
 
 
-Equation 26
+Equation 27
 -----------
 Domain: ind,os
-Count: 36 (2454 to 2489)
+Count: 36 (2455 to 2490)
 
    log(pb(os,ind))
    =ap0_os
@@ -3814,19 +3909,19 @@ Count: 36 (2454 to 2489)
    *sum(pr_os,sum(s_os,log(pb(s_os,ind))*bp_os*log(pb(pr_os,ind))))
 
 
-Equation 27
+Equation 28
 -----------
 Domain: ind,s_sv
-Count: 108 (2490 to 2597)
+Count: 108 (2491 to 2598)
 
    shr_sv
    =ap_sv+kalf_sv+sum(pr_sv,bp_sv*log(pb(pr_sv,ind)))
 
 
-Equation 28
+Equation 29
 -----------
 Domain: ind,sv
-Count: 36 (2598 to 2633)
+Count: 36 (2599 to 2634)
 
    log(pb(sv,ind))
    =ap0_sv
@@ -3835,19 +3930,19 @@ Count: 36 (2598 to 2633)
    *sum(pr_sv,sum(s_sv,log(pb(s_sv,ind))*bp_sv*log(pb(pr_sv,ind))))
 
 
-Equation 29
+Equation 30
 -----------
 Domain: ind,s_ma
-Count: 144 (2634 to 2777)
+Count: 144 (2635 to 2778)
 
    shr_ma
    =ap_ma+kalf_ma+sum(pr_ma,bp_ma*log(pb(pr_ma,ind)))
 
 
-Equation 30
+Equation 31
 -----------
 Domain: ind,ma
-Count: 36 (2778 to 2813)
+Count: 36 (2779 to 2814)
 
    log(pb(ma,ind))
    =ap0_ma
@@ -3856,19 +3951,19 @@ Count: 36 (2778 to 2813)
    *sum(pr_ma,sum(s_ma,log(pb(s_ma,ind))*bp_ma*log(pb(pr_ma,ind))))
 
 
-Equation 31
+Equation 32
 -----------
 Domain: ind,s_mn
-Count: 144 (2814 to 2957)
+Count: 144 (2815 to 2958)
 
    shr_mn
    =ap_mn+kalf_mn+sum(pr_mn,bp_mn*log(pb(pr_mn,ind)))
 
 
-Equation 32
+Equation 33
 -----------
 Domain: ind,mn
-Count: 36 (2958 to 2993)
+Count: 36 (2959 to 2994)
 
    log(pb(mn,ind))
    =ap0_mn
@@ -3877,19 +3972,19 @@ Count: 36 (2958 to 2993)
    *sum(pr_mn,sum(s_mn,log(pb(s_mn,ind))*bp_mn*log(pb(pr_mn,ind))))
 
 
-Equation 33
+Equation 34
 -----------
 Domain: ind,s_tr
-Count: 72 (2994 to 3065)
+Count: 72 (2995 to 3066)
 
    shr_tr
    =ap_tr+kalf_tr+sum(pr_tr,bp_tr*log(pb(pr_tr,ind)))
 
 
-Equation 34
+Equation 35
 -----------
 Domain: ind,tr
-Count: 36 (3066 to 3101)
+Count: 36 (3067 to 3102)
 
    log(pb(tr,ind))
    =ap0_tr
@@ -3898,19 +3993,19 @@ Count: 36 (3066 to 3101)
    *sum(pr_tr,sum(s_tr,log(pb(s_tr,ind))*bp_tr*log(pb(pr_tr,ind))))
 
 
-Equation 35
+Equation 36
 -----------
 Domain: ind,s_tt
-Count: 108 (3102 to 3209)
+Count: 108 (3103 to 3210)
 
    shr_tt
    =ap_tt+kalf_tt+sum(pr_tt,bp_tt*log(pb(pr_tt,ind)))
 
 
-Equation 36
+Equation 37
 -----------
 Domain: ind,tt
-Count: 36 (3210 to 3245)
+Count: 36 (3211 to 3246)
 
    log(pb(tt,ind))
    =ap0_tt
@@ -3919,19 +4014,19 @@ Count: 36 (3210 to 3245)
    *sum(pr_tt,sum(s_tt,log(pb(s_tt,ind))*bp_tt*log(pb(pr_tt,ind))))
 
 
-Equation 37
+Equation 38
 -----------
 Domain: ind,s_eq
-Count: 144 (3246 to 3389)
+Count: 144 (3247 to 3390)
 
    shr_eq
    =ap_eq+kalf_eq+sum(pr_eq,bp_eq*log(pb(pr_eq,ind)))
 
 
-Equation 38
+Equation 39
 -----------
 Domain: eq,ind
-Count: 36 (3390 to 3425)
+Count: 36 (3391 to 3426)
 
    log(pb(eq,ind))
    =ap0_eq
@@ -3940,19 +4035,19 @@ Count: 36 (3390 to 3425)
    *sum(pr_eq,sum(s_eq,log(pb(s_eq,ind))*bp_eq*log(pb(pr_eq,ind))))
 
 
-Equation 39
+Equation 40
 -----------
 Domain: ind,s_ms
-Count: 108 (3426 to 3533)
+Count: 108 (3427 to 3534)
 
    shr_ms
    =ap_ms+kalf_ms+sum(pr_ms,bp_ms*log(pb(pr_ms,ind)))
 
 
-Equation 40
+Equation 41
 -----------
 Domain: ind,ms
-Count: 36 (3534 to 3569)
+Count: 36 (3535 to 3570)
 
    log(pb(ms,ind))
    =ap0_ms
@@ -3961,19 +4056,19 @@ Count: 36 (3534 to 3569)
    *sum(pr_ms,sum(s_ms,log(pb(s_ms,ind))*bp_ms*log(pb(pr_ms,ind))))
 
 
-Equation 41
+Equation 42
 -----------
 Domain: ind,s_mm
-Count: 144 (3570 to 3713)
+Count: 144 (3571 to 3714)
 
    shr_mm
    =ap_mm+kalf_mm+sum(pr_mm,bp_mm*log(pb(pr_mm,ind)))
 
 
-Equation 42
+Equation 43
 -----------
 Domain: ind,mm
-Count: 36 (3714 to 3749)
+Count: 36 (3715 to 3750)
 
    log(pb(mm,ind))
    =ap0_mm
@@ -3982,19 +4077,19 @@ Count: 36 (3714 to 3749)
    *sum(pr_mm,sum(s_mm,log(pb(s_mm,ind))*bp_mm*log(pb(pr_mm,ind))))
 
 
-Equation 43
+Equation 44
 -----------
 Domain: ind,s_mat
-Count: 144 (3750 to 3893)
+Count: 144 (3751 to 3894)
 
    shr_mat
    =ap_mat+kalf_mat+sum(pr_mat,bp_mat*log(pb(pr_mat,ind)))
 
 
-Equation 44
+Equation 45
 -----------
 Domain: ind,mat
-Count: 36 (3894 to 3929)
+Count: 36 (3895 to 3930)
 
    log(pb(mat,ind))
    =ap0_mat
@@ -4003,19 +4098,19 @@ Count: 36 (3894 to 3929)
    *sum(pr_mat,sum(s_mat,log(pb(s_mat,ind))*bp_mat*log(pb(pr_mat,ind))))
 
 
-Equation 45
+Equation 46
 -----------
 Domain: ind,s_o
-Count: 144 (3930 to 4073)
+Count: 144 (3931 to 4074)
 
    shr_o
    =ap_o+kalf_o+sum(pr_o,bp_o*log(pb(pr_o,ind)))
 
 
-Equation 46
+Equation 47
 -----------
 Domain: ind
-Count: 36 (4074 to 4109)
+Count: 36 (4075 to 4110)
 
    log(po(ind))
    =ap0_o+kalp
@@ -4025,58 +4120,66 @@ Count: 36 (4074 to 4109)
    *sum(pr_o,sum(s_o,log(pb(s_o,ind))*bp_o*log(pb(pr_o,ind))))
 
 
-Equation 47
------------
-Domain: ind
-Count: 36 (4110 to 4145)
-
-   pi=po*(1+tax_sales)+tax_unit+tax_ext_ind
-
-
 Equation 48
 -----------
-Domain: com
-Count: 36 (4146 to 4181)
+Domain: ind
+Count: 36 (4111 to 4146)
 
-   pc=sum(ind,po*make_col)
+   pi=po*(1+tax_sales)+tax_unit+tax_ext_ind
 
 
 Equation 49
 -----------
 Domain: com
-Count: 36 (4182 to 4217)
+Count: 36 (4147 to 4182)
 
-   pf=exo_pf*tech_shk_row
+   pc=sum(ind,po*make_col)
 
 
 Equation 50
 -----------
 Domain: com
-Count: 36 (4218 to 4253)
+Count: 36 (4183 to 4218)
 
-   pfd=pf*exch*(1+tariff)+tar_ext_com
+   pf=exo_pf*tech_shk_row
 
 
 Equation 51
 -----------
 Domain: com
-Count: 36 (4254 to 4289)
+Count: 36 (4219 to 4254)
 
-   imp_share=amk_imp+bm_imp*(log(pfd)-log(pc))
+   pfd=pf*exch*(1+tariff)+tar_ext_com
 
 
 Equation 52
 -----------
 Domain: com
-Count: 36 (4290 to 4325)
+Count: 36 (4255 to 4290)
 
-   dom_share=1-imp_share
+   amk_imp=am_imp+kalm_imp
 
 
 Equation 53
 -----------
 Domain: com
-Count: 36 (4326 to 4361)
+Count: 36 (4291 to 4326)
+
+   imp_share=amk_imp+bm_imp*(log(pfd)-log(pc))
+
+
+Equation 54
+-----------
+Domain: com
+Count: 36 (4327 to 4362)
+
+   dom_share=1-imp_share
+
+
+Equation 55
+-----------
+Domain: com
+Count: 36 (4363 to 4398)
 
    log(ps)
    =amk_imp*log(pfd)+(1-amk_imp)*log(pc)+0.5*bm_imp*log(pfd)*log(pfd)
@@ -4084,423 +4187,423 @@ Count: 36 (4326 to 4361)
    +0.5*bm_imp*log(pc)*log(pc)
 
 
-Equation 54
+Equation 56
 -----------
 Domain: buy,com
-Count: 1404 (4362 to 5765)
+Count: 1404 (4399 to 5802)
 
    pb(com,buy)=ps+tax_ext_com
 
 
-Equation 55
+Equation 57
 -----------
 Domain: c01,ind,mat,mn
-Count: 36 (5766 to 5801)
+Count: 36 (5803 to 5838)
 
    io(c01)=shr_ma(c01)*shr_mat(mn)*shr_o(mat)
 
 
-Equation 56
+Equation 58
 -----------
 Domain: c10,ind,mat,mn
-Count: 36 (5802 to 5837)
+Count: 36 (5839 to 5874)
 
    io(c10)=shr_ma(c10)*shr_mat(mn)*shr_o(mat)
 
 
-Equation 57
+Equation 59
 -----------
 Domain: c20,ind,mat,mn
-Count: 36 (5838 to 5873)
+Count: 36 (5875 to 5910)
 
    io(c20)=shr_ma(c20)*shr_mat(mn)*shr_o(mat)
 
 
-Equation 58
+Equation 60
 -----------
 Domain: c21,ind,mat,mn
-Count: 36 (5874 to 5909)
+Count: 36 (5911 to 5946)
 
    io(c21)=shr_ma(c21)*shr_mat(mn)*shr_o(mat)
 
 
-Equation 59
+Equation 61
 -----------
 Domain: c02,ene,ff,ind,oil
-Count: 36 (5910 to 5945)
+Count: 36 (5947 to 5982)
 
    io(c02)
    =shr_oil(c02)*shr_ff(oil)*shr_ene(ff)*shr_o(ene)
 
 
-Equation 60
+Equation 62
 -----------
 Domain: c23,ene,ff,ind,oil
-Count: 36 (5946 to 5981)
+Count: 36 (5983 to 6018)
 
    io(c23)
    =shr_oil(c23)*shr_ff(oil)*shr_ene(ff)*shr_o(ene)
 
 
-Equation 61
+Equation 63
 -----------
 Domain: c03,ene,ff,gas,ind
-Count: 36 (5982 to 6017)
+Count: 36 (6019 to 6054)
 
    io(c03)
    =shr_gas(c03)*shr_ff(gas)*shr_ene(ff)*shr_o(ene)
 
 
-Equation 62
+Equation 64
 -----------
 Domain: c07,ene,ff,gas,ind
-Count: 36 (6018 to 6053)
+Count: 36 (6055 to 6090)
 
    io(c07)
    =shr_gas(c07)*shr_ff(gas)*shr_ene(ff)*shr_o(ene)
 
 
-Equation 63
+Equation 65
 -----------
 Domain: c04,ene,ff,ind
-Count: 36 (6054 to 6089)
+Count: 36 (6091 to 6126)
 
    io(c04)=shr_ff(c04)*shr_ene(ff)*shr_o(ene)
 
 
-Equation 64
+Equation 66
 -----------
 Domain: c06,ene,ind
-Count: 36 (6090 to 6125)
+Count: 36 (6127 to 6162)
 
    io(c06)=shr_ene(c06)*shr_o(ene)
 
 
-Equation 65
+Equation 67
 -----------
 Domain: c05,ind,mat,mm
-Count: 36 (6126 to 6161)
+Count: 36 (6163 to 6198)
 
    io(c05)=shr_mm(c05)*shr_mat(mm)*shr_o(mat)
 
 
-Equation 66
+Equation 68
 -----------
 Domain: c12,ind,mat,mm
-Count: 36 (6162 to 6197)
+Count: 36 (6199 to 6234)
 
    io(c12)=shr_mm(c12)*shr_mat(mm)*shr_o(mat)
 
 
-Equation 67
+Equation 69
 -----------
 Domain: c13,ind,mat,mm
-Count: 36 (6198 to 6233)
+Count: 36 (6235 to 6270)
 
    io(c13)=shr_mm(c13)*shr_mat(mm)*shr_o(mat)
 
 
-Equation 68
+Equation 70
 -----------
 Domain: c14,eq,ind,mat,mm
-Count: 36 (6234 to 6269)
+Count: 36 (6271 to 6306)
 
    io(c14)
    =shr_eq(c14)*shr_mm(eq)^shr_mat(mm)*shr_o(mat)
 
 
-Equation 69
+Equation 71
 -----------
 Domain: c15,eq,ind,mat,mm
-Count: 36 (6270 to 6305)
+Count: 36 (6307 to 6342)
 
    io(c15)
    =shr_eq(c15)*shr_mm(eq)^shr_mat(mm)*shr_o(mat)
 
 
-Equation 70
+Equation 72
 -----------
 Domain: c16,eq,ind,mat,mm
-Count: 36 (6306 to 6341)
+Count: 36 (6343 to 6378)
 
    io(c16)
    =shr_eq(c16)*shr_mm(eq)^shr_mat(mm)*shr_o(mat)
 
 
-Equation 71
+Equation 73
 -----------
 Domain: c17,eq,ind,mat,mm,tr
-Count: 36 (6342 to 6377)
+Count: 36 (6379 to 6414)
 
    io(c17)
    =shr_tr(c17)*shr_eq(tr)*shr_mm(eq)^shr_mat(mm)
    *shr_o(mat)
 
 
-Equation 72
+Equation 74
 -----------
 Domain: c18,eq,ind,mat,mm,tr
-Count: 36 (6378 to 6413)
+Count: 36 (6415 to 6450)
 
    io(c18)
    =shr_tr(c18)*shr_eq(tr)*shr_mm(eq)^shr_mat(mm)
    *shr_o(mat)
 
 
-Equation 73
+Equation 75
 -----------
 Domain: c11,ind,mat,mn
-Count: 36 (6414 to 6449)
+Count: 36 (6451 to 6486)
 
    io(c11)=shr_mn(c11)*shr_mat(mn)*shr_o(mat)
 
 
-Equation 74
+Equation 76
 -----------
 Domain: c19,ind,mat,mn
-Count: 36 (6450 to 6485)
+Count: 36 (6487 to 6522)
 
    io(c19)=shr_mn(c19)*shr_mat(mn)*shr_o(mat)
 
 
-Equation 75
+Equation 77
 -----------
 Domain: c22,ind,mat,mn
-Count: 36 (6486 to 6521)
+Count: 36 (6523 to 6558)
 
    io(c22)=shr_mn(c22)*shr_mat(mn)*shr_o(mat)
 
 
-Equation 76
+Equation 78
 -----------
 Domain: c24,ind,mat,mn
-Count: 36 (6522 to 6557)
+Count: 36 (6559 to 6594)
 
    io(c24)=shr_mn(c24)*shr_mat(mn)*shr_o(mat)
 
 
-Equation 77
+Equation 79
 -----------
 Domain: c32,ind,mat,ms
-Count: 36 (6558 to 6593)
+Count: 36 (6595 to 6630)
 
    io(c32)=shr_ms(c32)*shr_mat(ms)*shr_o(mat)
 
 
-Equation 78
+Equation 80
 -----------
 Domain: c25,ind,mat,ms,tt
-Count: 36 (6594 to 6629)
+Count: 36 (6631 to 6666)
 
    io(c25)
    =shr_tt(c25)*shr_ms(tt)*shr_mat(ms)*shr_o(mat)
 
 
-Equation 79
+Equation 81
 -----------
 Domain: c26,ind,mat,ms,tt
-Count: 36 (6630 to 6665)
+Count: 36 (6667 to 6702)
 
    io(c26)
    =shr_tt(c26)*shr_ms(tt)*shr_mat(ms)*shr_o(mat)
 
 
-Equation 80
+Equation 82
 -----------
 Domain: c27,ind,mat,ms,tt
-Count: 36 (6666 to 6701)
+Count: 36 (6703 to 6738)
 
    io(c27)
    =shr_tt(c27)*shr_ms(tt)*shr_mat(ms)*shr_o(mat)
 
 
-Equation 81
+Equation 83
 -----------
 Domain: bl,c08,ind,mat,ms,sv
-Count: 36 (6702 to 6737)
+Count: 36 (6739 to 6774)
 
    io(c08)
    =shr_bl(c08)*shr_sv(bl)*shr_ms(sv)*shr_mat(ms)
    *shr_o(mat)
 
 
-Equation 82
+Equation 84
 -----------
 Domain: bl,c09,ind,mat,ms,sv
-Count: 36 (6738 to 6773)
+Count: 36 (6775 to 6810)
 
    io(c09)
    =shr_bl(c09)*shr_sv(bl)*shr_ms(sv)*shr_mat(ms)
    *shr_o(mat)
 
 
-Equation 83
+Equation 85
 -----------
 Domain: bl,c31,ind,mat,ms,sv
-Count: 36 (6774 to 6809)
+Count: 36 (6811 to 6846)
 
    io(c31)
    =shr_bl(c31)*shr_sv(bl)*shr_ms(sv)*shr_mat(ms)
    *shr_o(mat)
 
 
-Equation 84
+Equation 86
 -----------
 Domain: c28,ind,mat,ms,ob,sv
-Count: 36 (6810 to 6845)
+Count: 36 (6847 to 6882)
 
    io(c28)
    =shr_ob(c28)*shr_sv(ob)*shr_ms(sv)*shr_mat(ms)
    *shr_o(mat)
 
 
-Equation 85
+Equation 87
 -----------
 Domain: c29,ind,mat,ms,ob,sv
-Count: 36 (6846 to 6881)
+Count: 36 (6883 to 6918)
 
    io(c29)
    =shr_ob(c29)*shr_sv(ob)*shr_ms(sv)*shr_mat(ms)
    *shr_o(mat)
 
 
-Equation 86
+Equation 88
 -----------
 Domain: c30,ind,mat,ms,ob,sv
-Count: 36 (6882 to 6917)
+Count: 36 (6919 to 6954)
 
    io(c30)
    =shr_ob(c30)*shr_sv(ob)*shr_ms(sv)*shr_mat(ms)
    *shr_o(mat)
 
 
-Equation 87
+Equation 89
 -----------
 Domain: c33,ind,mat,ms,os,sv
-Count: 36 (6918 to 6953)
+Count: 36 (6955 to 6990)
 
    io(c33)
    =shr_os(c33)*shr_sv(os)*shr_ms(sv)*shr_mat(ms)
    *shr_o(mat)
 
 
-Equation 88
+Equation 90
 -----------
 Domain: c34,ind,mat,ms,os,sv
-Count: 36 (6954 to 6989)
+Count: 36 (6991 to 7026)
 
    io(c34)
    =shr_os(c34)*shr_sv(os)*shr_ms(sv)*shr_mat(ms)
    *shr_o(mat)
 
 
-Equation 89
+Equation 91
 -----------
 Domain: c35,ind,mat,ms,os,sv
-Count: 36 (6990 to 7025)
+Count: 36 (7027 to 7062)
 
    io(c35)
    =shr_os(c35)*shr_sv(os)*shr_ms(sv)*shr_mat(ms)
    *shr_o(mat)
 
 
-Equation 90
+Equation 92
 -----------
 Domain: c36,ind,mat,ms,os,sv
-Count: 36 (7026 to 7061)
+Count: 36 (7063 to 7098)
 
    io(c36)
    =shr_os(c36)*shr_sv(os)*shr_ms(sv)*shr_mat(ms)
    *shr_o(mat)
 
 
-Equation 91
+Equation 93
 -----------
 Domain: ind,kap
-Count: 36 (7062 to 7097)
+Count: 36 (7099 to 7134)
 
    io(kap)=shr_o(kap)
 
 
-Equation 92
+Equation 94
 -----------
 Domain: ind,lab
-Count: 36 (7098 to 7133)
+Count: 36 (7135 to 7170)
 
    io(lab)=shr_o(lab)
 
 
-Equation 93
+Equation 95
 -----------
 Domain: con,kap
-Count: 1 (7134 to 7134)
+Count: 1 (7171 to 7171)
 
    pb(kap,con)=pk_service*pk_scale(con)*(1+tax_cap_hh)
 
 
-Equation 94
+Equation 96
 -----------
 
    tax_con_totc=tax_con+tax_con_good
 
 
-Equation 95
+Equation 97
 -----------
 
    tax_con_totk=tax_con+tax_con_kap
 
 
-Equation 96
+Equation 98
 -----------
 Domain: com,con
-Count: 36 (7137 to 7172)
+Count: 36 (7174 to 7209)
 
    pr_con(com)=pb(com,con)*(1+tax_con_totc)
 
 
-Equation 97
+Equation 99
 -----------
 Domain: con,kap
-Count: 1 (7173 to 7173)
+Count: 1 (7210 to 7210)
 
    pr_con(kap)=pb(kap,con)*(1+tax_con_totk)
 
 
-Equation 98
------------
+Equation 100
+------------
 Domain: nipa
-Count: 36 (7174 to 7209)
+Count: 36 (7211 to 7246)
 
    pcon(nipa)=sum(ncom_k,pr_con*io_nipa)
 
 
-Equation 99
------------
+Equation 101
+------------
 
    pr_leisure=pr_hours*pj_scale
 
 
-Equation 100
+Equation 102
 ------------
 Domain: r
-Count: 1 (7211 to 7211)
+Count: 1 (7248 to 7248)
 
    pcon(r)=pr_leisure
 
 
-Equation 101
+Equation 103
 ------------
 Domain: s_cmm
-Count: 2 (7212 to 7213)
+Count: 2 (7249 to 7250)
 
    shr_cmm
    =ah_cmm+kalh_cmm+sum(pr_cmm,bh_cmm*log(pcon(pr_cmm)))
 
 
-Equation 102
+Equation 104
 ------------
 Domain: cmm
-Count: 1 (7214 to 7214)
+Count: 1 (7251 to 7251)
 
    log(pcon(cmm))
    =sum(s_cmm,(ah_cmm+kalh_cmm)*log(pcon(s_cmm)))
@@ -4508,19 +4611,19 @@ Count: 1 (7214 to 7214)
    *sum(pr_cmm,sum(s_cmm,log(pcon(s_cmm))*bh_cmm*log(pcon(pr_cmm))))
 
 
-Equation 103
+Equation 105
 ------------
 Domain: s_hps
-Count: 3 (7215 to 7217)
+Count: 3 (7252 to 7254)
 
    shr_hps
    =ah_hps+kalh_hps+sum(pr_hps,bh_hps*log(pcon(pr_hps)))
 
 
-Equation 104
+Equation 106
 ------------
 Domain: hps
-Count: 1 (7218 to 7218)
+Count: 1 (7255 to 7255)
 
    log(pcon(hps))
    =sum(s_hps,(ah_hps+kalh_hps)*log(pcon(s_hps)))
@@ -4528,19 +4631,19 @@ Count: 1 (7218 to 7218)
    *sum(pr_hps,sum(s_hps,log(pcon(s_hps))*bh_hps*log(pcon(pr_hps))))
 
 
-Equation 105
+Equation 107
 ------------
 Domain: s_ens
-Count: 2 (7219 to 7220)
+Count: 2 (7256 to 7257)
 
    shr_ens
    =ah_ens+kalh_ens+sum(pr_ens,bh_ens*log(pcon(pr_ens)))
 
 
-Equation 106
+Equation 108
 ------------
 Domain: ens
-Count: 1 (7221 to 7221)
+Count: 1 (7258 to 7258)
 
    log(pcon(ens))
    =sum(s_ens,(ah_ens+kalh_ens)*log(pcon(s_ens)))
@@ -4548,19 +4651,19 @@ Count: 1 (7221 to 7221)
    *sum(pr_ens,sum(s_ens,log(pcon(s_ens))*bh_ens*log(pcon(pr_ens))))
 
 
-Equation 107
+Equation 109
 ------------
 Domain: s_trv
-Count: 2 (7222 to 7223)
+Count: 2 (7259 to 7260)
 
    shr_trv
    =ah_trv+kalh_trv+sum(pr_trv,bh_trv*log(pcon(pr_trv)))
 
 
-Equation 108
+Equation 110
 ------------
 Domain: trv
-Count: 1 (7224 to 7224)
+Count: 1 (7261 to 7261)
 
    log(pcon(trv))
    =sum(s_trv,(ah_trv+kalh_trv)*log(pcon(s_trv)))
@@ -4568,19 +4671,19 @@ Count: 1 (7224 to 7224)
    *sum(pr_trv,sum(s_trv,log(pcon(s_trv))*bh_trv*log(pcon(pr_trv))))
 
 
-Equation 109
+Equation 111
 ------------
 Domain: s_rcs
-Count: 3 (7225 to 7227)
+Count: 3 (7262 to 7264)
 
    shr_rcs
    =ah_rcs+kalh_rcs+sum(pr_rcs,bh_rcs*log(pcon(pr_rcs)))
 
 
-Equation 110
+Equation 112
 ------------
 Domain: rcs
-Count: 1 (7228 to 7228)
+Count: 1 (7265 to 7265)
 
    log(pcon(rcs))
    =sum(s_rcs,(ah_rcs+kalh_rcs)*log(pcon(s_rcs)))
@@ -4588,19 +4691,19 @@ Count: 1 (7228 to 7228)
    *sum(pr_rcs,sum(s_rcs,log(pcon(s_rcs))*bh_rcs*log(pcon(pr_rcs))))
 
 
-Equation 111
+Equation 113
 ------------
 Domain: s_edn
-Count: 2 (7229 to 7230)
+Count: 2 (7266 to 7267)
 
    shr_edn
    =ah_edn+kalh_edn+sum(pr_edn,bh_edn*log(pcon(pr_edn)))
 
 
-Equation 112
+Equation 114
 ------------
 Domain: edn
-Count: 1 (7231 to 7231)
+Count: 1 (7268 to 7268)
 
    log(pcon(edn))
    =sum(s_edn,(ah_edn+kalh_edn)*log(pcon(s_edn)))
@@ -4608,19 +4711,19 @@ Count: 1 (7231 to 7231)
    *sum(pr_edn,sum(s_edn,log(pcon(s_edn))*bh_edn*log(pcon(pr_edn))))
 
 
-Equation 113
+Equation 115
 ------------
 Domain: s_hpg
-Count: 2 (7232 to 7233)
+Count: 2 (7269 to 7270)
 
    shr_hpg
    =ah_hpg+kalh_hpg+sum(pr_hpg,bh_hpg*log(pcon(pr_hpg)))
 
 
-Equation 114
+Equation 116
 ------------
 Domain: hpg
-Count: 1 (7234 to 7234)
+Count: 1 (7271 to 7271)
 
    log(pcon(hpg))
    =sum(s_hpg,(ah_hpg+kalh_hpg)*log(pcon(s_hpg)))
@@ -4628,19 +4731,19 @@ Count: 1 (7234 to 7234)
    *sum(pr_hpg,sum(s_hpg,log(pcon(s_hpg))*bh_hpg*log(pcon(pr_hpg))))
 
 
-Equation 115
+Equation 117
 ------------
 Domain: s_fb
-Count: 3 (7235 to 7237)
+Count: 3 (7272 to 7274)
 
    shr_fb
    =ah_fb+kalh_fb+sum(pr_fb,bh_fb*log(pcon(pr_fb)))
 
 
-Equation 116
+Equation 118
 ------------
 Domain: fb
-Count: 1 (7238 to 7238)
+Count: 1 (7275 to 7275)
 
    log(pcon(fb))
    =sum(s_fb,(ah_fb+kalh_fb)*log(pcon(s_fb)))
@@ -4648,19 +4751,19 @@ Count: 1 (7238 to 7238)
    *sum(pr_fb,sum(s_fb,log(pcon(s_fb))*bh_fb*log(pcon(pr_fb))))
 
 
-Equation 117
+Equation 119
 ------------
 Domain: s_md
-Count: 2 (7239 to 7240)
+Count: 2 (7276 to 7277)
 
    shr_md
    =ah_md+kalh_md+sum(pr_md,bh_md*log(pcon(pr_md)))
 
 
-Equation 118
+Equation 120
 ------------
 Domain: md
-Count: 1 (7241 to 7241)
+Count: 1 (7278 to 7278)
 
    log(pcon(md))
    =sum(s_md,(ah_md+kalh_md)*log(pcon(s_md)))
@@ -4668,19 +4771,19 @@ Count: 1 (7241 to 7241)
    *sum(pr_md,sum(s_md,log(pcon(s_md))*bh_md*log(pcon(pr_md))))
 
 
-Equation 119
+Equation 121
 ------------
 Domain: s_en
-Count: 2 (7242 to 7243)
+Count: 2 (7279 to 7280)
 
    shr_en
    =ah_en+kalh_en+sum(pr_en,bh_en*log(pcon(pr_en)))
 
 
-Equation 120
+Equation 122
 ------------
 Domain: en
-Count: 1 (7244 to 7244)
+Count: 1 (7281 to 7281)
 
    log(pcon(en))
    =sum(s_en,(ah_en+kalh_en)*log(pcon(s_en)))
@@ -4688,19 +4791,19 @@ Count: 1 (7244 to 7244)
    *sum(pr_en,sum(s_en,log(pcon(s_en))*bh_en*log(pcon(pr_en))))
 
 
-Equation 121
+Equation 123
 ------------
 Domain: s_ks
-Count: 2 (7245 to 7246)
+Count: 2 (7282 to 7283)
 
    shr_ks
    =ah_ks+kalh_ks+sum(pr_ks,bh_ks*log(pcon(pr_ks)))
 
 
-Equation 122
+Equation 124
 ------------
 Domain: ks
-Count: 1 (7247 to 7247)
+Count: 1 (7284 to 7284)
 
    log(pcon(ks))
    =sum(s_ks,(ah_ks+kalh_ks)*log(pcon(s_ks)))
@@ -4708,19 +4811,19 @@ Count: 1 (7247 to 7247)
    *sum(pr_ks,sum(s_ks,log(pcon(s_ks))*bh_ks*log(pcon(pr_ks))))
 
 
-Equation 123
+Equation 125
 ------------
 Domain: s_trc
-Count: 4 (7248 to 7251)
+Count: 4 (7285 to 7288)
 
    shr_trc
    =ah_trc+kalh_trc+sum(pr_trc,bh_trc*log(pcon(pr_trc)))
 
 
-Equation 124
+Equation 126
 ------------
 Domain: trc
-Count: 1 (7252 to 7252)
+Count: 1 (7289 to 7289)
 
    log(pcon(trc))
    =sum(s_trc,(ah_trc+kalh_trc)*log(pcon(s_trc)))
@@ -4728,19 +4831,19 @@ Count: 1 (7252 to 7252)
    *sum(pr_trc,sum(s_trc,log(pcon(s_trc))*bh_trc*log(pcon(pr_trc))))
 
 
-Equation 125
+Equation 127
 ------------
 Domain: s_ups
-Count: 3 (7253 to 7255)
+Count: 3 (7290 to 7292)
 
    shr_ups
    =ah_ups+kalh_ups+sum(pr_ups,bh_ups*log(pcon(pr_ups)))
 
 
-Equation 126
+Equation 128
 ------------
 Domain: ups
-Count: 1 (7256 to 7256)
+Count: 1 (7293 to 7293)
 
    log(pcon(ups))
    =sum(s_ups,(ah_ups+kalh_ups)*log(pcon(s_ups)))
@@ -4748,19 +4851,19 @@ Count: 1 (7256 to 7256)
    *sum(pr_ups,sum(s_ups,log(pcon(s_ups))*bh_ups*log(pcon(pr_ups))))
 
 
-Equation 127
+Equation 129
 ------------
 Domain: s_rc
-Count: 3 (7257 to 7259)
+Count: 3 (7294 to 7296)
 
    shr_rc
    =ah_rc+kalh_rc+sum(pr_rc,bh_rc*log(pcon(pr_rc)))
 
 
-Equation 128
+Equation 130
 ------------
 Domain: rc
-Count: 1 (7260 to 7260)
+Count: 1 (7297 to 7297)
 
    log(pcon(rc))
    =sum(s_rc,(ah_rc+kalh_rc)*log(pcon(s_rc)))
@@ -4768,19 +4871,19 @@ Count: 1 (7260 to 7260)
    *sum(pr_rc,sum(s_rc,log(pcon(s_rc))*bh_rc*log(pcon(pr_rc))))
 
 
-Equation 129
+Equation 131
 ------------
 Domain: s_ho
-Count: 4 (7261 to 7264)
+Count: 4 (7298 to 7301)
 
    shr_ho
    =ah_ho+kalh_ho+sum(pr_ho,bh_ho*log(pcon(pr_ho)))
 
 
-Equation 130
+Equation 132
 ------------
 Domain: ho
-Count: 1 (7265 to 7265)
+Count: 1 (7302 to 7302)
 
    log(pcon(ho))
    =sum(s_ho,(ah_ho+kalh_ho)*log(pcon(s_ho)))
@@ -4788,19 +4891,19 @@ Count: 1 (7265 to 7265)
    *sum(pr_ho,sum(s_ho,log(pcon(s_ho))*bh_ho*log(pcon(pr_ho))))
 
 
-Equation 131
+Equation 133
 ------------
 Domain: s_cg
-Count: 4 (7266 to 7269)
+Count: 4 (7303 to 7306)
 
    shr_cg
    =ah_cg+kalh_cg+sum(pr_cg,bh_cg*log(pcon(pr_cg)))
 
 
-Equation 132
+Equation 134
 ------------
 Domain: cg
-Count: 1 (7270 to 7270)
+Count: 1 (7307 to 7307)
 
    log(pcon(cg))
    =sum(s_cg,(ah_cg+kalh_cg)*log(pcon(s_cg)))
@@ -4808,19 +4911,19 @@ Count: 1 (7270 to 7270)
    *sum(pr_cg,sum(s_cg,log(pcon(s_cg))*bh_cg*log(pcon(pr_cg))))
 
 
-Equation 133
+Equation 135
 ------------
 Domain: s_cs
-Count: 4 (7271 to 7274)
+Count: 4 (7308 to 7311)
 
    shr_cs
    =ah_cs+kalh_cs+sum(pr_cs,bh_cs*log(pcon(pr_cs)))
 
 
-Equation 134
+Equation 136
 ------------
 Domain: cs
-Count: 1 (7275 to 7275)
+Count: 1 (7312 to 7312)
 
    log(pcon(cs))
    =sum(s_cs,(ah_cs+kalh_cs)*log(pcon(s_cs)))
@@ -4828,19 +4931,19 @@ Count: 1 (7275 to 7275)
    *sum(pr_cs,sum(s_cs,log(pcon(s_cs))*bh_cs*log(pcon(pr_cs))))
 
 
-Equation 135
+Equation 137
 ------------
 Domain: s_nd
-Count: 4 (7276 to 7279)
+Count: 4 (7313 to 7316)
 
    shr_nd
    =ah_nd+kalh_nd+sum(pr_nd,bh_nd*log(pcon(pr_nd)))
 
 
-Equation 136
+Equation 138
 ------------
 Domain: nd
-Count: 1 (7280 to 7280)
+Count: 1 (7317 to 7317)
 
    log(pcon(nd))
    =sum(s_nd,(ah_nd+kalh_nd)*log(pcon(s_nd)))
@@ -4848,25 +4951,25 @@ Count: 1 (7280 to 7280)
    *sum(pr_nd,sum(s_nd,log(pcon(s_nd))*bh_nd*log(pcon(pr_nd))))
 
 
-Equation 137
+Equation 139
 ------------
 Domain: s_f
-Count: 4 (7281 to 7284)
+Count: 4 (7318 to 7321)
 
    ab_shr_f=ah_f+sum(pr_f,bh_f*log(pcon(pr_f)))
 
 
-Equation 138
+Equation 140
 ------------
 
    denom
    =(-1)+denom_rebase+sum(pr_f,sum(s_f,bh_f*log(pcon(pr_f))))
 
 
-Equation 139
+Equation 141
 ------------
 Domain: s_f
-Count: 4 (7286 to 7289)
+Count: 4 (7323 to 7326)
 
    cex_shr_f
    =(ab_shr_f-bhm_f*(log(full_con)+income_dist)
@@ -4874,15 +4977,15 @@ Count: 4 (7286 to 7289)
    /denom
 
 
-Equation 140
+Equation 142
 ------------
 Domain: s_f
-Count: 4 (7290 to 7293)
+Count: 4 (7327 to 7330)
 
    shr_f=cex_shr_f+dv_hh
 
 
-Equation 141
+Equation 143
 ------------
 
    pr_fc
@@ -4894,139 +4997,139 @@ Equation 141
    /pr_fc_scale
 
 
-Equation 142
+Equation 144
 ------------
 Domain: r
-Count: 1 (7295 to 7295)
+Count: 1 (7332 to 7332)
 
    leisure=(shr_f(r)*full_con)/pr_leisure
 
 
-Equation 143
+Equation 145
 ------------
 Domain: r
-Count: 1 (7296 to 7296)
+Count: 1 (7333 to 7333)
 
    cshare=1-shr_f(r)
 
 
-Equation 144
+Equation 146
 ------------
 
    con_expend=cshare*full_con
 
 
-Equation 145
+Equation 147
 ------------
 Domain: n01,nd
-Count: 1 (7298 to 7298)
+Count: 1 (7335 to 7335)
 
    con_share(n01)=(shr_nd(n01)*shr_f(nd))/cshare
 
 
-Equation 146
+Equation 148
 ------------
 Domain: cg,n02,nd
-Count: 1 (7299 to 7299)
+Count: 1 (7336 to 7336)
 
    con_share(n02)
    =(shr_cg(n02)*shr_nd(cg)*shr_f(nd))/cshare
 
 
-Equation 147
+Equation 149
 ------------
 Domain: en,n03,nd
-Count: 1 (7300 to 7300)
+Count: 1 (7337 to 7337)
 
    con_share(n03)
    =(shr_en(n03)*shr_nd(en)*shr_f(nd))/cshare
 
 
-Equation 148
+Equation 150
 ------------
 Domain: en,n04,nd
-Count: 1 (7301 to 7301)
+Count: 1 (7338 to 7338)
 
    con_share(n04)
    =(shr_en(n04)*shr_nd(en)*shr_f(nd))/cshare
 
 
-Equation 149
+Equation 151
 ------------
 Domain: n05,nd
-Count: 1 (7302 to 7302)
+Count: 1 (7339 to 7339)
 
    con_share(n05)=(shr_nd(n05)*shr_f(nd))/cshare
 
 
-Equation 150
+Equation 152
 ------------
 Domain: cg,n06,nd
-Count: 1 (7303 to 7303)
+Count: 1 (7340 to 7340)
 
    con_share(n06)
    =(shr_cg(n06)*shr_nd(cg)*shr_f(nd))/cshare
 
 
-Equation 151
+Equation 153
 ------------
 Domain: cg,hpg,n07,nd
-Count: 1 (7304 to 7304)
+Count: 1 (7341 to 7341)
 
    con_share(n07)
    =(shr_hpg(n07)*shr_cg(hpg)*shr_nd(cg)*shr_f(nd))
    /cshare
 
 
-Equation 152
+Equation 154
 ------------
 Domain: cg,hpg,n08,nd
-Count: 1 (7305 to 7305)
+Count: 1 (7342 to 7342)
 
    con_share(n08)
    =(shr_hpg(n08)*shr_cg(hpg)*shr_nd(cg)*shr_f(nd))
    /cshare
 
 
-Equation 153
+Equation 155
 ------------
 Domain: cg,n09,nd
-Count: 1 (7306 to 7306)
+Count: 1 (7343 to 7343)
 
    con_share(n09)
    =(shr_cg(n09)*shr_nd(cg)*shr_f(nd))/cshare
 
 
-Equation 154
+Equation 156
 ------------
 Domain: ks,n10
-Count: 1 (7307 to 7307)
+Count: 1 (7344 to 7344)
 
    con_share(n10)=(shr_ks(n10)*shr_f(ks))/cshare
 
 
-Equation 155
+Equation 157
 ------------
 Domain: ks,n36
-Count: 1 (7308 to 7308)
+Count: 1 (7345 to 7345)
 
    con_share(n36)=(shr_ks(n36)*shr_f(ks))/cshare
 
 
-Equation 156
+Equation 158
 ------------
 Domain: cs,ho,n11,ups
-Count: 1 (7309 to 7309)
+Count: 1 (7346 to 7346)
 
    con_share(n11)
    =(shr_ups(n11)*shr_ho(ups)*shr_cs(ho)*shr_f(cs))
    /cshare
 
 
-Equation 157
+Equation 159
 ------------
 Domain: cs,ens,ho,n12,ups
-Count: 1 (7310 to 7310)
+Count: 1 (7347 to 7347)
 
    con_share(n12)
    =(shr_ens(n12)*shr_ups(ens)*shr_ho(ups)*shr_cs(ho)
@@ -5034,10 +5137,10 @@ Count: 1 (7310 to 7310)
    /cshare
 
 
-Equation 158
+Equation 160
 ------------
 Domain: cs,ens,ho,n13,ups
-Count: 1 (7311 to 7311)
+Count: 1 (7348 to 7348)
 
    con_share(n13)
    =(shr_ens(n13)*shr_ups(ens)*shr_ho(ups)*shr_cs(ho)
@@ -5045,58 +5148,58 @@ Count: 1 (7311 to 7311)
    /cshare
 
 
-Equation 159
+Equation 161
 ------------
 Domain: cs,md,n14
-Count: 1 (7312 to 7312)
+Count: 1 (7349 to 7349)
 
    con_share(n14)
    =(shr_md(n14)^shr_cs(md)*shr_f(cs))/cshare
 
 
-Equation 160
+Equation 162
 ------------
 Domain: cs,md,n24
-Count: 1 (7313 to 7313)
+Count: 1 (7350 to 7350)
 
    con_share(n24)
    =(shr_md(n24)^shr_cs(md)*shr_f(cs))/cshare
 
 
-Equation 161
+Equation 163
 ------------
 Domain: cs,ho,n15,trc
-Count: 1 (7314 to 7314)
+Count: 1 (7351 to 7351)
 
    con_share(n15)
    =(shr_trc(n15)*shr_ho(trc)*shr_cs(ho)*shr_f(cs))
    /cshare
 
 
-Equation 162
+Equation 164
 ------------
 Domain: cs,ho,n16,trc
-Count: 1 (7315 to 7315)
+Count: 1 (7352 to 7352)
 
    con_share(n16)
    =(shr_trc(n16)*shr_ho(trc)*shr_cs(ho)*shr_f(cs))
    /cshare
 
 
-Equation 163
+Equation 165
 ------------
 Domain: cs,ho,n25,trc
-Count: 1 (7316 to 7316)
+Count: 1 (7353 to 7353)
 
    con_share(n25)
    =(shr_trc(n25)*shr_ho(trc)*shr_cs(ho)*shr_f(cs))
    /cshare
 
 
-Equation 164
+Equation 166
 ------------
 Domain: cmm,cs,ho,n26,trc
-Count: 1 (7317 to 7317)
+Count: 1 (7354 to 7354)
 
    con_share(n26)
    =(shr_cmm(n26)*shr_trc(cmm)*shr_ho(trc)*shr_cs(ho)
@@ -5104,10 +5207,10 @@ Count: 1 (7317 to 7317)
    /cshare
 
 
-Equation 165
+Equation 167
 ------------
 Domain: cmm,cs,ho,n27,trc
-Count: 1 (7318 to 7318)
+Count: 1 (7355 to 7355)
 
    con_share(n27)
    =(shr_cmm(n27)*shr_trc(cmm)*shr_ho(trc)*shr_cs(ho)
@@ -5115,116 +5218,116 @@ Count: 1 (7318 to 7318)
    /cshare
 
 
-Equation 166
+Equation 168
 ------------
 Domain: cs,n17,rc,rcs
-Count: 1 (7319 to 7319)
+Count: 1 (7356 to 7356)
 
    con_share(n17)
    =(shr_rcs(n17)*shr_rc(rcs)*shr_cs(rc)*shr_f(cs))
    /cshare
 
 
-Equation 167
+Equation 169
 ------------
 Domain: cs,n18,rc,rcs
-Count: 1 (7320 to 7320)
+Count: 1 (7357 to 7357)
 
    con_share(n18)
    =(shr_rcs(n18)*shr_rc(rcs)*shr_cs(rc)*shr_f(cs))
    /cshare
 
 
-Equation 168
+Equation 170
 ------------
 Domain: cs,n19,rc,rcs
-Count: 1 (7321 to 7321)
+Count: 1 (7358 to 7358)
 
    con_share(n19)
    =(shr_rcs(n19)*shr_rc(rcs)*shr_cs(rc)*shr_f(cs))
    /cshare
 
 
-Equation 169
+Equation 171
 ------------
 Domain: cs,n20,rc
-Count: 1 (7322 to 7322)
+Count: 1 (7359 to 7359)
 
    con_share(n20)
    =(shr_rc(n20)*shr_cs(rc)*shr_f(cs))/cshare
 
 
-Equation 170
+Equation 172
 ------------
 Domain: cs,n21,rc,trv
-Count: 1 (7323 to 7323)
+Count: 1 (7360 to 7360)
 
    con_share(n21)
    =(shr_trv(n21)*shr_rc(trv)*shr_cs(rc)*shr_f(cs))
    /cshare
 
 
-Equation 171
+Equation 173
 ------------
 Domain: cs,n33,rc,trv
-Count: 1 (7324 to 7324)
+Count: 1 (7361 to 7361)
 
    con_share(n33)
    =(shr_trv(n33)*shr_rc(trv)*shr_cs(rc)*shr_f(cs))
    /cshare
 
 
-Equation 172
+Equation 174
 ------------
 Domain: cs,fb,n22
-Count: 1 (7325 to 7325)
+Count: 1 (7362 to 7362)
 
    con_share(n22)
    =(shr_fb(n22)*shr_cs(fb)*shr_f(cs))/cshare
 
 
-Equation 173
+Equation 175
 ------------
 Domain: cs,fb,n23
-Count: 1 (7326 to 7326)
+Count: 1 (7363 to 7363)
 
    con_share(n23)
    =(shr_fb(n23)*shr_cs(fb)*shr_f(cs))/cshare
 
 
-Equation 174
+Equation 176
 ------------
 Domain: cs,fb,n29
-Count: 1 (7327 to 7327)
+Count: 1 (7364 to 7364)
 
    con_share(n29)
    =(shr_fb(n29)*shr_cs(fb)*shr_f(cs))/cshare
 
 
-Equation 175
+Equation 177
 ------------
 Domain: cs,edn,ho,n28
-Count: 1 (7328 to 7328)
+Count: 1 (7365 to 7365)
 
    con_share(n28)
    =(shr_edn(n28)*shr_ho(edn)*shr_cs(ho)*shr_f(cs))
    /cshare
 
 
-Equation 176
+Equation 178
 ------------
 Domain: cs,edn,ho,n34
-Count: 1 (7329 to 7329)
+Count: 1 (7366 to 7366)
 
    con_share(n34)
    =(shr_edn(n34)*shr_ho(edn)*shr_cs(ho)*shr_f(cs))
    /cshare
 
 
-Equation 177
+Equation 179
 ------------
 Domain: cs,ho,hps,n30,ups
-Count: 1 (7330 to 7330)
+Count: 1 (7367 to 7367)
 
    con_share(n30)
    =(shr_hps(n30)*shr_ups(hps)*shr_ho(ups)*shr_cs(ho)
@@ -5232,10 +5335,10 @@ Count: 1 (7330 to 7330)
    /cshare
 
 
-Equation 178
+Equation 180
 ------------
 Domain: cs,ho,hps,n31,ups
-Count: 1 (7331 to 7331)
+Count: 1 (7368 to 7368)
 
    con_share(n31)
    =(shr_hps(n31)*shr_ups(hps)*shr_ho(ups)*shr_cs(ho)
@@ -5243,10 +5346,10 @@ Count: 1 (7331 to 7331)
    /cshare
 
 
-Equation 179
+Equation 181
 ------------
 Domain: cs,ho,hps,n32,ups
-Count: 1 (7332 to 7332)
+Count: 1 (7369 to 7369)
 
    con_share(n32)
    =(shr_hps(n32)*shr_ups(hps)*shr_ho(ups)*shr_cs(ho)
@@ -5254,92 +5357,85 @@ Count: 1 (7332 to 7332)
    /cshare
 
 
-Equation 180
+Equation 182
 ------------
 Domain: cs,ho,n35
-Count: 1 (7333 to 7333)
+Count: 1 (7370 to 7370)
 
    con_share(n35)
    =(shr_ho(n35)*shr_cs(ho)*shr_f(cs))/cshare
 
 
-Equation 181
+Equation 183
 ------------
 Domain: ncom_k
-Count: 37 (7334 to 7370)
+Count: 37 (7371 to 7407)
 
    con_shk_val=con_shk_qty*pr_con
 
 
-Equation 182
+Equation 184
 ------------
 
    con_shk_xpnd=sum(ncom_k,con_shk_val)
 
 
-Equation 183
+Equation 185
 ------------
 
    con_xpnd_net=con_expend-con_shk_xpnd
 
 
-Equation 184
+Equation 186
 ------------
 Domain: com
-Count: 36 (7373 to 7408)
+Count: 36 (7410 to 7445)
 
    con(com)
-   =(sum(nipa,io_nipa(com,nipa)*con_share(nipa)*con_xpnd_net)
-   +con_shk_val(com))
-   /(1+tax_con_totc)
+   =sum(nipa,io_nipa(com,nipa)*con_share(nipa)*con_xpnd_net)
+   +con_shk_val(com)
 
 
-Equation 185
+Equation 187
 ------------
 Domain: kap
-Count: 1 (7409 to 7409)
+Count: 1 (7446 to 7446)
 
    con(kap)
    =sum(nipa,io_nipa(kap,nipa)*con_share(nipa)*con_xpnd_net)
    +con_shk_val(kap)
 
 
-Equation 186
+Equation 188
 ------------
 Domain: ncom_k
-Count: 37 (7410 to 7446)
+Count: 37 (7447 to 7483)
 
    con_qty=con/pr_con
 
 
-Equation 187
-------------
-
-   rev_con=sum(com,tax_con_totc*con)
-
-
-Equation 188
+Equation 189
 ------------
 Domain: com,inv
-Count: 36 (7448 to 7483)
+Count: 36 (7484 to 7519)
 
    pr_inv(com)=pb(com,inv)
 
 
-Equation 189
+Equation 190
 ------------
 Domain: s_rawm
-Count: 3 (7484 to 7486)
+Count: 3 (7520 to 7522)
 
    shr_rawm
    =ai_rawm+kali_rawm
    +sum(pr_rawm,bi_rawm*log(pr_inv(pr_rawm)))
 
 
-Equation 190
+Equation 191
 ------------
 Domain: rawm
-Count: 1 (7487 to 7487)
+Count: 1 (7523 to 7523)
 
    log(pr_inv(rawm))
    =sum(s_rawm,(ai_rawm+kali_rawm)*log(pr_inv(s_rawm)))
@@ -5347,20 +5443,20 @@ Count: 1 (7487 to 7487)
    *sum(pr_rawm,sum(s_rawm,log(pr_inv(s_rawm))*bi_rawm*log(pr_inv(pr_rawm))))
 
 
-Equation 191
+Equation 192
 ------------
 Domain: s_furn
-Count: 3 (7488 to 7490)
+Count: 3 (7524 to 7526)
 
    shr_furn
    =ai_furn+kali_furn
    +sum(pr_furn,bi_furn*log(pr_inv(pr_furn)))
 
 
-Equation 192
+Equation 193
 ------------
 Domain: furn
-Count: 1 (7491 to 7491)
+Count: 1 (7527 to 7527)
 
    log(pr_inv(furn))
    =sum(s_furn,(ai_furn+kali_furn)*log(pr_inv(s_furn)))
@@ -5368,20 +5464,20 @@ Count: 1 (7491 to 7491)
    *sum(pr_furn,sum(s_furn,log(pr_inv(s_furn))*bi_furn*log(pr_inv(pr_furn))))
 
 
-Equation 193
+Equation 194
 ------------
 Domain: s_mserv
-Count: 3 (7492 to 7494)
+Count: 3 (7528 to 7530)
 
    shr_mserv
    =ai_mserv+kali_mserv
    +sum(pr_mserv,bi_mserv*log(pr_inv(pr_mserv)))
 
 
-Equation 194
+Equation 195
 ------------
 Domain: mserv
-Count: 1 (7495 to 7495)
+Count: 1 (7531 to 7531)
 
    log(pr_inv(mserv))
    =sum(s_mserv,(ai_mserv+kali_mserv)*log(pr_inv(s_mserv)))
@@ -5389,19 +5485,19 @@ Count: 1 (7495 to 7495)
    *sum(pr_mserv,sum(s_mserv,log(pr_inv(s_mserv))*bi_mserv*log(pr_inv(pr_mserv))))
 
 
-Equation 195
+Equation 196
 ------------
 Domain: s_trd
-Count: 2 (7496 to 7497)
+Count: 2 (7532 to 7533)
 
    shr_trd
    =ai_trd+kali_trd+sum(pr_trd,bi_trd*log(pr_inv(pr_trd)))
 
 
-Equation 196
+Equation 197
 ------------
 Domain: trd
-Count: 1 (7498 to 7498)
+Count: 1 (7534 to 7534)
 
    log(pr_inv(trd))
    =sum(s_trd,(ai_trd+kali_trd)*log(pr_inv(s_trd)))
@@ -5409,20 +5505,20 @@ Count: 1 (7498 to 7498)
    *sum(pr_trd,sum(s_trd,log(pr_inv(s_trd))*bi_trd*log(pr_inv(pr_trd))))
 
 
-Equation 197
+Equation 198
 ------------
 Domain: s_trnsp
-Count: 2 (7499 to 7500)
+Count: 2 (7535 to 7536)
 
    shr_trnsp
    =ai_trnsp+kali_trnsp
    +sum(pr_trnsp,bi_trnsp*log(pr_inv(pr_trnsp)))
 
 
-Equation 198
+Equation 199
 ------------
 Domain: trnsp
-Count: 1 (7501 to 7501)
+Count: 1 (7537 to 7537)
 
    log(pr_inv(trnsp))
    =sum(s_trnsp,(ai_trnsp+kali_trnsp)*log(pr_inv(s_trnsp)))
@@ -5430,19 +5526,19 @@ Count: 1 (7501 to 7501)
    *sum(pr_trnsp,sum(s_trnsp,log(pr_inv(s_trnsp))*bi_trnsp*log(pr_inv(pr_trnsp))))
 
 
-Equation 199
+Equation 200
 ------------
 Domain: s_it
-Count: 3 (7502 to 7504)
+Count: 3 (7538 to 7540)
 
    shr_it
    =ai_it+kali_it+sum(pr_it,bi_it*log(pr_inv(pr_it)))
 
 
-Equation 200
+Equation 201
 ------------
 Domain: it
-Count: 1 (7505 to 7505)
+Count: 1 (7541 to 7541)
 
    log(pr_inv(it))
    =sum(s_it,(ai_it+kali_it)*log(pr_inv(s_it)))
@@ -5450,20 +5546,20 @@ Count: 1 (7505 to 7505)
    *sum(pr_it,sum(s_it,log(pr_inv(s_it))*bi_it*log(pr_inv(pr_it))))
 
 
-Equation 201
+Equation 202
 ------------
 Domain: s_mrawm
-Count: 2 (7506 to 7507)
+Count: 2 (7542 to 7543)
 
    shr_mrawm
    =ai_mrawm+kali_mrawm
    +sum(pr_mrawm,bi_mrawm*log(pr_inv(pr_mrawm)))
 
 
-Equation 202
+Equation 203
 ------------
 Domain: mrawm
-Count: 1 (7508 to 7508)
+Count: 1 (7544 to 7544)
 
    log(pr_inv(mrawm))
    =sum(s_mrawm,(ai_mrawm+kali_mrawm)*log(pr_inv(s_mrawm)))
@@ -5471,20 +5567,20 @@ Count: 1 (7508 to 7508)
    *sum(pr_mrawm,sum(s_mrawm,log(pr_inv(s_mrawm))*bi_mrawm*log(pr_inv(pr_mrawm))))
 
 
-Equation 203
+Equation 204
 ------------
 Domain: s_frawm
-Count: 2 (7509 to 7510)
+Count: 2 (7545 to 7546)
 
    shr_frawm
    =ai_frawm+kali_frawm
    +sum(pr_frawm,bi_frawm*log(pr_inv(pr_frawm)))
 
 
-Equation 204
+Equation 205
 ------------
 Domain: frawm
-Count: 1 (7511 to 7511)
+Count: 1 (7547 to 7547)
 
    log(pr_inv(frawm))
    =sum(s_frawm,(ai_frawm+kali_frawm)*log(pr_inv(s_frawm)))
@@ -5492,20 +5588,20 @@ Count: 1 (7511 to 7511)
    *sum(pr_frawm,sum(s_frawm,log(pr_inv(s_frawm))*bi_frawm*log(pr_inv(pr_frawm))))
 
 
-Equation 205
+Equation 206
 ------------
 Domain: s_serv
-Count: 2 (7512 to 7513)
+Count: 2 (7548 to 7549)
 
    shr_serv
    =ai_serv+kali_serv
    +sum(pr_serv,bi_serv*log(pr_inv(pr_serv)))
 
 
-Equation 206
+Equation 207
 ------------
 Domain: serv
-Count: 1 (7514 to 7514)
+Count: 1 (7550 to 7550)
 
    log(pr_inv(serv))
    =sum(s_serv,(ai_serv+kali_serv)*log(pr_inv(s_serv)))
@@ -5513,20 +5609,20 @@ Count: 1 (7514 to 7514)
    *sum(pr_serv,sum(s_serv,log(pr_inv(s_serv))*bi_serv*log(pr_inv(pr_serv))))
 
 
-Equation 207
+Equation 208
 ------------
 Domain: s_mach
-Count: 3 (7515 to 7517)
+Count: 3 (7551 to 7553)
 
    shr_mach
    =ai_mach+kali_mach
    +sum(pr_mach,bi_mach*log(pr_inv(pr_mach)))
 
 
-Equation 208
+Equation 209
 ------------
 Domain: mach
-Count: 1 (7518 to 7518)
+Count: 1 (7554 to 7554)
 
    log(pr_inv(mach))
    =sum(s_mach,(ai_mach+kali_mach)*log(pr_inv(s_mach)))
@@ -5534,20 +5630,20 @@ Count: 1 (7518 to 7518)
    *sum(pr_mach,sum(s_mach,log(pr_inv(s_mach))*bi_mach*log(pr_inv(pr_mach))))
 
 
-Equation 209
+Equation 210
 ------------
 Domain: s_ttsvc
-Count: 3 (7519 to 7521)
+Count: 3 (7555 to 7557)
 
    shr_ttsvc
    =ai_ttsvc+kali_ttsvc
    +sum(pr_ttsvc,bi_ttsvc*log(pr_inv(pr_ttsvc)))
 
 
-Equation 210
+Equation 211
 ------------
 Domain: ttsvc
-Count: 1 (7522 to 7522)
+Count: 1 (7558 to 7558)
 
    log(pr_inv(ttsvc))
    =sum(s_ttsvc,(ai_ttsvc+kali_ttsvc)*log(pr_inv(s_ttsvc)))
@@ -5555,19 +5651,19 @@ Count: 1 (7522 to 7522)
    *sum(pr_ttsvc,sum(s_ttsvc,log(pr_inv(s_ttsvc))*bi_ttsvc*log(pr_inv(pr_ttsvc))))
 
 
-Equation 211
+Equation 212
 ------------
 Domain: s_eit
-Count: 3 (7523 to 7525)
+Count: 3 (7559 to 7561)
 
    shr_eit
    =ai_eit+kali_eit+sum(pr_eit,bi_eit*log(pr_inv(pr_eit)))
 
 
-Equation 212
+Equation 213
 ------------
 Domain: eit
-Count: 1 (7526 to 7526)
+Count: 1 (7562 to 7562)
 
    log(pr_inv(eit))
    =sum(s_eit,(ai_eit+kali_eit)*log(pr_inv(s_eit)))
@@ -5575,20 +5671,20 @@ Count: 1 (7526 to 7526)
    *sum(pr_eit,sum(s_eit,log(pr_inv(s_eit))*bi_eit*log(pr_inv(pr_eit))))
 
 
-Equation 213
+Equation 214
 ------------
 Domain: s_short
-Count: 2 (7527 to 7528)
+Count: 2 (7563 to 7564)
 
    shr_short
    =ai_short+kali_short
    +sum(pr_short,bi_short*log(pr_inv(pr_short)))
 
 
-Equation 214
+Equation 215
 ------------
 Domain: short
-Count: 1 (7529 to 7529)
+Count: 1 (7565 to 7565)
 
    log(pr_inv(short))
    =sum(s_short,(ai_short+kali_short)*log(pr_inv(s_short)))
@@ -5596,20 +5692,20 @@ Count: 1 (7529 to 7529)
    *sum(pr_short,sum(s_short,log(pr_inv(s_short))*bi_short*log(pr_inv(pr_short))))
 
 
-Equation 215
+Equation 216
 ------------
 Domain: s_long
-Count: 3 (7530 to 7532)
+Count: 3 (7566 to 7568)
 
    shr_long
    =ai_long+kali_long
    +sum(pr_long,bi_long*log(pr_inv(pr_long)))
 
 
-Equation 216
+Equation 217
 ------------
 Domain: long
-Count: 1 (7533 to 7533)
+Count: 1 (7569 to 7569)
 
    log(pr_inv(long))
    =sum(s_long,(ai_long+kali_long)*log(pr_inv(s_long)))
@@ -5617,17 +5713,17 @@ Count: 1 (7533 to 7533)
    *sum(pr_long,sum(s_long,log(pr_inv(s_long))*bi_long*log(pr_inv(pr_long))))
 
 
-Equation 217
+Equation 218
 ------------
 Domain: s_fixed
-Count: 2 (7534 to 7535)
+Count: 2 (7570 to 7571)
 
    shr_fixed
    =ai_fixed+kali_fixed
    +sum(pr_fixed,bi_fixed*log(pr_inv(pr_fixed)))
 
 
-Equation 218
+Equation 219
 ------------
 
    pii
@@ -5638,70 +5734,70 @@ Equation 218
    *inv_shock
 
 
-Equation 219
+Equation 220
 ------------
 
    pk=adjust_pk*pii*(1-tax_itc)
 
 
-Equation 220
+Equation 221
 ------------
 
    inv_total=inv_expend/(1-tax_itc)
 
 
-Equation 221
+Equation 222
 ------------
 
    rev_itc=(-tax_itc)*inv_total
 
 
-Equation 222
+Equation 223
 ------------
 
    inv_real=(adjust_i*inv_total*inv_exp_shk)/pii
 
 
-Equation 223
+Equation 224
 ------------
 
    fixed_inv=inv_total*(1-inven_fract)
 
 
-Equation 224
+Equation 225
 ------------
 
    inven_inv=inv_total-fixed_inv
 
 
-Equation 225
+Equation 226
 ------------
 Domain: c05,long
-Count: 1 (7543 to 7543)
+Count: 1 (7579 to 7579)
 
    inv_share(c05)=shr_long(c05)*shr_fixed(long)
 
 
-Equation 226
+Equation 227
 ------------
 Domain: c09,long
-Count: 1 (7544 to 7544)
+Count: 1 (7580 to 7580)
 
    inv_share(c09)=shr_long(c09)*shr_fixed(long)
 
 
-Equation 227
+Equation 228
 ------------
 Domain: c31,long
-Count: 1 (7545 to 7545)
+Count: 1 (7581 to 7581)
 
    inv_share(c31)=shr_long(c31)*shr_fixed(long)
 
 
-Equation 228
+Equation 229
 ------------
 Domain: c10,eit,frawm,mach,mrawm,rawm,short
-Count: 1 (7546 to 7546)
+Count: 1 (7582 to 7582)
 
    inv_share(c10)
    =shr_rawm(c10)*shr_mrawm(rawm)*shr_frawm(mrawm)
@@ -5711,10 +5807,10 @@ Count: 1 (7546 to 7546)
    *shr_fixed(short)
 
 
-Equation 229
+Equation 230
 ------------
 Domain: c11,eit,frawm,mach,mrawm,rawm,short
-Count: 1 (7547 to 7547)
+Count: 1 (7583 to 7583)
 
    inv_share(c11)
    =shr_rawm(c11)*shr_mrawm(rawm)*shr_frawm(mrawm)
@@ -5724,10 +5820,10 @@ Count: 1 (7547 to 7547)
    *shr_fixed(short)
 
 
-Equation 230
+Equation 231
 ------------
 Domain: c12,eit,frawm,mach,mrawm,rawm,short
-Count: 1 (7548 to 7548)
+Count: 1 (7584 to 7584)
 
    inv_share(c12)
    =shr_rawm(c12)*shr_mrawm(rawm)*shr_frawm(mrawm)
@@ -5737,10 +5833,10 @@ Count: 1 (7548 to 7548)
    *shr_fixed(short)
 
 
-Equation 231
+Equation 232
 ------------
 Domain: c19,eit,frawm,furn,mach,short
-Count: 1 (7549 to 7549)
+Count: 1 (7585 to 7585)
 
    inv_share(c19)
    =shr_furn(c19)*shr_frawm(furn)*shr_mach(frawm)
@@ -5749,10 +5845,10 @@ Count: 1 (7549 to 7549)
    *shr_fixed(short)
 
 
-Equation 232
+Equation 233
 ------------
 Domain: c21,eit,frawm,furn,mach,short
-Count: 1 (7550 to 7550)
+Count: 1 (7586 to 7586)
 
    inv_share(c21)
    =shr_furn(c21)*shr_frawm(furn)*shr_mach(frawm)
@@ -5761,10 +5857,10 @@ Count: 1 (7550 to 7550)
    *shr_fixed(short)
 
 
-Equation 233
+Equation 234
 ------------
 Domain: c24,eit,frawm,furn,mach,short
-Count: 1 (7551 to 7551)
+Count: 1 (7587 to 7587)
 
    inv_share(c24)
    =shr_furn(c24)*shr_frawm(furn)*shr_mach(frawm)
@@ -5773,10 +5869,10 @@ Count: 1 (7551 to 7551)
    *shr_fixed(short)
 
 
-Equation 234
+Equation 235
 ------------
 Domain: c22,mserv,serv,short,ttsvc
-Count: 1 (7552 to 7552)
+Count: 1 (7588 to 7588)
 
    inv_share(c22)
    =shr_mserv(c22)*shr_serv(mserv)*shr_ttsvc(serv)
@@ -5784,10 +5880,10 @@ Count: 1 (7552 to 7552)
    *shr_fixed(short)
 
 
-Equation 235
+Equation 236
 ------------
 Domain: c34,mserv,serv,short,ttsvc
-Count: 1 (7553 to 7553)
+Count: 1 (7589 to 7589)
 
    inv_share(c34)
    =shr_mserv(c34)*shr_serv(mserv)*shr_ttsvc(serv)
@@ -5795,10 +5891,10 @@ Count: 1 (7553 to 7553)
    *shr_fixed(short)
 
 
-Equation 236
+Equation 237
 ------------
 Domain: c35,mserv,serv,short,ttsvc
-Count: 1 (7554 to 7554)
+Count: 1 (7590 to 7590)
 
    inv_share(c35)
    =shr_mserv(c35)*shr_serv(mserv)*shr_ttsvc(serv)
@@ -5806,77 +5902,77 @@ Count: 1 (7554 to 7554)
    *shr_fixed(short)
 
 
-Equation 237
+Equation 238
 ------------
 Domain: c25,short,trd,ttsvc
-Count: 1 (7555 to 7555)
+Count: 1 (7591 to 7591)
 
    inv_share(c25)
    =shr_trd(c25)*shr_ttsvc(trd)*shr_short(ttsvc)
    *shr_fixed(short)
 
 
-Equation 238
+Equation 239
 ------------
 Domain: c26,short,trd,ttsvc
-Count: 1 (7556 to 7556)
+Count: 1 (7592 to 7592)
 
    inv_share(c26)
    =shr_trd(c26)*shr_ttsvc(trd)*shr_short(ttsvc)
    *shr_fixed(short)
 
 
-Equation 239
+Equation 240
 ------------
 Domain: c17,eit,short,trnsp
-Count: 1 (7557 to 7557)
+Count: 1 (7593 to 7593)
 
    inv_share(c17)
    =shr_trnsp(c17)*shr_eit(trnsp)*shr_short(eit)
    *shr_fixed(short)
 
 
-Equation 240
+Equation 241
 ------------
 Domain: c18,eit,short,trnsp
-Count: 1 (7558 to 7558)
+Count: 1 (7594 to 7594)
 
    inv_share(c18)
    =shr_trnsp(c18)*shr_eit(trnsp)*shr_short(eit)
    *shr_fixed(short)
 
 
-Equation 241
+Equation 242
 ------------
 Domain: c15,eit,it,short
-Count: 1 (7559 to 7559)
+Count: 1 (7595 to 7595)
 
    inv_share(c15)
    =shr_it(c15)*shr_eit(it)*shr_short(eit)*shr_fixed(short)
 
 
-Equation 242
+Equation 243
 ------------
 Domain: c28,eit,it,short
-Count: 1 (7560 to 7560)
+Count: 1 (7596 to 7596)
 
    inv_share(c28)
    =shr_it(c28)*shr_eit(it)*shr_short(eit)*shr_fixed(short)
 
 
-Equation 243
+Equation 244
 ------------
 Domain: c29,eit,it,short
-Count: 1 (7561 to 7561)
+Count: 1 (7597 to 7597)
 
    inv_share(c29)
    =shr_it(c29)*shr_eit(it)*shr_short(eit)*shr_fixed(short)
 
 
-Equation 244
+Equation 245
 ------------
 Domain: c13,eit,frawm,mach,mrawm,short
-Count: 1 (7562 to 7562)
+Count: 1 (7598 to 7598)
 
    inv_share(c13)
    =shr_mrawm(c13)*shr_frawm(mrawm)*shr_mach(frawm)
@@ -5885,148 +5981,139 @@ Count: 1 (7562 to 7562)
    *shr_fixed(short)
 
 
-Equation 245
+Equation 246
 ------------
 Domain: c32,serv,short,ttsvc
-Count: 1 (7563 to 7563)
+Count: 1 (7599 to 7599)
 
    inv_share(c32)
    =shr_serv(c32)*shr_ttsvc(serv)*shr_short(ttsvc)
    *shr_fixed(short)
 
 
-Equation 246
+Equation 247
 ------------
 Domain: c14,eit,mach,short
-Count: 1 (7564 to 7564)
+Count: 1 (7600 to 7600)
 
    inv_share(c14)
    =shr_mach(c14)*shr_eit(mach)*shr_short(eit)
    *shr_fixed(short)
 
 
-Equation 247
+Equation 248
 ------------
 Domain: c16,eit,mach,short
-Count: 1 (7565 to 7565)
+Count: 1 (7601 to 7601)
 
    inv_share(c16)
    =shr_mach(c16)*shr_eit(mach)*shr_short(eit)
    *shr_fixed(short)
 
 
-Equation 248
+Equation 249
 ------------
 Domain: c27,short,ttsvc
-Count: 1 (7566 to 7566)
+Count: 1 (7602 to 7602)
 
    inv_share(c27)
    =shr_ttsvc(c27)*shr_short(ttsvc)*shr_fixed(short)
 
 
-Equation 249
+Equation 250
 ------------
 Domain: c01
-Count: 1 (7567 to 7567)
+Count: 1 (7603 to 7603)
 
    inv_share(c01)=0.0
 
 
-Equation 250
+Equation 251
 ------------
 Domain: c02
-Count: 1 (7568 to 7568)
+Count: 1 (7604 to 7604)
 
    inv_share(c02)=0.0
 
 
-Equation 251
+Equation 252
 ------------
 Domain: c03
-Count: 1 (7569 to 7569)
+Count: 1 (7605 to 7605)
 
    inv_share(c03)=0.0
 
 
-Equation 252
+Equation 253
 ------------
 Domain: c04
-Count: 1 (7570 to 7570)
+Count: 1 (7606 to 7606)
 
    inv_share(c04)=0.0
 
 
-Equation 253
+Equation 254
 ------------
 Domain: c06
-Count: 1 (7571 to 7571)
+Count: 1 (7607 to 7607)
 
    inv_share(c06)=0.0
 
 
-Equation 254
+Equation 255
 ------------
 Domain: c07
-Count: 1 (7572 to 7572)
+Count: 1 (7608 to 7608)
 
    inv_share(c07)=0.0
 
 
-Equation 255
+Equation 256
 ------------
 Domain: c08
-Count: 1 (7573 to 7573)
+Count: 1 (7609 to 7609)
 
    inv_share(c08)=0.0
 
 
-Equation 256
+Equation 257
 ------------
 Domain: c20
-Count: 1 (7574 to 7574)
+Count: 1 (7610 to 7610)
 
    inv_share(c20)=0.0
 
 
-Equation 257
+Equation 258
 ------------
 Domain: c23
-Count: 1 (7575 to 7575)
+Count: 1 (7611 to 7611)
 
    inv_share(c23)=0.0
 
 
-Equation 258
+Equation 259
 ------------
 Domain: c30
-Count: 1 (7576 to 7576)
+Count: 1 (7612 to 7612)
 
    inv_share(c30)=0.0
 
 
-Equation 259
+Equation 260
 ------------
 Domain: c33
-Count: 1 (7577 to 7577)
+Count: 1 (7613 to 7613)
 
    inv_share(c33)=0.0
 
 
-Equation 260
-------------
-Domain: c36
-Count: 1 (7578 to 7578)
-
-   inv_share(c36)=0.0
-
-
 Equation 261
 ------------
-Domain: com
-Count: 36 (7579 to 7614)
+Domain: c36
+Count: 1 (7614 to 7614)
 
-   inv
-   =inv_share*fixed_inv+inven_share*inven_inv
+   inv_share(c36)=0.0
 
 
 Equation 262
@@ -6034,7 +6121,8 @@ Equation 262
 Domain: com
 Count: 36 (7615 to 7650)
 
-   inv_qty(com)=inv(com)/pr_inv(com)
+   inv
+   =inv_share*fixed_inv+inven_share*inven_inv
 
 
 Equation 263
@@ -6042,112 +6130,232 @@ Equation 263
 Domain: com
 Count: 36 (7651 to 7686)
 
-   gov=(gov_share*gov_expend)/(1+tax_con_gov)
+   inv_qty(com)=inv(com)/pr_inv(com)
 
 
 Equation 264
 ------------
-Domain: com,gov
+Domain: com
 Count: 36 (7687 to 7722)
 
-   gov_qty(com)=gov(com)/pb(com,gov)
+   gov=gov_share*gov_expend
 
 
 Equation 265
 ------------
-Domain: com
+Domain: com,gov
 Count: 36 (7723 to 7758)
+
+   gov_qty(com)=gov(com)/(pb(com,gov)*(1+tax_con_gov))
+
+
+Equation 266
+------------
+
+   rev_sales=sum(ind,tax_sales*ind_out)
+
+
+Equation 267
+------------
+
+   rev_unit=sum(ind,tax_unit*ind_qty)
+
+
+Equation 268
+------------
+
+   rev_tariff=sum(com,tariff*pf*exch*imp_qty)
+
+
+Equation 269
+------------
+Domain: kap
+Count: 1 (7762 to 7762)
+
+   rev_con
+   =sum(com,(tax_con_totc*con)/(1+tax_con_totc))
+   +tax_con_totk*inv_expend*(con(kap)/(kap_income+rev_cap_hh))
+
+
+Equation 270
+------------
+
+   rev_con_gov=tax_con_gov*(gov_expend/(1+tax_con_gov))
+
+
+Equation 271
+------------
+
+   rev_con_rbt=tax_con*tax_con_xmpt
+
+
+Equation 272
+------------
+
+   rev_extern
+   =sum(ind,tax_ext_ind*ind_qty)+sum(com,tar_ext_com*imp_qty)
+   +sum(com,sum(buy,tax_ext_com*int_qty))
+
+
+Equation 273
+------------
+
+   rev_total
+   =rev_sales+rev_unit+rev_tariff+rev_prop+rev_cap
+   -rev_itc
+   +rev_cap_hh
+   +rev_wealth
+   +rev_labor
+   +rev_extern
+   +rev_con
+   +rev_con_gov
+   -rev_con_rbt
+   +rev_lump
+   +rev_nontax
+
+
+Equation 274
+------------
+
+   gov_surplus
+   =rev_total-gov_expend+gov_kap_inc+gov_from_ss
+   -gov_interest
+   -gov_int_ss
+   -gov_int_abr
+   -gov_transdom
+   -gov_transabr
+
+
+Equation 275
+------------
+Relative Time: [0,1]
+
+   lead(gov_debt)
+   =gov_debt
+   +(gov_for_nvst+gov_debt_cg+gov_debt_dsc-gov_surplus)
+   *nyears_lead
+
+
+Equation 276
+------------
+Relative Time: [0,1]
+
+   lead(gov_debt_f)
+   =gov_debt_f-(gov_for_nvst+gov_debt_fcg)*nyears_lead
+
+
+Equation 277
+------------
+Domain: com
+Count: 36 (7770 to 7805)
 
    exp_share
    =ax_exp+kalx_exp
    +bx_exp*(log(pf)-log((pc*(1+row_tariff))/exch))
 
 
-Equation 266
+Equation 278
 ------------
 Domain: com
-Count: 36 (7759 to 7794)
+Count: 36 (7806 to 7841)
 
    exports=pc*exp_share*com_qty
 
 
-Equation 267
+Equation 279
 ------------
 Domain: com
-Count: 36 (7795 to 7830)
+Count: 36 (7842 to 7877)
 
    exp_qty=exp_share*com_qty
 
 
-Equation 268
+Equation 280
 ------------
 
    export_value=sum(com,exports)
 
 
-Equation 269
+Equation 281
 ------------
 Domain: com
-Count: 36 (7832 to 7867)
+Count: 36 (7879 to 7914)
 
    imports=(pc*imp_share*com_qty)/dom_share
 
 
-Equation 270
+Equation 282
 ------------
 Domain: com
-Count: 36 (7868 to 7903)
+Count: 36 (7915 to 7950)
 
    imp_qty=imports/pfd
 
 
-Equation 271
+Equation 283
 ------------
 
    import_value=sum(com,imports)
 
 
-Equation 272
+Equation 284
 ------------
 
    trade_surp=export_value-import_value
 
 
-Equation 273
+Equation 285
 ------------
 
    trade_surpfc=trade_surp/exch
 
 
-Equation 274
+Equation 286
+------------
+
+   us_surplus
+   =trade_surp+row_interest-gov_int_abr-gov_transabr
+
+
+Equation 287
+------------
+Relative Time: [0,1]
+
+   lead(row_debt)
+   =row_debt
+   +(us_surplus+row_debt_cg+row_debt_dsc-gov_for_nvst)
+   *nyears_lead
+
+
+Equation 288
 ------------
 
    hours_adjust=(1-unemp_scale)*hours
 
 
-Equation 275
+Equation 289
 ------------
 Domain: ind,lab
-Count: 36 (7908 to 7943)
+Count: 36 (7957 to 7992)
 
    lab(ind)=(ind_out(ind)*io(lab,ind))/pb(lab,ind)
 
 
-Equation 276
+Equation 290
 ------------
 
    lab_demand=sum(ind,lab*pl_scale)
 
 
-Equation 277
+Equation 291
 ------------
 Domain: lab
-Count: 1 (7945 to 7945)
+Count: 1 (7994 to 7994)
 
    lab_income=sum(ind,lab*pb(lab,ind))
 
 
-Equation 278
+Equation 292
 ------------
 
    lab_inc_net
@@ -6156,19 +6364,19 @@ Equation 278
    *(1-tax_labor_a)
 
 
-Equation 279
+Equation 293
 ------------
 
    rev_labor=tax_labor_a*lab_income
 
 
-Equation 280
+Equation 294
 ------------
 
    tax_labor_z=lab_income-rev_labor/tax_labor_m
 
 
-Equation 281
+Equation 295
 ------------
 Relative Time: [0,1]
 
@@ -6177,98 +6385,91 @@ Relative Time: [0,1]
    +(1-delta)^nyears_lead*k
 
 
-Equation 282
+Equation 296
 ------------
 Domain: ind,kap
-Count: 36 (7950 to 7985)
+Count: 36 (7999 to 8034)
 
    kap(ind)=(ind_out(ind)*io(kap,ind))/pb(kap,ind)
 
 
-Equation 283
+Equation 297
 ------------
 Domain: con,kap
-Count: 1 (7986 to 7986)
+Count: 1 (8035 to 8035)
 
    kap(con)=con_qty(kap)
 
 
-Equation 284
+Equation 298
 ------------
 
    kap_demand=sum(nind_c,kap*pk_scale)
 
 
-Equation 285
+Equation 299
 ------------
 Domain: con,kap
-Count: 1 (7988 to 7988)
+Count: 1 (8037 to 8037)
 
    rev_cap_hh
    =(tax_cap_hh*pb(kap,con)*kap(con))/(1+tax_cap_hh)
 
 
-Equation 286
+Equation 300
 ------------
 Domain: kap
-Count: 1 (7989 to 7989)
+Count: 1 (8038 to 8038)
 
    kap_income
    =sum(ind,kap(ind)*pb(kap,ind))+con(kap)-rev_cap_hh
 
 
-Equation 287
+Equation 301
 ------------
 
    k_value=pk*k
 
 
-Equation 288
+Equation 302
 ------------
 
    deprec=delta*k_value
 
 
-Equation 289
+Equation 303
 ------------
 
    rev_prop=tax_prop*k_value
 
 
-Equation 290
+Equation 304
 ------------
 
    kap_taxable=kap_income-rev_prop
 
 
-Equation 291
+Equation 305
 ------------
 
    dividend=(1-tax_cap)*kap_taxable
 
 
-Equation 292
+Equation 306
 ------------
 
    div_rate=dividend/k_value
 
 
-Equation 293
+Equation 307
 ------------
 Domain: i36,kap
-Count: 1 (7996 to 7996)
+Count: 1 (8045 to 8045)
 
    gov_kap_inc=(1-tax_cap)*kap(i36)*pb(kap,i36)
 
 
-Equation 294
-------------
-Relative Time: [-1,0]
-
-   nyears_lag=year-lag(year)
-
-
-Equation 295
+Equation 308
 ------------
 Relative Time: [-1,0]
 
@@ -6276,50 +6477,50 @@ Relative Time: [-1,0]
    =(((pk-lag(pk))/nyears_lag)/pk-delta)*k_value
 
 
-Equation 296
+Equation 309
 ------------
 
    cg_rate=capgain/k_value
 
 
-Equation 297
+Equation 310
 ------------
 
    r=div_rate+cg_rate
 
 
-Equation 298
+Equation 311
 ------------
 
    interest=r*(gov_debt+row_debt)
 
 
-Equation 299
+Equation 312
 ------------
 
    gov_int_adj
    =gov_interest+gov_int_ss-gov_from_ss-(r*gov_debt)/(1-tax_cap)
 
 
-Equation 300
+Equation 313
 ------------
 
    row_int_adj=row_interest-(r*row_debt)/(1-tax_cap)
 
 
-Equation 301
+Equation 314
 ------------
 
    finwealth=k_value+gov_debt+row_debt
 
 
-Equation 302
+Equation 315
 ------------
 
    rev_wealth=tax_wealth*finwealth
 
 
-Equation 303
+Equation 316
 ------------
 
    rev_cap
@@ -6328,10 +6529,104 @@ Equation 303
    +row_int_adj)
 
 
-Equation 304
+Equation 317
 ------------
 
    kap_inc_net
    =dividend-gov_kap_inc+interest-rev_wealth
    +(1-tax_cap)*(gov_int_adj+row_int_adj)
+
+
+Equation 318
+------------
+
+   pd_con
+   =expsum(ncom_k,(con*log(pr_con))/con_expend)
+   /pd_con_scale
+
+
+Equation 319
+------------
+
+   pd_inv
+   =
+   expsum(com,(inv(com)*log(pr_inv(com)))/inv_total)
+   /pd_inv_scale
+
+
+Equation 320
+------------
+Domain: gov
+Count: 1 (8058 to 8058)
+
+   pgg
+   =
+   expsum(com,gov_share(com)*log(pb(com,gov)*(1+tax_con_gov)))
+
+
+Equation 321
+------------
+
+   pd_gov=pgg/pd_gov_scale
+
+
+Equation 322
+------------
+
+   pd_exp
+   =expsum(com,(exports*log(pc))/export_value)
+   /pd_exp_scale
+
+
+Equation 323
+------------
+
+   pd_imp
+   =
+   expsum(com,(pf*exch*imp_qty*log(pf*exch))/import_value)
+   /pd_imp_scale
+
+
+Equation 324
+------------
+
+   nom_gdp
+   =con_expend+inv_total+gov_expend+export_value
+   -import_value
+
+
+Equation 325
+------------
+
+   pd_gdp
+   =
+   exp((con_expend*log(pd_con)+inv_total*log(pd_inv)
+   +gov_expend*log(pd_gov)
+   +export_value*log(pd_exp)
+   -import_value*log(pd_imp))
+   /nom_gdp)
+   /pd_gdp_scale
+
+
+Equation 326
+------------
+
+   nom_gnp
+   =nom_gdp+row_interest-gov_int_abr+rev_tariff
+
+
+Equation 327
+------------
+
+   income
+   =lab_inc_net+kap_inc_net+gov_transdom+rev_con_rbt
+   -rev_lump
+
+
+Equation 328
+------------
+
+   save
+   =income-con_expend-transfer_abr-rev_nontax
+   +rev_itc
 

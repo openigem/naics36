@@ -499,10 +499,17 @@ coefficient (all,c,com) bx_exp(c) ;
 coefficient delta ;
 coefficient denom_rebase ;
 coefficient (all,N1,ncom_k) (all,n4,nipa) io_nipa(N1,n4) ;
+coefficient pd_con_scale ;
+coefficient pd_exp_scale ;
+coefficient pd_gdp_scale ;
+coefficient pd_gov_scale ;
+coefficient pd_imp_scale ;
+coefficient pd_inv_scale ;
 coefficient pf_scale_k ;
 coefficient pf_scale_l ;
 coefficient pfc_m0 ;
 coefficient pr_fc_scale ;
+coefficient rho ;
 
 file param ;
 
@@ -763,6 +770,18 @@ read
 read (all,N1,ncom_k) (all,n4,nipa) 
    io_nipa(N1,n4) from file param header "P045" ;
 read 
+   pd_con_scale from file param header "P137" ;
+read 
+   pd_exp_scale from file param header "P140" ;
+read 
+   pd_gdp_scale from file param header "P136" ;
+read 
+   pd_gov_scale from file param header "P139" ;
+read 
+   pd_imp_scale from file param header "P141" ;
+read 
+   pd_inv_scale from file param header "P138" ;
+read 
    pf_scale_k from file param header "P135" ;
 read 
    pf_scale_l from file param header "P134" ;
@@ -770,6 +789,8 @@ read
    pfc_m0 from file param header "P046" ;
 read 
    pr_fc_scale from file param header "P142" ;
+read 
+   rho from file param header "P003" ;
 
 variable (all,s10,s_f) (all,t,time) ab_shr_f(s10,t) ;
 variable (all,t,time) adjust_i(t) ;
@@ -936,13 +957,22 @@ variable (all,t,time) lab_income(t) ;
 variable (all,t,time) leisure(t) ;
 variable (all,i,ind) (all,c,com) (all,t,time) make_col(i,c,t) ;
 variable (all,i,ind) (all,t,time) mat(i,t) ;
+variable (all,t,time) nom_gdp(t) ;
+variable (all,t,time) nom_gnp(t) ;
 variable (all,t,time) nyears_lag(t) ;
 variable (all,t,time) nyears_lead(t) ;
 variable (all,i19,inputs) (all,b,buy) (all,t,time) pb(i19,b,t) ;
 variable (all,c,com) (all,t,time) pc(c,t) ;
 variable (all,n6,ntoth) (all,t,time) pcon(n6,t) ;
+variable (all,t,time) pd_con(t) ;
+variable (all,t,time) pd_exp(t) ;
+variable (all,t,time) pd_gdp(t) ;
+variable (all,t,time) pd_gov(t) ;
+variable (all,t,time) pd_imp(t) ;
+variable (all,t,time) pd_inv(t) ;
 variable (all,c,com) (all,t,time) pf(c,t) ;
 variable (all,c,com) (all,t,time) pfd(c,t) ;
+variable (all,t,time) pgg(t) ;
 variable (all,i,ind) (all,t,time) pi(i,t) ;
 variable (all,t,time) pii(t) ;
 variable (all,t,time) pj_scale(t) ;
@@ -980,6 +1010,7 @@ variable (all,t,time) rev_tariff(t) ;
 variable (all,t,time) rev_total(t) ;
 variable (all,t,time) rev_unit(t) ;
 variable (all,t,time) rev_wealth(t) ;
+variable (all,t,time) risk(t) ;
 variable (all,t,time) row_debt(t) ;
 variable (all,t,time) row_debt_cg(t) ;
 variable (all,t,time) row_debt_dsc(t) ;
@@ -1069,6 +1100,7 @@ variable (all,t,time) tech_shk_row(t) ;
 variable (all,i,ind) (all,t,time) tech_shock(i,t) ;
 variable (all,t,time) trade_surp(t) ;
 variable (all,t,time) trade_surpfc(t) ;
+variable (all,t,time) transfer_abr(t) ;
 variable (all,t,time) unemp_scale(t) ;
 variable (all,t,time) unemp_time(t) ;
 variable (all,t,time) us_surplus(t) ;
@@ -1409,6 +1441,10 @@ read (all,i,ind) (all,c,com) (all,t,time)
 read (all,i,ind) (all,t,time) 
    mat(i,t) from file endog header "N052" ;
 read (all,t,time) 
+   nom_gdp(t) from file endog header "N149" ;
+read (all,t,time) 
+   nom_gnp(t) from file endog header "N133" ;
+read (all,t,time) 
    nyears_lag(t) from file other header "ZV02" ;
 read (all,t,time) 
    nyears_lead(t) from file other header "ZV01" ;
@@ -1418,10 +1454,24 @@ read (all,c,com) (all,t,time)
    pc(c,t) from file endog header "N035" ;
 read (all,n6,ntoth) (all,t,time) 
    pcon(n6,t) from file endog header "N019" ;
+read (all,t,time) 
+   pd_con(t) from file endog header "N151" ;
+read (all,t,time) 
+   pd_exp(t) from file endog header "N154" ;
+read (all,t,time) 
+   pd_gdp(t) from file endog header "N156" ;
+read (all,t,time) 
+   pd_gov(t) from file endog header "N153" ;
+read (all,t,time) 
+   pd_imp(t) from file endog header "N155" ;
+read (all,t,time) 
+   pd_inv(t) from file endog header "N152" ;
 read (all,c,com) (all,t,time) 
    pf(c,t) from file endog header "N091" ;
 read (all,c,com) (all,t,time) 
    pfd(c,t) from file other header "ZV03" ;
+read (all,t,time) 
+   pgg(t) from file endog header "N157" ;
 read (all,i,ind) (all,t,time) 
    pi(i,t) from file endog header "N034" ;
 read (all,t,time) 
@@ -1496,6 +1546,8 @@ read (all,t,time)
    rev_unit(t) from file endog header "N106" ;
 read (all,t,time) 
    rev_wealth(t) from file endog header "N103" ;
+read (all,t,time) 
+   risk(t) from file exog header "X024" ;
 read (all,t,time) 
    row_debt(t) from file endog header "N130" ;
 read (all,t,time) 
@@ -1675,6 +1727,8 @@ read (all,t,time)
 read (all,t,time) 
    trade_surpfc(t) from file endog header "N094" ;
 read (all,t,time) 
+   transfer_abr(t) from file other header "ZV77" ;
+read (all,t,time) 
    unemp_scale(t) from file exog header "X026" ;
 read (all,t,time) 
    unemp_time(t) from file exog header "X025" ;
@@ -1683,222 +1737,225 @@ read (all,t,time)
 read (all,t,time) 
    year(t) from file exog header "X041" ;
 
-equation EQN1 (all,t,time) 
-   tax_labor_m(t) = exo_tax_labm(t)*tax_scale(t) ;
-
-equation EQN2 (all,t,time) 
-   tax_labor_a(t) = exo_tax_laba(t)*tax_scale(t) ;
-
-equation EQN3 (all,t,time) 
-   tax_cap(t) = exo_tax_cap(t)*tax_scale(t) ;
-
-equation EQN4 (all,i,ind) (all,t,time) 
-   tax_ext_ind(i,t) = sum(N8,nxtr,tax_ext_u(N8,t)*prd_ext(i,N8,t)) ;
-
-equation EQN5 (all,c,com) (all,t,time) 
-   tar_ext_com(c,t) = sum(N8,nxtr,tax_ext_u(N8,t)*imp_ext(c,N8,t)) ;
-
-equation EQN6 (all,b,buy) (all,c,com) (all,t,time) 
-   tax_ext_com(c,b,t) = sum(N8,nxtr,tax_ext_u(N8,t)*com_ext(c,b,N8,t)) ;
-
-equation EQN7 (all,t1,time_p0m1) 
+equation EQN1 (all,t1,time_p0m1) 
    nyears_lead(t1) = year(t1+1)-year(t1) ;
 
-equation EQN8 (all,t1,time_p0m1) 
+equation EQN2 (all,t2,time_p1m0) 
+   nyears_lag(t2) = year(t2)-year(t2-1) ;
+
+equation EQN3 (all,t,time) 
+   tax_labor_m(t) = exo_tax_labm(t)*tax_scale(t) ;
+
+equation EQN4 (all,t,time) 
+   tax_labor_a(t) = exo_tax_laba(t)*tax_scale(t) ;
+
+equation EQN5 (all,t,time) 
+   tax_cap(t) = exo_tax_cap(t)*tax_scale(t) ;
+
+equation EQN6 (all,i,ind) (all,t,time) 
+   tax_ext_ind(i,t) = sum(N8,nxtr,tax_ext_u(N8,t)*prd_ext(i,N8,t)) ;
+
+equation EQN7 (all,c,com) (all,t,time) 
+   tar_ext_com(c,t) = sum(N8,nxtr,tax_ext_u(N8,t)*imp_ext(c,N8,t)) ;
+
+equation EQN8 (all,b,buy) (all,c,com) (all,t,time) 
+   tax_ext_com(c,b,t) = sum(N8,nxtr,tax_ext_u(N8,t)*com_ext(c,b,N8,t)) ;
+
+equation EQN9 (all,t1,time_p0m1) 
    agg_tech_lvl(t1+1) = (1-agg_tech_chg(t1))^nyears_lead(t1)*agg_tech_lvl(t1) ;
 
-equation EQN9 (all,i1,indxoilgas) (all,t,time) 
+equation EQN10 (all,i1,indxoilgas) (all,t,time) 
    pb("kap",i1,t) = pk_service(t)*pk_scale(i1,t) ;
 
-equation EQN10 (all,t,time) 
+equation EQN11 (all,t,time) 
    pb("kap","i02",t) = pr_kap_oil(t) ;
 
-equation EQN11 (all,t,time) 
+equation EQN12 (all,t,time) 
    pb("kap","i03",t) = pr_kap_gas(t) ;
 
-equation EQN12 (all,i,ind) (all,t,time) 
+equation EQN13 (all,i,ind) (all,t,time) 
    pb("lab",i,t) = (pr_hours(t)*pl_scale(i,t))/(1-tax_labor_m(t)) ;
 
-equation EQN13 (all,i,ind) (all,s16,s_gas) (all,t,time) 
+equation EQN14 (all,i,ind) (all,s16,s_gas) (all,t,time) 
    shr_gas(s16,i,t) = ap_gas(s16,i)+kalf_gas(s16,i,t)
    +sum(p16,pr_gas,bp_gas(s16,p16,i)*loge(pb(p16,i,t))) ;
 
-equation EQN14 (all,i,ind) (all,t,time) 
+equation EQN15 (all,i,ind) (all,t,time) 
    loge(pb("gas",i,t)) = ap0_gas(i)
    +sum(s16,s_gas,(ap_gas(s16,i)+kalf_gas(s16,i,t))*loge(pb(s16,i,t)))
    +0.5
    *sum(p16,pr_gas,sum(s16,s_gas,loge(pb(s16,i,t))*bp_gas(s16,p16,i)
    *loge(pb(p16,i,t)))) ;
 
-equation EQN15 (all,i,ind) (all,s35,s_oil) (all,t,time) 
+equation EQN16 (all,i,ind) (all,s35,s_oil) (all,t,time) 
    shr_oil(s35,i,t) = ap_oil(s35,i)+kalf_oil(s35,i,t)
    +sum(p35,pr_oil,bp_oil(s35,p35,i)*loge(pb(p35,i,t))) ;
 
-equation EQN16 (all,i,ind) (all,t,time) 
+equation EQN17 (all,i,ind) (all,t,time) 
    loge(pb("oil",i,t)) = ap0_oil(i)
    +sum(s35,s_oil,(ap_oil(s35,i)+kalf_oil(s35,i,t))*loge(pb(s35,i,t)))
    +0.5
    *sum(p35,pr_oil,sum(s35,s_oil,loge(pb(s35,i,t))*bp_oil(s35,p35,i)
    *loge(pb(p35,i,t)))) ;
 
-equation EQN17 (all,i,ind) (all,s12,s_ff) (all,t,time) 
+equation EQN18 (all,i,ind) (all,s12,s_ff) (all,t,time) 
    shr_ff(s12,i,t) = ap_ff(s12,i)+kalf_ff(s12,i,t)
    +sum(p12,pr_ff,bp_ff(s12,p12,i)*loge(pb(p12,i,t))) ;
 
-equation EQN18 (all,i,ind) (all,t,time) 
+equation EQN19 (all,i,ind) (all,t,time) 
    loge(pb("ff",i,t)) = ap0_ff(i)
    +sum(s12,s_ff,(ap_ff(s12,i)+kalf_ff(s12,i,t))*loge(pb(s12,i,t)))
    +0.5
    *sum(p12,pr_ff,sum(s12,s_ff,loge(pb(s12,i,t))*bp_ff(s12,p12,i)
    *loge(pb(p12,i,t)))) ;
 
-equation EQN19 (all,i,ind) (all,s7,s_ene) (all,t,time) 
+equation EQN20 (all,i,ind) (all,s7,s_ene) (all,t,time) 
    shr_ene(s7,i,t) = ap_ene(s7,i)+kalf_ene(s7,i,t)
    +sum(p7,pr_ene,bp_ene(s7,p7,i)*loge(pb(p7,i,t))) ;
 
-equation EQN20 (all,i,ind) (all,t,time) 
+equation EQN21 (all,i,ind) (all,t,time) 
    loge(pb("ene",i,t)) = ap0_ene(i)
    +sum(s7,s_ene,(ap_ene(s7,i)+kalf_ene(s7,i,t))*loge(pb(s7,i,t)))
    +0.5
    *sum(p7,pr_ene,sum(s7,s_ene,loge(pb(s7,i,t))*bp_ene(s7,p7,i)
    *loge(pb(p7,i,t)))) ;
 
-equation EQN21 (all,i,ind) (all,s,s_bl) (all,t,time) 
+equation EQN22 (all,i,ind) (all,s,s_bl) (all,t,time) 
    shr_bl(s,i,t) = ap_bl(s,i)+kalf_bl(s,i,t)
    +sum(p,pr_bl,bp_bl(s,p,i)*loge(pb(p,i,t))) ;
 
-equation EQN22 (all,i,ind) (all,t,time) 
+equation EQN23 (all,i,ind) (all,t,time) 
    loge(pb("bl",i,t)) = ap0_bl(i)
    +sum(s,s_bl,(ap_bl(s,i)+kalf_bl(s,i,t))*loge(pb(s,i,t)))
    +0.5
    *sum(p,pr_bl,sum(s,s_bl,loge(pb(s,i,t))*bp_bl(s,p,i)*loge(pb(p,i,t)))) ;
 
-equation EQN23 (all,i,ind) (all,s34,s_ob) (all,t,time) 
+equation EQN24 (all,i,ind) (all,s34,s_ob) (all,t,time) 
    shr_ob(s34,i,t) = ap_ob(s34,i)+kalf_ob(s34,i,t)
    +sum(p34,pr_ob,bp_ob(s34,p34,i)*loge(pb(p34,i,t))) ;
 
-equation EQN24 (all,i,ind) (all,t,time) 
+equation EQN25 (all,i,ind) (all,t,time) 
    loge(pb("ob",i,t)) = ap0_ob(i)
    +sum(s34,s_ob,(ap_ob(s34,i)+kalf_ob(s34,i,t))*loge(pb(s34,i,t)))
    +0.5
    *sum(p34,pr_ob,sum(s34,s_ob,loge(pb(s34,i,t))*bp_ob(s34,p34,i)
    *loge(pb(p34,i,t)))) ;
 
-equation EQN25 (all,i,ind) (all,s36,s_os) (all,t,time) 
+equation EQN26 (all,i,ind) (all,s36,s_os) (all,t,time) 
    shr_os(s36,i,t) = ap_os(s36,i)+kalf_os(s36,i,t)
    +sum(p36,pr_os,bp_os(s36,p36,i)*loge(pb(p36,i,t))) ;
 
-equation EQN26 (all,i,ind) (all,t,time) 
+equation EQN27 (all,i,ind) (all,t,time) 
    loge(pb("os",i,t)) = ap0_os(i)
    +sum(s36,s_os,(ap_os(s36,i)+kalf_os(s36,i,t))*loge(pb(s36,i,t)))
    +0.5
    *sum(p36,pr_os,sum(s36,s_os,loge(pb(s36,i,t))*bp_os(s36,p36,i)
    *loge(pb(p36,i,t)))) ;
 
-equation EQN27 (all,i,ind) (all,s42,s_sv) (all,t,time) 
+equation EQN28 (all,i,ind) (all,s42,s_sv) (all,t,time) 
    shr_sv(s42,i,t) = ap_sv(s42,i)+kalf_sv(s42,i,t)
    +sum(p42,pr_sv,bp_sv(s42,p42,i)*loge(pb(p42,i,t))) ;
 
-equation EQN28 (all,i,ind) (all,t,time) 
+equation EQN29 (all,i,ind) (all,t,time) 
    loge(pb("sv",i,t)) = ap0_sv(i)
    +sum(s42,s_sv,(ap_sv(s42,i)+kalf_sv(s42,i,t))*loge(pb(s42,i,t)))
    +0.5
    *sum(p42,pr_sv,sum(s42,s_sv,loge(pb(s42,i,t))*bp_sv(s42,p42,i)
    *loge(pb(p42,i,t)))) ;
 
-equation EQN29 (all,i,ind) (all,s23,s_ma) (all,t,time) 
+equation EQN30 (all,i,ind) (all,s23,s_ma) (all,t,time) 
    shr_ma(s23,i,t) = ap_ma(s23,i)+kalf_ma(s23,i,t)
    +sum(p23,pr_ma,bp_ma(s23,p23,i)*loge(pb(p23,i,t))) ;
 
-equation EQN30 (all,i,ind) (all,t,time) 
+equation EQN31 (all,i,ind) (all,t,time) 
    loge(pb("ma",i,t)) = ap0_ma(i)
    +sum(s23,s_ma,(ap_ma(s23,i)+kalf_ma(s23,i,t))*loge(pb(s23,i,t)))
    +0.5
    *sum(p23,pr_ma,sum(s23,s_ma,loge(pb(s23,i,t))*bp_ma(s23,p23,i)
    *loge(pb(p23,i,t)))) ;
 
-equation EQN31 (all,i,ind) (all,s28,s_mn) (all,t,time) 
+equation EQN32 (all,i,ind) (all,s28,s_mn) (all,t,time) 
    shr_mn(s28,i,t) = ap_mn(s28,i)+kalf_mn(s28,i,t)
    +sum(p28,pr_mn,bp_mn(s28,p28,i)*loge(pb(p28,i,t))) ;
 
-equation EQN32 (all,i,ind) (all,t,time) 
+equation EQN33 (all,i,ind) (all,t,time) 
    loge(pb("mn",i,t)) = ap0_mn(i)
    +sum(s28,s_mn,(ap_mn(s28,i)+kalf_mn(s28,i,t))*loge(pb(s28,i,t)))
    +0.5
    *sum(p28,pr_mn,sum(s28,s_mn,loge(pb(s28,i,t))*bp_mn(s28,p28,i)
    *loge(pb(p28,i,t)))) ;
 
-equation EQN33 (all,i,ind) (all,s43,s_tr) (all,t,time) 
+equation EQN34 (all,i,ind) (all,s43,s_tr) (all,t,time) 
    shr_tr(s43,i,t) = ap_tr(s43,i)+kalf_tr(s43,i,t)
    +sum(p43,pr_tr,bp_tr(s43,p43,i)*loge(pb(p43,i,t))) ;
 
-equation EQN34 (all,i,ind) (all,t,time) 
+equation EQN35 (all,i,ind) (all,t,time) 
    loge(pb("tr",i,t)) = ap0_tr(i)
    +sum(s43,s_tr,(ap_tr(s43,i)+kalf_tr(s43,i,t))*loge(pb(s43,i,t)))
    +0.5
    *sum(p43,pr_tr,sum(s43,s_tr,loge(pb(s43,i,t))*bp_tr(s43,p43,i)
    *loge(pb(p43,i,t)))) ;
 
-equation EQN35 (all,i,ind) (all,s48,s_tt) (all,t,time) 
+equation EQN36 (all,i,ind) (all,s48,s_tt) (all,t,time) 
    shr_tt(s48,i,t) = ap_tt(s48,i)+kalf_tt(s48,i,t)
    +sum(p48,pr_tt,bp_tt(s48,p48,i)*loge(pb(p48,i,t))) ;
 
-equation EQN36 (all,i,ind) (all,t,time) 
+equation EQN37 (all,i,ind) (all,t,time) 
    loge(pb("tt",i,t)) = ap0_tt(i)
    +sum(s48,s_tt,(ap_tt(s48,i)+kalf_tt(s48,i,t))*loge(pb(s48,i,t)))
    +0.5
    *sum(p48,pr_tt,sum(s48,s_tt,loge(pb(s48,i,t))*bp_tt(s48,p48,i)
    *loge(pb(p48,i,t)))) ;
 
-equation EQN37 (all,i,ind) (all,s9,s_eq) (all,t,time) 
+equation EQN38 (all,i,ind) (all,s9,s_eq) (all,t,time) 
    shr_eq(s9,i,t) = ap_eq(s9,i)+kalf_eq(s9,i,t)
    +sum(p9,pr_eq,bp_eq(s9,p9,i)*loge(pb(p9,i,t))) ;
 
-equation EQN38 (all,i,ind) (all,t,time) 
+equation EQN39 (all,i,ind) (all,t,time) 
    loge(pb("eq",i,t)) = ap0_eq(i)
    +sum(s9,s_eq,(ap_eq(s9,i)+kalf_eq(s9,i,t))*loge(pb(s9,i,t)))
    +0.5
    *sum(p9,pr_eq,sum(s9,s_eq,loge(pb(s9,i,t))*bp_eq(s9,p9,i)
    *loge(pb(p9,i,t)))) ;
 
-equation EQN39 (all,i,ind) (all,s30,s_ms) (all,t,time) 
+equation EQN40 (all,i,ind) (all,s30,s_ms) (all,t,time) 
    shr_ms(s30,i,t) = ap_ms(s30,i)+kalf_ms(s30,i,t)
    +sum(p30,pr_ms,bp_ms(s30,p30,i)*loge(pb(p30,i,t))) ;
 
-equation EQN40 (all,i,ind) (all,t,time) 
+equation EQN41 (all,i,ind) (all,t,time) 
    loge(pb("ms",i,t)) = ap0_ms(i)
    +sum(s30,s_ms,(ap_ms(s30,i)+kalf_ms(s30,i,t))*loge(pb(s30,i,t)))
    +0.5
    *sum(p30,pr_ms,sum(s30,s_ms,loge(pb(s30,i,t))*bp_ms(s30,p30,i)
    *loge(pb(p30,i,t)))) ;
 
-equation EQN41 (all,i,ind) (all,s27,s_mm) (all,t,time) 
+equation EQN42 (all,i,ind) (all,s27,s_mm) (all,t,time) 
    shr_mm(s27,i,t) = ap_mm(s27,i)+kalf_mm(s27,i,t)
    +sum(p27,pr_mm,bp_mm(s27,p27,i)*loge(pb(p27,i,t))) ;
 
-equation EQN42 (all,i,ind) (all,t,time) 
+equation EQN43 (all,i,ind) (all,t,time) 
    loge(pb("mm",i,t)) = ap0_mm(i)
    +sum(s27,s_mm,(ap_mm(s27,i)+kalf_mm(s27,i,t))*loge(pb(s27,i,t)))
    +0.5
    *sum(p27,pr_mm,sum(s27,s_mm,loge(pb(s27,i,t))*bp_mm(s27,p27,i)
    *loge(pb(p27,i,t)))) ;
 
-equation EQN43 (all,i,ind) (all,s25,s_mat) (all,t,time) 
+equation EQN44 (all,i,ind) (all,s25,s_mat) (all,t,time) 
    shr_mat(s25,i,t) = ap_mat(s25,i)+kalf_mat(s25,i,t)
    +sum(p25,pr_mat,bp_mat(s25,p25,i)*loge(pb(p25,i,t))) ;
 
-equation EQN44 (all,i,ind) (all,t,time) 
+equation EQN45 (all,i,ind) (all,t,time) 
    loge(pb("mat",i,t)) = ap0_mat(i)
    +sum(s25,s_mat,(ap_mat(s25,i)+kalf_mat(s25,i,t))*loge(pb(s25,i,t)))
    +0.5
    *sum(p25,pr_mat,sum(s25,s_mat,loge(pb(s25,i,t))*bp_mat(s25,p25,i)
    *loge(pb(p25,i,t)))) ;
 
-equation EQN45 (all,i,ind) (all,s33,s_o) (all,t,time) 
+equation EQN46 (all,i,ind) (all,s33,s_o) (all,t,time) 
    shr_o(s33,i,t) = ap_o(s33,i)+kalf_o(s33,i,t)
    +sum(p33,pr_o,bp_o(s33,p33,i)*loge(pb(p33,i,t))) ;
 
-equation EQN46 (all,i,ind) (all,t,time) 
+equation EQN47 (all,i,ind) (all,t,time) 
    loge(po(i,t)) = ap0_o(i)+kalp(i,t)
    +loge(
    agg_tech_lvl(t)*tech_shk_agg(t)*tech_shock(i,t))
@@ -1907,421 +1964,424 @@ equation EQN46 (all,i,ind) (all,t,time)
    *sum(p33,pr_o,sum(s33,s_o,loge(pb(s33,i,t))*bp_o(s33,p33,i)
    *loge(pb(p33,i,t)))) ;
 
-equation EQN47 (all,i,ind) (all,t,time) 
+equation EQN48 (all,i,ind) (all,t,time) 
    pi(i,t) = po(i,t)*(1+tax_sales(i,t))+tax_unit(i,t)+tax_ext_ind(i,t) ;
 
-equation EQN48 (all,c,com) (all,t,time) 
+equation EQN49 (all,c,com) (all,t,time) 
    pc(c,t) = sum(i,ind,po(i,t)*make_col(i,c,t)) ;
 
-equation EQN49 (all,c,com) (all,t,time) 
+equation EQN50 (all,c,com) (all,t,time) 
    pf(c,t) = exo_pf(c,t)*tech_shk_row(t) ;
 
-equation EQN50 (all,c,com) (all,t,time) 
+equation EQN51 (all,c,com) (all,t,time) 
    pfd(c,t) = pf(c,t)*exch(t)*(1+tariff(c,t))+tar_ext_com(c,t) ;
 
-equation EQN51 (all,c,com) (all,t,time) 
-   imp_share(c,t) = amk_imp(c,t)+bm_imp(c)*(loge(pfd(c,t))-loge(pc(c,t))) ;
-
 equation EQN52 (all,c,com) (all,t,time) 
-   dom_share(c,t) = 1-imp_share(c,t) ;
+   amk_imp(c,t) = am_imp(c)+kalm_imp(c,t) ;
 
 equation EQN53 (all,c,com) (all,t,time) 
+   imp_share(c,t) = amk_imp(c,t)+bm_imp(c)*(loge(pfd(c,t))-loge(pc(c,t))) ;
+
+equation EQN54 (all,c,com) (all,t,time) 
+   dom_share(c,t) = 1-imp_share(c,t) ;
+
+equation EQN55 (all,c,com) (all,t,time) 
    loge(ps(c,t)) = amk_imp(c,t)*loge(pfd(c,t))+(1-amk_imp(c,t))*loge(pc(c,t))
    +0.5*bm_imp(c)*loge(pfd(c,t))*loge(pfd(c,t))
    -bm_imp(c)*loge(pfd(c,t))*loge(pc(c,t))
    +0.5*bm_imp(c)*loge(pc(c,t))*loge(pc(c,t)) ;
 
-equation EQN54 (all,b,buy) (all,c,com) (all,t,time) 
+equation EQN56 (all,b,buy) (all,c,com) (all,t,time) 
    pb(c,b,t) = ps(c,t)+tax_ext_com(c,b,t) ;
 
-equation EQN55 (all,i,ind) (all,t,time) 
+equation EQN57 (all,i,ind) (all,t,time) 
    io("c01",i,t) = shr_ma("c01",i,t)*shr_mat("mn",i,t)*shr_o("mat",i,t) ;
 
-equation EQN56 (all,i,ind) (all,t,time) 
+equation EQN58 (all,i,ind) (all,t,time) 
    io("c10",i,t) = shr_ma("c10",i,t)*shr_mat("mn",i,t)*shr_o("mat",i,t) ;
 
-equation EQN57 (all,i,ind) (all,t,time) 
+equation EQN59 (all,i,ind) (all,t,time) 
    io("c20",i,t) = shr_ma("c20",i,t)*shr_mat("mn",i,t)*shr_o("mat",i,t) ;
 
-equation EQN58 (all,i,ind) (all,t,time) 
+equation EQN60 (all,i,ind) (all,t,time) 
    io("c21",i,t) = shr_ma("c21",i,t)*shr_mat("mn",i,t)*shr_o("mat",i,t) ;
 
-equation EQN59 (all,i,ind) (all,t,time) 
+equation EQN61 (all,i,ind) (all,t,time) 
    io("c02",i,t) = shr_oil("c02",i,t)*shr_ff("oil",i,t)*shr_ene("ff",i,t)
    *shr_o("ene",i,t) ;
 
-equation EQN60 (all,i,ind) (all,t,time) 
+equation EQN62 (all,i,ind) (all,t,time) 
    io("c23",i,t) = shr_oil("c23",i,t)*shr_ff("oil",i,t)*shr_ene("ff",i,t)
    *shr_o("ene",i,t) ;
 
-equation EQN61 (all,i,ind) (all,t,time) 
+equation EQN63 (all,i,ind) (all,t,time) 
    io("c03",i,t) = shr_gas("c03",i,t)*shr_ff("gas",i,t)*shr_ene("ff",i,t)
    *shr_o("ene",i,t) ;
 
-equation EQN62 (all,i,ind) (all,t,time) 
+equation EQN64 (all,i,ind) (all,t,time) 
    io("c07",i,t) = shr_gas("c07",i,t)*shr_ff("gas",i,t)*shr_ene("ff",i,t)
    *shr_o("ene",i,t) ;
 
-equation EQN63 (all,i,ind) (all,t,time) 
+equation EQN65 (all,i,ind) (all,t,time) 
    io("c04",i,t) = shr_ff("c04",i,t)*shr_ene("ff",i,t)*shr_o("ene",i,t) ;
 
-equation EQN64 (all,i,ind) (all,t,time) 
+equation EQN66 (all,i,ind) (all,t,time) 
    io("c06",i,t) = shr_ene("c06",i,t)*shr_o("ene",i,t) ;
 
-equation EQN65 (all,i,ind) (all,t,time) 
+equation EQN67 (all,i,ind) (all,t,time) 
    io("c05",i,t) = shr_mm("c05",i,t)*shr_mat("mm",i,t)*shr_o("mat",i,t) ;
 
-equation EQN66 (all,i,ind) (all,t,time) 
+equation EQN68 (all,i,ind) (all,t,time) 
    io("c12",i,t) = shr_mm("c12",i,t)*shr_mat("mm",i,t)*shr_o("mat",i,t) ;
 
-equation EQN67 (all,i,ind) (all,t,time) 
+equation EQN69 (all,i,ind) (all,t,time) 
    io("c13",i,t) = shr_mm("c13",i,t)*shr_mat("mm",i,t)*shr_o("mat",i,t) ;
 
-equation EQN68 (all,i,ind) (all,t,time) 
+equation EQN70 (all,i,ind) (all,t,time) 
    io("c14",i,t) = shr_eq("c14",i,t)*shr_mm("eq",i,t)^shr_mat("mm",i,t)
    *shr_o("mat",i,t) ;
 
-equation EQN69 (all,i,ind) (all,t,time) 
+equation EQN71 (all,i,ind) (all,t,time) 
    io("c15",i,t) = shr_eq("c15",i,t)*shr_mm("eq",i,t)^shr_mat("mm",i,t)
    *shr_o("mat",i,t) ;
 
-equation EQN70 (all,i,ind) (all,t,time) 
+equation EQN72 (all,i,ind) (all,t,time) 
    io("c16",i,t) = shr_eq("c16",i,t)*shr_mm("eq",i,t)^shr_mat("mm",i,t)
    *shr_o("mat",i,t) ;
 
-equation EQN71 (all,i,ind) (all,t,time) 
+equation EQN73 (all,i,ind) (all,t,time) 
    io("c17",i,t) = shr_tr("c17",i,t)*shr_eq("tr",i,t)*shr_mm("eq",i,t)
    ^shr_mat("mm",i,t)
    *shr_o("mat",i,t) ;
 
-equation EQN72 (all,i,ind) (all,t,time) 
+equation EQN74 (all,i,ind) (all,t,time) 
    io("c18",i,t) = shr_tr("c18",i,t)*shr_eq("tr",i,t)*shr_mm("eq",i,t)
    ^shr_mat("mm",i,t)
    *shr_o("mat",i,t) ;
 
-equation EQN73 (all,i,ind) (all,t,time) 
+equation EQN75 (all,i,ind) (all,t,time) 
    io("c11",i,t) = shr_mn("c11",i,t)*shr_mat("mn",i,t)*shr_o("mat",i,t) ;
 
-equation EQN74 (all,i,ind) (all,t,time) 
+equation EQN76 (all,i,ind) (all,t,time) 
    io("c19",i,t) = shr_mn("c19",i,t)*shr_mat("mn",i,t)*shr_o("mat",i,t) ;
 
-equation EQN75 (all,i,ind) (all,t,time) 
+equation EQN77 (all,i,ind) (all,t,time) 
    io("c22",i,t) = shr_mn("c22",i,t)*shr_mat("mn",i,t)*shr_o("mat",i,t) ;
 
-equation EQN76 (all,i,ind) (all,t,time) 
+equation EQN78 (all,i,ind) (all,t,time) 
    io("c24",i,t) = shr_mn("c24",i,t)*shr_mat("mn",i,t)*shr_o("mat",i,t) ;
 
-equation EQN77 (all,i,ind) (all,t,time) 
+equation EQN79 (all,i,ind) (all,t,time) 
    io("c32",i,t) = shr_ms("c32",i,t)*shr_mat("ms",i,t)*shr_o("mat",i,t) ;
 
-equation EQN78 (all,i,ind) (all,t,time) 
+equation EQN80 (all,i,ind) (all,t,time) 
    io("c25",i,t) = shr_tt("c25",i,t)*shr_ms("tt",i,t)*shr_mat("ms",i,t)
    *shr_o("mat",i,t) ;
 
-equation EQN79 (all,i,ind) (all,t,time) 
+equation EQN81 (all,i,ind) (all,t,time) 
    io("c26",i,t) = shr_tt("c26",i,t)*shr_ms("tt",i,t)*shr_mat("ms",i,t)
    *shr_o("mat",i,t) ;
 
-equation EQN80 (all,i,ind) (all,t,time) 
+equation EQN82 (all,i,ind) (all,t,time) 
    io("c27",i,t) = shr_tt("c27",i,t)*shr_ms("tt",i,t)*shr_mat("ms",i,t)
    *shr_o("mat",i,t) ;
 
-equation EQN81 (all,i,ind) (all,t,time) 
+equation EQN83 (all,i,ind) (all,t,time) 
    io("c08",i,t) = shr_bl("c08",i,t)*shr_sv("bl",i,t)*shr_ms("sv",i,t)
    *shr_mat("ms",i,t)
    *shr_o("mat",i,t) ;
 
-equation EQN82 (all,i,ind) (all,t,time) 
+equation EQN84 (all,i,ind) (all,t,time) 
    io("c09",i,t) = shr_bl("c09",i,t)*shr_sv("bl",i,t)*shr_ms("sv",i,t)
    *shr_mat("ms",i,t)
    *shr_o("mat",i,t) ;
 
-equation EQN83 (all,i,ind) (all,t,time) 
+equation EQN85 (all,i,ind) (all,t,time) 
    io("c31",i,t) = shr_bl("c31",i,t)*shr_sv("bl",i,t)*shr_ms("sv",i,t)
    *shr_mat("ms",i,t)
    *shr_o("mat",i,t) ;
 
-equation EQN84 (all,i,ind) (all,t,time) 
+equation EQN86 (all,i,ind) (all,t,time) 
    io("c28",i,t) = shr_ob("c28",i,t)*shr_sv("ob",i,t)*shr_ms("sv",i,t)
    *shr_mat("ms",i,t)
    *shr_o("mat",i,t) ;
 
-equation EQN85 (all,i,ind) (all,t,time) 
+equation EQN87 (all,i,ind) (all,t,time) 
    io("c29",i,t) = shr_ob("c29",i,t)*shr_sv("ob",i,t)*shr_ms("sv",i,t)
    *shr_mat("ms",i,t)
    *shr_o("mat",i,t) ;
 
-equation EQN86 (all,i,ind) (all,t,time) 
+equation EQN88 (all,i,ind) (all,t,time) 
    io("c30",i,t) = shr_ob("c30",i,t)*shr_sv("ob",i,t)*shr_ms("sv",i,t)
    *shr_mat("ms",i,t)
    *shr_o("mat",i,t) ;
 
-equation EQN87 (all,i,ind) (all,t,time) 
+equation EQN89 (all,i,ind) (all,t,time) 
    io("c33",i,t) = shr_os("c33",i,t)*shr_sv("os",i,t)*shr_ms("sv",i,t)
    *shr_mat("ms",i,t)
    *shr_o("mat",i,t) ;
 
-equation EQN88 (all,i,ind) (all,t,time) 
+equation EQN90 (all,i,ind) (all,t,time) 
    io("c34",i,t) = shr_os("c34",i,t)*shr_sv("os",i,t)*shr_ms("sv",i,t)
    *shr_mat("ms",i,t)
    *shr_o("mat",i,t) ;
 
-equation EQN89 (all,i,ind) (all,t,time) 
+equation EQN91 (all,i,ind) (all,t,time) 
    io("c35",i,t) = shr_os("c35",i,t)*shr_sv("os",i,t)*shr_ms("sv",i,t)
    *shr_mat("ms",i,t)
    *shr_o("mat",i,t) ;
 
-equation EQN90 (all,i,ind) (all,t,time) 
+equation EQN92 (all,i,ind) (all,t,time) 
    io("c36",i,t) = shr_os("c36",i,t)*shr_sv("os",i,t)*shr_ms("sv",i,t)
    *shr_mat("ms",i,t)
    *shr_o("mat",i,t) ;
 
-equation EQN91 (all,i,ind) (all,t,time) 
+equation EQN93 (all,i,ind) (all,t,time) 
    io("kap",i,t) = shr_o("kap",i,t) ;
 
-equation EQN92 (all,i,ind) (all,t,time) 
+equation EQN94 (all,i,ind) (all,t,time) 
    io("lab",i,t) = shr_o("lab",i,t) ;
 
-equation EQN93 (all,t,time) 
+equation EQN95 (all,t,time) 
    pb("kap","con",t) = pk_service(t)*pk_scale("con",t)*(1+tax_cap_hh(t)) ;
 
-equation EQN94 (all,t,time) 
+equation EQN96 (all,t,time) 
    tax_con_totc(t) = tax_con(t)+tax_con_good(t) ;
 
-equation EQN95 (all,t,time) 
+equation EQN97 (all,t,time) 
    tax_con_totk(t) = tax_con(t)+tax_con_kap(t) ;
 
-equation EQN96 (all,c,com) (all,t,time) 
+equation EQN98 (all,c,com) (all,t,time) 
    pr_con(c,t) = pb(c,"con",t)*(1+tax_con_totc(t)) ;
 
-equation EQN97 (all,t,time) 
+equation EQN99 (all,t,time) 
    pr_con("kap",t) = pb("kap","con",t)*(1+tax_con_totk(t)) ;
 
-equation EQN98 (all,n4,nipa) (all,t,time) 
+equation EQN100 (all,n4,nipa) (all,t,time) 
    pcon(n4,t) = sum(N1,ncom_k,pr_con(N1,t)*io_nipa(N1,n4)) ;
 
-equation EQN99 (all,t,time) 
+equation EQN101 (all,t,time) 
    pr_leisure(t) = pr_hours(t)*pj_scale(t) ;
 
-equation EQN100 (all,t,time) 
+equation EQN102 (all,t,time) 
    pcon("r",t) = pr_leisure(t) ;
 
-equation EQN101 (all,s2,s_cmm) (all,t,time) 
+equation EQN103 (all,s2,s_cmm) (all,t,time) 
    shr_cmm(s2,t) = ah_cmm(s2)+kalh_cmm(s2,t)
    +sum(p2,pr_cmm,bh_cmm(s2,p2)*loge(pcon(p2,t))) ;
 
-equation EQN102 (all,t,time) 
+equation EQN104 (all,t,time) 
    loge(pcon("cmm",t)) = sum(s2,s_cmm,(ah_cmm(s2)+kalh_cmm(s2,t))
    *loge(pcon(s2,t)))
    +0.5
    *sum(p2,pr_cmm,sum(s2,s_cmm,loge(pcon(s2,t))*bh_cmm(s2,p2)
    *loge(pcon(p2,t)))) ;
 
-equation EQN103 (all,s19,s_hps) (all,t,time) 
+equation EQN105 (all,s19,s_hps) (all,t,time) 
    shr_hps(s19,t) = ah_hps(s19)+kalh_hps(s19,t)
    +sum(p19,pr_hps,bh_hps(s19,p19)*loge(pcon(p19,t))) ;
 
-equation EQN104 (all,t,time) 
+equation EQN106 (all,t,time) 
    loge(pcon("hps",t)) = sum(s19,s_hps,(ah_hps(s19)+kalh_hps(s19,t))
    *loge(pcon(s19,t)))
    +0.5
    *sum(p19,pr_hps,sum(s19,s_hps,loge(pcon(s19,t))*bh_hps(s19,p19)
    *loge(pcon(p19,t)))) ;
 
-equation EQN105 (all,s8,s_ens) (all,t,time) 
+equation EQN107 (all,s8,s_ens) (all,t,time) 
    shr_ens(s8,t) = ah_ens(s8)+kalh_ens(s8,t)
    +sum(p8,pr_ens,bh_ens(s8,p8)*loge(pcon(p8,t))) ;
 
-equation EQN106 (all,t,time) 
+equation EQN108 (all,t,time) 
    loge(pcon("ens",t)) = sum(s8,s_ens,(ah_ens(s8)+kalh_ens(s8,t))
    *loge(pcon(s8,t)))
    +0.5
    *sum(p8,pr_ens,sum(s8,s_ens,loge(pcon(s8,t))*bh_ens(s8,p8)
    *loge(pcon(p8,t)))) ;
 
-equation EQN107 (all,s47,s_trv) (all,t,time) 
+equation EQN109 (all,s47,s_trv) (all,t,time) 
    shr_trv(s47,t) = ah_trv(s47)+kalh_trv(s47,t)
    +sum(p47,pr_trv,bh_trv(s47,p47)*loge(pcon(p47,t))) ;
 
-equation EQN108 (all,t,time) 
+equation EQN110 (all,t,time) 
    loge(pcon("trv",t)) = sum(s47,s_trv,(ah_trv(s47)+kalh_trv(s47,t))
    *loge(pcon(s47,t)))
    +0.5
    *sum(p47,pr_trv,sum(s47,s_trv,loge(pcon(s47,t))*bh_trv(s47,p47)
    *loge(pcon(p47,t)))) ;
 
-equation EQN109 (all,s39,s_rcs) (all,t,time) 
+equation EQN111 (all,s39,s_rcs) (all,t,time) 
    shr_rcs(s39,t) = ah_rcs(s39)+kalh_rcs(s39,t)
    +sum(p39,pr_rcs,bh_rcs(s39,p39)*loge(pcon(p39,t))) ;
 
-equation EQN110 (all,t,time) 
+equation EQN112 (all,t,time) 
    loge(pcon("rcs",t)) = sum(s39,s_rcs,(ah_rcs(s39)+kalh_rcs(s39,t))
    *loge(pcon(s39,t)))
    +0.5
    *sum(p39,pr_rcs,sum(s39,s_rcs,loge(pcon(s39,t))*bh_rcs(s39,p39)
    *loge(pcon(p39,t)))) ;
 
-equation EQN111 (all,s4,s_edn) (all,t,time) 
+equation EQN113 (all,s4,s_edn) (all,t,time) 
    shr_edn(s4,t) = ah_edn(s4)+kalh_edn(s4,t)
    +sum(p4,pr_edn,bh_edn(s4,p4)*loge(pcon(p4,t))) ;
 
-equation EQN112 (all,t,time) 
+equation EQN114 (all,t,time) 
    loge(pcon("edn",t)) = sum(s4,s_edn,(ah_edn(s4)+kalh_edn(s4,t))
    *loge(pcon(s4,t)))
    +0.5
    *sum(p4,pr_edn,sum(s4,s_edn,loge(pcon(s4,t))*bh_edn(s4,p4)
    *loge(pcon(p4,t)))) ;
 
-equation EQN113 (all,s18,s_hpg) (all,t,time) 
+equation EQN115 (all,s18,s_hpg) (all,t,time) 
    shr_hpg(s18,t) = ah_hpg(s18)+kalh_hpg(s18,t)
    +sum(p18,pr_hpg,bh_hpg(s18,p18)*loge(pcon(p18,t))) ;
 
-equation EQN114 (all,t,time) 
+equation EQN116 (all,t,time) 
    loge(pcon("hpg",t)) = sum(s18,s_hpg,(ah_hpg(s18)+kalh_hpg(s18,t))
    *loge(pcon(s18,t)))
    +0.5
    *sum(p18,pr_hpg,sum(s18,s_hpg,loge(pcon(s18,t))*bh_hpg(s18,p18)
    *loge(pcon(p18,t)))) ;
 
-equation EQN115 (all,s11,s_fb) (all,t,time) 
+equation EQN117 (all,s11,s_fb) (all,t,time) 
    shr_fb(s11,t) = ah_fb(s11)+kalh_fb(s11,t)
    +sum(p11,pr_fb,bh_fb(s11,p11)*loge(pcon(p11,t))) ;
 
-equation EQN116 (all,t,time) 
+equation EQN118 (all,t,time) 
    loge(pcon("fb",t)) = sum(s11,s_fb,(ah_fb(s11)+kalh_fb(s11,t))
    *loge(pcon(s11,t)))
    +0.5
    *sum(p11,pr_fb,sum(s11,s_fb,loge(pcon(s11,t))*bh_fb(s11,p11)
    *loge(pcon(p11,t)))) ;
 
-equation EQN117 (all,s26,s_md) (all,t,time) 
+equation EQN119 (all,s26,s_md) (all,t,time) 
    shr_md(s26,t) = ah_md(s26)+kalh_md(s26,t)
    +sum(p26,pr_md,bh_md(s26,p26)*loge(pcon(p26,t))) ;
 
-equation EQN118 (all,t,time) 
+equation EQN120 (all,t,time) 
    loge(pcon("md",t)) = sum(s26,s_md,(ah_md(s26)+kalh_md(s26,t))
    *loge(pcon(s26,t)))
    +0.5
    *sum(p26,pr_md,sum(s26,s_md,loge(pcon(s26,t))*bh_md(s26,p26)
    *loge(pcon(p26,t)))) ;
 
-equation EQN119 (all,s6,s_en) (all,t,time) 
+equation EQN121 (all,s6,s_en) (all,t,time) 
    shr_en(s6,t) = ah_en(s6)+kalh_en(s6,t)
    +sum(p6,pr_en,bh_en(s6,p6)*loge(pcon(p6,t))) ;
 
-equation EQN120 (all,t,time) 
+equation EQN122 (all,t,time) 
    loge(pcon("en",t)) = sum(s6,s_en,(ah_en(s6)+kalh_en(s6,t))
    *loge(pcon(s6,t)))
    +0.5
    *sum(p6,pr_en,sum(s6,s_en,loge(pcon(s6,t))*bh_en(s6,p6)
    *loge(pcon(p6,t)))) ;
 
-equation EQN121 (all,s21,s_ks) (all,t,time) 
+equation EQN123 (all,s21,s_ks) (all,t,time) 
    shr_ks(s21,t) = ah_ks(s21)+kalh_ks(s21,t)
    +sum(p21,pr_ks,bh_ks(s21,p21)*loge(pcon(p21,t))) ;
 
-equation EQN122 (all,t,time) 
+equation EQN124 (all,t,time) 
    loge(pcon("ks",t)) = sum(s21,s_ks,(ah_ks(s21)+kalh_ks(s21,t))
    *loge(pcon(s21,t)))
    +0.5
    *sum(p21,pr_ks,sum(s21,s_ks,loge(pcon(s21,t))*bh_ks(s21,p21)
    *loge(pcon(p21,t)))) ;
 
-equation EQN123 (all,s44,s_trc) (all,t,time) 
+equation EQN125 (all,s44,s_trc) (all,t,time) 
    shr_trc(s44,t) = ah_trc(s44)+kalh_trc(s44,t)
    +sum(p44,pr_trc,bh_trc(s44,p44)*loge(pcon(p44,t))) ;
 
-equation EQN124 (all,t,time) 
+equation EQN126 (all,t,time) 
    loge(pcon("trc",t)) = sum(s44,s_trc,(ah_trc(s44)+kalh_trc(s44,t))
    *loge(pcon(s44,t)))
    +0.5
    *sum(p44,pr_trc,sum(s44,s_trc,loge(pcon(s44,t))*bh_trc(s44,p44)
    *loge(pcon(p44,t)))) ;
 
-equation EQN125 (all,s50,s_ups) (all,t,time) 
+equation EQN127 (all,s50,s_ups) (all,t,time) 
    shr_ups(s50,t) = ah_ups(s50)+kalh_ups(s50,t)
    +sum(p50,pr_ups,bh_ups(s50,p50)*loge(pcon(p50,t))) ;
 
-equation EQN126 (all,t,time) 
+equation EQN128 (all,t,time) 
    loge(pcon("ups",t)) = sum(s50,s_ups,(ah_ups(s50)+kalh_ups(s50,t))
    *loge(pcon(s50,t)))
    +0.5
    *sum(p50,pr_ups,sum(s50,s_ups,loge(pcon(s50,t))*bh_ups(s50,p50)
    *loge(pcon(p50,t)))) ;
 
-equation EQN127 (all,s38,s_rc) (all,t,time) 
+equation EQN129 (all,s38,s_rc) (all,t,time) 
    shr_rc(s38,t) = ah_rc(s38)+kalh_rc(s38,t)
    +sum(p38,pr_rc,bh_rc(s38,p38)*loge(pcon(p38,t))) ;
 
-equation EQN128 (all,t,time) 
+equation EQN130 (all,t,time) 
    loge(pcon("rc",t)) = sum(s38,s_rc,(ah_rc(s38)+kalh_rc(s38,t))
    *loge(pcon(s38,t)))
    +0.5
    *sum(p38,pr_rc,sum(s38,s_rc,loge(pcon(s38,t))*bh_rc(s38,p38)
    *loge(pcon(p38,t)))) ;
 
-equation EQN129 (all,s17,s_ho) (all,t,time) 
+equation EQN131 (all,s17,s_ho) (all,t,time) 
    shr_ho(s17,t) = ah_ho(s17)+kalh_ho(s17,t)
    +sum(p17,pr_ho,bh_ho(s17,p17)*loge(pcon(p17,t))) ;
 
-equation EQN130 (all,t,time) 
+equation EQN132 (all,t,time) 
    loge(pcon("ho",t)) = sum(s17,s_ho,(ah_ho(s17)+kalh_ho(s17,t))
    *loge(pcon(s17,t)))
    +0.5
    *sum(p17,pr_ho,sum(s17,s_ho,loge(pcon(s17,t))*bh_ho(s17,p17)
    *loge(pcon(p17,t)))) ;
 
-equation EQN131 (all,s1,s_cg) (all,t,time) 
+equation EQN133 (all,s1,s_cg) (all,t,time) 
    shr_cg(s1,t) = ah_cg(s1)+kalh_cg(s1,t)
    +sum(p1,pr_cg,bh_cg(s1,p1)*loge(pcon(p1,t))) ;
 
-equation EQN132 (all,t,time) 
+equation EQN134 (all,t,time) 
    loge(pcon("cg",t)) = sum(s1,s_cg,(ah_cg(s1)+kalh_cg(s1,t))
    *loge(pcon(s1,t)))
    +0.5
    *sum(p1,pr_cg,sum(s1,s_cg,loge(pcon(s1,t))*bh_cg(s1,p1)
    *loge(pcon(p1,t)))) ;
 
-equation EQN133 (all,s3,s_cs) (all,t,time) 
+equation EQN135 (all,s3,s_cs) (all,t,time) 
    shr_cs(s3,t) = ah_cs(s3)+kalh_cs(s3,t)
    +sum(p3,pr_cs,bh_cs(s3,p3)*loge(pcon(p3,t))) ;
 
-equation EQN134 (all,t,time) 
+equation EQN136 (all,t,time) 
    loge(pcon("cs",t)) = sum(s3,s_cs,(ah_cs(s3)+kalh_cs(s3,t))
    *loge(pcon(s3,t)))
    +0.5
    *sum(p3,pr_cs,sum(s3,s_cs,loge(pcon(s3,t))*bh_cs(s3,p3)
    *loge(pcon(p3,t)))) ;
 
-equation EQN135 (all,s32,s_nd) (all,t,time) 
+equation EQN137 (all,s32,s_nd) (all,t,time) 
    shr_nd(s32,t) = ah_nd(s32)+kalh_nd(s32,t)
    +sum(p32,pr_nd,bh_nd(s32,p32)*loge(pcon(p32,t))) ;
 
-equation EQN136 (all,t,time) 
+equation EQN138 (all,t,time) 
    loge(pcon("nd",t)) = sum(s32,s_nd,(ah_nd(s32)+kalh_nd(s32,t))
    *loge(pcon(s32,t)))
    +0.5
    *sum(p32,pr_nd,sum(s32,s_nd,loge(pcon(s32,t))*bh_nd(s32,p32)
    *loge(pcon(p32,t)))) ;
 
-equation EQN137 (all,s10,s_f) (all,t,time) 
+equation EQN139 (all,s10,s_f) (all,t,time) 
    ab_shr_f(s10,t) = ah_f(s10)
    +sum(p10,pr_f,bh_f(s10,p10)*loge(pcon(p10,t))) ;
 
-equation EQN138 (all,t,time) 
+equation EQN140 (all,t,time) 
    denom(t) = (-1)+denom_rebase
    +sum(p10,pr_f,sum(s10,s_f,bh_f(s10,p10)*loge(pcon(p10,t)))) ;
 
-equation EQN139 (all,s10,s_f) (all,t,time) 
+equation EQN141 (all,s10,s_f) (all,t,time) 
    cex_shr_f(s10,t) = (ab_shr_f(s10,t)
    -bhm_f(s10)*(loge(full_con(t))+income_dist(t))
    +sum(N,nattr,bha_f(s10,N)*income_share(N,t)))
    /denom(t) ;
 
-equation EQN140 (all,s10,s_f) (all,t,time) 
+equation EQN142 (all,s10,s_f) (all,t,time) 
    shr_f(s10,t) = cex_shr_f(s10,t)+dv_hh(s10,t) ;
 
-equation EQN141 (all,t,time) 
+equation EQN143 (all,t,time) 
    pr_fc(t) = exp(
    sum(s10,s_f,(ah_f(s10)-sum(p10,pr_f,bh_f(s10,p10)*loge(pfc_m0)))
    *loge(pcon(s10,t)))
@@ -2331,369 +2391,365 @@ equation EQN141 (all,t,time)
    /denom(t))
    /pr_fc_scale ;
 
-equation EQN142 (all,t,time) 
+equation EQN144 (all,t,time) 
    leisure(t) = (shr_f("r",t)*full_con(t))/pr_leisure(t) ;
 
-equation EQN143 (all,t,time) 
+equation EQN145 (all,t,time) 
    cshare(t) = 1-shr_f("r",t) ;
 
-equation EQN144 (all,t,time) 
+equation EQN146 (all,t,time) 
    con_expend(t) = cshare(t)*full_con(t) ;
 
-equation EQN145 (all,t,time) 
+equation EQN147 (all,t,time) 
    con_share("n01",t) = (shr_nd("n01",t)*shr_f("nd",t))/cshare(t) ;
 
-equation EQN146 (all,t,time) 
+equation EQN148 (all,t,time) 
    con_share("n02",t) = (shr_cg("n02",t)*shr_nd("cg",t)*shr_f("nd",t))
    /cshare(t) ;
 
-equation EQN147 (all,t,time) 
+equation EQN149 (all,t,time) 
    con_share("n03",t) = (shr_en("n03",t)*shr_nd("en",t)*shr_f("nd",t))
    /cshare(t) ;
 
-equation EQN148 (all,t,time) 
+equation EQN150 (all,t,time) 
    con_share("n04",t) = (shr_en("n04",t)*shr_nd("en",t)*shr_f("nd",t))
    /cshare(t) ;
 
-equation EQN149 (all,t,time) 
+equation EQN151 (all,t,time) 
    con_share("n05",t) = (shr_nd("n05",t)*shr_f("nd",t))/cshare(t) ;
 
-equation EQN150 (all,t,time) 
+equation EQN152 (all,t,time) 
    con_share("n06",t) = (shr_cg("n06",t)*shr_nd("cg",t)*shr_f("nd",t))
    /cshare(t) ;
 
-equation EQN151 (all,t,time) 
+equation EQN153 (all,t,time) 
    con_share("n07",t) = (shr_hpg("n07",t)*shr_cg("hpg",t)*shr_nd("cg",t)
    *shr_f("nd",t))
    /cshare(t) ;
 
-equation EQN152 (all,t,time) 
+equation EQN154 (all,t,time) 
    con_share("n08",t) = (shr_hpg("n08",t)*shr_cg("hpg",t)*shr_nd("cg",t)
    *shr_f("nd",t))
    /cshare(t) ;
 
-equation EQN153 (all,t,time) 
+equation EQN155 (all,t,time) 
    con_share("n09",t) = (shr_cg("n09",t)*shr_nd("cg",t)*shr_f("nd",t))
    /cshare(t) ;
 
-equation EQN154 (all,t,time) 
+equation EQN156 (all,t,time) 
    con_share("n10",t) = (shr_ks("n10",t)*shr_f("ks",t))/cshare(t) ;
 
-equation EQN155 (all,t,time) 
+equation EQN157 (all,t,time) 
    con_share("n36",t) = (shr_ks("n36",t)*shr_f("ks",t))/cshare(t) ;
 
-equation EQN156 (all,t,time) 
+equation EQN158 (all,t,time) 
    con_share("n11",t) = (shr_ups("n11",t)*shr_ho("ups",t)*shr_cs("ho",t)
    *shr_f("cs",t))
    /cshare(t) ;
 
-equation EQN157 (all,t,time) 
+equation EQN159 (all,t,time) 
    con_share("n12",t) = (shr_ens("n12",t)*shr_ups("ens",t)*shr_ho("ups",t)
    *shr_cs("ho",t)
    *shr_f("cs",t))
    /cshare(t) ;
 
-equation EQN158 (all,t,time) 
+equation EQN160 (all,t,time) 
    con_share("n13",t) = (shr_ens("n13",t)*shr_ups("ens",t)*shr_ho("ups",t)
    *shr_cs("ho",t)
    *shr_f("cs",t))
    /cshare(t) ;
 
-equation EQN159 (all,t,time) 
+equation EQN161 (all,t,time) 
    con_share("n14",t) = (shr_md("n14",t)^shr_cs("md",t)*shr_f("cs",t))
    /cshare(t) ;
 
-equation EQN160 (all,t,time) 
+equation EQN162 (all,t,time) 
    con_share("n24",t) = (shr_md("n24",t)^shr_cs("md",t)*shr_f("cs",t))
    /cshare(t) ;
 
-equation EQN161 (all,t,time) 
+equation EQN163 (all,t,time) 
    con_share("n15",t) = (shr_trc("n15",t)*shr_ho("trc",t)*shr_cs("ho",t)
    *shr_f("cs",t))
    /cshare(t) ;
 
-equation EQN162 (all,t,time) 
+equation EQN164 (all,t,time) 
    con_share("n16",t) = (shr_trc("n16",t)*shr_ho("trc",t)*shr_cs("ho",t)
    *shr_f("cs",t))
    /cshare(t) ;
 
-equation EQN163 (all,t,time) 
+equation EQN165 (all,t,time) 
    con_share("n25",t) = (shr_trc("n25",t)*shr_ho("trc",t)*shr_cs("ho",t)
    *shr_f("cs",t))
    /cshare(t) ;
 
-equation EQN164 (all,t,time) 
+equation EQN166 (all,t,time) 
    con_share("n26",t) = (shr_cmm("n26",t)*shr_trc("cmm",t)*shr_ho("trc",t)
    *shr_cs("ho",t)
    *shr_f("cs",t))
    /cshare(t) ;
 
-equation EQN165 (all,t,time) 
+equation EQN167 (all,t,time) 
    con_share("n27",t) = (shr_cmm("n27",t)*shr_trc("cmm",t)*shr_ho("trc",t)
    *shr_cs("ho",t)
    *shr_f("cs",t))
    /cshare(t) ;
 
-equation EQN166 (all,t,time) 
+equation EQN168 (all,t,time) 
    con_share("n17",t) = (shr_rcs("n17",t)*shr_rc("rcs",t)*shr_cs("rc",t)
    *shr_f("cs",t))
    /cshare(t) ;
 
-equation EQN167 (all,t,time) 
+equation EQN169 (all,t,time) 
    con_share("n18",t) = (shr_rcs("n18",t)*shr_rc("rcs",t)*shr_cs("rc",t)
    *shr_f("cs",t))
    /cshare(t) ;
 
-equation EQN168 (all,t,time) 
+equation EQN170 (all,t,time) 
    con_share("n19",t) = (shr_rcs("n19",t)*shr_rc("rcs",t)*shr_cs("rc",t)
    *shr_f("cs",t))
    /cshare(t) ;
 
-equation EQN169 (all,t,time) 
+equation EQN171 (all,t,time) 
    con_share("n20",t) = (shr_rc("n20",t)*shr_cs("rc",t)*shr_f("cs",t))
    /cshare(t) ;
 
-equation EQN170 (all,t,time) 
+equation EQN172 (all,t,time) 
    con_share("n21",t) = (shr_trv("n21",t)*shr_rc("trv",t)*shr_cs("rc",t)
    *shr_f("cs",t))
    /cshare(t) ;
 
-equation EQN171 (all,t,time) 
+equation EQN173 (all,t,time) 
    con_share("n33",t) = (shr_trv("n33",t)*shr_rc("trv",t)*shr_cs("rc",t)
    *shr_f("cs",t))
    /cshare(t) ;
 
-equation EQN172 (all,t,time) 
+equation EQN174 (all,t,time) 
    con_share("n22",t) = (shr_fb("n22",t)*shr_cs("fb",t)*shr_f("cs",t))
    /cshare(t) ;
 
-equation EQN173 (all,t,time) 
+equation EQN175 (all,t,time) 
    con_share("n23",t) = (shr_fb("n23",t)*shr_cs("fb",t)*shr_f("cs",t))
    /cshare(t) ;
 
-equation EQN174 (all,t,time) 
+equation EQN176 (all,t,time) 
    con_share("n29",t) = (shr_fb("n29",t)*shr_cs("fb",t)*shr_f("cs",t))
    /cshare(t) ;
 
-equation EQN175 (all,t,time) 
+equation EQN177 (all,t,time) 
    con_share("n28",t) = (shr_edn("n28",t)*shr_ho("edn",t)*shr_cs("ho",t)
    *shr_f("cs",t))
    /cshare(t) ;
 
-equation EQN176 (all,t,time) 
+equation EQN178 (all,t,time) 
    con_share("n34",t) = (shr_edn("n34",t)*shr_ho("edn",t)*shr_cs("ho",t)
    *shr_f("cs",t))
    /cshare(t) ;
 
-equation EQN177 (all,t,time) 
+equation EQN179 (all,t,time) 
    con_share("n30",t) = (shr_hps("n30",t)*shr_ups("hps",t)*shr_ho("ups",t)
    *shr_cs("ho",t)
    *shr_f("cs",t))
    /cshare(t) ;
 
-equation EQN178 (all,t,time) 
+equation EQN180 (all,t,time) 
    con_share("n31",t) = (shr_hps("n31",t)*shr_ups("hps",t)*shr_ho("ups",t)
    *shr_cs("ho",t)
    *shr_f("cs",t))
    /cshare(t) ;
 
-equation EQN179 (all,t,time) 
+equation EQN181 (all,t,time) 
    con_share("n32",t) = (shr_hps("n32",t)*shr_ups("hps",t)*shr_ho("ups",t)
    *shr_cs("ho",t)
    *shr_f("cs",t))
    /cshare(t) ;
 
-equation EQN180 (all,t,time) 
+equation EQN182 (all,t,time) 
    con_share("n35",t) = (shr_ho("n35",t)*shr_cs("ho",t)*shr_f("cs",t))
    /cshare(t) ;
 
-equation EQN181 (all,N1,ncom_k) (all,t,time) 
+equation EQN183 (all,N1,ncom_k) (all,t,time) 
    con_shk_val(N1,t) = con_shk_qty(N1,t)*pr_con(N1,t) ;
 
-equation EQN182 (all,t,time) 
+equation EQN184 (all,t,time) 
    con_shk_xpnd(t) = sum(N1,ncom_k,con_shk_val(N1,t)) ;
 
-equation EQN183 (all,t,time) 
+equation EQN185 (all,t,time) 
    con_xpnd_net(t) = con_expend(t)-con_shk_xpnd(t) ;
 
-equation EQN184 (all,c,com) (all,t,time) 
-   con(c,t) = (sum(n4,nipa,io_nipa(c,n4)*con_share(n4,t)*con_xpnd_net(t))
-   +con_shk_val(c,t))
-   /(1+tax_con_totc(t)) ;
+equation EQN186 (all,c,com) (all,t,time) 
+   con(c,t) = sum(n4,nipa,io_nipa(c,n4)*con_share(n4,t)*con_xpnd_net(t))
+   +con_shk_val(c,t) ;
 
-equation EQN185 (all,t,time) 
+equation EQN187 (all,t,time) 
    con("kap",t) = sum(n4,nipa,io_nipa("kap",n4)*con_share(n4,t)
    *con_xpnd_net(t))
    +con_shk_val("kap",t) ;
 
-equation EQN186 (all,N1,ncom_k) (all,t,time) 
+equation EQN188 (all,N1,ncom_k) (all,t,time) 
    con_qty(N1,t) = con(N1,t)/pr_con(N1,t) ;
 
-equation EQN187 (all,t,time) 
-   rev_con(t) = sum(c,com,tax_con_totc(t)*con(c,t)) ;
-
-equation EQN188 (all,c,com) (all,t,time) 
+equation EQN189 (all,c,com) (all,t,time) 
    pr_inv(c,t) = pb(c,"inv",t) ;
 
-equation EQN189 (all,s37,s_rawm) (all,t,time) 
+equation EQN190 (all,s37,s_rawm) (all,t,time) 
    shr_rawm(s37,t) = ai_rawm(s37)+kali_rawm(s37,t)
    +sum(p37,pr_rawm,bi_rawm(s37,p37)*loge(pr_inv(p37,t))) ;
 
-equation EQN190 (all,t,time) 
+equation EQN191 (all,t,time) 
    loge(pr_inv("rawm",t)) = sum(s37,s_rawm,(ai_rawm(s37)+kali_rawm(s37,t))
    *loge(pr_inv(s37,t)))
    +0.5
    *sum(p37,pr_rawm,sum(s37,s_rawm,loge(pr_inv(s37,t))*bi_rawm(s37,p37)
    *loge(pr_inv(p37,t)))) ;
 
-equation EQN191 (all,s15,s_furn) (all,t,time) 
+equation EQN192 (all,s15,s_furn) (all,t,time) 
    shr_furn(s15,t) = ai_furn(s15)+kali_furn(s15,t)
    +sum(p15,pr_furn,bi_furn(s15,p15)*loge(pr_inv(p15,t))) ;
 
-equation EQN192 (all,t,time) 
+equation EQN193 (all,t,time) 
    loge(pr_inv("furn",t)) = sum(s15,s_furn,(ai_furn(s15)+kali_furn(s15,t))
    *loge(pr_inv(s15,t)))
    +0.5
    *sum(p15,pr_furn,sum(s15,s_furn,loge(pr_inv(s15,t))*bi_furn(s15,p15)
    *loge(pr_inv(p15,t)))) ;
 
-equation EQN193 (all,s31,s_mserv) (all,t,time) 
+equation EQN194 (all,s31,s_mserv) (all,t,time) 
    shr_mserv(s31,t) = ai_mserv(s31)+kali_mserv(s31,t)
    +sum(p31,pr_mserv,bi_mserv(s31,p31)*loge(pr_inv(p31,t))) ;
 
-equation EQN194 (all,t,time) 
+equation EQN195 (all,t,time) 
    loge(pr_inv("mserv",t)) = sum(s31,s_mserv,(ai_mserv(s31)+kali_mserv(s31,t))
    *loge(pr_inv(s31,t)))
    +0.5
    *sum(p31,pr_mserv,sum(s31,s_mserv,loge(pr_inv(s31,t))*bi_mserv(s31,p31)
    *loge(pr_inv(p31,t)))) ;
 
-equation EQN195 (all,s45,s_trd) (all,t,time) 
+equation EQN196 (all,s45,s_trd) (all,t,time) 
    shr_trd(s45,t) = ai_trd(s45)+kali_trd(s45,t)
    +sum(p45,pr_trd,bi_trd(s45,p45)*loge(pr_inv(p45,t))) ;
 
-equation EQN196 (all,t,time) 
+equation EQN197 (all,t,time) 
    loge(pr_inv("trd",t)) = sum(s45,s_trd,(ai_trd(s45)+kali_trd(s45,t))
    *loge(pr_inv(s45,t)))
    +0.5
    *sum(p45,pr_trd,sum(s45,s_trd,loge(pr_inv(s45,t))*bi_trd(s45,p45)
    *loge(pr_inv(p45,t)))) ;
 
-equation EQN197 (all,s46,s_trnsp) (all,t,time) 
+equation EQN198 (all,s46,s_trnsp) (all,t,time) 
    shr_trnsp(s46,t) = ai_trnsp(s46)+kali_trnsp(s46,t)
    +sum(p46,pr_trnsp,bi_trnsp(s46,p46)*loge(pr_inv(p46,t))) ;
 
-equation EQN198 (all,t,time) 
+equation EQN199 (all,t,time) 
    loge(pr_inv("trnsp",t)) = sum(s46,s_trnsp,(ai_trnsp(s46)+kali_trnsp(s46,t))
    *loge(pr_inv(s46,t)))
    +0.5
    *sum(p46,pr_trnsp,sum(s46,s_trnsp,loge(pr_inv(s46,t))*bi_trnsp(s46,p46)
    *loge(pr_inv(p46,t)))) ;
 
-equation EQN199 (all,s20,s_it) (all,t,time) 
+equation EQN200 (all,s20,s_it) (all,t,time) 
    shr_it(s20,t) = ai_it(s20)+kali_it(s20,t)
    +sum(p20,pr_it,bi_it(s20,p20)*loge(pr_inv(p20,t))) ;
 
-equation EQN200 (all,t,time) 
+equation EQN201 (all,t,time) 
    loge(pr_inv("it",t)) = sum(s20,s_it,(ai_it(s20)+kali_it(s20,t))
    *loge(pr_inv(s20,t)))
    +0.5
    *sum(p20,pr_it,sum(s20,s_it,loge(pr_inv(s20,t))*bi_it(s20,p20)
    *loge(pr_inv(p20,t)))) ;
 
-equation EQN201 (all,s29,s_mrawm) (all,t,time) 
+equation EQN202 (all,s29,s_mrawm) (all,t,time) 
    shr_mrawm(s29,t) = ai_mrawm(s29)+kali_mrawm(s29,t)
    +sum(p29,pr_mrawm,bi_mrawm(s29,p29)*loge(pr_inv(p29,t))) ;
 
-equation EQN202 (all,t,time) 
+equation EQN203 (all,t,time) 
    loge(pr_inv("mrawm",t)) = sum(s29,s_mrawm,(ai_mrawm(s29)+kali_mrawm(s29,t))
    *loge(pr_inv(s29,t)))
    +0.5
    *sum(p29,pr_mrawm,sum(s29,s_mrawm,loge(pr_inv(s29,t))*bi_mrawm(s29,p29)
    *loge(pr_inv(p29,t)))) ;
 
-equation EQN203 (all,s14,s_frawm) (all,t,time) 
+equation EQN204 (all,s14,s_frawm) (all,t,time) 
    shr_frawm(s14,t) = ai_frawm(s14)+kali_frawm(s14,t)
    +sum(p14,pr_frawm,bi_frawm(s14,p14)*loge(pr_inv(p14,t))) ;
 
-equation EQN204 (all,t,time) 
+equation EQN205 (all,t,time) 
    loge(pr_inv("frawm",t)) = sum(s14,s_frawm,(ai_frawm(s14)+kali_frawm(s14,t))
    *loge(pr_inv(s14,t)))
    +0.5
    *sum(p14,pr_frawm,sum(s14,s_frawm,loge(pr_inv(s14,t))*bi_frawm(s14,p14)
    *loge(pr_inv(p14,t)))) ;
 
-equation EQN205 (all,s40,s_serv) (all,t,time) 
+equation EQN206 (all,s40,s_serv) (all,t,time) 
    shr_serv(s40,t) = ai_serv(s40)+kali_serv(s40,t)
    +sum(p40,pr_serv,bi_serv(s40,p40)*loge(pr_inv(p40,t))) ;
 
-equation EQN206 (all,t,time) 
+equation EQN207 (all,t,time) 
    loge(pr_inv("serv",t)) = sum(s40,s_serv,(ai_serv(s40)+kali_serv(s40,t))
    *loge(pr_inv(s40,t)))
    +0.5
    *sum(p40,pr_serv,sum(s40,s_serv,loge(pr_inv(s40,t))*bi_serv(s40,p40)
    *loge(pr_inv(p40,t)))) ;
 
-equation EQN207 (all,s24,s_mach) (all,t,time) 
+equation EQN208 (all,s24,s_mach) (all,t,time) 
    shr_mach(s24,t) = ai_mach(s24)+kali_mach(s24,t)
    +sum(p24,pr_mach,bi_mach(s24,p24)*loge(pr_inv(p24,t))) ;
 
-equation EQN208 (all,t,time) 
+equation EQN209 (all,t,time) 
    loge(pr_inv("mach",t)) = sum(s24,s_mach,(ai_mach(s24)+kali_mach(s24,t))
    *loge(pr_inv(s24,t)))
    +0.5
    *sum(p24,pr_mach,sum(s24,s_mach,loge(pr_inv(s24,t))*bi_mach(s24,p24)
    *loge(pr_inv(p24,t)))) ;
 
-equation EQN209 (all,s49,s_ttsvc) (all,t,time) 
+equation EQN210 (all,s49,s_ttsvc) (all,t,time) 
    shr_ttsvc(s49,t) = ai_ttsvc(s49)+kali_ttsvc(s49,t)
    +sum(p49,pr_ttsvc,bi_ttsvc(s49,p49)*loge(pr_inv(p49,t))) ;
 
-equation EQN210 (all,t,time) 
+equation EQN211 (all,t,time) 
    loge(pr_inv("ttsvc",t)) = sum(s49,s_ttsvc,(ai_ttsvc(s49)+kali_ttsvc(s49,t))
    *loge(pr_inv(s49,t)))
    +0.5
    *sum(p49,pr_ttsvc,sum(s49,s_ttsvc,loge(pr_inv(s49,t))*bi_ttsvc(s49,p49)
    *loge(pr_inv(p49,t)))) ;
 
-equation EQN211 (all,s5,s_eit) (all,t,time) 
+equation EQN212 (all,s5,s_eit) (all,t,time) 
    shr_eit(s5,t) = ai_eit(s5)+kali_eit(s5,t)
    +sum(p5,pr_eit,bi_eit(s5,p5)*loge(pr_inv(p5,t))) ;
 
-equation EQN212 (all,t,time) 
+equation EQN213 (all,t,time) 
    loge(pr_inv("eit",t)) = sum(s5,s_eit,(ai_eit(s5)+kali_eit(s5,t))
    *loge(pr_inv(s5,t)))
    +0.5
    *sum(p5,pr_eit,sum(s5,s_eit,loge(pr_inv(s5,t))*bi_eit(s5,p5)
    *loge(pr_inv(p5,t)))) ;
 
-equation EQN213 (all,s41,s_short) (all,t,time) 
+equation EQN214 (all,s41,s_short) (all,t,time) 
    shr_short(s41,t) = ai_short(s41)+kali_short(s41,t)
    +sum(p41,pr_short,bi_short(s41,p41)*loge(pr_inv(p41,t))) ;
 
-equation EQN214 (all,t,time) 
+equation EQN215 (all,t,time) 
    loge(pr_inv("short",t)) = sum(s41,s_short,(ai_short(s41)+kali_short(s41,t))
    *loge(pr_inv(s41,t)))
    +0.5
    *sum(p41,pr_short,sum(s41,s_short,loge(pr_inv(s41,t))*bi_short(s41,p41)
    *loge(pr_inv(p41,t)))) ;
 
-equation EQN215 (all,s22,s_long) (all,t,time) 
+equation EQN216 (all,s22,s_long) (all,t,time) 
    shr_long(s22,t) = ai_long(s22)+kali_long(s22,t)
    +sum(p22,pr_long,bi_long(s22,p22)*loge(pr_inv(p22,t))) ;
 
-equation EQN216 (all,t,time) 
+equation EQN217 (all,t,time) 
    loge(pr_inv("long",t)) = sum(s22,s_long,(ai_long(s22)+kali_long(s22,t))
    *loge(pr_inv(s22,t)))
    +0.5
    *sum(p22,pr_long,sum(s22,s_long,loge(pr_inv(s22,t))*bi_long(s22,p22)
    *loge(pr_inv(p22,t)))) ;
 
-equation EQN217 (all,s13,s_fixed) (all,t,time) 
+equation EQN218 (all,s13,s_fixed) (all,t,time) 
    shr_fixed(s13,t) = ai_fixed(s13)+kali_fixed(s13,t)
    +sum(p13,pr_fixed,bi_fixed(s13,p13)*loge(pr_inv(p13,t))) ;
 
-equation EQN218 (all,t,time) 
+equation EQN219 (all,t,time) 
    pii(t) = exp(
    sum(s13,s_fixed,(ai_fixed(s13)+kali_fixed(s13,t))*loge(pr_inv(s13,t)))
    +0.5
@@ -2701,35 +2757,35 @@ equation EQN218 (all,t,time)
    *loge(pr_inv(p13,t)))))
    *inv_shock(t) ;
 
-equation EQN219 (all,t,time) 
+equation EQN220 (all,t,time) 
    pk(t) = adjust_pk(t)*pii(t)*(1-tax_itc(t)) ;
 
-equation EQN220 (all,t,time) 
+equation EQN221 (all,t,time) 
    inv_total(t) = inv_expend(t)/(1-tax_itc(t)) ;
 
-equation EQN221 (all,t,time) 
+equation EQN222 (all,t,time) 
    rev_itc(t) = (-tax_itc(t))*inv_total(t) ;
 
-equation EQN222 (all,t,time) 
+equation EQN223 (all,t,time) 
    inv_real(t) = (adjust_i(t)*inv_total(t)*inv_exp_shk(t))
    /pii(t) ;
 
-equation EQN223 (all,t,time) 
+equation EQN224 (all,t,time) 
    fixed_inv(t) = inv_total(t)*(1-inven_fract(t)) ;
 
-equation EQN224 (all,t,time) 
+equation EQN225 (all,t,time) 
    inven_inv(t) = inv_total(t)-fixed_inv(t) ;
 
-equation EQN225 (all,t,time) 
+equation EQN226 (all,t,time) 
    inv_share("c05",t) = shr_long("c05",t)*shr_fixed("long",t) ;
 
-equation EQN226 (all,t,time) 
+equation EQN227 (all,t,time) 
    inv_share("c09",t) = shr_long("c09",t)*shr_fixed("long",t) ;
 
-equation EQN227 (all,t,time) 
+equation EQN228 (all,t,time) 
    inv_share("c31",t) = shr_long("c31",t)*shr_fixed("long",t) ;
 
-equation EQN228 (all,t,time) 
+equation EQN229 (all,t,time) 
    inv_share("c10",t) = shr_rawm("c10",t)*shr_mrawm("rawm",t)
    *shr_frawm("mrawm",t)
    *shr_mach("frawm",t)
@@ -2737,7 +2793,7 @@ equation EQN228 (all,t,time)
    *shr_short("eit",t)
    *shr_fixed("short",t) ;
 
-equation EQN229 (all,t,time) 
+equation EQN230 (all,t,time) 
    inv_share("c11",t) = shr_rawm("c11",t)*shr_mrawm("rawm",t)
    *shr_frawm("mrawm",t)
    *shr_mach("frawm",t)
@@ -2745,7 +2801,7 @@ equation EQN229 (all,t,time)
    *shr_short("eit",t)
    *shr_fixed("short",t) ;
 
-equation EQN230 (all,t,time) 
+equation EQN231 (all,t,time) 
    inv_share("c12",t) = shr_rawm("c12",t)*shr_mrawm("rawm",t)
    *shr_frawm("mrawm",t)
    *shr_mach("frawm",t)
@@ -2753,280 +2809,399 @@ equation EQN230 (all,t,time)
    *shr_short("eit",t)
    *shr_fixed("short",t) ;
 
-equation EQN231 (all,t,time) 
+equation EQN232 (all,t,time) 
    inv_share("c19",t) = shr_furn("c19",t)*shr_frawm("furn",t)
    *shr_mach("frawm",t)
    *shr_eit("mach",t)
    *shr_short("eit",t)
    *shr_fixed("short",t) ;
 
-equation EQN232 (all,t,time) 
+equation EQN233 (all,t,time) 
    inv_share("c21",t) = shr_furn("c21",t)*shr_frawm("furn",t)
    *shr_mach("frawm",t)
    *shr_eit("mach",t)
    *shr_short("eit",t)
    *shr_fixed("short",t) ;
 
-equation EQN233 (all,t,time) 
+equation EQN234 (all,t,time) 
    inv_share("c24",t) = shr_furn("c24",t)*shr_frawm("furn",t)
    *shr_mach("frawm",t)
    *shr_eit("mach",t)
    *shr_short("eit",t)
    *shr_fixed("short",t) ;
 
-equation EQN234 (all,t,time) 
+equation EQN235 (all,t,time) 
    inv_share("c22",t) = shr_mserv("c22",t)*shr_serv("mserv",t)
    *shr_ttsvc("serv",t)
    *shr_short("ttsvc",t)
    *shr_fixed("short",t) ;
 
-equation EQN235 (all,t,time) 
+equation EQN236 (all,t,time) 
    inv_share("c34",t) = shr_mserv("c34",t)*shr_serv("mserv",t)
    *shr_ttsvc("serv",t)
    *shr_short("ttsvc",t)
    *shr_fixed("short",t) ;
 
-equation EQN236 (all,t,time) 
+equation EQN237 (all,t,time) 
    inv_share("c35",t) = shr_mserv("c35",t)*shr_serv("mserv",t)
    *shr_ttsvc("serv",t)
    *shr_short("ttsvc",t)
    *shr_fixed("short",t) ;
 
-equation EQN237 (all,t,time) 
+equation EQN238 (all,t,time) 
    inv_share("c25",t) = shr_trd("c25",t)*shr_ttsvc("trd",t)
    *shr_short("ttsvc",t)
    *shr_fixed("short",t) ;
 
-equation EQN238 (all,t,time) 
+equation EQN239 (all,t,time) 
    inv_share("c26",t) = shr_trd("c26",t)*shr_ttsvc("trd",t)
    *shr_short("ttsvc",t)
    *shr_fixed("short",t) ;
 
-equation EQN239 (all,t,time) 
+equation EQN240 (all,t,time) 
    inv_share("c17",t) = shr_trnsp("c17",t)*shr_eit("trnsp",t)
    *shr_short("eit",t)
    *shr_fixed("short",t) ;
 
-equation EQN240 (all,t,time) 
+equation EQN241 (all,t,time) 
    inv_share("c18",t) = shr_trnsp("c18",t)*shr_eit("trnsp",t)
    *shr_short("eit",t)
    *shr_fixed("short",t) ;
 
-equation EQN241 (all,t,time) 
+equation EQN242 (all,t,time) 
    inv_share("c15",t) = shr_it("c15",t)*shr_eit("it",t)*shr_short("eit",t)
    *shr_fixed("short",t) ;
 
-equation EQN242 (all,t,time) 
+equation EQN243 (all,t,time) 
    inv_share("c28",t) = shr_it("c28",t)*shr_eit("it",t)*shr_short("eit",t)
    *shr_fixed("short",t) ;
 
-equation EQN243 (all,t,time) 
+equation EQN244 (all,t,time) 
    inv_share("c29",t) = shr_it("c29",t)*shr_eit("it",t)*shr_short("eit",t)
    *shr_fixed("short",t) ;
 
-equation EQN244 (all,t,time) 
+equation EQN245 (all,t,time) 
    inv_share("c13",t) = shr_mrawm("c13",t)*shr_frawm("mrawm",t)
    *shr_mach("frawm",t)
    *shr_eit("mach",t)
    *shr_short("eit",t)
    *shr_fixed("short",t) ;
 
-equation EQN245 (all,t,time) 
+equation EQN246 (all,t,time) 
    inv_share("c32",t) = shr_serv("c32",t)*shr_ttsvc("serv",t)
    *shr_short("ttsvc",t)
    *shr_fixed("short",t) ;
 
-equation EQN246 (all,t,time) 
+equation EQN247 (all,t,time) 
    inv_share("c14",t) = shr_mach("c14",t)*shr_eit("mach",t)*shr_short("eit",t)
    *shr_fixed("short",t) ;
 
-equation EQN247 (all,t,time) 
+equation EQN248 (all,t,time) 
    inv_share("c16",t) = shr_mach("c16",t)*shr_eit("mach",t)*shr_short("eit",t)
    *shr_fixed("short",t) ;
 
-equation EQN248 (all,t,time) 
+equation EQN249 (all,t,time) 
    inv_share("c27",t) = shr_ttsvc("c27",t)*shr_short("ttsvc",t)
    *shr_fixed("short",t) ;
 
-equation EQN249 (all,t,time) 
+equation EQN250 (all,t,time) 
    inv_share("c01",t) = 0.0 ;
 
-equation EQN250 (all,t,time) 
+equation EQN251 (all,t,time) 
    inv_share("c02",t) = 0.0 ;
 
-equation EQN251 (all,t,time) 
+equation EQN252 (all,t,time) 
    inv_share("c03",t) = 0.0 ;
 
-equation EQN252 (all,t,time) 
+equation EQN253 (all,t,time) 
    inv_share("c04",t) = 0.0 ;
 
-equation EQN253 (all,t,time) 
+equation EQN254 (all,t,time) 
    inv_share("c06",t) = 0.0 ;
 
-equation EQN254 (all,t,time) 
+equation EQN255 (all,t,time) 
    inv_share("c07",t) = 0.0 ;
 
-equation EQN255 (all,t,time) 
+equation EQN256 (all,t,time) 
    inv_share("c08",t) = 0.0 ;
 
-equation EQN256 (all,t,time) 
+equation EQN257 (all,t,time) 
    inv_share("c20",t) = 0.0 ;
 
-equation EQN257 (all,t,time) 
+equation EQN258 (all,t,time) 
    inv_share("c23",t) = 0.0 ;
 
-equation EQN258 (all,t,time) 
+equation EQN259 (all,t,time) 
    inv_share("c30",t) = 0.0 ;
 
-equation EQN259 (all,t,time) 
+equation EQN260 (all,t,time) 
    inv_share("c33",t) = 0.0 ;
 
-equation EQN260 (all,t,time) 
+equation EQN261 (all,t,time) 
    inv_share("c36",t) = 0.0 ;
 
-equation EQN261 (all,c,com) (all,t,time) 
+equation EQN262 (all,c,com) (all,t,time) 
    inv(c,t) = inv_share(c,t)*fixed_inv(t)+inven_share(c,t)*inven_inv(t) ;
 
-equation EQN262 (all,c,com) (all,t,time) 
+equation EQN263 (all,c,com) (all,t,time) 
    inv_qty(c,t) = inv(c,t)/pr_inv(c,t) ;
 
-equation EQN263 (all,c,com) (all,t,time) 
-   gov(c,t) = (gov_share(c,t)*gov_expend(t))/(1+tax_con_gov(t)) ;
-
 equation EQN264 (all,c,com) (all,t,time) 
-   gov_qty(c,t) = gov(c,t)/pb(c,"gov",t) ;
+   gov(c,t) = gov_share(c,t)*gov_expend(t) ;
 
 equation EQN265 (all,c,com) (all,t,time) 
+   gov_qty(c,t) = gov(c,t)/(pb(c,"gov",t)*(1+tax_con_gov(t))) ;
+
+equation EQN266 (all,t,time) 
+   rev_sales(t) = sum(i,ind,tax_sales(i,t)*ind_out(i,t)) ;
+
+equation EQN267 (all,t,time) 
+   rev_unit(t) = sum(i,ind,tax_unit(i,t)*ind_qty(i,t)) ;
+
+equation EQN268 (all,t,time) 
+   rev_tariff(t) = sum(c,com,tariff(c,t)*pf(c,t)*exch(t)*imp_qty(c,t)) ;
+
+equation EQN269 (all,t,time) 
+   rev_con(t) = sum(c,com,(tax_con_totc(t)*con(c,t))/(1+tax_con_totc(t)))
+   +tax_con_totk(t)*inv_expend(t)
+   *(con("kap",t)/(kap_income(t)+rev_cap_hh(t))) ;
+
+equation EQN270 (all,t,time) 
+   rev_con_gov(t) = tax_con_gov(t)*(gov_expend(t)/(1+tax_con_gov(t))) ;
+
+equation EQN271 (all,t,time) 
+   rev_con_rbt(t) = tax_con(t)*tax_con_xmpt(t) ;
+
+equation EQN272 (all,t,time) 
+   rev_extern(t) = sum(i,ind,tax_ext_ind(i,t)*ind_qty(i,t))
+   +sum(c,com,tar_ext_com(c,t)*imp_qty(c,t))
+   +sum(c,com,sum(b,buy,tax_ext_com(c,b,t)*int_qty(c,b,t))) ;
+
+equation EQN273 (all,t,time) 
+   rev_total(t) = rev_sales(t)+rev_unit(t)+rev_tariff(t)+rev_prop(t)
+   +rev_cap(t)
+   -rev_itc(t)
+   +rev_cap_hh(t)
+   +rev_wealth(t)
+   +rev_labor(t)
+   +rev_extern(t)
+   +rev_con(t)
+   +rev_con_gov(t)
+   -rev_con_rbt(t)
+   +rev_lump(t)
+   +rev_nontax(t) ;
+
+equation EQN274 (all,t,time) 
+   gov_surplus(t) = rev_total(t)-gov_expend(t)+gov_kap_inc(t)
+   +gov_from_ss(t)
+   -gov_interest(t)
+   -gov_int_ss(t)
+   -gov_int_abr(t)
+   -gov_transdom(t)
+   -gov_transabr(t) ;
+
+equation EQN275 (all,t1,time_p0m1) 
+   gov_debt(t1+1) = gov_debt(t1)
+   +(gov_for_nvst(t1)+gov_debt_cg(t1)+gov_debt_dsc(t1)
+   -gov_surplus(t1))
+   *nyears_lead(t1) ;
+
+equation EQN276 (all,t1,time_p0m1) 
+   gov_debt_f(t1+1) = gov_debt_f(t1)
+   -(gov_for_nvst(t1)+gov_debt_fcg(t1))*nyears_lead(t1) ;
+
+equation EQN277 (all,c,com) (all,t,time) 
    exp_share(c,t) = ax_exp(c)+kalx_exp(c,t)
    +bx_exp(c)
    *(loge(pf(c,t))
    -loge((pc(c,t)*(1+row_tariff(c,t)))/exch(t))) ;
 
-equation EQN266 (all,c,com) (all,t,time) 
+equation EQN278 (all,c,com) (all,t,time) 
    exports(c,t) = pc(c,t)*exp_share(c,t)*com_qty(c,t) ;
 
-equation EQN267 (all,c,com) (all,t,time) 
+equation EQN279 (all,c,com) (all,t,time) 
    exp_qty(c,t) = exp_share(c,t)*com_qty(c,t) ;
 
-equation EQN268 (all,t,time) 
+equation EQN280 (all,t,time) 
    export_value(t) = sum(c,com,exports(c,t)) ;
 
-equation EQN269 (all,c,com) (all,t,time) 
+equation EQN281 (all,c,com) (all,t,time) 
    imports(c,t) = (pc(c,t)*imp_share(c,t)*com_qty(c,t))/dom_share(c,t) ;
 
-equation EQN270 (all,c,com) (all,t,time) 
+equation EQN282 (all,c,com) (all,t,time) 
    imp_qty(c,t) = imports(c,t)/pfd(c,t) ;
 
-equation EQN271 (all,t,time) 
+equation EQN283 (all,t,time) 
    import_value(t) = sum(c,com,imports(c,t)) ;
 
-equation EQN272 (all,t,time) 
+equation EQN284 (all,t,time) 
    trade_surp(t) = export_value(t)-import_value(t) ;
 
-equation EQN273 (all,t,time) 
+equation EQN285 (all,t,time) 
    trade_surpfc(t) = trade_surp(t)/exch(t) ;
 
-equation EQN274 (all,t,time) 
+equation EQN286 (all,t,time) 
+   us_surplus(t) = trade_surp(t)+row_interest(t)-gov_int_abr(t)
+   -gov_transabr(t) ;
+
+equation EQN287 (all,t1,time_p0m1) 
+   row_debt(t1+1) = row_debt(t1)
+   +(us_surplus(t1)+row_debt_cg(t1)+row_debt_dsc(t1)
+   -gov_for_nvst(t1))
+   *nyears_lead(t1) ;
+
+equation EQN288 (all,t,time) 
    hours_adjust(t) = (1-unemp_scale(t))*hours(t) ;
 
-equation EQN275 (all,i,ind) (all,t,time) 
+equation EQN289 (all,i,ind) (all,t,time) 
    lab(i,t) = (ind_out(i,t)*io("lab",i,t))/pb("lab",i,t) ;
 
-equation EQN276 (all,t,time) 
+equation EQN290 (all,t,time) 
    lab_demand(t) = sum(i,ind,lab(i,t)*pl_scale(i,t)) ;
 
-equation EQN277 (all,t,time) 
+equation EQN291 (all,t,time) 
    lab_income(t) = sum(i,ind,lab(i,t)*pb("lab",i,t)) ;
 
-equation EQN278 (all,t,time) 
+equation EQN292 (all,t,time) 
    lab_inc_net(t) = ((pr_hours(t)*hours_adjust(t)-pr_leisure(t)*leisure(t))
    /(1-tax_labor_m(t)))
    *(1-tax_labor_a(t)) ;
 
-equation EQN279 (all,t,time) 
+equation EQN293 (all,t,time) 
    rev_labor(t) = tax_labor_a(t)*lab_income(t) ;
 
-equation EQN280 (all,t,time) 
+equation EQN294 (all,t,time) 
    tax_labor_z(t) = lab_income(t)-rev_labor(t)/tax_labor_m(t) ;
 
-equation EQN281 (all,t1,time_p0m1) 
+equation EQN295 (all,t1,time_p0m1) 
    k(t1+1) = (-(((1-delta)^nyears_lead(t1)-1)/delta))*inv_real(t1)
    +(1-delta)^nyears_lead(t1)*k(t1) ;
 
-equation EQN282 (all,i,ind) (all,t,time) 
+equation EQN296 (all,i,ind) (all,t,time) 
    kap(i,t) = (ind_out(i,t)*io("kap",i,t))/pb("kap",i,t) ;
 
-equation EQN283 (all,t,time) 
+equation EQN297 (all,t,time) 
    kap("con",t) = con_qty("kap",t) ;
 
-equation EQN284 (all,t,time) 
+equation EQN298 (all,t,time) 
    kap_demand(t) = sum(N2,nind_c,kap(N2,t)*pk_scale(N2,t)) ;
 
-equation EQN285 (all,t,time) 
+equation EQN299 (all,t,time) 
    rev_cap_hh(t) = (tax_cap_hh(t)*pb("kap","con",t)*kap("con",t))
    /(1+tax_cap_hh(t)) ;
 
-equation EQN286 (all,t,time) 
+equation EQN300 (all,t,time) 
    kap_income(t) = sum(i,ind,kap(i,t)*pb("kap",i,t))+con("kap",t)
    -rev_cap_hh(t) ;
 
-equation EQN287 (all,t,time) 
+equation EQN301 (all,t,time) 
    k_value(t) = pk(t)*k(t) ;
 
-equation EQN288 (all,t,time) 
+equation EQN302 (all,t,time) 
    deprec(t) = delta*k_value(t) ;
 
-equation EQN289 (all,t,time) 
+equation EQN303 (all,t,time) 
    rev_prop(t) = tax_prop(t)*k_value(t) ;
 
-equation EQN290 (all,t,time) 
+equation EQN304 (all,t,time) 
    kap_taxable(t) = kap_income(t)-rev_prop(t) ;
 
-equation EQN291 (all,t,time) 
+equation EQN305 (all,t,time) 
    dividend(t) = (1-tax_cap(t))*kap_taxable(t) ;
 
-equation EQN292 (all,t,time) 
+equation EQN306 (all,t,time) 
    div_rate(t) = dividend(t)/k_value(t) ;
 
-equation EQN293 (all,t,time) 
+equation EQN307 (all,t,time) 
    gov_kap_inc(t) = (1-tax_cap(t))*kap("i36",t)*pb("kap","i36",t) ;
 
-equation EQN294 (all,t2,time_p1m0) 
-   nyears_lag(t2) = year(t2)-year(t2-1) ;
-
-equation EQN295 (all,t2,time_p1m0) 
+equation EQN308 (all,t2,time_p1m0) 
    capgain(t2) = (((pk(t2)-pk(t2-1))/nyears_lag(t2))/pk(t2)
    -delta)
    *k_value(t2) ;
 
-equation EQN296 (all,t,time) 
+equation EQN309 (all,t,time) 
    cg_rate(t) = capgain(t)/k_value(t) ;
 
-equation EQN297 (all,t,time) 
+equation EQN310 (all,t,time) 
    r(t) = div_rate(t)+cg_rate(t) ;
 
-equation EQN298 (all,t,time) 
+equation EQN311 (all,t,time) 
    interest(t) = r(t)*(gov_debt(t)+row_debt(t)) ;
 
-equation EQN299 (all,t,time) 
+equation EQN312 (all,t,time) 
    gov_int_adj(t) = gov_interest(t)+gov_int_ss(t)-gov_from_ss(t)
    -(r(t)*gov_debt(t))/(1-tax_cap(t)) ;
 
-equation EQN300 (all,t,time) 
+equation EQN313 (all,t,time) 
    row_int_adj(t) = row_interest(t)-(r(t)*row_debt(t))/(1-tax_cap(t)) ;
 
-equation EQN301 (all,t,time) 
+equation EQN314 (all,t,time) 
    finwealth(t) = k_value(t)+gov_debt(t)+row_debt(t) ;
 
-equation EQN302 (all,t,time) 
+equation EQN315 (all,t,time) 
    rev_wealth(t) = tax_wealth(t)*finwealth(t) ;
 
-equation EQN303 (all,t,time) 
+equation EQN316 (all,t,time) 
    rev_cap(t) = tax_cap(t)
    *(kap_taxable(t)+interest(t)/(1-tax_cap(t))
    +gov_int_adj(t)
    +row_int_adj(t)) ;
 
-equation EQN304 (all,t,time) 
+equation EQN317 (all,t,time) 
    kap_inc_net(t) = dividend(t)-gov_kap_inc(t)+interest(t)-rev_wealth(t)
    +(1-tax_cap(t))*(gov_int_adj(t)+row_int_adj(t)) ;
+
+equation EQN318 (all,t,time) 
+   pd_con(t) = exp(
+   sum(N1,ncom_k,(con(N1,t)*loge(pr_con(N1,t)))/con_expend(t)))
+   /pd_con_scale ;
+
+equation EQN319 (all,t,time) 
+   pd_inv(t) = exp(
+   sum(c,com,(inv(c,t)*loge(pr_inv(c,t)))/inv_total(t)))
+   /pd_inv_scale ;
+
+equation EQN320 (all,t,time) 
+   pgg(t) = exp(
+   sum(c,com,gov_share(c,t)*loge(pb(c,"gov",t)*(1+tax_con_gov(t))))) ;
+
+equation EQN321 (all,t,time) 
+   pd_gov(t) = pgg(t)/pd_gov_scale ;
+
+equation EQN322 (all,t,time) 
+   pd_exp(t) = exp(
+   sum(c,com,(exports(c,t)*loge(pc(c,t)))/export_value(t)))
+   /pd_exp_scale ;
+
+equation EQN323 (all,t,time) 
+   pd_imp(t) = exp(
+   sum(c,com,(pf(c,t)*exch(t)*imp_qty(c,t)*loge(pf(c,t)*exch(t)))
+   /import_value(t)))
+   /pd_imp_scale ;
+
+equation EQN324 (all,t,time) 
+   nom_gdp(t) = con_expend(t)+inv_total(t)+gov_expend(t)+export_value(t)
+   -import_value(t) ;
+
+equation EQN325 (all,t,time) 
+   pd_gdp(t) = exp(
+   (con_expend(t)*loge(pd_con(t))+inv_total(t)*loge(pd_inv(t))
+   +gov_expend(t)*loge(pd_gov(t))
+   +export_value(t)*loge(pd_exp(t))
+   -import_value(t)*loge(pd_imp(t)))
+   /nom_gdp(t))
+   /pd_gdp_scale ;
+
+equation EQN326 (all,t,time) 
+   nom_gnp(t) = nom_gdp(t)+row_interest(t)-gov_int_abr(t)
+   +rev_tariff(t) ;
+
+equation EQN327 (all,t,time) 
+   income(t) = lab_inc_net(t)+kap_inc_net(t)+gov_transdom(t)
+   +rev_con_rbt(t)
+   -rev_lump(t) ;
+
+equation EQN328 (all,t,time) 
+   save(t) = income(t)-con_expend(t)-transfer_abr(t)-rev_nontax(t)
+   +rev_itc(t) ;

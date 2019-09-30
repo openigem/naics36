@@ -1,0 +1,35 @@
+// NIPA Accounting Equations
+
+pd_con = exp(sum(ncom_k,con*ln(pr_con)/con_expend))/pd_con_scale  'Geometric price deflator for con_expend'  ;
+
+pd_inv = exp(sum(com,inv(com)*ln(pr_inv(com))/inv_total))/pd_inv_scale  'Geometric price deflator for inv_total'  ;
+
+pgg = exp(sum(com,gov_share(com)*ln(pb(com,gov)*(1+tax_con_gov))))  'Geometric price deflator for gov_expend in gov_real'  ;
+pd_gov = pgg/pd_gov_scale  'Geometric price deflator for gov_expend in pd_gdp'  ;
+
+pd_exp = exp(sum(com,exports*ln(pc)/export_value))/pd_exp_scale  'Geometric price deflator for export_value'  ;
+
+pd_imp = exp(sum(com,pf*exch*imp_qty*ln(pf*exch)/import_value))/pd_imp_scale  'Geometric price deflator for import_value'  ;
+
+nom_gdp = con_expend + inv_total + gov_expend + export_value - import_value  'Nominal GDP'  ;
+
+pd_gdp = exp((con_expend*ln(pd_con)
+             +inv_total*ln(pd_inv)
+			 +gov_expend*ln(pd_gov)
+			 +export_value*ln(pd_exp)
+			 -import_value*ln(pd_imp))
+			 /nom_gdp)/pd_gdp_scale
+			 'Geometric price deflator for nom_gdp'  ;
+			 
+nom_gnp = nom_gdp + row_interest - gov_int_abr + rev_tariff  'Nominal GDP'  ;
+
+income = lab_inc_net + kap_inc_net + gov_transdom + rev_con_rbt - rev_lump  'After-tax household income'  ;
+
+save = income - con_expend - transfer_abr - rev_nontax + rev_itc  'Household saving'  ;
+
+			 
+
+
+
+
+

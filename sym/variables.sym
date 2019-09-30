@@ -476,3 +476,23 @@ variable  interest  'Value of interest earned' N070 ;
 
 variable  save  'Value of household saving' N044 ;
 
+variable  risk  'Risk premium' X024 ;
+
+variable  transfer_abr  'Personal transfers abroad' ZV77 ;
+
+//  Cobb-Douglas (geometric) price deflators and scalars
+
+variable  pd_con  'Geometric price deflator for con_expend' N151 ;
+variable  pd_inv  'Geometric price deflator for inv_total' N152 ;
+variable  pd_gov  'Geometric price deflator for gov_expend in pd_gdp' N153 ;
+variable  pd_exp  'Geometric price deflator for export_value' N154 ;
+variable  pd_imp  'Geometric price deflator for import_value' N155 ;
+variable  pd_gdp  'Geometric price deflator for nom_gdp' N156 ;
+
+variable  pgg     'Geometric price deflator for gov_expend in gov_real' N157 ;
+
+variable  nom_gdp 'Nominal GDP' N149 ;
+variable  nom_gnp 'Nominal GNP' N133 ;
+
+
+

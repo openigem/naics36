@@ -39,8 +39,6 @@ div_rate = dividend / k_value             'Dividend rate'  ;
 
 gov_kap_inc = (1-tax_cap) * kap(i36) * pb(kap,i36)  'Government enterprises capital income'  ;
 
-nyears_lag = year - lag(year)  'Lagged number of intervening years'  ;
-
 capgain = (((pk - lag(pk))/nyears_lag)/pk - delta) * k_value  'Capital gain'  ;
 cg_rate = capgain / k_value  'Capital gain rate'  ;
 

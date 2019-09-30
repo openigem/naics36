@@ -211,11 +211,9 @@ con_xpnd_net = con_expend - con_shk_xpnd  'Net consumption expenditure'  ;
 
 // Equations - Consumption expenditures and quantities by commodity - io basis
 
-con(com) = (sum(nipa,io_nipa(com,nipa)*con_share(nipa)*con_xpnd_net) + con_shk_val(com))/(1+tax_con_totc)  'con, io commodity' ;
+con(com) = (sum(nipa,io_nipa(com,nipa)*con_share(nipa)*con_xpnd_net) + con_shk_val(com))  'con, io commodity' ;
 con(kap) = (sum(nipa,io_nipa(kap,nipa)*con_share(nipa)*con_xpnd_net) + con_shk_val(kap))  'con, io capital' ;
 
 con_qty = con/pr_con 'con_qty, io quantities'  ;
-
-rev_con = sum(com,tax_con_totc*con)  'Consumption tax revenue from goods and services'  ;
 
 

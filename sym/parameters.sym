@@ -234,3 +234,18 @@ parameter ax_exp(com)  'Export share at unit prices' P132 ;
 parameter bx_exp(com)  'Export share price elasticity' P133 ;
 
 parameter delta  'Depreciation rate' P131 ;
+
+parameter pd_con_scale  'Scalar, consumption price deflator' P137 ;
+parameter pd_inv_scale  'Scalar, investment price deflator' P138 ;
+parameter pd_gov_scale  'Scalar, government price deflator' P139 ;
+parameter pd_exp_scale  'Scalar, export price deflator' P140 ;
+parameter pd_imp_scale  'Scalar, import price deflator' P141 ;
+parameter pd_gdp_scale  'Scalar, gdp price deflator (=1)' P136 ;
+
+parameter rho  'Pure rate of time preference' P003 ;
+
+
+
+
+
+

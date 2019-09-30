@@ -418,13 +418,28 @@ div.eqn { margin-top: 1em; margin-left: 2em;}
 <tr><td>leisure<td><b>&nbsp;</b><td>Leisure quantity</tr>
 <tr><td>make_col<td><b>ind, com</b><td>Make table of commodity output shares</tr>
 <tr><td>mat<td><b>ind</b><td>Quantities of materials bought</tr>
+<tr><td>nom_gdp<td><b>&nbsp;</b><td>Nominal GDP</tr>
+<tr><td>nom_gnp<td><b>&nbsp;</b><td>Nominal GNP</tr>
 <tr><td>nyears_lag<td><b>&nbsp;</b><td>Lagged number of intervening years</tr>
 <tr><td>nyears_lead<td><b>&nbsp;</b><td>Leading number of intervening years</tr>
 <tr><td>pb<td><b>inputs, buy</b><td>Buyer prices with demand-driven externality taxes (if any)</tr>
 <tr><td>pc<td><b>com</b><td>Domestic commodity prices</tr>
 <tr><td>pcon<td><b>ntoth</b><td>Household commodity prices including leisure and tiers, nipa</tr>
+<tr><td>pd_con<td><b>&nbsp;</b><td>Geometric price deflator for con_expend</tr>
+<tr><td>pd_exp<td><b>&nbsp;</b><td>Geometric price deflator for export_value</tr>
+<tr><td>pd_gdp<td><b>&nbsp;</b><td>Geometric price deflator for nom_gdp</tr>
+<tr><td>pd_gov<td><b>&nbsp;</b><td>Geometric price deflator for gov_expend in pd_gdp</tr>
+<tr><td>pd_imp<td><b>&nbsp;</b><td>Geometric price deflator for import_value</tr>
+<tr><td>pd_inv<td><b>&nbsp;</b><td>Geometric price deflator for inv_total</tr>
 <tr><td>pf<td><b>com</b><td>Commodity import prices, foreign currency</tr>
 <tr><td>pfd<td><b>com</b><td>Commodity import prices, domestic currency</tr>
+<tr><td>pgg<td><b>&nbsp;</b><td>Geometric price deflator for gov_expend in gov_real</tr>
+</table>
+</div>
+<div class="heading">Variables, continued:</div>
+<div class="dblock">
+<table class="dec" border=1 cellspacing=0>
+<tr><th>Name<th>Domain<th>Description</tr>
 <tr><td>pi<td><b>ind</b><td>Industry purchaser prices</tr>
 <tr><td>pii<td><b>&nbsp;</b><td>Price of investment goods</tr>
 <tr><td>pj_scale<td><b>&nbsp;</b><td>Leisure price multiplier</tr>
@@ -434,12 +449,6 @@ div.eqn { margin-top: 1em; margin-left: 2em;}
 <tr><td>pl_scale<td><b>ind</b><td>Labor price multipliers</tr>
 <tr><td>po<td><b>ind</b><td>Industry producer prices</tr>
 <tr><td>pr_con<td><b>ncom_k</b><td>Household commodity prices, io</tr>
-</table>
-</div>
-<div class="heading">Variables, continued:</div>
-<div class="dblock">
-<table class="dec" border=1 cellspacing=0>
-<tr><th>Name<th>Domain<th>Description</tr>
 <tr><td>pr_fc<td><b>&nbsp;</b><td>Price of full consumption</tr>
 <tr><td>pr_hours<td><b>&nbsp;</b><td>After-tax value of time to households</tr>
 <tr><td>pr_inv<td><b>inputs</b><td>Investment commodity prices, io</tr>
@@ -461,6 +470,12 @@ div.eqn { margin-top: 1em; margin-left: 2em;}
 <tr><td>rev_itc<td><b>&nbsp;</b><td>Loss in tax revenue from the invcestment tax credit (itc)</tr>
 <tr><td>rev_labor<td><b>&nbsp;</b><td>Labor (wage) tax revenue</tr>
 <tr><td>rev_lump<td><b>&nbsp;</b><td>Lump-sum tax revenue</tr>
+</table>
+</div>
+<div class="heading">Variables, continued:</div>
+<div class="dblock">
+<table class="dec" border=1 cellspacing=0>
+<tr><th>Name<th>Domain<th>Description</tr>
 <tr><td>rev_nontax<td><b>&nbsp;</b><td>Non-tax revenue</tr>
 <tr><td>rev_prop<td><b>&nbsp;</b><td>Property tax revenue</tr>
 <tr><td>rev_sales<td><b>&nbsp;</b><td>Sales tax revenue</tr>
@@ -468,14 +483,9 @@ div.eqn { margin-top: 1em; margin-left: 2em;}
 <tr><td>rev_total<td><b>&nbsp;</b><td>Total tax revenue</tr>
 <tr><td>rev_unit<td><b>&nbsp;</b><td>Unit tax revenue</tr>
 <tr><td>rev_wealth<td><b>&nbsp;</b><td>Wealth tax revenue</tr>
+<tr><td>risk<td><b>&nbsp;</b><td>Risk premium</tr>
 <tr><td>row_debt<td><b>&nbsp;</b><td>Rest-of-world debt</tr>
 <tr><td>row_debt_cg<td><b>&nbsp;</b><td>Capital gains on rest-of-world debt</tr>
-</table>
-</div>
-<div class="heading">Variables, continued:</div>
-<div class="dblock">
-<table class="dec" border=1 cellspacing=0>
-<tr><th>Name<th>Domain<th>Description</tr>
 <tr><td>row_debt_dsc<td><b>&nbsp;</b><td>Rest-of-world debt discrepancy</tr>
 <tr><td>row_int_adj<td><b>&nbsp;</b><td>Rest-of-world interest adjustment</tr>
 <tr><td>row_interest<td><b>&nbsp;</b><td>Rest-of-world interest</tr>
@@ -496,6 +506,12 @@ div.eqn { margin-top: 1em; margin-left: 2em;}
 <tr><td>shr_ff<td><b>s_ff, ind</b><td>Input shares, ff</tr>
 <tr><td>shr_fixed<td><b>s_fixed</b><td>Investment shares, fixed</tr>
 <tr><td>shr_frawm<td><b>s_frawm</b><td>Investment shares, frawm</tr>
+</table>
+</div>
+<div class="heading">Variables, continued:</div>
+<div class="dblock">
+<table class="dec" border=1 cellspacing=0>
+<tr><th>Name<th>Domain<th>Description</tr>
 <tr><td>shr_furn<td><b>s_furn</b><td>Investment shares, furn</tr>
 <tr><td>shr_gas<td><b>s_gas, ind</b><td>Input shares, gas</tr>
 <tr><td>shr_ho<td><b>s_ho</b><td>Household shares, ho</tr>
@@ -506,12 +522,6 @@ div.eqn { margin-top: 1em; margin-left: 2em;}
 <tr><td>shr_long<td><b>s_long</b><td>Investment shares, long</tr>
 <tr><td>shr_ma<td><b>s_ma, ind</b><td>Input shares, ma</tr>
 <tr><td>shr_mach<td><b>s_mach</b><td>Investment shares, mach</tr>
-</table>
-</div>
-<div class="heading">Variables, continued:</div>
-<div class="dblock">
-<table class="dec" border=1 cellspacing=0>
-<tr><th>Name<th>Domain<th>Description</tr>
 <tr><td>shr_mat<td><b>s_mat, ind</b><td>Input shares, mat</tr>
 <tr><td>shr_md<td><b>s_md</b><td>Household shares, md</tr>
 <tr><td>shr_mm<td><b>s_mm, ind</b><td>Input shares, mm</tr>
@@ -532,6 +542,12 @@ div.eqn { margin-top: 1em; margin-left: 2em;}
 <tr><td>shr_sv<td><b>s_sv, ind</b><td>Input shares, sv</tr>
 <tr><td>shr_tr<td><b>s_tr, ind</b><td>Input shares, tr</tr>
 <tr><td>shr_trc<td><b>s_trc</b><td>Household shares, trc</tr>
+</table>
+</div>
+<div class="heading">Variables, continued:</div>
+<div class="dblock">
+<table class="dec" border=1 cellspacing=0>
+<tr><th>Name<th>Domain<th>Description</tr>
 <tr><td>shr_trd<td><b>s_trd</b><td>Investment shares, trd</tr>
 <tr><td>shr_trnsp<td><b>s_trnsp</b><td>Investment shares, trnsp</tr>
 <tr><td>shr_trv<td><b>s_trv</b><td>Household shares, trv</tr>
@@ -542,12 +558,6 @@ div.eqn { margin-top: 1em; margin-left: 2em;}
 <tr><td>tariff<td><b>com</b><td>Commodity tariff rates, domestic</tr>
 <tr><td>tax_cap<td><b>&nbsp;</b><td>Average-marginal tax rate on capital</tr>
 <tr><td>tax_cap_hh<td><b>&nbsp;</b><td>Average-marginal tax rate on household capital</tr>
-</table>
-</div>
-<div class="heading">Variables, continued:</div>
-<div class="dblock">
-<table class="dec" border=1 cellspacing=0>
-<tr><th>Name<th>Domain<th>Description</tr>
 <tr><td>tax_con<td><b>&nbsp;</b><td>Consumption tax on all household expenditures</tr>
 <tr><td>tax_con_good<td><b>&nbsp;</b><td>Consumption tax on only household goods and services</tr>
 <tr><td>tax_con_gov<td><b>&nbsp;</b><td>Consumption tax on all government spending</tr>
@@ -568,6 +578,12 @@ div.eqn { margin-top: 1em; margin-left: 2em;}
 <tr><td>tax_prop<td><b>&nbsp;</b><td>Average-marginal tax rate on property</tr>
 <tr><td>tax_sales<td><b>ind</b><td>Sales tax rate</tr>
 <tr><td>tax_scale<td><b>&nbsp;</b><td>Scalar applied to labor and capital taxes</tr>
+</table>
+</div>
+<div class="heading">Variables, continued:</div>
+<div class="dblock">
+<table class="dec" border=1 cellspacing=0>
+<tr><th>Name<th>Domain<th>Description</tr>
 <tr><td>tax_unit<td><b>ind</b><td>Unit tax rate</tr>
 <tr><td>tax_wealth<td><b>&nbsp;</b><td>Average-marginal tax rate on wealth</tr>
 <tr><td>tech_shk_agg<td><b>&nbsp;</b><td>Economy-wide technology shock</tr>
@@ -575,15 +591,10 @@ div.eqn { margin-top: 1em; margin-left: 2em;}
 <tr><td>tech_shock<td><b>ind</b><td>Input neutral industry-specific technology shock</tr>
 <tr><td>trade_surp<td><b>&nbsp;</b><td>Trade surplus in domestic currency</tr>
 <tr><td>trade_surpfc<td><b>&nbsp;</b><td>Trade surplus in foreign currency</tr>
+<tr><td>transfer_abr<td><b>&nbsp;</b><td>Personal transfers abroad</tr>
 <tr><td>unemp_scale<td><b>&nbsp;</b><td>Scalar unemployment adjustment</tr>
 <tr><td>unemp_time<td><b>&nbsp;</b><td>Temporal unemployment adjustment</tr>
 <tr><td>us_surplus<td><b>&nbsp;</b><td>Current account surplus in domestic currency</tr>
-</table>
-</div>
-<div class="heading">Variables, continued:</div>
-<div class="dblock">
-<table class="dec" border=1 cellspacing=0>
-<tr><th>Name<th>Domain<th>Description</tr>
 <tr><td>year<td><b>&nbsp;</b><td>Calendar years</tr>
 </table>
 </div>
@@ -743,77 +754,88 @@ div.eqn { margin-top: 1em; margin-left: 2em;}
 <tr><td>delta<td><b>&nbsp;</b><td>Depreciation rate</tr>
 <tr><td>denom_rebase<td><b>&nbsp;</b><td>Full consumption share denominator re-basing parameter</tr>
 <tr><td>io_nipa<td><b>ncom_k, nipa</b><td>io to nipa commodity price shares</tr>
+<tr><td>pd_con_scale<td><b>&nbsp;</b><td>Scalar, consumption price deflator</tr>
+<tr><td>pd_exp_scale<td><b>&nbsp;</b><td>Scalar, export price deflator</tr>
+<tr><td>pd_gdp_scale<td><b>&nbsp;</b><td>Scalar, gdp price deflator (=1)</tr>
+<tr><td>pd_gov_scale<td><b>&nbsp;</b><td>Scalar, government price deflator</tr>
+<tr><td>pd_imp_scale<td><b>&nbsp;</b><td>Scalar, import price deflator</tr>
+<tr><td>pd_inv_scale<td><b>&nbsp;</b><td>Scalar, investment price deflator</tr>
 <tr><td>pf_scale_k<td><b>&nbsp;</b><td>Scalar - Capital stock</tr>
 <tr><td>pf_scale_l<td><b>&nbsp;</b><td>Scalar - Value of available hours</tr>
 <tr><td>pfc_m0<td><b>&nbsp;</b><td>Full consumption share normalization parameter</tr>
 <tr><td>pr_fc_scale<td><b>&nbsp;</b><td>Full consumption price normalization scalar</tr>
+<tr><td>rho<td><b>&nbsp;</b><td>Pure rate of time preference</tr>
 </table>
 </div>
 <div class="heading">Equations:</div>
 <div class="dblock">
 <div class="eblock">
-Equation 1: Marginal tax rate on labor<br>
+Equation 1: Leading number of intervening years<br>
+<div class="eqn"><i>nyears_lead</i> = lead(<i>year</i>)-<i>year</i></div>
+</div>
+<div class="eblock">
+Equation 2: Lagged number of intervening years<br>
+<div class="eqn"><i>nyears_lag</i> = <i>year</i>-lag(<i>year</i>)</div>
+</div>
+<div class="eblock">
+Equation 3: Marginal tax rate on labor<br>
 <div class="eqn"><i>tax_labor_m</i> = <i>exo_tax_labm</i>*<i>tax_scale</i></div>
 </div>
 <div class="eblock">
-Equation 2: Average tax rate on labor<br>
+Equation 4: Average tax rate on labor<br>
 <div class="eqn"><i>tax_labor_a</i> = <i>exo_tax_laba</i>*<i>tax_scale</i></div>
 </div>
 <div class="eblock">
-Equation 3: Average-marginal tax rate on capital  ;<br>
+Equation 5: Average-marginal tax rate on capital  ;<br>
 <div class="eqn"><i>tax_cap</i> = <i>exo_tax_cap</i>*<i>tax_scale</i></div>
 </div>
 <div class="eblock">
-Equation 4: Total externality tax on industry production<br>
+Equation 6: Total externality tax on industry production<br>
 For <i>i</i> in <b>ind</b> (36 total):<br>
 <div class="eqn"><i>tax_ext_ind</i>(<i>i</i>) = sum(<i>N8</i> in <b>nxtr</b>, <i>tax_ext_u</i>(<i>N8</i>)*<i>prd_ext</i>(<i>i,N8</i>))</div>
 </div>
 <div class="eblock">
-Equation 5: Total externality tariff on commodity import<br>
+Equation 7: Total externality tariff on commodity import<br>
 For <i>c</i> in <b>com</b> (36 total):<br>
 <div class="eqn"><i>tar_ext_com</i>(<i>c</i>) = sum(<i>N8</i> in <b>nxtr</b>, <i>tax_ext_u</i>(<i>N8</i>)*<i>imp_ext</i>(<i>c,N8</i>))</div>
 </div>
 <div class="eblock">
-Equation 6: Total externality tax on commodity use<br>
+Equation 8: Total externality tax on commodity use<br>
 For <i>b</i> in <b>buy</b>, <i>c</i> in <b>com</b> (1404 total):<br>
 <div class="eqn"><i>tax_ext_com</i>(<i>c,b</i>) = sum(<i>N8</i> in <b>nxtr</b>, <i>tax_ext_u</i>(<i>N8</i>)*<i>com_ext</i>(<i>c,b,N8</i>))</div>
 </div>
 <div class="eblock">
-Equation 7: Leading number of intervening years<br>
-<div class="eqn"><i>nyears_lead</i> = lead(<i>year</i>)-<i>year</i></div>
-</div>
-<div class="eblock">
-Equation 8: Economy-wide level of tech improvement<br>
+Equation 9: Economy-wide level of tech improvement<br>
 <div class="eqn">lead(<i>agg_tech_lvl</i>) = (1-<i>agg_tech_chg</i>)^<i>nyears_lead</i>
    *<i>agg_tech_lvl</i></div>
 </div>
 <div class="eblock">
-Equation 9: Non-oil,gas industry-specific capital services prices<br>
+Equation 10: Non-oil,gas industry-specific capital services prices<br>
 For <i>i1</i> in <b>indxoilgas</b> (34 total):<br>
 <div class="eqn"><i>pb</i>(<i>"kap",i1</i>) = <i>pk_service</i>*<i>pk_scale</i>(<i>i1</i>)</div>
 </div>
 <div class="eblock">
-Equation 10: Capital services price, oil mining<br>
+Equation 11: Capital services price, oil mining<br>
 <div class="eqn"><i>pb</i>(<i>"kap","i02"</i>) = <i>pr_kap_oil</i></div>
 </div>
 <div class="eblock">
-Equation 11: Capital services price, gas mining<br>
+Equation 12: Capital services price, gas mining<br>
 <div class="eqn"><i>pb</i>(<i>"kap","i03"</i>) = <i>pr_kap_gas</i></div>
 </div>
 <div class="eblock">
-Equation 12: Industry-specific labor prices<br>
+Equation 13: Industry-specific labor prices<br>
 For <i>i</i> in <b>ind</b> (36 total):<br>
 <div class="eqn"><i>pb</i>(<i>"lab",i</i>) = (<i>pr_hours</i>*<i>pl_scale</i>(<i>i</i>))
    /(1-<i>tax_labor_m</i>)</div>
 </div>
 <div class="eblock">
-Equation 13: gas input shares<br>
+Equation 14: gas input shares<br>
 For <i>i</i> in <b>ind</b>, <i>s16</i> in <b>s_gas</b> (72 total):<br>
 <div class="eqn"><i>shr_gas</i>(<i>s16,i</i>) = <i>ap_gas</i>(<i>s16,i</i>)+<i>kalf_gas</i>(<i>s16,i</i>)
    +sum(<i>p16</i> in <b>pr_gas</b>, <i>bp_gas</i>(<i>s16,p16,i</i>)*loge(<i>pb</i>(<i>p16,i</i>)))</div>
 </div>
 <div class="eblock">
-Equation 14: gas prices<br>
+Equation 15: gas prices<br>
 For <i>i</i> in <b>ind</b> (36 total):<br>
 <div class="eqn">loge(<i>pb</i>(<i>"gas",i</i>)) = <i>ap0_gas</i>(<i>i</i>)
    +sum(<i>s16</i> in <b>s_gas</b>, (<i>ap_gas</i>(<i>s16,i</i>)+<i>kalf_gas</i>(<i>s16,i</i>))
@@ -823,13 +845,13 @@ For <i>i</i> in <b>ind</b> (36 total):<br>
    *loge(<i>pb</i>(<i>p16,i</i>))))</div>
 </div>
 <div class="eblock">
-Equation 15: oil input shares<br>
+Equation 16: oil input shares<br>
 For <i>i</i> in <b>ind</b>, <i>s35</i> in <b>s_oil</b> (72 total):<br>
 <div class="eqn"><i>shr_oil</i>(<i>s35,i</i>) = <i>ap_oil</i>(<i>s35,i</i>)+<i>kalf_oil</i>(<i>s35,i</i>)
    +sum(<i>p35</i> in <b>pr_oil</b>, <i>bp_oil</i>(<i>s35,p35,i</i>)*loge(<i>pb</i>(<i>p35,i</i>)))</div>
 </div>
 <div class="eblock">
-Equation 16: oil prices<br>
+Equation 17: oil prices<br>
 For <i>i</i> in <b>ind</b> (36 total):<br>
 <div class="eqn">loge(<i>pb</i>(<i>"oil",i</i>)) = <i>ap0_oil</i>(<i>i</i>)
    +sum(<i>s35</i> in <b>s_oil</b>, (<i>ap_oil</i>(<i>s35,i</i>)+<i>kalf_oil</i>(<i>s35,i</i>))
@@ -839,13 +861,13 @@ For <i>i</i> in <b>ind</b> (36 total):<br>
    *loge(<i>pb</i>(<i>p35,i</i>))))</div>
 </div>
 <div class="eblock">
-Equation 17: ff input shares<br>
+Equation 18: ff input shares<br>
 For <i>i</i> in <b>ind</b>, <i>s12</i> in <b>s_ff</b> (108 total):<br>
 <div class="eqn"><i>shr_ff</i>(<i>s12,i</i>) = <i>ap_ff</i>(<i>s12,i</i>)+<i>kalf_ff</i>(<i>s12,i</i>)
    +sum(<i>p12</i> in <b>pr_ff</b>, <i>bp_ff</i>(<i>s12,p12,i</i>)*loge(<i>pb</i>(<i>p12,i</i>)))</div>
 </div>
 <div class="eblock">
-Equation 18: ff prices<br>
+Equation 19: ff prices<br>
 For <i>i</i> in <b>ind</b> (36 total):<br>
 <div class="eqn">loge(<i>pb</i>(<i>"ff",i</i>)) = <i>ap0_ff</i>(<i>i</i>)
    +sum(<i>s12</i> in <b>s_ff</b>, (<i>ap_ff</i>(<i>s12,i</i>)+<i>kalf_ff</i>(<i>s12,i</i>))
@@ -855,13 +877,13 @@ For <i>i</i> in <b>ind</b> (36 total):<br>
    *loge(<i>pb</i>(<i>p12,i</i>))))</div>
 </div>
 <div class="eblock">
-Equation 19: ene input shares<br>
+Equation 20: ene input shares<br>
 For <i>i</i> in <b>ind</b>, <i>s7</i> in <b>s_ene</b> (72 total):<br>
 <div class="eqn"><i>shr_ene</i>(<i>s7,i</i>) = <i>ap_ene</i>(<i>s7,i</i>)+<i>kalf_ene</i>(<i>s7,i</i>)
    +sum(<i>p7</i> in <b>pr_ene</b>, <i>bp_ene</i>(<i>s7,p7,i</i>)*loge(<i>pb</i>(<i>p7,i</i>)))</div>
 </div>
 <div class="eblock">
-Equation 20: ene prices<br>
+Equation 21: ene prices<br>
 For <i>i</i> in <b>ind</b> (36 total):<br>
 <div class="eqn">loge(<i>pb</i>(<i>"ene",i</i>)) = <i>ap0_ene</i>(<i>i</i>)
    +sum(<i>s7</i> in <b>s_ene</b>, (<i>ap_ene</i>(<i>s7,i</i>)+<i>kalf_ene</i>(<i>s7,i</i>))
@@ -871,13 +893,13 @@ For <i>i</i> in <b>ind</b> (36 total):<br>
    *loge(<i>pb</i>(<i>p7,i</i>))))</div>
 </div>
 <div class="eblock">
-Equation 21: bl input shares<br>
+Equation 22: bl input shares<br>
 For <i>i</i> in <b>ind</b>, <i>s</i> in <b>s_bl</b> (108 total):<br>
 <div class="eqn"><i>shr_bl</i>(<i>s,i</i>) = <i>ap_bl</i>(<i>s,i</i>)+<i>kalf_bl</i>(<i>s,i</i>)
    +sum(<i>p</i> in <b>pr_bl</b>, <i>bp_bl</i>(<i>s,p,i</i>)*loge(<i>pb</i>(<i>p,i</i>)))</div>
 </div>
 <div class="eblock">
-Equation 22: bl prices<br>
+Equation 23: bl prices<br>
 For <i>i</i> in <b>ind</b> (36 total):<br>
 <div class="eqn">loge(<i>pb</i>(<i>"bl",i</i>)) = <i>ap0_bl</i>(<i>i</i>)
    +sum(<i>s</i> in <b>s_bl</b>, (<i>ap_bl</i>(<i>s,i</i>)+<i>kalf_bl</i>(<i>s,i</i>))
@@ -887,13 +909,13 @@ For <i>i</i> in <b>ind</b> (36 total):<br>
    *loge(<i>pb</i>(<i>p,i</i>))))</div>
 </div>
 <div class="eblock">
-Equation 23: ob input shares<br>
+Equation 24: ob input shares<br>
 For <i>i</i> in <b>ind</b>, <i>s34</i> in <b>s_ob</b> (108 total):<br>
 <div class="eqn"><i>shr_ob</i>(<i>s34,i</i>) = <i>ap_ob</i>(<i>s34,i</i>)+<i>kalf_ob</i>(<i>s34,i</i>)
    +sum(<i>p34</i> in <b>pr_ob</b>, <i>bp_ob</i>(<i>s34,p34,i</i>)*loge(<i>pb</i>(<i>p34,i</i>)))</div>
 </div>
 <div class="eblock">
-Equation 24: ob prices<br>
+Equation 25: ob prices<br>
 For <i>i</i> in <b>ind</b> (36 total):<br>
 <div class="eqn">loge(<i>pb</i>(<i>"ob",i</i>)) = <i>ap0_ob</i>(<i>i</i>)
    +sum(<i>s34</i> in <b>s_ob</b>, (<i>ap_ob</i>(<i>s34,i</i>)+<i>kalf_ob</i>(<i>s34,i</i>))
@@ -903,13 +925,13 @@ For <i>i</i> in <b>ind</b> (36 total):<br>
    *loge(<i>pb</i>(<i>p34,i</i>))))</div>
 </div>
 <div class="eblock">
-Equation 25: os input shares<br>
+Equation 26: os input shares<br>
 For <i>i</i> in <b>ind</b>, <i>s36</i> in <b>s_os</b> (144 total):<br>
 <div class="eqn"><i>shr_os</i>(<i>s36,i</i>) = <i>ap_os</i>(<i>s36,i</i>)+<i>kalf_os</i>(<i>s36,i</i>)
    +sum(<i>p36</i> in <b>pr_os</b>, <i>bp_os</i>(<i>s36,p36,i</i>)*loge(<i>pb</i>(<i>p36,i</i>)))</div>
 </div>
 <div class="eblock">
-Equation 26: os prices<br>
+Equation 27: os prices<br>
 For <i>i</i> in <b>ind</b> (36 total):<br>
 <div class="eqn">loge(<i>pb</i>(<i>"os",i</i>)) = <i>ap0_os</i>(<i>i</i>)
    +sum(<i>s36</i> in <b>s_os</b>, (<i>ap_os</i>(<i>s36,i</i>)+<i>kalf_os</i>(<i>s36,i</i>))
@@ -919,13 +941,13 @@ For <i>i</i> in <b>ind</b> (36 total):<br>
    *loge(<i>pb</i>(<i>p36,i</i>))))</div>
 </div>
 <div class="eblock">
-Equation 27: sv input shares<br>
+Equation 28: sv input shares<br>
 For <i>i</i> in <b>ind</b>, <i>s42</i> in <b>s_sv</b> (108 total):<br>
 <div class="eqn"><i>shr_sv</i>(<i>s42,i</i>) = <i>ap_sv</i>(<i>s42,i</i>)+<i>kalf_sv</i>(<i>s42,i</i>)
    +sum(<i>p42</i> in <b>pr_sv</b>, <i>bp_sv</i>(<i>s42,p42,i</i>)*loge(<i>pb</i>(<i>p42,i</i>)))</div>
 </div>
 <div class="eblock">
-Equation 28: sv prices<br>
+Equation 29: sv prices<br>
 For <i>i</i> in <b>ind</b> (36 total):<br>
 <div class="eqn">loge(<i>pb</i>(<i>"sv",i</i>)) = <i>ap0_sv</i>(<i>i</i>)
    +sum(<i>s42</i> in <b>s_sv</b>, (<i>ap_sv</i>(<i>s42,i</i>)+<i>kalf_sv</i>(<i>s42,i</i>))
@@ -935,13 +957,13 @@ For <i>i</i> in <b>ind</b> (36 total):<br>
    *loge(<i>pb</i>(<i>p42,i</i>))))</div>
 </div>
 <div class="eblock">
-Equation 29: ma input shares<br>
+Equation 30: ma input shares<br>
 For <i>i</i> in <b>ind</b>, <i>s23</i> in <b>s_ma</b> (144 total):<br>
 <div class="eqn"><i>shr_ma</i>(<i>s23,i</i>) = <i>ap_ma</i>(<i>s23,i</i>)+<i>kalf_ma</i>(<i>s23,i</i>)
    +sum(<i>p23</i> in <b>pr_ma</b>, <i>bp_ma</i>(<i>s23,p23,i</i>)*loge(<i>pb</i>(<i>p23,i</i>)))</div>
 </div>
 <div class="eblock">
-Equation 30: ma prices<br>
+Equation 31: ma prices<br>
 For <i>i</i> in <b>ind</b> (36 total):<br>
 <div class="eqn">loge(<i>pb</i>(<i>"ma",i</i>)) = <i>ap0_ma</i>(<i>i</i>)
    +sum(<i>s23</i> in <b>s_ma</b>, (<i>ap_ma</i>(<i>s23,i</i>)+<i>kalf_ma</i>(<i>s23,i</i>))
@@ -951,13 +973,13 @@ For <i>i</i> in <b>ind</b> (36 total):<br>
    *loge(<i>pb</i>(<i>p23,i</i>))))</div>
 </div>
 <div class="eblock">
-Equation 31: mn input shares<br>
+Equation 32: mn input shares<br>
 For <i>i</i> in <b>ind</b>, <i>s28</i> in <b>s_mn</b> (144 total):<br>
 <div class="eqn"><i>shr_mn</i>(<i>s28,i</i>) = <i>ap_mn</i>(<i>s28,i</i>)+<i>kalf_mn</i>(<i>s28,i</i>)
    +sum(<i>p28</i> in <b>pr_mn</b>, <i>bp_mn</i>(<i>s28,p28,i</i>)*loge(<i>pb</i>(<i>p28,i</i>)))</div>
 </div>
 <div class="eblock">
-Equation 32: mn prices<br>
+Equation 33: mn prices<br>
 For <i>i</i> in <b>ind</b> (36 total):<br>
 <div class="eqn">loge(<i>pb</i>(<i>"mn",i</i>)) = <i>ap0_mn</i>(<i>i</i>)
    +sum(<i>s28</i> in <b>s_mn</b>, (<i>ap_mn</i>(<i>s28,i</i>)+<i>kalf_mn</i>(<i>s28,i</i>))
@@ -967,13 +989,13 @@ For <i>i</i> in <b>ind</b> (36 total):<br>
    *loge(<i>pb</i>(<i>p28,i</i>))))</div>
 </div>
 <div class="eblock">
-Equation 33: tr input shares<br>
+Equation 34: tr input shares<br>
 For <i>i</i> in <b>ind</b>, <i>s43</i> in <b>s_tr</b> (72 total):<br>
 <div class="eqn"><i>shr_tr</i>(<i>s43,i</i>) = <i>ap_tr</i>(<i>s43,i</i>)+<i>kalf_tr</i>(<i>s43,i</i>)
    +sum(<i>p43</i> in <b>pr_tr</b>, <i>bp_tr</i>(<i>s43,p43,i</i>)*loge(<i>pb</i>(<i>p43,i</i>)))</div>
 </div>
 <div class="eblock">
-Equation 34: tr prices<br>
+Equation 35: tr prices<br>
 For <i>i</i> in <b>ind</b> (36 total):<br>
 <div class="eqn">loge(<i>pb</i>(<i>"tr",i</i>)) = <i>ap0_tr</i>(<i>i</i>)
    +sum(<i>s43</i> in <b>s_tr</b>, (<i>ap_tr</i>(<i>s43,i</i>)+<i>kalf_tr</i>(<i>s43,i</i>))
@@ -983,13 +1005,13 @@ For <i>i</i> in <b>ind</b> (36 total):<br>
    *loge(<i>pb</i>(<i>p43,i</i>))))</div>
 </div>
 <div class="eblock">
-Equation 35: tt input shares<br>
+Equation 36: tt input shares<br>
 For <i>i</i> in <b>ind</b>, <i>s48</i> in <b>s_tt</b> (108 total):<br>
 <div class="eqn"><i>shr_tt</i>(<i>s48,i</i>) = <i>ap_tt</i>(<i>s48,i</i>)+<i>kalf_tt</i>(<i>s48,i</i>)
    +sum(<i>p48</i> in <b>pr_tt</b>, <i>bp_tt</i>(<i>s48,p48,i</i>)*loge(<i>pb</i>(<i>p48,i</i>)))</div>
 </div>
 <div class="eblock">
-Equation 36: tt prices<br>
+Equation 37: tt prices<br>
 For <i>i</i> in <b>ind</b> (36 total):<br>
 <div class="eqn">loge(<i>pb</i>(<i>"tt",i</i>)) = <i>ap0_tt</i>(<i>i</i>)
    +sum(<i>s48</i> in <b>s_tt</b>, (<i>ap_tt</i>(<i>s48,i</i>)+<i>kalf_tt</i>(<i>s48,i</i>))
@@ -999,13 +1021,13 @@ For <i>i</i> in <b>ind</b> (36 total):<br>
    *loge(<i>pb</i>(<i>p48,i</i>))))</div>
 </div>
 <div class="eblock">
-Equation 37: eq input shares<br>
+Equation 38: eq input shares<br>
 For <i>i</i> in <b>ind</b>, <i>s9</i> in <b>s_eq</b> (144 total):<br>
 <div class="eqn"><i>shr_eq</i>(<i>s9,i</i>) = <i>ap_eq</i>(<i>s9,i</i>)+<i>kalf_eq</i>(<i>s9,i</i>)
    +sum(<i>p9</i> in <b>pr_eq</b>, <i>bp_eq</i>(<i>s9,p9,i</i>)*loge(<i>pb</i>(<i>p9,i</i>)))</div>
 </div>
 <div class="eblock">
-Equation 38: eq prices<br>
+Equation 39: eq prices<br>
 For <i>i</i> in <b>ind</b> (36 total):<br>
 <div class="eqn">loge(<i>pb</i>(<i>"eq",i</i>)) = <i>ap0_eq</i>(<i>i</i>)
    +sum(<i>s9</i> in <b>s_eq</b>, (<i>ap_eq</i>(<i>s9,i</i>)+<i>kalf_eq</i>(<i>s9,i</i>))
@@ -1015,13 +1037,13 @@ For <i>i</i> in <b>ind</b> (36 total):<br>
    *loge(<i>pb</i>(<i>p9,i</i>))))</div>
 </div>
 <div class="eblock">
-Equation 39: ms input shares<br>
+Equation 40: ms input shares<br>
 For <i>i</i> in <b>ind</b>, <i>s30</i> in <b>s_ms</b> (108 total):<br>
 <div class="eqn"><i>shr_ms</i>(<i>s30,i</i>) = <i>ap_ms</i>(<i>s30,i</i>)+<i>kalf_ms</i>(<i>s30,i</i>)
    +sum(<i>p30</i> in <b>pr_ms</b>, <i>bp_ms</i>(<i>s30,p30,i</i>)*loge(<i>pb</i>(<i>p30,i</i>)))</div>
 </div>
 <div class="eblock">
-Equation 40: ms prices<br>
+Equation 41: ms prices<br>
 For <i>i</i> in <b>ind</b> (36 total):<br>
 <div class="eqn">loge(<i>pb</i>(<i>"ms",i</i>)) = <i>ap0_ms</i>(<i>i</i>)
    +sum(<i>s30</i> in <b>s_ms</b>, (<i>ap_ms</i>(<i>s30,i</i>)+<i>kalf_ms</i>(<i>s30,i</i>))
@@ -1031,13 +1053,13 @@ For <i>i</i> in <b>ind</b> (36 total):<br>
    *loge(<i>pb</i>(<i>p30,i</i>))))</div>
 </div>
 <div class="eblock">
-Equation 41: mm input shares<br>
+Equation 42: mm input shares<br>
 For <i>i</i> in <b>ind</b>, <i>s27</i> in <b>s_mm</b> (144 total):<br>
 <div class="eqn"><i>shr_mm</i>(<i>s27,i</i>) = <i>ap_mm</i>(<i>s27,i</i>)+<i>kalf_mm</i>(<i>s27,i</i>)
    +sum(<i>p27</i> in <b>pr_mm</b>, <i>bp_mm</i>(<i>s27,p27,i</i>)*loge(<i>pb</i>(<i>p27,i</i>)))</div>
 </div>
 <div class="eblock">
-Equation 42: mm prices<br>
+Equation 43: mm prices<br>
 For <i>i</i> in <b>ind</b> (36 total):<br>
 <div class="eqn">loge(<i>pb</i>(<i>"mm",i</i>)) = <i>ap0_mm</i>(<i>i</i>)
    +sum(<i>s27</i> in <b>s_mm</b>, (<i>ap_mm</i>(<i>s27,i</i>)+<i>kalf_mm</i>(<i>s27,i</i>))
@@ -1047,13 +1069,13 @@ For <i>i</i> in <b>ind</b> (36 total):<br>
    *loge(<i>pb</i>(<i>p27,i</i>))))</div>
 </div>
 <div class="eblock">
-Equation 43: mat input shares<br>
+Equation 44: mat input shares<br>
 For <i>i</i> in <b>ind</b>, <i>s25</i> in <b>s_mat</b> (144 total):<br>
 <div class="eqn"><i>shr_mat</i>(<i>s25,i</i>) = <i>ap_mat</i>(<i>s25,i</i>)+<i>kalf_mat</i>(<i>s25,i</i>)
    +sum(<i>p25</i> in <b>pr_mat</b>, <i>bp_mat</i>(<i>s25,p25,i</i>)*loge(<i>pb</i>(<i>p25,i</i>)))</div>
 </div>
 <div class="eblock">
-Equation 44: mat prices<br>
+Equation 45: mat prices<br>
 For <i>i</i> in <b>ind</b> (36 total):<br>
 <div class="eqn">loge(<i>pb</i>(<i>"mat",i</i>)) = <i>ap0_mat</i>(<i>i</i>)
    +sum(<i>s25</i> in <b>s_mat</b>, (<i>ap_mat</i>(<i>s25,i</i>)+<i>kalf_mat</i>(<i>s25,i</i>))
@@ -1063,13 +1085,13 @@ For <i>i</i> in <b>ind</b> (36 total):<br>
    *loge(<i>pb</i>(<i>p25,i</i>))))</div>
 </div>
 <div class="eblock">
-Equation 45: klem shares in output o<br>
+Equation 46: klem shares in output o<br>
 For <i>i</i> in <b>ind</b>, <i>s33</i> in <b>s_o</b> (144 total):<br>
 <div class="eqn"><i>shr_o</i>(<i>s33,i</i>) = <i>ap_o</i>(<i>s33,i</i>)+<i>kalf_o</i>(<i>s33,i</i>)
    +sum(<i>p33</i> in <b>pr_o</b>, <i>bp_o</i>(<i>s33,p33,i</i>)*loge(<i>pb</i>(<i>p33,i</i>)))</div>
 </div>
 <div class="eblock">
-Equation 46: Industry producer prices<br>
+Equation 47: Industry producer prices<br>
 For <i>i</i> in <b>ind</b> (36 total):<br>
 <div class="eqn">loge(<i>po</i>(<i>i</i>)) = <i>ap0_o</i>(<i>i</i>)+<i>kalp</i>(<i>i</i>)
    +loge(
@@ -1081,42 +1103,47 @@ For <i>i</i> in <b>ind</b> (36 total):<br>
    *loge(<i>pb</i>(<i>p33,i</i>))))</div>
 </div>
 <div class="eblock">
-Equation 47: Industry purchaser prices<br>
+Equation 48: Industry purchaser prices<br>
 For <i>i</i> in <b>ind</b> (36 total):<br>
 <div class="eqn"><i>pi</i>(<i>i</i>) = <i>po</i>(<i>i</i>)*(1+<i>tax_sales</i>(<i>i</i>))
    +<i>tax_unit</i>(<i>i</i>)
    +<i>tax_ext_ind</i>(<i>i</i>)</div>
 </div>
 <div class="eblock">
-Equation 48: Commodity prices from make table<br>
+Equation 49: Commodity prices from make table<br>
 For <i>c</i> in <b>com</b> (36 total):<br>
 <div class="eqn"><i>pc</i>(<i>c</i>) = sum(<i>i</i> in <b>ind</b>, <i>po</i>(<i>i</i>)*<i>make_col</i>(<i>i,c</i>))</div>
 </div>
 <div class="eblock">
-Equation 49: Commodity import prices in foreign currency<br>
+Equation 50: Commodity import prices in foreign currency<br>
 For <i>c</i> in <b>com</b> (36 total):<br>
 <div class="eqn"><i>pf</i>(<i>c</i>) = <i>exo_pf</i>(<i>c</i>)*<i>tech_shk_row</i></div>
 </div>
 <div class="eblock">
-Equation 50: Commodity import prices in domestic currency<br>
+Equation 51: Commodity import prices in domestic currency<br>
 For <i>c</i> in <b>com</b> (36 total):<br>
 <div class="eqn"><i>pfd</i>(<i>c</i>) = <i>pf</i>(<i>c</i>)*<i>exch</i>*(1+<i>tariff</i>(<i>c</i>))
    +<i>tar_ext_com</i>(<i>c</i>)</div>
 </div>
 <div class="eblock">
-Equation 51: Import share of total supply<br>
+Equation 52: Import share constant<br>
+For <i>c</i> in <b>com</b> (36 total):<br>
+<div class="eqn"><i>amk_imp</i>(<i>c</i>) = <i>am_imp</i>(<i>c</i>)+<i>kalm_imp</i>(<i>c</i>)</div>
+</div>
+<div class="eblock">
+Equation 53: Import share of total supply<br>
 For <i>c</i> in <b>com</b> (36 total):<br>
 <div class="eqn"><i>imp_share</i>(<i>c</i>) = <i>amk_imp</i>(<i>c</i>)
    +<i>bm_imp</i>(<i>c</i>)
    *(loge(<i>pfd</i>(<i>c</i>))-loge(<i>pc</i>(<i>c</i>)))</div>
 </div>
 <div class="eblock">
-Equation 52: Domestic share of total supply<br>
+Equation 54: Domestic share of total supply<br>
 For <i>c</i> in <b>com</b> (36 total):<br>
 <div class="eqn"><i>dom_share</i>(<i>c</i>) = 1-<i>imp_share</i>(<i>c</i>)</div>
 </div>
 <div class="eblock">
-Equation 53: Commodity supply prices<br>
+Equation 55: Commodity supply prices<br>
 For <i>c</i> in <b>com</b> (36 total):<br>
 <div class="eqn">loge(<i>ps</i>(<i>c</i>)) = <i>amk_imp</i>(<i>c</i>)*loge(<i>pfd</i>(<i>c</i>))
    +(1-<i>amk_imp</i>(<i>c</i>))*loge(<i>pc</i>(<i>c</i>))
@@ -1128,179 +1155,179 @@ For <i>c</i> in <b>com</b> (36 total):<br>
    *loge(<i>pc</i>(<i>c</i>))</div>
 </div>
 <div class="eblock">
-Equation 54: Commodity prices to buyers = commodity supply prices plus any demand-driven externality taxes<br>
+Equation 56: Commodity prices to buyers = commodity supply prices plus any demand-driven externality taxes<br>
 For <i>b</i> in <b>buy</b>, <i>c</i> in <b>com</b> (1404 total):<br>
 <div class="eqn"><i>pb</i>(<i>c,b</i>) = <i>ps</i>(<i>c</i>)+<i>tax_ext_com</i>(<i>c,b</i>)</div>
 </div>
 <div class="eblock">
-Equation 55: Agriculture io shares<br>
+Equation 57: Agriculture io shares<br>
 For <i>i</i> in <b>ind</b> (36 total):<br>
 <div class="eqn"><i>io</i>(<i>"c01",i</i>) = <i>shr_ma</i>(<i>"c01",i</i>)*<i>shr_mat</i>(<i>"mn",i</i>)
    *<i>shr_o</i>(<i>"mat",i</i>)</div>
 </div>
 <div class="eblock">
-Equation 56: Wood et al` shares<br>
+Equation 58: Wood et al` shares<br>
 For <i>i</i> in <b>ind</b> (36 total):<br>
 <div class="eqn"><i>io</i>(<i>"c10",i</i>) = <i>shr_ma</i>(<i>"c10",i</i>)*<i>shr_mat</i>(<i>"mn",i</i>)
    *<i>shr_o</i>(<i>"mat",i</i>)</div>
 </div>
 <div class="eblock">
-Equation 57: Food et al io shares<br>
+Equation 59: Food et al io shares<br>
 For <i>i</i> in <b>ind</b> (36 total):<br>
 <div class="eqn"><i>io</i>(<i>"c20",i</i>) = <i>shr_ma</i>(<i>"c20",i</i>)*<i>shr_mat</i>(<i>"mn",i</i>)
    *<i>shr_o</i>(<i>"mat",i</i>)</div>
 </div>
 <div class="eblock">
-Equation 58: Textiles et al io shares<br>
+Equation 60: Textiles et al io shares<br>
 For <i>i</i> in <b>ind</b> (36 total):<br>
 <div class="eqn"><i>io</i>(<i>"c21",i</i>) = <i>shr_ma</i>(<i>"c21",i</i>)*<i>shr_mat</i>(<i>"mn",i</i>)
    *<i>shr_o</i>(<i>"mat",i</i>)</div>
 </div>
 <div class="eblock">
-Equation 59: Oil mining io shares<br>
+Equation 61: Oil mining io shares<br>
 For <i>i</i> in <b>ind</b> (36 total):<br>
 <div class="eqn"><i>io</i>(<i>"c02",i</i>) = <i>shr_oil</i>(<i>"c02",i</i>)*<i>shr_ff</i>(<i>"oil",i</i>)
    *<i>shr_ene</i>(<i>"ff",i</i>)
    *<i>shr_o</i>(<i>"ene",i</i>)</div>
 </div>
 <div class="eblock">
-Equation 60: Petroleum et al io shares<br>
+Equation 62: Petroleum et al io shares<br>
 For <i>i</i> in <b>ind</b> (36 total):<br>
 <div class="eqn"><i>io</i>(<i>"c23",i</i>) = <i>shr_oil</i>(<i>"c23",i</i>)*<i>shr_ff</i>(<i>"oil",i</i>)
    *<i>shr_ene</i>(<i>"ff",i</i>)
    *<i>shr_o</i>(<i>"ene",i</i>)</div>
 </div>
 <div class="eblock">
-Equation 61: Gas mining io shares<br>
+Equation 63: Gas mining io shares<br>
 For <i>i</i> in <b>ind</b> (36 total):<br>
 <div class="eqn"><i>io</i>(<i>"c03",i</i>) = <i>shr_gas</i>(<i>"c03",i</i>)*<i>shr_ff</i>(<i>"gas",i</i>)
    *<i>shr_ene</i>(<i>"ff",i</i>)
    *<i>shr_o</i>(<i>"ene",i</i>)</div>
 </div>
 <div class="eblock">
-Equation 62: Gas utilities io ahares<br>
+Equation 64: Gas utilities io ahares<br>
 For <i>i</i> in <b>ind</b> (36 total):<br>
 <div class="eqn"><i>io</i>(<i>"c07",i</i>) = <i>shr_gas</i>(<i>"c07",i</i>)*<i>shr_ff</i>(<i>"gas",i</i>)
    *<i>shr_ene</i>(<i>"ff",i</i>)
    *<i>shr_o</i>(<i>"ene",i</i>)</div>
 </div>
 <div class="eblock">
-Equation 63: Coal mining io shares<br>
+Equation 65: Coal mining io shares<br>
 For <i>i</i> in <b>ind</b> (36 total):<br>
 <div class="eqn"><i>io</i>(<i>"c04",i</i>) = <i>shr_ff</i>(<i>"c04",i</i>)*<i>shr_ene</i>(<i>"ff",i</i>)
    *<i>shr_o</i>(<i>"ene",i</i>)</div>
 </div>
 <div class="eblock">
-Equation 64: Electric utilities io shares<br>
+Equation 66: Electric utilities io shares<br>
 For <i>i</i> in <b>ind</b> (36 total):<br>
 <div class="eqn"><i>io</i>(<i>"c06",i</i>) = <i>shr_ene</i>(<i>"c06",i</i>)*<i>shr_o</i>(<i>"ene",i</i>)</div>
 </div>
 <div class="eblock">
-Equation 65: Nonenergy mining io shares<br>
+Equation 67: Nonenergy mining io shares<br>
 For <i>i</i> in <b>ind</b> (36 total):<br>
 <div class="eqn"><i>io</i>(<i>"c05",i</i>) = <i>shr_mm</i>(<i>"c05",i</i>)*<i>shr_mat</i>(<i>"mm",i</i>)
    *<i>shr_o</i>(<i>"mat",i</i>)</div>
 </div>
 <div class="eblock">
-Equation 66: Primary metals io shares<br>
+Equation 68: Primary metals io shares<br>
 For <i>i</i> in <b>ind</b> (36 total):<br>
 <div class="eqn"><i>io</i>(<i>"c12",i</i>) = <i>shr_mm</i>(<i>"c12",i</i>)*<i>shr_mat</i>(<i>"mm",i</i>)
    *<i>shr_o</i>(<i>"mat",i</i>)</div>
 </div>
 <div class="eblock">
-Equation 67: Fabricated metals io shares<br>
+Equation 69: Fabricated metals io shares<br>
 For <i>i</i> in <b>ind</b> (36 total):<br>
 <div class="eqn"><i>io</i>(<i>"c13",i</i>) = <i>shr_mm</i>(<i>"c13",i</i>)*<i>shr_mat</i>(<i>"mm",i</i>)
    *<i>shr_o</i>(<i>"mat",i</i>)</div>
 </div>
 <div class="eblock">
-Equation 68: Machinery io shares<br>
+Equation 70: Machinery io shares<br>
 For <i>i</i> in <b>ind</b> (36 total):<br>
 <div class="eqn"><i>io</i>(<i>"c14",i</i>) = <i>shr_eq</i>(<i>"c14",i</i>)
    *<i>shr_mm</i>(<i>"eq",i</i>)^<i>shr_mat</i>(<i>"mm",i</i>)
    *<i>shr_o</i>(<i>"mat",i</i>)</div>
 </div>
 <div class="eblock">
-Equation 69: IT equipment io shares<br>
+Equation 71: IT equipment io shares<br>
 For <i>i</i> in <b>ind</b> (36 total):<br>
 <div class="eqn"><i>io</i>(<i>"c15",i</i>) = <i>shr_eq</i>(<i>"c15",i</i>)
    *<i>shr_mm</i>(<i>"eq",i</i>)^<i>shr_mat</i>(<i>"mm",i</i>)
    *<i>shr_o</i>(<i>"mat",i</i>)</div>
 </div>
 <div class="eblock">
-Equation 70: Electrical equipment io shares<br>
+Equation 72: Electrical equipment io shares<br>
 For <i>i</i> in <b>ind</b> (36 total):<br>
 <div class="eqn"><i>io</i>(<i>"c16",i</i>) = <i>shr_eq</i>(<i>"c16",i</i>)
    *<i>shr_mm</i>(<i>"eq",i</i>)^<i>shr_mat</i>(<i>"mm",i</i>)
    *<i>shr_o</i>(<i>"mat",i</i>)</div>
 </div>
 <div class="eblock">
-Equation 71: Motor vehicles io shares<br>
+Equation 73: Motor vehicles io shares<br>
 For <i>i</i> in <b>ind</b> (36 total):<br>
 <div class="eqn"><i>io</i>(<i>"c17",i</i>) = <i>shr_tr</i>(<i>"c17",i</i>)*<i>shr_eq</i>(<i>"tr",i</i>)
    *<i>shr_mm</i>(<i>"eq",i</i>)^<i>shr_mat</i>(<i>"mm",i</i>)
    *<i>shr_o</i>(<i>"mat",i</i>)</div>
 </div>
 <div class="eblock">
-Equation 72: Transport equipment io shares<br>
+Equation 74: Transport equipment io shares<br>
 For <i>i</i> in <b>ind</b> (36 total):<br>
 <div class="eqn"><i>io</i>(<i>"c18",i</i>) = <i>shr_tr</i>(<i>"c18",i</i>)*<i>shr_eq</i>(<i>"tr",i</i>)
    *<i>shr_mm</i>(<i>"eq",i</i>)^<i>shr_mat</i>(<i>"mm",i</i>)
    *<i>shr_o</i>(<i>"mat",i</i>)</div>
 </div>
 <div class="eblock">
-Equation 73: Nonmetallic io shares<br>
+Equation 75: Nonmetallic io shares<br>
 For <i>i</i> in <b>ind</b> (36 total):<br>
 <div class="eqn"><i>io</i>(<i>"c11",i</i>) = <i>shr_mn</i>(<i>"c11",i</i>)*<i>shr_mat</i>(<i>"mn",i</i>)
    *<i>shr_o</i>(<i>"mat",i</i>)</div>
 </div>
 <div class="eblock">
-Equation 74: Misc mfg io shares<br>
+Equation 76: Misc mfg io shares<br>
 For <i>i</i> in <b>ind</b> (36 total):<br>
 <div class="eqn"><i>io</i>(<i>"c19",i</i>) = <i>shr_mn</i>(<i>"c19",i</i>)*<i>shr_mat</i>(<i>"mn",i</i>)
    *<i>shr_o</i>(<i>"mat",i</i>)</div>
 </div>
 <div class="eblock">
-Equation 75: Printing io shares<br>
+Equation 77: Printing io shares<br>
 For <i>i</i> in <b>ind</b> (36 total):<br>
 <div class="eqn"><i>io</i>(<i>"c22",i</i>) = <i>shr_mn</i>(<i>"c22",i</i>)*<i>shr_mat</i>(<i>"mn",i</i>)
    *<i>shr_o</i>(<i>"mat",i</i>)</div>
 </div>
 <div class="eblock">
-Equation 76: Chemicals et al io shares<br>
+Equation 78: Chemicals et al io shares<br>
 For <i>i</i> in <b>ind</b> (36 total):<br>
 <div class="eqn"><i>io</i>(<i>"c24",i</i>) = <i>shr_mn</i>(<i>"c24",i</i>)*<i>shr_mat</i>(<i>"mn",i</i>)
    *<i>shr_o</i>(<i>"mat",i</i>)</div>
 </div>
 <div class="eblock">
-Equation 77: Business services io shares<br>
+Equation 79: Business services io shares<br>
 For <i>i</i> in <b>ind</b> (36 total):<br>
 <div class="eqn"><i>io</i>(<i>"c32",i</i>) = <i>shr_ms</i>(<i>"c32",i</i>)*<i>shr_mat</i>(<i>"ms",i</i>)
    *<i>shr_o</i>(<i>"mat",i</i>)</div>
 </div>
 <div class="eblock">
-Equation 78: Wholesale trade io shares<br>
+Equation 80: Wholesale trade io shares<br>
 For <i>i</i> in <b>ind</b> (36 total):<br>
 <div class="eqn"><i>io</i>(<i>"c25",i</i>) = <i>shr_tt</i>(<i>"c25",i</i>)*<i>shr_ms</i>(<i>"tt",i</i>)
    *<i>shr_mat</i>(<i>"ms",i</i>)
    *<i>shr_o</i>(<i>"mat",i</i>)</div>
 </div>
 <div class="eblock">
-Equation 79: Retail trade io shares<br>
+Equation 81: Retail trade io shares<br>
 For <i>i</i> in <b>ind</b> (36 total):<br>
 <div class="eqn"><i>io</i>(<i>"c26",i</i>) = <i>shr_tt</i>(<i>"c26",i</i>)*<i>shr_ms</i>(<i>"tt",i</i>)
    *<i>shr_mat</i>(<i>"ms",i</i>)
    *<i>shr_o</i>(<i>"mat",i</i>)</div>
 </div>
 <div class="eblock">
-Equation 80: Transport-warehouse io shares<br>
+Equation 82: Transport-warehouse io shares<br>
 For <i>i</i> in <b>ind</b> (36 total):<br>
 <div class="eqn"><i>io</i>(<i>"c27",i</i>) = <i>shr_tt</i>(<i>"c27",i</i>)*<i>shr_ms</i>(<i>"tt",i</i>)
    *<i>shr_mat</i>(<i>"ms",i</i>)
    *<i>shr_o</i>(<i>"mat",i</i>)</div>
 </div>
 <div class="eblock">
-Equation 81: Water-wastewater io shares<br>
+Equation 83: Water-wastewater io shares<br>
 For <i>i</i> in <b>ind</b> (36 total):<br>
 <div class="eqn"><i>io</i>(<i>"c08",i</i>) = <i>shr_bl</i>(<i>"c08",i</i>)*<i>shr_sv</i>(<i>"bl",i</i>)
    *<i>shr_ms</i>(<i>"sv",i</i>)
@@ -1308,7 +1335,7 @@ For <i>i</i> in <b>ind</b> (36 total):<br>
    *<i>shr_o</i>(<i>"mat",i</i>)</div>
 </div>
 <div class="eblock">
-Equation 82: Construction io shares<br>
+Equation 84: Construction io shares<br>
 For <i>i</i> in <b>ind</b> (36 total):<br>
 <div class="eqn"><i>io</i>(<i>"c09",i</i>) = <i>shr_bl</i>(<i>"c09",i</i>)*<i>shr_sv</i>(<i>"bl",i</i>)
    *<i>shr_ms</i>(<i>"sv",i</i>)
@@ -1316,7 +1343,7 @@ For <i>i</i> in <b>ind</b> (36 total):<br>
    *<i>shr_o</i>(<i>"mat",i</i>)</div>
 </div>
 <div class="eblock">
-Equation 83: Real estate io shares<br>
+Equation 85: Real estate io shares<br>
 For <i>i</i> in <b>ind</b> (36 total):<br>
 <div class="eqn"><i>io</i>(<i>"c31",i</i>) = <i>shr_bl</i>(<i>"c31",i</i>)*<i>shr_sv</i>(<i>"bl",i</i>)
    *<i>shr_ms</i>(<i>"sv",i</i>)
@@ -1324,7 +1351,7 @@ For <i>i</i> in <b>ind</b> (36 total):<br>
    *<i>shr_o</i>(<i>"mat",i</i>)</div>
 </div>
 <div class="eblock">
-Equation 84: Publishing et al io shares<br>
+Equation 86: Publishing et al io shares<br>
 For <i>i</i> in <b>ind</b> (36 total):<br>
 <div class="eqn"><i>io</i>(<i>"c28",i</i>) = <i>shr_ob</i>(<i>"c28",i</i>)*<i>shr_sv</i>(<i>"ob",i</i>)
    *<i>shr_ms</i>(<i>"sv",i</i>)
@@ -1332,7 +1359,7 @@ For <i>i</i> in <b>ind</b> (36 total):<br>
    *<i>shr_o</i>(<i>"mat",i</i>)</div>
 </div>
 <div class="eblock">
-Equation 85: Software-IT svcs io shares<br>
+Equation 87: Software-IT svcs io shares<br>
 For <i>i</i> in <b>ind</b> (36 total):<br>
 <div class="eqn"><i>io</i>(<i>"c29",i</i>) = <i>shr_ob</i>(<i>"c29",i</i>)*<i>shr_sv</i>(<i>"ob",i</i>)
    *<i>shr_ms</i>(<i>"sv",i</i>)
@@ -1340,7 +1367,7 @@ For <i>i</i> in <b>ind</b> (36 total):<br>
    *<i>shr_o</i>(<i>"mat",i</i>)</div>
 </div>
 <div class="eblock">
-Equation 86: Finance-insurance io shares<br>
+Equation 88: Finance-insurance io shares<br>
 For <i>i</i> in <b>ind</b> (36 total):<br>
 <div class="eqn"><i>io</i>(<i>"c30",i</i>) = <i>shr_ob</i>(<i>"c30",i</i>)*<i>shr_sv</i>(<i>"ob",i</i>)
    *<i>shr_ms</i>(<i>"sv",i</i>)
@@ -1348,7 +1375,7 @@ For <i>i</i> in <b>ind</b> (36 total):<br>
    *<i>shr_o</i>(<i>"mat",i</i>)</div>
 </div>
 <div class="eblock">
-Equation 87: Education io shares<br>
+Equation 89: Education io shares<br>
 For <i>i</i> in <b>ind</b> (36 total):<br>
 <div class="eqn"><i>io</i>(<i>"c33",i</i>) = <i>shr_os</i>(<i>"c33",i</i>)*<i>shr_sv</i>(<i>"os",i</i>)
    *<i>shr_ms</i>(<i>"sv",i</i>)
@@ -1356,7 +1383,7 @@ For <i>i</i> in <b>ind</b> (36 total):<br>
    *<i>shr_o</i>(<i>"mat",i</i>)</div>
 </div>
 <div class="eblock">
-Equation 88: Health io shares<br>
+Equation 90: Health io shares<br>
 For <i>i</i> in <b>ind</b> (36 total):<br>
 <div class="eqn"><i>io</i>(<i>"c34",i</i>) = <i>shr_os</i>(<i>"c34",i</i>)*<i>shr_sv</i>(<i>"os",i</i>)
    *<i>shr_ms</i>(<i>"sv",i</i>)
@@ -1364,7 +1391,7 @@ For <i>i</i> in <b>ind</b> (36 total):<br>
    *<i>shr_o</i>(<i>"mat",i</i>)</div>
 </div>
 <div class="eblock">
-Equation 89: Accommodation io shares<br>
+Equation 91: Accommodation io shares<br>
 For <i>i</i> in <b>ind</b> (36 total):<br>
 <div class="eqn"><i>io</i>(<i>"c35",i</i>) = <i>shr_os</i>(<i>"c35",i</i>)*<i>shr_sv</i>(<i>"os",i</i>)
    *<i>shr_ms</i>(<i>"sv",i</i>)
@@ -1372,7 +1399,7 @@ For <i>i</i> in <b>ind</b> (36 total):<br>
    *<i>shr_o</i>(<i>"mat",i</i>)</div>
 </div>
 <div class="eblock">
-Equation 90: Other government io shares<br>
+Equation 92: Other government io shares<br>
 For <i>i</i> in <b>ind</b> (36 total):<br>
 <div class="eqn"><i>io</i>(<i>"c36",i</i>) = <i>shr_os</i>(<i>"c36",i</i>)*<i>shr_sv</i>(<i>"os",i</i>)
    *<i>shr_ms</i>(<i>"sv",i</i>)
@@ -1380,58 +1407,58 @@ For <i>i</i> in <b>ind</b> (36 total):<br>
    *<i>shr_o</i>(<i>"mat",i</i>)</div>
 </div>
 <div class="eblock">
-Equation 91: Capital io shares<br>
+Equation 93: Capital io shares<br>
 For <i>i</i> in <b>ind</b> (36 total):<br>
 <div class="eqn"><i>io</i>(<i>"kap",i</i>) = <i>shr_o</i>(<i>"kap",i</i>)</div>
 </div>
 <div class="eblock">
-Equation 92: Labor io shares<br>
+Equation 94: Labor io shares<br>
 For <i>i</i> in <b>ind</b> (36 total):<br>
 <div class="eqn"><i>io</i>(<i>"lab",i</i>) = <i>shr_o</i>(<i>"lab",i</i>)</div>
 </div>
 <div class="eblock">
-Equation 93: Household capital price, io<br>
+Equation 95: Household capital price, io<br>
 <div class="eqn"><i>pb</i>(<i>"kap","con"</i>) = <i>pk_service</i>*<i>pk_scale</i>(<i>"con"</i>)
    *(1+<i>tax_cap_hh</i>)</div>
 </div>
 <div class="eblock">
-Equation 94: Total consumption tax on goods and services<br>
+Equation 96: Total consumption tax on goods and services<br>
 <div class="eqn"><i>tax_con_totc</i> = <i>tax_con</i>+<i>tax_con_good</i></div>
 </div>
 <div class="eblock">
-Equation 95: Total consumption tax on capital services<br>
+Equation 97: Total consumption tax on capital services<br>
 <div class="eqn"><i>tax_con_totk</i> = <i>tax_con</i>+<i>tax_con_kap</i></div>
 </div>
 <div class="eblock">
-Equation 96: Household commodity prices including consumption taxes, io<br>
+Equation 98: Household commodity prices including consumption taxes, io<br>
 For <i>c</i> in <b>com</b> (36 total):<br>
 <div class="eqn"><i>pr_con</i>(<i>c</i>) = <i>pb</i>(<i>c,"con"</i>)*(1+<i>tax_con_totc</i>)</div>
 </div>
 <div class="eblock">
-Equation 97: Household capital price including consumption taxes, io<br>
+Equation 99: Household capital price including consumption taxes, io<br>
 <div class="eqn"><i>pr_con</i>(<i>"kap"</i>) = <i>pb</i>(<i>"kap","con"</i>)*(1+<i>tax_con_totk</i>)</div>
 </div>
 <div class="eblock">
-Equation 98: Household prices - weighted-average conversions io to nipa<br>
+Equation 100: Household prices - weighted-average conversions io to nipa<br>
 For <i>n4</i> in <b>nipa</b> (36 total):<br>
 <div class="eqn"><i>pcon</i>(<i>n4</i>) = sum(<i>N1</i> in <b>ncom_k</b>, <i>pr_con</i>(<i>N1</i>)*<i>io_nipa</i>(<i>N1,n4</i>))</div>
 </div>
 <div class="eblock">
-Equation 99: Household leisure price<br>
+Equation 101: Household leisure price<br>
 <div class="eqn"><i>pr_leisure</i> = <i>pr_hours</i>*<i>pj_scale</i></div>
 </div>
 <div class="eblock">
-Equation 100: Household leisure price<br>
+Equation 102: Household leisure price<br>
 <div class="eqn"><i>pcon</i>(<i>"r"</i>) = <i>pr_leisure</i></div>
 </div>
 <div class="eblock">
-Equation 101: cmm commodity shares<br>
+Equation 103: cmm commodity shares<br>
 For <i>s2</i> in <b>s_cmm</b> (2 total):<br>
 <div class="eqn"><i>shr_cmm</i>(<i>s2</i>) = <i>ah_cmm</i>(<i>s2</i>)+<i>kalh_cmm</i>(<i>s2</i>)
    +sum(<i>p2</i> in <b>pr_cmm</b>, <i>bh_cmm</i>(<i>s2,p2</i>)*loge(<i>pcon</i>(<i>p2</i>)))</div>
 </div>
 <div class="eblock">
-Equation 102: cmm price<br>
+Equation 104: cmm price<br>
 <div class="eqn">loge(<i>pcon</i>(<i>"cmm"</i>)) = sum(<i>s2</i> in <b>s_cmm</b>, (<i>ah_cmm</i>(<i>s2</i>)+<i>kalh_cmm</i>(<i>s2</i>))
    *loge(<i>pcon</i>(<i>s2</i>)))
    +0.5
@@ -1439,13 +1466,13 @@ Equation 102: cmm price<br>
    *loge(<i>pcon</i>(<i>p2</i>))))</div>
 </div>
 <div class="eblock">
-Equation 103: hps commodity shares<br>
+Equation 105: hps commodity shares<br>
 For <i>s19</i> in <b>s_hps</b> (3 total):<br>
 <div class="eqn"><i>shr_hps</i>(<i>s19</i>) = <i>ah_hps</i>(<i>s19</i>)+<i>kalh_hps</i>(<i>s19</i>)
    +sum(<i>p19</i> in <b>pr_hps</b>, <i>bh_hps</i>(<i>s19,p19</i>)*loge(<i>pcon</i>(<i>p19</i>)))</div>
 </div>
 <div class="eblock">
-Equation 104: hps price<br>
+Equation 106: hps price<br>
 <div class="eqn">loge(<i>pcon</i>(<i>"hps"</i>)) = sum(<i>s19</i> in <b>s_hps</b>, (<i>ah_hps</i>(<i>s19</i>)+<i>kalh_hps</i>(<i>s19</i>))
    *loge(<i>pcon</i>(<i>s19</i>)))
    +0.5
@@ -1453,13 +1480,13 @@ Equation 104: hps price<br>
    *loge(<i>pcon</i>(<i>p19</i>))))</div>
 </div>
 <div class="eblock">
-Equation 105: ens commodity shares<br>
+Equation 107: ens commodity shares<br>
 For <i>s8</i> in <b>s_ens</b> (2 total):<br>
 <div class="eqn"><i>shr_ens</i>(<i>s8</i>) = <i>ah_ens</i>(<i>s8</i>)+<i>kalh_ens</i>(<i>s8</i>)
    +sum(<i>p8</i> in <b>pr_ens</b>, <i>bh_ens</i>(<i>s8,p8</i>)*loge(<i>pcon</i>(<i>p8</i>)))</div>
 </div>
 <div class="eblock">
-Equation 106: ens price<br>
+Equation 108: ens price<br>
 <div class="eqn">loge(<i>pcon</i>(<i>"ens"</i>)) = sum(<i>s8</i> in <b>s_ens</b>, (<i>ah_ens</i>(<i>s8</i>)+<i>kalh_ens</i>(<i>s8</i>))
    *loge(<i>pcon</i>(<i>s8</i>)))
    +0.5
@@ -1467,13 +1494,13 @@ Equation 106: ens price<br>
    *loge(<i>pcon</i>(<i>p8</i>))))</div>
 </div>
 <div class="eblock">
-Equation 107: trv commodity shares<br>
+Equation 109: trv commodity shares<br>
 For <i>s47</i> in <b>s_trv</b> (2 total):<br>
 <div class="eqn"><i>shr_trv</i>(<i>s47</i>) = <i>ah_trv</i>(<i>s47</i>)+<i>kalh_trv</i>(<i>s47</i>)
    +sum(<i>p47</i> in <b>pr_trv</b>, <i>bh_trv</i>(<i>s47,p47</i>)*loge(<i>pcon</i>(<i>p47</i>)))</div>
 </div>
 <div class="eblock">
-Equation 108: trv price<br>
+Equation 110: trv price<br>
 <div class="eqn">loge(<i>pcon</i>(<i>"trv"</i>)) = sum(<i>s47</i> in <b>s_trv</b>, (<i>ah_trv</i>(<i>s47</i>)+<i>kalh_trv</i>(<i>s47</i>))
    *loge(<i>pcon</i>(<i>s47</i>)))
    +0.5
@@ -1481,13 +1508,13 @@ Equation 108: trv price<br>
    *loge(<i>pcon</i>(<i>p47</i>))))</div>
 </div>
 <div class="eblock">
-Equation 109: rcs commodity shares<br>
+Equation 111: rcs commodity shares<br>
 For <i>s39</i> in <b>s_rcs</b> (3 total):<br>
 <div class="eqn"><i>shr_rcs</i>(<i>s39</i>) = <i>ah_rcs</i>(<i>s39</i>)+<i>kalh_rcs</i>(<i>s39</i>)
    +sum(<i>p39</i> in <b>pr_rcs</b>, <i>bh_rcs</i>(<i>s39,p39</i>)*loge(<i>pcon</i>(<i>p39</i>)))</div>
 </div>
 <div class="eblock">
-Equation 110: rcs price<br>
+Equation 112: rcs price<br>
 <div class="eqn">loge(<i>pcon</i>(<i>"rcs"</i>)) = sum(<i>s39</i> in <b>s_rcs</b>, (<i>ah_rcs</i>(<i>s39</i>)+<i>kalh_rcs</i>(<i>s39</i>))
    *loge(<i>pcon</i>(<i>s39</i>)))
    +0.5
@@ -1495,13 +1522,13 @@ Equation 110: rcs price<br>
    *loge(<i>pcon</i>(<i>p39</i>))))</div>
 </div>
 <div class="eblock">
-Equation 111: edn commodity shares<br>
+Equation 113: edn commodity shares<br>
 For <i>s4</i> in <b>s_edn</b> (2 total):<br>
 <div class="eqn"><i>shr_edn</i>(<i>s4</i>) = <i>ah_edn</i>(<i>s4</i>)+<i>kalh_edn</i>(<i>s4</i>)
    +sum(<i>p4</i> in <b>pr_edn</b>, <i>bh_edn</i>(<i>s4,p4</i>)*loge(<i>pcon</i>(<i>p4</i>)))</div>
 </div>
 <div class="eblock">
-Equation 112: edn price<br>
+Equation 114: edn price<br>
 <div class="eqn">loge(<i>pcon</i>(<i>"edn"</i>)) = sum(<i>s4</i> in <b>s_edn</b>, (<i>ah_edn</i>(<i>s4</i>)+<i>kalh_edn</i>(<i>s4</i>))
    *loge(<i>pcon</i>(<i>s4</i>)))
    +0.5
@@ -1509,13 +1536,13 @@ Equation 112: edn price<br>
    *loge(<i>pcon</i>(<i>p4</i>))))</div>
 </div>
 <div class="eblock">
-Equation 113: hpg commodity shares<br>
+Equation 115: hpg commodity shares<br>
 For <i>s18</i> in <b>s_hpg</b> (2 total):<br>
 <div class="eqn"><i>shr_hpg</i>(<i>s18</i>) = <i>ah_hpg</i>(<i>s18</i>)+<i>kalh_hpg</i>(<i>s18</i>)
    +sum(<i>p18</i> in <b>pr_hpg</b>, <i>bh_hpg</i>(<i>s18,p18</i>)*loge(<i>pcon</i>(<i>p18</i>)))</div>
 </div>
 <div class="eblock">
-Equation 114: hpg price<br>
+Equation 116: hpg price<br>
 <div class="eqn">loge(<i>pcon</i>(<i>"hpg"</i>)) = sum(<i>s18</i> in <b>s_hpg</b>, (<i>ah_hpg</i>(<i>s18</i>)+<i>kalh_hpg</i>(<i>s18</i>))
    *loge(<i>pcon</i>(<i>s18</i>)))
    +0.5
@@ -1523,13 +1550,13 @@ Equation 114: hpg price<br>
    *loge(<i>pcon</i>(<i>p18</i>))))</div>
 </div>
 <div class="eblock">
-Equation 115: fb commodity shares<br>
+Equation 117: fb commodity shares<br>
 For <i>s11</i> in <b>s_fb</b> (3 total):<br>
 <div class="eqn"><i>shr_fb</i>(<i>s11</i>) = <i>ah_fb</i>(<i>s11</i>)+<i>kalh_fb</i>(<i>s11</i>)
    +sum(<i>p11</i> in <b>pr_fb</b>, <i>bh_fb</i>(<i>s11,p11</i>)*loge(<i>pcon</i>(<i>p11</i>)))</div>
 </div>
 <div class="eblock">
-Equation 116: fb price<br>
+Equation 118: fb price<br>
 <div class="eqn">loge(<i>pcon</i>(<i>"fb"</i>)) = sum(<i>s11</i> in <b>s_fb</b>, (<i>ah_fb</i>(<i>s11</i>)+<i>kalh_fb</i>(<i>s11</i>))
    *loge(<i>pcon</i>(<i>s11</i>)))
    +0.5
@@ -1537,13 +1564,13 @@ Equation 116: fb price<br>
    *loge(<i>pcon</i>(<i>p11</i>))))</div>
 </div>
 <div class="eblock">
-Equation 117: md commodity shares<br>
+Equation 119: md commodity shares<br>
 For <i>s26</i> in <b>s_md</b> (2 total):<br>
 <div class="eqn"><i>shr_md</i>(<i>s26</i>) = <i>ah_md</i>(<i>s26</i>)+<i>kalh_md</i>(<i>s26</i>)
    +sum(<i>p26</i> in <b>pr_md</b>, <i>bh_md</i>(<i>s26,p26</i>)*loge(<i>pcon</i>(<i>p26</i>)))</div>
 </div>
 <div class="eblock">
-Equation 118: md price<br>
+Equation 120: md price<br>
 <div class="eqn">loge(<i>pcon</i>(<i>"md"</i>)) = sum(<i>s26</i> in <b>s_md</b>, (<i>ah_md</i>(<i>s26</i>)+<i>kalh_md</i>(<i>s26</i>))
    *loge(<i>pcon</i>(<i>s26</i>)))
    +0.5
@@ -1551,13 +1578,13 @@ Equation 118: md price<br>
    *loge(<i>pcon</i>(<i>p26</i>))))</div>
 </div>
 <div class="eblock">
-Equation 119: en commodity shares<br>
+Equation 121: en commodity shares<br>
 For <i>s6</i> in <b>s_en</b> (2 total):<br>
 <div class="eqn"><i>shr_en</i>(<i>s6</i>) = <i>ah_en</i>(<i>s6</i>)+<i>kalh_en</i>(<i>s6</i>)
    +sum(<i>p6</i> in <b>pr_en</b>, <i>bh_en</i>(<i>s6,p6</i>)*loge(<i>pcon</i>(<i>p6</i>)))</div>
 </div>
 <div class="eblock">
-Equation 120: en price<br>
+Equation 122: en price<br>
 <div class="eqn">loge(<i>pcon</i>(<i>"en"</i>)) = sum(<i>s6</i> in <b>s_en</b>, (<i>ah_en</i>(<i>s6</i>)+<i>kalh_en</i>(<i>s6</i>))
    *loge(<i>pcon</i>(<i>s6</i>)))
    +0.5
@@ -1565,13 +1592,13 @@ Equation 120: en price<br>
    *loge(<i>pcon</i>(<i>p6</i>))))</div>
 </div>
 <div class="eblock">
-Equation 121: ks commodity shares<br>
+Equation 123: ks commodity shares<br>
 For <i>s21</i> in <b>s_ks</b> (2 total):<br>
 <div class="eqn"><i>shr_ks</i>(<i>s21</i>) = <i>ah_ks</i>(<i>s21</i>)+<i>kalh_ks</i>(<i>s21</i>)
    +sum(<i>p21</i> in <b>pr_ks</b>, <i>bh_ks</i>(<i>s21,p21</i>)*loge(<i>pcon</i>(<i>p21</i>)))</div>
 </div>
 <div class="eblock">
-Equation 122: ks price<br>
+Equation 124: ks price<br>
 <div class="eqn">loge(<i>pcon</i>(<i>"ks"</i>)) = sum(<i>s21</i> in <b>s_ks</b>, (<i>ah_ks</i>(<i>s21</i>)+<i>kalh_ks</i>(<i>s21</i>))
    *loge(<i>pcon</i>(<i>s21</i>)))
    +0.5
@@ -1579,13 +1606,13 @@ Equation 122: ks price<br>
    *loge(<i>pcon</i>(<i>p21</i>))))</div>
 </div>
 <div class="eblock">
-Equation 123: trc commodity shares<br>
+Equation 125: trc commodity shares<br>
 For <i>s44</i> in <b>s_trc</b> (4 total):<br>
 <div class="eqn"><i>shr_trc</i>(<i>s44</i>) = <i>ah_trc</i>(<i>s44</i>)+<i>kalh_trc</i>(<i>s44</i>)
    +sum(<i>p44</i> in <b>pr_trc</b>, <i>bh_trc</i>(<i>s44,p44</i>)*loge(<i>pcon</i>(<i>p44</i>)))</div>
 </div>
 <div class="eblock">
-Equation 124: trc price<br>
+Equation 126: trc price<br>
 <div class="eqn">loge(<i>pcon</i>(<i>"trc"</i>)) = sum(<i>s44</i> in <b>s_trc</b>, (<i>ah_trc</i>(<i>s44</i>)+<i>kalh_trc</i>(<i>s44</i>))
    *loge(<i>pcon</i>(<i>s44</i>)))
    +0.5
@@ -1593,13 +1620,13 @@ Equation 124: trc price<br>
    *loge(<i>pcon</i>(<i>p44</i>))))</div>
 </div>
 <div class="eblock">
-Equation 125: ups commodity shares<br>
+Equation 127: ups commodity shares<br>
 For <i>s50</i> in <b>s_ups</b> (3 total):<br>
 <div class="eqn"><i>shr_ups</i>(<i>s50</i>) = <i>ah_ups</i>(<i>s50</i>)+<i>kalh_ups</i>(<i>s50</i>)
    +sum(<i>p50</i> in <b>pr_ups</b>, <i>bh_ups</i>(<i>s50,p50</i>)*loge(<i>pcon</i>(<i>p50</i>)))</div>
 </div>
 <div class="eblock">
-Equation 126: ups price<br>
+Equation 128: ups price<br>
 <div class="eqn">loge(<i>pcon</i>(<i>"ups"</i>)) = sum(<i>s50</i> in <b>s_ups</b>, (<i>ah_ups</i>(<i>s50</i>)+<i>kalh_ups</i>(<i>s50</i>))
    *loge(<i>pcon</i>(<i>s50</i>)))
    +0.5
@@ -1607,13 +1634,13 @@ Equation 126: ups price<br>
    *loge(<i>pcon</i>(<i>p50</i>))))</div>
 </div>
 <div class="eblock">
-Equation 127: rc commodity shares<br>
+Equation 129: rc commodity shares<br>
 For <i>s38</i> in <b>s_rc</b> (3 total):<br>
 <div class="eqn"><i>shr_rc</i>(<i>s38</i>) = <i>ah_rc</i>(<i>s38</i>)+<i>kalh_rc</i>(<i>s38</i>)
    +sum(<i>p38</i> in <b>pr_rc</b>, <i>bh_rc</i>(<i>s38,p38</i>)*loge(<i>pcon</i>(<i>p38</i>)))</div>
 </div>
 <div class="eblock">
-Equation 128: rc price<br>
+Equation 130: rc price<br>
 <div class="eqn">loge(<i>pcon</i>(<i>"rc"</i>)) = sum(<i>s38</i> in <b>s_rc</b>, (<i>ah_rc</i>(<i>s38</i>)+<i>kalh_rc</i>(<i>s38</i>))
    *loge(<i>pcon</i>(<i>s38</i>)))
    +0.5
@@ -1621,13 +1648,13 @@ Equation 128: rc price<br>
    *loge(<i>pcon</i>(<i>p38</i>))))</div>
 </div>
 <div class="eblock">
-Equation 129: ho commodity shares<br>
+Equation 131: ho commodity shares<br>
 For <i>s17</i> in <b>s_ho</b> (4 total):<br>
 <div class="eqn"><i>shr_ho</i>(<i>s17</i>) = <i>ah_ho</i>(<i>s17</i>)+<i>kalh_ho</i>(<i>s17</i>)
    +sum(<i>p17</i> in <b>pr_ho</b>, <i>bh_ho</i>(<i>s17,p17</i>)*loge(<i>pcon</i>(<i>p17</i>)))</div>
 </div>
 <div class="eblock">
-Equation 130: ho price<br>
+Equation 132: ho price<br>
 <div class="eqn">loge(<i>pcon</i>(<i>"ho"</i>)) = sum(<i>s17</i> in <b>s_ho</b>, (<i>ah_ho</i>(<i>s17</i>)+<i>kalh_ho</i>(<i>s17</i>))
    *loge(<i>pcon</i>(<i>s17</i>)))
    +0.5
@@ -1635,13 +1662,13 @@ Equation 130: ho price<br>
    *loge(<i>pcon</i>(<i>p17</i>))))</div>
 </div>
 <div class="eblock">
-Equation 131: cg commodity shares<br>
+Equation 133: cg commodity shares<br>
 For <i>s1</i> in <b>s_cg</b> (4 total):<br>
 <div class="eqn"><i>shr_cg</i>(<i>s1</i>) = <i>ah_cg</i>(<i>s1</i>)+<i>kalh_cg</i>(<i>s1</i>)
    +sum(<i>p1</i> in <b>pr_cg</b>, <i>bh_cg</i>(<i>s1,p1</i>)*loge(<i>pcon</i>(<i>p1</i>)))</div>
 </div>
 <div class="eblock">
-Equation 132: cg price<br>
+Equation 134: cg price<br>
 <div class="eqn">loge(<i>pcon</i>(<i>"cg"</i>)) = sum(<i>s1</i> in <b>s_cg</b>, (<i>ah_cg</i>(<i>s1</i>)+<i>kalh_cg</i>(<i>s1</i>))
    *loge(<i>pcon</i>(<i>s1</i>)))
    +0.5
@@ -1649,13 +1676,13 @@ Equation 132: cg price<br>
    *loge(<i>pcon</i>(<i>p1</i>))))</div>
 </div>
 <div class="eblock">
-Equation 133: cs commodity shares<br>
+Equation 135: cs commodity shares<br>
 For <i>s3</i> in <b>s_cs</b> (4 total):<br>
 <div class="eqn"><i>shr_cs</i>(<i>s3</i>) = <i>ah_cs</i>(<i>s3</i>)+<i>kalh_cs</i>(<i>s3</i>)
    +sum(<i>p3</i> in <b>pr_cs</b>, <i>bh_cs</i>(<i>s3,p3</i>)*loge(<i>pcon</i>(<i>p3</i>)))</div>
 </div>
 <div class="eblock">
-Equation 134: cs price<br>
+Equation 136: cs price<br>
 <div class="eqn">loge(<i>pcon</i>(<i>"cs"</i>)) = sum(<i>s3</i> in <b>s_cs</b>, (<i>ah_cs</i>(<i>s3</i>)+<i>kalh_cs</i>(<i>s3</i>))
    *loge(<i>pcon</i>(<i>s3</i>)))
    +0.5
@@ -1663,13 +1690,13 @@ Equation 134: cs price<br>
    *loge(<i>pcon</i>(<i>p3</i>))))</div>
 </div>
 <div class="eblock">
-Equation 135: nd commodity shares<br>
+Equation 137: nd commodity shares<br>
 For <i>s32</i> in <b>s_nd</b> (4 total):<br>
 <div class="eqn"><i>shr_nd</i>(<i>s32</i>) = <i>ah_nd</i>(<i>s32</i>)+<i>kalh_nd</i>(<i>s32</i>)
    +sum(<i>p32</i> in <b>pr_nd</b>, <i>bh_nd</i>(<i>s32,p32</i>)*loge(<i>pcon</i>(<i>p32</i>)))</div>
 </div>
 <div class="eblock">
-Equation 136: nd price<br>
+Equation 138: nd price<br>
 <div class="eqn">loge(<i>pcon</i>(<i>"nd"</i>)) = sum(<i>s32</i> in <b>s_nd</b>, (<i>ah_nd</i>(<i>s32</i>)+<i>kalh_nd</i>(<i>s32</i>))
    *loge(<i>pcon</i>(<i>s32</i>)))
    +0.5
@@ -1677,18 +1704,18 @@ Equation 136: nd price<br>
    *loge(<i>pcon</i>(<i>p32</i>))))</div>
 </div>
 <div class="eblock">
-Equation 137: Full consumption shares - alpha and beta effects<br>
+Equation 139: Full consumption shares - alpha and beta effects<br>
 For <i>s10</i> in <b>s_f</b> (4 total):<br>
 <div class="eqn"><i>ab_shr_f</i>(<i>s10</i>) = <i>ah_f</i>(<i>s10</i>)
    +sum(<i>p10</i> in <b>pr_f</b>, <i>bh_f</i>(<i>s10,p10</i>)*loge(<i>pcon</i>(<i>p10</i>)))</div>
 </div>
 <div class="eblock">
-Equation 138: Full consumption (f) share denominator<br>
+Equation 140: Full consumption (f) share denominator<br>
 <div class="eqn"><i>denom</i> = (-1)+<i>denom_rebase</i>
    +sum(<i>p10</i> in <b>pr_f</b>, sum(<i>s10</i> in <b>s_f</b>, <i>bh_f</i>(<i>s10,p10</i>)*loge(<i>pcon</i>(<i>p10</i>))))</div>
 </div>
 <div class="eblock">
-Equation 139: Full consumption shares - cex basis<br>
+Equation 141: Full consumption shares - cex basis<br>
 For <i>s10</i> in <b>s_f</b> (4 total):<br>
 <div class="eqn"><i>cex_shr_f</i>(<i>s10</i>) = (<i>ab_shr_f</i>(<i>s10</i>)
    -<i>bhm_f</i>(<i>s10</i>)
@@ -1697,12 +1724,12 @@ For <i>s10</i> in <b>s_f</b> (4 total):<br>
    /<i>denom</i></div>
 </div>
 <div class="eblock">
-Equation 140: Full consumption shares - nipa basis<br>
+Equation 142: Full consumption shares - nipa basis<br>
 For <i>s10</i> in <b>s_f</b> (4 total):<br>
 <div class="eqn"><i>shr_f</i>(<i>s10</i>) = <i>cex_shr_f</i>(<i>s10</i>)+<i>dv_hh</i>(<i>s10</i>)</div>
 </div>
 <div class="eblock">
-Equation 141: Full consumption price<br>
+Equation 143: Full consumption price<br>
 <div class="eqn"><i>pr_fc</i> = exp(
    sum(<i>s10</i> in <b>s_f</b>, (<i>ah_f</i>(<i>s10</i>)
    -sum(<i>p10</i> in <b>pr_f</b>, <i>bh_f</i>(<i>s10,p10</i>)*loge(<i>pfc_m0</i>)))
@@ -1714,91 +1741,91 @@ Equation 141: Full consumption price<br>
    /<i>pr_fc_scale</i></div>
 </div>
 <div class="eblock">
-Equation 142: Leisure quantity<br>
+Equation 144: Leisure quantity<br>
 <div class="eqn"><i>leisure</i> = (<i>shr_f</i>(<i>"r"</i>)*<i>full_con</i>)
    /<i>pr_leisure</i></div>
 </div>
 <div class="eblock">
-Equation 143: Consumption share of full consumption<br>
+Equation 145: Consumption share of full consumption<br>
 <div class="eqn"><i>cshare</i> = 1-<i>shr_f</i>(<i>"r"</i>)</div>
 </div>
 <div class="eblock">
-Equation 144: Consumption expenditure<br>
+Equation 146: Consumption expenditure<br>
 <div class="eqn"><i>con_expend</i> = <i>cshare</i>*<i>full_con</i></div>
 </div>
 <div class="eblock">
-Equation 145: Food and tobacco<br>
+Equation 147: Food and tobacco<br>
 <div class="eqn"><i>con_share</i>(<i>"n01"</i>) = (<i>shr_nd</i>(<i>"n01"</i>)*<i>shr_f</i>(<i>"nd"</i>))
    /<i>cshare</i></div>
 </div>
 <div class="eblock">
-Equation 146: Clothing and footwear<br>
+Equation 148: Clothing and footwear<br>
 <div class="eqn"><i>con_share</i>(<i>"n02"</i>) = (<i>shr_cg</i>(<i>"n02"</i>)*<i>shr_nd</i>(<i>"cg"</i>)
    *<i>shr_f</i>(<i>"nd"</i>))
    /<i>cshare</i></div>
 </div>
 <div class="eblock">
-Equation 147: Gasoline<br>
+Equation 149: Gasoline<br>
 <div class="eqn"><i>con_share</i>(<i>"n03"</i>) = (<i>shr_en</i>(<i>"n03"</i>)*<i>shr_nd</i>(<i>"en"</i>)
    *<i>shr_f</i>(<i>"nd"</i>))
    /<i>cshare</i></div>
 </div>
 <div class="eblock">
-Equation 148: Other household fuel<br>
+Equation 150: Other household fuel<br>
 <div class="eqn"><i>con_share</i>(<i>"n04"</i>) = (<i>shr_en</i>(<i>"n04"</i>)*<i>shr_nd</i>(<i>"en"</i>)
    *<i>shr_f</i>(<i>"nd"</i>))
    /<i>cshare</i></div>
 </div>
 <div class="eblock">
-Equation 149: Pharmaceuticals<br>
+Equation 151: Pharmaceuticals<br>
 <div class="eqn"><i>con_share</i>(<i>"n05"</i>) = (<i>shr_nd</i>(<i>"n05"</i>)*<i>shr_f</i>(<i>"nd"</i>))
    /<i>cshare</i></div>
 </div>
 <div class="eblock">
-Equation 150: Recreational goods<br>
+Equation 152: Recreational goods<br>
 <div class="eqn"><i>con_share</i>(<i>"n06"</i>) = (<i>shr_cg</i>(<i>"n06"</i>)*<i>shr_nd</i>(<i>"cg"</i>)
    *<i>shr_f</i>(<i>"nd"</i>))
    /<i>cshare</i></div>
 </div>
 <div class="eblock">
-Equation 151: Household goods<br>
+Equation 153: Household goods<br>
 <div class="eqn"><i>con_share</i>(<i>"n07"</i>) = (<i>shr_hpg</i>(<i>"n07"</i>)*<i>shr_cg</i>(<i>"hpg"</i>)
    *<i>shr_nd</i>(<i>"cg"</i>)
    *<i>shr_f</i>(<i>"nd"</i>))
    /<i>cshare</i></div>
 </div>
 <div class="eblock">
-Equation 152: Personal care products<br>
+Equation 154: Personal care products<br>
 <div class="eqn"><i>con_share</i>(<i>"n08"</i>) = (<i>shr_hpg</i>(<i>"n08"</i>)*<i>shr_cg</i>(<i>"hpg"</i>)
    *<i>shr_nd</i>(<i>"cg"</i>)
    *<i>shr_f</i>(<i>"nd"</i>))
    /<i>cshare</i></div>
 </div>
 <div class="eblock">
-Equation 153: Reading materials<br>
+Equation 155: Reading materials<br>
 <div class="eqn"><i>con_share</i>(<i>"n09"</i>) = (<i>shr_cg</i>(<i>"n09"</i>)*<i>shr_nd</i>(<i>"cg"</i>)
    *<i>shr_f</i>(<i>"nd"</i>))
    /<i>cshare</i></div>
 </div>
 <div class="eblock">
-Equation 154: Rental<br>
+Equation 156: Rental<br>
 <div class="eqn"><i>con_share</i>(<i>"n10"</i>) = (<i>shr_ks</i>(<i>"n10"</i>)*<i>shr_f</i>(<i>"ks"</i>))
    /<i>cshare</i></div>
 </div>
 <div class="eblock">
-Equation 155: Household capital flow<br>
+Equation 157: Household capital flow<br>
 <div class="eqn"><i>con_share</i>(<i>"n36"</i>) = (<i>shr_ks</i>(<i>"n36"</i>)*<i>shr_f</i>(<i>"ks"</i>))
    /<i>cshare</i></div>
 </div>
 <div class="eblock">
-Equation 156: Water<br>
+Equation 158: Water<br>
 <div class="eqn"><i>con_share</i>(<i>"n11"</i>) = (<i>shr_ups</i>(<i>"n11"</i>)*<i>shr_ho</i>(<i>"ups"</i>)
    *<i>shr_cs</i>(<i>"ho"</i>)
    *<i>shr_f</i>(<i>"cs"</i>))
    /<i>cshare</i></div>
 </div>
 <div class="eblock">
-Equation 157: Electricity<br>
+Equation 159: Electricity<br>
 <div class="eqn"><i>con_share</i>(<i>"n12"</i>) = (<i>shr_ens</i>(<i>"n12"</i>)*<i>shr_ups</i>(<i>"ens"</i>)
    *<i>shr_ho</i>(<i>"ups"</i>)
    *<i>shr_cs</i>(<i>"ho"</i>)
@@ -1806,7 +1833,7 @@ Equation 157: Electricity<br>
    /<i>cshare</i></div>
 </div>
 <div class="eblock">
-Equation 158: Gas<br>
+Equation 160: Gas<br>
 <div class="eqn"><i>con_share</i>(<i>"n13"</i>) = (<i>shr_ens</i>(<i>"n13"</i>)*<i>shr_ups</i>(<i>"ens"</i>)
    *<i>shr_ho</i>(<i>"ups"</i>)
    *<i>shr_cs</i>(<i>"ho"</i>)
@@ -1814,40 +1841,40 @@ Equation 158: Gas<br>
    /<i>cshare</i></div>
 </div>
 <div class="eblock">
-Equation 159: Health care<br>
+Equation 161: Health care<br>
 <div class="eqn"><i>con_share</i>(<i>"n14"</i>) = (<i>shr_md</i>(<i>"n14"</i>)^<i>shr_cs</i>(<i>"md"</i>)
    *<i>shr_f</i>(<i>"cs"</i>))
    /<i>cshare</i></div>
 </div>
 <div class="eblock">
-Equation 160: Health insurance<br>
+Equation 162: Health insurance<br>
 <div class="eqn"><i>con_share</i>(<i>"n24"</i>) = (<i>shr_md</i>(<i>"n24"</i>)^<i>shr_cs</i>(<i>"md"</i>)
    *<i>shr_f</i>(<i>"cs"</i>))
    /<i>cshare</i></div>
 </div>
 <div class="eblock">
-Equation 161: Own transportation<br>
+Equation 163: Own transportation<br>
 <div class="eqn"><i>con_share</i>(<i>"n15"</i>) = (<i>shr_trc</i>(<i>"n15"</i>)*<i>shr_ho</i>(<i>"trc"</i>)
    *<i>shr_cs</i>(<i>"ho"</i>)
    *<i>shr_f</i>(<i>"cs"</i>))
    /<i>cshare</i></div>
 </div>
 <div class="eblock">
-Equation 162: Transportation<br>
+Equation 164: Transportation<br>
 <div class="eqn"><i>con_share</i>(<i>"n16"</i>) = (<i>shr_trc</i>(<i>"n16"</i>)*<i>shr_ho</i>(<i>"trc"</i>)
    *<i>shr_cs</i>(<i>"ho"</i>)
    *<i>shr_f</i>(<i>"cs"</i>))
    /<i>cshare</i></div>
 </div>
 <div class="eblock">
-Equation 163: Vehicle insurance<br>
+Equation 165: Vehicle insurance<br>
 <div class="eqn"><i>con_share</i>(<i>"n25"</i>) = (<i>shr_trc</i>(<i>"n25"</i>)*<i>shr_ho</i>(<i>"trc"</i>)
    *<i>shr_cs</i>(<i>"ho"</i>)
    *<i>shr_f</i>(<i>"cs"</i>))
    /<i>cshare</i></div>
 </div>
 <div class="eblock">
-Equation 164: Telecommunications<br>
+Equation 166: Telecommunications<br>
 <div class="eqn"><i>con_share</i>(<i>"n26"</i>) = (<i>shr_cmm</i>(<i>"n26"</i>)*<i>shr_trc</i>(<i>"cmm"</i>)
    *<i>shr_ho</i>(<i>"trc"</i>)
    *<i>shr_cs</i>(<i>"ho"</i>)
@@ -1855,7 +1882,7 @@ Equation 164: Telecommunications<br>
    /<i>cshare</i></div>
 </div>
 <div class="eblock">
-Equation 165: Postal and delivery<br>
+Equation 167: Postal and delivery<br>
 <div class="eqn"><i>con_share</i>(<i>"n27"</i>) = (<i>shr_cmm</i>(<i>"n27"</i>)*<i>shr_trc</i>(<i>"cmm"</i>)
    *<i>shr_ho</i>(<i>"trc"</i>)
    *<i>shr_cs</i>(<i>"ho"</i>)
@@ -1863,80 +1890,80 @@ Equation 165: Postal and delivery<br>
    /<i>cshare</i></div>
 </div>
 <div class="eblock">
-Equation 166: Sports and theaters<br>
+Equation 168: Sports and theaters<br>
 <div class="eqn"><i>con_share</i>(<i>"n17"</i>) = (<i>shr_rcs</i>(<i>"n17"</i>)*<i>shr_rc</i>(<i>"rcs"</i>)
    *<i>shr_cs</i>(<i>"rc"</i>)
    *<i>shr_f</i>(<i>"cs"</i>))
    /<i>cshare</i></div>
 </div>
 <div class="eblock">
-Equation 167: Video and IT services<br>
+Equation 169: Video and IT services<br>
 <div class="eqn"><i>con_share</i>(<i>"n18"</i>) = (<i>shr_rcs</i>(<i>"n18"</i>)*<i>shr_rc</i>(<i>"rcs"</i>)
    *<i>shr_cs</i>(<i>"rc"</i>)
    *<i>shr_f</i>(<i>"cs"</i>))
    /<i>cshare</i></div>
 </div>
 <div class="eblock">
-Equation 168: Gambling<br>
+Equation 170: Gambling<br>
 <div class="eqn"><i>con_share</i>(<i>"n19"</i>) = (<i>shr_rcs</i>(<i>"n19"</i>)*<i>shr_rc</i>(<i>"rcs"</i>)
    *<i>shr_cs</i>(<i>"rc"</i>)
    *<i>shr_f</i>(<i>"cs"</i>))
    /<i>cshare</i></div>
 </div>
 <div class="eblock">
-Equation 169: Meals<br>
+Equation 171: Meals<br>
 <div class="eqn"><i>con_share</i>(<i>"n20"</i>) = (<i>shr_rc</i>(<i>"n20"</i>)*<i>shr_cs</i>(<i>"rc"</i>)
    *<i>shr_f</i>(<i>"cs"</i>))
    /<i>cshare</i></div>
 </div>
 <div class="eblock">
-Equation 170: Hotels<br>
+Equation 172: Hotels<br>
 <div class="eqn"><i>con_share</i>(<i>"n21"</i>) = (<i>shr_trv</i>(<i>"n21"</i>)*<i>shr_rc</i>(<i>"trv"</i>)
    *<i>shr_cs</i>(<i>"rc"</i>)
    *<i>shr_f</i>(<i>"cs"</i>))
    /<i>cshare</i></div>
 </div>
 <div class="eblock">
-Equation 171: Foreign travel<br>
+Equation 173: Foreign travel<br>
 <div class="eqn"><i>con_share</i>(<i>"n33"</i>) = (<i>shr_trv</i>(<i>"n33"</i>)*<i>shr_rc</i>(<i>"trv"</i>)
    *<i>shr_cs</i>(<i>"rc"</i>)
    *<i>shr_f</i>(<i>"cs"</i>))
    /<i>cshare</i></div>
 </div>
 <div class="eblock">
-Equation 172: Financial services<br>
+Equation 174: Financial services<br>
 <div class="eqn"><i>con_share</i>(<i>"n22"</i>) = (<i>shr_fb</i>(<i>"n22"</i>)*<i>shr_cs</i>(<i>"fb"</i>)
    *<i>shr_f</i>(<i>"cs"</i>))
    /<i>cshare</i></div>
 </div>
 <div class="eblock">
-Equation 173: Life insurance<br>
+Equation 175: Life insurance<br>
 <div class="eqn"><i>con_share</i>(<i>"n23"</i>) = (<i>shr_fb</i>(<i>"n23"</i>)*<i>shr_cs</i>(<i>"fb"</i>)
    *<i>shr_f</i>(<i>"cs"</i>))
    /<i>cshare</i></div>
 </div>
 <div class="eblock">
-Equation 174: Business services<br>
+Equation 176: Business services<br>
 <div class="eqn"><i>con_share</i>(<i>"n29"</i>) = (<i>shr_fb</i>(<i>"n29"</i>)*<i>shr_cs</i>(<i>"fb"</i>)
    *<i>shr_f</i>(<i>"cs"</i>))
    /<i>cshare</i></div>
 </div>
 <div class="eblock">
-Equation 175: Education<br>
+Equation 177: Education<br>
 <div class="eqn"><i>con_share</i>(<i>"n28"</i>) = (<i>shr_edn</i>(<i>"n28"</i>)*<i>shr_ho</i>(<i>"edn"</i>)
    *<i>shr_cs</i>(<i>"ho"</i>)
    *<i>shr_f</i>(<i>"cs"</i>))
    /<i>cshare</i></div>
 </div>
 <div class="eblock">
-Equation 176: Non-profits consumption<br>
+Equation 178: Non-profits consumption<br>
 <div class="eqn"><i>con_share</i>(<i>"n34"</i>) = (<i>shr_edn</i>(<i>"n34"</i>)*<i>shr_ho</i>(<i>"edn"</i>)
    *<i>shr_cs</i>(<i>"ho"</i>)
    *<i>shr_f</i>(<i>"cs"</i>))
    /<i>cshare</i></div>
 </div>
 <div class="eblock">
-Equation 177: Personal services<br>
+Equation 179: Personal services<br>
 <div class="eqn"><i>con_share</i>(<i>"n30"</i>) = (<i>shr_hps</i>(<i>"n30"</i>)*<i>shr_ups</i>(<i>"hps"</i>)
    *<i>shr_ho</i>(<i>"ups"</i>)
    *<i>shr_cs</i>(<i>"ho"</i>)
@@ -1944,7 +1971,7 @@ Equation 177: Personal services<br>
    /<i>cshare</i></div>
 </div>
 <div class="eblock">
-Equation 178: Social services<br>
+Equation 180: Social services<br>
 <div class="eqn"><i>con_share</i>(<i>"n31"</i>) = (<i>shr_hps</i>(<i>"n31"</i>)*<i>shr_ups</i>(<i>"hps"</i>)
    *<i>shr_ho</i>(<i>"ups"</i>)
    *<i>shr_cs</i>(<i>"ho"</i>)
@@ -1952,7 +1979,7 @@ Equation 178: Social services<br>
    /<i>cshare</i></div>
 </div>
 <div class="eblock">
-Equation 179: Household services<br>
+Equation 181: Household services<br>
 <div class="eqn"><i>con_share</i>(<i>"n32"</i>) = (<i>shr_hps</i>(<i>"n32"</i>)*<i>shr_ups</i>(<i>"hps"</i>)
    *<i>shr_ho</i>(<i>"ups"</i>)
    *<i>shr_cs</i>(<i>"ho"</i>)
@@ -1960,60 +1987,55 @@ Equation 179: Household services<br>
    /<i>cshare</i></div>
 </div>
 <div class="eblock">
-Equation 180: Owner maintenance<br>
+Equation 182: Owner maintenance<br>
 <div class="eqn"><i>con_share</i>(<i>"n35"</i>) = (<i>shr_ho</i>(<i>"n35"</i>)*<i>shr_cs</i>(<i>"ho"</i>)
    *<i>shr_f</i>(<i>"cs"</i>))
    /<i>cshare</i></div>
 </div>
 <div class="eblock">
-Equation 181: Consumer demand shocks, io values<br>
+Equation 183: Consumer demand shocks, io values<br>
 For <i>N1</i> in <b>ncom_k</b> (37 total):<br>
 <div class="eqn"><i>con_shk_val</i>(<i>N1</i>) = <i>con_shk_qty</i>(<i>N1</i>)*<i>pr_con</i>(<i>N1</i>)</div>
 </div>
 <div class="eblock">
-Equation 182: Consumer demand shocks, total value<br>
+Equation 184: Consumer demand shocks, total value<br>
 <div class="eqn"><i>con_shk_xpnd</i> = sum(<i>N1</i> in <b>ncom_k</b>, <i>con_shk_val</i>(<i>N1</i>))</div>
 </div>
 <div class="eblock">
-Equation 183: Net consumption expenditure<br>
+Equation 185: Net consumption expenditure<br>
 <div class="eqn"><i>con_xpnd_net</i> = <i>con_expend</i>-<i>con_shk_xpnd</i></div>
 </div>
 <div class="eblock">
-Equation 184: con, io commodity<br>
+Equation 186: con, io commodity<br>
 For <i>c</i> in <b>com</b> (36 total):<br>
-<div class="eqn"><i>con</i>(<i>c</i>) = (sum(<i>n4</i> in <b>nipa</b>, <i>io_nipa</i>(<i>c,n4</i>)*<i>con_share</i>(<i>n4</i>)
+<div class="eqn"><i>con</i>(<i>c</i>) = sum(<i>n4</i> in <b>nipa</b>, <i>io_nipa</i>(<i>c,n4</i>)*<i>con_share</i>(<i>n4</i>)
    *<i>con_xpnd_net</i>)
-   +<i>con_shk_val</i>(<i>c</i>))
-   /(1+<i>tax_con_totc</i>)</div>
+   +<i>con_shk_val</i>(<i>c</i>)</div>
 </div>
 <div class="eblock">
-Equation 185: con, io capital<br>
+Equation 187: con, io capital<br>
 <div class="eqn"><i>con</i>(<i>"kap"</i>) = sum(<i>n4</i> in <b>nipa</b>, <i>io_nipa</i>(<i>"kap",n4</i>)*<i>con_share</i>(<i>n4</i>)
    *<i>con_xpnd_net</i>)
    +<i>con_shk_val</i>(<i>"kap"</i>)</div>
 </div>
 <div class="eblock">
-Equation 186: con_qty, io quantities<br>
+Equation 188: con_qty, io quantities<br>
 For <i>N1</i> in <b>ncom_k</b> (37 total):<br>
 <div class="eqn"><i>con_qty</i>(<i>N1</i>) = <i>con</i>(<i>N1</i>)/<i>pr_con</i>(<i>N1</i>)</div>
 </div>
 <div class="eblock">
-Equation 187: Consumption tax revenue from goods and services<br>
-<div class="eqn"><i>rev_con</i> = sum(<i>c</i> in <b>com</b>, <i>tax_con_totc</i>*<i>con</i>(<i>c</i>))</div>
-</div>
-<div class="eblock">
-Equation 188: Investment commodity prices, io<br>
+Equation 189: Investment commodity prices, io<br>
 For <i>c</i> in <b>com</b> (36 total):<br>
 <div class="eqn"><i>pr_inv</i>(<i>c</i>) = <i>pb</i>(<i>c,"inv"</i>)</div>
 </div>
 <div class="eblock">
-Equation 189: rawm commodity shares<br>
+Equation 190: rawm commodity shares<br>
 For <i>s37</i> in <b>s_rawm</b> (3 total):<br>
 <div class="eqn"><i>shr_rawm</i>(<i>s37</i>) = <i>ai_rawm</i>(<i>s37</i>)+<i>kali_rawm</i>(<i>s37</i>)
    +sum(<i>p37</i> in <b>pr_rawm</b>, <i>bi_rawm</i>(<i>s37,p37</i>)*loge(<i>pr_inv</i>(<i>p37</i>)))</div>
 </div>
 <div class="eblock">
-Equation 190: rawm price<br>
+Equation 191: rawm price<br>
 <div class="eqn">loge(<i>pr_inv</i>(<i>"rawm"</i>)) = sum(<i>s37</i> in <b>s_rawm</b>, (<i>ai_rawm</i>(<i>s37</i>)+<i>kali_rawm</i>(<i>s37</i>))
    *loge(<i>pr_inv</i>(<i>s37</i>)))
    +0.5
@@ -2021,13 +2043,13 @@ Equation 190: rawm price<br>
    *loge(<i>pr_inv</i>(<i>p37</i>))))</div>
 </div>
 <div class="eblock">
-Equation 191: furn commodity shares<br>
+Equation 192: furn commodity shares<br>
 For <i>s15</i> in <b>s_furn</b> (3 total):<br>
 <div class="eqn"><i>shr_furn</i>(<i>s15</i>) = <i>ai_furn</i>(<i>s15</i>)+<i>kali_furn</i>(<i>s15</i>)
    +sum(<i>p15</i> in <b>pr_furn</b>, <i>bi_furn</i>(<i>s15,p15</i>)*loge(<i>pr_inv</i>(<i>p15</i>)))</div>
 </div>
 <div class="eblock">
-Equation 192: furn price<br>
+Equation 193: furn price<br>
 <div class="eqn">loge(<i>pr_inv</i>(<i>"furn"</i>)) = sum(<i>s15</i> in <b>s_furn</b>, (<i>ai_furn</i>(<i>s15</i>)+<i>kali_furn</i>(<i>s15</i>))
    *loge(<i>pr_inv</i>(<i>s15</i>)))
    +0.5
@@ -2035,13 +2057,13 @@ Equation 192: furn price<br>
    *loge(<i>pr_inv</i>(<i>p15</i>))))</div>
 </div>
 <div class="eblock">
-Equation 193: mserv commodity shares<br>
+Equation 194: mserv commodity shares<br>
 For <i>s31</i> in <b>s_mserv</b> (3 total):<br>
 <div class="eqn"><i>shr_mserv</i>(<i>s31</i>) = <i>ai_mserv</i>(<i>s31</i>)+<i>kali_mserv</i>(<i>s31</i>)
    +sum(<i>p31</i> in <b>pr_mserv</b>, <i>bi_mserv</i>(<i>s31,p31</i>)*loge(<i>pr_inv</i>(<i>p31</i>)))</div>
 </div>
 <div class="eblock">
-Equation 194: mserv price<br>
+Equation 195: mserv price<br>
 <div class="eqn">loge(<i>pr_inv</i>(<i>"mserv"</i>)) = sum(<i>s31</i> in <b>s_mserv</b>, (<i>ai_mserv</i>(<i>s31</i>)+<i>kali_mserv</i>(<i>s31</i>))
    *loge(<i>pr_inv</i>(<i>s31</i>)))
    +0.5
@@ -2049,13 +2071,13 @@ Equation 194: mserv price<br>
    *loge(<i>pr_inv</i>(<i>p31</i>))))</div>
 </div>
 <div class="eblock">
-Equation 195: trd commodity shares<br>
+Equation 196: trd commodity shares<br>
 For <i>s45</i> in <b>s_trd</b> (2 total):<br>
 <div class="eqn"><i>shr_trd</i>(<i>s45</i>) = <i>ai_trd</i>(<i>s45</i>)+<i>kali_trd</i>(<i>s45</i>)
    +sum(<i>p45</i> in <b>pr_trd</b>, <i>bi_trd</i>(<i>s45,p45</i>)*loge(<i>pr_inv</i>(<i>p45</i>)))</div>
 </div>
 <div class="eblock">
-Equation 196: trd price<br>
+Equation 197: trd price<br>
 <div class="eqn">loge(<i>pr_inv</i>(<i>"trd"</i>)) = sum(<i>s45</i> in <b>s_trd</b>, (<i>ai_trd</i>(<i>s45</i>)+<i>kali_trd</i>(<i>s45</i>))
    *loge(<i>pr_inv</i>(<i>s45</i>)))
    +0.5
@@ -2063,13 +2085,13 @@ Equation 196: trd price<br>
    *loge(<i>pr_inv</i>(<i>p45</i>))))</div>
 </div>
 <div class="eblock">
-Equation 197: trnsp commodity shares<br>
+Equation 198: trnsp commodity shares<br>
 For <i>s46</i> in <b>s_trnsp</b> (2 total):<br>
 <div class="eqn"><i>shr_trnsp</i>(<i>s46</i>) = <i>ai_trnsp</i>(<i>s46</i>)+<i>kali_trnsp</i>(<i>s46</i>)
    +sum(<i>p46</i> in <b>pr_trnsp</b>, <i>bi_trnsp</i>(<i>s46,p46</i>)*loge(<i>pr_inv</i>(<i>p46</i>)))</div>
 </div>
 <div class="eblock">
-Equation 198: trnsp price<br>
+Equation 199: trnsp price<br>
 <div class="eqn">loge(<i>pr_inv</i>(<i>"trnsp"</i>)) = sum(<i>s46</i> in <b>s_trnsp</b>, (<i>ai_trnsp</i>(<i>s46</i>)+<i>kali_trnsp</i>(<i>s46</i>))
    *loge(<i>pr_inv</i>(<i>s46</i>)))
    +0.5
@@ -2077,13 +2099,13 @@ Equation 198: trnsp price<br>
    *loge(<i>pr_inv</i>(<i>p46</i>))))</div>
 </div>
 <div class="eblock">
-Equation 199: it commodity shares<br>
+Equation 200: it commodity shares<br>
 For <i>s20</i> in <b>s_it</b> (3 total):<br>
 <div class="eqn"><i>shr_it</i>(<i>s20</i>) = <i>ai_it</i>(<i>s20</i>)+<i>kali_it</i>(<i>s20</i>)
    +sum(<i>p20</i> in <b>pr_it</b>, <i>bi_it</i>(<i>s20,p20</i>)*loge(<i>pr_inv</i>(<i>p20</i>)))</div>
 </div>
 <div class="eblock">
-Equation 200: it price<br>
+Equation 201: it price<br>
 <div class="eqn">loge(<i>pr_inv</i>(<i>"it"</i>)) = sum(<i>s20</i> in <b>s_it</b>, (<i>ai_it</i>(<i>s20</i>)+<i>kali_it</i>(<i>s20</i>))
    *loge(<i>pr_inv</i>(<i>s20</i>)))
    +0.5
@@ -2091,13 +2113,13 @@ Equation 200: it price<br>
    *loge(<i>pr_inv</i>(<i>p20</i>))))</div>
 </div>
 <div class="eblock">
-Equation 201: mrawm commodity shares<br>
+Equation 202: mrawm commodity shares<br>
 For <i>s29</i> in <b>s_mrawm</b> (2 total):<br>
 <div class="eqn"><i>shr_mrawm</i>(<i>s29</i>) = <i>ai_mrawm</i>(<i>s29</i>)+<i>kali_mrawm</i>(<i>s29</i>)
    +sum(<i>p29</i> in <b>pr_mrawm</b>, <i>bi_mrawm</i>(<i>s29,p29</i>)*loge(<i>pr_inv</i>(<i>p29</i>)))</div>
 </div>
 <div class="eblock">
-Equation 202: mrawm price<br>
+Equation 203: mrawm price<br>
 <div class="eqn">loge(<i>pr_inv</i>(<i>"mrawm"</i>)) = sum(<i>s29</i> in <b>s_mrawm</b>, (<i>ai_mrawm</i>(<i>s29</i>)+<i>kali_mrawm</i>(<i>s29</i>))
    *loge(<i>pr_inv</i>(<i>s29</i>)))
    +0.5
@@ -2105,13 +2127,13 @@ Equation 202: mrawm price<br>
    *loge(<i>pr_inv</i>(<i>p29</i>))))</div>
 </div>
 <div class="eblock">
-Equation 203: frawm commodity shares<br>
+Equation 204: frawm commodity shares<br>
 For <i>s14</i> in <b>s_frawm</b> (2 total):<br>
 <div class="eqn"><i>shr_frawm</i>(<i>s14</i>) = <i>ai_frawm</i>(<i>s14</i>)+<i>kali_frawm</i>(<i>s14</i>)
    +sum(<i>p14</i> in <b>pr_frawm</b>, <i>bi_frawm</i>(<i>s14,p14</i>)*loge(<i>pr_inv</i>(<i>p14</i>)))</div>
 </div>
 <div class="eblock">
-Equation 204: frawm price<br>
+Equation 205: frawm price<br>
 <div class="eqn">loge(<i>pr_inv</i>(<i>"frawm"</i>)) = sum(<i>s14</i> in <b>s_frawm</b>, (<i>ai_frawm</i>(<i>s14</i>)+<i>kali_frawm</i>(<i>s14</i>))
    *loge(<i>pr_inv</i>(<i>s14</i>)))
    +0.5
@@ -2119,13 +2141,13 @@ Equation 204: frawm price<br>
    *loge(<i>pr_inv</i>(<i>p14</i>))))</div>
 </div>
 <div class="eblock">
-Equation 205: serv commodity shares<br>
+Equation 206: serv commodity shares<br>
 For <i>s40</i> in <b>s_serv</b> (2 total):<br>
 <div class="eqn"><i>shr_serv</i>(<i>s40</i>) = <i>ai_serv</i>(<i>s40</i>)+<i>kali_serv</i>(<i>s40</i>)
    +sum(<i>p40</i> in <b>pr_serv</b>, <i>bi_serv</i>(<i>s40,p40</i>)*loge(<i>pr_inv</i>(<i>p40</i>)))</div>
 </div>
 <div class="eblock">
-Equation 206: serv price<br>
+Equation 207: serv price<br>
 <div class="eqn">loge(<i>pr_inv</i>(<i>"serv"</i>)) = sum(<i>s40</i> in <b>s_serv</b>, (<i>ai_serv</i>(<i>s40</i>)+<i>kali_serv</i>(<i>s40</i>))
    *loge(<i>pr_inv</i>(<i>s40</i>)))
    +0.5
@@ -2133,13 +2155,13 @@ Equation 206: serv price<br>
    *loge(<i>pr_inv</i>(<i>p40</i>))))</div>
 </div>
 <div class="eblock">
-Equation 207: mach commodity shares<br>
+Equation 208: mach commodity shares<br>
 For <i>s24</i> in <b>s_mach</b> (3 total):<br>
 <div class="eqn"><i>shr_mach</i>(<i>s24</i>) = <i>ai_mach</i>(<i>s24</i>)+<i>kali_mach</i>(<i>s24</i>)
    +sum(<i>p24</i> in <b>pr_mach</b>, <i>bi_mach</i>(<i>s24,p24</i>)*loge(<i>pr_inv</i>(<i>p24</i>)))</div>
 </div>
 <div class="eblock">
-Equation 208: mach price<br>
+Equation 209: mach price<br>
 <div class="eqn">loge(<i>pr_inv</i>(<i>"mach"</i>)) = sum(<i>s24</i> in <b>s_mach</b>, (<i>ai_mach</i>(<i>s24</i>)+<i>kali_mach</i>(<i>s24</i>))
    *loge(<i>pr_inv</i>(<i>s24</i>)))
    +0.5
@@ -2147,13 +2169,13 @@ Equation 208: mach price<br>
    *loge(<i>pr_inv</i>(<i>p24</i>))))</div>
 </div>
 <div class="eblock">
-Equation 209: ttsvc commodity shares<br>
+Equation 210: ttsvc commodity shares<br>
 For <i>s49</i> in <b>s_ttsvc</b> (3 total):<br>
 <div class="eqn"><i>shr_ttsvc</i>(<i>s49</i>) = <i>ai_ttsvc</i>(<i>s49</i>)+<i>kali_ttsvc</i>(<i>s49</i>)
    +sum(<i>p49</i> in <b>pr_ttsvc</b>, <i>bi_ttsvc</i>(<i>s49,p49</i>)*loge(<i>pr_inv</i>(<i>p49</i>)))</div>
 </div>
 <div class="eblock">
-Equation 210: ttsvc price<br>
+Equation 211: ttsvc price<br>
 <div class="eqn">loge(<i>pr_inv</i>(<i>"ttsvc"</i>)) = sum(<i>s49</i> in <b>s_ttsvc</b>, (<i>ai_ttsvc</i>(<i>s49</i>)+<i>kali_ttsvc</i>(<i>s49</i>))
    *loge(<i>pr_inv</i>(<i>s49</i>)))
    +0.5
@@ -2161,13 +2183,13 @@ Equation 210: ttsvc price<br>
    *loge(<i>pr_inv</i>(<i>p49</i>))))</div>
 </div>
 <div class="eblock">
-Equation 211: eit commodity shares<br>
+Equation 212: eit commodity shares<br>
 For <i>s5</i> in <b>s_eit</b> (3 total):<br>
 <div class="eqn"><i>shr_eit</i>(<i>s5</i>) = <i>ai_eit</i>(<i>s5</i>)+<i>kali_eit</i>(<i>s5</i>)
    +sum(<i>p5</i> in <b>pr_eit</b>, <i>bi_eit</i>(<i>s5,p5</i>)*loge(<i>pr_inv</i>(<i>p5</i>)))</div>
 </div>
 <div class="eblock">
-Equation 212: eit price<br>
+Equation 213: eit price<br>
 <div class="eqn">loge(<i>pr_inv</i>(<i>"eit"</i>)) = sum(<i>s5</i> in <b>s_eit</b>, (<i>ai_eit</i>(<i>s5</i>)+<i>kali_eit</i>(<i>s5</i>))
    *loge(<i>pr_inv</i>(<i>s5</i>)))
    +0.5
@@ -2175,13 +2197,13 @@ Equation 212: eit price<br>
    *loge(<i>pr_inv</i>(<i>p5</i>))))</div>
 </div>
 <div class="eblock">
-Equation 213: short commodity shares<br>
+Equation 214: short commodity shares<br>
 For <i>s41</i> in <b>s_short</b> (2 total):<br>
 <div class="eqn"><i>shr_short</i>(<i>s41</i>) = <i>ai_short</i>(<i>s41</i>)+<i>kali_short</i>(<i>s41</i>)
    +sum(<i>p41</i> in <b>pr_short</b>, <i>bi_short</i>(<i>s41,p41</i>)*loge(<i>pr_inv</i>(<i>p41</i>)))</div>
 </div>
 <div class="eblock">
-Equation 214: short price<br>
+Equation 215: short price<br>
 <div class="eqn">loge(<i>pr_inv</i>(<i>"short"</i>)) = sum(<i>s41</i> in <b>s_short</b>, (<i>ai_short</i>(<i>s41</i>)+<i>kali_short</i>(<i>s41</i>))
    *loge(<i>pr_inv</i>(<i>s41</i>)))
    +0.5
@@ -2189,13 +2211,13 @@ Equation 214: short price<br>
    *loge(<i>pr_inv</i>(<i>p41</i>))))</div>
 </div>
 <div class="eblock">
-Equation 215: long commodity shares<br>
+Equation 216: long commodity shares<br>
 For <i>s22</i> in <b>s_long</b> (3 total):<br>
 <div class="eqn"><i>shr_long</i>(<i>s22</i>) = <i>ai_long</i>(<i>s22</i>)+<i>kali_long</i>(<i>s22</i>)
    +sum(<i>p22</i> in <b>pr_long</b>, <i>bi_long</i>(<i>s22,p22</i>)*loge(<i>pr_inv</i>(<i>p22</i>)))</div>
 </div>
 <div class="eblock">
-Equation 216: long price<br>
+Equation 217: long price<br>
 <div class="eqn">loge(<i>pr_inv</i>(<i>"long"</i>)) = sum(<i>s22</i> in <b>s_long</b>, (<i>ai_long</i>(<i>s22</i>)+<i>kali_long</i>(<i>s22</i>))
    *loge(<i>pr_inv</i>(<i>s22</i>)))
    +0.5
@@ -2203,13 +2225,13 @@ Equation 216: long price<br>
    *loge(<i>pr_inv</i>(<i>p22</i>))))</div>
 </div>
 <div class="eblock">
-Equation 217: fixed commodity shares<br>
+Equation 218: fixed commodity shares<br>
 For <i>s13</i> in <b>s_fixed</b> (2 total):<br>
 <div class="eqn"><i>shr_fixed</i>(<i>s13</i>) = <i>ai_fixed</i>(<i>s13</i>)+<i>kali_fixed</i>(<i>s13</i>)
    +sum(<i>p13</i> in <b>pr_fixed</b>, <i>bi_fixed</i>(<i>s13,p13</i>)*loge(<i>pr_inv</i>(<i>p13</i>)))</div>
 </div>
 <div class="eblock">
-Equation 218: Investment goods price<br>
+Equation 219: Investment goods price<br>
 <div class="eqn"><i>pii</i> = exp(
    sum(<i>s13</i> in <b>s_fixed</b>, (<i>ai_fixed</i>(<i>s13</i>)+<i>kali_fixed</i>(<i>s13</i>))
    *loge(<i>pr_inv</i>(<i>s13</i>)))
@@ -2219,44 +2241,44 @@ Equation 218: Investment goods price<br>
    *<i>inv_shock</i></div>
 </div>
 <div class="eblock">
-Equation 219: Price of new capital stock<br>
+Equation 220: Price of new capital stock<br>
 <div class="eqn"><i>pk</i> = <i>adjust_pk</i>*<i>pii</i>*(1-<i>tax_itc</i>)</div>
 </div>
 <div class="eblock">
-Equation 220: Post-itc investment<br>
+Equation 221: Post-itc investment<br>
 <div class="eqn"><i>inv_total</i> = <i>inv_expend</i>/(1-<i>tax_itc</i>)</div>
 </div>
 <div class="eblock">
-Equation 221: Investment tax credit (negative)<br>
+Equation 222: Investment tax credit (negative)<br>
 <div class="eqn"><i>rev_itc</i> = (-<i>tax_itc</i>)*<i>inv_total</i></div>
 </div>
 <div class="eblock">
-Equation 222: Post-itc investment quantity<br>
+Equation 223: Post-itc investment quantity<br>
 <div class="eqn"><i>inv_real</i> = (<i>adjust_i</i>*<i>inv_total</i>*<i>inv_exp_shk</i>)
    /<i>pii</i></div>
 </div>
 <div class="eblock">
-Equation 223: Fixed portion of total investment<br>
+Equation 224: Fixed portion of total investment<br>
 <div class="eqn"><i>fixed_inv</i> = <i>inv_total</i>*(1-<i>inven_fract</i>)</div>
 </div>
 <div class="eblock">
-Equation 224: Inventory portion of total investment<br>
+Equation 225: Inventory portion of total investment<br>
 <div class="eqn"><i>inven_inv</i> = <i>inv_total</i>-<i>fixed_inv</i></div>
 </div>
 <div class="eblock">
-Equation 225: Non-energy mining share<br>
+Equation 226: Non-energy mining share<br>
 <div class="eqn"><i>inv_share</i>(<i>"c05"</i>) = <i>shr_long</i>(<i>"c05"</i>)*<i>shr_fixed</i>(<i>"long"</i>)</div>
 </div>
 <div class="eblock">
-Equation 226: Construction share<br>
+Equation 227: Construction share<br>
 <div class="eqn"><i>inv_share</i>(<i>"c09"</i>) = <i>shr_long</i>(<i>"c09"</i>)*<i>shr_fixed</i>(<i>"long"</i>)</div>
 </div>
 <div class="eblock">
-Equation 227: Real estate and leasing share<br>
+Equation 228: Real estate and leasing share<br>
 <div class="eqn"><i>inv_share</i>(<i>"c31"</i>) = <i>shr_long</i>(<i>"c31"</i>)*<i>shr_fixed</i>(<i>"long"</i>)</div>
 </div>
 <div class="eblock">
-Equation 228: Wood share<br>
+Equation 229: Wood share<br>
 <div class="eqn"><i>inv_share</i>(<i>"c10"</i>) = <i>shr_rawm</i>(<i>"c10"</i>)*<i>shr_mrawm</i>(<i>"rawm"</i>)
    *<i>shr_frawm</i>(<i>"mrawm"</i>)
    *<i>shr_mach</i>(<i>"frawm"</i>)
@@ -2265,7 +2287,7 @@ Equation 228: Wood share<br>
    *<i>shr_fixed</i>(<i>"short"</i>)</div>
 </div>
 <div class="eblock">
-Equation 229: Non-metals share<br>
+Equation 230: Non-metals share<br>
 <div class="eqn"><i>inv_share</i>(<i>"c11"</i>) = <i>shr_rawm</i>(<i>"c11"</i>)*<i>shr_mrawm</i>(<i>"rawm"</i>)
    *<i>shr_frawm</i>(<i>"mrawm"</i>)
    *<i>shr_mach</i>(<i>"frawm"</i>)
@@ -2274,7 +2296,7 @@ Equation 229: Non-metals share<br>
    *<i>shr_fixed</i>(<i>"short"</i>)</div>
 </div>
 <div class="eblock">
-Equation 230: Primary metals share<br>
+Equation 231: Primary metals share<br>
 <div class="eqn"><i>inv_share</i>(<i>"c12"</i>) = <i>shr_rawm</i>(<i>"c12"</i>)*<i>shr_mrawm</i>(<i>"rawm"</i>)
    *<i>shr_frawm</i>(<i>"mrawm"</i>)
    *<i>shr_mach</i>(<i>"frawm"</i>)
@@ -2283,7 +2305,7 @@ Equation 230: Primary metals share<br>
    *<i>shr_fixed</i>(<i>"short"</i>)</div>
 </div>
 <div class="eblock">
-Equation 231: Misc mfg share<br>
+Equation 232: Misc mfg share<br>
 <div class="eqn"><i>inv_share</i>(<i>"c19"</i>) = <i>shr_furn</i>(<i>"c19"</i>)*<i>shr_frawm</i>(<i>"furn"</i>)
    *<i>shr_mach</i>(<i>"frawm"</i>)
    *<i>shr_eit</i>(<i>"mach"</i>)
@@ -2291,7 +2313,7 @@ Equation 231: Misc mfg share<br>
    *<i>shr_fixed</i>(<i>"short"</i>)</div>
 </div>
 <div class="eblock">
-Equation 232: Textiles share<br>
+Equation 233: Textiles share<br>
 <div class="eqn"><i>inv_share</i>(<i>"c21"</i>) = <i>shr_furn</i>(<i>"c21"</i>)*<i>shr_frawm</i>(<i>"furn"</i>)
    *<i>shr_mach</i>(<i>"frawm"</i>)
    *<i>shr_eit</i>(<i>"mach"</i>)
@@ -2299,7 +2321,7 @@ Equation 232: Textiles share<br>
    *<i>shr_fixed</i>(<i>"short"</i>)</div>
 </div>
 <div class="eblock">
-Equation 233: Chemicals share<br>
+Equation 234: Chemicals share<br>
 <div class="eqn"><i>inv_share</i>(<i>"c24"</i>) = <i>shr_furn</i>(<i>"c24"</i>)*<i>shr_frawm</i>(<i>"furn"</i>)
    *<i>shr_mach</i>(<i>"frawm"</i>)
    *<i>shr_eit</i>(<i>"mach"</i>)
@@ -2307,70 +2329,70 @@ Equation 233: Chemicals share<br>
    *<i>shr_fixed</i>(<i>"short"</i>)</div>
 </div>
 <div class="eblock">
-Equation 234: Printing share<br>
+Equation 235: Printing share<br>
 <div class="eqn"><i>inv_share</i>(<i>"c22"</i>) = <i>shr_mserv</i>(<i>"c22"</i>)*<i>shr_serv</i>(<i>"mserv"</i>)
    *<i>shr_ttsvc</i>(<i>"serv"</i>)
    *<i>shr_short</i>(<i>"ttsvc"</i>)
    *<i>shr_fixed</i>(<i>"short"</i>)</div>
 </div>
 <div class="eblock">
-Equation 235: Healthcare share<br>
+Equation 236: Healthcare share<br>
 <div class="eqn"><i>inv_share</i>(<i>"c34"</i>) = <i>shr_mserv</i>(<i>"c34"</i>)*<i>shr_serv</i>(<i>"mserv"</i>)
    *<i>shr_ttsvc</i>(<i>"serv"</i>)
    *<i>shr_short</i>(<i>"ttsvc"</i>)
    *<i>shr_fixed</i>(<i>"short"</i>)</div>
 </div>
 <div class="eblock">
-Equation 236: Accommodations share<br>
+Equation 237: Accommodations share<br>
 <div class="eqn"><i>inv_share</i>(<i>"c35"</i>) = <i>shr_mserv</i>(<i>"c35"</i>)*<i>shr_serv</i>(<i>"mserv"</i>)
    *<i>shr_ttsvc</i>(<i>"serv"</i>)
    *<i>shr_short</i>(<i>"ttsvc"</i>)
    *<i>shr_fixed</i>(<i>"short"</i>)</div>
 </div>
 <div class="eblock">
-Equation 237: Wholesale trade share<br>
+Equation 238: Wholesale trade share<br>
 <div class="eqn"><i>inv_share</i>(<i>"c25"</i>) = <i>shr_trd</i>(<i>"c25"</i>)*<i>shr_ttsvc</i>(<i>"trd"</i>)
    *<i>shr_short</i>(<i>"ttsvc"</i>)
    *<i>shr_fixed</i>(<i>"short"</i>)</div>
 </div>
 <div class="eblock">
-Equation 238: Retail trade share<br>
+Equation 239: Retail trade share<br>
 <div class="eqn"><i>inv_share</i>(<i>"c26"</i>) = <i>shr_trd</i>(<i>"c26"</i>)*<i>shr_ttsvc</i>(<i>"trd"</i>)
    *<i>shr_short</i>(<i>"ttsvc"</i>)
    *<i>shr_fixed</i>(<i>"short"</i>)</div>
 </div>
 <div class="eblock">
-Equation 239: Motor vehicles share<br>
+Equation 240: Motor vehicles share<br>
 <div class="eqn"><i>inv_share</i>(<i>"c17"</i>) = <i>shr_trnsp</i>(<i>"c17"</i>)*<i>shr_eit</i>(<i>"trnsp"</i>)
    *<i>shr_short</i>(<i>"eit"</i>)
    *<i>shr_fixed</i>(<i>"short"</i>)</div>
 </div>
 <div class="eblock">
-Equation 240: Other transport equipment share<br>
+Equation 241: Other transport equipment share<br>
 <div class="eqn"><i>inv_share</i>(<i>"c18"</i>) = <i>shr_trnsp</i>(<i>"c18"</i>)*<i>shr_eit</i>(<i>"trnsp"</i>)
    *<i>shr_short</i>(<i>"eit"</i>)
    *<i>shr_fixed</i>(<i>"short"</i>)</div>
 </div>
 <div class="eblock">
-Equation 241: IT equipment share<br>
+Equation 242: IT equipment share<br>
 <div class="eqn"><i>inv_share</i>(<i>"c15"</i>) = <i>shr_it</i>(<i>"c15"</i>)*<i>shr_eit</i>(<i>"it"</i>)
    *<i>shr_short</i>(<i>"eit"</i>)
    *<i>shr_fixed</i>(<i>"short"</i>)</div>
 </div>
 <div class="eblock">
-Equation 242: Publishing, broadcasting and telecom share<br>
+Equation 243: Publishing, broadcasting and telecom share<br>
 <div class="eqn"><i>inv_share</i>(<i>"c28"</i>) = <i>shr_it</i>(<i>"c28"</i>)*<i>shr_eit</i>(<i>"it"</i>)
    *<i>shr_short</i>(<i>"eit"</i>)
    *<i>shr_fixed</i>(<i>"short"</i>)</div>
 </div>
 <div class="eblock">
-Equation 243: Software and services share<br>
+Equation 244: Software and services share<br>
 <div class="eqn"><i>inv_share</i>(<i>"c29"</i>) = <i>shr_it</i>(<i>"c29"</i>)*<i>shr_eit</i>(<i>"it"</i>)
    *<i>shr_short</i>(<i>"eit"</i>)
    *<i>shr_fixed</i>(<i>"short"</i>)</div>
 </div>
 <div class="eblock">
-Equation 244: Fabricated metals share<br>
+Equation 245: Fabricated metals share<br>
 <div class="eqn"><i>inv_share</i>(<i>"c13"</i>) = <i>shr_mrawm</i>(<i>"c13"</i>)*<i>shr_frawm</i>(<i>"mrawm"</i>)
    *<i>shr_mach</i>(<i>"frawm"</i>)
    *<i>shr_eit</i>(<i>"mach"</i>)
@@ -2378,100 +2400,175 @@ Equation 244: Fabricated metals share<br>
    *<i>shr_fixed</i>(<i>"short"</i>)</div>
 </div>
 <div class="eblock">
-Equation 245: Business services share<br>
+Equation 246: Business services share<br>
 <div class="eqn"><i>inv_share</i>(<i>"c32"</i>) = <i>shr_serv</i>(<i>"c32"</i>)*<i>shr_ttsvc</i>(<i>"serv"</i>)
    *<i>shr_short</i>(<i>"ttsvc"</i>)
    *<i>shr_fixed</i>(<i>"short"</i>)</div>
 </div>
 <div class="eblock">
-Equation 246: Machinery share<br>
+Equation 247: Machinery share<br>
 <div class="eqn"><i>inv_share</i>(<i>"c14"</i>) = <i>shr_mach</i>(<i>"c14"</i>)*<i>shr_eit</i>(<i>"mach"</i>)
    *<i>shr_short</i>(<i>"eit"</i>)
    *<i>shr_fixed</i>(<i>"short"</i>)</div>
 </div>
 <div class="eblock">
-Equation 247: Electrical equipment share<br>
+Equation 248: Electrical equipment share<br>
 <div class="eqn"><i>inv_share</i>(<i>"c16"</i>) = <i>shr_mach</i>(<i>"c16"</i>)*<i>shr_eit</i>(<i>"mach"</i>)
    *<i>shr_short</i>(<i>"eit"</i>)
    *<i>shr_fixed</i>(<i>"short"</i>)</div>
 </div>
 <div class="eblock">
-Equation 248: Transportation and warehousing share<br>
+Equation 249: Transportation and warehousing share<br>
 <div class="eqn"><i>inv_share</i>(<i>"c27"</i>) = <i>shr_ttsvc</i>(<i>"c27"</i>)*<i>shr_short</i>(<i>"ttsvc"</i>)
    *<i>shr_fixed</i>(<i>"short"</i>)</div>
 </div>
 <div class="eblock">
-Equation 249<br>
+Equation 250<br>
 <div class="eqn"><i>inv_share</i>(<i>"c01"</i>) = 0.0</div>
 </div>
 <div class="eblock">
-Equation 250<br>
+Equation 251<br>
 <div class="eqn"><i>inv_share</i>(<i>"c02"</i>) = 0.0</div>
 </div>
 <div class="eblock">
-Equation 251<br>
+Equation 252<br>
 <div class="eqn"><i>inv_share</i>(<i>"c03"</i>) = 0.0</div>
 </div>
 <div class="eblock">
-Equation 252<br>
+Equation 253<br>
 <div class="eqn"><i>inv_share</i>(<i>"c04"</i>) = 0.0</div>
 </div>
 <div class="eblock">
-Equation 253<br>
+Equation 254<br>
 <div class="eqn"><i>inv_share</i>(<i>"c06"</i>) = 0.0</div>
 </div>
 <div class="eblock">
-Equation 254<br>
+Equation 255<br>
 <div class="eqn"><i>inv_share</i>(<i>"c07"</i>) = 0.0</div>
 </div>
 <div class="eblock">
-Equation 255<br>
+Equation 256<br>
 <div class="eqn"><i>inv_share</i>(<i>"c08"</i>) = 0.0</div>
 </div>
 <div class="eblock">
-Equation 256<br>
+Equation 257<br>
 <div class="eqn"><i>inv_share</i>(<i>"c20"</i>) = 0.0</div>
 </div>
 <div class="eblock">
-Equation 257<br>
+Equation 258<br>
 <div class="eqn"><i>inv_share</i>(<i>"c23"</i>) = 0.0</div>
 </div>
 <div class="eblock">
-Equation 258<br>
+Equation 259<br>
 <div class="eqn"><i>inv_share</i>(<i>"c30"</i>) = 0.0</div>
 </div>
 <div class="eblock">
-Equation 259<br>
+Equation 260<br>
 <div class="eqn"><i>inv_share</i>(<i>"c33"</i>) = 0.0</div>
 </div>
 <div class="eblock">
-Equation 260<br>
+Equation 261<br>
 <div class="eqn"><i>inv_share</i>(<i>"c36"</i>) = 0.0</div>
 </div>
 <div class="eblock">
-Equation 261: Investment good expenditures<br>
+Equation 262: Investment good expenditures<br>
 For <i>c</i> in <b>com</b> (36 total):<br>
 <div class="eqn"><i>inv</i>(<i>c</i>) = <i>inv_share</i>(<i>c</i>)*<i>fixed_inv</i>
    +<i>inven_share</i>(<i>c</i>)*<i>inven_inv</i></div>
 </div>
 <div class="eblock">
-Equation 262: Investment good quantities<br>
+Equation 263: Investment good quantities<br>
 For <i>c</i> in <b>com</b> (36 total):<br>
 <div class="eqn"><i>inv_qty</i>(<i>c</i>) = <i>inv</i>(<i>c</i>)/<i>pr_inv</i>(<i>c</i>)</div>
 </div>
 <div class="eblock">
-Equation 263: Commodity purchases by governments<br>
+Equation 264: Commodity purchases by governments<br>
 For <i>c</i> in <b>com</b> (36 total):<br>
-<div class="eqn"><i>gov</i>(<i>c</i>) = (<i>gov_share</i>(<i>c</i>)*<i>gov_expend</i>)
-   /(1+<i>tax_con_gov</i>)</div>
+<div class="eqn"><i>gov</i>(<i>c</i>) = <i>gov_share</i>(<i>c</i>)*<i>gov_expend</i></div>
 </div>
 <div class="eblock">
-Equation 264: Quantities of commodity purchases by governments<br>
+Equation 265: Quantities of commodity purchases by governments<br>
 For <i>c</i> in <b>com</b> (36 total):<br>
-<div class="eqn"><i>gov_qty</i>(<i>c</i>) = <i>gov</i>(<i>c</i>)/<i>pb</i>(<i>c,"gov"</i>)</div>
+<div class="eqn"><i>gov_qty</i>(<i>c</i>) = <i>gov</i>(<i>c</i>)
+   /(<i>pb</i>(<i>c,"gov"</i>)*(1+<i>tax_con_gov</i>))</div>
 </div>
 <div class="eblock">
-Equation 265: Export shares<br>
+Equation 266: Sales and excise tax revenue<br>
+<div class="eqn"><i>rev_sales</i> = sum(<i>i</i> in <b>ind</b>, <i>tax_sales</i>(<i>i</i>)*<i>ind_out</i>(<i>i</i>))</div>
+</div>
+<div class="eblock">
+Equation 267: Unit tax revenue<br>
+<div class="eqn"><i>rev_unit</i> = sum(<i>i</i> in <b>ind</b>, <i>tax_unit</i>(<i>i</i>)*<i>ind_qty</i>(<i>i</i>))</div>
+</div>
+<div class="eblock">
+Equation 268: Revenues from tariffs on competing imports<br>
+<div class="eqn"><i>rev_tariff</i> = sum(<i>c</i> in <b>com</b>, <i>tariff</i>(<i>c</i>)*<i>pf</i>(<i>c</i>)
+   *<i>exch</i>
+   *<i>imp_qty</i>(<i>c</i>))</div>
+</div>
+<div class="eblock">
+Equation 269: Consumption tax revenue from goods, services and physical capital<br>
+<div class="eqn"><i>rev_con</i> = sum(<i>c</i> in <b>com</b>, (<i>tax_con_totc</i>*<i>con</i>(<i>c</i>))
+   /(1+<i>tax_con_totc</i>))
+   +<i>tax_con_totk</i>*<i>inv_expend</i>
+   *(<i>con</i>(<i>"kap"</i>)/(<i>kap_income</i>+<i>rev_cap_hh</i>))</div>
+</div>
+<div class="eblock">
+Equation 270: Consumption tax revenue from government spending<br>
+<div class="eqn"><i>rev_con_gov</i> = <i>tax_con_gov</i>
+   *(<i>gov_expend</i>/(1+<i>tax_con_gov</i>))</div>
+</div>
+<div class="eblock">
+Equation 271: Lump-sum consumption tax rebate<br>
+<div class="eqn"><i>rev_con_rbt</i> = <i>tax_con</i>*<i>tax_con_xmpt</i></div>
+</div>
+<div class="eblock">
+Equation 272: Externality tax revenue<br>
+<div class="eqn"><i>rev_extern</i> = sum(<i>i</i> in <b>ind</b>, <i>tax_ext_ind</i>(<i>i</i>)*<i>ind_qty</i>(<i>i</i>))
+   +sum(<i>c</i> in <b>com</b>, <i>tar_ext_com</i>(<i>c</i>)*<i>imp_qty</i>(<i>c</i>))
+   +sum(<i>c</i> in <b>com</b>, sum(<i>b</i> in <b>buy</b>, <i>tax_ext_com</i>(<i>c,b</i>)*<i>int_qty</i>(<i>c,b</i>)))</div>
+</div>
+<div class="eblock">
+Equation 273: Total tax revenue<br>
+<div class="eqn"><i>rev_total</i> = <i>rev_sales</i>+<i>rev_unit</i>+<i>rev_tariff</i>
+   +<i>rev_prop</i>
+   +<i>rev_cap</i>
+   -<i>rev_itc</i>
+   +<i>rev_cap_hh</i>
+   +<i>rev_wealth</i>
+   +<i>rev_labor</i>
+   +<i>rev_extern</i>
+   +<i>rev_con</i>
+   +<i>rev_con_gov</i>
+   -<i>rev_con_rbt</i>
+   +<i>rev_lump</i>
+   +<i>rev_nontax</i></div>
+</div>
+<div class="eblock">
+Equation 274: Federal, state and local gov surplus<br>
+<div class="eqn"><i>gov_surplus</i> = <i>rev_total</i>-<i>gov_expend</i>+<i>gov_kap_inc</i>
+   +<i>gov_from_ss</i>
+   -<i>gov_interest</i>
+   -<i>gov_int_ss</i>
+   -<i>gov_int_abr</i>
+   -<i>gov_transdom</i>
+   -<i>gov_transabr</i></div>
+</div>
+<div class="eblock">
+Equation 275: Govt debt held domestically<br>
+<div class="eqn">lead(<i>gov_debt</i>) = <i>gov_debt</i>
+   +(<i>gov_for_nvst</i>+<i>gov_debt_cg</i>+<i>gov_debt_dsc</i>
+   -<i>gov_surplus</i>)
+   *<i>nyears_lead</i></div>
+</div>
+<div class="eblock">
+Equation 276: Govt debt held abroad<br>
+<div class="eqn">lead(<i>gov_debt_f</i>) = <i>gov_debt_f</i>
+   -(<i>gov_for_nvst</i>+<i>gov_debt_fcg</i>)
+   *<i>nyears_lead</i></div>
+</div>
+<div class="eblock">
+Equation 277: Export shares<br>
 For <i>c</i> in <b>com</b> (36 total):<br>
 <div class="eqn"><i>exp_share</i>(<i>c</i>) = <i>ax_exp</i>(<i>c</i>)+<i>kalx_exp</i>(<i>c</i>)
    +<i>bx_exp</i>(<i>c</i>)
@@ -2481,191 +2578,273 @@ For <i>c</i> in <b>com</b> (36 total):<br>
    /<i>exch</i>))</div>
 </div>
 <div class="eblock">
-Equation 266: Values of commodity exports<br>
+Equation 278: Values of commodity exports<br>
 For <i>c</i> in <b>com</b> (36 total):<br>
 <div class="eqn"><i>exports</i>(<i>c</i>) = <i>pc</i>(<i>c</i>)*<i>exp_share</i>(<i>c</i>)
    *<i>com_qty</i>(<i>c</i>)</div>
 </div>
 <div class="eblock">
-Equation 267: Quantities of commodity exports<br>
+Equation 279: Quantities of commodity exports<br>
 For <i>c</i> in <b>com</b> (36 total):<br>
 <div class="eqn"><i>exp_qty</i>(<i>c</i>) = <i>exp_share</i>(<i>c</i>)*<i>com_qty</i>(<i>c</i>)</div>
 </div>
 <div class="eblock">
-Equation 268: Total exports of goods and services<br>
+Equation 280: Total exports of goods and services<br>
 <div class="eqn"><i>export_value</i> = sum(<i>c</i> in <b>com</b>, <i>exports</i>(<i>c</i>))</div>
 </div>
 <div class="eblock">
-Equation 269: Values of commodity imports<br>
+Equation 281: Values of commodity imports<br>
 For <i>c</i> in <b>com</b> (36 total):<br>
 <div class="eqn"><i>imports</i>(<i>c</i>) = (<i>pc</i>(<i>c</i>)*<i>imp_share</i>(<i>c</i>)
    *<i>com_qty</i>(<i>c</i>))
    /<i>dom_share</i>(<i>c</i>)</div>
 </div>
 <div class="eblock">
-Equation 270: Quantities of commodity imports<br>
+Equation 282: Quantities of commodity imports<br>
 For <i>c</i> in <b>com</b> (36 total):<br>
 <div class="eqn"><i>imp_qty</i>(<i>c</i>) = <i>imports</i>(<i>c</i>)/<i>pfd</i>(<i>c</i>)</div>
 </div>
 <div class="eblock">
-Equation 271: Total imports of goods and services<br>
+Equation 283: Total imports of goods and services<br>
 <div class="eqn"><i>import_value</i> = sum(<i>c</i> in <b>com</b>, <i>imports</i>(<i>c</i>))</div>
 </div>
 <div class="eblock">
-Equation 272: Trade surplus in domestic currency<br>
+Equation 284: Trade surplus in domestic currency<br>
 <div class="eqn"><i>trade_surp</i> = <i>export_value</i>-<i>import_value</i></div>
 </div>
 <div class="eblock">
-Equation 273: Trade surplus in foreign currency<br>
+Equation 285: Trade surplus in foreign currency<br>
 <div class="eqn"><i>trade_surpfc</i> = <i>trade_surp</i>/<i>exch</i></div>
 </div>
 <div class="eblock">
-Equation 274: Household time endowment after unemployment adjustment<br>
+Equation 286: Current account surplus in domestic currency<br>
+<div class="eqn"><i>us_surplus</i> = <i>trade_surp</i>+<i>row_interest</i>-<i>gov_int_abr</i>
+   -<i>gov_transabr</i></div>
+</div>
+<div class="eblock">
+Equation 287: Rest-of-world debt<br>
+<div class="eqn">lead(<i>row_debt</i>) = <i>row_debt</i>
+   +(<i>us_surplus</i>+<i>row_debt_cg</i>+<i>row_debt_dsc</i>
+   -<i>gov_for_nvst</i>)
+   *<i>nyears_lead</i></div>
+</div>
+<div class="eblock">
+Equation 288: Household time endowment after unemployment adjustment<br>
 <div class="eqn"><i>hours_adjust</i> = (1-<i>unemp_scale</i>)*<i>hours</i></div>
 </div>
 <div class="eblock">
-Equation 275: Quantity of labor demanded by industry<br>
+Equation 289: Quantity of labor demanded by industry<br>
 For <i>i</i> in <b>ind</b> (36 total):<br>
 <div class="eqn"><i>lab</i>(<i>i</i>) = (<i>ind_out</i>(<i>i</i>)*<i>io</i>(<i>"lab",i</i>))
    /<i>pb</i>(<i>"lab",i</i>)</div>
 </div>
 <div class="eblock">
-Equation 276: Total quantity of labor demanded<br>
+Equation 290: Total quantity of labor demanded<br>
 <div class="eqn"><i>lab_demand</i> = sum(<i>i</i> in <b>ind</b>, <i>lab</i>(<i>i</i>)*<i>pl_scale</i>(<i>i</i>))</div>
 </div>
 <div class="eblock">
-Equation 277: Labor income, pre-tax<br>
+Equation 291: Labor income, pre-tax<br>
 <div class="eqn"><i>lab_income</i> = sum(<i>i</i> in <b>ind</b>, <i>lab</i>(<i>i</i>)*<i>pb</i>(<i>"lab",i</i>))</div>
 </div>
 <div class="eblock">
-Equation 278: Labor income, post-tax<br>
+Equation 292: Labor income, post-tax<br>
 <div class="eqn"><i>lab_inc_net</i> = ((<i>pr_hours</i>*<i>hours_adjust</i>-<i>pr_leisure</i>*<i>leisure</i>)
    /(1-<i>tax_labor_m</i>))
    *(1-<i>tax_labor_a</i>)</div>
 </div>
 <div class="eblock">
-Equation 279: Labor tax revenue<br>
+Equation 293: Labor tax revenue<br>
 <div class="eqn"><i>rev_labor</i> = <i>tax_labor_a</i>*<i>lab_income</i></div>
 </div>
 <div class="eblock">
-Equation 280: Zero bracket labor tax<br>
+Equation 294: Zero bracket labor tax<br>
 <div class="eqn"><i>tax_labor_z</i> = <i>lab_income</i>-<i>rev_labor</i>/<i>tax_labor_m</i></div>
 </div>
 <div class="eblock">
-Equation 281: Capital accumulation<br>
+Equation 295: Capital accumulation<br>
 <div class="eqn">lead(<i>k</i>) = (
    -(((1-<i>delta</i>)^<i>nyears_lead</i>-1)/<i>delta</i>))
    *<i>inv_real</i>
    +(1-<i>delta</i>)^<i>nyears_lead</i>*<i>k</i></div>
 </div>
 <div class="eblock">
-Equation 282: Quantity of capital services demanded by industry<br>
+Equation 296: Quantity of capital services demanded by industry<br>
 For <i>i</i> in <b>ind</b> (36 total):<br>
 <div class="eqn"><i>kap</i>(<i>i</i>) = (<i>ind_out</i>(<i>i</i>)*<i>io</i>(<i>"kap",i</i>))
    /<i>pb</i>(<i>"kap",i</i>)</div>
 </div>
 <div class="eblock">
-Equation 283: Quantity of capital services demanded by households<br>
+Equation 297: Quantity of capital services demanded by households<br>
 <div class="eqn"><i>kap</i>(<i>"con"</i>) = <i>con_qty</i>(<i>"kap"</i>)</div>
 </div>
 <div class="eblock">
-Equation 284: Total quantity of capital services demanded<br>
+Equation 298: Total quantity of capital services demanded<br>
 <div class="eqn"><i>kap_demand</i> = sum(<i>N2</i> in <b>nind_c</b>, <i>kap</i>(<i>N2</i>)*<i>pk_scale</i>(<i>N2</i>))</div>
 </div>
 <div class="eblock">
-Equation 285: Tax revenue from household capital<br>
+Equation 299: Tax revenue from household capital<br>
 <div class="eqn"><i>rev_cap_hh</i> = (<i>tax_cap_hh</i>*<i>pb</i>(<i>"kap","con"</i>)
    *<i>kap</i>(<i>"con"</i>))
    /(1+<i>tax_cap_hh</i>)</div>
 </div>
 <div class="eblock">
-Equation 286: Capital income, pre-tax net of household capital taxes<br>
+Equation 300: Capital income, pre-tax net of household capital taxes<br>
 <div class="eqn"><i>kap_income</i> = sum(<i>i</i> in <b>ind</b>, <i>kap</i>(<i>i</i>)*<i>pb</i>(<i>"kap",i</i>))
    +<i>con</i>(<i>"kap"</i>)
    -<i>rev_cap_hh</i></div>
 </div>
 <div class="eblock">
-Equation 287: Value of the physical capital stock<br>
+Equation 301: Value of the physical capital stock<br>
 <div class="eqn"><i>k_value</i> = <i>pk</i>*<i>k</i></div>
 </div>
 <div class="eblock">
-Equation 288: Depreciation<br>
+Equation 302: Depreciation<br>
 <div class="eqn"><i>deprec</i> = <i>delta</i>*<i>k_value</i></div>
 </div>
 <div class="eblock">
-Equation 289: Property tax revenue<br>
+Equation 303: Property tax revenue<br>
 <div class="eqn"><i>rev_prop</i> = <i>tax_prop</i>*<i>k_value</i></div>
 </div>
 <div class="eblock">
-Equation 290: Taxable capital income<br>
+Equation 304: Taxable capital income<br>
 <div class="eqn"><i>kap_taxable</i> = <i>kap_income</i>-<i>rev_prop</i></div>
 </div>
 <div class="eblock">
-Equation 291: Value of dividends<br>
+Equation 305: Value of dividends<br>
 <div class="eqn"><i>dividend</i> = (1-<i>tax_cap</i>)*<i>kap_taxable</i></div>
 </div>
 <div class="eblock">
-Equation 292: Dividend rate<br>
+Equation 306: Dividend rate<br>
 <div class="eqn"><i>div_rate</i> = <i>dividend</i>/<i>k_value</i></div>
 </div>
 <div class="eblock">
-Equation 293: Government enterprises capital income<br>
+Equation 307: Government enterprises capital income<br>
 <div class="eqn"><i>gov_kap_inc</i> = (1-<i>tax_cap</i>)*<i>kap</i>(<i>"i36"</i>)
    *<i>pb</i>(<i>"kap","i36"</i>)</div>
 </div>
 <div class="eblock">
-Equation 294: Lagged number of intervening years<br>
-<div class="eqn"><i>nyears_lag</i> = <i>year</i>-lag(<i>year</i>)</div>
-</div>
-<div class="eblock">
-Equation 295: Capital gain<br>
+Equation 308: Capital gain<br>
 <div class="eqn"><i>capgain</i> = (((<i>pk</i>-lag(<i>pk</i>))/<i>nyears_lag</i>)
    /<i>pk</i>
    -<i>delta</i>)
    *<i>k_value</i></div>
 </div>
 <div class="eblock">
-Equation 296: Capital gain rate<br>
+Equation 309: Capital gain rate<br>
 <div class="eqn"><i>cg_rate</i> = <i>capgain</i>/<i>k_value</i></div>
 </div>
 <div class="eblock">
-Equation 297: Interest rate from intertemporal arbitrage<br>
+Equation 310: Interest rate from intertemporal arbitrage<br>
 <div class="eqn"><i>r</i> = <i>div_rate</i>+<i>cg_rate</i></div>
 </div>
 <div class="eblock">
-Equation 298: Value of interest received<br>
+Equation 311: Value of interest received<br>
 <div class="eqn"><i>interest</i> = <i>r</i>*(<i>gov_debt</i>+<i>row_debt</i>)</div>
 </div>
 <div class="eblock">
-Equation 299: Government interest adjustment<br>
+Equation 312: Government interest adjustment<br>
 <div class="eqn"><i>gov_int_adj</i> = <i>gov_interest</i>+<i>gov_int_ss</i>-<i>gov_from_ss</i>
    -(<i>r</i>*<i>gov_debt</i>)/(1-<i>tax_cap</i>)</div>
 </div>
 <div class="eblock">
-Equation 300: ROW interest adjustment<br>
+Equation 313: ROW interest adjustment<br>
 <div class="eqn"><i>row_int_adj</i> = <i>row_interest</i>
    -(<i>r</i>*<i>row_debt</i>)/(1-<i>tax_cap</i>)</div>
 </div>
 <div class="eblock">
-Equation 301: Value of financial wealth<br>
+Equation 314: Value of financial wealth<br>
 <div class="eqn"><i>finwealth</i> = <i>k_value</i>+<i>gov_debt</i>+<i>row_debt</i></div>
 </div>
 <div class="eblock">
-Equation 302: Wealth tax revenue<br>
+Equation 315: Wealth tax revenue<br>
 <div class="eqn"><i>rev_wealth</i> = <i>tax_wealth</i>*<i>finwealth</i></div>
 </div>
 <div class="eblock">
-Equation 303: Capital tax revenue<br>
+Equation 316: Capital tax revenue<br>
 <div class="eqn"><i>rev_cap</i> = <i>tax_cap</i>
    *(<i>kap_taxable</i>+<i>interest</i>/(1-<i>tax_cap</i>)
    +<i>gov_int_adj</i>
    +<i>row_int_adj</i>)</div>
 </div>
 <div class="eblock">
-Equation 304: Net capital income to households<br>
+Equation 317: Net capital income to households<br>
 <div class="eqn"><i>kap_inc_net</i> = <i>dividend</i>-<i>gov_kap_inc</i>+<i>interest</i>
    -<i>rev_wealth</i>
    +(1-<i>tax_cap</i>)*(<i>gov_int_adj</i>+<i>row_int_adj</i>)</div>
+</div>
+<div class="eblock">
+Equation 318: Geometric price deflator for con_expend<br>
+<div class="eqn"><i>pd_con</i> = exp(
+   sum(<i>N1</i> in <b>ncom_k</b>, (<i>con</i>(<i>N1</i>)*loge(<i>pr_con</i>(<i>N1</i>)))
+   /<i>con_expend</i>))
+   /<i>pd_con_scale</i></div>
+</div>
+<div class="eblock">
+Equation 319: Geometric price deflator for inv_total<br>
+<div class="eqn"><i>pd_inv</i> = exp(
+   sum(<i>c</i> in <b>com</b>, (<i>inv</i>(<i>c</i>)*loge(<i>pr_inv</i>(<i>c</i>)))
+   /<i>inv_total</i>))
+   /<i>pd_inv_scale</i></div>
+</div>
+<div class="eblock">
+Equation 320: Geometric price deflator for gov_expend in gov_real<br>
+<div class="eqn"><i>pgg</i> = exp(
+   sum(<i>c</i> in <b>com</b>, <i>gov_share</i>(<i>c</i>)
+   *loge(
+   <i>pb</i>(<i>c,"gov"</i>)*(1+<i>tax_con_gov</i>))))</div>
+</div>
+<div class="eblock">
+Equation 321: Geometric price deflator for gov_expend in pd_gdp<br>
+<div class="eqn"><i>pd_gov</i> = <i>pgg</i>/<i>pd_gov_scale</i></div>
+</div>
+<div class="eblock">
+Equation 322: Geometric price deflator for export_value<br>
+<div class="eqn"><i>pd_exp</i> = exp(
+   sum(<i>c</i> in <b>com</b>, (<i>exports</i>(<i>c</i>)*loge(<i>pc</i>(<i>c</i>)))
+   /<i>export_value</i>))
+   /<i>pd_exp_scale</i></div>
+</div>
+<div class="eblock">
+Equation 323: Geometric price deflator for import_value<br>
+<div class="eqn"><i>pd_imp</i> = exp(
+   sum(<i>c</i> in <b>com</b>, (<i>pf</i>(<i>c</i>)*<i>exch</i>*<i>imp_qty</i>(<i>c</i>)
+   *loge(<i>pf</i>(<i>c</i>)*<i>exch</i>))
+   /<i>import_value</i>))
+   /<i>pd_imp_scale</i></div>
+</div>
+<div class="eblock">
+Equation 324: Nominal GDP<br>
+<div class="eqn"><i>nom_gdp</i> = <i>con_expend</i>+<i>inv_total</i>+<i>gov_expend</i>
+   +<i>export_value</i>
+   -<i>import_value</i></div>
+</div>
+<div class="eblock">
+Equation 325: Geometric price deflator for nom_gdp<br>
+<div class="eqn"><i>pd_gdp</i> = exp(
+   (<i>con_expend</i>*loge(<i>pd_con</i>)
+   +<i>inv_total</i>*loge(<i>pd_inv</i>)
+   +<i>gov_expend</i>*loge(<i>pd_gov</i>)
+   +<i>export_value</i>*loge(<i>pd_exp</i>)
+   -<i>import_value</i>*loge(<i>pd_imp</i>))
+   /<i>nom_gdp</i>)
+   /<i>pd_gdp_scale</i></div>
+</div>
+<div class="eblock">
+Equation 326: Nominal GDP<br>
+<div class="eqn"><i>nom_gnp</i> = <i>nom_gdp</i>+<i>row_interest</i>-<i>gov_int_abr</i>
+   +<i>rev_tariff</i></div>
+</div>
+<div class="eblock">
+Equation 327: After-tax household income<br>
+<div class="eqn"><i>income</i> = <i>lab_inc_net</i>+<i>kap_inc_net</i>+<i>gov_transdom</i>
+   +<i>rev_con_rbt</i>
+   -<i>rev_lump</i></div>
+</div>
+<div class="eblock">
+Equation 328: Household saving<br>
+<div class="eqn"><i>save</i> = <i>income</i>-<i>con_expend</i>-<i>transfer_abr</i>
+   -<i>rev_nontax</i>
+   +<i>rev_itc</i></div>
 </div>
 </div>
 </body>
