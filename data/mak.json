@@ -101,7 +101,7 @@
         }, 
         {
             "header": "M003", 
-            "name": "make_colshr", 
+            "name": "make_col", 
             "sets": [
                 "nind", 
                 "ncom"

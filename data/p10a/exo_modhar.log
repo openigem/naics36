@@ -1,0 +1,2088 @@
+  
+ <MODHAR   Version 6.0 - F90  February 1999>
+   This program accesses some of the routines in the GEMPACK software release
+ <GEMPACK Release 11.4.004   October 2016>
+  
+ Licence file: H:\binvol\gempack12\licen.gem
+  
+     -------------------------------------------------------
+    !            GEMPACK Software System Licence            !
+    !  Single-user Source-code Licence for GEMPACK on a PC  !
+    !                 Licence No.  GFS-1575                 !
+    !          Licence for Release 12.0 of GEMPACK          !
+    !                     Pete Wilcoxen                     !
+    !               Named User-Pete Wilcoxen                !
+     -------------------------------------------------------
+  
+  
+     << COPYRIGHT 1986-2001: CoPS/Impact and KPSOFT >>
+  
+  Current directory is: H:\wk\igem\open\pub\data\p10a
+  
+  
+  Full path name of running EXE is: H:\binvol\gempack12\modhar.exe
+  Fortran compiler = GF32  4.8.1 (rev3, built by mingw-builds project):
+  OPENMP number of threads: 4
+  Operating system is Windows 8
+  
+  
+  ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+  
+  
+                    MODHAR OPTIONS
+               ( --> indicates those in effect )
+  
+       BAT Run in batch              STI Take inputs from a Stored-input file
+       BPR Brief prompts             SIF Store inputs on a file
+       LOG Output to log file        ASI Add to incomplete Stored-input file
+                                     CSO Control screen output
+  
+  Select an option   :  <opt>      Deselect an option      : -<opt>
+  Help for an option : ?<opt>      Help on all options     : ??
+  Redisplay options  : /           Finish option selection : Carriage return
+  
+ Your selection >
+  
+  
+ bat
+ Running in batch
+ Your selection >
+  
+  
+  
+  
+  This program can be used it two ways.
+  
+  1. Usually it is used to modify some or all of the data on
+      on an existing Header Array file.
+       In this case, the existing file is not actually
+        changed, but a copy of it is made and modified.
+       Existing data can be modified and new data (read from
+        existing files and/or the terminal) can be added.
+  
+  2. It can be used to create a new Header Array file from
+      scratch. In this case the new data can be read from
+      existing files and/or the terminal.
+  
+  This program is easy to run interactively. It is partly
+   command-driven and partly menu-driven. Help is available.
+  
+  Is this based on an old HEADER ARRAY file?   [Y/n]
+  
+  
+ n
+  
+  NEW HEADER ARRAY FILE TO BE CREATED
+  -----------------------------------
+  
+  
+ exo.har
+ (Opened new header file 'exo.har'.)
+  
+  Available tasks are:
+  
+  Command               Meaning
+     ah            ADD one or more arrays from HEADER array file
+     ds            DEFINE SETS for adding arrays from text file
+     at            ADD one or more arrays from TEXT file
+     da            DELETE one or more ARRAYS from old file
+     ra            RESTORE one or more deleted ARRAYS on old file
+     mw            MODIFY data from the old file and WRITE it on the new file
+     aw            ADD new data and WRITE it on the new file
+     ex            EXIT, saving the new header array file
+     q             QUIT, without saving the new header array file
+     lh            LIST the HEADERS, their status and size of associated arrays
+     oh            show ONE HEADER, its status and size of associated array
+     ch            CHANGE a HEADER name
+     eln           EXAMINE a LONG NAME
+     cln           CHANGE the LONG NAME associated with a header
+     ?             HELP
+  
+  
+  > Next Command:  (or '?' for help)
+  
+  
+ at
+  
+  TEXT FILE CONTAINING THE NEW DATA TO BE ADDED
+  ---------------------------------------------
+  
+  Input the full name (INCLUDING suffix) of this file.
+  
+  
+ exo_modhar.txt
+ (Opened, as text, existing file 'exo_modhar.txt'.)
+  
+  !  (There is no CREATION information on this file.)
+  
+  From this file, do you wish to add
+     [A]      ALL of the data arrays on the file
+  
+     [s]      Some of the arrays (Process arrays one by one)
+                        (XXX to skip, XXQ to exit)
+     [n]      NONE of the arrays.
+  
+  Please enter your choice. ([A] is the default.)
+  
+  
+ a
+  
+  Coefficient = exo_baseyear (time).
+  No sets defined for coefficients.
+  
+  (Read real matrix of size: 10.)
+  Longname 'exo_baseyear'
+  
+  Header found on the text file 'X001'.
+  
+ (Written real array, size 10, header "X001".)
+  
+  Header 'X001' transferred to the new file.
+  Longname 'exo_baseyear'
+  
+  Coefficient = exo_version (time).
+  No sets defined for coefficients.
+  
+  (Read real matrix of size: 10.)
+  Longname 'exo_version'
+  
+  Header found on the text file 'X002'.
+  
+ (Written real array, size 10, header "X002".)
+  
+  Header 'X002' transferred to the new file.
+  Longname 'exo_version'
+  
+  Coefficient = pr_hours (time).
+  No sets defined for coefficients.
+  
+  (Read real matrix of size: 10.)
+  Longname 'pr_hours'
+  
+  Header found on the text file 'X003'.
+  
+ (Written real array, size 10, header "X003".)
+  
+  Header 'X003' transferred to the new file.
+  Longname 'pr_hours'
+  
+  Coefficient = exo_pf (ncom,time).
+  No sets defined for coefficients.
+  
+  (Read real matrix of size: 36x10.)
+  Longname 'exo_pf'
+  
+  Header found on the text file 'X004'.
+  
+ (Written real array, size 36x10, header "X004".)
+  
+  Header 'X004' transferred to the new file.
+  Longname 'exo_pf'
+  
+  Coefficient = pr_numeraire (time).
+  No sets defined for coefficients.
+  
+  (Read real matrix of size: 10.)
+  Longname 'pr_numeraire'
+  
+  Header found on the text file 'X005'.
+  
+ (Written real array, size 10, header "X005".)
+  
+  Header 'X005' transferred to the new file.
+  Longname 'pr_numeraire'
+  
+  Coefficient = pk_scale (nind_c,time).
+  No sets defined for coefficients.
+  
+  (Read real matrix of size: 37x10.)
+  Longname 'pk_scale'
+  
+  Header found on the text file 'X006'.
+  
+ (Written real array, size 37x10, header "X006".)
+  
+  Header 'X006' transferred to the new file.
+  Longname 'pk_scale'
+  
+  Coefficient = pl_scale (nind,time).
+  No sets defined for coefficients.
+  
+  (Read real matrix of size: 36x10.)
+  Longname 'pl_scale'
+  
+  Header found on the text file 'X007'.
+  
+ (Written real array, size 36x10, header "X007".)
+  
+  Header 'X007' transferred to the new file.
+  Longname 'pl_scale'
+  
+  Coefficient = pj_scale (time).
+  No sets defined for coefficients.
+  
+  (Read real matrix of size: 10.)
+  Longname 'pj_scale'
+  
+  Header found on the text file 'X008'.
+  
+ (Written real array, size 10, header "X008".)
+  
+  Header 'X008' transferred to the new file.
+  Longname 'pj_scale'
+  
+  Coefficient = inven_fract (time).
+  No sets defined for coefficients.
+  
+  (Read real matrix of size: 10.)
+  Longname 'inven_fract'
+  
+  Header found on the text file 'X009'.
+  
+ (Written real array, size 10, header "X009".)
+  
+  Header 'X009' transferred to the new file.
+  Longname 'inven_fract'
+  
+  Coefficient = gov_share (ncom,time).
+  No sets defined for coefficients.
+  
+  (Read real matrix of size: 36x10.)
+  Longname 'gov_share'
+  
+  Header found on the text file 'X010'.
+  
+ (Written real array, size 36x10, header "X010".)
+  
+  Header 'X010' transferred to the new file.
+  Longname 'gov_share'
+  
+  Coefficient = adjust_i (time).
+  No sets defined for coefficients.
+  
+  (Read real matrix of size: 10.)
+  Longname 'adjust_i'
+  
+  Header found on the text file 'X011'.
+  
+ (Written real array, size 10, header "X011".)
+  
+  Header 'X011' transferred to the new file.
+  Longname 'adjust_i'
+  
+  Coefficient = adjust_pk (time).
+  No sets defined for coefficients.
+  
+  (Read real matrix of size: 10.)
+  Longname 'adjust_pk'
+  
+  Header found on the text file 'X012'.
+  
+ (Written real array, size 10, header "X012".)
+  
+  Header 'X012' transferred to the new file.
+  Longname 'adjust_pk'
+  
+  Coefficient = adjust_k (time).
+  No sets defined for coefficients.
+  
+  (Read real matrix of size: 10.)
+  Longname 'adjust_k'
+  
+  Header found on the text file 'X013'.
+  
+ (Written real array, size 10, header "X013".)
+  
+  Header 'X013' transferred to the new file.
+  Longname 'adjust_k'
+  
+  Coefficient = inven_share (ncom,time).
+  No sets defined for coefficients.
+  
+  (Read real matrix of size: 36x10.)
+  Longname 'inven_share'
+  
+  Header found on the text file 'X014'.
+  
+ (Written real array, size 36x10, header "X014".)
+  
+  Header 'X014' transferred to the new file.
+  Longname 'inven_share'
+  
+  Coefficient = income_dist (time).
+  No sets defined for coefficients.
+  
+  (Read real matrix of size: 10.)
+  Longname 'income_dist'
+  
+  Header found on the text file 'X015'.
+  
+ (Written real array, size 10, header "X015".)
+  
+  Header 'X015' transferred to the new file.
+  Longname 'income_dist'
+  
+  Coefficient = income_share (nattr,time).
+  No sets defined for coefficients.
+  
+  (Read real matrix of size: 11x10.)
+  Longname 'income_share'
+  
+  Header found on the text file 'X016'.
+  
+ (Written real array, size 11x10, header "X016".)
+  
+  Header 'X016' transferred to the new file.
+  Longname 'income_share'
+  
+  Coefficient = kap_oil (time).
+  No sets defined for coefficients.
+  
+  (Read real matrix of size: 10.)
+  Longname 'kap_oil'
+  
+  Header found on the text file 'X017'.
+  
+ (Written real array, size 10, header "X017".)
+  
+  Header 'X017' transferred to the new file.
+  Longname 'kap_oil'
+  
+  Coefficient = kap_gas (time).
+  No sets defined for coefficients.
+  
+  (Read real matrix of size: 10.)
+  Longname 'kap_gas'
+  
+  Header found on the text file 'X018'.
+  
+ (Written real array, size 10, header "X018".)
+  
+  Header 'X018' transferred to the new file.
+  Longname 'kap_gas'
+  
+  Coefficient = us_surplus (time).
+  No sets defined for coefficients.
+  
+  (Read real matrix of size: 10.)
+  Longname 'us_surplus'
+  
+  Header found on the text file 'X019'.
+  
+ (Written real array, size 10, header "X019".)
+  
+  Header 'X019' transferred to the new file.
+  Longname 'us_surplus'
+  
+  Coefficient = raw_us_surp (time).
+  No sets defined for coefficients.
+  
+  (Read real matrix of size: 10.)
+  Longname 'raw_us_surp'
+  
+  Header found on the text file 'X020'.
+  
+ (Written real array, size 10, header "X020".)
+  
+  Header 'X020' transferred to the new file.
+  Longname 'raw_us_surp'
+  
+  Coefficient = prd_ext (nind,nxtr,time).
+  No sets defined for coefficients.
+  
+  (Read real matrix of size: 36x20x10.)
+  Longname 'prd_ext'
+  
+  Header found on the text file 'X021'.
+  
+ (Written real array, size 36x20x10, header "X021".)
+  
+  Header 'X021' transferred to the new file.
+  Longname 'prd_ext'
+  
+  Coefficient = imp_ext (ncom,nxtr,time).
+  No sets defined for coefficients.
+  
+  (Read real matrix of size: 36x20x10.)
+  Longname 'imp_ext'
+  
+  Header found on the text file 'X022'.
+  
+ (Written real array, size 36x20x10, header "X022".)
+  
+  Header 'X022' transferred to the new file.
+  Longname 'imp_ext'
+  
+  Coefficient = dv_hh (tfac_h,time).
+  No sets defined for coefficients.
+  
+  (Read real matrix of size: 4x10.)
+  Longname 'dv_hh'
+  
+  Header found on the text file 'X023'.
+  
+ (Written real array, size 4x10, header "X023".)
+  
+  Header 'X023' transferred to the new file.
+  Longname 'dv_hh'
+  
+  Coefficient = risk (time).
+  No sets defined for coefficients.
+  
+  (Read real matrix of size: 10.)
+  Longname 'risk'
+  
+  Header found on the text file 'X024'.
+  
+ (Written real array, size 10, header "X024".)
+  
+  Header 'X024' transferred to the new file.
+  Longname 'risk'
+  
+  Coefficient = unemp_time (time).
+  No sets defined for coefficients.
+  
+  (Read real matrix of size: 10.)
+  Longname 'unemp_time'
+  
+  Header found on the text file 'X025'.
+  
+ (Written real array, size 10, header "X025".)
+  
+  Header 'X025' transferred to the new file.
+  Longname 'unemp_time'
+  
+  Coefficient = unemp_scale (time).
+  No sets defined for coefficients.
+  
+  (Read real matrix of size: 10.)
+  Longname 'unemp_scale'
+  
+  Header found on the text file 'X026'.
+  
+ (Written real array, size 10, header "X026".)
+  
+  Header 'X026' transferred to the new file.
+  Longname 'unemp_scale'
+  
+  Coefficient = xr_interest (time).
+  No sets defined for coefficients.
+  
+  (Read real matrix of size: 10.)
+  Longname 'xr_interest'
+  
+  Header found on the text file 'X027'.
+  
+ (Written real array, size 10, header "X027".)
+  
+  Header 'X027' transferred to the new file.
+  Longname 'xr_interest'
+  
+  Coefficient = xr_int_low (time).
+  No sets defined for coefficients.
+  
+  (Read real matrix of size: 10.)
+  Longname 'xr_int_low'
+  
+  Header found on the text file 'X028'.
+  
+ (Written real array, size 10, header "X028".)
+  
+  Header 'X028' transferred to the new file.
+  Longname 'xr_int_low'
+  
+  Coefficient = xr_int_high (time).
+  No sets defined for coefficients.
+  
+  (Read real matrix of size: 10.)
+  Longname 'xr_int_high'
+  
+  Header found on the text file 'X029'.
+  
+ (Written real array, size 10, header "X029".)
+  
+  Header 'X029' transferred to the new file.
+  Longname 'xr_int_high'
+  
+  Coefficient = row_debt_dsc (time).
+  No sets defined for coefficients.
+  
+  (Read real matrix of size: 10.)
+  Longname 'row_debt_dsc'
+  
+  Header found on the text file 'X030'.
+  
+ (Written real array, size 10, header "X030".)
+  
+  Header 'X030' transferred to the new file.
+  Longname 'row_debt_dsc'
+  
+  Coefficient = row_debt_cg (time).
+  No sets defined for coefficients.
+  
+  (Read real matrix of size: 10.)
+  Longname 'row_debt_cg'
+  
+  Header found on the text file 'X031'.
+  
+ (Written real array, size 10, header "X031".)
+  
+  Header 'X031' transferred to the new file.
+  Longname 'row_debt_cg'
+  
+  Coefficient = xg_interest (time).
+  No sets defined for coefficients.
+  
+  (Read real matrix of size: 10.)
+  Longname 'xg_interest'
+  
+  Header found on the text file 'X032'.
+  
+ (Written real array, size 10, header "X032".)
+  
+  Header 'X032' transferred to the new file.
+  Longname 'xg_interest'
+  
+  Coefficient = xgintabroad (time).
+  No sets defined for coefficients.
+  
+  (Read real matrix of size: 10.)
+  Longname 'xgintabroad'
+  
+  Header found on the text file 'X033'.
+  
+ (Written real array, size 10, header "X033".)
+  
+  Header 'X033' transferred to the new file.
+  Longname 'xgintabroad'
+  
+  Coefficient = xg_int_ss (time).
+  No sets defined for coefficients.
+  
+  (Read real matrix of size: 10.)
+  Longname 'xg_int_ss'
+  
+  Header found on the text file 'X034'.
+  
+ (Written real array, size 10, header "X034".)
+  
+  Header 'X034' transferred to the new file.
+  Longname 'xg_int_ss'
+  
+  Coefficient = gov_surplus (time).
+  No sets defined for coefficients.
+  
+  (Read real matrix of size: 10.)
+  Longname 'gov_surplus'
+  
+  Header found on the text file 'X035'.
+  
+ (Written real array, size 10, header "X035".)
+  
+  Header 'X035' transferred to the new file.
+  Longname 'gov_surplus'
+  
+  Coefficient = raw_gov_surp (time).
+  No sets defined for coefficients.
+  
+  (Read real matrix of size: 10.)
+  Longname 'raw_gov_surp'
+  
+  Header found on the text file 'X036'.
+  
+ (Written real array, size 10, header "X036".)
+  
+  Header 'X036' transferred to the new file.
+  Longname 'raw_gov_surp'
+  
+  Coefficient = gov_for_nvst (time).
+  No sets defined for coefficients.
+  
+  (Read real matrix of size: 10.)
+  Longname 'gov_for_nvst'
+  
+  Header found on the text file 'X037'.
+  
+ (Written real array, size 10, header "X037".)
+  
+  Header 'X037' transferred to the new file.
+  Longname 'gov_for_nvst'
+  
+  Coefficient = gov_debt_dsc (time).
+  No sets defined for coefficients.
+  
+  (Read real matrix of size: 10.)
+  Longname 'gov_debt_dsc'
+  
+  Header found on the text file 'X038'.
+  
+ (Written real array, size 10, header "X038".)
+  
+  Header 'X038' transferred to the new file.
+  Longname 'gov_debt_dsc'
+  
+  Coefficient = gov_debt_cg (time).
+  No sets defined for coefficients.
+  
+  (Read real matrix of size: 10.)
+  Longname 'gov_debt_cg'
+  
+  Header found on the text file 'X039'.
+  
+ (Written real array, size 10, header "X039".)
+  
+  Header 'X039' transferred to the new file.
+  Longname 'gov_debt_cg'
+  
+  Coefficient = gov_debt_fcg (time).
+  No sets defined for coefficients.
+  
+  (Read real matrix of size: 10.)
+  Longname 'gov_debt_fcg'
+  
+  Header found on the text file 'X040'.
+  
+ (Written real array, size 10, header "X040".)
+  
+  Header 'X040' transferred to the new file.
+  Longname 'gov_debt_fcg'
+  
+  Coefficient = year (time).
+  No sets defined for coefficients.
+  
+  (Read real matrix of size: 10.)
+  Longname 'year'
+  
+  Header found on the text file 'X041'.
+  
+ (Written real array, size 10, header "X041".)
+  
+  Header 'X041' transferred to the new file.
+  Longname 'year'
+  
+  Coefficient = hours (time).
+  No sets defined for coefficients.
+  
+  (Read real matrix of size: 10.)
+  Longname 'hours'
+  
+  Header found on the text file 'X042'.
+  
+ (Written real array, size 10, header "X042".)
+  
+  Header 'X042' transferred to the new file.
+  Longname 'hours'
+  
+  Coefficient = raw_hours (time).
+  No sets defined for coefficients.
+  
+  (Read real matrix of size: 10.)
+  Longname 'raw_hours'
+  
+  Header found on the text file 'X043'.
+  
+ (Written real array, size 10, header "X043".)
+  
+  Header 'X043' transferred to the new file.
+  Longname 'raw_hours'
+  
+  Coefficient = hh_equiv (time).
+  No sets defined for coefficients.
+  
+  (Read real matrix of size: 10.)
+  Longname 'hh_equiv'
+  
+  Header found on the text file 'X044'.
+  
+ (Written real array, size 10, header "X044".)
+  
+  Header 'X044' transferred to the new file.
+  Longname 'hh_equiv'
+  
+  Coefficient = exo_k (time).
+  No sets defined for coefficients.
+  
+  (Read real matrix of size: 10.)
+  Longname 'exo_k'
+  
+  Header found on the text file 'X045'.
+  
+ (Written real array, size 10, header "X045".)
+  
+  Header 'X045' transferred to the new file.
+  Longname 'exo_k'
+  
+  Coefficient = xg_debt (time).
+  No sets defined for coefficients.
+  
+  (Read real matrix of size: 10.)
+  Longname 'xg_debt'
+  
+  Header found on the text file 'X046'.
+  
+ (Written real array, size 10, header "X046".)
+  
+  Header 'X046' transferred to the new file.
+  Longname 'xg_debt'
+  
+  Coefficient = xg_debt_f (time).
+  No sets defined for coefficients.
+  
+  (Read real matrix of size: 10.)
+  Longname 'xg_debt_f'
+  
+  Header found on the text file 'X047'.
+  
+ (Written real array, size 10, header "X047".)
+  
+  Header 'X047' transferred to the new file.
+  Longname 'xg_debt_f'
+  
+  Coefficient = xr_debt (time).
+  No sets defined for coefficients.
+  
+  (Read real matrix of size: 10.)
+  Longname 'xr_debt'
+  
+  Header found on the text file 'X048'.
+  
+ (Written real array, size 10, header "X048".)
+  
+  Header 'X048' transferred to the new file.
+  Longname 'xr_debt'
+  
+  Coefficient = exo_full_con (time).
+  No sets defined for coefficients.
+  
+  (Read real matrix of size: 10.)
+  Longname 'exo_full_con'
+  
+  Header found on the text file 'X049'.
+  
+ (Written real array, size 10, header "X049".)
+  
+  Header 'X049' transferred to the new file.
+  Longname 'exo_full_con'
+  
+  Coefficient = exotechlevel (time).
+  No sets defined for coefficients.
+  
+  (Read real matrix of size: 10.)
+  Longname 'exotechlevel'
+  
+  Header found on the text file 'X050'.
+  
+ (Written real array, size 10, header "X050".)
+  
+  Header 'X050' transferred to the new file.
+  Longname 'exotechlevel'
+  
+  Coefficient = pk_lag (time).
+  No sets defined for coefficients.
+  
+  (Read real matrix of size: 10.)
+  Longname 'pk_lag'
+  
+  Header found on the text file 'X051'.
+  
+ (Written real array, size 10, header "X051".)
+  
+  Header 'X051' transferred to the new file.
+  Longname 'pk_lag'
+  
+  Coefficient = hh_equiv_lag (time).
+  No sets defined for coefficients.
+  
+  (Read real matrix of size: 10.)
+  Longname 'hh_equiv_lag'
+  
+  Header found on the text file 'X052'.
+  
+ (Written real array, size 10, header "X052".)
+  
+  Header 'X052' transferred to the new file.
+  Longname 'hh_equiv_lag'
+  
+  Coefficient = exo_tax_laba (time).
+  No sets defined for coefficients.
+  
+  (Read real matrix of size: 10.)
+  Longname 'exo_tax_laba'
+  
+  Header found on the text file 'X053'.
+  
+ (Written real array, size 10, header "X053".)
+  
+  Header 'X053' transferred to the new file.
+  Longname 'exo_tax_laba'
+  
+  Coefficient = exo_tax_labm (time).
+  No sets defined for coefficients.
+  
+  (Read real matrix of size: 10.)
+  Longname 'exo_tax_labm'
+  
+  Header found on the text file 'X054'.
+  
+ (Written real array, size 10, header "X054".)
+  
+  Header 'X054' transferred to the new file.
+  Longname 'exo_tax_labm'
+  
+  Coefficient = tax_prop (time).
+  No sets defined for coefficients.
+  
+  (Read real matrix of size: 10.)
+  Longname 'tax_prop'
+  
+  Header found on the text file 'X055'.
+  
+ (Written real array, size 10, header "X055".)
+  
+  Header 'X055' transferred to the new file.
+  Longname 'tax_prop'
+  
+  Coefficient = tax_sales (nind,time).
+  No sets defined for coefficients.
+  
+  (Read real matrix of size: 36x10.)
+  Longname 'tax_sales'
+  
+  Header found on the text file 'X056'.
+  
+ (Written real array, size 36x10, header "X056".)
+  
+  Header 'X056' transferred to the new file.
+  Longname 'tax_sales'
+  
+  Coefficient = tax_wealth (time).
+  No sets defined for coefficients.
+  
+  (Read real matrix of size: 10.)
+  Longname 'tax_wealth'
+  
+  Header found on the text file 'X057'.
+  
+ (Written real array, size 10, header "X057".)
+  
+  Header 'X057' transferred to the new file.
+  Longname 'tax_wealth'
+  
+  Coefficient = exo_tax_cap (time).
+  No sets defined for coefficients.
+  
+  (Read real matrix of size: 10.)
+  Longname 'exo_tax_cap'
+  
+  Header found on the text file 'X058'.
+  
+ (Written real array, size 10, header "X058".)
+  
+  Header 'X058' transferred to the new file.
+  Longname 'exo_tax_cap'
+  
+  Coefficient = tariff (ncom,time).
+  No sets defined for coefficients.
+  
+  (Read real matrix of size: 36x10.)
+  Longname 'tariff'
+  
+  Header found on the text file 'X059'.
+  
+ (Written real array, size 36x10, header "X059".)
+  
+  Header 'X059' transferred to the new file.
+  Longname 'tariff'
+  
+  Coefficient = row_tariff (ncom,time).
+  No sets defined for coefficients.
+  
+  (Read real matrix of size: 36x10.)
+  Longname 'row_tariff'
+  
+  Header found on the text file 'X060'.
+  
+ (Written real array, size 36x10, header "X060".)
+  
+  Header 'X060' transferred to the new file.
+  Longname 'row_tariff'
+  
+  Coefficient = rev_lump (time).
+  No sets defined for coefficients.
+  
+  (Read real matrix of size: 10.)
+  Longname 'rev_lump'
+  
+  Header found on the text file 'X061'.
+  
+ (Written real array, size 10, header "X061".)
+  
+  Header 'X061' transferred to the new file.
+  Longname 'rev_lump'
+  
+  Coefficient = tax_unit (nind,time).
+  No sets defined for coefficients.
+  
+  (Read real matrix of size: 36x10.)
+  Longname 'tax_unit'
+  
+  Header found on the text file 'X062'.
+  
+ (Written real array, size 36x10, header "X062".)
+  
+  Header 'X062' transferred to the new file.
+  Longname 'tax_unit'
+  
+  Coefficient = tax_extern_v (nxtr,time).
+  No sets defined for coefficients.
+  
+  (Read real matrix of size: 20x10.)
+  Longname 'tax_extern_v'
+  
+  Header found on the text file 'X063'.
+  
+ (Written real array, size 20x10, header "X063".)
+  
+  Header 'X063' transferred to the new file.
+  Longname 'tax_extern_v'
+  
+  Coefficient = tax_ext_u (nxtr,time).
+  No sets defined for coefficients.
+  
+  (Read real matrix of size: 20x10.)
+  Longname 'tax_ext_u'
+  
+  Header found on the text file 'X064'.
+  
+ (Written real array, size 20x10, header "X064".)
+  
+  Header 'X064' transferred to the new file.
+  Longname 'tax_ext_u'
+  
+  Coefficient = tax_itc (time).
+  No sets defined for coefficients.
+  
+  (Read real matrix of size: 10.)
+  Longname 'tax_itc'
+  
+  Header found on the text file 'X065'.
+  
+ (Written real array, size 10, header "X065".)
+  
+  Header 'X065' transferred to the new file.
+  Longname 'tax_itc'
+  
+  Coefficient = tax_cap_hh (time).
+  No sets defined for coefficients.
+  
+  (Read real matrix of size: 10.)
+  Longname 'tax_cap_hh'
+  
+  Header found on the text file 'X066'.
+  
+ (Written real array, size 10, header "X066".)
+  
+  Header 'X066' transferred to the new file.
+  Longname 'tax_cap_hh'
+  
+  Coefficient = tax_con (time).
+  No sets defined for coefficients.
+  
+  (Read real matrix of size: 10.)
+  Longname 'tax_con'
+  
+  Header found on the text file 'X067'.
+  
+ (Written real array, size 10, header "X067".)
+  
+  Header 'X067' transferred to the new file.
+  Longname 'tax_con'
+  
+  Coefficient = tax_con_good (time).
+  No sets defined for coefficients.
+  
+  (Read real matrix of size: 10.)
+  Longname 'tax_con_good'
+  
+  Header found on the text file 'X068'.
+  
+ (Written real array, size 10, header "X068".)
+  
+  Header 'X068' transferred to the new file.
+  Longname 'tax_con_good'
+  
+  Coefficient = tax_con_kap (time).
+  No sets defined for coefficients.
+  
+  (Read real matrix of size: 10.)
+  Longname 'tax_con_kap'
+  
+  Header found on the text file 'X069'.
+  
+ (Written real array, size 10, header "X069".)
+  
+  Header 'X069' transferred to the new file.
+  Longname 'tax_con_kap'
+  
+  Coefficient = tax_con_lab (time).
+  No sets defined for coefficients.
+  
+  (Read real matrix of size: 10.)
+  Longname 'tax_con_lab'
+  
+  Header found on the text file 'X070'.
+  
+ (Written real array, size 10, header "X070".)
+  
+  Header 'X070' transferred to the new file.
+  Longname 'tax_con_lab'
+  
+  Coefficient = tax_con_gov (time).
+  No sets defined for coefficients.
+  
+  (Read real matrix of size: 10.)
+  Longname 'tax_con_gov'
+  
+  Header found on the text file 'X071'.
+  
+ (Written real array, size 10, header "X071".)
+  
+  Header 'X071' transferred to the new file.
+  Longname 'tax_con_gov'
+  
+  Coefficient = tax_con_xmpt (time).
+  No sets defined for coefficients.
+  
+  (Read real matrix of size: 10.)
+  Longname 'tax_con_xmpt'
+  
+  Header found on the text file 'X072'.
+  
+ (Written real array, size 10, header "X072".)
+  
+  Header 'X072' transferred to the new file.
+  Longname 'tax_con_xmpt'
+  
+  Coefficient = tech_shock (nind,time).
+  No sets defined for coefficients.
+  
+  (Read real matrix of size: 36x10.)
+  Longname 'tech_shock'
+  
+  Header found on the text file 'X073'.
+  
+ (Written real array, size 36x10, header "X073".)
+  
+  Header 'X073' transferred to the new file.
+  Longname 'tech_shock'
+  
+  Coefficient = tech_shk_agg (time).
+  No sets defined for coefficients.
+  
+  (Read real matrix of size: 10.)
+  Longname 'tech_shk_agg'
+  
+  Header found on the text file 'X074'.
+  
+ (Written real array, size 10, header "X074".)
+  
+  Header 'X074' transferred to the new file.
+  Longname 'tech_shk_agg'
+  
+  Coefficient = tech_shk_row (time).
+  No sets defined for coefficients.
+  
+  (Read real matrix of size: 10.)
+  Longname 'tech_shk_row'
+  
+  Header found on the text file 'X075'.
+  
+ (Written real array, size 10, header "X075".)
+  
+  Header 'X075' transferred to the new file.
+  Longname 'tech_shk_row'
+  
+  Coefficient = agg_tech_chg (time).
+  No sets defined for coefficients.
+  
+  (Read real matrix of size: 10.)
+  Longname 'agg_tech_chg'
+  
+  Header found on the text file 'X076'.
+  
+ (Written real array, size 10, header "X076".)
+  
+  Header 'X076' transferred to the new file.
+  Longname 'agg_tech_chg'
+  
+  Coefficient = inv_shock (time).
+  No sets defined for coefficients.
+  
+  (Read real matrix of size: 10.)
+  Longname 'inv_shock'
+  
+  Header found on the text file 'X077'.
+  
+ (Written real array, size 10, header "X077".)
+  
+  Header 'X077' transferred to the new file.
+  Longname 'inv_shock'
+  
+  Coefficient = inv_exp_shk (time).
+  No sets defined for coefficients.
+  
+  (Read real matrix of size: 10.)
+  Longname 'inv_exp_shk'
+  
+  Header found on the text file 'X078'.
+  
+ (Written real array, size 10, header "X078".)
+  
+  Header 'X078' transferred to the new file.
+  Longname 'inv_exp_shk'
+  
+  Coefficient = con_shk_qty (ncom_k,time).
+  No sets defined for coefficients.
+  
+  (Read real matrix of size: 37x10.)
+  Longname 'con_shk_qty'
+  
+  Header found on the text file 'X079'.
+  
+ (Written real array, size 37x10, header "X079".)
+  
+  Header 'X079' transferred to the new file.
+  Longname 'con_shk_qty'
+  
+  Coefficient = tax_gain_h (time).
+  No sets defined for coefficients.
+  
+  (Read real matrix of size: 10.)
+  Longname 'tax_gain_h'
+  
+  Header found on the text file 'X080'.
+  
+ (Written real array, size 10, header "X080".)
+  
+  Header 'X080' transferred to the new file.
+  Longname 'tax_gain_h'
+  
+  Coefficient = debt_shr_h (time).
+  No sets defined for coefficients.
+  
+  (Read real matrix of size: 10.)
+  Longname 'debt_shr_h'
+  
+  Header found on the text file 'X081'.
+  
+ (Written real array, size 10, header "X081".)
+  
+  Header 'X081' transferred to the new file.
+  Longname 'debt_shr_h'
+  
+  Coefficient = inf (time).
+  No sets defined for coefficients.
+  
+  (Read real matrix of size: 10.)
+  Longname 'inf'
+  
+  Header found on the text file 'X082'.
+  
+ (Written real array, size 10, header "X082".)
+  
+  Header 'X082' transferred to the new file.
+  Longname 'inf'
+  
+  Coefficient = exo_r (time).
+  No sets defined for coefficients.
+  
+  (Read real matrix of size: 10.)
+  Longname 'exo_r'
+  
+  Header found on the text file 'X083'.
+  
+ (Written real array, size 10, header "X083".)
+  
+  Header 'X083' transferred to the new file.
+  Longname 'exo_r'
+  
+  Coefficient = theta_ephi (time).
+  No sets defined for coefficients.
+  
+  (Read real matrix of size: 10.)
+  Longname 'theta_ephi'
+  
+  Header found on the text file 'X084'.
+  
+ (Written real array, size 10, header "X084".)
+  
+  Header 'X084' transferred to the new file.
+  Longname 'theta_ephi'
+  
+  Coefficient = depallowstd (time).
+  No sets defined for coefficients.
+  
+  (Read real matrix of size: 10.)
+  Longname 'depallowstd'
+  
+  Header found on the text file 'X085'.
+  
+ (Written real array, size 10, header "X085".)
+  
+  Header 'X085' transferred to the new file.
+  Longname 'depallowstd'
+  
+  Coefficient = depallowecon (time).
+  No sets defined for coefficients.
+  
+  (Read real matrix of size: 10.)
+  Longname 'depallowecon'
+  
+  Header found on the text file 'X086'.
+  
+ (Written real array, size 10, header "X086".)
+  
+  Header 'X086' transferred to the new file.
+  Longname 'depallowecon'
+  
+  Coefficient = tax_scale (time).
+  No sets defined for coefficients.
+  
+  (Read real matrix of size: 10.)
+  Longname 'tax_scale'
+  
+  Header found on the text file 'X087'.
+  
+ (Written real array, size 10, header "X087".)
+  
+  Header 'X087' transferred to the new file.
+  Longname 'tax_scale'
+  
+  Coefficient = xg_transfer (time).
+  No sets defined for coefficients.
+  
+  (Read real matrix of size: 10.)
+  Longname 'xg_transfer'
+  
+  Header found on the text file 'X088'.
+  
+ (Written real array, size 10, header "X088".)
+  
+  Header 'X088' transferred to the new file.
+  Longname 'xg_transfer'
+  
+  Coefficient = xgtoforeign (time).
+  No sets defined for coefficients.
+  
+  (Read real matrix of size: 10.)
+  Longname 'xgtoforeign'
+  
+  Header found on the text file 'X089'.
+  
+ (Written real array, size 10, header "X089".)
+  
+  Header 'X089' transferred to the new file.
+  Longname 'xgtoforeign'
+  
+  Coefficient = exorevnontax (time).
+  No sets defined for coefficients.
+  
+  (Read real matrix of size: 10.)
+  Longname 'exorevnontax'
+  
+  Header found on the text file 'X090'.
+  
+ (Written real array, size 10, header "X090".)
+  
+  Header 'X090' transferred to the new file.
+  Longname 'exorevnontax'
+  
+  Coefficient = exotransabro (time).
+  No sets defined for coefficients.
+  
+  (Read real matrix of size: 10.)
+  Longname 'exotransabro'
+  
+  Header found on the text file 'X091'.
+  
+ (Written real array, size 10, header "X091".)
+  
+  Header 'X091' transferred to the new file.
+  Longname 'exotransabro'
+  
+  Coefficient = xg_from_ss (time).
+  No sets defined for coefficients.
+  
+  (Read real matrix of size: 10.)
+  Longname 'xg_from_ss'
+  
+  Header found on the text file 'X092'.
+  
+ (Written real array, size 10, header "X092".)
+  
+  Header 'X092' transferred to the new file.
+  Longname 'xg_from_ss'
+  
+  Coefficient = shrgovtransf (time).
+  No sets defined for coefficients.
+  
+  (Read real matrix of size: 10.)
+  Longname 'shrgovtransf'
+  
+  Header found on the text file 'X093'.
+  
+ (Written real array, size 10, header "X093".)
+  
+  Header 'X093' transferred to the new file.
+  Longname 'shrgovtransf'
+  
+  Coefficient = shrgovtofore (time).
+  No sets defined for coefficients.
+  
+  (Read real matrix of size: 10.)
+  Longname 'shrgovtofore'
+  
+  Header found on the text file 'X094'.
+  
+ (Written real array, size 10, header "X094".)
+  
+  Header 'X094' transferred to the new file.
+  Longname 'shrgovtofore'
+  
+  Coefficient = shrrevnontax (time).
+  No sets defined for coefficients.
+  
+  (Read real matrix of size: 10.)
+  Longname 'shrrevnontax'
+  
+  Header found on the text file 'X095'.
+  
+ (Written real array, size 10, header "X095".)
+  
+  Header 'X095' transferred to the new file.
+  Longname 'shrrevnontax'
+  
+  Coefficient = shrtransabro (time).
+  No sets defined for coefficients.
+  
+  (Read real matrix of size: 10.)
+  Longname 'shrtransabro'
+  
+  Header found on the text file 'X096'.
+  
+ (Written real array, size 10, header "X096".)
+  
+  Header 'X096' transferred to the new file.
+  Longname 'shrtransabro'
+  
+  Coefficient = shrgovfromss (time).
+  No sets defined for coefficients.
+  
+  (Read real matrix of size: 10.)
+  Longname 'shrgovfromss'
+  
+  Header found on the text file 'X097'.
+  
+ (Written real array, size 10, header "X097".)
+  
+  Header 'X097' transferred to the new file.
+  Longname 'shrgovfromss'
+  
+  Coefficient = hni_gdp (time).
+  No sets defined for coefficients.
+  
+  (Read real matrix of size: 10.)
+  Longname 'hni_gdp'
+  
+  Header found on the text file 'X098'.
+  
+ (Written real array, size 10, header "X098".)
+  
+  Header 'X098' transferred to the new file.
+  Longname 'hni_gdp'
+  
+  Coefficient = hni_c (time).
+  No sets defined for coefficients.
+  
+  (Read real matrix of size: 10.)
+  Longname 'hni_c'
+  
+  Header found on the text file 'X099'.
+  
+ (Written real array, size 10, header "X099".)
+  
+  Header 'X099' transferred to the new file.
+  Longname 'hni_c'
+  
+  Coefficient = hni_c_dur (time).
+  No sets defined for coefficients.
+  
+  (Read real matrix of size: 10.)
+  Longname 'hni_c_dur'
+  
+  Header found on the text file 'X100'.
+  
+ (Written real array, size 10, header "X100".)
+  
+  Header 'X100' transferred to the new file.
+  Longname 'hni_c_dur'
+  
+  Coefficient = hni_i (time).
+  No sets defined for coefficients.
+  
+  (Read real matrix of size: 10.)
+  Longname 'hni_i'
+  
+  Header found on the text file 'X101'.
+  
+ (Written real array, size 10, header "X101".)
+  
+  Header 'X101' transferred to the new file.
+  Longname 'hni_i'
+  
+  Coefficient = hni_g (time).
+  No sets defined for coefficients.
+  
+  (Read real matrix of size: 10.)
+  Longname 'hni_g'
+  
+  Header found on the text file 'X102'.
+  
+ (Written real array, size 10, header "X102".)
+  
+  Header 'X102' transferred to the new file.
+  Longname 'hni_g'
+  
+  Coefficient = hni_x (time).
+  No sets defined for coefficients.
+  
+  (Read real matrix of size: 10.)
+  Longname 'hni_x'
+  
+  Header found on the text file 'X103'.
+  
+ (Written real array, size 10, header "X103".)
+  
+  Header 'X103' transferred to the new file.
+  Longname 'hni_x'
+  
+  Coefficient = hni_m (time).
+  No sets defined for coefficients.
+  
+  (Read real matrix of size: 10.)
+  Longname 'hni_m'
+  
+  Header found on the text file 'X104'.
+  
+ (Written real array, size 10, header "X104".)
+  
+  Header 'X104' transferred to the new file.
+  Longname 'hni_m'
+  
+  Coefficient = hni_real_gdp (time).
+  No sets defined for coefficients.
+  
+  (Read real matrix of size: 10.)
+  Longname 'hni_real_gdp'
+  
+  Header found on the text file 'X105'.
+  
+ (Written real array, size 10, header "X105".)
+  
+  Header 'X105' transferred to the new file.
+  Longname 'hni_real_gdp'
+  
+  Coefficient = hni_real_c (time).
+  No sets defined for coefficients.
+  
+  (Read real matrix of size: 10.)
+  Longname 'hni_real_c'
+  
+  Header found on the text file 'X106'.
+  
+ (Written real array, size 10, header "X106".)
+  
+  Header 'X106' transferred to the new file.
+  Longname 'hni_real_c'
+  
+  Coefficient = hni_real_i (time).
+  No sets defined for coefficients.
+  
+  (Read real matrix of size: 10.)
+  Longname 'hni_real_i'
+  
+  Header found on the text file 'X107'.
+  
+ (Written real array, size 10, header "X107".)
+  
+  Header 'X107' transferred to the new file.
+  Longname 'hni_real_i'
+  
+  Coefficient = hni_real_g (time).
+  No sets defined for coefficients.
+  
+  (Read real matrix of size: 10.)
+  Longname 'hni_real_g'
+  
+  Header found on the text file 'X108'.
+  
+ (Written real array, size 10, header "X108".)
+  
+  Header 'X108' transferred to the new file.
+  Longname 'hni_real_g'
+  
+  Coefficient = hni_real_x (time).
+  No sets defined for coefficients.
+  
+  (Read real matrix of size: 10.)
+  Longname 'hni_real_x'
+  
+  Header found on the text file 'X109'.
+  
+ (Written real array, size 10, header "X109".)
+  
+  Header 'X109' transferred to the new file.
+  Longname 'hni_real_x'
+  
+  Coefficient = hni_real_m (time).
+  No sets defined for coefficients.
+  
+  (Read real matrix of size: 10.)
+  Longname 'hni_real_m'
+  
+  Header found on the text file 'X110'.
+  
+ (Written real array, size 10, header "X110".)
+  
+  Header 'X110' transferred to the new file.
+  Longname 'hni_real_m'
+  
+  Coefficient = hni_shr_c (time).
+  No sets defined for coefficients.
+  
+  (Read real matrix of size: 10.)
+  Longname 'hni_shr_c'
+  
+  Header found on the text file 'X111'.
+  
+ (Written real array, size 10, header "X111".)
+  
+  Header 'X111' transferred to the new file.
+  Longname 'hni_shr_c'
+  
+  Coefficient = hni_shr_i (time).
+  No sets defined for coefficients.
+  
+  (Read real matrix of size: 10.)
+  Longname 'hni_shr_i'
+  
+  Header found on the text file 'X112'.
+  
+ (Written real array, size 10, header "X112".)
+  
+  Header 'X112' transferred to the new file.
+  Longname 'hni_shr_i'
+  
+  Coefficient = hni_shr_g (time).
+  No sets defined for coefficients.
+  
+  (Read real matrix of size: 10.)
+  Longname 'hni_shr_g'
+  
+  Header found on the text file 'X113'.
+  
+ (Written real array, size 10, header "X113".)
+  
+  Header 'X113' transferred to the new file.
+  Longname 'hni_shr_g'
+  
+  Coefficient = hni_shr_x (time).
+  No sets defined for coefficients.
+  
+  (Read real matrix of size: 10.)
+  Longname 'hni_shr_x'
+  
+  Header found on the text file 'X114'.
+  
+ (Written real array, size 10, header "X114".)
+  
+  Header 'X114' transferred to the new file.
+  Longname 'hni_shr_x'
+  
+  Coefficient = hni_shr_m (time).
+  No sets defined for coefficients.
+  
+  (Read real matrix of size: 10.)
+  Longname 'hni_shr_m'
+  
+  Header found on the text file 'X115'.
+  
+ (Written real array, size 10, header "X115".)
+  
+  Header 'X115' transferred to the new file.
+  Longname 'hni_shr_m'
+  
+  Coefficient = hdj_shr_c (time).
+  No sets defined for coefficients.
+  
+  (Read real matrix of size: 10.)
+  Longname 'hdj_shr_c'
+  
+  Header found on the text file 'X116'.
+  
+ (Written real array, size 10, header "X116".)
+  
+  Header 'X116' transferred to the new file.
+  Longname 'hdj_shr_c'
+  
+  Coefficient = hdj_shr_i (time).
+  No sets defined for coefficients.
+  
+  (Read real matrix of size: 10.)
+  Longname 'hdj_shr_i'
+  
+  Header found on the text file 'X117'.
+  
+ (Written real array, size 10, header "X117".)
+  
+  Header 'X117' transferred to the new file.
+  Longname 'hdj_shr_i'
+  
+  Coefficient = hdj_shr_g (time).
+  No sets defined for coefficients.
+  
+  (Read real matrix of size: 10.)
+  Longname 'hdj_shr_g'
+  
+  Header found on the text file 'X118'.
+  
+ (Written real array, size 10, header "X118".)
+  
+  Header 'X118' transferred to the new file.
+  Longname 'hdj_shr_g'
+  
+  Coefficient = hdj_shr_x (time).
+  No sets defined for coefficients.
+  
+  (Read real matrix of size: 10.)
+  Longname 'hdj_shr_x'
+  
+  Header found on the text file 'X119'.
+  
+ (Written real array, size 10, header "X119".)
+  
+  Header 'X119' transferred to the new file.
+  Longname 'hdj_shr_x'
+  
+  Coefficient = hdj_shr_m (time).
+  No sets defined for coefficients.
+  
+  (Read real matrix of size: 10.)
+  Longname 'hdj_shr_m'
+  
+  Header found on the text file 'X120'.
+  
+ (Written real array, size 10, header "X120".)
+  
+  Header 'X120' transferred to the new file.
+  Longname 'hdj_shr_m'
+  
+  Coefficient = hws_real_gdp (time).
+  No sets defined for coefficients.
+  
+  (Read real matrix of size: 10.)
+  Longname 'hws_real_gdp'
+  
+  Header found on the text file 'X121'.
+  
+ (Written real array, size 10, header "X121".)
+  
+  Header 'X121' transferred to the new file.
+  Longname 'hws_real_gdp'
+  
+  Coefficient = hwsrealgdpal (time).
+  No sets defined for coefficients.
+  
+  (Read real matrix of size: 10.)
+  Longname 'hwsrealgdpal'
+  
+  Header found on the text file 'X122'.
+  
+ (Written real array, size 10, header "X122".)
+  
+  Header 'X122' transferred to the new file.
+  Longname 'hwsrealgdpal'
+  
+  Coefficient = hws_real_c (time).
+  No sets defined for coefficients.
+  
+  (Read real matrix of size: 10.)
+  Longname 'hws_real_c'
+  
+  Header found on the text file 'X123'.
+  
+ (Written real array, size 10, header "X123".)
+  
+  Header 'X123' transferred to the new file.
+  Longname 'hws_real_c'
+  
+  Coefficient = hws_real_i (time).
+  No sets defined for coefficients.
+  
+  (Read real matrix of size: 10.)
+  Longname 'hws_real_i'
+  
+  Header found on the text file 'X124'.
+  
+ (Written real array, size 10, header "X124".)
+  
+  Header 'X124' transferred to the new file.
+  Longname 'hws_real_i'
+  
+  Coefficient = hws_real_g (time).
+  No sets defined for coefficients.
+  
+  (Read real matrix of size: 10.)
+  Longname 'hws_real_g'
+  
+  Header found on the text file 'X125'.
+  
+ (Written real array, size 10, header "X125".)
+  
+  Header 'X125' transferred to the new file.
+  Longname 'hws_real_g'
+  
+  Coefficient = hws_real_x (time).
+  No sets defined for coefficients.
+  
+  (Read real matrix of size: 10.)
+  Longname 'hws_real_x'
+  
+  Header found on the text file 'X126'.
+  
+ (Written real array, size 10, header "X126".)
+  
+  Header 'X126' transferred to the new file.
+  Longname 'hws_real_x'
+  
+  Coefficient = hws_real_m (time).
+  No sets defined for coefficients.
+  
+  (Read real matrix of size: 10.)
+  Longname 'hws_real_m'
+  
+  Header found on the text file 'X127'.
+  
+ (Written real array, size 10, header "X127".)
+  
+  Header 'X127' transferred to the new file.
+  Longname 'hws_real_m'
+  
+  Coefficient = hws_gdp (time).
+  No sets defined for coefficients.
+  
+  (Read real matrix of size: 10.)
+  Longname 'hws_gdp'
+  
+  Header found on the text file 'X128'.
+  
+ (Written real array, size 10, header "X128".)
+  
+  Header 'X128' transferred to the new file.
+  Longname 'hws_gdp'
+  
+  Coefficient = hws_c (time).
+  No sets defined for coefficients.
+  
+  (Read real matrix of size: 10.)
+  Longname 'hws_c'
+  
+  Header found on the text file 'X129'.
+  
+ (Written real array, size 10, header "X129".)
+  
+  Header 'X129' transferred to the new file.
+  Longname 'hws_c'
+  
+  Coefficient = hws_i (time).
+  No sets defined for coefficients.
+  
+  (Read real matrix of size: 10.)
+  Longname 'hws_i'
+  
+  Header found on the text file 'X130'.
+  
+ (Written real array, size 10, header "X130".)
+  
+  Header 'X130' transferred to the new file.
+  Longname 'hws_i'
+  
+  Coefficient = hws_g (time).
+  No sets defined for coefficients.
+  
+  (Read real matrix of size: 10.)
+  Longname 'hws_g'
+  
+  Header found on the text file 'X131'.
+  
+ (Written real array, size 10, header "X131".)
+  
+  Header 'X131' transferred to the new file.
+  Longname 'hws_g'
+  
+  Coefficient = hist_p_fc (time).
+  No sets defined for coefficients.
+  
+  (Read real matrix of size: 10.)
+  Longname 'hist_p_fc'
+  
+  Header found on the text file 'X132'.
+  
+ (Written real array, size 10, header "X132".)
+  
+  Header 'X132' transferred to the new file.
+  Longname 'hist_p_fc'
+  
+  Coefficient = histfullqty (time).
+  No sets defined for coefficients.
+  
+  (Read real matrix of size: 10.)
+  Longname 'histfullqty'
+  
+  Header found on the text file 'X133'.
+  
+ (Written real array, size 10, header "X133".)
+  
+  Header 'X133' transferred to the new file.
+  Longname 'histfullqty'
+  
+  Coefficient = histpleisure (time).
+  No sets defined for coefficients.
+  
+  (Read real matrix of size: 10.)
+  Longname 'histpleisure'
+  
+  Header found on the text file 'X134'.
+  
+ (Written real array, size 10, header "X134".)
+  
+  Header 'X134' transferred to the new file.
+  Longname 'histpleisure'
+  
+  Coefficient = hist_leisure (time).
+  No sets defined for coefficients.
+  
+  (Read real matrix of size: 10.)
+  Longname 'hist_leisure'
+  
+  Header found on the text file 'X135'.
+  
+ (Written real array, size 10, header "X135".)
+  
+  Header 'X135' transferred to the new file.
+  Longname 'hist_leisure'
+  
+  Coefficient = histpnumerai (time).
+  No sets defined for coefficients.
+  
+  (Read real matrix of size: 10.)
+  Longname 'histpnumerai'
+  
+  Header found on the text file 'X136'.
+  
+ (Written real array, size 10, header "X136".)
+  
+  Header 'X136' transferred to the new file.
+  Longname 'histpnumerai'
+  
+  Coefficient = hist_c396 (time).
+  No sets defined for coefficients.
+  
+  (Read real matrix of size: 10.)
+  Longname 'hist_c396'
+  
+  Header found on the text file 'X137'.
+  
+ (Written real array, size 10, header "X137".)
+  
+  Header 'X137' transferred to the new file.
+  Longname 'hist_c396'
+  
+  Coefficient = population (time).
+  No sets defined for coefficients.
+  
+  (Read real matrix of size: 10.)
+  Longname 'population'
+  
+  Header found on the text file 'X138'.
+  
+ (Written real array, size 10, header "X138".)
+  
+  Header 'X138' transferred to the new file.
+  Longname 'population'
+  Last array on file has been read. Transfer completed.
+  TRANSFERRED A TOTAL OF 138 ARRAYS TO THE NEW FILE.
+  
+  > Next Command:  (or '?' for help)
+  
+  
+ ex
+  Since an old file was not used, there are no arrays to transfer..
+  NO    HEADER    STATUS    DATA  <-------------- SIZE -------------->     SIZE
+       OLD  NEW             TYPE        OLD                   NEW        CHANGE?
+  
+  
+    1 (TF) X001 ON NEW FILE real  10                   10                   no
+    2 (TF) X002 ON NEW FILE real  10                   10                   no
+    3 (TF) X003 ON NEW FILE real  10                   10                   no
+    4 (TF) X004 ON NEW FILE real  36x10                36x10                no
+    5 (TF) X005 ON NEW FILE real  10                   10                   no
+    6 (TF) X006 ON NEW FILE real  37x10                37x10                no
+    7 (TF) X007 ON NEW FILE real  36x10                36x10                no
+    8 (TF) X008 ON NEW FILE real  10                   10                   no
+    9 (TF) X009 ON NEW FILE real  10                   10                   no
+   10 (TF) X010 ON NEW FILE real  36x10                36x10                no
+   11 (TF) X011 ON NEW FILE real  10                   10                   no
+   12 (TF) X012 ON NEW FILE real  10                   10                   no
+   13 (TF) X013 ON NEW FILE real  10                   10                   no
+   14 (TF) X014 ON NEW FILE real  36x10                36x10                no
+   15 (TF) X015 ON NEW FILE real  10                   10                   no
+   16 (TF) X016 ON NEW FILE real  11x10                11x10                no
+   17 (TF) X017 ON NEW FILE real  10                   10                   no
+   18 (TF) X018 ON NEW FILE real  10                   10                   no
+   19 (TF) X019 ON NEW FILE real  10                   10                   no
+   20 (TF) X020 ON NEW FILE real  10                   10                   no
+   21 (TF) X021 ON NEW FILE real  36x20x10             36x20x10             no
+   22 (TF) X022 ON NEW FILE real  36x20x10             36x20x10             no
+   23 (TF) X023 ON NEW FILE real  4x10                 4x10                 no
+   24 (TF) X024 ON NEW FILE real  10                   10                   no
+   25 (TF) X025 ON NEW FILE real  10                   10                   no
+   26 (TF) X026 ON NEW FILE real  10                   10                   no
+   27 (TF) X027 ON NEW FILE real  10                   10                   no
+   28 (TF) X028 ON NEW FILE real  10                   10                   no
+   29 (TF) X029 ON NEW FILE real  10                   10                   no
+   30 (TF) X030 ON NEW FILE real  10                   10                   no
+   31 (TF) X031 ON NEW FILE real  10                   10                   no
+   32 (TF) X032 ON NEW FILE real  10                   10                   no
+   33 (TF) X033 ON NEW FILE real  10                   10                   no
+   34 (TF) X034 ON NEW FILE real  10                   10                   no
+   35 (TF) X035 ON NEW FILE real  10                   10                   no
+   36 (TF) X036 ON NEW FILE real  10                   10                   no
+   37 (TF) X037 ON NEW FILE real  10                   10                   no
+   38 (TF) X038 ON NEW FILE real  10                   10                   no
+   39 (TF) X039 ON NEW FILE real  10                   10                   no
+   40 (TF) X040 ON NEW FILE real  10                   10                   no
+   41 (TF) X041 ON NEW FILE real  10                   10                   no
+   42 (TF) X042 ON NEW FILE real  10                   10                   no
+   43 (TF) X043 ON NEW FILE real  10                   10                   no
+   44 (TF) X044 ON NEW FILE real  10                   10                   no
+   45 (TF) X045 ON NEW FILE real  10                   10                   no
+   46 (TF) X046 ON NEW FILE real  10                   10                   no
+   47 (TF) X047 ON NEW FILE real  10                   10                   no
+   48 (TF) X048 ON NEW FILE real  10                   10                   no
+   49 (TF) X049 ON NEW FILE real  10                   10                   no
+   50 (TF) X050 ON NEW FILE real  10                   10                   no
+   51 (TF) X051 ON NEW FILE real  10                   10                   no
+   52 (TF) X052 ON NEW FILE real  10                   10                   no
+   53 (TF) X053 ON NEW FILE real  10                   10                   no
+   54 (TF) X054 ON NEW FILE real  10                   10                   no
+   55 (TF) X055 ON NEW FILE real  10                   10                   no
+   56 (TF) X056 ON NEW FILE real  36x10                36x10                no
+   57 (TF) X057 ON NEW FILE real  10                   10                   no
+   58 (TF) X058 ON NEW FILE real  10                   10                   no
+   59 (TF) X059 ON NEW FILE real  36x10                36x10                no
+   60 (TF) X060 ON NEW FILE real  36x10                36x10                no
+   61 (TF) X061 ON NEW FILE real  10                   10                   no
+   62 (TF) X062 ON NEW FILE real  36x10                36x10                no
+   63 (TF) X063 ON NEW FILE real  20x10                20x10                no
+   64 (TF) X064 ON NEW FILE real  20x10                20x10                no
+   65 (TF) X065 ON NEW FILE real  10                   10                   no
+   66 (TF) X066 ON NEW FILE real  10                   10                   no
+   67 (TF) X067 ON NEW FILE real  10                   10                   no
+   68 (TF) X068 ON NEW FILE real  10                   10                   no
+   69 (TF) X069 ON NEW FILE real  10                   10                   no
+   70 (TF) X070 ON NEW FILE real  10                   10                   no
+   71 (TF) X071 ON NEW FILE real  10                   10                   no
+   72 (TF) X072 ON NEW FILE real  10                   10                   no
+   73 (TF) X073 ON NEW FILE real  36x10                36x10                no
+   74 (TF) X074 ON NEW FILE real  10                   10                   no
+   75 (TF) X075 ON NEW FILE real  10                   10                   no
+   76 (TF) X076 ON NEW FILE real  10                   10                   no
+   77 (TF) X077 ON NEW FILE real  10                   10                   no
+   78 (TF) X078 ON NEW FILE real  10                   10                   no
+   79 (TF) X079 ON NEW FILE real  37x10                37x10                no
+   80 (TF) X080 ON NEW FILE real  10                   10                   no
+   81 (TF) X081 ON NEW FILE real  10                   10                   no
+   82 (TF) X082 ON NEW FILE real  10                   10                   no
+   83 (TF) X083 ON NEW FILE real  10                   10                   no
+   84 (TF) X084 ON NEW FILE real  10                   10                   no
+   85 (TF) X085 ON NEW FILE real  10                   10                   no
+   86 (TF) X086 ON NEW FILE real  10                   10                   no
+   87 (TF) X087 ON NEW FILE real  10                   10                   no
+   88 (TF) X088 ON NEW FILE real  10                   10                   no
+   89 (TF) X089 ON NEW FILE real  10                   10                   no
+   90 (TF) X090 ON NEW FILE real  10                   10                   no
+   91 (TF) X091 ON NEW FILE real  10                   10                   no
+   92 (TF) X092 ON NEW FILE real  10                   10                   no
+   93 (TF) X093 ON NEW FILE real  10                   10                   no
+   94 (TF) X094 ON NEW FILE real  10                   10                   no
+   95 (TF) X095 ON NEW FILE real  10                   10                   no
+   96 (TF) X096 ON NEW FILE real  10                   10                   no
+   97 (TF) X097 ON NEW FILE real  10                   10                   no
+   98 (TF) X098 ON NEW FILE real  10                   10                   no
+   99 (TF) X099 ON NEW FILE real  10                   10                   no
+  100 (TF) X100 ON NEW FILE real  10                   10                   no
+  101 (TF) X101 ON NEW FILE real  10                   10                   no
+  102 (TF) X102 ON NEW FILE real  10                   10                   no
+  103 (TF) X103 ON NEW FILE real  10                   10                   no
+  104 (TF) X104 ON NEW FILE real  10                   10                   no
+  105 (TF) X105 ON NEW FILE real  10                   10                   no
+  106 (TF) X106 ON NEW FILE real  10                   10                   no
+  107 (TF) X107 ON NEW FILE real  10                   10                   no
+  108 (TF) X108 ON NEW FILE real  10                   10                   no
+  109 (TF) X109 ON NEW FILE real  10                   10                   no
+  110 (TF) X110 ON NEW FILE real  10                   10                   no
+  111 (TF) X111 ON NEW FILE real  10                   10                   no
+  112 (TF) X112 ON NEW FILE real  10                   10                   no
+  113 (TF) X113 ON NEW FILE real  10                   10                   no
+  114 (TF) X114 ON NEW FILE real  10                   10                   no
+  115 (TF) X115 ON NEW FILE real  10                   10                   no
+  116 (TF) X116 ON NEW FILE real  10                   10                   no
+  117 (TF) X117 ON NEW FILE real  10                   10                   no
+  118 (TF) X118 ON NEW FILE real  10                   10                   no
+  119 (TF) X119 ON NEW FILE real  10                   10                   no
+  120 (TF) X120 ON NEW FILE real  10                   10                   no
+  121 (TF) X121 ON NEW FILE real  10                   10                   no
+  122 (TF) X122 ON NEW FILE real  10                   10                   no
+  123 (TF) X123 ON NEW FILE real  10                   10                   no
+  124 (TF) X124 ON NEW FILE real  10                   10                   no
+  125 (TF) X125 ON NEW FILE real  10                   10                   no
+  126 (TF) X126 ON NEW FILE real  10                   10                   no
+  127 (TF) X127 ON NEW FILE real  10                   10                   no
+  128 (TF) X128 ON NEW FILE real  10                   10                   no
+  129 (TF) X129 ON NEW FILE real  10                   10                   no
+  130 (TF) X130 ON NEW FILE real  10                   10                   no
+  131 (TF) X131 ON NEW FILE real  10                   10                   no
+  132 (TF) X132 ON NEW FILE real  10                   10                   no
+  133 (TF) X133 ON NEW FILE real  10                   10                   no
+  134 (TF) X134 ON NEW FILE real  10                   10                   no
+  135 (TF) X135 ON NEW FILE real  10                   10                   no
+  136 (TF) X136 ON NEW FILE real  10                   10                   no
+  137 (TF) X137 ON NEW FILE real  10                   10                   no
+  138 (TF) X138 ON NEW FILE real  10                   10                   no
+  
+  
+  HISTORY OF THIS RUN OF THE PROGRAM
+  
+  Type in your name,
+    or    -   to ignore any old history,
+          =   to take just any old history (no new),
+          0   to have no history on the new file.
+  
+  
+ 0
+ (New Header Array file is 'exo.har'.)
+  
+  (The program has completed without error.)
+  Total elapsed time is: less than one second.
+  

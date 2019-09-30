@@ -7,11 +7,14 @@ exogenous data, Kalman terms, make table variables, and endogenous
 variables. This directory contains a number of files associated with 
 each block. The start of each filename indicates the block as follows:
 ```
-   par = parameters
+   end = endogenous variables
    exo = main block of exogenous variables
+   ext = additional endogenous variables: pb
+   int = intermediate inputs: int_val and int_qty
+   iot = Full IO table: io
    kal = exogenous Kalman terms
    mak = make table variables
-   end = endogenous variables
+   par = parameters
 ```
 
 ## JSON Files
@@ -45,16 +48,26 @@ used are:
    <prefix>_dec.sym    - output, Sym declaration file with headers
 ```
 
-## Txt and Inp files
+## Subdirectory: openigem
+
+Python code for the openigem module used by build_modhar_txt.py.
+
+## Subdirectory: p10a
+
+Working directory for building a set of GEMPACK header array files
+for a 10-period model. The dates of the periods are defined in the 
+p10a.json. The input information is read from the directory 
+above.
+
+### Txt and Inp files
 
 These are output by build_modhar_txt.py. The TXT files contain data 
 in a format suitable for MODHAR. The INP files are directives passed
 to MODHAR (GEMPACK STI files) to describe the processing that is 
 required.
 
-## Sym Files
+### Sym Files
 
-These are declarations for the corresponding variables or parameters. 
-In addition, there is a file of set declarations called sets.sym.
-
+These are declarations for the corresponding variables or parameters.
+The GEMPACK header codes are included.
 

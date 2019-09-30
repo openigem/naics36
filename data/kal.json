@@ -546,14 +546,14 @@
         }, 
         {
             "header": "K002", 
-            "name": "kal_p", 
+            "name": "kalp", 
             "sets": [
                 "nind"
             ]
         }, 
         {
             "header": "K003", 
-            "name": "kal_f_o", 
+            "name": "kalf_o", 
             "sets": [
                 "s_o", 
                 "nind"
@@ -561,7 +561,7 @@
         }, 
         {
             "header": "K004", 
-            "name": "kal_f_e", 
+            "name": "kalf_ene", 
             "sets": [
                 "s_e", 
                 "nind"
@@ -569,7 +569,7 @@
         }, 
         {
             "header": "K005", 
-            "name": "kal_f_m", 
+            "name": "kalf_mat", 
             "sets": [
                 "s_m", 
                 "nind"
@@ -577,7 +577,7 @@
         }, 
         {
             "header": "K006", 
-            "name": "kal_f_ff", 
+            "name": "kalf_ff", 
             "sets": [
                 "s_ff", 
                 "nind"
@@ -585,7 +585,7 @@
         }, 
         {
             "header": "K007", 
-            "name": "kal_f_oil", 
+            "name": "kalf_oil", 
             "sets": [
                 "s_oil", 
                 "nind"
@@ -593,7 +593,7 @@
         }, 
         {
             "header": "K008", 
-            "name": "kal_f_gas", 
+            "name": "kalf_gas", 
             "sets": [
                 "s_gas", 
                 "nind"
@@ -601,7 +601,7 @@
         }, 
         {
             "header": "K009", 
-            "name": "kal_f_ma", 
+            "name": "kalf_ma", 
             "sets": [
                 "s_ma", 
                 "nind"
@@ -609,7 +609,7 @@
         }, 
         {
             "header": "K010", 
-            "name": "kal_f_mm", 
+            "name": "kalf_mm", 
             "sets": [
                 "s_mm", 
                 "nind"
@@ -617,7 +617,7 @@
         }, 
         {
             "header": "K011", 
-            "name": "kal_f_mn", 
+            "name": "kalf_mn", 
             "sets": [
                 "s_mn", 
                 "nind"
@@ -625,7 +625,7 @@
         }, 
         {
             "header": "K012", 
-            "name": "kal_f_ms", 
+            "name": "kalf_ms", 
             "sets": [
                 "s_ms", 
                 "nind"
@@ -633,7 +633,7 @@
         }, 
         {
             "header": "K013", 
-            "name": "kal_f_eq", 
+            "name": "kalf_eq", 
             "sets": [
                 "s_eq", 
                 "nind"
@@ -641,7 +641,7 @@
         }, 
         {
             "header": "K014", 
-            "name": "kal_f_tr", 
+            "name": "kalf_tr", 
             "sets": [
                 "s_tr", 
                 "nind"
@@ -649,7 +649,7 @@
         }, 
         {
             "header": "K015", 
-            "name": "kal_f_tt", 
+            "name": "kalf_tt", 
             "sets": [
                 "s_tt", 
                 "nind"
@@ -657,7 +657,7 @@
         }, 
         {
             "header": "K016", 
-            "name": "kal_f_sv", 
+            "name": "kalf_sv", 
             "sets": [
                 "s_sv", 
                 "nind"
@@ -665,7 +665,7 @@
         }, 
         {
             "header": "K017", 
-            "name": "kal_f_bl", 
+            "name": "kalf_bl", 
             "sets": [
                 "s_bl", 
                 "nind"
@@ -673,7 +673,7 @@
         }, 
         {
             "header": "K018", 
-            "name": "kal_f_ob", 
+            "name": "kalf_ob", 
             "sets": [
                 "s_ob", 
                 "nind"
@@ -681,7 +681,7 @@
         }, 
         {
             "header": "K019", 
-            "name": "kal_f_os", 
+            "name": "kalf_os", 
             "sets": [
                 "s_os", 
                 "nind"
@@ -689,252 +689,252 @@
         }, 
         {
             "header": "K020", 
-            "name": "kal_fi_fixed", 
+            "name": "kali_fixed", 
             "sets": [
                 "s_fixed"
             ]
         }, 
         {
             "header": "K021", 
-            "name": "kal_fi_long", 
+            "name": "kali_long", 
             "sets": [
                 "s_long"
             ]
         }, 
         {
             "header": "K022", 
-            "name": "kal_fi_short", 
+            "name": "kali_short", 
             "sets": [
                 "s_short"
             ]
         }, 
         {
             "header": "K023", 
-            "name": "kal_fi_eit", 
+            "name": "kali_eit", 
             "sets": [
                 "s_eit"
             ]
         }, 
         {
             "header": "K024", 
-            "name": "kal_fi_ttsvc", 
+            "name": "kali_ttsvc", 
             "sets": [
                 "s_ttsvc"
             ]
         }, 
         {
             "header": "K025", 
-            "name": "kal_fi_mach", 
+            "name": "kali_mach", 
             "sets": [
                 "s_mach"
             ]
         }, 
         {
             "header": "K026", 
-            "name": "kal_fi_it", 
+            "name": "kali_it", 
             "sets": [
                 "s_it"
             ]
         }, 
         {
             "header": "K027", 
-            "name": "kal_fi_trnsp", 
+            "name": "kali_trnsp", 
             "sets": [
                 "s_trnsp"
             ]
         }, 
         {
             "header": "K028", 
-            "name": "kal_fi_trd", 
+            "name": "kali_trd", 
             "sets": [
                 "s_trd"
             ]
         }, 
         {
             "header": "K029", 
-            "name": "kal_fi_serv", 
+            "name": "kali_serv", 
             "sets": [
                 "s_serv"
             ]
         }, 
         {
             "header": "K030", 
-            "name": "kal_fi_frawm", 
+            "name": "kali_frawm", 
             "sets": [
                 "s_frawm"
             ]
         }, 
         {
             "header": "K031", 
-            "name": "kal_fi_mserv", 
+            "name": "kali_mserv", 
             "sets": [
                 "s_mserv"
             ]
         }, 
         {
             "header": "K032", 
-            "name": "kal_fi_mrawm", 
+            "name": "kali_mrawm", 
             "sets": [
                 "s_mrawm"
             ]
         }, 
         {
             "header": "K033", 
-            "name": "kal_fi_furn", 
+            "name": "kali_furn", 
             "sets": [
                 "s_furn"
             ]
         }, 
         {
             "header": "K034", 
-            "name": "kal_fi_rawm", 
+            "name": "kali_rawm", 
             "sets": [
                 "s_rawm"
             ]
         }, 
         {
             "header": "K035", 
-            "name": "kal_fh_f", 
+            "name": "kalh_f", 
             "sets": [
                 "s_f"
             ]
         }, 
         {
             "header": "K036", 
-            "name": "kal_fh_nd", 
+            "name": "kalh_nd", 
             "sets": [
                 "s_nd"
             ]
         }, 
         {
             "header": "K037", 
-            "name": "kal_fh_ks", 
+            "name": "kalh_ks", 
             "sets": [
                 "s_ks"
             ]
         }, 
         {
             "header": "K038", 
-            "name": "kal_fh_cs", 
+            "name": "kalh_cs", 
             "sets": [
                 "s_cs"
             ]
         }, 
         {
             "header": "K039", 
-            "name": "kal_fh_en", 
+            "name": "kalh_en", 
             "sets": [
                 "s_en"
             ]
         }, 
         {
             "header": "K040", 
-            "name": "kal_fh_cg", 
+            "name": "kalh_cg", 
             "sets": [
                 "s_cg"
             ]
         }, 
         {
             "header": "K041", 
-            "name": "kal_fh_md", 
+            "name": "kalh_md", 
             "sets": [
                 "s_md"
             ]
         }, 
         {
             "header": "K042", 
-            "name": "kal_fh_fb", 
+            "name": "kalh_fb", 
             "sets": [
                 "s_fb"
             ]
         }, 
         {
             "header": "K043", 
-            "name": "kal_fh_ho", 
+            "name": "kalh_ho", 
             "sets": [
                 "s_ho"
             ]
         }, 
         {
             "header": "K044", 
-            "name": "kal_fh_rc", 
+            "name": "kalh_rc", 
             "sets": [
                 "s_rc"
             ]
         }, 
         {
             "header": "K045", 
-            "name": "kal_fh_hpg", 
+            "name": "kalh_hpg", 
             "sets": [
                 "s_hpg"
             ]
         }, 
         {
             "header": "K046", 
-            "name": "kal_fh_edn", 
+            "name": "kalh_edn", 
             "sets": [
                 "s_edn"
             ]
         }, 
         {
             "header": "K047", 
-            "name": "kal_fh_ups", 
+            "name": "kalh_ups", 
             "sets": [
                 "s_ups"
             ]
         }, 
         {
             "header": "K048", 
-            "name": "kal_fh_trc", 
+            "name": "kalh_trc", 
             "sets": [
                 "s_trc"
             ]
         }, 
         {
             "header": "K049", 
-            "name": "kal_fh_rcs", 
+            "name": "kalh_rcs", 
             "sets": [
                 "s_rcs"
             ]
         }, 
         {
             "header": "K050", 
-            "name": "kal_fh_trv", 
+            "name": "kalh_trv", 
             "sets": [
                 "s_trv"
             ]
         }, 
         {
             "header": "K051", 
-            "name": "kal_fh_ens", 
+            "name": "kalh_ens", 
             "sets": [
                 "s_ens"
             ]
         }, 
         {
             "header": "K052", 
-            "name": "kal_fh_hps", 
+            "name": "kalh_hps", 
             "sets": [
                 "s_hps"
             ]
         }, 
         {
             "header": "K053", 
-            "name": "kal_fh_cmm", 
+            "name": "kalh_cmm", 
             "sets": [
                 "s_cmm"
             ]
         }, 
         {
             "header": "K054", 
-            "name": "kal_m", 
+            "name": "kalm_imp", 
             "sets": [
                 "ncom"
             ]
         }, 
         {
             "header": "K055", 
-            "name": "kal_x", 
+            "name": "kalx_exp", 
             "sets": [
                 "ncom"
             ]

@@ -304,14 +304,12 @@
         }, 
         {
             "header": "N002", 
-            "longname": true, 
-            "name": "flag_no_walras", 
+            "name": "flagnowalras", 
             "sets": ""
         }, 
         {
             "header": "N003", 
-            "longname": true, 
-            "name": "flag_igem_vers", 
+            "name": "flagigemvers", 
             "sets": ""
         }, 
         {
@@ -326,8 +324,7 @@
         }, 
         {
             "header": "N006", 
-            "longname": true, 
-            "name": "end_techmodel", 
+            "name": "endtechmodel", 
             "sets": ""
         }, 
         {
@@ -337,7 +334,7 @@
         }, 
         {
             "header": "N008", 
-            "name": "p_fc", 
+            "name": "pr_fc", 
             "sets": ""
         }, 
         {
@@ -347,8 +344,7 @@
         }, 
         {
             "header": "N010", 
-            "longname": true, 
-            "name": "con_shk_expend", 
+            "name": "con_shk_xpnd", 
             "sets": ""
         }, 
         {
@@ -372,7 +368,7 @@
         }, 
         {
             "header": "N014", 
-            "name": "p_con", 
+            "name": "pr_con", 
             "sets": [
                 "ncom_k"
             ]
@@ -393,7 +389,7 @@
         }, 
         {
             "header": "N017", 
-            "name": "p_leisure", 
+            "name": "pr_leisure", 
             "sets": ""
         }, 
         {
@@ -478,7 +474,7 @@
         }, 
         {
             "header": "N032", 
-            "name": "dom_shr", 
+            "name": "dom_share", 
             "sets": [
                 "ncom"
             ]
@@ -559,28 +555,28 @@
         }, 
         {
             "header": "N045", 
-            "name": "p_kap", 
+            "name": "pr_kap", 
             "sets": [
                 "nind_c"
             ]
         }, 
         {
             "header": "N046", 
-            "name": "p_lab", 
+            "name": "pr_lab", 
             "sets": [
                 "nind"
             ]
         }, 
         {
             "header": "N047", 
-            "name": "p_ene", 
+            "name": "pr_ene", 
             "sets": [
                 "nind"
             ]
         }, 
         {
             "header": "N048", 
-            "name": "p_mat", 
+            "name": "pr_mat", 
             "sets": [
                 "nind"
             ]
@@ -680,14 +676,12 @@
         }, 
         {
             "header": "N064", 
-            "longname": true, 
-            "name": "kap_income_net", 
+            "name": "kap_inc_net", 
             "sets": ""
         }, 
         {
             "header": "N065", 
-            "longname": true, 
-            "name": "kap_inc_taxable", 
+            "name": "kap_taxable", 
             "sets": ""
         }, 
         {
@@ -697,8 +691,7 @@
         }, 
         {
             "header": "N067", 
-            "longname": true, 
-            "name": "lab_income_net", 
+            "name": "lab_inc_net", 
             "sets": ""
         }, 
         {
@@ -728,7 +721,7 @@
         }, 
         {
             "header": "N073", 
-            "name": "e", 
+            "name": "exch", 
             "sets": ""
         }, 
         {
@@ -743,20 +736,17 @@
         }, 
         {
             "header": "N076", 
-            "longname": true, 
-            "name": "gov_int_adjust", 
+            "name": "gov_int_adj", 
             "sets": ""
         }, 
         {
             "header": "N077", 
-            "longname": true, 
-            "name": "row_int_adjust", 
+            "name": "row_int_adj", 
             "sets": ""
         }, 
         {
             "header": "N078", 
-            "longname": true, 
-            "name": "gov_kap_income", 
+            "name": "gov_kap_inc", 
             "sets": ""
         }, 
         {
@@ -766,12 +756,12 @@
         }, 
         {
             "header": "N080", 
-            "name": "p_kap_oil", 
+            "name": "pr_kap_oil", 
             "sets": ""
         }, 
         {
             "header": "N081", 
-            "name": "p_kap_gas", 
+            "name": "pr_kap_gas", 
             "sets": ""
         }, 
         {
@@ -844,7 +834,7 @@
         }, 
         {
             "header": "N092", 
-            "name": "p_land_f", 
+            "name": "pr_land_f", 
             "sets": [
                 "ncom"
             ]
@@ -856,13 +846,12 @@
         }, 
         {
             "header": "N094", 
-            "longname": true, 
-            "name": "trade_surp_fc", 
+            "name": "trade_surpfc", 
             "sets": ""
         }, 
         {
             "header": "N095", 
-            "name": "exp_shr", 
+            "name": "exp_share", 
             "sets": [
                 "ncom"
             ]
@@ -874,8 +863,7 @@
         }, 
         {
             "header": "N097", 
-            "longname": true, 
-            "name": "hours_adjusted", 
+            "name": "hours_adjust", 
             "sets": ""
         }, 
         {
@@ -950,8 +938,7 @@
         }, 
         {
             "header": "N112", 
-            "longname": true, 
-            "name": "rev_con_rebate", 
+            "name": "rev_con_rbt", 
             "sets": ""
         }, 
         {
@@ -1006,8 +993,7 @@
         }, 
         {
             "header": "N123", 
-            "longname": true, 
-            "name": "tx_value_ephi", 
+            "name": "txvalueephi", 
             "sets": ""
         }, 
         {
@@ -1052,8 +1038,7 @@
         }, 
         {
             "header": "N132", 
-            "longname": true, 
-            "name": "agg_tech_level", 
+            "name": "agg_tech_lvl", 
             "sets": ""
         }, 
         {
@@ -1068,7 +1053,7 @@
         }, 
         {
             "header": "N135", 
-            "name": "grosout", 
+            "name": "grossout", 
             "sets": [
                 "nind"
             ]
@@ -1089,8 +1074,7 @@
         }, 
         {
             "header": "N138", 
-            "longname": true, 
-            "name": "us_surplus_fc", 
+            "name": "ussurplusfc", 
             "sets": ""
         }, 
         {
@@ -1100,14 +1084,12 @@
         }, 
         {
             "header": "N140", 
-            "longname": true, 
-            "name": "gov_trans_real", 
+            "name": "govtransreal", 
             "sets": ""
         }, 
         {
             "header": "N141", 
-            "longname": true, 
-            "name": "gov_trans_gdp", 
+            "name": "govtransgdp", 
             "sets": ""
         }, 
         {
@@ -1142,8 +1124,7 @@
         }, 
         {
             "header": "N148", 
-            "longname": true, 
-            "name": "tot_gross_cap", 
+            "name": "totgrosscap", 
             "sets": [
                 "nind_c"
             ]
@@ -1195,13 +1176,12 @@
         }, 
         {
             "header": "N158", 
-            "name": "gov_transfer", 
+            "name": "gov_transdom", 
             "sets": ""
         }, 
         {
             "header": "N159", 
-            "longname": true, 
-            "name": "gov_to_foreign", 
+            "name": "gov_transabr", 
             "sets": ""
         }, 
         {
@@ -1226,8 +1206,7 @@
         }, 
         {
             "header": "N164", 
-            "longname": true, 
-            "name": "gov_int_abroad", 
+            "name": "gov_int_abr", 
             "sets": ""
         }, 
         {

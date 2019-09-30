@@ -1,3 +1,0 @@
-variable make_version M001;
-variable make_rowshr(nind,ncom) M002;
-variable make_colshr(nind,ncom) M003;

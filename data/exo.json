@@ -233,7 +233,7 @@
         }, 
         {
             "header": "X003", 
-            "name": "p_hours", 
+            "name": "pr_hours", 
             "sets": ""
         }, 
         {
@@ -245,7 +245,7 @@
         }, 
         {
             "header": "X005", 
-            "name": "p_numeraire", 
+            "name": "pr_numeraire", 
             "sets": ""
         }, 
         {
@@ -269,8 +269,7 @@
         }, 
         {
             "header": "X009", 
-            "longname": true, 
-            "name": "inven_fraction", 
+            "name": "inven_fract", 
             "sets": ""
         }, 
         {
@@ -336,7 +335,7 @@
         }, 
         {
             "header": "X021", 
-            "name": "prd_extern", 
+            "name": "prd_ext", 
             "sets": [
                 "nind", 
                 "nxtr"
@@ -344,7 +343,7 @@
         }, 
         {
             "header": "X022", 
-            "name": "imp_extern", 
+            "name": "imp_ext", 
             "sets": [
                 "ncom", 
                 "nxtr"
@@ -364,38 +363,32 @@
         }, 
         {
             "header": "X025", 
-            "longname": true, 
-            "name": "unemp_adj_time", 
+            "name": "unemp_time", 
             "sets": ""
         }, 
         {
             "header": "X026", 
-            "longname": true, 
-            "name": "unemp_adj_scaled", 
+            "name": "unemp_scale", 
             "sets": ""
         }, 
         {
             "header": "X027", 
-            "longname": true, 
-            "name": "exo_row_interest", 
+            "name": "xr_interest", 
             "sets": ""
         }, 
         {
             "header": "X028", 
-            "longname": true, 
-            "name": "exo_row_int_low", 
+            "name": "xr_int_low", 
             "sets": ""
         }, 
         {
             "header": "X029", 
-            "longname": true, 
-            "name": "exo_row_int_high", 
+            "name": "xr_int_high", 
             "sets": ""
         }, 
         {
             "header": "X030", 
-            "longname": true, 
-            "name": "row_debt_disc", 
+            "name": "row_debt_dsc", 
             "sets": ""
         }, 
         {
@@ -405,20 +398,17 @@
         }, 
         {
             "header": "X032", 
-            "longname": true, 
-            "name": "exo_gov_interest", 
+            "name": "xg_interest", 
             "sets": ""
         }, 
         {
             "header": "X033", 
-            "longname": true, 
-            "name": "exo_gov_int_abroad", 
+            "name": "xgintabroad", 
             "sets": ""
         }, 
         {
             "header": "X034", 
-            "longname": true, 
-            "name": "exo_gov_int_ss", 
+            "name": "xg_int_ss", 
             "sets": ""
         }, 
         {
@@ -433,14 +423,12 @@
         }, 
         {
             "header": "X037", 
-            "longname": true, 
-            "name": "gov_for_invest", 
+            "name": "gov_for_nvst", 
             "sets": ""
         }, 
         {
             "header": "X038", 
-            "longname": true, 
-            "name": "gov_debt_disc", 
+            "name": "gov_debt_dsc", 
             "sets": ""
         }, 
         {
@@ -455,7 +443,7 @@
         }, 
         {
             "header": "X041", 
-            "name": "t", 
+            "name": "year", 
             "sets": ""
         }, 
         {
@@ -480,18 +468,17 @@
         }, 
         {
             "header": "X046", 
-            "name": "exo_gov_debt", 
+            "name": "xg_debt", 
             "sets": ""
         }, 
         {
             "header": "X047", 
-            "longname": true, 
-            "name": "exo_gov_debt_f", 
+            "name": "xg_debt_f", 
             "sets": ""
         }, 
         {
             "header": "X048", 
-            "name": "exo_row_debt", 
+            "name": "xr_debt", 
             "sets": ""
         }, 
         {
@@ -501,8 +488,7 @@
         }, 
         {
             "header": "X050", 
-            "longname": true, 
-            "name": "exo_tech_level", 
+            "name": "exotechlevel", 
             "sets": ""
         }, 
         {
@@ -517,14 +503,12 @@
         }, 
         {
             "header": "X053", 
-            "longname": true, 
-            "name": "exo_tax_labor_a", 
+            "name": "exo_tax_laba", 
             "sets": ""
         }, 
         {
             "header": "X054", 
-            "longname": true, 
-            "name": "exo_tax_labor_m", 
+            "name": "exo_tax_labm", 
             "sets": ""
         }, 
         {
@@ -584,7 +568,7 @@
         }, 
         {
             "header": "X064", 
-            "name": "tax_extern_u", 
+            "name": "tax_ext_u", 
             "sets": [
                 "nxtr"
             ]
@@ -626,8 +610,7 @@
         }, 
         {
             "header": "X072", 
-            "longname": true, 
-            "name": "tax_con_exempt", 
+            "name": "tax_con_xmpt", 
             "sets": ""
         }, 
         {
@@ -639,14 +622,12 @@
         }, 
         {
             "header": "X074", 
-            "longname": true, 
-            "name": "tech_shock_agg", 
+            "name": "tech_shk_agg", 
             "sets": ""
         }, 
         {
             "header": "X075", 
-            "longname": true, 
-            "name": "tech_shock_row", 
+            "name": "tech_shk_row", 
             "sets": ""
         }, 
         {
@@ -661,8 +642,7 @@
         }, 
         {
             "header": "X078", 
-            "longname": true, 
-            "name": "inv_exp_shock", 
+            "name": "inv_exp_shk", 
             "sets": ""
         }, 
         {
@@ -699,275 +679,237 @@
         }, 
         {
             "header": "X085", 
-            "longname": true, 
-            "name": "dep_allow_std", 
+            "name": "depallowstd", 
             "sets": ""
         }, 
         {
             "header": "X086", 
-            "longname": true, 
-            "name": "dep_allow_econ", 
+            "name": "depallowecon", 
             "sets": ""
         }, 
         {
             "header": "X087", 
-            "longname": true, 
-            "name": "tax_scale_fac", 
+            "name": "tax_scale", 
             "sets": ""
         }, 
         {
             "header": "X088", 
-            "longname": true, 
-            "name": "exo_gov_transfer", 
+            "name": "xg_transfer", 
             "sets": ""
         }, 
         {
             "header": "X089", 
-            "longname": true, 
-            "name": "exo_gov_to_foreign", 
+            "name": "xgtoforeign", 
             "sets": ""
         }, 
         {
             "header": "X090", 
-            "longname": true, 
-            "name": "exo_rev_nontax", 
+            "name": "exorevnontax", 
             "sets": ""
         }, 
         {
             "header": "X091", 
-            "longname": true, 
-            "name": "exo_trans_abroad", 
+            "name": "exotransabro", 
             "sets": ""
         }, 
         {
             "header": "X092", 
-            "longname": true, 
-            "name": "exo_gov_from_ss", 
+            "name": "xg_from_ss", 
             "sets": ""
         }, 
         {
             "header": "X093", 
-            "longname": true, 
-            "name": "shr_gov_transfer", 
+            "name": "shrgovtransf", 
             "sets": ""
         }, 
         {
             "header": "X094", 
-            "longname": true, 
-            "name": "shr_gov_to_foreign", 
+            "name": "shrgovtofore", 
             "sets": ""
         }, 
         {
             "header": "X095", 
-            "longname": true, 
-            "name": "shr_rev_nontax", 
+            "name": "shrrevnontax", 
             "sets": ""
         }, 
         {
             "header": "X096", 
-            "longname": true, 
-            "name": "shr_trans_abroad", 
+            "name": "shrtransabro", 
             "sets": ""
         }, 
         {
             "header": "X097", 
-            "longname": true, 
-            "name": "shr_gov_from_ss", 
+            "name": "shrgovfromss", 
             "sets": ""
         }, 
         {
             "header": "X098", 
-            "longname": true, 
-            "name": "hist_nipa_gdp", 
+            "name": "hni_gdp", 
             "sets": ""
         }, 
         {
             "header": "X099", 
-            "name": "hist_nipa_c", 
+            "name": "hni_c", 
             "sets": ""
         }, 
         {
             "header": "X100", 
-            "longname": true, 
-            "name": "hist_nipa_c_dur", 
+            "name": "hni_c_dur", 
             "sets": ""
         }, 
         {
             "header": "X101", 
-            "name": "hist_nipa_i", 
+            "name": "hni_i", 
             "sets": ""
         }, 
         {
             "header": "X102", 
-            "name": "hist_nipa_g", 
+            "name": "hni_g", 
             "sets": ""
         }, 
         {
             "header": "X103", 
-            "name": "hist_nipa_x", 
+            "name": "hni_x", 
             "sets": ""
         }, 
         {
             "header": "X104", 
-            "name": "hist_nipa_m", 
+            "name": "hni_m", 
             "sets": ""
         }, 
         {
             "header": "X105", 
-            "longname": true, 
-            "name": "hist_nipa_real_gdp", 
+            "name": "hni_real_gdp", 
             "sets": ""
         }, 
         {
             "header": "X106", 
-            "longname": true, 
-            "name": "hist_nipa_real_c", 
+            "name": "hni_real_c", 
             "sets": ""
         }, 
         {
             "header": "X107", 
-            "longname": true, 
-            "name": "hist_nipa_real_i", 
+            "name": "hni_real_i", 
             "sets": ""
         }, 
         {
             "header": "X108", 
-            "longname": true, 
-            "name": "hist_nipa_real_g", 
+            "name": "hni_real_g", 
             "sets": ""
         }, 
         {
             "header": "X109", 
-            "longname": true, 
-            "name": "hist_nipa_real_x", 
+            "name": "hni_real_x", 
             "sets": ""
         }, 
         {
             "header": "X110", 
-            "longname": true, 
-            "name": "hist_nipa_real_m", 
+            "name": "hni_real_m", 
             "sets": ""
         }, 
         {
             "header": "X111", 
-            "longname": true, 
-            "name": "hist_nipa_shr_c", 
+            "name": "hni_shr_c", 
             "sets": ""
         }, 
         {
             "header": "X112", 
-            "longname": true, 
-            "name": "hist_nipa_shr_i", 
+            "name": "hni_shr_i", 
             "sets": ""
         }, 
         {
             "header": "X113", 
-            "longname": true, 
-            "name": "hist_nipa_shr_g", 
+            "name": "hni_shr_g", 
             "sets": ""
         }, 
         {
             "header": "X114", 
-            "longname": true, 
-            "name": "hist_nipa_shr_x", 
+            "name": "hni_shr_x", 
             "sets": ""
         }, 
         {
             "header": "X115", 
-            "longname": true, 
-            "name": "hist_nipa_shr_m", 
+            "name": "hni_shr_m", 
             "sets": ""
         }, 
         {
             "header": "X116", 
-            "longname": true, 
-            "name": "hist_dja_shr_c", 
+            "name": "hdj_shr_c", 
             "sets": ""
         }, 
         {
             "header": "X117", 
-            "longname": true, 
-            "name": "hist_dja_shr_i", 
+            "name": "hdj_shr_i", 
             "sets": ""
         }, 
         {
             "header": "X118", 
-            "longname": true, 
-            "name": "hist_dja_shr_g", 
+            "name": "hdj_shr_g", 
             "sets": ""
         }, 
         {
             "header": "X119", 
-            "longname": true, 
-            "name": "hist_dja_shr_x", 
+            "name": "hdj_shr_x", 
             "sets": ""
         }, 
         {
             "header": "X120", 
-            "longname": true, 
-            "name": "hist_dja_shr_m", 
+            "name": "hdj_shr_m", 
             "sets": ""
         }, 
         {
             "header": "X121", 
-            "longname": true, 
-            "name": "hist_ws_real_gdp", 
+            "name": "hws_real_gdp", 
             "sets": ""
         }, 
         {
             "header": "X122", 
-            "longname": true, 
-            "name": "hist_ws_real_gdp_alt", 
+            "name": "hwsrealgdpal", 
             "sets": ""
         }, 
         {
             "header": "X123", 
-            "longname": true, 
-            "name": "hist_ws_real_c", 
+            "name": "hws_real_c", 
             "sets": ""
         }, 
         {
             "header": "X124", 
-            "longname": true, 
-            "name": "hist_ws_real_i", 
+            "name": "hws_real_i", 
             "sets": ""
         }, 
         {
             "header": "X125", 
-            "longname": true, 
-            "name": "hist_ws_real_g", 
+            "name": "hws_real_g", 
             "sets": ""
         }, 
         {
             "header": "X126", 
-            "longname": true, 
-            "name": "hist_ws_real_x", 
+            "name": "hws_real_x", 
             "sets": ""
         }, 
         {
             "header": "X127", 
-            "longname": true, 
-            "name": "hist_ws_real_m", 
+            "name": "hws_real_m", 
             "sets": ""
         }, 
         {
             "header": "X128", 
-            "name": "hist_ws_gdp", 
+            "name": "hws_gdp", 
             "sets": ""
         }, 
         {
             "header": "X129", 
-            "name": "hist_ws_c", 
+            "name": "hws_c", 
             "sets": ""
         }, 
         {
             "header": "X130", 
-            "name": "hist_ws_i", 
+            "name": "hws_i", 
             "sets": ""
         }, 
         {
             "header": "X131", 
-            "name": "hist_ws_g", 
+            "name": "hws_g", 
             "sets": ""
         }, 
         {
@@ -977,14 +919,12 @@
         }, 
         {
             "header": "X133", 
-            "longname": true, 
-            "name": "hist_full_qty", 
+            "name": "histfullqty", 
             "sets": ""
         }, 
         {
             "header": "X134", 
-            "longname": true, 
-            "name": "hist_p_leisure", 
+            "name": "histpleisure", 
             "sets": ""
         }, 
         {
@@ -994,8 +934,7 @@
         }, 
         {
             "header": "X136", 
-            "longname": true, 
-            "name": "hist_p_numeraire", 
+            "name": "histpnumerai", 
             "sets": ""
         }, 
         {

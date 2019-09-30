@@ -1,0 +1,23 @@
+# define DSEL and then include this to build HAR files
+
+TARS = end exo kal mak par ext int iot
+
+MTXT = $(addsuffix _modhar.txt, $(TARS))
+MINP = $(addsuffix _modhar.inp, $(TARS))
+MHAR = $(addsuffix .har, $(TARS))
+LOGS = $(addsuffix .log, $(TARS))
+SYMS = $(addsuffix _dec.sym, $(TARS))
+
+.PRECIOUS: $(MTXT) $(MINP)
+
+%_modhar.txt : ../%.json ../%_data.csv ../build_modhar_txt.py
+	../build_modhar_txt.py $(DSEL).json $*
+
+%.har : %_modhar.txt 
+	@rm -f $*_modhar.log
+	modhar < $*_modhar.inp > $*_modhar.log
+
+har: $(MHAR)
+
+clean:
+	@rm -f $(LOGS) $(SYMS) $(MTXT) $(MINP) $(MHAR) *.log *~
