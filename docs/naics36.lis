@@ -1,0 +1,6337 @@
+Run Specifications:
+   Sym build 749 (2019/09/19)
+   Target language: html
+   Source file: openigem.sym
+   Source file: sets.sym
+   Source file: variables.sym
+   Source file: parameters.sym
+   Source file: producer.sym
+   Source file: household.sym
+   Source file: investment.sym
+   Source file: government.sym
+   Source file: trade.sym
+   Source file: factors.sym
+
+Intertemporal Details:
+
+   Longest lag is -1; longest lead is 1.
+
+Sets:
+
+   buy
+      Domestic buyers 
+         i01,i02,i03,i04,i05,i06,i07,i08,i09,i10,i11,i12,i13,i14,i15,
+         i16,i17,i18,i19,i20,i21,i22,i23,i24,i25,i26,i27,i28,i29,i30,
+         i31,i32,i33,i34,i35,i36,con,inv,gov
+
+   com
+      IGEM Commodities 
+         c01,c02,c03,c04,c05,c06,c07,c08,c09,c10,c11,c12,c13,c14,c15,
+         c16,c17,c18,c19,c20,c21,c22,c23,c24,c25,c26,c27,c28,c29,c30,
+         c31,c32,c33,c34,c35,c36
+
+   hh_cg
+      Clothing & footwear, Recreational goods, Reading materials,
+                                      and Household & personal goods 
+         n02,n06,n09,hpg
+
+   hh_cmm
+      Telecommunications, Postal and delivery 
+         n26,n27
+
+   hh_cs
+      Medical, Finance, Household operation, and Recreation aggregates 
+         md,fb,ho,rc
+
+   hh_edn
+      Education, Non-profit consumption 
+         n28,n34
+
+   hh_en
+      Gasoline, Other household fuel 
+         n03,n04
+
+   hh_ens
+      Electricity, Gas 
+         n12,n13
+
+   hh_f
+      Non-durable goods, Consumer capital services and Consumer services aggregates
+                                     plus leisure 
+         nd,ks,cs,r
+
+   hh_fb
+      Financial services, Life insurance, Business services 
+         n22,n23,n29
+
+   hh_ho
+      Owner maintenance, Education aggregate, Utilities aggregate, Transportation aggregate 
+         n35,edn,ups,trc
+
+   hh_hpg
+      Household goods, Personal care products 
+         n07,n08
+
+   hh_hps
+      Personal services, Social services, Household services 
+         n30,n31,n32
+
+   hh_ks
+      Rental, Household capital flow 
+         n10,n36
+
+   hh_md
+      Health care, Health insurance 
+         n14,n24
+
+   hh_nd
+      Food and tobacco, Pharmaceuticals, Energy aggregate, Consumer goods aggregate 
+         n01,n05,en,cg
+
+   hh_rc
+      Meals, Recreational services aggregate, Travel aggregate 
+         n20,rcs,trv
+
+   hh_rcs
+      Sports and theaters, Video and IT services, Gambling 
+         n17,n18,n19
+
+   hh_trc
+      Own transportation, Transportation, Vehicle insurance, Communications aggregate 
+         n15,n16,n25,cmm
+
+   hh_trv
+      Hotels, Foreign travel 
+         n21,n33
+
+   hh_ups
+      Water, Energy utilities aggregate, Household and personal services aggregate 
+         n11,ens,hps
+
+   ind
+         i01,i02,i03,i04,i05,i06,i07,i08,i09,i10,i11,i12,i13,i14,i15,
+         i16,i17,i18,i19,i20,i21,i22,i23,i24,i25,i26,i27,i28,i29,i30,
+         i31,i32,i33,i34,i35,i36
+
+   indxoilgas
+      IGEM Industries excluding Oil and Gas Mining 
+         i01,i04,i05,i06,i07,i08,i09,i10,i11,i12,i13,i14,i15,i16,i17,
+         i18,i19,i20,i21,i22,i23,i24,i25,i26,i27,i28,i29,i30,i31,i32,
+         i33,i34,i35,i36
+
+   inp_bl
+      Water and wastewater, Construction, Real estate and leasing 
+         c08,c09,c31
+
+   inp_ene
+      Electric utilities and Fossil fuels aggregate 
+         c06,ff
+
+   inp_eq
+      Machinery, IT equip, Electrical equip, Transportation equip 
+         c14,c15,c16,tr
+
+   inp_ff
+      Coal mining and Oil and Gas aggregates 
+         c04,oil,gas
+
+   inp_gas
+      Gas mining and Natural gas distribution 
+         c03,c07
+
+   inp_ma
+      Agriculture, Wood and products, Food et al, Textiles et al 
+         c01,c10,c20,c21
+
+   inp_mat
+      Agriculture, Metrals, Non-metals and Services aggregates 
+         ma,mm,mn,ms
+
+   inp_mm
+      Non-energy mining, Primary and Fabricated metals, Equipment aggregate 
+         c05,c12,c13,eq
+
+   inp_mn
+      Non-metal minerals, Misc mfg, Printing, Chemicals et al 
+         c11,c19,c22,c24
+
+   inp_ms
+      Business services, Trade and transportation, Other services aggregate 
+         c32,tt,sv
+
+   inp_o
+      Capital, labor, energy, materials, klem in output o 
+         kap,lab,ene,mat
+
+   inp_ob
+      Publishing et al, Software and IT, Finance and insurance 
+         c28,c29,c30
+
+   inp_oil
+      Oil mining and Petroleum and coal products 
+         c02,c23
+
+   inp_os
+      Education, Health, Accommodation, Other government 
+         c33,c34,c35,c36
+
+   inp_sv
+      Services 
+         bl,ob,os
+
+   inp_tr
+      Motor vehicles and parts, Other transportation equipment - inv_trnsp alias 
+         c17,c18
+
+   inp_tt
+      Wholesale and Retail trade, Transportation and warehousing 
+         c25,c26,c27
+
+   inputs
+      Commodities and tiers for production, io, and investment, inv 
+         c01,c02,c03,c04,c05,c06,c07,c08,c09,c10,c11,c12,c13,c14,c15,
+         c16,c17,c18,c19,c20,c21,c22,c23,c24,c25,c26,c27,c28,c29,c30,
+         c31,c32,c33,c34,c35,c36,kap,lab,os,ob,bl,tt,tr,mn,ma,gas,oil,
+         sv,eq,ms,mm,ff,mat,ene,rawm,furn,mserv,trd,trnsp,it,long,
+         mrawm,frawm,serv,mach,ttsvc,eit,short
+
+   inv_eit
+      The Machinery, IT and communications equipment and Transportation equipment aggregates 
+         mach,it,trnsp
+
+   inv_fixed
+      Long- and Short-lived capital 
+         long,short
+
+   inv_frawm
+      Metals and raw materials and Furnishings aggregates 
+         mrawm,furn
+
+   inv_furn
+      Misc mfg, Textiles, apparel and leather, Chemicals, rubber and plastic 
+         c19,c21,c24
+
+   inv_it
+      IT equipment, Publishing, Broadcasting and Telecommunications, Software and IT Services 
+         c15,c28,c29
+
+   inv_long
+      Non-energy mining and support, Construction, Real estate and leasing 
+         c05,c09,c31
+
+   inv_mach
+      Machinery, Electrical equipment and Furnishing and materials aggregate 
+         c14,c16,frawm
+
+   inv_mrawm
+      Fabricated metals and Raw materials aggregate 
+         c13,rawm
+
+   inv_mserv
+      Printing and related, Health care and social assistance, Accommodation and other services 
+         c22,c34,c35
+
+   inv_rawm
+      Wood and paper, Non-metallic minerals, Primary metals 
+         c10,c11,c12
+
+   inv_serv
+      Business services and Manufacturing services aggregate 
+         c32,mserv
+
+   inv_short
+      The Equipment and Trade, transportation and services aggregates 
+         eit,ttsvc
+
+   inv_trd
+      Wholesale and Retail trade 
+         c25,c26
+
+   inv_trnsp
+      Motor vehicle and parts, Other transportation equipment - inp_tr alias 
+         c17,c18
+
+   inv_ttsvc
+      Transportation and warehousing and the Trade and Services aggregates 
+         c27,trd,serv
+
+   mvpote
+      Motor vehicles and parts, Other transportation equipment 
+         c17,c18
+
+   NATTR
+      Demographic attributes 
+         at1,at2,at3,at4,at5,at6,at7,at8,at9,at10,at11
+
+   NCOM_K
+      Commodities plus capital 
+         c01,c02,c03,c04,c05,c06,c07,c08,c09,c10,c11,c12,c13,c14,c15,
+         c16,c17,c18,c19,c20,c21,c22,c23,c24,c25,c26,c27,c28,c29,c30,
+         c31,c32,c33,c34,c35,c36,kap
+
+   NIND_C
+      ind plus consumption 
+         i01,i02,i03,i04,i05,i06,i07,i08,i09,i10,i11,i12,i13,i14,i15,
+         i16,i17,i18,i19,i20,i21,i22,i23,i24,i25,i26,i27,i28,i29,i30,
+         i31,i32,i33,i34,i35,i36,con
+
+   NINP
+      Com plus capital and labor 
+         c01,c02,c03,c04,c05,c06,c07,c08,c09,c10,c11,c12,c13,c14,c15,
+         c16,c17,c18,c19,c20,c21,c22,c23,c24,c25,c26,c27,c28,c29,c30,
+         c31,c32,c33,c34,c35,c36,kap,lab
+
+   nipa
+      NIPA Commodities 
+         n01,n02,n03,n04,n05,n06,n07,n08,n09,n10,n11,n12,n13,n14,n15,
+         n16,n17,n18,n19,n20,n21,n22,n23,n24,n25,n26,n27,n28,n29,n30,
+         n31,n32,n33,n34,n35,n36
+
+   nleis
+      NIPA commodities plus leisure (r) 
+         n01,n02,n03,n04,n05,n06,n07,n08,n09,n10,n11,n12,n13,n14,n15,
+         n16,n17,n18,n19,n20,n21,n22,n23,n24,n25,n26,n27,n28,n29,n30,
+         n31,n32,n33,n34,n35,n36,r
+
+   ntoth
+      Household commodities and tiers, nipa 
+         n01,n02,n03,n04,n05,n06,n07,n08,n09,n10,n11,n12,n13,n14,n15,
+         n16,n17,n18,n19,n20,n21,n22,n23,n24,n25,n26,n27,n28,n29,n30,
+         n31,n32,n33,n34,n35,n36,r,cmm,hps,ens,trv,rcs,edn,hpg,fb,md,
+         en,ks,trc,ups,rc,ho,cg,cs,nd
+
+   NUSES
+      Commodity transactions - interindustry and final demand 
+         i01,i02,i03,i04,i05,i06,i07,i08,i09,i10,i11,i12,i13,i14,i15,
+         i16,i17,i18,i19,i20,i21,i22,i23,i24,i25,i26,i27,i28,i29,i30,
+         i31,i32,i33,i34,i35,i36,con,inv,gov,xpt,imp
+
+   NXTR
+      Externalities 
+         ex1,ex2,ex3,ex4,ex5,ex6,ex7,ex8,ex9,ex10,ex11,ex12,ex13,ex14,
+         ex15,ex16,ex17,ex18,ex19,ex20
+
+   pr_bl
+      Input prices, bl 
+         c08,c09,c31
+
+   pr_cg
+      Household prices, cg 
+         n02,n06,n09,hpg
+
+   pr_cmm
+      Household prices, cmm 
+         n26,n27
+
+   pr_cs
+      Household prices, cs 
+         md,fb,ho,rc
+
+   pr_edn
+      Household prices, edn 
+         n28,n34
+
+   pr_eit
+      Investment prices, eit 
+         mach,it,trnsp
+
+   pr_en
+      Household prices, en 
+         n03,n04
+
+   pr_ene
+      Input prices, ene 
+         c06,ff
+
+   pr_ens
+      Household prices, ens 
+         n12,n13
+
+   pr_eq
+      Input prices, eq 
+         c14,c15,c16,tr
+
+   pr_f
+      Household prices, f 
+         nd,ks,cs,r
+
+   pr_fb
+      Household prices, fb 
+         n22,n23,n29
+
+   pr_ff
+      Input prices, ff 
+         c04,oil,gas
+
+   pr_fixed
+      Investment prices, fixed 
+         long,short
+
+   pr_frawm
+      Investment prices, frawm 
+         mrawm,furn
+
+   pr_furn
+      Investment prices, furn 
+         c19,c21,c24
+
+   pr_gas
+      Input prices, gas 
+         c03,c07
+
+   pr_ho
+      Household prices, ho 
+         n35,edn,ups,trc
+
+   pr_hpg
+      Household prices, hpg 
+         n07,n08
+
+   pr_hps
+      Household prices, hps 
+         n30,n31,n32
+
+   pr_it
+      Investment prices, it 
+         c15,c28,c29
+
+   pr_ks
+      Household prices, ks 
+         n10,n36
+
+   pr_long
+      Investment prices, long 
+         c05,c09,c31
+
+   pr_ma
+      input prices, ma 
+         c01,c10,c20,c21
+
+   pr_mach
+      Investment prices, mach 
+         c14,c16,frawm
+
+   pr_mat
+      Input prices, mat 
+         ma,mm,mn,ms
+
+   pr_md
+      Household prices, md 
+         n14,n24
+
+   pr_mm
+      Input prices, mm 
+         c05,c12,c13,eq
+
+   pr_mn
+      input prices, mn 
+         c11,c19,c22,c24
+
+   pr_mrawm
+      Investment prices, mrawm 
+         c13,rawm
+
+   pr_ms
+      Input prices, ms 
+         c32,tt,sv
+
+   pr_mserv
+      Investment prices, mserv 
+         c22,c34,c35
+
+   pr_nd
+      Household prices, nd 
+         n01,n05,en,cg
+
+   pr_o
+      Input prices, klem in o 
+         kap,lab,ene,mat
+
+   pr_ob
+      Input prices, ob 
+         c28,c29,c30
+
+   pr_oil
+      Input prices, oil 
+         c02,c23
+
+   pr_os
+      Input prices, os 
+         c33,c34,c35,c36
+
+   pr_rawm
+      Investment prices, rawm 
+         c10,c11,c12
+
+   pr_rc
+      Household prices, rc 
+         n20,rcs,trv
+
+   pr_rcs
+      Household prices, rcs 
+         n17,n18,n19
+
+   pr_serv
+      Investment prices, serv 
+         c32,mserv
+
+   pr_short
+      Investment prices, short 
+         eit,ttsvc
+
+   pr_sv
+      Input prices, sv 
+         bl,ob,os
+
+   pr_tr
+      input prices, tr 
+         c17,c18
+
+   pr_trc
+      Household prices, trc 
+         n15,n16,n25,cmm
+
+   pr_trd
+      Investment prices, trd 
+         c25,c26
+
+   pr_trnsp
+      Investment prices, trnsp 
+         c17,c18
+
+   pr_trv
+      Household prices, trv 
+         n21,n33
+
+   pr_tt
+      input prices, tt 
+         c25,c26,c27
+
+   pr_ttsvc
+      Investment prices, ttsvc 
+         c27,trd,serv
+
+   pr_ups
+      Household prices, ups 
+         n11,ens,hps
+
+   s_bl
+      Input shares, bl 
+         c08,c09,c31
+
+   s_cg
+      Household shares, cg 
+         n02,n06,n09,hpg
+
+   s_cmm
+      Household shares, cmm 
+         n26,n27
+
+   s_cs
+      Household shares, cs 
+         md,fb,ho,rc
+
+   s_edn
+      Household shares, edn 
+         n28,n34
+
+   s_eit
+      Investment shares, eit 
+         mach,it,trnsp
+
+   s_en
+      Household shares, en 
+         n03,n04
+
+   s_ene
+      Input shares, ene 
+         c06,ff
+
+   s_ens
+      Household shares, ens 
+         n12,n13
+
+   s_eq
+      Input shares, eq 
+         c14,c15,c16,tr
+
+   s_f
+      Household shares, f 
+         nd,ks,cs,r
+
+   s_fb
+      Household shares, fb 
+         n22,n23,n29
+
+   s_ff
+      Input shares, ff 
+         c04,oil,gas
+
+   s_fixed
+      Investment shares, fixed 
+         long,short
+
+   s_frawm
+      Investment shares, frawm 
+         mrawm,furn
+
+   s_furn
+      Investment shares, furn 
+         c19,c21,c24
+
+   s_gas
+      Input shares, gas 
+         c03,c07
+
+   s_ho
+      Household shares, ho 
+         n35,edn,ups,trc
+
+   s_hpg
+      Household shares, hpg 
+         n07,n08
+
+   s_hps
+      Household shares, hps 
+         n30,n31,n32
+
+   s_it
+      Investment shares, it 
+         c15,c28,c29
+
+   s_ks
+      Household shares, ks 
+         n10,n36
+
+   s_long
+      Investment shares, long 
+         c05,c09,c31
+
+   s_ma
+      Input shares, ma 
+         c01,c10,c20,c21
+
+   s_mach
+      Investment shares, mach 
+         c14,c16,frawm
+
+   s_mat
+      Input shares, mat 
+         ma,mm,mn,ms
+
+   s_md
+      Household shares, md 
+         n14,n24
+
+   s_mm
+      Input shares, mm 
+         c05,c12,c13,eq
+
+   s_mn
+      Input shares, mn 
+         c11,c19,c22,c24
+
+   s_mrawm
+      Investment shares, mrawm 
+         c13,rawm
+
+   s_ms
+      Input shares, ms 
+         c32,tt,sv
+
+   s_mserv
+      Investment shares, mserv 
+         c22,c34,c35
+
+   s_nd
+      Household shares, nd 
+         n01,n05,en,cg
+
+   s_o
+      Input shares, klem in o 
+         kap,lab,ene,mat
+
+   s_ob
+      Input shares, ob 
+         c28,c29,c30
+
+   s_oil
+      Input shares, oil 
+         c02,c23
+
+   s_os
+      Input shares, os 
+         c33,c34,c35,c36
+
+   s_rawm
+      Investment shares, rawm 
+         c10,c11,c12
+
+   s_rc
+      Household shares, rc 
+         n20,rcs,trv
+
+   s_rcs
+      Household shares, rcs 
+         n17,n18,n19
+
+   s_serv
+      Investment shares, serv 
+         c32,mserv
+
+   s_short
+      Investment shares, short 
+         eit,ttsvc
+
+   s_sv
+      Input shares, sv 
+         bl,ob,os
+
+   s_tr
+      Input shares, tr 
+         c17,c18
+
+   s_trc
+      Household shares, trc 
+         n15,n16,n25,cmm
+
+   s_trd
+      Investment shares, trd 
+         c25,c26
+
+   s_trnsp
+      Investment shares, trnsp 
+         c17,c18
+
+   s_trv
+      Household shares, trv 
+         n21,n33
+
+   s_tt
+      Input shares, tt 
+         c25,c26,c27
+
+   s_ttsvc
+      Investment shares, ttsvc 
+         c27,trd,serv
+
+   s_ups
+      Household shares, ups 
+         n11,ens,hps
+
+   time
+      Time periods 
+         p0,p1
+
+
+Parameters:
+
+   ah_cg
+      Household shares at unit prices, cg (P009)
+         s_cg
+
+   ah_cmm
+      Household shares at unit prices, cmm (P022)
+         s_cmm
+
+   ah_cs
+      Household shares at unit prices, cs (P007)
+         s_cs
+
+   ah_edn
+      Household shares at unit prices, edn (P015)
+         s_edn
+
+   ah_en
+      Household shares at unit prices, en (P008)
+         s_en
+
+   ah_ens
+      Household shares at unit prices, ens (P020)
+         s_ens
+
+   ah_f
+      Household shares at unit prices, f (P004)
+         s_f
+
+   ah_fb
+      Household shares at unit prices, fb (P011)
+         s_fb
+
+   ah_ho
+      Household shares at unit prices, ho (P012)
+         s_ho
+
+   ah_hpg
+      Household shares at unit prices, hpg (P014)
+         s_hpg
+
+   ah_hps
+      Household shares at unit prices, hps (P021)
+         s_hps
+
+   ah_ks
+      Household shares at unit prices, ks (P006)
+         s_ks
+
+   ah_md
+      Household shares at unit prices, md (P010)
+         s_md
+
+   ah_nd
+      Household shares at unit prices, nd (P005)
+         s_nd
+
+   ah_rc
+      Household shares at unit prices, rc (P013)
+         s_rc
+
+   ah_rcs
+      Household shares at unit prices, rcs (P018)
+         s_rcs
+
+   ah_trc
+      Household shares at unit prices, trc (P017)
+         s_trc
+
+   ah_trv
+      Household shares at unit prices, trv (P019)
+         s_trv
+
+   ah_ups
+      Household shares at unit prices, ups (P016)
+         s_ups
+
+   ai_eit
+      Investment at unit prices, eit (P051)
+         s_eit
+
+   ai_fixed
+      Investment ahares at unit prices, fixed (P048)
+         s_fixed
+
+   ai_frawm
+      Investment ahares at unimt prices, frawm (P058)
+         s_frawm
+
+   ai_furn
+      Investment ahares at unit prices, furn (P061)
+         s_furn
+
+   ai_it
+      Investment ahares at unit prices, it (P054)
+         s_it
+
+   ai_long
+      Investment ahares at unit prices, long (P049)
+         s_long
+
+   ai_mach
+      Investment ahares at unit prices, mach (P053)
+         s_mach
+
+   ai_mrawm
+      Investment ahares at unit prices, mrawm (P060)
+         s_mrawm
+
+   ai_mserv
+      Investment ahares at unit prices, mserv (P059)
+         s_mserv
+
+   ai_rawm
+      Investment ahares at unit prices, rawm (P062)
+         s_rawm
+
+   ai_serv
+      Investment ahares at unit prices, serv (P057)
+         s_serv
+
+   ai_short
+      Investment ahares at unit prices, short (P050)
+         s_short
+
+   ai_trd
+      Investment ahares at unit prices, trd (P056)
+         s_trd
+
+   ai_trnsp
+      Investment ahares at unit prices, trnsp (P055)
+         s_trnsp
+
+   ai_ttsvc
+      Investment ahares at unit prices, ttsvc (P052)
+         s_ttsvc
+
+   am_imp
+      Import share at unit prices (P129)
+         com
+
+   ap0_bl
+      Price constant, bl (P092)
+         ind
+
+   ap0_ene
+      Price constant, ene (P079)
+         ind
+
+   ap0_eq
+      Price constant, eq (P088)
+         ind
+
+   ap0_ff
+      Price constant, ff (P081)
+         ind
+
+   ap0_gas
+      Price constant, gas (P083)
+         ind
+
+   ap0_ma
+      Price constant, ma (P084)
+         ind
+
+   ap0_mat
+      Price constant, mat (P080)
+         ind
+
+   ap0_mm
+      Price constant, mm (P085)
+         ind
+
+   ap0_mn
+      Price constant, mn (P086)
+         ind
+
+   ap0_ms
+      Price constant, ms (P087)
+         ind
+
+   ap0_o
+      Price constant, output o (P078)
+         ind
+
+   ap0_ob
+      Price constant, ob (P093)
+         ind
+
+   ap0_oil
+      Price constant, oil (P082)
+         ind
+
+   ap0_os
+      Price constant, os (P094)
+         ind
+
+   ap0_sv
+      Price constant, sv (P091)
+         ind
+
+   ap0_tr
+      Price constant, tr (P089)
+         ind
+
+   ap0_tt
+      Price constant, tt (P090)
+         ind
+
+   ap_bl
+      Input shares at unit prices, bl (P109)
+         s_bl,ind
+
+   ap_ene
+      Input shares at unit prices, ene (P096)
+         s_ene,ind
+
+   ap_eq
+      Input shares at unit prices, eq (P105)
+         s_eq,ind
+
+   ap_ff
+      Input shares at unit prices, ff (P098)
+         s_ff,ind
+
+   ap_gas
+      Input shares at unit prices, gas (P100)
+         s_gas,ind
+
+   ap_ma
+      Input shares at unit prices, ma (P101)
+         s_ma,ind
+
+   ap_mat
+      Input shares at unit prices, mat (P097)
+         s_mat,ind
+
+   ap_mm
+      Input shares at unit prices, mm (P102)
+         s_mm,ind
+
+   ap_mn
+      Input shares at unit prices, mn (P103)
+         s_mn,ind
+
+   ap_ms
+      Input shares at unit prices, ms (P104)
+         s_ms,ind
+
+   ap_o
+      Input shares at unit prices, klem in o (P095)
+         s_o,ind
+
+   ap_ob
+      Input shares at unit prices, ob (P110)
+         s_ob,ind
+
+   ap_oil
+      Input shares at unit prices, oil (P099)
+         s_oil,ind
+
+   ap_os
+      Input shares at unit prices, os (P111)
+         s_os,ind
+
+   ap_sv
+      Input shares at unit prices, sv (P108)
+         s_sv,ind
+
+   ap_tr
+      Input shares at unit prices, tr (P106)
+         s_tr,ind
+
+   ap_tt
+      Input shares at unit prices, tt (P107)
+         s_tt,ind
+
+   ax_exp
+      Export share at unit prices (P132)
+         com
+
+   bh_cg
+      Share price elasticities, cg (P028)
+         s_cg,pr_cg
+
+   bh_cmm
+      Share price elasticities, cmm (P041)
+         s_cmm,pr_cmm
+
+   bh_cs
+      Share price elasticities, cs (P026)
+         s_cs,pr_cs
+
+   bh_edn
+      Share price elasticities, edn (P034)
+         s_edn,pr_edn
+
+   bh_en
+      Share price elasticities, en (P027)
+         s_en,pr_en
+
+   bh_ens
+      Share price elasticities, ens (P039)
+         s_ens,pr_ens
+
+   bh_f
+      Share price elasticities, f (P023)
+         s_f,pr_f
+
+   bh_fb
+      Share price elasticities, fb (P030)
+         s_fb,pr_fb
+
+   bh_ho
+      Share price elasticities, ho (P031)
+         s_ho,pr_ho
+
+   bh_hpg
+      Share price elasticities, hpg (P033)
+         s_hpg,pr_hpg
+
+   bh_hps
+      Share price elasticities, hps (P040)
+         s_hps,pr_hps
+
+   bh_ks
+      Share price elasticities, ks (P025)
+         s_ks,pr_ks
+
+   bh_md
+      Share price elasticities, md (P029)
+         s_md,pr_md
+
+   bh_nd
+      Share price elasticities, nd (P024)
+         s_nd,pr_nd
+
+   bh_rc
+      Share price elasticities, rc (P032)
+         s_rc,pr_rc
+
+   bh_rcs
+      Share price elasticities, rcs (P037)
+         s_rcs,pr_rcs
+
+   bh_trc
+      Share price elasticities, trc (P036)
+         s_trc,pr_trc
+
+   bh_trv
+      Share price elasticities, trv (P038)
+         s_trv,pr_trv
+
+   bh_ups
+      Share price elasticities, ups (P035)
+         s_ups,pr_ups
+
+   bha_f
+      CEX share adjustment paramaters - demographic attributes, f (P042)
+         s_f,nattr
+
+   bhm_f
+      CEX share adjustment paramaters - expenditure, f (P043)
+         s_f
+
+   bi_eit
+      Share price elasticities, eit (P066)
+         s_eit,pr_eit
+
+   bi_fixed
+      Share price elasticities, fixed (P063)
+         s_fixed,pr_fixed
+
+   bi_frawm
+      Share price elasticities, frawm (P073)
+         s_frawm,pr_frawm
+
+   bi_furn
+      Share price elasticities, furn (P076)
+         s_furn,pr_furn
+
+   bi_it
+      Share price elasticities, it (P069)
+         s_it,pr_it
+
+   bi_long
+      Share price elasticities, long (P064)
+         s_long,pr_long
+
+   bi_mach
+      Share price elasticities, mach (P068)
+         s_mach,pr_mach
+
+   bi_mrawm
+      Share price elasticities, mrawm (P075)
+         s_mrawm,pr_mrawm
+
+   bi_mserv
+      Share price elasticities, mserv (P074)
+         s_mserv,pr_mserv
+
+   bi_rawm
+      Share price elasticities, rawm (P077)
+         s_rawm,pr_rawm
+
+   bi_serv
+      Share price elasticities, serv (P072)
+         s_serv,pr_serv
+
+   bi_short
+      Share price elasticities, short (P065)
+         s_short,pr_short
+
+   bi_trd
+      Share price elasticities, trd (P071)
+         s_trd,pr_trd
+
+   bi_trnsp
+      Share price elasticities, trnspo (P070)
+         s_trnsp,pr_trnsp
+
+   bi_ttsvc
+      Share price elasticities, ttsvc (P067)
+         s_ttsvc,pr_ttsvc
+
+   bm_imp
+      Import share price elasticity (P130)
+         com
+
+   bp_bl
+      Share price elasticities, bl (P126)
+         s_bl,pr_bl,ind
+
+   bp_ene
+      Share price elasticities, ene (P113)
+         s_ene,pr_ene,ind
+
+   bp_eq
+      Share price elasticities, eq (P122)
+         s_eq,pr_eq,ind
+
+   bp_ff
+      Share price elasticities, ff (P115)
+         s_ff,pr_ff,ind
+
+   bp_gas
+      Share price elasticities, gas (P117)
+         s_gas,pr_gas,ind
+
+   bp_ma
+      Share price elasticities, ma (P118)
+         s_ma,pr_ma,ind
+
+   bp_mat
+      Share price elasticities, mat (P114)
+         s_mat,pr_mat,ind
+
+   bp_mm
+      Share price elasticities, mm (P119)
+         s_mm,pr_mm,ind
+
+   bp_mn
+      Share price elasticities, mn (P120)
+         s_mn,pr_mn,ind
+
+   bp_ms
+      Share price elasticities, ms (P121)
+         s_ms,pr_ms,ind
+
+   bp_o
+      Share price elasticities, klem in o (P112)
+         s_o,pr_o,ind
+
+   bp_ob
+      Share price elasticities, ob (P127)
+         s_ob,pr_ob,ind
+
+   bp_oil
+      Share price elasticities, oil (P116)
+         s_oil,pr_oil,ind
+
+   bp_os
+      Share price elasticities, os (P128)
+         s_os,pr_os,ind
+
+   bp_sv
+      Share price elasticities, sv (P125)
+         s_sv,pr_sv,ind
+
+   bp_tr
+      Share price elasticities, tr (P123)
+         s_tr,pr_tr,ind
+
+   bp_tt
+      Share price elasticities, tt (P124)
+         s_tt,pr_tt,ind
+
+   bx_exp
+      Export share price elasticity (P133)
+         com
+
+   delta
+      Depreciation rate (P131)
+         
+
+   denom_rebase
+      Full consumption share denominator re-basing parameter (P044)
+         
+
+   io_nipa
+      io to nipa commodity price shares (P045)
+         ncom_k,nipa
+
+   pf_scale_k
+      Scalar - Capital stock (P135)
+         
+
+   pf_scale_l
+      Scalar - Value of available hours (P134)
+         
+
+   pfc_m0
+      Full consumption share normalization parameter (P046)
+         
+
+   pr_fc_scale
+      Full consumption price normalization scalar (P142)
+         
+
+
+Variables:
+
+   ab_shr_f
+      Full consumption shares - with only alpha and beta effects, f (ZV41)
+         s_f
+
+   adjust_i
+      Convert investment dollars to capital stock (X011)
+         
+
+   adjust_k
+      Convert capital stock to capital services (X013)
+         
+
+   adjust_pk
+      Capital stock-to-investment goods price adjustment (X012)
+         
+
+   agg_tech_chg
+      Economy-wide rate of technological improvement (X076)
+         
+
+   agg_tech_lvl
+      Economy-wide level of technological improvement (N132)
+         
+
+   amk_imp
+      Import share constant (ZV71)
+         com
+
+   capgain
+      Value of capital gains (N068)
+         
+
+   cex_shr_f
+      Full consumption shares - with cex expenditure and demographic effects, f (ZV42)
+         s_f
+
+   cg_rate
+      Capital gains rate (N041)
+         
+
+   com_ext
+      Externality coefficients from consumption (ZV05)
+         com,buy,nxtr
+
+   com_out
+      Values of domestic commodities (N082)
+         com
+
+   com_qty
+      Quantities of domestic commodities (N083)
+         com
+
+   con
+      Consumption expenditures by commodity, io (N013)
+         ncom_k
+
+   con_expend
+      Consumption expenditure (N009)
+         
+
+   con_qty
+      Consumption quantities by commodity, io (ZV45)
+         ncom_k
+
+   con_share
+      Commodity shares of consumption expenditure, nipa (N016)
+         nipa
+
+   con_shk_qty
+      Consumer demand shocks, io quantities (X079)
+         ncom_k
+
+   con_shk_val
+      Consumer demand shocks, io values (N015)
+         ncom_k
+
+   con_shk_xpnd
+      Consumer demand shocks, total value (N010)
+         
+
+   con_xpnd_net
+      Net consumption expenditure (ZV46)
+         
+
+   cshare
+      Consumption share of full consumption (N018)
+         
+
+   denom
+      Full consumption share denominator (ZV44)
+         
+
+   deprec
+      Value of depreciation (N059)
+         
+
+   div_rate
+      Dividend rate (N040)
+         
+
+   dividend
+      Value of dividend (N069)
+         
+
+   dom_share
+      Domestic share of total supply (N032)
+         com
+
+   dv_hh
+      cex-nipa bridge for full consumption shares (X023)
+         s_f
+
+   ene
+      Quantities of energy bought (N051)
+         ind
+
+   exch
+      Direct exchange rate, USD/Foreign currency (N073)
+         
+
+   exo_pf
+      Commodity import prices, foreign currency, exogenous (X004)
+         com
+
+   exo_tax_cap
+      Average-marginal tax rate on capital, exogenous (X058)
+         
+
+   exo_tax_laba
+      Average tax rate on labor, exogenous (X053)
+         
+
+   exo_tax_labm
+      Marginal tax rate on labor, exogenous (X054)
+         
+
+   exp_qty
+      Quantity composition of exports (ZV75)
+         com
+
+   exp_share
+      Commodity shares of exports (N095)
+         com
+
+   export_real
+      Real exports of goods and services (ZV74)
+         
+
+   export_value
+      Value of exported goods and services (N075)
+         
+
+   exports
+      Value composition of exports (N031)
+         com
+
+   finwealth
+      Value of financial wealth (N071)
+         
+
+   fixed_inv
+      Fixed investment (N024)
+         
+
+   full_con
+      Value of full consumption (N131)
+         
+
+   full_qty
+      Quantity of full consumption (N134)
+         
+
+   gov
+      Value composition of government expenditure (N029)
+         com
+
+   gov_debt
+      gov debt held domestically (N128)
+         
+
+   gov_debt_cg
+      capital gain on gov_debt (X039)
+         
+
+   gov_debt_dsc
+      gov_debt discrepancy (X038)
+         
+
+   gov_debt_f
+      gov debt held abroad (N129)
+         
+
+   gov_debt_fcg
+      capital gain on gov_debt_f (X040)
+         
+
+   gov_expend
+      Government ependiture on goods and services (N027)
+         
+
+   gov_for_nvst
+      gov foreign investment (X037)
+         
+
+   gov_from_ss
+      gov transfer from social insurance funds (N162)
+         
+
+   gov_int_abr
+      gov interest paid on gov debt held abroad (N164)
+         
+
+   gov_int_adj
+      gov interest adjustment (N076)
+         
+
+   gov_int_ss
+      gov interest paid to social insurance funds (N165)
+         
+
+   gov_interest
+      gov interest paid on gov debt held domestically (N163)
+         
+
+   gov_kap_inc
+      gov enterprises capital income (N078)
+         
+
+   gov_qty
+      Quantity composition of government spending (ZV64)
+         com
+
+   gov_real
+      Real government purchases of goods and services (N028)
+         
+
+   gov_share
+      Commodity shares of government expenditure (X010)
+         com
+
+   gov_surplus
+      Federal, state and local gov surplus (X035)
+         
+
+   gov_transabr
+      gov transfers abroad (N159)
+         
+
+   gov_transdom
+      domestic gov transfers (N158)
+         
+
+   grossout
+      Gross values of domestic industry outputs (N135)
+         ind
+
+   hh_equiv
+      Number of household equivalent members (X044)
+         
+
+   hh_equiv_lag
+      Lagged hh_equiv (X052)
+         
+
+   hours
+      Total hours in household time endowment (X042)
+         
+
+   hours_adjust
+      Household time endowment after unemployment adjustment (N097)
+         
+
+   imp_ext
+      Externality coefficients from imports (X022)
+         com,nxtr
+
+   imp_qty
+      Quantity composition of imports (N137)
+         com
+
+   imp_share
+      Import share of total supply (ZV73)
+         com
+
+   import_real
+      Real imports of goods and services (ZV72)
+         
+
+   import_value
+      Value of imported goods and services (N074)
+         
+
+   imports
+      Value composition of imports (N030)
+         com
+
+   income
+      Value of household income (N043)
+         
+
+   income_dist
+      income distribution statistic (X015)
+         
+
+   income_share
+      income shares by attribute (X016)
+         nattr
+
+   ind_out
+      Net values of domestic industry outputs (N057)
+         ind
+
+   ind_qty
+      Quantities of domestic industry outputs (N136)
+         ind
+
+   inf
+      Inflation rate (X082)
+         
+
+   int_qty
+      Real commodity purchases by buyers (I002)
+         com,buy
+
+   int_val
+      Value of commodity purchases by buyers (I001)
+         com,buy
+
+   interest
+      Value of interest earned (N070)
+         
+
+   inv
+      Investment goods expenditures (N023)
+         com
+
+   inv_exp_shk
+      Policy shock to investment expenditures (X078)
+         
+
+   inv_expend
+      Pre-itc investment (N021)
+         
+
+   inv_qty
+      Investment goods quantities (N026)
+         com
+
+   inv_real
+      Post-itc investment quantity (ZV62)
+         
+
+   inv_share
+      Commodity shares of fixed investment (ZV63)
+         com
+
+   inv_shock
+      Policy shock to the price of investment goods (X077)
+         
+
+   inv_total
+      Post-itc investnent (N022)
+         
+
+   inven_fract
+      Inventory fraction of post-itc investment (X009)
+         
+
+   inven_inv
+      Inventory investment (N025)
+         
+
+   inven_share
+      Commodity shares of inventory investment (X014)
+         com
+
+   io
+      Input-output coefficients in value terms (O001)
+         ninp,ind
+
+   k
+      Physical capital stock (N127)
+         
+
+   k_value
+      Value of physical capital stock (ZV76)
+         
+
+   kalf_bl
+      Input biases, bl (K017)
+         s_bl,ind
+
+   kalf_ene
+      Input biases, ene (K004)
+         s_ene,ind
+
+   kalf_eq
+      Input biases, eq (K013)
+         s_eq,ind
+
+   kalf_ff
+      Input biases, ff (K006)
+         s_ff,ind
+
+   kalf_gas
+      Input biases, gas (K008)
+         s_gas,ind
+
+   kalf_ma
+      Input biases, ma (K009)
+         s_ma,ind
+
+   kalf_mat
+      Input biases, mat (K005)
+         s_mat,ind
+
+   kalf_mm
+      Input biases, mm (K010)
+         s_mm,ind
+
+   kalf_mn
+      Input biases, mn (K011)
+         s_mn,ind
+
+   kalf_ms
+      Input biases, ms (K012)
+         s_ms,ind
+
+   kalf_o
+      Input biases, klem in o (K003)
+         s_o,ind
+
+   kalf_ob
+      Input biases, ob (K018)
+         s_ob,ind
+
+   kalf_oil
+      Input biases, oil (K007)
+         s_oil,ind
+
+   kalf_os
+      Input biases, os (K019)
+         s_os,ind
+
+   kalf_sv
+      Input biases, sv (K016)
+         s_sv,ind
+
+   kalf_tr
+      Input biases, tr (K014)
+         s_tr,ind
+
+   kalf_tt
+      Input biases, tt (K015)
+         s_tt,ind
+
+   kalh_cg
+      Household biases, cg (K040)
+         s_cg
+
+   kalh_cmm
+      Household biases, cmm (K053)
+         s_cmm
+
+   kalh_cs
+      Household biases, cs (K038)
+         s_cs
+
+   kalh_edn
+      Household biases, edn (K046)
+         s_edn
+
+   kalh_en
+      Household biases, en (K039)
+         s_en
+
+   kalh_ens
+      Household biases, ens (K051)
+         s_ens
+
+   kalh_fb
+      Household biases, fb (K042)
+         s_fb
+
+   kalh_ho
+      Household biases, ho (K043)
+         s_ho
+
+   kalh_hpg
+      Household biases, hpg (K045)
+         s_hpg
+
+   kalh_hps
+      Household biases, hps (K052)
+         s_hps
+
+   kalh_ks
+      Household biases, ks (K037)
+         s_ks
+
+   kalh_md
+      Household biases, md (K041)
+         s_md
+
+   kalh_nd
+      Household biases, nd (K036)
+         s_nd
+
+   kalh_rc
+      Household biases, rc (K044)
+         s_rc
+
+   kalh_rcs
+      Household biases, rcs (K049)
+         s_rcs
+
+   kalh_trc
+      Household biases, trc (K048)
+         s_trc
+
+   kalh_trv
+      Household biases, trv (K050)
+         s_trv
+
+   kalh_ups
+      Household biases, ups (K047)
+         s_ups
+
+   kali_eit
+      Investment biases, eit (K023)
+         s_eit
+
+   kali_fixed
+      Investment biases, fixed (K020)
+         s_fixed
+
+   kali_frawm
+      Investment biases, frawm (K030)
+         s_frawm
+
+   kali_furn
+      Investment biases, furn (K033)
+         s_furn
+
+   kali_it
+      Investment biases, it (K026)
+         s_it
+
+   kali_long
+      Investment biases, long (K021)
+         s_long
+
+   kali_mach
+      Investment biases, mach (K025)
+         s_mach
+
+   kali_mrawm
+      Investment biases, mrawm (K032)
+         s_mrawm
+
+   kali_mserv
+      Investment biases, mserv (K031)
+         s_mserv
+
+   kali_rawm
+      Investment biases, rawm (K034)
+         s_rawm
+
+   kali_serv
+      Investment biases, serv (K029)
+         s_serv
+
+   kali_short
+      Investment biases, short (K022)
+         s_short
+
+   kali_trd
+      Investment biases, trd (K028)
+         s_trd
+
+   kali_trnsp
+      Investment biases, trnsp (K027)
+         s_trnsp
+
+   kali_ttsvc
+      Investment biases, ttsvc (K024)
+         s_ttsvc
+
+   kalm_imp
+      Import share bias (K054)
+         com
+
+   kalp
+      Technical change (TFP, Total factor productivity), output (K002)
+         ind
+
+   kalx_exp
+      Export share bias (K055)
+         com
+
+   kap
+      Quantities of capital services bought (N049)
+         NIND_C
+
+   kap_demand
+      Total quantity of capital services demanded (N061)
+         
+
+   kap_gas
+      Capital services, gas mining (X018)
+         
+
+   kap_inc_net
+      Value of post-tax capital income (N064)
+         
+
+   kap_income
+      Value of pre-tax capital income (N063)
+         
+
+   kap_oil
+      Capital services, oil mining (X017)
+         
+
+   kap_taxable
+      Value of taxable capital income (N065)
+         
+
+   lab
+      Quantities of labor bought (N050)
+         ind
+
+   lab_demand
+      Total quantity of labor demanded (N062)
+         
+
+   lab_inc_net
+      Value of post-tax labor income (N067)
+         
+
+   lab_income
+      Value of pre-tax labor income (N066)
+         
+
+   leisure
+      Leisure quantity (N011)
+         
+
+   make_col
+      Make table of commodity output shares (M003)
+         ind,com
+
+   mat
+      Quantities of materials bought (N052)
+         ind
+
+   nyears_lag
+      Lagged number of intervening years (ZV02)
+         
+
+   nyears_lead
+      Leading number of intervening years (ZV01)
+         
+
+   pb
+      Buyer prices with demand-driven externality taxes (if any) (T001)
+         inputs,buy
+
+   pc
+      Domestic commodity prices (N035)
+         com
+
+   pcon
+      Household commodity prices including leisure and tiers, nipa (N019)
+         ntoth
+
+   pf
+      Commodity import prices, foreign currency (N091)
+         com
+
+   pfd
+      Commodity import prices, domestic currency (ZV03)
+         com
+
+   pi
+      Industry purchaser prices (N034)
+         ind
+
+   pii
+      Price of investment goods (N020)
+         
+
+   pj_scale
+      Leisure price multiplier (X008)
+         
+
+   pk
+      Price of new capital stock (N060)
+         
+
+   pk_scale
+      Capital price multipliers (X006)
+         NIND_C
+
+   pk_service
+      Price of capital services (N058)
+         
+
+   pl_scale
+      Labor price multipliers (X007)
+         ind
+
+   po
+      Industry producer prices (N033)
+         ind
+
+   pr_con
+      Household commodity prices, io (N014)
+         ncom_k
+
+   pr_fc
+      Price of full consumption (N008)
+         
+
+   pr_hours
+      After-tax value of time to households (X003)
+         
+
+   pr_inv
+      Investment commodity prices, io (ZV04)
+         inputs
+
+   pr_kap_gas
+      Price of capital services, gas mining (N081)
+         
+
+   pr_kap_oil
+      Price of capital services, oil mining (N080)
+         
+
+   pr_leisure
+      Price of leisure (N017)
+         
+
+   prd_ext
+      Externality coefficients from production (X021)
+         ind,nxtr
+
+   ps
+      Total commodity supply prices (N036)
+         com
+
+   qty_extern
+      Quantities of externalties (N085)
+         nxtr
+
+   r
+      Interest rate (N042)
+         
+
+   rev_cap
+      Capital tax revenue (N098)
+         
+
+   rev_cap_hh
+      Capital tax revenue from households (N108)
+         
+
+   rev_com_ext
+      Externality tax revenue from demand-side commodity use (N114)
+         
+
+   rev_con
+      Consumption tax revenue (N109)
+         
+
+   rev_con_gov
+      Consumption tax revenue from government spending (N110)
+         
+
+   rev_con_rbt
+      Lump-sum rebate of consumption taxes (N112)
+         
+
+   rev_extern
+      Externality tax revenue from supply-side production and imports (N107)
+         
+
+   rev_hcap
+      Consumption tax revenue from household capital (N111)
+         
+
+   rev_itc
+      Loss in tax revenue from the invcestment tax credit (itc) (N099)
+         
+
+   rev_labor
+      Labor (wage) tax revenue (N100)
+         
+
+   rev_lump
+      Lump-sum tax revenue (X061)
+         
+
+   rev_nontax
+      Non-tax revenue (N160)
+         
+
+   rev_prop
+      Property tax revenue (N101)
+         
+
+   rev_sales
+      Sales tax revenue (N102)
+         
+
+   rev_tariff
+      Tariff revenue (N104)
+         
+
+   rev_total
+      Total tax revenue (N105)
+         
+
+   rev_unit
+      Unit tax revenue (N106)
+         
+
+   rev_wealth
+      Wealth tax revenue (N103)
+         
+
+   row_debt
+      Rest-of-world debt (N130)
+         
+
+   row_debt_cg
+      Capital gains on rest-of-world debt (X031)
+         
+
+   row_debt_dsc
+      Rest-of-world debt discrepancy (X030)
+         
+
+   row_int_adj
+      Rest-of-world interest adjustment (N077)
+         
+
+   row_interest
+      Rest-of-world interest (N166)
+         
+
+   row_tariff
+      Commodity tariff rates, foreign (X060)
+         com
+
+   save
+      Value of household saving (N044)
+         
+
+   shr_bl
+      Input shares, bl (ZV10)
+         s_bl,ind
+
+   shr_cg
+      Household shares, cg (ZV25)
+         s_cg
+
+   shr_cmm
+      Household shares, cmm (ZV27)
+         s_cmm
+
+   shr_cs
+      Household shares, cs (ZV39)
+         s_cs
+
+   shr_edn
+      Household shares, edn (ZV32)
+         s_edn
+
+   shr_eit
+      Investment shares, eit (ZV58)
+         s_eit
+
+   shr_en
+      Household shares, en (ZV23)
+         s_en
+
+   shr_ene
+      Input shares, ene (ZV09)
+         s_ene,ind
+
+   shr_ens
+      Household shares, ens (ZV29)
+         s_ens
+
+   shr_eq
+      Input shares, eq (ZV18)
+         s_eq,ind
+
+   shr_f
+      Full consumption shares - bridged cex-to-nipa (ZV43)
+         s_f
+
+   shr_fb
+      Household shares, fb (ZV33)
+         s_fb
+
+   shr_ff
+      Input shares, ff (ZV08)
+         s_ff,ind
+
+   shr_fixed
+      Investment shares, fixed (ZV61)
+         s_fixed
+
+   shr_frawm
+      Investment shares, frawm (ZV54)
+         s_frawm
+
+   shr_furn
+      Investment shares, furn (ZV48)
+         s_furn
+
+   shr_gas
+      Input shares, gas (ZV06)
+         s_gas,ind
+
+   shr_ho
+      Household shares, ho (ZV38)
+         s_ho
+
+   shr_hpg
+      Household shares, hpg (ZV24)
+         s_hpg
+
+   shr_hps
+      Household shares, hps (ZV28)
+         s_hps
+
+   shr_it
+      Investment shares, it (ZV52)
+         s_it
+
+   shr_ks
+      Household shares, ks (ZV40)
+         s_ks
+
+   shr_long
+      Investment shares, long (ZV60)
+         s_long
+
+   shr_ma
+      Input shares, ma (ZV14)
+         s_ma,ind
+
+   shr_mach
+      Investment shares, mach (ZV56)
+         s_mach
+
+   shr_mat
+      Input shares, mat (ZV21)
+         s_mat,ind
+
+   shr_md
+      Household shares, md (ZV34)
+         s_md
+
+   shr_mm
+      Input shares, mm (ZV20)
+         s_mm,ind
+
+   shr_mn
+      Input shares, mn (ZV15)
+         s_mn,ind
+
+   shr_mrawm
+      Investment shares, mrawm (ZV53)
+         s_mrawm
+
+   shr_ms
+      Input shares, ms (ZV19)
+         s_ms,ind
+
+   shr_mserv
+      Investment shares, mserv (ZV49)
+         s_mserv
+
+   shr_nd
+      Household shares, nd (ZV26)
+         s_nd
+
+   shr_o
+      Input shares, klem in o (ZV22)
+         s_o,ind
+
+   shr_ob
+      Input shares, ob (ZV11)
+         s_ob,ind
+
+   shr_oil
+      Input shares, oil (ZV07)
+         s_oil,ind
+
+   shr_os
+      Input shares, os (ZV12)
+         s_os,ind
+
+   shr_rawm
+      Investment shares, rawm (ZV47)
+         s_rawm
+
+   shr_rc
+      Household shares, rc (ZV37)
+         s_rc
+
+   shr_rcs
+      Household shares, rcs (ZV31)
+         s_rcs
+
+   shr_serv
+      Investment shares, serv (ZV55)
+         s_serv
+
+   shr_short
+      Investment shares, short (ZV59)
+         s_short
+
+   shr_sv
+      Input shares, sv (ZV13)
+         s_sv,ind
+
+   shr_tr
+      Input shares, tr (ZV16)
+         s_tr,ind
+
+   shr_trc
+      Household shares, trc (ZV35)
+         s_trc
+
+   shr_trd
+      Investment shares, trd (ZV50)
+         s_trd
+
+   shr_trnsp
+      Investment shares, trnsp (ZV51)
+         s_trnsp
+
+   shr_trv
+      Household shares, trv (ZV30)
+         s_trv
+
+   shr_tt
+      Input shares, tt (ZV17)
+         s_tt,ind
+
+   shr_ttsvc
+      Investment shares, ttsvc (ZV57)
+         s_ttsvc
+
+   shr_ups
+      Household shares, ups (ZV36)
+         s_ups
+
+   tar_ext_com
+      Import tariff rate from all externalities (ZV66)
+         com
+
+   tariff
+      Commodity tariff rates, domestic (X059)
+         com
+
+   tax_cap
+      Average-marginal tax rate on capital (N126)
+         
+
+   tax_cap_hh
+      Average-marginal tax rate on household capital (X066)
+         
+
+   tax_con
+      Consumption tax on all household expenditures (X067)
+         
+
+   tax_con_good
+      Consumption tax on only household goods and services (X068)
+         
+
+   tax_con_gov
+      Consumption tax on all government spending (X071)
+         
+
+   tax_con_kap
+      Consumption tax on only household capital services (X069)
+         
+
+   tax_con_lab
+      Consumption tax on labor (X070)
+         
+
+   tax_con_totc
+      Total consumption tax on goods and services (ZV69)
+         
+
+   tax_con_totk
+      Total consumption tax on capital services (ZV70)
+         
+
+   tax_con_xmpt
+      Consumption tax exemption base (X072)
+         
+
+   tax_ext_com
+      Consumption tax rate from all externalties (ZV67)
+         com,buy
+
+   tax_ext_ind
+      Production tax rate from all externalities (ZV65)
+         ind
+
+   tax_ext_u
+      Externality tax rate (X064)
+         nxtr
+
+   tax_full
+      Fully-burdened industry tax rate (ZV68)
+         ind
+
+   tax_gain_h
+      Tax rate on household capital gains (X080)
+         
+
+   tax_itc
+      Investment tax credit (X065)
+         
+
+   tax_labor_a
+      Average tax rate on labor (N124)
+         
+
+   tax_labor_m
+      Marginal tax rate on labor (N125)
+         
+
+   tax_labor_z
+      Zero-bracket labor tax (N090)
+         
+
+   tax_prop
+      Average-marginal tax rate on property (X055)
+         
+
+   tax_sales
+      Sales tax rate (X056)
+         ind
+
+   tax_scale
+      Scalar applied to labor and capital taxes (X087)
+         
+
+   tax_unit
+      Unit tax rate (X062)
+         ind
+
+   tax_wealth
+      Average-marginal tax rate on wealth (X057)
+         
+
+   tech_shk_agg
+      Economy-wide technology shock (X074)
+         
+
+   tech_shk_row
+      Technology shock to foreign commodity prices, pf (X075)
+         
+
+   tech_shock
+      Input neutral industry-specific technology shock (X073)
+         ind
+
+   trade_surp
+      Trade surplus in domestic currency (N093)
+         
+
+   trade_surpfc
+      Trade surplus in foreign currency (N094)
+         
+
+   unemp_scale
+      Scalar unemployment adjustment (X026)
+         
+
+   unemp_time
+      Temporal unemployment adjustment (X025)
+         
+
+   us_surplus
+      Current account surplus in domestic currency (X019)
+         
+
+   year
+      Calendar years (X041)
+         
+
+
+Unique Elements:
+
+   at1,at10,at11,at2,at3,at4,at5,at6,at7,at8,at9,bl,c01,c02,c03,c04,
+   c05,c06,c07,c08,c09,c10,c11,c12,c13,c14,c15,c16,c17,c18,c19,c20,c21,
+   c22,c23,c24,c25,c26,c27,c28,c29,c30,c31,c32,c33,c34,c35,c36,cg,cmm,
+   con,cs,edn,eit,en,ene,ens,eq,ex1,ex10,ex11,ex12,ex13,ex14,ex15,ex16,
+   ex17,ex18,ex19,ex2,ex20,ex3,ex4,ex5,ex6,ex7,ex8,ex9,fb,ff,frawm,
+   furn,gas,gov,ho,hpg,hps,i01,i02,i03,i04,i05,i06,i07,i08,i09,i10,i11,
+   i12,i13,i14,i15,i16,i17,i18,i19,i20,i21,i22,i23,i24,i25,i26,i27,i28,
+   i29,i30,i31,i32,i33,i34,i35,i36,imp,inv,it,kap,ks,lab,long,ma,mach,
+   mat,md,mm,mn,mrawm,ms,mserv,n01,n02,n03,n04,n05,n06,n07,n08,n09,n10,
+   n11,n12,n13,n14,n15,n16,n17,n18,n19,n20,n21,n22,n23,n24,n25,n26,n27,
+   n28,n29,n30,n31,n32,n33,n34,n35,n36,nd,ob,oil,os,p0,p1,r,rawm,rc,
+   rcs,serv,short,sv,tr,trc,trd,trnsp,trv,tt,ttsvc,ups,xpt
+
+Equations Using Each Parameter:
+
+   ah_cg: 131,132
+   ah_cmm: 101,102
+   ah_cs: 133,134
+   ah_edn: 111,112
+   ah_en: 119,120
+   ah_ens: 105,106
+   ah_f: 137,141
+   ah_fb: 115,116
+   ah_ho: 129,130
+   ah_hpg: 113,114
+   ah_hps: 103,104
+   ah_ks: 121,122
+   ah_md: 117,118
+   ah_nd: 135,136
+   ah_rc: 127,128
+   ah_rcs: 109,110
+   ah_trc: 123,124
+   ah_trv: 107,108
+   ah_ups: 125,126
+   ai_eit: 211,212
+   ai_fixed: 217,218
+   ai_frawm: 203,204
+   ai_furn: 191,192
+   ai_it: 199,200
+   ai_long: 215,216
+   ai_mach: 207,208
+   ai_mrawm: 201,202
+   ai_mserv: 193,194
+   ai_rawm: 189,190
+   ai_serv: 205,206
+   ai_short: 213,214
+   ai_trd: 195,196
+   ai_trnsp: 197,198
+   ai_ttsvc: 209,210
+   am_imp: none
+   ap0_bl: 22
+   ap0_ene: 20
+   ap0_eq: 38
+   ap0_ff: 18
+   ap0_gas: 14
+   ap0_ma: 30
+   ap0_mat: 44
+   ap0_mm: 42
+   ap0_mn: 32
+   ap0_ms: 40
+   ap0_o: 46
+   ap0_ob: 24
+   ap0_oil: 16
+   ap0_os: 26
+   ap0_sv: 28
+   ap0_tr: 34
+   ap0_tt: 36
+   ap_bl: 21,22
+   ap_ene: 19,20
+   ap_eq: 37,38
+   ap_ff: 17,18
+   ap_gas: 13,14
+   ap_ma: 29,30
+   ap_mat: 43,44
+   ap_mm: 41,42
+   ap_mn: 31,32
+   ap_ms: 39,40
+   ap_o: 45,46
+   ap_ob: 23,24
+   ap_oil: 15,16
+   ap_os: 25,26
+   ap_sv: 27,28
+   ap_tr: 33,34
+   ap_tt: 35,36
+   ax_exp: 265
+   bh_cg: 131,132
+   bh_cmm: 101,102
+   bh_cs: 133,134
+   bh_edn: 111,112
+   bh_en: 119,120
+   bh_ens: 105,106
+   bh_f: 137,138,141
+   bh_fb: 115,116
+   bh_ho: 129,130
+   bh_hpg: 113,114
+   bh_hps: 103,104
+   bh_ks: 121,122
+   bh_md: 117,118
+   bh_nd: 135,136
+   bh_rc: 127,128
+   bh_rcs: 109,110
+   bh_trc: 123,124
+   bh_trv: 107,108
+   bh_ups: 125,126
+   bha_f: 139
+   bhm_f: 139
+   bi_eit: 211,212
+   bi_fixed: 217,218
+   bi_frawm: 203,204
+   bi_furn: 191,192
+   bi_it: 199,200
+   bi_long: 215,216
+   bi_mach: 207,208
+   bi_mrawm: 201,202
+   bi_mserv: 193,194
+   bi_rawm: 189,190
+   bi_serv: 205,206
+   bi_short: 213,214
+   bi_trd: 195,196
+   bi_trnsp: 197,198
+   bi_ttsvc: 209,210
+   bm_imp: 51,53
+   bp_bl: 21,22
+   bp_ene: 19,20
+   bp_eq: 37,38
+   bp_ff: 17,18
+   bp_gas: 13,14
+   bp_ma: 29,30
+   bp_mat: 43,44
+   bp_mm: 41,42
+   bp_mn: 31,32
+   bp_ms: 39,40
+   bp_o: 45,46
+   bp_ob: 23,24
+   bp_oil: 15,16
+   bp_os: 25,26
+   bp_sv: 27,28
+   bp_tr: 33,34
+   bp_tt: 35,36
+   bx_exp: 265
+   delta: 281,288,295
+   denom_rebase: 138
+   io_nipa: 184,185,98
+   pf_scale_k: none
+   pf_scale_l: none
+   pfc_m0: 141
+   pr_fc_scale: 141
+
+Equations Using Each Variable:
+
+   ab_shr_f:
+      LHS 137
+      RHS 139
+   adjust_i:
+      LHS none
+      RHS 222
+   adjust_k:
+      LHS none
+      RHS none
+   adjust_pk:
+      LHS none
+      RHS 219
+   agg_tech_chg:
+      LHS none
+      RHS 8
+   agg_tech_lvl:
+      LHS 8
+      RHS 46,8
+   amk_imp:
+      LHS none
+      RHS 51,53
+   capgain:
+      LHS 295
+      RHS 296
+   cex_shr_f:
+      LHS 139
+      RHS 140
+   cg_rate:
+      LHS 296
+      RHS 297
+   com_ext:
+      LHS none
+      RHS 6
+   com_out:
+      LHS none
+      RHS none
+   com_qty:
+      LHS none
+      RHS 266,267,269
+   con:
+      LHS 184,185
+      RHS 186,187,286
+   con_expend:
+      LHS 144
+      RHS 183
+   con_qty:
+      LHS 186
+      RHS 283
+   con_share:
+      LHS 145,146,147,148,149,150,151,152,153,154,155,156,157,158,159,160,161,162,163,164,165,166,167,168,169,170,171,172,173,174,175,176,177,178,179,180
+      RHS 184,185
+   con_shk_qty:
+      LHS none
+      RHS 181
+   con_shk_val:
+      LHS 181
+      RHS 182,184,185
+   con_shk_xpnd:
+      LHS 182
+      RHS 183
+   con_xpnd_net:
+      LHS 183
+      RHS 184,185
+   cshare:
+      LHS 143
+      RHS 144,145,146,147,148,149,150,151,152,153,154,155,156,157,158,159,160,161,162,163,164,165,166,167,168,169,170,171,172,173,174,175,176,177,178,179,180
+   denom:
+      LHS 138
+      RHS 139,141
+   deprec:
+      LHS 288
+      RHS none
+   div_rate:
+      LHS 292
+      RHS 297
+   dividend:
+      LHS 291
+      RHS 292,304
+   dom_share:
+      LHS 52
+      RHS 269
+   dv_hh:
+      LHS none
+      RHS 140
+   ene:
+      LHS none
+      RHS none
+   exch:
+      LHS none
+      RHS 265,273,50
+   exo_pf:
+      LHS none
+      RHS 49
+   exo_tax_cap:
+      LHS none
+      RHS 3
+   exo_tax_laba:
+      LHS none
+      RHS 2
+   exo_tax_labm:
+      LHS none
+      RHS 1
+   exp_qty:
+      LHS 267
+      RHS none
+   exp_share:
+      LHS 265
+      RHS 266,267
+   export_real:
+      LHS none
+      RHS none
+   export_value:
+      LHS 268
+      RHS 272
+   exports:
+      LHS 266
+      RHS 268
+   finwealth:
+      LHS 301
+      RHS 302
+   fixed_inv:
+      LHS 223
+      RHS 224,261
+   full_con:
+      LHS none
+      RHS 139,142,144
+   full_qty:
+      LHS none
+      RHS none
+   gov:
+      LHS 263
+      RHS 264
+   gov_debt:
+      LHS none
+      RHS 298,299,301
+   gov_debt_cg:
+      LHS none
+      RHS none
+   gov_debt_dsc:
+      LHS none
+      RHS none
+   gov_debt_f:
+      LHS none
+      RHS none
+   gov_debt_fcg:
+      LHS none
+      RHS none
+   gov_expend:
+      LHS none
+      RHS 263
+   gov_for_nvst:
+      LHS none
+      RHS none
+   gov_from_ss:
+      LHS none
+      RHS 299
+   gov_int_abr:
+      LHS none
+      RHS none
+   gov_int_adj:
+      LHS 299
+      RHS 303,304
+   gov_int_ss:
+      LHS none
+      RHS 299
+   gov_interest:
+      LHS none
+      RHS 299
+   gov_kap_inc:
+      LHS 293
+      RHS 304
+   gov_qty:
+      LHS 264
+      RHS none
+   gov_real:
+      LHS none
+      RHS none
+   gov_share:
+      LHS none
+      RHS 263
+   gov_surplus:
+      LHS none
+      RHS none
+   gov_transabr:
+      LHS none
+      RHS none
+   gov_transdom:
+      LHS none
+      RHS none
+   grossout:
+      LHS none
+      RHS none
+   hh_equiv:
+      LHS none
+      RHS none
+   hh_equiv_lag:
+      LHS none
+      RHS none
+   hours:
+      LHS none
+      RHS 274
+   hours_adjust:
+      LHS 274
+      RHS 278
+   imp_ext:
+      LHS none
+      RHS 5
+   imp_qty:
+      LHS 270
+      RHS none
+   imp_share:
+      LHS 51
+      RHS 269,52
+   import_real:
+      LHS none
+      RHS none
+   import_value:
+      LHS 271
+      RHS 272
+   imports:
+      LHS 269
+      RHS 270,271
+   income:
+      LHS none
+      RHS none
+   income_dist:
+      LHS none
+      RHS 139
+   income_share:
+      LHS none
+      RHS 139
+   ind_out:
+      LHS none
+      RHS 275,282
+   ind_qty:
+      LHS none
+      RHS none
+   inf:
+      LHS none
+      RHS none
+   int_qty:
+      LHS none
+      RHS none
+   int_val:
+      LHS none
+      RHS none
+   interest:
+      LHS 298
+      RHS 303,304
+   inv:
+      LHS 261
+      RHS 262
+   inv_exp_shk:
+      LHS none
+      RHS 222
+   inv_expend:
+      LHS none
+      RHS 220
+   inv_qty:
+      LHS 262
+      RHS none
+   inv_real:
+      LHS 222
+      RHS 281
+   inv_share:
+      LHS 225,226,227,228,229,230,231,232,233,234,235,236,237,238,239,240,241,242,243,244,245,246,247,248,249,250,251,252,253,254,255,256,257,258,259,260
+      RHS 261
+   inv_shock:
+      LHS none
+      RHS 218
+   inv_total:
+      LHS 220
+      RHS 221,222,223,224
+   inven_fract:
+      LHS none
+      RHS 223
+   inven_inv:
+      LHS 224
+      RHS 261
+   inven_share:
+      LHS none
+      RHS 261
+   io:
+      LHS 55,56,57,58,59,60,61,62,63,64,65,66,67,68,69,70,71,72,73,74,75,76,77,78,79,80,81,82,83,84,85,86,87,88,89,90,91,92
+      RHS 275,282
+   k:
+      LHS 281
+      RHS 281,287
+   k_value:
+      LHS 287
+      RHS 288,289,292,295,296,301
+   kalf_bl:
+      LHS none
+      RHS 21,22
+   kalf_ene:
+      LHS none
+      RHS 19,20
+   kalf_eq:
+      LHS none
+      RHS 37,38
+   kalf_ff:
+      LHS none
+      RHS 17,18
+   kalf_gas:
+      LHS none
+      RHS 13,14
+   kalf_ma:
+      LHS none
+      RHS 29,30
+   kalf_mat:
+      LHS none
+      RHS 43,44
+   kalf_mm:
+      LHS none
+      RHS 41,42
+   kalf_mn:
+      LHS none
+      RHS 31,32
+   kalf_ms:
+      LHS none
+      RHS 39,40
+   kalf_o:
+      LHS none
+      RHS 45,46
+   kalf_ob:
+      LHS none
+      RHS 23,24
+   kalf_oil:
+      LHS none
+      RHS 15,16
+   kalf_os:
+      LHS none
+      RHS 25,26
+   kalf_sv:
+      LHS none
+      RHS 27,28
+   kalf_tr:
+      LHS none
+      RHS 33,34
+   kalf_tt:
+      LHS none
+      RHS 35,36
+   kalh_cg:
+      LHS none
+      RHS 131,132
+   kalh_cmm:
+      LHS none
+      RHS 101,102
+   kalh_cs:
+      LHS none
+      RHS 133,134
+   kalh_edn:
+      LHS none
+      RHS 111,112
+   kalh_en:
+      LHS none
+      RHS 119,120
+   kalh_ens:
+      LHS none
+      RHS 105,106
+   kalh_fb:
+      LHS none
+      RHS 115,116
+   kalh_ho:
+      LHS none
+      RHS 129,130
+   kalh_hpg:
+      LHS none
+      RHS 113,114
+   kalh_hps:
+      LHS none
+      RHS 103,104
+   kalh_ks:
+      LHS none
+      RHS 121,122
+   kalh_md:
+      LHS none
+      RHS 117,118
+   kalh_nd:
+      LHS none
+      RHS 135,136
+   kalh_rc:
+      LHS none
+      RHS 127,128
+   kalh_rcs:
+      LHS none
+      RHS 109,110
+   kalh_trc:
+      LHS none
+      RHS 123,124
+   kalh_trv:
+      LHS none
+      RHS 107,108
+   kalh_ups:
+      LHS none
+      RHS 125,126
+   kali_eit:
+      LHS none
+      RHS 211,212
+   kali_fixed:
+      LHS none
+      RHS 217,218
+   kali_frawm:
+      LHS none
+      RHS 203,204
+   kali_furn:
+      LHS none
+      RHS 191,192
+   kali_it:
+      LHS none
+      RHS 199,200
+   kali_long:
+      LHS none
+      RHS 215,216
+   kali_mach:
+      LHS none
+      RHS 207,208
+   kali_mrawm:
+      LHS none
+      RHS 201,202
+   kali_mserv:
+      LHS none
+      RHS 193,194
+   kali_rawm:
+      LHS none
+      RHS 189,190
+   kali_serv:
+      LHS none
+      RHS 205,206
+   kali_short:
+      LHS none
+      RHS 213,214
+   kali_trd:
+      LHS none
+      RHS 195,196
+   kali_trnsp:
+      LHS none
+      RHS 197,198
+   kali_ttsvc:
+      LHS none
+      RHS 209,210
+   kalm_imp:
+      LHS none
+      RHS none
+   kalp:
+      LHS none
+      RHS 46
+   kalx_exp:
+      LHS none
+      RHS 265
+   kap:
+      LHS 282,283
+      RHS 284,285,286,293
+   kap_demand:
+      LHS 284
+      RHS none
+   kap_gas:
+      LHS none
+      RHS none
+   kap_inc_net:
+      LHS 304
+      RHS none
+   kap_income:
+      LHS 286
+      RHS 290
+   kap_oil:
+      LHS none
+      RHS none
+   kap_taxable:
+      LHS 290
+      RHS 291,303
+   lab:
+      LHS 275
+      RHS 276,277
+   lab_demand:
+      LHS 276
+      RHS none
+   lab_inc_net:
+      LHS 278
+      RHS none
+   lab_income:
+      LHS 277
+      RHS 279,280
+   leisure:
+      LHS 142
+      RHS 278
+   make_col:
+      LHS none
+      RHS 48
+   mat:
+      LHS none
+      RHS none
+   nyears_lag:
+      LHS 294
+      RHS 295
+   nyears_lead:
+      LHS 7
+      RHS 281,8
+   pb:
+      LHS 10,11,12,14,16,18,20,22,24,26,28,30,32,34,36,38,40,42,44,54,9,93
+      RHS 13,14,15,16,17,18,188,19,20,21,22,23,24,25,26,264,27,275,277,28,282,285,286,29,293,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,96,97
+   pc:
+      LHS 48
+      RHS 265,266,269,51,53
+   pcon:
+      LHS 100,102,104,106,108,110,112,114,116,118,120,122,124,126,128,130,132,134,136,98
+      RHS 101,102,103,104,105,106,107,108,109,110,111,112,113,114,115,116,117,118,119,120,121,122,123,124,125,126,127,128,129,130,131,132,133,134,135,136,137,138,141
+   pf:
+      LHS 49
+      RHS 265,50
+   pfd:
+      LHS 50
+      RHS 270,51,53
+   pi:
+      LHS 47
+      RHS none
+   pii:
+      LHS 218
+      RHS 219,222
+   pj_scale:
+      LHS none
+      RHS 99
+   pk:
+      LHS 219
+      RHS 287,295
+   pk_scale:
+      LHS none
+      RHS 284,9,93
+   pk_service:
+      LHS none
+      RHS 9,93
+   pl_scale:
+      LHS none
+      RHS 12,276
+   po:
+      LHS 46
+      RHS 47,48
+   pr_con:
+      LHS 96,97
+      RHS 181,186,98
+   pr_fc:
+      LHS 141
+      RHS none
+   pr_hours:
+      LHS none
+      RHS 12,278,99
+   pr_inv:
+      LHS 188,190,192,194,196,198,200,202,204,206,208,210,212,214,216
+      RHS 189,190,191,192,193,194,195,196,197,198,199,200,201,202,203,204,205,206,207,208,209,210,211,212,213,214,215,216,217,218,262
+   pr_kap_gas:
+      LHS none
+      RHS 11
+   pr_kap_oil:
+      LHS none
+      RHS 10
+   pr_leisure:
+      LHS 99
+      RHS 100,142,278
+   prd_ext:
+      LHS none
+      RHS 4
+   ps:
+      LHS 53
+      RHS 54
+   qty_extern:
+      LHS none
+      RHS none
+   r:
+      LHS 297
+      RHS 298,299,300
+   rev_cap:
+      LHS 303
+      RHS none
+   rev_cap_hh:
+      LHS 285
+      RHS 286
+   rev_com_ext:
+      LHS none
+      RHS none
+   rev_con:
+      LHS 187
+      RHS none
+   rev_con_gov:
+      LHS none
+      RHS none
+   rev_con_rbt:
+      LHS none
+      RHS none
+   rev_extern:
+      LHS none
+      RHS none
+   rev_hcap:
+      LHS none
+      RHS none
+   rev_itc:
+      LHS 221
+      RHS none
+   rev_labor:
+      LHS 279
+      RHS 280
+   rev_lump:
+      LHS none
+      RHS none
+   rev_nontax:
+      LHS none
+      RHS none
+   rev_prop:
+      LHS 289
+      RHS 290
+   rev_sales:
+      LHS none
+      RHS none
+   rev_tariff:
+      LHS none
+      RHS none
+   rev_total:
+      LHS none
+      RHS none
+   rev_unit:
+      LHS none
+      RHS none
+   rev_wealth:
+      LHS 302
+      RHS 304
+   row_debt:
+      LHS none
+      RHS 298,300,301
+   row_debt_cg:
+      LHS none
+      RHS none
+   row_debt_dsc:
+      LHS none
+      RHS none
+   row_int_adj:
+      LHS 300
+      RHS 303,304
+   row_interest:
+      LHS none
+      RHS 300
+   row_tariff:
+      LHS none
+      RHS 265
+   save:
+      LHS none
+      RHS none
+   shr_bl:
+      LHS 21
+      RHS 81,82,83
+   shr_cg:
+      LHS 131
+      RHS 146,150,151,152,153
+   shr_cmm:
+      LHS 101
+      RHS 164,165
+   shr_cs:
+      LHS 133
+      RHS 156,157,158,159,160,161,162,163,164,165,166,167,168,169,170,171,172,173,174,175,176,177,178,179,180
+   shr_edn:
+      LHS 111
+      RHS 175,176
+   shr_eit:
+      LHS 211
+      RHS 228,229,230,231,232,233,239,240,241,242,243,244,246,247
+   shr_en:
+      LHS 119
+      RHS 147,148
+   shr_ene:
+      LHS 19
+      RHS 59,60,61,62,63,64
+   shr_ens:
+      LHS 105
+      RHS 157,158
+   shr_eq:
+      LHS 37
+      RHS 68,69,70,71,72
+   shr_f:
+      LHS 140
+      RHS 142,143,145,146,147,148,149,150,151,152,153,154,155,156,157,158,159,160,161,162,163,164,165,166,167,168,169,170,171,172,173,174,175,176,177,178,179,180
+   shr_fb:
+      LHS 115
+      RHS 172,173,174
+   shr_ff:
+      LHS 17
+      RHS 59,60,61,62,63
+   shr_fixed:
+      LHS 217
+      RHS 225,226,227,228,229,230,231,232,233,234,235,236,237,238,239,240,241,242,243,244,245,246,247,248
+   shr_frawm:
+      LHS 203
+      RHS 228,229,230,231,232,233,244
+   shr_furn:
+      LHS 191
+      RHS 231,232,233
+   shr_gas:
+      LHS 13
+      RHS 61,62
+   shr_ho:
+      LHS 129
+      RHS 156,157,158,161,162,163,164,165,175,176,177,178,179,180
+   shr_hpg:
+      LHS 113
+      RHS 151,152
+   shr_hps:
+      LHS 103
+      RHS 177,178,179
+   shr_it:
+      LHS 199
+      RHS 241,242,243
+   shr_ks:
+      LHS 121
+      RHS 154,155
+   shr_long:
+      LHS 215
+      RHS 225,226,227
+   shr_ma:
+      LHS 29
+      RHS 55,56,57,58
+   shr_mach:
+      LHS 207
+      RHS 228,229,230,231,232,233,244,246,247
+   shr_mat:
+      LHS 43
+      RHS 55,56,57,58,65,66,67,68,69,70,71,72,73,74,75,76,77,78,79,80,81,82,83,84,85,86,87,88,89,90
+   shr_md:
+      LHS 117
+      RHS 159,160
+   shr_mm:
+      LHS 41
+      RHS 65,66,67,68,69,70,71,72
+   shr_mn:
+      LHS 31
+      RHS 73,74,75,76
+   shr_mrawm:
+      LHS 201
+      RHS 228,229,230,244
+   shr_ms:
+      LHS 39
+      RHS 77,78,79,80,81,82,83,84,85,86,87,88,89,90
+   shr_mserv:
+      LHS 193
+      RHS 234,235,236
+   shr_nd:
+      LHS 135
+      RHS 145,146,147,148,149,150,151,152,153
+   shr_o:
+      LHS 45
+      RHS 55,56,57,58,59,60,61,62,63,64,65,66,67,68,69,70,71,72,73,74,75,76,77,78,79,80,81,82,83,84,85,86,87,88,89,90,91,92
+   shr_ob:
+      LHS 23
+      RHS 84,85,86
+   shr_oil:
+      LHS 15
+      RHS 59,60
+   shr_os:
+      LHS 25
+      RHS 87,88,89,90
+   shr_rawm:
+      LHS 189
+      RHS 228,229,230
+   shr_rc:
+      LHS 127
+      RHS 166,167,168,169,170,171
+   shr_rcs:
+      LHS 109
+      RHS 166,167,168
+   shr_serv:
+      LHS 205
+      RHS 234,235,236,245
+   shr_short:
+      LHS 213
+      RHS 228,229,230,231,232,233,234,235,236,237,238,239,240,241,242,243,244,245,246,247,248
+   shr_sv:
+      LHS 27
+      RHS 81,82,83,84,85,86,87,88,89,90
+   shr_tr:
+      LHS 33
+      RHS 71,72
+   shr_trc:
+      LHS 123
+      RHS 161,162,163,164,165
+   shr_trd:
+      LHS 195
+      RHS 237,238
+   shr_trnsp:
+      LHS 197
+      RHS 239,240
+   shr_trv:
+      LHS 107
+      RHS 170,171
+   shr_tt:
+      LHS 35
+      RHS 78,79,80
+   shr_ttsvc:
+      LHS 209
+      RHS 234,235,236,237,238,245,248
+   shr_ups:
+      LHS 125
+      RHS 156,157,158,177,178,179
+   tar_ext_com:
+      LHS 5
+      RHS 50
+   tariff:
+      LHS none
+      RHS 50
+   tax_cap:
+      LHS 3
+      RHS 291,293,299,300,303,304
+   tax_cap_hh:
+      LHS none
+      RHS 285,93
+   tax_con:
+      LHS none
+      RHS 94,95
+   tax_con_good:
+      LHS none
+      RHS 94
+   tax_con_gov:
+      LHS none
+      RHS 263
+   tax_con_kap:
+      LHS none
+      RHS 95
+   tax_con_lab:
+      LHS none
+      RHS none
+   tax_con_totc:
+      LHS 94
+      RHS 184,187,96
+   tax_con_totk:
+      LHS 95
+      RHS 97
+   tax_con_xmpt:
+      LHS none
+      RHS none
+   tax_ext_com:
+      LHS 6
+      RHS 54
+   tax_ext_ind:
+      LHS 4
+      RHS 47
+   tax_ext_u:
+      LHS none
+      RHS 4,5,6
+   tax_full:
+      LHS none
+      RHS none
+   tax_gain_h:
+      LHS none
+      RHS none
+   tax_itc:
+      LHS none
+      RHS 219,220,221
+   tax_labor_a:
+      LHS 2
+      RHS 278,279
+   tax_labor_m:
+      LHS 1
+      RHS 12,278,280
+   tax_labor_z:
+      LHS 280
+      RHS none
+   tax_prop:
+      LHS none
+      RHS 289
+   tax_sales:
+      LHS none
+      RHS 47
+   tax_scale:
+      LHS none
+      RHS 1,2,3
+   tax_unit:
+      LHS none
+      RHS 47
+   tax_wealth:
+      LHS none
+      RHS 302
+   tech_shk_agg:
+      LHS none
+      RHS 46
+   tech_shk_row:
+      LHS none
+      RHS 49
+   tech_shock:
+      LHS none
+      RHS 46
+   trade_surp:
+      LHS 272
+      RHS 273
+   trade_surpfc:
+      LHS 273
+      RHS none
+   unemp_scale:
+      LHS none
+      RHS 274
+   unemp_time:
+      LHS none
+      RHS none
+   us_surplus:
+      LHS none
+      RHS none
+   year:
+      LHS none
+      RHS 294,7
+
+Unused Parameters:
+
+   am_imp
+   pf_scale_k
+   pf_scale_l
+
+Unused Variables:
+
+   adjust_k
+   com_out
+   ene
+   export_real
+   full_qty
+   gov_debt_cg
+   gov_debt_dsc
+   gov_debt_f
+   gov_debt_fcg
+   gov_for_nvst
+   gov_int_abr
+   gov_real
+   gov_surplus
+   gov_transabr
+   gov_transdom
+   grossout
+   hh_equiv
+   hh_equiv_lag
+   import_real
+   income
+   ind_qty
+   inf
+   int_qty
+   int_val
+   kalm_imp
+   kap_gas
+   kap_oil
+   mat
+   qty_extern
+   rev_com_ext
+   rev_con_gov
+   rev_con_rbt
+   rev_extern
+   rev_hcap
+   rev_lump
+   rev_nontax
+   rev_sales
+   rev_tariff
+   rev_total
+   rev_unit
+   row_debt_cg
+   row_debt_dsc
+   save
+   tax_con_lab
+   tax_con_xmpt
+   tax_full
+   tax_gain_h
+   unemp_time
+   us_surplus
+
+
+Equation 1
+----------
+
+   tax_labor_m=exo_tax_labm*tax_scale
+
+
+Equation 2
+----------
+
+   tax_labor_a=exo_tax_laba*tax_scale
+
+
+Equation 3
+----------
+
+   tax_cap=exo_tax_cap*tax_scale
+
+
+Equation 4
+----------
+Domain: ind
+Count: 36 (4 to 39)
+
+   tax_ext_ind=sum(nxtr,tax_ext_u*prd_ext(ind,nxtr))
+
+
+Equation 5
+----------
+Domain: com
+Count: 36 (40 to 75)
+
+   tar_ext_com=sum(nxtr,tax_ext_u*imp_ext(com,nxtr))
+
+
+Equation 6
+----------
+Domain: buy,com
+Count: 1404 (76 to 1479)
+
+   tax_ext_com
+   =sum(nxtr,tax_ext_u*com_ext(com,buy,nxtr))
+
+
+Equation 7
+----------
+Relative Time: [0,1]
+
+   nyears_lead=lead(year)-year
+
+
+Equation 8
+----------
+Relative Time: [0,1]
+
+   lead(agg_tech_lvl)
+   =(1-agg_tech_chg)^nyears_lead*agg_tech_lvl
+
+
+Equation 9
+----------
+Domain: indxoilgas,kap
+Count: 34 (1482 to 1515)
+
+   pb(kap,indxoilgas)=pk_service*pk_scale(indxoilgas)
+
+
+Equation 10
+-----------
+Domain: i02,kap
+Count: 1 (1516 to 1516)
+
+   pb(kap,i02)=pr_kap_oil
+
+
+Equation 11
+-----------
+Domain: i03,kap
+Count: 1 (1517 to 1517)
+
+   pb(kap,i03)=pr_kap_gas
+
+
+Equation 12
+-----------
+Domain: ind,lab
+Count: 36 (1518 to 1553)
+
+   pb(lab,ind)=(pr_hours*pl_scale(ind))/(1-tax_labor_m)
+
+
+Equation 13
+-----------
+Domain: ind,s_gas
+Count: 72 (1554 to 1625)
+
+   shr_gas
+   =ap_gas+kalf_gas+sum(pr_gas,bp_gas*log(pb(pr_gas,ind)))
+
+
+Equation 14
+-----------
+Domain: gas,ind
+Count: 36 (1626 to 1661)
+
+   log(pb(gas,ind))
+   =ap0_gas
+   +sum(s_gas,(ap_gas+kalf_gas)*log(pb(s_gas,ind)))
+   +0.5
+   *sum(pr_gas,sum(s_gas,log(pb(s_gas,ind))*bp_gas*log(pb(pr_gas,ind))))
+
+
+Equation 15
+-----------
+Domain: ind,s_oil
+Count: 72 (1662 to 1733)
+
+   shr_oil
+   =ap_oil+kalf_oil+sum(pr_oil,bp_oil*log(pb(pr_oil,ind)))
+
+
+Equation 16
+-----------
+Domain: ind,oil
+Count: 36 (1734 to 1769)
+
+   log(pb(oil,ind))
+   =ap0_oil
+   +sum(s_oil,(ap_oil+kalf_oil)*log(pb(s_oil,ind)))
+   +0.5
+   *sum(pr_oil,sum(s_oil,log(pb(s_oil,ind))*bp_oil*log(pb(pr_oil,ind))))
+
+
+Equation 17
+-----------
+Domain: ind,s_ff
+Count: 108 (1770 to 1877)
+
+   shr_ff
+   =ap_ff+kalf_ff+sum(pr_ff,bp_ff*log(pb(pr_ff,ind)))
+
+
+Equation 18
+-----------
+Domain: ff,ind
+Count: 36 (1878 to 1913)
+
+   log(pb(ff,ind))
+   =ap0_ff
+   +sum(s_ff,(ap_ff+kalf_ff)*log(pb(s_ff,ind)))
+   +0.5
+   *sum(pr_ff,sum(s_ff,log(pb(s_ff,ind))*bp_ff*log(pb(pr_ff,ind))))
+
+
+Equation 19
+-----------
+Domain: ind,s_ene
+Count: 72 (1914 to 1985)
+
+   shr_ene
+   =ap_ene+kalf_ene+sum(pr_ene,bp_ene*log(pb(pr_ene,ind)))
+
+
+Equation 20
+-----------
+Domain: ene,ind
+Count: 36 (1986 to 2021)
+
+   log(pb(ene,ind))
+   =ap0_ene
+   +sum(s_ene,(ap_ene+kalf_ene)*log(pb(s_ene,ind)))
+   +0.5
+   *sum(pr_ene,sum(s_ene,log(pb(s_ene,ind))*bp_ene*log(pb(pr_ene,ind))))
+
+
+Equation 21
+-----------
+Domain: ind,s_bl
+Count: 108 (2022 to 2129)
+
+   shr_bl
+   =ap_bl+kalf_bl+sum(pr_bl,bp_bl*log(pb(pr_bl,ind)))
+
+
+Equation 22
+-----------
+Domain: bl,ind
+Count: 36 (2130 to 2165)
+
+   log(pb(bl,ind))
+   =ap0_bl
+   +sum(s_bl,(ap_bl+kalf_bl)*log(pb(s_bl,ind)))
+   +0.5
+   *sum(pr_bl,sum(s_bl,log(pb(s_bl,ind))*bp_bl*log(pb(pr_bl,ind))))
+
+
+Equation 23
+-----------
+Domain: ind,s_ob
+Count: 108 (2166 to 2273)
+
+   shr_ob
+   =ap_ob+kalf_ob+sum(pr_ob,bp_ob*log(pb(pr_ob,ind)))
+
+
+Equation 24
+-----------
+Domain: ind,ob
+Count: 36 (2274 to 2309)
+
+   log(pb(ob,ind))
+   =ap0_ob
+   +sum(s_ob,(ap_ob+kalf_ob)*log(pb(s_ob,ind)))
+   +0.5
+   *sum(pr_ob,sum(s_ob,log(pb(s_ob,ind))*bp_ob*log(pb(pr_ob,ind))))
+
+
+Equation 25
+-----------
+Domain: ind,s_os
+Count: 144 (2310 to 2453)
+
+   shr_os
+   =ap_os+kalf_os+sum(pr_os,bp_os*log(pb(pr_os,ind)))
+
+
+Equation 26
+-----------
+Domain: ind,os
+Count: 36 (2454 to 2489)
+
+   log(pb(os,ind))
+   =ap0_os
+   +sum(s_os,(ap_os+kalf_os)*log(pb(s_os,ind)))
+   +0.5
+   *sum(pr_os,sum(s_os,log(pb(s_os,ind))*bp_os*log(pb(pr_os,ind))))
+
+
+Equation 27
+-----------
+Domain: ind,s_sv
+Count: 108 (2490 to 2597)
+
+   shr_sv
+   =ap_sv+kalf_sv+sum(pr_sv,bp_sv*log(pb(pr_sv,ind)))
+
+
+Equation 28
+-----------
+Domain: ind,sv
+Count: 36 (2598 to 2633)
+
+   log(pb(sv,ind))
+   =ap0_sv
+   +sum(s_sv,(ap_sv+kalf_sv)*log(pb(s_sv,ind)))
+   +0.5
+   *sum(pr_sv,sum(s_sv,log(pb(s_sv,ind))*bp_sv*log(pb(pr_sv,ind))))
+
+
+Equation 29
+-----------
+Domain: ind,s_ma
+Count: 144 (2634 to 2777)
+
+   shr_ma
+   =ap_ma+kalf_ma+sum(pr_ma,bp_ma*log(pb(pr_ma,ind)))
+
+
+Equation 30
+-----------
+Domain: ind,ma
+Count: 36 (2778 to 2813)
+
+   log(pb(ma,ind))
+   =ap0_ma
+   +sum(s_ma,(ap_ma+kalf_ma)*log(pb(s_ma,ind)))
+   +0.5
+   *sum(pr_ma,sum(s_ma,log(pb(s_ma,ind))*bp_ma*log(pb(pr_ma,ind))))
+
+
+Equation 31
+-----------
+Domain: ind,s_mn
+Count: 144 (2814 to 2957)
+
+   shr_mn
+   =ap_mn+kalf_mn+sum(pr_mn,bp_mn*log(pb(pr_mn,ind)))
+
+
+Equation 32
+-----------
+Domain: ind,mn
+Count: 36 (2958 to 2993)
+
+   log(pb(mn,ind))
+   =ap0_mn
+   +sum(s_mn,(ap_mn+kalf_mn)*log(pb(s_mn,ind)))
+   +0.5
+   *sum(pr_mn,sum(s_mn,log(pb(s_mn,ind))*bp_mn*log(pb(pr_mn,ind))))
+
+
+Equation 33
+-----------
+Domain: ind,s_tr
+Count: 72 (2994 to 3065)
+
+   shr_tr
+   =ap_tr+kalf_tr+sum(pr_tr,bp_tr*log(pb(pr_tr,ind)))
+
+
+Equation 34
+-----------
+Domain: ind,tr
+Count: 36 (3066 to 3101)
+
+   log(pb(tr,ind))
+   =ap0_tr
+   +sum(s_tr,(ap_tr+kalf_tr)*log(pb(s_tr,ind)))
+   +0.5
+   *sum(pr_tr,sum(s_tr,log(pb(s_tr,ind))*bp_tr*log(pb(pr_tr,ind))))
+
+
+Equation 35
+-----------
+Domain: ind,s_tt
+Count: 108 (3102 to 3209)
+
+   shr_tt
+   =ap_tt+kalf_tt+sum(pr_tt,bp_tt*log(pb(pr_tt,ind)))
+
+
+Equation 36
+-----------
+Domain: ind,tt
+Count: 36 (3210 to 3245)
+
+   log(pb(tt,ind))
+   =ap0_tt
+   +sum(s_tt,(ap_tt+kalf_tt)*log(pb(s_tt,ind)))
+   +0.5
+   *sum(pr_tt,sum(s_tt,log(pb(s_tt,ind))*bp_tt*log(pb(pr_tt,ind))))
+
+
+Equation 37
+-----------
+Domain: ind,s_eq
+Count: 144 (3246 to 3389)
+
+   shr_eq
+   =ap_eq+kalf_eq+sum(pr_eq,bp_eq*log(pb(pr_eq,ind)))
+
+
+Equation 38
+-----------
+Domain: eq,ind
+Count: 36 (3390 to 3425)
+
+   log(pb(eq,ind))
+   =ap0_eq
+   +sum(s_eq,(ap_eq+kalf_eq)*log(pb(s_eq,ind)))
+   +0.5
+   *sum(pr_eq,sum(s_eq,log(pb(s_eq,ind))*bp_eq*log(pb(pr_eq,ind))))
+
+
+Equation 39
+-----------
+Domain: ind,s_ms
+Count: 108 (3426 to 3533)
+
+   shr_ms
+   =ap_ms+kalf_ms+sum(pr_ms,bp_ms*log(pb(pr_ms,ind)))
+
+
+Equation 40
+-----------
+Domain: ind,ms
+Count: 36 (3534 to 3569)
+
+   log(pb(ms,ind))
+   =ap0_ms
+   +sum(s_ms,(ap_ms+kalf_ms)*log(pb(s_ms,ind)))
+   +0.5
+   *sum(pr_ms,sum(s_ms,log(pb(s_ms,ind))*bp_ms*log(pb(pr_ms,ind))))
+
+
+Equation 41
+-----------
+Domain: ind,s_mm
+Count: 144 (3570 to 3713)
+
+   shr_mm
+   =ap_mm+kalf_mm+sum(pr_mm,bp_mm*log(pb(pr_mm,ind)))
+
+
+Equation 42
+-----------
+Domain: ind,mm
+Count: 36 (3714 to 3749)
+
+   log(pb(mm,ind))
+   =ap0_mm
+   +sum(s_mm,(ap_mm+kalf_mm)*log(pb(s_mm,ind)))
+   +0.5
+   *sum(pr_mm,sum(s_mm,log(pb(s_mm,ind))*bp_mm*log(pb(pr_mm,ind))))
+
+
+Equation 43
+-----------
+Domain: ind,s_mat
+Count: 144 (3750 to 3893)
+
+   shr_mat
+   =ap_mat+kalf_mat+sum(pr_mat,bp_mat*log(pb(pr_mat,ind)))
+
+
+Equation 44
+-----------
+Domain: ind,mat
+Count: 36 (3894 to 3929)
+
+   log(pb(mat,ind))
+   =ap0_mat
+   +sum(s_mat,(ap_mat+kalf_mat)*log(pb(s_mat,ind)))
+   +0.5
+   *sum(pr_mat,sum(s_mat,log(pb(s_mat,ind))*bp_mat*log(pb(pr_mat,ind))))
+
+
+Equation 45
+-----------
+Domain: ind,s_o
+Count: 144 (3930 to 4073)
+
+   shr_o
+   =ap_o+kalf_o+sum(pr_o,bp_o*log(pb(pr_o,ind)))
+
+
+Equation 46
+-----------
+Domain: ind
+Count: 36 (4074 to 4109)
+
+   log(po(ind))
+   =ap0_o+kalp
+   +log(agg_tech_lvl*tech_shk_agg*tech_shock)
+   +sum(s_o,(ap_o+kalf_o)*log(pb(s_o,ind)))
+   +0.5
+   *sum(pr_o,sum(s_o,log(pb(s_o,ind))*bp_o*log(pb(pr_o,ind))))
+
+
+Equation 47
+-----------
+Domain: ind
+Count: 36 (4110 to 4145)
+
+   pi=po*(1+tax_sales)+tax_unit+tax_ext_ind
+
+
+Equation 48
+-----------
+Domain: com
+Count: 36 (4146 to 4181)
+
+   pc=sum(ind,po*make_col)
+
+
+Equation 49
+-----------
+Domain: com
+Count: 36 (4182 to 4217)
+
+   pf=exo_pf*tech_shk_row
+
+
+Equation 50
+-----------
+Domain: com
+Count: 36 (4218 to 4253)
+
+   pfd=pf*exch*(1+tariff)+tar_ext_com
+
+
+Equation 51
+-----------
+Domain: com
+Count: 36 (4254 to 4289)
+
+   imp_share=amk_imp+bm_imp*(log(pfd)-log(pc))
+
+
+Equation 52
+-----------
+Domain: com
+Count: 36 (4290 to 4325)
+
+   dom_share=1-imp_share
+
+
+Equation 53
+-----------
+Domain: com
+Count: 36 (4326 to 4361)
+
+   log(ps)
+   =amk_imp*log(pfd)+(1-amk_imp)*log(pc)+0.5*bm_imp*log(pfd)*log(pfd)
+   -bm_imp*log(pfd)*log(pc)
+   +0.5*bm_imp*log(pc)*log(pc)
+
+
+Equation 54
+-----------
+Domain: buy,com
+Count: 1404 (4362 to 5765)
+
+   pb(com,buy)=ps+tax_ext_com
+
+
+Equation 55
+-----------
+Domain: c01,ind,mat,mn
+Count: 36 (5766 to 5801)
+
+   io(c01)=shr_ma(c01)*shr_mat(mn)*shr_o(mat)
+
+
+Equation 56
+-----------
+Domain: c10,ind,mat,mn
+Count: 36 (5802 to 5837)
+
+   io(c10)=shr_ma(c10)*shr_mat(mn)*shr_o(mat)
+
+
+Equation 57
+-----------
+Domain: c20,ind,mat,mn
+Count: 36 (5838 to 5873)
+
+   io(c20)=shr_ma(c20)*shr_mat(mn)*shr_o(mat)
+
+
+Equation 58
+-----------
+Domain: c21,ind,mat,mn
+Count: 36 (5874 to 5909)
+
+   io(c21)=shr_ma(c21)*shr_mat(mn)*shr_o(mat)
+
+
+Equation 59
+-----------
+Domain: c02,ene,ff,ind,oil
+Count: 36 (5910 to 5945)
+
+   io(c02)
+   =shr_oil(c02)*shr_ff(oil)*shr_ene(ff)*shr_o(ene)
+
+
+Equation 60
+-----------
+Domain: c23,ene,ff,ind,oil
+Count: 36 (5946 to 5981)
+
+   io(c23)
+   =shr_oil(c23)*shr_ff(oil)*shr_ene(ff)*shr_o(ene)
+
+
+Equation 61
+-----------
+Domain: c03,ene,ff,gas,ind
+Count: 36 (5982 to 6017)
+
+   io(c03)
+   =shr_gas(c03)*shr_ff(gas)*shr_ene(ff)*shr_o(ene)
+
+
+Equation 62
+-----------
+Domain: c07,ene,ff,gas,ind
+Count: 36 (6018 to 6053)
+
+   io(c07)
+   =shr_gas(c07)*shr_ff(gas)*shr_ene(ff)*shr_o(ene)
+
+
+Equation 63
+-----------
+Domain: c04,ene,ff,ind
+Count: 36 (6054 to 6089)
+
+   io(c04)=shr_ff(c04)*shr_ene(ff)*shr_o(ene)
+
+
+Equation 64
+-----------
+Domain: c06,ene,ind
+Count: 36 (6090 to 6125)
+
+   io(c06)=shr_ene(c06)*shr_o(ene)
+
+
+Equation 65
+-----------
+Domain: c05,ind,mat,mm
+Count: 36 (6126 to 6161)
+
+   io(c05)=shr_mm(c05)*shr_mat(mm)*shr_o(mat)
+
+
+Equation 66
+-----------
+Domain: c12,ind,mat,mm
+Count: 36 (6162 to 6197)
+
+   io(c12)=shr_mm(c12)*shr_mat(mm)*shr_o(mat)
+
+
+Equation 67
+-----------
+Domain: c13,ind,mat,mm
+Count: 36 (6198 to 6233)
+
+   io(c13)=shr_mm(c13)*shr_mat(mm)*shr_o(mat)
+
+
+Equation 68
+-----------
+Domain: c14,eq,ind,mat,mm
+Count: 36 (6234 to 6269)
+
+   io(c14)
+   =shr_eq(c14)*shr_mm(eq)^shr_mat(mm)*shr_o(mat)
+
+
+Equation 69
+-----------
+Domain: c15,eq,ind,mat,mm
+Count: 36 (6270 to 6305)
+
+   io(c15)
+   =shr_eq(c15)*shr_mm(eq)^shr_mat(mm)*shr_o(mat)
+
+
+Equation 70
+-----------
+Domain: c16,eq,ind,mat,mm
+Count: 36 (6306 to 6341)
+
+   io(c16)
+   =shr_eq(c16)*shr_mm(eq)^shr_mat(mm)*shr_o(mat)
+
+
+Equation 71
+-----------
+Domain: c17,eq,ind,mat,mm,tr
+Count: 36 (6342 to 6377)
+
+   io(c17)
+   =shr_tr(c17)*shr_eq(tr)*shr_mm(eq)^shr_mat(mm)
+   *shr_o(mat)
+
+
+Equation 72
+-----------
+Domain: c18,eq,ind,mat,mm,tr
+Count: 36 (6378 to 6413)
+
+   io(c18)
+   =shr_tr(c18)*shr_eq(tr)*shr_mm(eq)^shr_mat(mm)
+   *shr_o(mat)
+
+
+Equation 73
+-----------
+Domain: c11,ind,mat,mn
+Count: 36 (6414 to 6449)
+
+   io(c11)=shr_mn(c11)*shr_mat(mn)*shr_o(mat)
+
+
+Equation 74
+-----------
+Domain: c19,ind,mat,mn
+Count: 36 (6450 to 6485)
+
+   io(c19)=shr_mn(c19)*shr_mat(mn)*shr_o(mat)
+
+
+Equation 75
+-----------
+Domain: c22,ind,mat,mn
+Count: 36 (6486 to 6521)
+
+   io(c22)=shr_mn(c22)*shr_mat(mn)*shr_o(mat)
+
+
+Equation 76
+-----------
+Domain: c24,ind,mat,mn
+Count: 36 (6522 to 6557)
+
+   io(c24)=shr_mn(c24)*shr_mat(mn)*shr_o(mat)
+
+
+Equation 77
+-----------
+Domain: c32,ind,mat,ms
+Count: 36 (6558 to 6593)
+
+   io(c32)=shr_ms(c32)*shr_mat(ms)*shr_o(mat)
+
+
+Equation 78
+-----------
+Domain: c25,ind,mat,ms,tt
+Count: 36 (6594 to 6629)
+
+   io(c25)
+   =shr_tt(c25)*shr_ms(tt)*shr_mat(ms)*shr_o(mat)
+
+
+Equation 79
+-----------
+Domain: c26,ind,mat,ms,tt
+Count: 36 (6630 to 6665)
+
+   io(c26)
+   =shr_tt(c26)*shr_ms(tt)*shr_mat(ms)*shr_o(mat)
+
+
+Equation 80
+-----------
+Domain: c27,ind,mat,ms,tt
+Count: 36 (6666 to 6701)
+
+   io(c27)
+   =shr_tt(c27)*shr_ms(tt)*shr_mat(ms)*shr_o(mat)
+
+
+Equation 81
+-----------
+Domain: bl,c08,ind,mat,ms,sv
+Count: 36 (6702 to 6737)
+
+   io(c08)
+   =shr_bl(c08)*shr_sv(bl)*shr_ms(sv)*shr_mat(ms)
+   *shr_o(mat)
+
+
+Equation 82
+-----------
+Domain: bl,c09,ind,mat,ms,sv
+Count: 36 (6738 to 6773)
+
+   io(c09)
+   =shr_bl(c09)*shr_sv(bl)*shr_ms(sv)*shr_mat(ms)
+   *shr_o(mat)
+
+
+Equation 83
+-----------
+Domain: bl,c31,ind,mat,ms,sv
+Count: 36 (6774 to 6809)
+
+   io(c31)
+   =shr_bl(c31)*shr_sv(bl)*shr_ms(sv)*shr_mat(ms)
+   *shr_o(mat)
+
+
+Equation 84
+-----------
+Domain: c28,ind,mat,ms,ob,sv
+Count: 36 (6810 to 6845)
+
+   io(c28)
+   =shr_ob(c28)*shr_sv(ob)*shr_ms(sv)*shr_mat(ms)
+   *shr_o(mat)
+
+
+Equation 85
+-----------
+Domain: c29,ind,mat,ms,ob,sv
+Count: 36 (6846 to 6881)
+
+   io(c29)
+   =shr_ob(c29)*shr_sv(ob)*shr_ms(sv)*shr_mat(ms)
+   *shr_o(mat)
+
+
+Equation 86
+-----------
+Domain: c30,ind,mat,ms,ob,sv
+Count: 36 (6882 to 6917)
+
+   io(c30)
+   =shr_ob(c30)*shr_sv(ob)*shr_ms(sv)*shr_mat(ms)
+   *shr_o(mat)
+
+
+Equation 87
+-----------
+Domain: c33,ind,mat,ms,os,sv
+Count: 36 (6918 to 6953)
+
+   io(c33)
+   =shr_os(c33)*shr_sv(os)*shr_ms(sv)*shr_mat(ms)
+   *shr_o(mat)
+
+
+Equation 88
+-----------
+Domain: c34,ind,mat,ms,os,sv
+Count: 36 (6954 to 6989)
+
+   io(c34)
+   =shr_os(c34)*shr_sv(os)*shr_ms(sv)*shr_mat(ms)
+   *shr_o(mat)
+
+
+Equation 89
+-----------
+Domain: c35,ind,mat,ms,os,sv
+Count: 36 (6990 to 7025)
+
+   io(c35)
+   =shr_os(c35)*shr_sv(os)*shr_ms(sv)*shr_mat(ms)
+   *shr_o(mat)
+
+
+Equation 90
+-----------
+Domain: c36,ind,mat,ms,os,sv
+Count: 36 (7026 to 7061)
+
+   io(c36)
+   =shr_os(c36)*shr_sv(os)*shr_ms(sv)*shr_mat(ms)
+   *shr_o(mat)
+
+
+Equation 91
+-----------
+Domain: ind,kap
+Count: 36 (7062 to 7097)
+
+   io(kap)=shr_o(kap)
+
+
+Equation 92
+-----------
+Domain: ind,lab
+Count: 36 (7098 to 7133)
+
+   io(lab)=shr_o(lab)
+
+
+Equation 93
+-----------
+Domain: con,kap
+Count: 1 (7134 to 7134)
+
+   pb(kap,con)=pk_service*pk_scale(con)*(1+tax_cap_hh)
+
+
+Equation 94
+-----------
+
+   tax_con_totc=tax_con+tax_con_good
+
+
+Equation 95
+-----------
+
+   tax_con_totk=tax_con+tax_con_kap
+
+
+Equation 96
+-----------
+Domain: com,con
+Count: 36 (7137 to 7172)
+
+   pr_con(com)=pb(com,con)*(1+tax_con_totc)
+
+
+Equation 97
+-----------
+Domain: con,kap
+Count: 1 (7173 to 7173)
+
+   pr_con(kap)=pb(kap,con)*(1+tax_con_totk)
+
+
+Equation 98
+-----------
+Domain: nipa
+Count: 36 (7174 to 7209)
+
+   pcon(nipa)=sum(ncom_k,pr_con*io_nipa)
+
+
+Equation 99
+-----------
+
+   pr_leisure=pr_hours*pj_scale
+
+
+Equation 100
+------------
+Domain: r
+Count: 1 (7211 to 7211)
+
+   pcon(r)=pr_leisure
+
+
+Equation 101
+------------
+Domain: s_cmm
+Count: 2 (7212 to 7213)
+
+   shr_cmm
+   =ah_cmm+kalh_cmm+sum(pr_cmm,bh_cmm*log(pcon(pr_cmm)))
+
+
+Equation 102
+------------
+Domain: cmm
+Count: 1 (7214 to 7214)
+
+   log(pcon(cmm))
+   =sum(s_cmm,(ah_cmm+kalh_cmm)*log(pcon(s_cmm)))
+   +0.5
+   *sum(pr_cmm,sum(s_cmm,log(pcon(s_cmm))*bh_cmm*log(pcon(pr_cmm))))
+
+
+Equation 103
+------------
+Domain: s_hps
+Count: 3 (7215 to 7217)
+
+   shr_hps
+   =ah_hps+kalh_hps+sum(pr_hps,bh_hps*log(pcon(pr_hps)))
+
+
+Equation 104
+------------
+Domain: hps
+Count: 1 (7218 to 7218)
+
+   log(pcon(hps))
+   =sum(s_hps,(ah_hps+kalh_hps)*log(pcon(s_hps)))
+   +0.5
+   *sum(pr_hps,sum(s_hps,log(pcon(s_hps))*bh_hps*log(pcon(pr_hps))))
+
+
+Equation 105
+------------
+Domain: s_ens
+Count: 2 (7219 to 7220)
+
+   shr_ens
+   =ah_ens+kalh_ens+sum(pr_ens,bh_ens*log(pcon(pr_ens)))
+
+
+Equation 106
+------------
+Domain: ens
+Count: 1 (7221 to 7221)
+
+   log(pcon(ens))
+   =sum(s_ens,(ah_ens+kalh_ens)*log(pcon(s_ens)))
+   +0.5
+   *sum(pr_ens,sum(s_ens,log(pcon(s_ens))*bh_ens*log(pcon(pr_ens))))
+
+
+Equation 107
+------------
+Domain: s_trv
+Count: 2 (7222 to 7223)
+
+   shr_trv
+   =ah_trv+kalh_trv+sum(pr_trv,bh_trv*log(pcon(pr_trv)))
+
+
+Equation 108
+------------
+Domain: trv
+Count: 1 (7224 to 7224)
+
+   log(pcon(trv))
+   =sum(s_trv,(ah_trv+kalh_trv)*log(pcon(s_trv)))
+   +0.5
+   *sum(pr_trv,sum(s_trv,log(pcon(s_trv))*bh_trv*log(pcon(pr_trv))))
+
+
+Equation 109
+------------
+Domain: s_rcs
+Count: 3 (7225 to 7227)
+
+   shr_rcs
+   =ah_rcs+kalh_rcs+sum(pr_rcs,bh_rcs*log(pcon(pr_rcs)))
+
+
+Equation 110
+------------
+Domain: rcs
+Count: 1 (7228 to 7228)
+
+   log(pcon(rcs))
+   =sum(s_rcs,(ah_rcs+kalh_rcs)*log(pcon(s_rcs)))
+   +0.5
+   *sum(pr_rcs,sum(s_rcs,log(pcon(s_rcs))*bh_rcs*log(pcon(pr_rcs))))
+
+
+Equation 111
+------------
+Domain: s_edn
+Count: 2 (7229 to 7230)
+
+   shr_edn
+   =ah_edn+kalh_edn+sum(pr_edn,bh_edn*log(pcon(pr_edn)))
+
+
+Equation 112
+------------
+Domain: edn
+Count: 1 (7231 to 7231)
+
+   log(pcon(edn))
+   =sum(s_edn,(ah_edn+kalh_edn)*log(pcon(s_edn)))
+   +0.5
+   *sum(pr_edn,sum(s_edn,log(pcon(s_edn))*bh_edn*log(pcon(pr_edn))))
+
+
+Equation 113
+------------
+Domain: s_hpg
+Count: 2 (7232 to 7233)
+
+   shr_hpg
+   =ah_hpg+kalh_hpg+sum(pr_hpg,bh_hpg*log(pcon(pr_hpg)))
+
+
+Equation 114
+------------
+Domain: hpg
+Count: 1 (7234 to 7234)
+
+   log(pcon(hpg))
+   =sum(s_hpg,(ah_hpg+kalh_hpg)*log(pcon(s_hpg)))
+   +0.5
+   *sum(pr_hpg,sum(s_hpg,log(pcon(s_hpg))*bh_hpg*log(pcon(pr_hpg))))
+
+
+Equation 115
+------------
+Domain: s_fb
+Count: 3 (7235 to 7237)
+
+   shr_fb
+   =ah_fb+kalh_fb+sum(pr_fb,bh_fb*log(pcon(pr_fb)))
+
+
+Equation 116
+------------
+Domain: fb
+Count: 1 (7238 to 7238)
+
+   log(pcon(fb))
+   =sum(s_fb,(ah_fb+kalh_fb)*log(pcon(s_fb)))
+   +0.5
+   *sum(pr_fb,sum(s_fb,log(pcon(s_fb))*bh_fb*log(pcon(pr_fb))))
+
+
+Equation 117
+------------
+Domain: s_md
+Count: 2 (7239 to 7240)
+
+   shr_md
+   =ah_md+kalh_md+sum(pr_md,bh_md*log(pcon(pr_md)))
+
+
+Equation 118
+------------
+Domain: md
+Count: 1 (7241 to 7241)
+
+   log(pcon(md))
+   =sum(s_md,(ah_md+kalh_md)*log(pcon(s_md)))
+   +0.5
+   *sum(pr_md,sum(s_md,log(pcon(s_md))*bh_md*log(pcon(pr_md))))
+
+
+Equation 119
+------------
+Domain: s_en
+Count: 2 (7242 to 7243)
+
+   shr_en
+   =ah_en+kalh_en+sum(pr_en,bh_en*log(pcon(pr_en)))
+
+
+Equation 120
+------------
+Domain: en
+Count: 1 (7244 to 7244)
+
+   log(pcon(en))
+   =sum(s_en,(ah_en+kalh_en)*log(pcon(s_en)))
+   +0.5
+   *sum(pr_en,sum(s_en,log(pcon(s_en))*bh_en*log(pcon(pr_en))))
+
+
+Equation 121
+------------
+Domain: s_ks
+Count: 2 (7245 to 7246)
+
+   shr_ks
+   =ah_ks+kalh_ks+sum(pr_ks,bh_ks*log(pcon(pr_ks)))
+
+
+Equation 122
+------------
+Domain: ks
+Count: 1 (7247 to 7247)
+
+   log(pcon(ks))
+   =sum(s_ks,(ah_ks+kalh_ks)*log(pcon(s_ks)))
+   +0.5
+   *sum(pr_ks,sum(s_ks,log(pcon(s_ks))*bh_ks*log(pcon(pr_ks))))
+
+
+Equation 123
+------------
+Domain: s_trc
+Count: 4 (7248 to 7251)
+
+   shr_trc
+   =ah_trc+kalh_trc+sum(pr_trc,bh_trc*log(pcon(pr_trc)))
+
+
+Equation 124
+------------
+Domain: trc
+Count: 1 (7252 to 7252)
+
+   log(pcon(trc))
+   =sum(s_trc,(ah_trc+kalh_trc)*log(pcon(s_trc)))
+   +0.5
+   *sum(pr_trc,sum(s_trc,log(pcon(s_trc))*bh_trc*log(pcon(pr_trc))))
+
+
+Equation 125
+------------
+Domain: s_ups
+Count: 3 (7253 to 7255)
+
+   shr_ups
+   =ah_ups+kalh_ups+sum(pr_ups,bh_ups*log(pcon(pr_ups)))
+
+
+Equation 126
+------------
+Domain: ups
+Count: 1 (7256 to 7256)
+
+   log(pcon(ups))
+   =sum(s_ups,(ah_ups+kalh_ups)*log(pcon(s_ups)))
+   +0.5
+   *sum(pr_ups,sum(s_ups,log(pcon(s_ups))*bh_ups*log(pcon(pr_ups))))
+
+
+Equation 127
+------------
+Domain: s_rc
+Count: 3 (7257 to 7259)
+
+   shr_rc
+   =ah_rc+kalh_rc+sum(pr_rc,bh_rc*log(pcon(pr_rc)))
+
+
+Equation 128
+------------
+Domain: rc
+Count: 1 (7260 to 7260)
+
+   log(pcon(rc))
+   =sum(s_rc,(ah_rc+kalh_rc)*log(pcon(s_rc)))
+   +0.5
+   *sum(pr_rc,sum(s_rc,log(pcon(s_rc))*bh_rc*log(pcon(pr_rc))))
+
+
+Equation 129
+------------
+Domain: s_ho
+Count: 4 (7261 to 7264)
+
+   shr_ho
+   =ah_ho+kalh_ho+sum(pr_ho,bh_ho*log(pcon(pr_ho)))
+
+
+Equation 130
+------------
+Domain: ho
+Count: 1 (7265 to 7265)
+
+   log(pcon(ho))
+   =sum(s_ho,(ah_ho+kalh_ho)*log(pcon(s_ho)))
+   +0.5
+   *sum(pr_ho,sum(s_ho,log(pcon(s_ho))*bh_ho*log(pcon(pr_ho))))
+
+
+Equation 131
+------------
+Domain: s_cg
+Count: 4 (7266 to 7269)
+
+   shr_cg
+   =ah_cg+kalh_cg+sum(pr_cg,bh_cg*log(pcon(pr_cg)))
+
+
+Equation 132
+------------
+Domain: cg
+Count: 1 (7270 to 7270)
+
+   log(pcon(cg))
+   =sum(s_cg,(ah_cg+kalh_cg)*log(pcon(s_cg)))
+   +0.5
+   *sum(pr_cg,sum(s_cg,log(pcon(s_cg))*bh_cg*log(pcon(pr_cg))))
+
+
+Equation 133
+------------
+Domain: s_cs
+Count: 4 (7271 to 7274)
+
+   shr_cs
+   =ah_cs+kalh_cs+sum(pr_cs,bh_cs*log(pcon(pr_cs)))
+
+
+Equation 134
+------------
+Domain: cs
+Count: 1 (7275 to 7275)
+
+   log(pcon(cs))
+   =sum(s_cs,(ah_cs+kalh_cs)*log(pcon(s_cs)))
+   +0.5
+   *sum(pr_cs,sum(s_cs,log(pcon(s_cs))*bh_cs*log(pcon(pr_cs))))
+
+
+Equation 135
+------------
+Domain: s_nd
+Count: 4 (7276 to 7279)
+
+   shr_nd
+   =ah_nd+kalh_nd+sum(pr_nd,bh_nd*log(pcon(pr_nd)))
+
+
+Equation 136
+------------
+Domain: nd
+Count: 1 (7280 to 7280)
+
+   log(pcon(nd))
+   =sum(s_nd,(ah_nd+kalh_nd)*log(pcon(s_nd)))
+   +0.5
+   *sum(pr_nd,sum(s_nd,log(pcon(s_nd))*bh_nd*log(pcon(pr_nd))))
+
+
+Equation 137
+------------
+Domain: s_f
+Count: 4 (7281 to 7284)
+
+   ab_shr_f=ah_f+sum(pr_f,bh_f*log(pcon(pr_f)))
+
+
+Equation 138
+------------
+
+   denom
+   =(-1)+denom_rebase+sum(pr_f,sum(s_f,bh_f*log(pcon(pr_f))))
+
+
+Equation 139
+------------
+Domain: s_f
+Count: 4 (7286 to 7289)
+
+   cex_shr_f
+   =(ab_shr_f-bhm_f*(log(full_con)+income_dist)
+   +sum(nattr,bha_f*income_share(nattr)))
+   /denom
+
+
+Equation 140
+------------
+Domain: s_f
+Count: 4 (7290 to 7293)
+
+   shr_f=cex_shr_f+dv_hh
+
+
+Equation 141
+------------
+
+   pr_fc
+   =
+   exp(sum(s_f,(ah_f-sum(pr_f,bh_f*log(pfc_m0)))*log(pcon(s_f)))
+   +(0.5
+   *sum(pr_f,sum(s_f,log(pcon(s_f))*bh_f*log(pcon(pr_f)))))
+   /denom)
+   /pr_fc_scale
+
+
+Equation 142
+------------
+Domain: r
+Count: 1 (7295 to 7295)
+
+   leisure=(shr_f(r)*full_con)/pr_leisure
+
+
+Equation 143
+------------
+Domain: r
+Count: 1 (7296 to 7296)
+
+   cshare=1-shr_f(r)
+
+
+Equation 144
+------------
+
+   con_expend=cshare*full_con
+
+
+Equation 145
+------------
+Domain: n01,nd
+Count: 1 (7298 to 7298)
+
+   con_share(n01)=(shr_nd(n01)*shr_f(nd))/cshare
+
+
+Equation 146
+------------
+Domain: cg,n02,nd
+Count: 1 (7299 to 7299)
+
+   con_share(n02)
+   =(shr_cg(n02)*shr_nd(cg)*shr_f(nd))/cshare
+
+
+Equation 147
+------------
+Domain: en,n03,nd
+Count: 1 (7300 to 7300)
+
+   con_share(n03)
+   =(shr_en(n03)*shr_nd(en)*shr_f(nd))/cshare
+
+
+Equation 148
+------------
+Domain: en,n04,nd
+Count: 1 (7301 to 7301)
+
+   con_share(n04)
+   =(shr_en(n04)*shr_nd(en)*shr_f(nd))/cshare
+
+
+Equation 149
+------------
+Domain: n05,nd
+Count: 1 (7302 to 7302)
+
+   con_share(n05)=(shr_nd(n05)*shr_f(nd))/cshare
+
+
+Equation 150
+------------
+Domain: cg,n06,nd
+Count: 1 (7303 to 7303)
+
+   con_share(n06)
+   =(shr_cg(n06)*shr_nd(cg)*shr_f(nd))/cshare
+
+
+Equation 151
+------------
+Domain: cg,hpg,n07,nd
+Count: 1 (7304 to 7304)
+
+   con_share(n07)
+   =(shr_hpg(n07)*shr_cg(hpg)*shr_nd(cg)*shr_f(nd))
+   /cshare
+
+
+Equation 152
+------------
+Domain: cg,hpg,n08,nd
+Count: 1 (7305 to 7305)
+
+   con_share(n08)
+   =(shr_hpg(n08)*shr_cg(hpg)*shr_nd(cg)*shr_f(nd))
+   /cshare
+
+
+Equation 153
+------------
+Domain: cg,n09,nd
+Count: 1 (7306 to 7306)
+
+   con_share(n09)
+   =(shr_cg(n09)*shr_nd(cg)*shr_f(nd))/cshare
+
+
+Equation 154
+------------
+Domain: ks,n10
+Count: 1 (7307 to 7307)
+
+   con_share(n10)=(shr_ks(n10)*shr_f(ks))/cshare
+
+
+Equation 155
+------------
+Domain: ks,n36
+Count: 1 (7308 to 7308)
+
+   con_share(n36)=(shr_ks(n36)*shr_f(ks))/cshare
+
+
+Equation 156
+------------
+Domain: cs,ho,n11,ups
+Count: 1 (7309 to 7309)
+
+   con_share(n11)
+   =(shr_ups(n11)*shr_ho(ups)*shr_cs(ho)*shr_f(cs))
+   /cshare
+
+
+Equation 157
+------------
+Domain: cs,ens,ho,n12,ups
+Count: 1 (7310 to 7310)
+
+   con_share(n12)
+   =(shr_ens(n12)*shr_ups(ens)*shr_ho(ups)*shr_cs(ho)
+   *shr_f(cs))
+   /cshare
+
+
+Equation 158
+------------
+Domain: cs,ens,ho,n13,ups
+Count: 1 (7311 to 7311)
+
+   con_share(n13)
+   =(shr_ens(n13)*shr_ups(ens)*shr_ho(ups)*shr_cs(ho)
+   *shr_f(cs))
+   /cshare
+
+
+Equation 159
+------------
+Domain: cs,md,n14
+Count: 1 (7312 to 7312)
+
+   con_share(n14)
+   =(shr_md(n14)^shr_cs(md)*shr_f(cs))/cshare
+
+
+Equation 160
+------------
+Domain: cs,md,n24
+Count: 1 (7313 to 7313)
+
+   con_share(n24)
+   =(shr_md(n24)^shr_cs(md)*shr_f(cs))/cshare
+
+
+Equation 161
+------------
+Domain: cs,ho,n15,trc
+Count: 1 (7314 to 7314)
+
+   con_share(n15)
+   =(shr_trc(n15)*shr_ho(trc)*shr_cs(ho)*shr_f(cs))
+   /cshare
+
+
+Equation 162
+------------
+Domain: cs,ho,n16,trc
+Count: 1 (7315 to 7315)
+
+   con_share(n16)
+   =(shr_trc(n16)*shr_ho(trc)*shr_cs(ho)*shr_f(cs))
+   /cshare
+
+
+Equation 163
+------------
+Domain: cs,ho,n25,trc
+Count: 1 (7316 to 7316)
+
+   con_share(n25)
+   =(shr_trc(n25)*shr_ho(trc)*shr_cs(ho)*shr_f(cs))
+   /cshare
+
+
+Equation 164
+------------
+Domain: cmm,cs,ho,n26,trc
+Count: 1 (7317 to 7317)
+
+   con_share(n26)
+   =(shr_cmm(n26)*shr_trc(cmm)*shr_ho(trc)*shr_cs(ho)
+   *shr_f(cs))
+   /cshare
+
+
+Equation 165
+------------
+Domain: cmm,cs,ho,n27,trc
+Count: 1 (7318 to 7318)
+
+   con_share(n27)
+   =(shr_cmm(n27)*shr_trc(cmm)*shr_ho(trc)*shr_cs(ho)
+   *shr_f(cs))
+   /cshare
+
+
+Equation 166
+------------
+Domain: cs,n17,rc,rcs
+Count: 1 (7319 to 7319)
+
+   con_share(n17)
+   =(shr_rcs(n17)*shr_rc(rcs)*shr_cs(rc)*shr_f(cs))
+   /cshare
+
+
+Equation 167
+------------
+Domain: cs,n18,rc,rcs
+Count: 1 (7320 to 7320)
+
+   con_share(n18)
+   =(shr_rcs(n18)*shr_rc(rcs)*shr_cs(rc)*shr_f(cs))
+   /cshare
+
+
+Equation 168
+------------
+Domain: cs,n19,rc,rcs
+Count: 1 (7321 to 7321)
+
+   con_share(n19)
+   =(shr_rcs(n19)*shr_rc(rcs)*shr_cs(rc)*shr_f(cs))
+   /cshare
+
+
+Equation 169
+------------
+Domain: cs,n20,rc
+Count: 1 (7322 to 7322)
+
+   con_share(n20)
+   =(shr_rc(n20)*shr_cs(rc)*shr_f(cs))/cshare
+
+
+Equation 170
+------------
+Domain: cs,n21,rc,trv
+Count: 1 (7323 to 7323)
+
+   con_share(n21)
+   =(shr_trv(n21)*shr_rc(trv)*shr_cs(rc)*shr_f(cs))
+   /cshare
+
+
+Equation 171
+------------
+Domain: cs,n33,rc,trv
+Count: 1 (7324 to 7324)
+
+   con_share(n33)
+   =(shr_trv(n33)*shr_rc(trv)*shr_cs(rc)*shr_f(cs))
+   /cshare
+
+
+Equation 172
+------------
+Domain: cs,fb,n22
+Count: 1 (7325 to 7325)
+
+   con_share(n22)
+   =(shr_fb(n22)*shr_cs(fb)*shr_f(cs))/cshare
+
+
+Equation 173
+------------
+Domain: cs,fb,n23
+Count: 1 (7326 to 7326)
+
+   con_share(n23)
+   =(shr_fb(n23)*shr_cs(fb)*shr_f(cs))/cshare
+
+
+Equation 174
+------------
+Domain: cs,fb,n29
+Count: 1 (7327 to 7327)
+
+   con_share(n29)
+   =(shr_fb(n29)*shr_cs(fb)*shr_f(cs))/cshare
+
+
+Equation 175
+------------
+Domain: cs,edn,ho,n28
+Count: 1 (7328 to 7328)
+
+   con_share(n28)
+   =(shr_edn(n28)*shr_ho(edn)*shr_cs(ho)*shr_f(cs))
+   /cshare
+
+
+Equation 176
+------------
+Domain: cs,edn,ho,n34
+Count: 1 (7329 to 7329)
+
+   con_share(n34)
+   =(shr_edn(n34)*shr_ho(edn)*shr_cs(ho)*shr_f(cs))
+   /cshare
+
+
+Equation 177
+------------
+Domain: cs,ho,hps,n30,ups
+Count: 1 (7330 to 7330)
+
+   con_share(n30)
+   =(shr_hps(n30)*shr_ups(hps)*shr_ho(ups)*shr_cs(ho)
+   *shr_f(cs))
+   /cshare
+
+
+Equation 178
+------------
+Domain: cs,ho,hps,n31,ups
+Count: 1 (7331 to 7331)
+
+   con_share(n31)
+   =(shr_hps(n31)*shr_ups(hps)*shr_ho(ups)*shr_cs(ho)
+   *shr_f(cs))
+   /cshare
+
+
+Equation 179
+------------
+Domain: cs,ho,hps,n32,ups
+Count: 1 (7332 to 7332)
+
+   con_share(n32)
+   =(shr_hps(n32)*shr_ups(hps)*shr_ho(ups)*shr_cs(ho)
+   *shr_f(cs))
+   /cshare
+
+
+Equation 180
+------------
+Domain: cs,ho,n35
+Count: 1 (7333 to 7333)
+
+   con_share(n35)
+   =(shr_ho(n35)*shr_cs(ho)*shr_f(cs))/cshare
+
+
+Equation 181
+------------
+Domain: ncom_k
+Count: 37 (7334 to 7370)
+
+   con_shk_val=con_shk_qty*pr_con
+
+
+Equation 182
+------------
+
+   con_shk_xpnd=sum(ncom_k,con_shk_val)
+
+
+Equation 183
+------------
+
+   con_xpnd_net=con_expend-con_shk_xpnd
+
+
+Equation 184
+------------
+Domain: com
+Count: 36 (7373 to 7408)
+
+   con(com)
+   =(sum(nipa,io_nipa(com,nipa)*con_share(nipa)*con_xpnd_net)
+   +con_shk_val(com))
+   /(1+tax_con_totc)
+
+
+Equation 185
+------------
+Domain: kap
+Count: 1 (7409 to 7409)
+
+   con(kap)
+   =sum(nipa,io_nipa(kap,nipa)*con_share(nipa)*con_xpnd_net)
+   +con_shk_val(kap)
+
+
+Equation 186
+------------
+Domain: ncom_k
+Count: 37 (7410 to 7446)
+
+   con_qty=con/pr_con
+
+
+Equation 187
+------------
+
+   rev_con=sum(com,tax_con_totc*con)
+
+
+Equation 188
+------------
+Domain: com,inv
+Count: 36 (7448 to 7483)
+
+   pr_inv(com)=pb(com,inv)
+
+
+Equation 189
+------------
+Domain: s_rawm
+Count: 3 (7484 to 7486)
+
+   shr_rawm
+   =ai_rawm+kali_rawm
+   +sum(pr_rawm,bi_rawm*log(pr_inv(pr_rawm)))
+
+
+Equation 190
+------------
+Domain: rawm
+Count: 1 (7487 to 7487)
+
+   log(pr_inv(rawm))
+   =sum(s_rawm,(ai_rawm+kali_rawm)*log(pr_inv(s_rawm)))
+   +0.5
+   *sum(pr_rawm,sum(s_rawm,log(pr_inv(s_rawm))*bi_rawm*log(pr_inv(pr_rawm))))
+
+
+Equation 191
+------------
+Domain: s_furn
+Count: 3 (7488 to 7490)
+
+   shr_furn
+   =ai_furn+kali_furn
+   +sum(pr_furn,bi_furn*log(pr_inv(pr_furn)))
+
+
+Equation 192
+------------
+Domain: furn
+Count: 1 (7491 to 7491)
+
+   log(pr_inv(furn))
+   =sum(s_furn,(ai_furn+kali_furn)*log(pr_inv(s_furn)))
+   +0.5
+   *sum(pr_furn,sum(s_furn,log(pr_inv(s_furn))*bi_furn*log(pr_inv(pr_furn))))
+
+
+Equation 193
+------------
+Domain: s_mserv
+Count: 3 (7492 to 7494)
+
+   shr_mserv
+   =ai_mserv+kali_mserv
+   +sum(pr_mserv,bi_mserv*log(pr_inv(pr_mserv)))
+
+
+Equation 194
+------------
+Domain: mserv
+Count: 1 (7495 to 7495)
+
+   log(pr_inv(mserv))
+   =sum(s_mserv,(ai_mserv+kali_mserv)*log(pr_inv(s_mserv)))
+   +0.5
+   *sum(pr_mserv,sum(s_mserv,log(pr_inv(s_mserv))*bi_mserv*log(pr_inv(pr_mserv))))
+
+
+Equation 195
+------------
+Domain: s_trd
+Count: 2 (7496 to 7497)
+
+   shr_trd
+   =ai_trd+kali_trd+sum(pr_trd,bi_trd*log(pr_inv(pr_trd)))
+
+
+Equation 196
+------------
+Domain: trd
+Count: 1 (7498 to 7498)
+
+   log(pr_inv(trd))
+   =sum(s_trd,(ai_trd+kali_trd)*log(pr_inv(s_trd)))
+   +0.5
+   *sum(pr_trd,sum(s_trd,log(pr_inv(s_trd))*bi_trd*log(pr_inv(pr_trd))))
+
+
+Equation 197
+------------
+Domain: s_trnsp
+Count: 2 (7499 to 7500)
+
+   shr_trnsp
+   =ai_trnsp+kali_trnsp
+   +sum(pr_trnsp,bi_trnsp*log(pr_inv(pr_trnsp)))
+
+
+Equation 198
+------------
+Domain: trnsp
+Count: 1 (7501 to 7501)
+
+   log(pr_inv(trnsp))
+   =sum(s_trnsp,(ai_trnsp+kali_trnsp)*log(pr_inv(s_trnsp)))
+   +0.5
+   *sum(pr_trnsp,sum(s_trnsp,log(pr_inv(s_trnsp))*bi_trnsp*log(pr_inv(pr_trnsp))))
+
+
+Equation 199
+------------
+Domain: s_it
+Count: 3 (7502 to 7504)
+
+   shr_it
+   =ai_it+kali_it+sum(pr_it,bi_it*log(pr_inv(pr_it)))
+
+
+Equation 200
+------------
+Domain: it
+Count: 1 (7505 to 7505)
+
+   log(pr_inv(it))
+   =sum(s_it,(ai_it+kali_it)*log(pr_inv(s_it)))
+   +0.5
+   *sum(pr_it,sum(s_it,log(pr_inv(s_it))*bi_it*log(pr_inv(pr_it))))
+
+
+Equation 201
+------------
+Domain: s_mrawm
+Count: 2 (7506 to 7507)
+
+   shr_mrawm
+   =ai_mrawm+kali_mrawm
+   +sum(pr_mrawm,bi_mrawm*log(pr_inv(pr_mrawm)))
+
+
+Equation 202
+------------
+Domain: mrawm
+Count: 1 (7508 to 7508)
+
+   log(pr_inv(mrawm))
+   =sum(s_mrawm,(ai_mrawm+kali_mrawm)*log(pr_inv(s_mrawm)))
+   +0.5
+   *sum(pr_mrawm,sum(s_mrawm,log(pr_inv(s_mrawm))*bi_mrawm*log(pr_inv(pr_mrawm))))
+
+
+Equation 203
+------------
+Domain: s_frawm
+Count: 2 (7509 to 7510)
+
+   shr_frawm
+   =ai_frawm+kali_frawm
+   +sum(pr_frawm,bi_frawm*log(pr_inv(pr_frawm)))
+
+
+Equation 204
+------------
+Domain: frawm
+Count: 1 (7511 to 7511)
+
+   log(pr_inv(frawm))
+   =sum(s_frawm,(ai_frawm+kali_frawm)*log(pr_inv(s_frawm)))
+   +0.5
+   *sum(pr_frawm,sum(s_frawm,log(pr_inv(s_frawm))*bi_frawm*log(pr_inv(pr_frawm))))
+
+
+Equation 205
+------------
+Domain: s_serv
+Count: 2 (7512 to 7513)
+
+   shr_serv
+   =ai_serv+kali_serv
+   +sum(pr_serv,bi_serv*log(pr_inv(pr_serv)))
+
+
+Equation 206
+------------
+Domain: serv
+Count: 1 (7514 to 7514)
+
+   log(pr_inv(serv))
+   =sum(s_serv,(ai_serv+kali_serv)*log(pr_inv(s_serv)))
+   +0.5
+   *sum(pr_serv,sum(s_serv,log(pr_inv(s_serv))*bi_serv*log(pr_inv(pr_serv))))
+
+
+Equation 207
+------------
+Domain: s_mach
+Count: 3 (7515 to 7517)
+
+   shr_mach
+   =ai_mach+kali_mach
+   +sum(pr_mach,bi_mach*log(pr_inv(pr_mach)))
+
+
+Equation 208
+------------
+Domain: mach
+Count: 1 (7518 to 7518)
+
+   log(pr_inv(mach))
+   =sum(s_mach,(ai_mach+kali_mach)*log(pr_inv(s_mach)))
+   +0.5
+   *sum(pr_mach,sum(s_mach,log(pr_inv(s_mach))*bi_mach*log(pr_inv(pr_mach))))
+
+
+Equation 209
+------------
+Domain: s_ttsvc
+Count: 3 (7519 to 7521)
+
+   shr_ttsvc
+   =ai_ttsvc+kali_ttsvc
+   +sum(pr_ttsvc,bi_ttsvc*log(pr_inv(pr_ttsvc)))
+
+
+Equation 210
+------------
+Domain: ttsvc
+Count: 1 (7522 to 7522)
+
+   log(pr_inv(ttsvc))
+   =sum(s_ttsvc,(ai_ttsvc+kali_ttsvc)*log(pr_inv(s_ttsvc)))
+   +0.5
+   *sum(pr_ttsvc,sum(s_ttsvc,log(pr_inv(s_ttsvc))*bi_ttsvc*log(pr_inv(pr_ttsvc))))
+
+
+Equation 211
+------------
+Domain: s_eit
+Count: 3 (7523 to 7525)
+
+   shr_eit
+   =ai_eit+kali_eit+sum(pr_eit,bi_eit*log(pr_inv(pr_eit)))
+
+
+Equation 212
+------------
+Domain: eit
+Count: 1 (7526 to 7526)
+
+   log(pr_inv(eit))
+   =sum(s_eit,(ai_eit+kali_eit)*log(pr_inv(s_eit)))
+   +0.5
+   *sum(pr_eit,sum(s_eit,log(pr_inv(s_eit))*bi_eit*log(pr_inv(pr_eit))))
+
+
+Equation 213
+------------
+Domain: s_short
+Count: 2 (7527 to 7528)
+
+   shr_short
+   =ai_short+kali_short
+   +sum(pr_short,bi_short*log(pr_inv(pr_short)))
+
+
+Equation 214
+------------
+Domain: short
+Count: 1 (7529 to 7529)
+
+   log(pr_inv(short))
+   =sum(s_short,(ai_short+kali_short)*log(pr_inv(s_short)))
+   +0.5
+   *sum(pr_short,sum(s_short,log(pr_inv(s_short))*bi_short*log(pr_inv(pr_short))))
+
+
+Equation 215
+------------
+Domain: s_long
+Count: 3 (7530 to 7532)
+
+   shr_long
+   =ai_long+kali_long
+   +sum(pr_long,bi_long*log(pr_inv(pr_long)))
+
+
+Equation 216
+------------
+Domain: long
+Count: 1 (7533 to 7533)
+
+   log(pr_inv(long))
+   =sum(s_long,(ai_long+kali_long)*log(pr_inv(s_long)))
+   +0.5
+   *sum(pr_long,sum(s_long,log(pr_inv(s_long))*bi_long*log(pr_inv(pr_long))))
+
+
+Equation 217
+------------
+Domain: s_fixed
+Count: 2 (7534 to 7535)
+
+   shr_fixed
+   =ai_fixed+kali_fixed
+   +sum(pr_fixed,bi_fixed*log(pr_inv(pr_fixed)))
+
+
+Equation 218
+------------
+
+   pii
+   =
+   exp(sum(s_fixed,(ai_fixed+kali_fixed)*log(pr_inv(s_fixed)))
+   +0.5
+   *sum(pr_fixed,sum(s_fixed,log(pr_inv(s_fixed))*bi_fixed*log(pr_inv(pr_fixed)))))
+   *inv_shock
+
+
+Equation 219
+------------
+
+   pk=adjust_pk*pii*(1-tax_itc)
+
+
+Equation 220
+------------
+
+   inv_total=inv_expend/(1-tax_itc)
+
+
+Equation 221
+------------
+
+   rev_itc=(-tax_itc)*inv_total
+
+
+Equation 222
+------------
+
+   inv_real=(adjust_i*inv_total*inv_exp_shk)/pii
+
+
+Equation 223
+------------
+
+   fixed_inv=inv_total*(1-inven_fract)
+
+
+Equation 224
+------------
+
+   inven_inv=inv_total-fixed_inv
+
+
+Equation 225
+------------
+Domain: c05,long
+Count: 1 (7543 to 7543)
+
+   inv_share(c05)=shr_long(c05)*shr_fixed(long)
+
+
+Equation 226
+------------
+Domain: c09,long
+Count: 1 (7544 to 7544)
+
+   inv_share(c09)=shr_long(c09)*shr_fixed(long)
+
+
+Equation 227
+------------
+Domain: c31,long
+Count: 1 (7545 to 7545)
+
+   inv_share(c31)=shr_long(c31)*shr_fixed(long)
+
+
+Equation 228
+------------
+Domain: c10,eit,frawm,mach,mrawm,rawm,short
+Count: 1 (7546 to 7546)
+
+   inv_share(c10)
+   =shr_rawm(c10)*shr_mrawm(rawm)*shr_frawm(mrawm)
+   *shr_mach(frawm)
+   *shr_eit(mach)
+   *shr_short(eit)
+   *shr_fixed(short)
+
+
+Equation 229
+------------
+Domain: c11,eit,frawm,mach,mrawm,rawm,short
+Count: 1 (7547 to 7547)
+
+   inv_share(c11)
+   =shr_rawm(c11)*shr_mrawm(rawm)*shr_frawm(mrawm)
+   *shr_mach(frawm)
+   *shr_eit(mach)
+   *shr_short(eit)
+   *shr_fixed(short)
+
+
+Equation 230
+------------
+Domain: c12,eit,frawm,mach,mrawm,rawm,short
+Count: 1 (7548 to 7548)
+
+   inv_share(c12)
+   =shr_rawm(c12)*shr_mrawm(rawm)*shr_frawm(mrawm)
+   *shr_mach(frawm)
+   *shr_eit(mach)
+   *shr_short(eit)
+   *shr_fixed(short)
+
+
+Equation 231
+------------
+Domain: c19,eit,frawm,furn,mach,short
+Count: 1 (7549 to 7549)
+
+   inv_share(c19)
+   =shr_furn(c19)*shr_frawm(furn)*shr_mach(frawm)
+   *shr_eit(mach)
+   *shr_short(eit)
+   *shr_fixed(short)
+
+
+Equation 232
+------------
+Domain: c21,eit,frawm,furn,mach,short
+Count: 1 (7550 to 7550)
+
+   inv_share(c21)
+   =shr_furn(c21)*shr_frawm(furn)*shr_mach(frawm)
+   *shr_eit(mach)
+   *shr_short(eit)
+   *shr_fixed(short)
+
+
+Equation 233
+------------
+Domain: c24,eit,frawm,furn,mach,short
+Count: 1 (7551 to 7551)
+
+   inv_share(c24)
+   =shr_furn(c24)*shr_frawm(furn)*shr_mach(frawm)
+   *shr_eit(mach)
+   *shr_short(eit)
+   *shr_fixed(short)
+
+
+Equation 234
+------------
+Domain: c22,mserv,serv,short,ttsvc
+Count: 1 (7552 to 7552)
+
+   inv_share(c22)
+   =shr_mserv(c22)*shr_serv(mserv)*shr_ttsvc(serv)
+   *shr_short(ttsvc)
+   *shr_fixed(short)
+
+
+Equation 235
+------------
+Domain: c34,mserv,serv,short,ttsvc
+Count: 1 (7553 to 7553)
+
+   inv_share(c34)
+   =shr_mserv(c34)*shr_serv(mserv)*shr_ttsvc(serv)
+   *shr_short(ttsvc)
+   *shr_fixed(short)
+
+
+Equation 236
+------------
+Domain: c35,mserv,serv,short,ttsvc
+Count: 1 (7554 to 7554)
+
+   inv_share(c35)
+   =shr_mserv(c35)*shr_serv(mserv)*shr_ttsvc(serv)
+   *shr_short(ttsvc)
+   *shr_fixed(short)
+
+
+Equation 237
+------------
+Domain: c25,short,trd,ttsvc
+Count: 1 (7555 to 7555)
+
+   inv_share(c25)
+   =shr_trd(c25)*shr_ttsvc(trd)*shr_short(ttsvc)
+   *shr_fixed(short)
+
+
+Equation 238
+------------
+Domain: c26,short,trd,ttsvc
+Count: 1 (7556 to 7556)
+
+   inv_share(c26)
+   =shr_trd(c26)*shr_ttsvc(trd)*shr_short(ttsvc)
+   *shr_fixed(short)
+
+
+Equation 239
+------------
+Domain: c17,eit,short,trnsp
+Count: 1 (7557 to 7557)
+
+   inv_share(c17)
+   =shr_trnsp(c17)*shr_eit(trnsp)*shr_short(eit)
+   *shr_fixed(short)
+
+
+Equation 240
+------------
+Domain: c18,eit,short,trnsp
+Count: 1 (7558 to 7558)
+
+   inv_share(c18)
+   =shr_trnsp(c18)*shr_eit(trnsp)*shr_short(eit)
+   *shr_fixed(short)
+
+
+Equation 241
+------------
+Domain: c15,eit,it,short
+Count: 1 (7559 to 7559)
+
+   inv_share(c15)
+   =shr_it(c15)*shr_eit(it)*shr_short(eit)*shr_fixed(short)
+
+
+Equation 242
+------------
+Domain: c28,eit,it,short
+Count: 1 (7560 to 7560)
+
+   inv_share(c28)
+   =shr_it(c28)*shr_eit(it)*shr_short(eit)*shr_fixed(short)
+
+
+Equation 243
+------------
+Domain: c29,eit,it,short
+Count: 1 (7561 to 7561)
+
+   inv_share(c29)
+   =shr_it(c29)*shr_eit(it)*shr_short(eit)*shr_fixed(short)
+
+
+Equation 244
+------------
+Domain: c13,eit,frawm,mach,mrawm,short
+Count: 1 (7562 to 7562)
+
+   inv_share(c13)
+   =shr_mrawm(c13)*shr_frawm(mrawm)*shr_mach(frawm)
+   *shr_eit(mach)
+   *shr_short(eit)
+   *shr_fixed(short)
+
+
+Equation 245
+------------
+Domain: c32,serv,short,ttsvc
+Count: 1 (7563 to 7563)
+
+   inv_share(c32)
+   =shr_serv(c32)*shr_ttsvc(serv)*shr_short(ttsvc)
+   *shr_fixed(short)
+
+
+Equation 246
+------------
+Domain: c14,eit,mach,short
+Count: 1 (7564 to 7564)
+
+   inv_share(c14)
+   =shr_mach(c14)*shr_eit(mach)*shr_short(eit)
+   *shr_fixed(short)
+
+
+Equation 247
+------------
+Domain: c16,eit,mach,short
+Count: 1 (7565 to 7565)
+
+   inv_share(c16)
+   =shr_mach(c16)*shr_eit(mach)*shr_short(eit)
+   *shr_fixed(short)
+
+
+Equation 248
+------------
+Domain: c27,short,ttsvc
+Count: 1 (7566 to 7566)
+
+   inv_share(c27)
+   =shr_ttsvc(c27)*shr_short(ttsvc)*shr_fixed(short)
+
+
+Equation 249
+------------
+Domain: c01
+Count: 1 (7567 to 7567)
+
+   inv_share(c01)=0.0
+
+
+Equation 250
+------------
+Domain: c02
+Count: 1 (7568 to 7568)
+
+   inv_share(c02)=0.0
+
+
+Equation 251
+------------
+Domain: c03
+Count: 1 (7569 to 7569)
+
+   inv_share(c03)=0.0
+
+
+Equation 252
+------------
+Domain: c04
+Count: 1 (7570 to 7570)
+
+   inv_share(c04)=0.0
+
+
+Equation 253
+------------
+Domain: c06
+Count: 1 (7571 to 7571)
+
+   inv_share(c06)=0.0
+
+
+Equation 254
+------------
+Domain: c07
+Count: 1 (7572 to 7572)
+
+   inv_share(c07)=0.0
+
+
+Equation 255
+------------
+Domain: c08
+Count: 1 (7573 to 7573)
+
+   inv_share(c08)=0.0
+
+
+Equation 256
+------------
+Domain: c20
+Count: 1 (7574 to 7574)
+
+   inv_share(c20)=0.0
+
+
+Equation 257
+------------
+Domain: c23
+Count: 1 (7575 to 7575)
+
+   inv_share(c23)=0.0
+
+
+Equation 258
+------------
+Domain: c30
+Count: 1 (7576 to 7576)
+
+   inv_share(c30)=0.0
+
+
+Equation 259
+------------
+Domain: c33
+Count: 1 (7577 to 7577)
+
+   inv_share(c33)=0.0
+
+
+Equation 260
+------------
+Domain: c36
+Count: 1 (7578 to 7578)
+
+   inv_share(c36)=0.0
+
+
+Equation 261
+------------
+Domain: com
+Count: 36 (7579 to 7614)
+
+   inv
+   =inv_share*fixed_inv+inven_share*inven_inv
+
+
+Equation 262
+------------
+Domain: com
+Count: 36 (7615 to 7650)
+
+   inv_qty(com)=inv(com)/pr_inv(com)
+
+
+Equation 263
+------------
+Domain: com
+Count: 36 (7651 to 7686)
+
+   gov=(gov_share*gov_expend)/(1+tax_con_gov)
+
+
+Equation 264
+------------
+Domain: com,gov
+Count: 36 (7687 to 7722)
+
+   gov_qty(com)=gov(com)/pb(com,gov)
+
+
+Equation 265
+------------
+Domain: com
+Count: 36 (7723 to 7758)
+
+   exp_share
+   =ax_exp+kalx_exp
+   +bx_exp*(log(pf)-log((pc*(1+row_tariff))/exch))
+
+
+Equation 266
+------------
+Domain: com
+Count: 36 (7759 to 7794)
+
+   exports=pc*exp_share*com_qty
+
+
+Equation 267
+------------
+Domain: com
+Count: 36 (7795 to 7830)
+
+   exp_qty=exp_share*com_qty
+
+
+Equation 268
+------------
+
+   export_value=sum(com,exports)
+
+
+Equation 269
+------------
+Domain: com
+Count: 36 (7832 to 7867)
+
+   imports=(pc*imp_share*com_qty)/dom_share
+
+
+Equation 270
+------------
+Domain: com
+Count: 36 (7868 to 7903)
+
+   imp_qty=imports/pfd
+
+
+Equation 271
+------------
+
+   import_value=sum(com,imports)
+
+
+Equation 272
+------------
+
+   trade_surp=export_value-import_value
+
+
+Equation 273
+------------
+
+   trade_surpfc=trade_surp/exch
+
+
+Equation 274
+------------
+
+   hours_adjust=(1-unemp_scale)*hours
+
+
+Equation 275
+------------
+Domain: ind,lab
+Count: 36 (7908 to 7943)
+
+   lab(ind)=(ind_out(ind)*io(lab,ind))/pb(lab,ind)
+
+
+Equation 276
+------------
+
+   lab_demand=sum(ind,lab*pl_scale)
+
+
+Equation 277
+------------
+Domain: lab
+Count: 1 (7945 to 7945)
+
+   lab_income=sum(ind,lab*pb(lab,ind))
+
+
+Equation 278
+------------
+
+   lab_inc_net
+   =((pr_hours*hours_adjust-pr_leisure*leisure)
+   /(1-tax_labor_m))
+   *(1-tax_labor_a)
+
+
+Equation 279
+------------
+
+   rev_labor=tax_labor_a*lab_income
+
+
+Equation 280
+------------
+
+   tax_labor_z=lab_income-rev_labor/tax_labor_m
+
+
+Equation 281
+------------
+Relative Time: [0,1]
+
+   lead(k)
+   =(-(((1-delta)^nyears_lead-1)/delta))*inv_real
+   +(1-delta)^nyears_lead*k
+
+
+Equation 282
+------------
+Domain: ind,kap
+Count: 36 (7950 to 7985)
+
+   kap(ind)=(ind_out(ind)*io(kap,ind))/pb(kap,ind)
+
+
+Equation 283
+------------
+Domain: con,kap
+Count: 1 (7986 to 7986)
+
+   kap(con)=con_qty(kap)
+
+
+Equation 284
+------------
+
+   kap_demand=sum(nind_c,kap*pk_scale)
+
+
+Equation 285
+------------
+Domain: con,kap
+Count: 1 (7988 to 7988)
+
+   rev_cap_hh
+   =(tax_cap_hh*pb(kap,con)*kap(con))/(1+tax_cap_hh)
+
+
+Equation 286
+------------
+Domain: kap
+Count: 1 (7989 to 7989)
+
+   kap_income
+   =sum(ind,kap(ind)*pb(kap,ind))+con(kap)-rev_cap_hh
+
+
+Equation 287
+------------
+
+   k_value=pk*k
+
+
+Equation 288
+------------
+
+   deprec=delta*k_value
+
+
+Equation 289
+------------
+
+   rev_prop=tax_prop*k_value
+
+
+Equation 290
+------------
+
+   kap_taxable=kap_income-rev_prop
+
+
+Equation 291
+------------
+
+   dividend=(1-tax_cap)*kap_taxable
+
+
+Equation 292
+------------
+
+   div_rate=dividend/k_value
+
+
+Equation 293
+------------
+Domain: i36,kap
+Count: 1 (7996 to 7996)
+
+   gov_kap_inc=(1-tax_cap)*kap(i36)*pb(kap,i36)
+
+
+Equation 294
+------------
+Relative Time: [-1,0]
+
+   nyears_lag=year-lag(year)
+
+
+Equation 295
+------------
+Relative Time: [-1,0]
+
+   capgain
+   =(((pk-lag(pk))/nyears_lag)/pk-delta)*k_value
+
+
+Equation 296
+------------
+
+   cg_rate=capgain/k_value
+
+
+Equation 297
+------------
+
+   r=div_rate+cg_rate
+
+
+Equation 298
+------------
+
+   interest=r*(gov_debt+row_debt)
+
+
+Equation 299
+------------
+
+   gov_int_adj
+   =gov_interest+gov_int_ss-gov_from_ss-(r*gov_debt)/(1-tax_cap)
+
+
+Equation 300
+------------
+
+   row_int_adj=row_interest-(r*row_debt)/(1-tax_cap)
+
+
+Equation 301
+------------
+
+   finwealth=k_value+gov_debt+row_debt
+
+
+Equation 302
+------------
+
+   rev_wealth=tax_wealth*finwealth
+
+
+Equation 303
+------------
+
+   rev_cap
+   =tax_cap
+   *(kap_taxable+interest/(1-tax_cap)+gov_int_adj
+   +row_int_adj)
+
+
+Equation 304
+------------
+
+   kap_inc_net
+   =dividend-gov_kap_inc+interest-rev_wealth
+   +(1-tax_cap)*(gov_int_adj+row_int_adj)
+
