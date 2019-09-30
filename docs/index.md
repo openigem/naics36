@@ -33,5 +33,5 @@ from September 2018 and 2019.
 + [Sym Language](https://pjwilcoxen.github.io/sym/)
 + [GEMPACK Software](https://www.copsmodels.com/gempack.htm)
 + [Progress Report, September 2018](Open Source IGEM.ProgressReport.Sep2018.pdf)
-+ Progress Report, September 2019, TBD
++ [Progress Report, September 2019](OpenIGEM_ProgressReport_30Sep2019.pdf)
 
