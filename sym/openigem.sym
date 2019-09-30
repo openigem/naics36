@@ -3,3 +3,7 @@
 #include parameters.sym
 #include producer.sym
 #include household.sym
+#include investment.sym
+#include government.sym
+#include trade.sym
+#include factors.sym

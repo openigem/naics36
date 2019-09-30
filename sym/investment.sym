@@ -1,0 +1,157 @@
+// IGEM's Investment Sub-model
+
+pr_inv(com) = pb(com,inv)  'Investment commodity prices, io'  ;
+
+// Equations - Tiers bottom-up shares and prices
+
+// Equations - Raw materials (rawm), Furnishings (furn), Mfg services (mserv), Trade (trd),
+//             Transportation equipment (trnsp), IT and communications equip (it)
+
+shr_rawm = ai_rawm + kali_rawm + sum(pr_rawm,bi_rawm*ln(pr_inv(pr_rawm))) 'rawm commodity shares' ;
+
+ln(pr_inv(rawm)) = sum(s_rawm,(ai_rawm + kali_rawm)*ln(pr_inv(s_rawm)))
+                + 0.5*sum(pr_rawm,sum(s_rawm,ln(pr_inv(s_rawm))*bi_rawm*ln(pr_inv(pr_rawm)))) 'rawm price' ;
+
+shr_furn = ai_furn + kali_furn + sum(pr_furn,bi_furn*ln(pr_inv(pr_furn))) 'furn commodity shares' ;
+
+ln(pr_inv(furn)) = sum(s_furn,(ai_furn + kali_furn)*ln(pr_inv(s_furn)))
+                + 0.5*sum(pr_furn,sum(s_furn,ln(pr_inv(s_furn))*bi_furn*ln(pr_inv(pr_furn)))) 'furn price' ;
+
+shr_mserv = ai_mserv + kali_mserv + sum(pr_mserv,bi_mserv*ln(pr_inv(pr_mserv))) 'mserv commodity shares' ;
+
+ln(pr_inv(mserv)) = sum(s_mserv,(ai_mserv + kali_mserv)*ln(pr_inv(s_mserv)))
+                 + 0.5*sum(pr_mserv,sum(s_mserv,ln(pr_inv(s_mserv))*bi_mserv*ln(pr_inv(pr_mserv)))) 'mserv price' ;		
+				 
+shr_trd = ai_trd + kali_trd + sum(pr_trd,bi_trd*ln(pr_inv(pr_trd))) 'trd commodity shares' ;
+
+ln(pr_inv(trd)) = sum(s_trd,(ai_trd + kali_trd)*ln(pr_inv(s_trd)))
+               + 0.5*sum(pr_trd,sum(s_trd,ln(pr_inv(s_trd))*bi_trd*ln(pr_inv(pr_trd)))) 'trd price' ;		
+				 
+shr_trnsp = ai_trnsp + kali_trnsp + sum(pr_trnsp,bi_trnsp*ln(pr_inv(pr_trnsp))) 'trnsp commodity shares' ;
+
+ln(pr_inv(trnsp)) = sum(s_trnsp,(ai_trnsp + kali_trnsp)*ln(pr_inv(s_trnsp)))
+                 + 0.5*sum(pr_trnsp,sum(s_trnsp,ln(pr_inv(s_trnsp))*bi_trnsp*ln(pr_inv(pr_trnsp)))) 'trnsp price' ;
+			   
+shr_it = ai_it + kali_it + sum(pr_it,bi_it*ln(pr_inv(pr_it))) 'it commodity shares' ;
+
+ln(pr_inv(it)) = sum(s_it,(ai_it + kali_it)*ln(pr_inv(s_it)))
+              + 0.5*sum(pr_it,sum(s_it,ln(pr_inv(s_it))*bi_it*ln(pr_inv(pr_it)))) 'it price' ;	
+
+// Equations - Metals and rawm (mrawm), Furnishings and mrawm (frawm), Services (serv), Machinery (mach),
+//             Trade, transport and services (ttsvc), Equipment (eit)
+
+shr_mrawm = ai_mrawm + kali_mrawm + sum(pr_mrawm,bi_mrawm*ln(pr_inv(pr_mrawm))) 'mrawm commodity shares' ;
+
+ln(pr_inv(mrawm)) = sum(s_mrawm,(ai_mrawm + kali_mrawm)*ln(pr_inv(s_mrawm)))
+              + 0.5*sum(pr_mrawm,sum(s_mrawm,ln(pr_inv(s_mrawm))*bi_mrawm*ln(pr_inv(pr_mrawm)))) 'mrawm price' ;	
+
+shr_frawm = ai_frawm + kali_frawm + sum(pr_frawm,bi_frawm*ln(pr_inv(pr_frawm))) 'frawm commodity shares' ;
+
+ln(pr_inv(frawm)) = sum(s_frawm,(ai_frawm + kali_frawm)*ln(pr_inv(s_frawm)))
+              + 0.5*sum(pr_frawm,sum(s_frawm,ln(pr_inv(s_frawm))*bi_frawm*ln(pr_inv(pr_frawm)))) 'frawm price' ;	
+
+shr_serv = ai_serv + kali_serv + sum(pr_serv,bi_serv*ln(pr_inv(pr_serv))) 'serv commodity shares' ;
+
+ln(pr_inv(serv)) = sum(s_serv,(ai_serv + kali_serv)*ln(pr_inv(s_serv)))
+              + 0.5*sum(pr_serv,sum(s_serv,ln(pr_inv(s_serv))*bi_serv*ln(pr_inv(pr_serv)))) 'serv price' ;	
+
+shr_mach = ai_mach + kali_mach + sum(pr_mach,bi_mach*ln(pr_inv(pr_mach))) 'mach commodity shares' ;
+
+ln(pr_inv(mach)) = sum(s_mach,(ai_mach + kali_mach)*ln(pr_inv(s_mach)))
+              + 0.5*sum(pr_mach,sum(s_mach,ln(pr_inv(s_mach))*bi_mach*ln(pr_inv(pr_mach)))) 'mach price' ;	
+
+shr_ttsvc = ai_ttsvc + kali_ttsvc + sum(pr_ttsvc,bi_ttsvc*ln(pr_inv(pr_ttsvc))) 'ttsvc commodity shares' ;
+
+ln(pr_inv(ttsvc)) = sum(s_ttsvc,(ai_ttsvc + kali_ttsvc)*ln(pr_inv(s_ttsvc)))
+              + 0.5*sum(pr_ttsvc,sum(s_ttsvc,ln(pr_inv(s_ttsvc))*bi_ttsvc*ln(pr_inv(pr_ttsvc)))) 'ttsvc price' ;	
+
+shr_eit = ai_eit + kali_eit + sum(pr_eit,bi_eit*ln(pr_inv(pr_eit))) 'eit commodity shares' ;
+
+ln(pr_inv(eit)) = sum(s_eit,(ai_eit + kali_eit)*ln(pr_inv(s_eit)))
+              + 0.5*sum(pr_eit,sum(s_eit,ln(pr_inv(s_eit))*bi_eit*ln(pr_inv(pr_eit)))) 'eit price' ;	
+
+// Equations - Short-lived capital (short), Long-lived capital (long), Fixed investnent (fixed)
+
+shr_short = ai_short + kali_short + sum(pr_short,bi_short*ln(pr_inv(pr_short))) 'short commodity shares' ;
+
+ln(pr_inv(short)) = sum(s_short,(ai_short + kali_short)*ln(pr_inv(s_short)))
+              + 0.5*sum(pr_short,sum(s_short,ln(pr_inv(s_short))*bi_short*ln(pr_inv(pr_short)))) 'short price' ;	
+
+shr_long = ai_long + kali_long + sum(pr_long,bi_long*ln(pr_inv(pr_long))) 'long commodity shares' ;
+
+ln(pr_inv(long)) = sum(s_long,(ai_long + kali_long)*ln(pr_inv(s_long)))
+              + 0.5*sum(pr_long,sum(s_long,ln(pr_inv(s_long))*bi_long*ln(pr_inv(pr_long)))) 'long price' ;	
+
+shr_fixed = ai_fixed + kali_fixed + sum(pr_fixed,bi_fixed*ln(pr_inv(pr_fixed))) 'fixed commodity shares' ;
+
+pii = exp(sum(s_fixed,(ai_fixed + kali_fixed)*ln(pr_inv(s_fixed)))
+      + 0.5*sum(pr_fixed,sum(s_fixed,ln(pr_inv(s_fixed))*bi_fixed*ln(pr_inv(pr_fixed)))))*inv_shock 'Investment goods price' ;	
+
+pk = adjust_pk*pii*(1-tax_itc) 'Price of new capital stock'  ;
+
+inv_total = inv_expend/(1-tax_itc) 'Post-itc investment'  ;
+rev_itc = -tax_itc*inv_total       'Investment tax credit (negative)'  ;
+inv_real = adjust_i*inv_total*inv_exp_shk/pii  'Post-itc investment quantity'  ;
+fixed_inv = inv_total*(1-inven_fract) 'Fixed portion of total investment'  ;
+inven_inv = inv_total- fixed_inv 'Inventory portion of total investment'  ;
+
+// Long-lived capital commodity shares
+
+inv_share(c05) = shr_long(c05)*shr_fixed(long) 'Non-energy mining share'  ;
+inv_share(c09) = shr_long(c09)*shr_fixed(long) 'Construction share' ;
+inv_share(c31) = shr_long(c31)*shr_fixed(long) 'Real estate and leasing share' ; 
+
+// Short-lived capital commodity shares
+
+inv_share(c10) = shr_rawm(c10)*shr_mrawm(rawm)*shr_frawm(mrawm)*shr_mach(frawm)*shr_eit(mach)*shr_short(eit)*shr_fixed(short) 'Wood share'  ;
+inv_share(c11) = shr_rawm(c11)*shr_mrawm(rawm)*shr_frawm(mrawm)*shr_mach(frawm)*shr_eit(mach)*shr_short(eit)*shr_fixed(short) 'Non-metals share'  ;
+inv_share(c12) = shr_rawm(c12)*shr_mrawm(rawm)*shr_frawm(mrawm)*shr_mach(frawm)*shr_eit(mach)*shr_short(eit)*shr_fixed(short) 'Primary metals share'  ;
+
+inv_share(c19) = shr_furn(c19)*shr_frawm(furn)*shr_mach(frawm)*shr_eit(mach)*shr_short(eit)*shr_fixed(short) 'Misc mfg share'  ;
+inv_share(c21) = shr_furn(c21)*shr_frawm(furn)*shr_mach(frawm)*shr_eit(mach)*shr_short(eit)*shr_fixed(short) 'Textiles share'  ;
+inv_share(c24) = shr_furn(c24)*shr_frawm(furn)*shr_mach(frawm)*shr_eit(mach)*shr_short(eit)*shr_fixed(short) 'Chemicals share'  ;
+
+inv_share(c22) = shr_mserv(c22)*shr_serv(mserv)*shr_ttsvc(serv)*shr_short(ttsvc)*shr_fixed(short) 'Printing share'  ;
+inv_share(c34) = shr_mserv(c34)*shr_serv(mserv)*shr_ttsvc(serv)*shr_short(ttsvc)*shr_fixed(short) 'Healthcare share'  ;
+inv_share(c35) = shr_mserv(c35)*shr_serv(mserv)*shr_ttsvc(serv)*shr_short(ttsvc)*shr_fixed(short) 'Accommodations share'  ;
+
+inv_share(c25) = shr_trd(c25)*shr_ttsvc(trd)*shr_short(ttsvc)*shr_fixed(short) 'Wholesale trade share'  ;
+inv_share(c26) = shr_trd(c26)*shr_ttsvc(trd)*shr_short(ttsvc)*shr_fixed(short) 'Retail trade share'  ;
+
+inv_share(c17) = shr_trnsp(c17)*shr_eit(trnsp)*shr_short(eit)*shr_fixed(short) 'Motor vehicles share'  ;
+inv_share(c18) = shr_trnsp(c18)*shr_eit(trnsp)*shr_short(eit)*shr_fixed(short) 'Other transport equipment share'  ;
+
+inv_share(c15) = shr_it(c15)*shr_eit(it)*shr_short(eit)*shr_fixed(short) 'IT equipment share'  ;
+inv_share(c28) = shr_it(c28)*shr_eit(it)*shr_short(eit)*shr_fixed(short) 'Publishing, broadcasting and telecom share'  ;
+inv_share(c29) = shr_it(c29)*shr_eit(it)*shr_short(eit)*shr_fixed(short) 'Software and services share'  ;
+
+inv_share(c13) = shr_mrawm(c13)*shr_frawm(mrawm)*shr_mach(frawm)*shr_eit(mach)*shr_short(eit)*shr_fixed(short) 'Fabricated metals share'  ;
+
+inv_share(c32) = shr_serv(c32)*shr_ttsvc(serv)*shr_short(ttsvc)*shr_fixed(short) 'Business services share'  ;
+
+inv_share(c14) = shr_mach(c14)*shr_eit(mach)*shr_short(eit)*shr_fixed(short) 'Machinery share'  ;
+inv_share(c16) = shr_mach(c16)*shr_eit(mach)*shr_short(eit)*shr_fixed(short) 'Electrical equipment share'  ;
+
+inv_share(c27) = shr_ttsvc(c27)*shr_short(ttsvc)*shr_fixed(short) 'Transportation and warehousing share'  ;
+
+//  Unused as investment goods
+
+inv_share(c01) = 0.0  ;
+inv_share(c02) = 0.0  ;
+inv_share(c03) = 0.0  ;
+inv_share(c04) = 0.0  ;
+inv_share(c06) = 0.0  ;
+inv_share(c07) = 0.0  ;
+inv_share(c08) = 0.0  ;
+inv_share(c20) = 0.0  ;
+inv_share(c23) = 0.0  ;
+inv_share(c30) = 0.0  ;
+inv_share(c33) = 0.0  ;
+inv_share(c36) = 0.0  ;
+
+//  Investment goods expenditues and quantities
+
+inv = inv_share*fixed_inv + inven_share*inven_inv 'Investment good expenditures'  ;
+inv_qty(com) = inv(com)/pr_inv(com) 'Investment good quantities'  ;
+
+

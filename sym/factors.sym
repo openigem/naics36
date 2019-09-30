@@ -1,0 +1,58 @@
+// Factor demands and related income and tax equations
+
+// Labor
+
+hours_adjust = (1-unemp_scale) * hours  'Household time endowment after unemployment adjustment'  ;
+
+lab(ind) = ind_out(ind) * io(lab,ind) / pb(lab,ind)  'Quantity of labor demanded by industry'  ;
+
+lab_demand = sum(ind,lab*pl_scale)  'Total quantity of labor demanded'  ;
+lab_income = sum(ind,lab*pb(lab,ind))  'Labor income, pre-tax'  ;
+lab_inc_net = ((pr_hours*hours_adjust - pr_leisure*leisure)/(1-tax_labor_m)) * (1-tax_labor_a)  'Labor income, post-tax'  ;
+
+rev_labor = tax_labor_a * lab_income  'Labor tax revenue'  ;
+
+tax_labor_z = lab_income - rev_labor/tax_labor_m  'Zero bracket labor tax'  ;
+
+// Capital and capital services
+
+lead(k) = -(((1 - delta)^nyears_lead - 1)/delta) * inv_real + (1 - delta)^nyears_lead * k  'Capital accumulation'  ;
+
+kap(ind) = ind_out(ind) * io(kap,ind) / pb(kap,ind)  'Quantity of capital services demanded by industry'  ;
+kap(con) = con_qty(kap)  'Quantity of capital services demanded by households'  ;
+
+kap_demand = sum(nind_c,kap*pk_scale)  'Total quantity of capital services demanded'  ;
+
+rev_cap_hh = tax_cap_hh*pb(kap,con)*kap(con)/(1+tax_cap_hh)  'Tax revenue from household capital'  ;
+kap_income = sum(ind,kap(ind)*pb(kap,ind)) + con(kap) - rev_cap_hh  'Capital income, pre-tax net of household capital taxes'  ;
+
+k_value = pk * k  'Value of the physical capital stock'  ;
+
+deprec = delta * k_value  'Depreciation'  ;
+
+rev_prop = tax_prop * k_value  'Property tax revenue'  ;
+
+kap_taxable = kap_income - rev_prop  'Taxable capital income'  ;
+
+dividend = (1-tax_cap) * kap_taxable  'Value of dividends'  ;
+div_rate = dividend / k_value             'Dividend rate'  ;
+
+gov_kap_inc = (1-tax_cap) * kap(i36) * pb(kap,i36)  'Government enterprises capital income'  ;
+
+nyears_lag = year - lag(year)  'Lagged number of intervening years'  ;
+
+capgain = (((pk - lag(pk))/nyears_lag)/pk - delta) * k_value  'Capital gain'  ;
+cg_rate = capgain / k_value  'Capital gain rate'  ;
+
+r = div_rate + cg_rate  'Interest rate from intertemporal arbitrage'  ;
+
+interest = r * (gov_debt + row_debt)  'Value of interest received'  ;
+gov_int_adj = gov_interest+gov_int_ss-gov_from_ss-(r*gov_debt/(1-tax_cap))  'Government interest adjustment'  ;
+row_int_adj = row_interest-(r*row_debt/(1-tax_cap))  'ROW interest adjustment'  ;
+
+finwealth = k_value + gov_debt + row_debt  'Value of financial wealth'  ;
+rev_wealth = tax_wealth * finwealth        'Wealth tax revenue'  ;
+
+rev_cap = tax_cap * (kap_taxable + (interest/(1-tax_cap)) + gov_int_adj + row_int_adj) 'Capital tax revenue' ;
+
+kap_inc_net = dividend - gov_kap_inc + interest - rev_wealth + (1-tax_cap) * (gov_int_adj + row_int_adj) 'Net capital income to households'  ;

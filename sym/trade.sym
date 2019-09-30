@@ -1,0 +1,28 @@
+// IGEM's Trade equations
+
+// Export equations
+
+exp_share = ax_exp + kalx_exp + bx_exp*(ln(pf) - ln(pc*(1+row_tariff)/exch))  'Export shares'  ;
+
+exports = pc*exp_share*com_qty 'Values of commodity exports'  ;
+
+exp_qty = exp_share*com_qty    'Quantities of commodity exports'  ;
+
+export_value = sum(com,exports) 'Total exports of goods and services'  ;
+
+// Import equations
+// Import and domestic shares and import prices in domestic currency are computed in producer.sym
+
+imports = pc*imp_share*com_qty/dom_share  'Values of commodity imports'  ;
+
+imp_qty = imports/pfd  'Quantities of commodity imports'  ;
+
+import_value = sum(com,imports) 'Total imports of goods and services'  ;
+
+trade_surp = export_value - import_value  'Trade surplus in domestic currency'  ;
+trade_surpfc = trade_surp/exch  'Trade surplus in foreign currency'  ;
+
+
+
+
+

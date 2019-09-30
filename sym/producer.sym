@@ -4,154 +4,161 @@
 
 //  NOTE: A given externality is either supply- or demand-driven, not both
 
+tax_labor_m = exo_tax_labm * tax_scale 'Marginal tax rate on labor'  ;
+tax_labor_a = exo_tax_laba * tax_scale 'Average tax rate on labor'  ;
+tax_cap = exo_tax_cap * tax_scale 'Average-marginal tax rate on capital  ;
+
 //  Supply-driven externality tax rates
 
 tax_ext_ind = sum(nxtr,tax_ext_u*prd_ext(ind,nxtr))  'Total externality tax on industry production'  ;
-tar_ext_com = sum(nxtr,tax_ext_u*imp_ext(com,nxtr))  'Total externality tax on commodity import'  ;
+tar_ext_com = sum(nxtr,tax_ext_u*imp_ext(com,nxtr))  'Total externality tariff on commodity import'  ;
 
 //  Demand-driven externality tax rates
 
 tax_ext_com = sum(nxtr,tax_ext_u*com_ext(com,buy,nxtr))  'Total externality tax on commodity use'  ;
 
-//  Compute agg_tech_level and industry capital and labor prices
+//  Compute agg_tech_lvl and industry capital and labor prices
 
-lead(agg_tech_level) = (1 - (lead(year) - year)*agg_tech_chg)*agg_tech_level  'Economy-wide level of tech improvement'  ;
+nyears_lead = lead(year) - year   'Leading number of intervening years'  ;
+lead(agg_tech_lvl) = (1 - agg_tech_chg)^nyears_lead * agg_tech_lvl  'Economy-wide level of tech improvement'  ;
 
-pb(kap,ind) = pk_service*pk_scale(ind) 'Industry-specific capital price' ;
-pb(lab,ind) = p_hours*pl_scale(ind)/(1 - tax_labor_m) 'Industry-specific labor price' ;
+pb(kap,indxoilgas) = pk_service*pk_scale(indxoilgas)  'Non-oil,gas industry-specific capital services prices' ;
+pb(kap,i02) = pr_kap_oil  'Capital services price, oil mining'  ;
+pb(kap,i03) = pr_kap_gas  'Capital services price, gas mining'  ;
+pb(lab,ind) = pr_hours*pl_scale(ind)/(1 - tax_labor_m) 'Industry-specific labor prices' ;
 
 // Energy tier equations
 
 // Gas share and price equations
 
-shr_gas = ap_gas + kalf_gas + sum(p_gas,bp_gas*ln(pb(p_gas,ind))) 'gas input shares' ;
+shr_gas = ap_gas + kalf_gas + sum(pr_gas,bp_gas*ln(pb(pr_gas,ind))) 'gas input shares' ;
 
 ln(pb(gas,ind)) = ap0_gas + sum(s_gas,(ap_gas + kalf_gas)*ln(pb(s_gas,ind)))
-                          + 0.5*sum(p_gas,sum(s_gas,ln(pb(s_gas,ind))*bp_gas*ln(pb(p_gas,ind)))) 'gas prices' ;
+                          + 0.5*sum(pr_gas,sum(s_gas,ln(pb(s_gas,ind))*bp_gas*ln(pb(pr_gas,ind)))) 'gas prices' ;
 
 // Oil share and price equations
 
-shr_oil = ap_oil + kalf_oil + sum(p_oil,bp_oil*ln(pb(p_oil,ind))) 'oil input shares' ;
+shr_oil = ap_oil + kalf_oil + sum(pr_oil,bp_oil*ln(pb(pr_oil,ind))) 'oil input shares' ;
 
 ln(pb(oil,ind)) = ap0_oil + sum(s_oil,(ap_oil + kalf_oil)*ln(pb(s_oil,ind)))
-                          + 0.5*sum(p_oil,sum(s_oil,ln(pb(s_oil,ind))*bp_oil*ln(pb(p_oil,ind)))) 'oil prices' ;
+                          + 0.5*sum(pr_oil,sum(s_oil,ln(pb(s_oil,ind))*bp_oil*ln(pb(pr_oil,ind)))) 'oil prices' ;
    
 // Fossil fuel share and price equations
 
-shr_ff = ap_ff + kalf_ff + sum(p_ff,bp_ff*ln(pb(p_ff,ind))) 'ff input shares' ;
+shr_ff = ap_ff + kalf_ff + sum(pr_ff,bp_ff*ln(pb(pr_ff,ind))) 'ff input shares' ;
 
 ln(pb(ff,ind)) = ap0_ff + sum(s_ff,(ap_ff + kalf_ff)*ln(pb(s_ff,ind)))
-                        + 0.5*sum(p_ff,sum(s_ff,ln(pb(s_ff,ind))*bp_ff*ln(pb(p_ff,ind)))) 'ff prices' ;
+                        + 0.5*sum(pr_ff,sum(s_ff,ln(pb(s_ff,ind))*bp_ff*ln(pb(pr_ff,ind)))) 'ff prices' ;
 
 // Energy share and price equations
 
-shr_ene = ap_ene + kalf_ene + sum(p_ene,bp_ene*ln(pb(p_ene,ind))) 'ene input shares' ;
+shr_ene = ap_ene + kalf_ene + sum(pr_ene,bp_ene*ln(pb(pr_ene,ind))) 'ene input shares' ;
 
 ln(pb(ene,ind)) = ap0_ene + sum(s_ene,(ap_ene + kalf_ene)*ln(pb(s_ene,ind)))
-                          + 0.5*sum(p_ene,sum(s_ene,ln(pb(s_ene,ind))*bp_ene*ln(pb(p_ene,ind)))) 'ene prices' ;
+                          + 0.5*sum(pr_ene,sum(s_ene,ln(pb(s_ene,ind))*bp_ene*ln(pb(pr_ene,ind)))) 'ene prices' ;
 
 // Services tier equations
 
 // bl share and price equations
 
-shr_bl = ap_bl + kalf_bl + sum(p_bl,bp_bl*ln(pb(p_bl,ind))) 'bl input shares' ;
+shr_bl = ap_bl + kalf_bl + sum(pr_bl,bp_bl*ln(pb(pr_bl,ind))) 'bl input shares' ;
 
 ln(pb(bl,ind)) = ap0_bl + sum(s_bl,(ap_bl + kalf_bl)*ln(pb(s_bl,ind)))
-                        + 0.5*sum(p_bl,sum(s_bl,ln(pb(s_bl,ind))*bp_bl*ln(pb(p_bl,ind)))) 'bl prices' ;
+                        + 0.5*sum(pr_bl,sum(s_bl,ln(pb(s_bl,ind))*bp_bl*ln(pb(pr_bl,ind)))) 'bl prices' ;
 
 // ob share and price equations
 
-shr_ob = ap_ob + kalf_ob + sum(p_ob,bp_ob*ln(pb(p_ob,ind))) 'ob input shares' ;
+shr_ob = ap_ob + kalf_ob + sum(pr_ob,bp_ob*ln(pb(pr_ob,ind))) 'ob input shares' ;
 
 ln(pb(ob,ind)) = ap0_ob + sum(s_ob,(ap_ob + kalf_ob)*ln(pb(s_ob,ind)))
-                        + 0.5*sum(p_ob,sum(s_ob,ln(pb(s_ob,ind))*bp_ob*ln(pb(p_ob,ind)))) 'ob prices' ;
+                        + 0.5*sum(pr_ob,sum(s_ob,ln(pb(s_ob,ind))*bp_ob*ln(pb(pr_ob,ind)))) 'ob prices' ;
    
 // os share and price equations
 
-shr_os = ap_os + kalf_os + sum(p_os,bp_os*ln(pb(p_os,ind))) 'os input shares' ;
+shr_os = ap_os + kalf_os + sum(pr_os,bp_os*ln(pb(pr_os,ind))) 'os input shares' ;
 
 ln(pb(os,ind)) = ap0_os + sum(s_os,(ap_os + kalf_os)*ln(pb(s_os,ind)))
-                        + 0.5*sum(p_os,sum(s_os,ln(pb(s_os,ind))*bp_os*ln(pb(p_os,ind)))) 'os prices' ;
+                        + 0.5*sum(pr_os,sum(s_os,ln(pb(s_os,ind))*bp_os*ln(pb(pr_os,ind)))) 'os prices' ;
 
 // sv share and price equations
 
-shr_sv = ap_sv + kalf_sv + sum(p_sv,bp_sv*ln(pb(p_sv,ind))) 'sv input shares' ;
+shr_sv = ap_sv + kalf_sv + sum(pr_sv,bp_sv*ln(pb(pr_sv,ind))) 'sv input shares' ;
 
 ln(pb(sv,ind)) = ap0_sv + sum(s_sv,(ap_sv + kalf_sv)*ln(pb(s_sv,ind)))
-                        + 0.5*sum(p_sv,sum(s_sv,ln(pb(s_sv,ind))*bp_sv*ln(pb(p_sv,ind)))) 'sv prices' ;
+                        + 0.5*sum(pr_sv,sum(s_sv,ln(pb(s_sv,ind))*bp_sv*ln(pb(pr_sv,ind)))) 'sv prices' ;
 
 // Non-aggregate materials tier equations						   
 						   
 // ma share and price equations
 
-shr_ma = ap_ma + kalf_ma + sum(p_ma,bp_ma*ln(pb(p_ma,ind))) 'ma input shares' ;
+shr_ma = ap_ma + kalf_ma + sum(pr_ma,bp_ma*ln(pb(pr_ma,ind))) 'ma input shares' ;
 
 ln(pb(ma,ind)) = ap0_ma + sum(s_ma,(ap_ma + kalf_ma)*ln(pb(s_ma,ind)))
-                        + 0.5*sum(p_ma,sum(s_ma,ln(pb(s_ma,ind))*bp_ma*ln(pb(p_ma,ind)))) 'ma prices'  ;
+                        + 0.5*sum(pr_ma,sum(s_ma,ln(pb(s_ma,ind))*bp_ma*ln(pb(pr_ma,ind)))) 'ma prices'  ;
 
 // mn share and price equations
 
-shr_mn = ap_mn + kalf_mn + sum(p_mn,bp_mn*ln(pb(p_mn,ind))) 'mn input shares' ;
+shr_mn = ap_mn + kalf_mn + sum(pr_mn,bp_mn*ln(pb(pr_mn,ind))) 'mn input shares' ;
 
 ln(pb(mn,ind)) = ap0_mn + sum(s_mn,(ap_mn + kalf_mn)*ln(pb(s_mn,ind)))
-                        + 0.5*sum(p_mn,sum(s_mn,ln(pb(s_mn,ind))*bp_mn*ln(pb(p_mn,ind)))) 'mn prices'  ;
+                        + 0.5*sum(pr_mn,sum(s_mn,ln(pb(s_mn,ind))*bp_mn*ln(pb(pr_mn,ind)))) 'mn prices'  ;
    
 // tr share and price equations
 
-shr_tr = ap_tr + kalf_tr + sum(p_tr,bp_tr*ln(pb(p_tr,ind))) 'tr input shares' ;
+shr_tr = ap_tr + kalf_tr + sum(pr_tr,bp_tr*ln(pb(pr_tr,ind))) 'tr input shares' ;
 
 ln(pb(tr,ind)) = ap0_tr + sum(s_tr,(ap_tr + kalf_tr)*ln(pb(s_tr,ind)))
-                        + 0.5*sum(p_tr,sum(s_tr,ln(pb(s_tr,ind))*bp_tr*ln(pb(p_tr,ind)))) 'tr prices' ;
+                        + 0.5*sum(pr_tr,sum(s_tr,ln(pb(s_tr,ind))*bp_tr*ln(pb(pr_tr,ind)))) 'tr prices' ;
 
 // tt share and price equations
 
-shr_tt = ap_tt + kalf_tt + sum(p_tt,bp_tt*ln(pb(p_tt,ind))) 'tt input shares' ;
+shr_tt = ap_tt + kalf_tt + sum(pr_tt,bp_tt*ln(pb(pr_tt,ind))) 'tt input shares' ;
 
 ln(pb(tt,ind)) = ap0_tt + sum(s_tt,(ap_tt + kalf_tt)*ln(pb(s_tt,ind)))
-                        + 0.5*sum(p_tt,sum(s_tt,ln(pb(s_tt,ind))*bp_tt*ln(pb(p_tt,ind)))) 'tt prices' ;
+                        + 0.5*sum(pr_tt,sum(s_tt,ln(pb(s_tt,ind))*bp_tt*ln(pb(pr_tt,ind)))) 'tt prices' ;
 
 // Aggregate materials tier equations
 
 // eq share and price equations
 
-shr_eq = ap_eq + kalf_eq + sum(p_eq,bp_eq*ln(pb(p_eq,ind))) 'eq input shares' ;
+shr_eq = ap_eq + kalf_eq + sum(pr_eq,bp_eq*ln(pb(pr_eq,ind))) 'eq input shares' ;
 
 ln(pb(eq,ind)) = ap0_eq + sum(s_eq,(ap_eq + kalf_eq)*ln(pb(s_eq,ind)))
-                        + 0.5*sum(p_eq,sum(s_eq,ln(pb(s_eq,ind))*bp_eq*ln(pb(p_eq,ind)))) 'eq prices' ;
+                        + 0.5*sum(pr_eq,sum(s_eq,ln(pb(s_eq,ind))*bp_eq*ln(pb(pr_eq,ind)))) 'eq prices' ;
 
 // ms share and price equations
 
-shr_ms = ap_ms + kalf_ms + sum(p_ms,bp_ms*ln(pb(p_ms,ind))) 'ms input shares' ;
+shr_ms = ap_ms + kalf_ms + sum(pr_ms,bp_ms*ln(pb(pr_ms,ind))) 'ms input shares' ;
 
 ln(pb(ms,ind)) = ap0_ms + sum(s_ms,(ap_ms + kalf_ms)*ln(pb(s_ms,ind)))
-                        + 0.5*sum(p_ms,sum(s_ms,ln(pb(s_ms,ind))*bp_ms*ln(pb(p_ms,ind)))) 'ms prices' ;
+                        + 0.5*sum(pr_ms,sum(s_ms,ln(pb(s_ms,ind))*bp_ms*ln(pb(pr_ms,ind)))) 'ms prices' ;
    
 // mm share and price equations
 
-shr_mm = ap_mm + kalf_mm + sum(p_mm,bp_mm*ln(pb(p_mm,ind))) 'mm input shares' ;
+shr_mm = ap_mm + kalf_mm + sum(pr_mm,bp_mm*ln(pb(pr_mm,ind))) 'mm input shares' ;
 
 ln(pb(mm,ind)) = ap0_mm + sum(s_mm,(ap_mm + kalf_mm)*ln(pb(s_mm,ind)))
-                        + 0.5*sum(p_mm,sum(s_mm,ln(pb(s_mm,ind))*bp_mm*ln(pb(p_mm,ind)))) 'mm prices' ;
+                        + 0.5*sum(pr_mm,sum(s_mm,ln(pb(s_mm,ind))*bp_mm*ln(pb(pr_mm,ind)))) 'mm prices' ;
 
 // mat share and price equations
 
-shr_mat = ap_mat + kalf_mat + sum(p_mat,bp_mat*ln(pb(p_mat,ind))) 'mat input shares' ;
+shr_mat = ap_mat + kalf_mat + sum(pr_mat,bp_mat*ln(pb(pr_mat,ind))) 'mat input shares' ;
 
 ln(pb(mat,ind)) = ap0_mat + sum(s_mat,(ap_mat + kalf_mat)*ln(pb(s_mat,ind)))
-                          + 0.5*sum(p_mat,sum(s_mat,ln(pb(s_mat,ind))*bp_mat*ln(pb(p_mat,ind)))) 'mat prices' ;
+                          + 0.5*sum(pr_mat,sum(s_mat,ln(pb(s_mat,ind))*bp_mat*ln(pb(pr_mat,ind)))) 'mat prices' ;
 						
 
 // klem shares and industry producer price equations
 
-shr_o = ap_o + kalf_o + sum(p_o,bp_o*ln(pb(p_o,ind))) 'klem shares in output o' ;
+shr_o = ap_o + kalf_o + sum(pr_o,bp_o*ln(pb(pr_o,ind))) 'klem shares in output o' ;
 
-ln(po(ind)) = ap0_o + kalp + ln(agg_tech_level*tech_shock_agg*tech_shock)
+ln(po(ind)) = ap0_o + kalp + ln(agg_tech_lvl*tech_shk_agg*tech_shock)
                     + sum(s_o,(ap_o + kalf_o)*ln(pb(s_o,ind)))
-                    + 0.5*sum(p_o,sum(s_o,ln(pb(s_o,ind))*bp_o*ln(pb(p_o,ind)))) 'Industry producer prices' ;
+                    + 0.5*sum(pr_o,sum(s_o,ln(pb(s_o,ind))*bp_o*ln(pb(pr_o,ind)))) 'Industry producer prices' ;
 					  
 //  Compute industry purchaser prices
 
-pi = po*(1 + tax_sales) + tax_unit + tax_ext_ind  'Inductry purchaser prices' ;
+pi = po*(1 + tax_sales) + tax_unit + tax_ext_ind  'Industry purchaser prices' ;
 
 //  Compute commodity prices as weighted averages of industry prices
 
@@ -159,14 +166,11 @@ pc = sum(ind,po*make_col)  'Commodity prices from make table' ;
 
 //  Compute commodity import prices to domestic buyers
 
-pfd = pf*e*(1 + tariff) + tar_ext_com  'Commodity import prices, domestic currency' ;
+pf = exo_pf * tech_shk_row  'Commodity import prices in foreign currency'  ;
+pfd = pf * exch * (1+tariff) + tar_ext_com  'Commodity import prices in domestic currency'  ;
 
-//  Compute import and domestic commodity shares and commodity supply prices
-
-amk_imp = am_imp + kalm_imp  'Import share constant' ;
-
-imp_shr = amk_imp + bm_imp*(ln(pfd) - ln(pc)) 'Import share of total supply'  ;
-dom_shr = (1 - imp_shr) 'Domestic share of total supply'  ;
+imp_share = amk_imp + bm_imp*(ln(pfd) - ln(pc)) 'Import share of total supply'  ;
+dom_share = (1 - imp_share) 'Domestic share of total supply'  ;
 
 //  Compute total commodity supply prices
 
@@ -248,5 +252,7 @@ io(c34) = shr_os(c34)*shr_sv(os)*shr_ms(sv)*shr_mat(ms)*shr_o(mat)  'Health io s
 io(c35) = shr_os(c35)*shr_sv(os)*shr_ms(sv)*shr_mat(ms)*shr_o(mat)  'Accommodation io shares' ;
 io(c36) = shr_os(c36)*shr_sv(os)*shr_ms(sv)*shr_mat(ms)*shr_o(mat)  'Other government io shares' ;
 
-
+//  Capital and Labor
+io(kap) = shr_o(kap)  'Capital io shares'  ;
+io(lab) = shr_o(lab)  'Labor io shares'  ;
 						

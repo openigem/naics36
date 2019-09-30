@@ -6,127 +6,127 @@
 
 pb(kap,con) = pk_service*pk_scale(con)*(1+tax_cap_hh)  'Household capital price, io'  ;
 
-tax_con_tot_com = tax_con + tax_con_good  'Total consumption tax on goods and services'  ;
-tax_con_tot_kap = tax_con + tax_con_kap   'Total consumption tax on capital services'  ;
-p_con(com) = pb(com,con)*(1+tax_con_tot_com)  'Household commodity prices including consumption taxes, io'  ;
-p_con(kap) = pb(kap,con)*(1+tax_con_tot_kap)  'Household capital price including consumption taxes, io'  ;
+tax_con_totc = tax_con + tax_con_good  'Total consumption tax on goods and services'  ;
+tax_con_totk = tax_con + tax_con_kap   'Total consumption tax on capital services'  ;
+pr_con(com) = pb(com,con)*(1+tax_con_totc)  'Household commodity prices including consumption taxes, io'  ;
+pr_con(kap) = pb(kap,con)*(1+tax_con_totk)  'Household capital price including consumption taxes, io'  ;
 
-pcon(nipa) = sum(ncom_k,p_con*io_nipa)  'Household prices - weighted-average conversions io to nipa'  ;
+pcon(nipa) = sum(ncom_k,pr_con*io_nipa)  'Household prices - weighted-average conversions io to nipa'  ;
 
-p_leisure = p_hours*pj_scale  'Household leisure price'  ;
-pcon(r) = p_leisure  'Household leisure price'  ;
+pr_leisure = pr_hours*pj_scale  'Household leisure price'  ;
+pcon(r) = pr_leisure  'Household leisure price'  ;
 
 // Equations - Tiers bottom-up shares and prices
 // Equations - Communications (cmm), Household and personal services (hps), Energy utilities (ens)
 
-shr_cmm = ah_cmm + kalh_cmm + sum(p_cmm,bh_cmm*ln(pcon(p_cmm))) 'cmm commodity shares' ;
+shr_cmm = ah_cmm + kalh_cmm + sum(pr_cmm,bh_cmm*ln(pcon(pr_cmm))) 'cmm commodity shares' ;
 
 ln(pcon(cmm)) = sum(s_cmm,(ah_cmm + kalh_cmm)*ln(pcon(s_cmm)))
-                + 0.5*sum(p_cmm,sum(s_cmm,ln(pcon(s_cmm))*bh_cmm*ln(pcon(p_cmm)))) 'cmm price' ;
+                + 0.5*sum(pr_cmm,sum(s_cmm,ln(pcon(s_cmm))*bh_cmm*ln(pcon(pr_cmm)))) 'cmm price' ;
 
-shr_hps = ah_hps + kalh_hps + sum(p_hps,bh_hps*ln(pcon(p_hps))) 'hps commodity shares' ;				
+shr_hps = ah_hps + kalh_hps + sum(pr_hps,bh_hps*ln(pcon(pr_hps))) 'hps commodity shares' ;				
 				
 ln(pcon(hps)) = sum(s_hps,(ah_hps + kalh_hps)*ln(pcon(s_hps)))
-                + 0.5*sum(p_hps,sum(s_hps,ln(pcon(s_hps))*bh_hps*ln(pcon(p_hps)))) 'hps price' ;
+                + 0.5*sum(pr_hps,sum(s_hps,ln(pcon(s_hps))*bh_hps*ln(pcon(pr_hps)))) 'hps price' ;
 
-shr_ens = ah_ens + kalh_ens + sum(p_ens,bh_ens*ln(pcon(p_ens))) 'ens commodity shares' ;				
+shr_ens = ah_ens + kalh_ens + sum(pr_ens,bh_ens*ln(pcon(pr_ens))) 'ens commodity shares' ;				
 								
 ln(pcon(ens)) = sum(s_ens,(ah_ens + kalh_ens)*ln(pcon(s_ens)))
-                + 0.5*sum(p_ens,sum(s_ens,ln(pcon(s_ens))*bh_ens*ln(pcon(p_ens)))) 'ens price' ;
+                + 0.5*sum(pr_ens,sum(s_ens,ln(pcon(s_ens))*bh_ens*ln(pcon(pr_ens)))) 'ens price' ;
 				
 // Equations - Travel (trv), Recreational services (rcs), Education (edn)
 
-shr_trv = ah_trv + kalh_trv + sum(p_trv,bh_trv*ln(pcon(p_trv))) 'trv commodity shares' ;
+shr_trv = ah_trv + kalh_trv + sum(pr_trv,bh_trv*ln(pcon(pr_trv))) 'trv commodity shares' ;
 
 ln(pcon(trv)) = sum(s_trv,(ah_trv + kalh_trv)*ln(pcon(s_trv)))
-                + 0.5*sum(p_trv,sum(s_trv,ln(pcon(s_trv))*bh_trv*ln(pcon(p_trv)))) 'trv price' ;
+                + 0.5*sum(pr_trv,sum(s_trv,ln(pcon(s_trv))*bh_trv*ln(pcon(pr_trv)))) 'trv price' ;
 
-shr_rcs = ah_rcs + kalh_rcs + sum(p_rcs,bh_rcs*ln(pcon(p_rcs))) 'rcs commodity shares' ;
+shr_rcs = ah_rcs + kalh_rcs + sum(pr_rcs,bh_rcs*ln(pcon(pr_rcs))) 'rcs commodity shares' ;
 				
 ln(pcon(rcs)) = sum(s_rcs,(ah_rcs + kalh_rcs)*ln(pcon(s_rcs)))
-                + 0.5*sum(p_rcs,sum(s_rcs,ln(pcon(s_rcs))*bh_rcs*ln(pcon(p_rcs)))) 'rcs price' ;
+                + 0.5*sum(pr_rcs,sum(s_rcs,ln(pcon(s_rcs))*bh_rcs*ln(pcon(pr_rcs)))) 'rcs price' ;
 
-shr_edn = ah_edn + kalh_edn + sum(p_edn,bh_edn*ln(pcon(p_edn))) 'edn commodity shares' ;				
+shr_edn = ah_edn + kalh_edn + sum(pr_edn,bh_edn*ln(pcon(pr_edn))) 'edn commodity shares' ;				
 
 ln(pcon(edn)) = sum(s_edn,(ah_edn + kalh_edn)*ln(pcon(s_edn)))
-                + 0.5*sum(p_edn,sum(s_edn,ln(pcon(s_edn))*bh_edn*ln(pcon(p_edn)))) 'edn price' ;
+                + 0.5*sum(pr_edn,sum(s_edn,ln(pcon(s_edn))*bh_edn*ln(pcon(pr_edn)))) 'edn price' ;
 
 // Equations - Household and personal goods (hpg), Finance and business services (fb), Medical (md)
 
-shr_hpg = ah_hpg + kalh_hpg + sum(p_hpg,bh_hpg*ln(pcon(p_hpg))) 'hpg commodity shares' ;
+shr_hpg = ah_hpg + kalh_hpg + sum(pr_hpg,bh_hpg*ln(pcon(pr_hpg))) 'hpg commodity shares' ;
 
 ln(pcon(hpg)) = sum(s_hpg,(ah_hpg + kalh_hpg)*ln(pcon(s_hpg)))
-                + 0.5*sum(p_hpg,sum(s_hpg,ln(pcon(s_hpg))*bh_hpg*ln(pcon(p_hpg)))) 'hpg price' ;
+                + 0.5*sum(pr_hpg,sum(s_hpg,ln(pcon(s_hpg))*bh_hpg*ln(pcon(pr_hpg)))) 'hpg price' ;
 
-shr_fb = ah_fb + kalh_fb + sum(p_fb,bh_fb*ln(pcon(p_fb))) 'fb commodity shares' ;
+shr_fb = ah_fb + kalh_fb + sum(pr_fb,bh_fb*ln(pcon(pr_fb))) 'fb commodity shares' ;
 				
 ln(pcon(fb)) = sum(s_fb,(ah_fb + kalh_fb)*ln(pcon(s_fb)))
-                + 0.5*sum(p_fb,sum(s_fb,ln(pcon(s_fb))*bh_fb*ln(pcon(p_fb)))) 'fb price' ;
+                + 0.5*sum(pr_fb,sum(s_fb,ln(pcon(s_fb))*bh_fb*ln(pcon(pr_fb)))) 'fb price' ;
 
-shr_md = ah_md + kalh_md + sum(p_md,bh_md*ln(pcon(p_md))) 'md commodity shares' ;
+shr_md = ah_md + kalh_md + sum(pr_md,bh_md*ln(pcon(pr_md))) 'md commodity shares' ;
 				
 ln(pcon(md)) = sum(s_md,(ah_md + kalh_md)*ln(pcon(s_md)))
-                + 0.5*sum(p_md,sum(s_md,ln(pcon(s_md))*bh_md*ln(pcon(p_md)))) 'md price' ;
+                + 0.5*sum(pr_md,sum(s_md,ln(pcon(s_md))*bh_md*ln(pcon(pr_md)))) 'md price' ;
 				
 // Equations - Energy goods (en), Capital (ks), Transportation and communication (trc)
 
-shr_en = ah_en + kalh_en + sum(p_en,bh_en*ln(pcon(p_en))) 'en commodity shares' ;
+shr_en = ah_en + kalh_en + sum(pr_en,bh_en*ln(pcon(pr_en))) 'en commodity shares' ;
 
 ln(pcon(en)) = sum(s_en,(ah_en + kalh_en)*ln(pcon(s_en)))
-               + 0.5*sum(p_en,sum(s_en,ln(pcon(s_en))*bh_en*ln(pcon(p_en)))) 'en price' ;
+               + 0.5*sum(pr_en,sum(s_en,ln(pcon(s_en))*bh_en*ln(pcon(pr_en)))) 'en price' ;
 
-shr_ks = ah_ks + kalh_ks + sum(p_ks,bh_ks*ln(pcon(p_ks))) 'ks commodity shares' ;
+shr_ks = ah_ks + kalh_ks + sum(pr_ks,bh_ks*ln(pcon(pr_ks))) 'ks commodity shares' ;
 			   
 ln(pcon(ks)) = sum(s_ks,(ah_ks + kalh_ks)*ln(pcon(s_ks)))
-               + 0.5*sum(p_ks,sum(s_ks,ln(pcon(s_ks))*bh_ks*ln(pcon(p_ks)))) 'ks price' ;
+               + 0.5*sum(pr_ks,sum(s_ks,ln(pcon(s_ks))*bh_ks*ln(pcon(pr_ks)))) 'ks price' ;
 				
-shr_trc = ah_trc + kalh_trc + sum(p_trc,bh_trc*ln(pcon(p_trc))) 'trc commodity shares' ;
+shr_trc = ah_trc + kalh_trc + sum(pr_trc,bh_trc*ln(pcon(pr_trc))) 'trc commodity shares' ;
 				
 ln(pcon(trc)) = sum(s_trc,(ah_trc + kalh_trc)*ln(pcon(s_trc)))
-                + 0.5*sum(p_trc,sum(s_trc,ln(pcon(s_trc))*bh_trc*ln(pcon(p_trc)))) 'trc price' ;
+                + 0.5*sum(pr_trc,sum(s_trc,ln(pcon(s_trc))*bh_trc*ln(pcon(pr_trc)))) 'trc price' ;
 
 // Equations - Utilities & personal services (ups), Recreation, travel & meals (rc), Household operation (ho)
 
-shr_ups = ah_ups + kalh_ups + sum(p_ups,bh_ups*ln(pcon(p_ups))) 'ups commodity shares' ;
+shr_ups = ah_ups + kalh_ups + sum(pr_ups,bh_ups*ln(pcon(pr_ups))) 'ups commodity shares' ;
 
 ln(pcon(ups)) = sum(s_ups,(ah_ups + kalh_ups)*ln(pcon(s_ups)))
-                + 0.5*sum(p_ups,sum(s_ups,ln(pcon(s_ups))*bh_ups*ln(pcon(p_ups)))) 'ups price' ;
+                + 0.5*sum(pr_ups,sum(s_ups,ln(pcon(s_ups))*bh_ups*ln(pcon(pr_ups)))) 'ups price' ;
 
-shr_rc = ah_rc + kalh_rc + sum(p_rc,bh_rc*ln(pcon(p_rc))) 'rc commodity shares' ;
+shr_rc = ah_rc + kalh_rc + sum(pr_rc,bh_rc*ln(pcon(pr_rc))) 'rc commodity shares' ;
 
 ln(pcon(rc)) = sum(s_rc,(ah_rc + kalh_rc)*ln(pcon(s_rc)))
-               + 0.5*sum(p_rc,sum(s_rc,ln(pcon(s_rc))*bh_rc*ln(pcon(p_rc)))) 'rc price' ;
+               + 0.5*sum(pr_rc,sum(s_rc,ln(pcon(s_rc))*bh_rc*ln(pcon(pr_rc)))) 'rc price' ;
 
-shr_ho = ah_ho + kalh_ho + sum(p_ho,bh_ho*ln(pcon(p_ho))) 'ho commodity shares' ;
+shr_ho = ah_ho + kalh_ho + sum(pr_ho,bh_ho*ln(pcon(pr_ho))) 'ho commodity shares' ;
 
 ln(pcon(ho)) = sum(s_ho,(ah_ho + kalh_ho)*ln(pcon(s_ho)))
-               + 0.5*sum(p_ho,sum(s_ho,ln(pcon(s_ho))*bh_ho*ln(pcon(p_ho)))) 'ho price' ;
+               + 0.5*sum(pr_ho,sum(s_ho,ln(pcon(s_ho))*bh_ho*ln(pcon(pr_ho)))) 'ho price' ;
 				
 // Equations - Consumer goods (cg), Consumer services (cs), Non-durables (nd)
 
-shr_cg = ah_cg + kalh_cg + sum(p_cg,bh_cg*ln(pcon(p_cg))) 'cg commodity shares' ;
+shr_cg = ah_cg + kalh_cg + sum(pr_cg,bh_cg*ln(pcon(pr_cg))) 'cg commodity shares' ;
 
 ln(pcon(cg)) = sum(s_cg,(ah_cg + kalh_cg)*ln(pcon(s_cg)))
-               + 0.5*sum(p_cg,sum(s_cg,ln(pcon(s_cg))*bh_cg*ln(pcon(p_cg)))) 'cg price' ;
+               + 0.5*sum(pr_cg,sum(s_cg,ln(pcon(s_cg))*bh_cg*ln(pcon(pr_cg)))) 'cg price' ;
 
-shr_cs = ah_cs + kalh_cs + sum(p_cs,bh_cs*ln(pcon(p_cs))) 'cs commodity shares' ;			   
+shr_cs = ah_cs + kalh_cs + sum(pr_cs,bh_cs*ln(pcon(pr_cs))) 'cs commodity shares' ;			   
 			   
 ln(pcon(cs)) = sum(s_cs,(ah_cs + kalh_cs)*ln(pcon(s_cs)))
-               + 0.5*sum(p_cs,sum(s_cs,ln(pcon(s_cs))*bh_cs*ln(pcon(p_cs)))) 'cs price' ;
+               + 0.5*sum(pr_cs,sum(s_cs,ln(pcon(s_cs))*bh_cs*ln(pcon(pr_cs)))) 'cs price' ;
 
-shr_nd = ah_nd + kalh_nd + sum(p_nd,bh_nd*ln(pcon(p_nd))) 'nd commodity shares' ;			   
+shr_nd = ah_nd + kalh_nd + sum(pr_nd,bh_nd*ln(pcon(pr_nd))) 'nd commodity shares' ;			   
 			   
 ln(pcon(nd)) = sum(s_nd,(ah_nd + kalh_nd)*ln(pcon(s_nd)))
-               + 0.5*sum(p_nd,sum(s_nd,ln(pcon(s_nd))*bh_nd*ln(pcon(p_nd)))) 'nd price' ;
+               + 0.5*sum(pr_nd,sum(s_nd,ln(pcon(s_nd))*bh_nd*ln(pcon(pr_nd)))) 'nd price' ;
 				
 // Equation - Full consumption shares (f) - Top tier alpha and beta effects
 //            Non-durables (nd), Capital (ks), Consumer services (cs), Leisure (r)
 
-ab_shr_f = ah_f + sum(p_f,bh_f*ln(pcon(p_f))) 'Full consumption shares - alpha and beta effects'  ;
+ab_shr_f = ah_f + sum(pr_f,bh_f*ln(pcon(pr_f))) 'Full consumption shares - alpha and beta effects'  ;
 
 // Equation - Full consumption (f) - Share denominator
 
-denom = -1 + denom_rebase + sum(p_f,sum(s_f,bh_f*ln(pcon(p_f))))  'Full consumption (f) share denominator'  ;
+denom = -1 + denom_rebase + sum(pr_f,sum(s_f,bh_f*ln(pcon(pr_f))))  'Full consumption (f) share denominator'  ;
 
 //  Equation - Full consumption shares (f) - With cex expenditure and demographic effects
 
@@ -139,12 +139,12 @@ shr_f = cex_shr_f + dv_hh  'Full consumption shares - nipa basis'  ;
 
 //  Equation - Full consumption price
 
-p_fc = exp(sum(s_f,(ah_f-sum(p_f,bh_f*ln(pfc_m0)))*ln(pcon(s_f)))
-           + 0.5*sum(p_f,sum(s_f,ln(pcon(s_f))*bh_f*ln(pcon(p_f))))/denom)/p_fc_scale  'Full consumption price'  ;
+pr_fc = exp(sum(s_f,(ah_f-sum(pr_f,bh_f*ln(pfc_m0)))*ln(pcon(s_f)))
+           + 0.5*sum(pr_f,sum(s_f,ln(pcon(s_f))*bh_f*ln(pcon(pr_f))))/denom)/pr_fc_scale  'Full consumption price'  ;
 		   
 //  Equations - Leisure and consumption
 
-leisure = shr_f(r)*full_con/p_leisure  'Leisure quantity'  ;
+leisure = shr_f(r)*full_con/pr_leisure  'Leisure quantity'  ;
 cshare = 1 - shr_f(r)  'Consumption share of full consumption'  ;
 con_expend = cshare*full_con  'Consumption expenditure'  ;
 
@@ -205,15 +205,17 @@ con_share(n35) = shr_ho(n35)*shr_cs(ho)*shr_f(cs)/cshare  'Owner maintenance'  ;
 
 // Equations - Policy shocks to consumer demands
 
-con_shk_val = con_shk_qty * p_con  'Consumer demand shocks, io values'  ;
-con_shk_expend = sum(ncom_k,con_shk_val)  'Consumer demand shocks, total value'  ;
-con_expend_net = con_expend - con_shk_expend  'Net consumption expenditure'  ;
+con_shk_val = con_shk_qty * pr_con  'Consumer demand shocks, io values'  ;
+con_shk_xpnd = sum(ncom_k,con_shk_val)  'Consumer demand shocks, total value'  ;
+con_xpnd_net = con_expend - con_shk_xpnd  'Net consumption expenditure'  ;
 
-// Equations - Consumption expenditures by commodity - io basis
+// Equations - Consumption expenditures and quantities by commodity - io basis
 
-con(com) = (sum(nipa,io_nipa(com,nipa)*con_share(nipa)*con_expend_net) + con_shk_val(com))/(1+tax_con_tot_com)  'con, io commodity' ;
-con(kap) = (sum(nipa,io_nipa(kap,nipa)*con_share(nipa)*con_expend_net) + con_shk_val(kap))  'con, io capital' ;
+con(com) = (sum(nipa,io_nipa(com,nipa)*con_share(nipa)*con_xpnd_net) + con_shk_val(com))/(1+tax_con_totc)  'con, io commodity' ;
+con(kap) = (sum(nipa,io_nipa(kap,nipa)*con_share(nipa)*con_xpnd_net) + con_shk_val(kap))  'con, io capital' ;
 
-rev_con = sum(com,tax_con_tot_com*con)  'Consumption tax revenue from goods and services'  ;
+con_qty = con/pr_con 'con_qty, io quantities'  ;
+
+rev_con = sum(com,tax_con_totc*con)  'Consumption tax revenue from goods and services'  ;
 
 

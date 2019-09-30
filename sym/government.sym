@@ -1,0 +1,7 @@
+// IGEM's Government Sub-model
+
+gov = gov_share*gov_expend/(1+tax_con_gov)  'Commodity purchases by governments'  ;
+gov_qty(com) = gov(com)/pb(com,gov)  'Quantities of commodity purchases by governments'  ;
+
+
+
