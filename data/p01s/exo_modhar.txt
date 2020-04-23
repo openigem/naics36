@@ -1,0 +1,2709 @@
+! File: exo_modhar.txt
+! Filter: p01s.json
+! Periods: 1
+! Years: 2080
+!
+1 header "X001"
+   longname "exo_baseyear"
+   coefficient exo_baseyear(time)
+   ;
+! time=0 data, year is 2080
+2005.0
+1 header "X002"
+   longname "exo_version"
+   coefficient exo_version(time)
+   ;
+! time=0 data, year is 2080
+205.0
+1 header "X003"
+   longname "pr_hours"
+   coefficient pr_hours(time)
+   ;
+! time=0 data, year is 2080
+0.75493568
+36 1 col_order header "X004"
+   longname "exo_pf"
+   coefficient exo_pf(ncom,time)
+   ;
+! time=0 data, year is 2080
+1.0867131
+1.5847802
+1.0213863
+1.2822325
+1.3173008999999998
+1.6673638
+1.2298943000000002
+1.2175858
+1.0161883
+0.88452846
+0.99418926
+1.259535
+0.93114758
+0.83577222
+0.29733571
+1.0231394
+0.81427604
+1.034701
+0.58617383
+1.1113028999999999
+0.6172055000000001
+1.0395334
+1.322991
+1.1080097
+0.56915289
+0.6254012
+1.2867402000000001
+0.86518407
+0.43028939
+0.46711868
+1.0011736999999998
+1.1260333
+1.0042862
+1.1529973
+1.1687378000000002
+0.90429229
+1 header "X005"
+   longname "pr_numeraire"
+   coefficient pr_numeraire(time)
+   ;
+! time=0 data, year is 2080
+1.1398937
+37 1 col_order header "X006"
+   longname "pk_scale"
+   coefficient pk_scale(nind_c,time)
+   ;
+! time=0 data, year is 2080
+1.1004637
+0.58963346
+0.91284233
+1.1579607
+1.1208329
+1.0278492000000001
+1.2825003000000001
+1.1678492
+0.20660949
+0.97308803
+0.37137643
+0.55341572
+0.81709689
+1.4929316000000001
+1.9047308
+1.8964595000000002
+0.069236271
+0.85046029
+1.1009687
+0.99689204
+0.65267003
+0.5096665
+0.67238933
+1.1541045
+0.91902179
+0.66417152
+0.81199157
+0.88733166
+0.84562522
+0.9730701999999999
+0.97341007
+0.96041381
+0.87566823
+1.2037790000000002
+0.84343708
+0.95109946
+0.80229932
+36 1 col_order header "X007"
+   longname "pl_scale"
+   coefficient pl_scale(nind,time)
+   ;
+! time=0 data, year is 2080
+0.96364629
+1.0807183
+1.0921457
+1.0965368999999998
+1.0733374
+1.0138232
+1.2100931000000001
+1.0512277
+0.98243093
+0.95693064
+1.0090379
+1.1235396
+0.97674417
+0.9842118000000001
+1.0002357
+1.0259209
+0.77759624
+0.83717245
+1.0044364
+0.91546416
+0.91492969
+0.94467127
+1.144807
+0.98850447
+1.0092494
+0.98591298
+1.0019031999999999
+1.0207833
+0.99360114
+0.90634894
+0.9347322
+0.98609954
+0.96508539
+0.97704631
+0.96194339
+0.93819934
+1 header "X008"
+   longname "pj_scale"
+   coefficient pj_scale(time)
+   ;
+! time=0 data, year is 2080
+1.0004851000000001
+1 header "X009"
+   longname "inven_fract"
+   coefficient inven_fract(time)
+   ;
+! time=0 data, year is 2080
+0.023242954
+36 1 col_order header "X010"
+   longname "gov_share"
+   coefficient gov_share(ncom,time)
+   ;
+! time=0 data, year is 2080
+1.5984901e-10
+0.0
+9.8606856e-09
+1.7650028e-06
+8.4651576e-05
+1.4162954e-07
+8.9865111e-08
+8.9865111e-08
+0.098583691
+7.7364457e-06
+2.4042956e-07
+1.5172075e-05
+0.0009036542599999999
+0.00237727
+0.013009737
+0.013190114
+0.0035215171999999997
+0.014478426
+0.001300789
+1.9787976000000004e-08
+3.4166792e-06
+1.4939388e-06
+1.2374844e-06
+1.4123272e-05
+0.005305856899999999
+4.5876674e-05
+0.001007469
+6.2548147e-06
+0.014248327
+1.8170903000000001e-06
+4.8701466e-05
+6.213019500000001e-05
+0.29924956
+0.057218209000000006
+2.6953508e-06
+0.4753077
+1 header "X011"
+   longname "adjust_i"
+   coefficient adjust_i(time)
+   ;
+! time=0 data, year is 2080
+0.67181242
+1 header "X012"
+   longname "adjust_pk"
+   coefficient adjust_pk(time)
+   ;
+! time=0 data, year is 2080
+1.4574457
+1 header "X013"
+   longname "adjust_k"
+   coefficient adjust_k(time)
+   ;
+! time=0 data, year is 2080
+0.12673028
+36 1 col_order header "X014"
+   longname "inven_share"
+   coefficient inven_share(ncom,time)
+   ;
+! time=0 data, year is 2080
+0.018343316000000002
+0.0035843744
+0.011495788
+0.0
+0.0060733026
+2.9023082999999998e-06
+1.8415075e-06
+1.8415075e-06
+0.009688911
+0.009407690699999999
+0.0
+0.059557874000000004
+0.017504623
+0.04735506
+0.069502294
+0.087521769
+0.1660119
+0.13657726
+0.051342208
+0.020922016
+0.053993318
+0.0048138825
+0.0
+0.066955268
+0.12075598
+0.0009401177499999999
+0.026636062000000002
+0.0056944187
+0.001824399
+3.7236361e-05
+0.00099530397
+0.0012731892
+3.5700879e-07
+6.994942200000001e-08
+5.521543399999999e-05
+0.0011302062
+1 header "X015"
+   longname "income_dist"
+   coefficient income_dist(time)
+   ;
+! time=0 data, year is 2080
+1.3819818000000001
+11 1 col_order header "X016"
+   longname "income_share"
+   coefficient income_share(nattr,time)
+   ;
+! time=0 data, year is 2080
+0.14936129999999997
+0.13753849
+0.072606303
+0.53013653
+0.20049369
+0.20283911
+0.35291651
+0.25152329
+0.238857
+0.2352185
+0.078429997
+1 header "X017"
+   longname "kap_oil"
+   coefficient kap_oil(time)
+   ;
+! time=0 data, year is 2080
+55.203334999999996
+1 header "X018"
+   longname "kap_gas"
+   coefficient kap_gas(time)
+   ;
+! time=0 data, year is 2080
+55.203334999999996
+1 header "X019"
+   longname "us_surplus"
+   coefficient us_surplus(time)
+   ;
+! time=0 data, year is 2080
+0.0
+1 header "X020"
+   longname "raw_us_surp"
+   coefficient raw_us_surp(time)
+   ;
+! time=0 data, year is 2080
+0.0
+36 20 1 header "X021"
+   longname "prd_ext"
+   coefficient prd_ext(nind,nxtr,time)
+   ;
+! time=0 data, year is 2080
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+7.7385168
+0.32814240000000006
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+1.7110124
+0.10707881
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+27.559393
+0.92968488
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+36 20 1 header "X022"
+   longname "imp_ext"
+   coefficient imp_ext(ncom,nxtr,time)
+   ;
+! time=0 data, year is 2080
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+7.7385168
+0.32814240000000006
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+1.7110124
+0.10707881
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+27.559393
+0.92968488
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+7.7385168
+0.32814240000000006
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+4 1 col_order header "X023"
+   longname "dv_hh"
+   coefficient dv_hh(tfac_h,time)
+   ;
+! time=0 data, year is 2080
+0.0094900317
+-0.026234402999999996
+0.10642279
+-0.08967805699999999
+1 header "X024"
+   longname "risk"
+   coefficient risk(time)
+   ;
+! time=0 data, year is 2080
+0.0
+1 header "X025"
+   longname "unemp_time"
+   coefficient unemp_time(time)
+   ;
+! time=0 data, year is 2080
+0.0
+1 header "X026"
+   longname "unemp_scale"
+   coefficient unemp_scale(time)
+   ;
+! time=0 data, year is 2080
+0.0
+1 header "X027"
+   longname "xr_interest"
+   coefficient xr_interest(time)
+   ;
+! time=0 data, year is 2080
+-94.095963
+1 header "X028"
+   longname "xr_int_low"
+   coefficient xr_int_low(time)
+   ;
+! time=0 data, year is 2080
+-94.095963
+1 header "X029"
+   longname "xr_int_high"
+   coefficient xr_int_high(time)
+   ;
+! time=0 data, year is 2080
+-33.290401
+1 header "X030"
+   longname "row_debt_dsc"
+   coefficient row_debt_dsc(time)
+   ;
+! time=0 data, year is 2080
+0.0
+1 header "X031"
+   longname "row_debt_cg"
+   coefficient row_debt_cg(time)
+   ;
+! time=0 data, year is 2080
+0.0
+1 header "X032"
+   longname "gov_interest"
+   coefficient gov_interest(time)
+   ;
+! time=0 data, year is 2080
+849.9201699999999
+1 header "X033"
+   longname "gov_int_abr"
+   coefficient gov_int_abr(time)
+   ;
+! time=0 data, year is 2080
+280.38707999999997
+1 header "X034"
+   longname "gov_int_ss"
+   coefficient gov_int_ss(time)
+   ;
+! time=0 data, year is 2080
+0.0
+1 header "X035"
+   longname "gov_surplus"
+   coefficient gov_surplus(time)
+   ;
+! time=0 data, year is 2080
+0.0
+1 header "X036"
+   longname "raw_gov_surp"
+   coefficient raw_gov_surp(time)
+   ;
+! time=0 data, year is 2080
+0.0
+1 header "X037"
+   longname "gov_for_nvst"
+   coefficient gov_for_nvst(time)
+   ;
+! time=0 data, year is 2080
+1.0608369999999999e-29
+1 header "X038"
+   longname "gov_debt_dsc"
+   coefficient gov_debt_dsc(time)
+   ;
+! time=0 data, year is 2080
+0.0
+1 header "X039"
+   longname "gov_debt_cg"
+   coefficient gov_debt_cg(time)
+   ;
+! time=0 data, year is 2080
+0.0
+1 header "X040"
+   longname "gov_debt_fcg"
+   coefficient gov_debt_fcg(time)
+   ;
+! time=0 data, year is 2080
+0.0
+1 header "X041"
+   longname "year"
+   coefficient year(time)
+   ;
+! time=0 data, year is 2080
+2080.0
+1 header "X042"
+   longname "hours"
+   coefficient hours(time)
+   ;
+! time=0 data, year is 2080
+42942.555
+1 header "X043"
+   longname "raw_hours"
+   coefficient raw_hours(time)
+   ;
+! time=0 data, year is 2080
+42947.105
+1 header "X044"
+   longname "hh_equiv"
+   coefficient hh_equiv(time)
+   ;
+! time=0 data, year is 2080
+0.49886608
+1 header "X045"
+   longname "exo_k"
+   coefficient exo_k(time)
+   ;
+! time=0 data, year is 2080
+37930.562000000005
+1 header "X046"
+   longname "xg_debt"
+   coefficient xg_debt(time)
+   ;
+! time=0 data, year is 2080
+18961.695
+1 header "X047"
+   longname "xg_debt_f"
+   coefficient xg_debt_f(time)
+   ;
+! time=0 data, year is 2080
+6949.5806
+1 header "X048"
+   longname "xr_debt"
+   coefficient xr_debt(time)
+   ;
+! time=0 data, year is 2080
+-6189.2246
+1 header "X049"
+   longname "exo_full_con"
+   coefficient exo_full_con(time)
+   ;
+! time=0 data, year is 2080
+24543.592
+1 header "X050"
+   longname "exotechlevel"
+   coefficient exotechlevel(time)
+   ;
+! time=0 data, year is 2080
+1.0
+1 header "X051"
+   longname "pk_lag"
+   coefficient pk_lag(time)
+   ;
+! time=0 data, year is 2080
+0.0
+1 header "X052"
+   longname "hh_equiv_lag"
+   coefficient hh_equiv_lag(time)
+   ;
+! time=0 data, year is 2080
+0.49759278
+1 header "X053"
+   longname "exo_tax_laba"
+   coefficient exo_tax_laba(time)
+   ;
+! time=0 data, year is 2080
+0.14890638
+1 header "X054"
+   longname "exo_tax_labm"
+   coefficient exo_tax_labm(time)
+   ;
+! time=0 data, year is 2080
+0.25094122
+1 header "X055"
+   longname "tax_prop"
+   coefficient tax_prop(time)
+   ;
+! time=0 data, year is 2080
+0.010912825
+36 1 col_order header "X056"
+   longname "tax_sales"
+   coefficient tax_sales(nind,time)
+   ;
+! time=0 data, year is 2080
+-0.020543283
+0.06720106299999999
+0.049834304
+0.04192777
+0.013386752
+0.10837269999999999
+0.042588192999999996
+0.079231866
+0.0037103207000000003
+0.0026221569
+0.0034891425
+0.0021608989
+0.0046842848
+0.0023923729999999997
+0.0042140614
+0.00019340238999999998
+0.0013713017000000001
+0.0021365138
+0.0029452408000000003
+0.041723967
+0.003126458
+0.0021867256
+0.0019232485
+0.0045027453
+0.20864365
+0.0105023
+0.020989558
+0.04744456
+0.009063023100000001
+0.01490149
+0.0036913662
+0.013746808000000001
+0.0012613803
+0.0056494763
+0.060389575
+0.0
+1 header "X057"
+   longname "tax_wealth"
+   coefficient tax_wealth(time)
+   ;
+! time=0 data, year is 2080
+0.00033589949999999997
+1 header "X058"
+   longname "exo_tax_cap"
+   coefficient exo_tax_cap(time)
+   ;
+! time=0 data, year is 2080
+0.14870535
+36 1 col_order header "X059"
+   longname "tariff"
+   coefficient tariff(ncom,time)
+   ;
+! time=0 data, year is 2080
+0.0010485089
+0.00028958818
+0.00028958818
+0.0
+0.000249645
+0.0
+0.0
+0.0
+0.0
+0.0058616642
+0.028139982
+0.0031455269
+0.02030113
+0.0076091788
+0.0029857538
+0.017445191999999998
+0.011663413999999999
+0.0046334108
+0.0078688106
+0.011593513
+0.10314332
+0.00052924739
+0.0013380970000000001
+0.010804635
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+36 1 col_order header "X060"
+   longname "row_tariff"
+   coefficient row_tariff(ncom,time)
+   ;
+! time=0 data, year is 2080
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+1 header "X061"
+   longname "rev_lump"
+   coefficient rev_lump(time)
+   ;
+! time=0 data, year is 2080
+0.0
+36 1 col_order header "X062"
+   longname "tax_unit"
+   coefficient tax_unit(nind,time)
+   ;
+! time=0 data, year is 2080
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+20 1 col_order header "X063"
+   longname "tax_extern_v"
+   coefficient tax_extern_v(nxtr,time)
+   ;
+! time=0 data, year is 2080
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+20 1 col_order header "X064"
+   longname "tax_ext_u"
+   coefficient tax_ext_u(nxtr,time)
+   ;
+! time=0 data, year is 2080
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+1 header "X065"
+   longname "tax_itc"
+   coefficient tax_itc(time)
+   ;
+! time=0 data, year is 2080
+0.0
+1 header "X066"
+   longname "tax_cap_hh"
+   coefficient tax_cap_hh(time)
+   ;
+! time=0 data, year is 2080
+0.0
+1 header "X067"
+   longname "tax_con"
+   coefficient tax_con(time)
+   ;
+! time=0 data, year is 2080
+0.0
+1 header "X068"
+   longname "tax_con_good"
+   coefficient tax_con_good(time)
+   ;
+! time=0 data, year is 2080
+0.0
+1 header "X069"
+   longname "tax_con_kap"
+   coefficient tax_con_kap(time)
+   ;
+! time=0 data, year is 2080
+0.0
+1 header "X070"
+   longname "tax_con_lab"
+   coefficient tax_con_lab(time)
+   ;
+! time=0 data, year is 2080
+0.0
+1 header "X071"
+   longname "tax_con_gov"
+   coefficient tax_con_gov(time)
+   ;
+! time=0 data, year is 2080
+0.0
+1 header "X072"
+   longname "tax_con_xmpt"
+   coefficient tax_con_xmpt(time)
+   ;
+! time=0 data, year is 2080
+0.0
+36 1 col_order header "X073"
+   longname "tech_shock"
+   coefficient tech_shock(nind,time)
+   ;
+! time=0 data, year is 2080
+1.0
+1.0
+1.0
+1.0
+1.0
+1.0
+1.0
+1.0
+1.0
+1.0
+1.0
+1.0
+1.0
+1.0
+1.0
+1.0
+1.0
+1.0
+1.0
+1.0
+1.0
+1.0
+1.0
+1.0
+1.0
+1.0
+1.0
+1.0
+1.0
+1.0
+1.0
+1.0
+1.0
+1.0
+1.0
+1.0
+1 header "X074"
+   longname "tech_shk_agg"
+   coefficient tech_shk_agg(time)
+   ;
+! time=0 data, year is 2080
+0.77868217
+1 header "X075"
+   longname "tech_shk_row"
+   coefficient tech_shk_row(time)
+   ;
+! time=0 data, year is 2080
+1.0
+1 header "X076"
+   longname "agg_tech_chg"
+   coefficient agg_tech_chg(time)
+   ;
+! time=0 data, year is 2080
+0.0
+1 header "X077"
+   longname "inv_shock"
+   coefficient inv_shock(time)
+   ;
+! time=0 data, year is 2080
+1.0
+1 header "X078"
+   longname "inv_exp_shk"
+   coefficient inv_exp_shk(time)
+   ;
+! time=0 data, year is 2080
+1.0
+37 1 col_order header "X079"
+   longname "con_shk_qty"
+   coefficient con_shk_qty(ncom_k,time)
+   ;
+! time=0 data, year is 2080
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+1 header "X080"
+   longname "tax_gain_h"
+   coefficient tax_gain_h(time)
+   ;
+! time=0 data, year is 2080
+0.0
+1 header "X081"
+   longname "debt_shr_h"
+   coefficient debt_shr_h(time)
+   ;
+! time=0 data, year is 2080
+0.48761174
+1 header "X082"
+   longname "inf"
+   coefficient inf(time)
+   ;
+! time=0 data, year is 2080
+0.02
+1 header "X083"
+   longname "exo_r"
+   coefficient exo_r(time)
+   ;
+! time=0 data, year is 2080
+0.092172869
+1 header "X084"
+   longname "theta_ephi"
+   coefficient theta_ephi(time)
+   ;
+! time=0 data, year is 2080
+0.065462813
+1 header "X085"
+   longname "depallowstd"
+   coefficient depallowstd(time)
+   ;
+! time=0 data, year is 2080
+0.6326232
+1 header "X086"
+   longname "depallowecon"
+   coefficient depallowecon(time)
+   ;
+! time=0 data, year is 2080
+0.48680705
+1 header "X087"
+   longname "tax_scale"
+   coefficient tax_scale(time)
+   ;
+! time=0 data, year is 2080
+1.0
+1 header "X088"
+   longname "gov_transdom"
+   coefficient gov_transdom(time)
+   ;
+! time=0 data, year is 2080
+2064.5715
+1 header "X089"
+   longname "gov_transabr"
+   coefficient gov_transabr(time)
+   ;
+! time=0 data, year is 2080
+130.64075
+1 header "X090"
+   longname "rev_nontax"
+   coefficient rev_nontax(time)
+   ;
+! time=0 data, year is 2080
+356.83612
+1 header "X091"
+   longname "transfer_abr"
+   coefficient transfer_abr(time)
+   ;
+! time=0 data, year is 2080
+212.05647000000002
+1 header "X092"
+   longname "gov_from_ss"
+   coefficient gov_from_ss(time)
+   ;
+! time=0 data, year is 2080
+55.731789
+1 header "X093"
+   longname "shrgovtransf"
+   coefficient shrgovtransf(time)
+   ;
+! time=0 data, year is 2080
+0.033768453
+1 header "X094"
+   longname "shrgovtofore"
+   coefficient shrgovtofore(time)
+   ;
+! time=0 data, year is 2080
+0.0019349493
+1 header "X095"
+   longname "shrrevnontax"
+   coefficient shrrevnontax(time)
+   ;
+! time=0 data, year is 2080
+0.0052851792
+1 header "X096"
+   longname "shrtransabro"
+   coefficient shrtransabro(time)
+   ;
+! time=0 data, year is 2080
+0.0031408155
+1 header "X097"
+   longname "shrgovfromss"
+   coefficient shrgovfromss(time)
+   ;
+! time=0 data, year is 2080
+0.0008254559399999999
+1 header "X098"
+   longname "hni_gdp"
+   coefficient hni_gdp(time)
+   ;
+! time=0 data, year is 2080
+14526.5
+1 header "X099"
+   longname "hni_c"
+   coefficient hni_c(time)
+   ;
+! time=0 data, year is 2080
+10245.5
+1 header "X100"
+   longname "hni_c_dur"
+   coefficient hni_c_dur(time)
+   ;
+! time=0 data, year is 2080
+1085.5
+1 header "X101"
+   longname "hni_i"
+   coefficient hni_i(time)
+   ;
+! time=0 data, year is 2080
+1795.1
+1 header "X102"
+   longname "hni_g"
+   coefficient hni_g(time)
+   ;
+! time=0 data, year is 2080
+3002.8
+1 header "X103"
+   longname "hni_x"
+   coefficient hni_x(time)
+   ;
+! time=0 data, year is 2080
+1839.8
+1 header "X104"
+   longname "hni_m"
+   coefficient hni_m(time)
+   ;
+! time=0 data, year is 2080
+2356.7
+1 header "X105"
+   longname "hni_real_gdp"
+   coefficient hni_real_gdp(time)
+   ;
+! time=0 data, year is 2080
+13087.881000000001
+1 header "X106"
+   longname "hni_real_c"
+   coefficient hni_real_c(time)
+   ;
+! time=0 data, year is 2080
+9220.876
+1 header "X107"
+   longname "hni_real_i"
+   coefficient hni_real_i(time)
+   ;
+! time=0 data, year is 2080
+1714.8781
+1 header "X108"
+   longname "hni_real_g"
+   coefficient hni_real_g(time)
+   ;
+! time=0 data, year is 2080
+2556.7712
+1 header "X109"
+   longname "hni_real_x"
+   coefficient hni_real_x(time)
+   ;
+! time=0 data, year is 2080
+1663.2163
+1 header "X110"
+   longname "hni_real_m"
+   coefficient hni_real_m(time)
+   ;
+! time=0 data, year is 2080
+2084.9849
+1 header "X111"
+   longname "hni_shr_c"
+   coefficient hni_shr_c(time)
+   ;
+! time=0 data, year is 2080
+0.63057172
+1 header "X112"
+   longname "hni_shr_i"
+   coefficient hni_shr_i(time)
+   ;
+! time=0 data, year is 2080
+0.19829966
+1 header "X113"
+   longname "hni_shr_g"
+   coefficient hni_shr_g(time)
+   ;
+! time=0 data, year is 2080
+0.20671187
+1 header "X114"
+   longname "hni_shr_x"
+   coefficient hni_shr_x(time)
+   ;
+! time=0 data, year is 2080
+0.1266513
+1 header "X115"
+   longname "hni_shr_m"
+   coefficient hni_shr_m(time)
+   ;
+! time=0 data, year is 2080
+0.16223453
+1 header "X116"
+   longname "hdj_shr_c"
+   coefficient hdj_shr_c(time)
+   ;
+! time=0 data, year is 2080
+0.64149606
+1 header "X117"
+   longname "hdj_shr_i"
+   coefficient hdj_shr_i(time)
+   ;
+! time=0 data, year is 2080
+0.22303334
+1 header "X118"
+   longname "hdj_shr_g"
+   coefficient hdj_shr_g(time)
+   ;
+! time=0 data, year is 2080
+0.18647051
+1 header "X119"
+   longname "hdj_shr_x"
+   coefficient hdj_shr_x(time)
+   ;
+! time=0 data, year is 2080
+0.084975757
+1 header "X120"
+   longname "hdj_shr_m"
+   coefficient hdj_shr_m(time)
+   ;
+! time=0 data, year is 2080
+0.13597564
+1 header "X121"
+   longname "hws_real_gdp"
+   coefficient hws_real_gdp(time)
+   ;
+! time=0 data, year is 2080
+14033.659
+1 header "X122"
+   longname "hwsrealgdpal"
+   coefficient hwsrealgdpal(time)
+   ;
+! time=0 data, year is 2080
+14001.621000000001
+1 header "X123"
+   longname "hws_real_c"
+   coefficient hws_real_c(time)
+   ;
+! time=0 data, year is 2080
+9008.5322
+1 header "X124"
+   longname "hws_real_i"
+   coefficient hws_real_i(time)
+   ;
+! time=0 data, year is 2080
+2866.3179
+1 header "X125"
+   longname "hws_real_g"
+   coefficient hws_real_g(time)
+   ;
+! time=0 data, year is 2080
+2548.4626
+1 header "X126"
+   longname "hws_real_x"
+   coefficient hws_real_x(time)
+   ;
+! time=0 data, year is 2080
+1663.1832
+1 header "X127"
+   longname "hws_real_m"
+   coefficient hws_real_m(time)
+   ;
+! time=0 data, year is 2080
+2084.875
+1 header "X128"
+   longname "hws_gdp"
+   coefficient hws_gdp(time)
+   ;
+! time=0 data, year is 2080
+16563.525
+1 header "X129"
+   longname "hws_c"
+   coefficient hws_c(time)
+   ;
+! time=0 data, year is 2080
+10644.755
+1 header "X130"
+   longname "hws_i"
+   coefficient hws_i(time)
+   ;
+! time=0 data, year is 2080
+2880.6001
+1 header "X131"
+   longname "hws_g"
+   coefficient hws_g(time)
+   ;
+! time=0 data, year is 2080
+3555.0708
+1 header "X132"
+   longname "hist_p_fc"
+   coefficient hist_p_fc(time)
+   ;
+! time=0 data, year is 2080
+1.1614533999999999
+1 header "X133"
+   longname "histfullqty"
+   coefficient histfullqty(time)
+   ;
+! time=0 data, year is 2080
+24087.998
+1 header "X134"
+   longname "histpleisure"
+   coefficient histpleisure(time)
+   ;
+! time=0 data, year is 2080
+0.86096382
+1 header "X135"
+   longname "hist_leisure"
+   coefficient hist_leisure(time)
+   ;
+! time=0 data, year is 2080
+19986.301
+1 header "X136"
+   longname "histpnumerai"
+   coefficient histpnumerai(time)
+   ;
+! time=0 data, year is 2080
+0.86054641
+1 header "X137"
+   longname "hist_c396"
+   coefficient hist_c396(time)
+   ;
+! time=0 data, year is 2080
+0.86054641
+1 header "X138"
+   longname "population"
+   coefficient population(time)
+   ;
+! time=0 data, year is 2080
+451.73610999999994

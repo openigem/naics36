@@ -1,0 +1,2 @@
+variable int_val(ninp,nuses) I001;
+variable int_qty(ninp,nuses) I002;

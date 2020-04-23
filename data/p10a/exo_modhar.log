@@ -17,7 +17,7 @@
   
      << COPYRIGHT 1986-2001: CoPS/Impact and KPSOFT >>
   
-  Current directory is: H:\wk\igem\open\pub\data\p10a
+  Current directory is: H:\wk\open\data\p10a
   
   
   Full path name of running EXE is: H:\binvol\gempack12\modhar.exe
@@ -76,8 +76,8 @@
   -----------------------------------
   
   
- exo.har
- (Opened new header file 'exo.har'.)
+ exo_base.har
+ (Opened new header file 'exo_base.har'.)
   
   Available tasks are:
   
@@ -530,44 +530,44 @@
   Header 'X031' transferred to the new file.
   Longname 'row_debt_cg'
   
-  Coefficient = xg_interest (time).
+  Coefficient = gov_interest (time).
   No sets defined for coefficients.
   
   (Read real matrix of size: 10.)
-  Longname 'xg_interest'
+  Longname 'gov_interest'
   
   Header found on the text file 'X032'.
   
  (Written real array, size 10, header "X032".)
   
   Header 'X032' transferred to the new file.
-  Longname 'xg_interest'
+  Longname 'gov_interest'
   
-  Coefficient = xgintabroad (time).
+  Coefficient = gov_int_abr (time).
   No sets defined for coefficients.
   
   (Read real matrix of size: 10.)
-  Longname 'xgintabroad'
+  Longname 'gov_int_abr'
   
   Header found on the text file 'X033'.
   
  (Written real array, size 10, header "X033".)
   
   Header 'X033' transferred to the new file.
-  Longname 'xgintabroad'
+  Longname 'gov_int_abr'
   
-  Coefficient = xg_int_ss (time).
+  Coefficient = gov_int_ss (time).
   No sets defined for coefficients.
   
   (Read real matrix of size: 10.)
-  Longname 'xg_int_ss'
+  Longname 'gov_int_ss'
   
   Header found on the text file 'X034'.
   
  (Written real array, size 10, header "X034".)
   
   Header 'X034' transferred to the new file.
-  Longname 'xg_int_ss'
+  Longname 'gov_int_ss'
   
   Coefficient = gov_surplus (time).
   No sets defined for coefficients.
@@ -1258,70 +1258,70 @@
   Header 'X087' transferred to the new file.
   Longname 'tax_scale'
   
-  Coefficient = xg_transfer (time).
+  Coefficient = gov_transdom (time).
   No sets defined for coefficients.
   
   (Read real matrix of size: 10.)
-  Longname 'xg_transfer'
+  Longname 'gov_transdom'
   
   Header found on the text file 'X088'.
   
  (Written real array, size 10, header "X088".)
   
   Header 'X088' transferred to the new file.
-  Longname 'xg_transfer'
+  Longname 'gov_transdom'
   
-  Coefficient = xgtoforeign (time).
+  Coefficient = gov_transabr (time).
   No sets defined for coefficients.
   
   (Read real matrix of size: 10.)
-  Longname 'xgtoforeign'
+  Longname 'gov_transabr'
   
   Header found on the text file 'X089'.
   
  (Written real array, size 10, header "X089".)
   
   Header 'X089' transferred to the new file.
-  Longname 'xgtoforeign'
+  Longname 'gov_transabr'
   
-  Coefficient = exorevnontax (time).
+  Coefficient = rev_nontax (time).
   No sets defined for coefficients.
   
   (Read real matrix of size: 10.)
-  Longname 'exorevnontax'
+  Longname 'rev_nontax'
   
   Header found on the text file 'X090'.
   
  (Written real array, size 10, header "X090".)
   
   Header 'X090' transferred to the new file.
-  Longname 'exorevnontax'
+  Longname 'rev_nontax'
   
-  Coefficient = exotransabro (time).
+  Coefficient = transfer_abr (time).
   No sets defined for coefficients.
   
   (Read real matrix of size: 10.)
-  Longname 'exotransabro'
+  Longname 'transfer_abr'
   
   Header found on the text file 'X091'.
   
  (Written real array, size 10, header "X091".)
   
   Header 'X091' transferred to the new file.
-  Longname 'exotransabro'
+  Longname 'transfer_abr'
   
-  Coefficient = xg_from_ss (time).
+  Coefficient = gov_from_ss (time).
   No sets defined for coefficients.
   
   (Read real matrix of size: 10.)
-  Longname 'xg_from_ss'
+  Longname 'gov_from_ss'
   
   Header found on the text file 'X092'.
   
  (Written real array, size 10, header "X092".)
   
   Header 'X092' transferred to the new file.
-  Longname 'xg_from_ss'
+  Longname 'gov_from_ss'
   
   Coefficient = shrgovtransf (time).
   No sets defined for coefficients.
@@ -2081,8 +2081,8 @@
   
   
  0
- (New Header Array file is 'exo.har'.)
+ (New Header Array file is 'exo_base.har'.)
   
   (The program has completed without error.)
-  Total elapsed time is: less than one second.
+  Total elapsed time is:  1 seconds.
   

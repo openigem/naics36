@@ -1,23 +1,54 @@
 # define DSEL and then include this to build HAR files
 
-TARS = end exo kal mak par ext int iot
+TARS = end exo kal mak par ext int iot 
+FIXS = ext end int iot addend
 
 MTXT = $(addsuffix _modhar.txt, $(TARS))
 MINP = $(addsuffix _modhar.inp, $(TARS))
-MHAR = $(addsuffix .har, $(TARS))
-LOGS = $(addsuffix .log, $(TARS))
-SYMS = $(addsuffix _dec.sym, $(TARS))
+MHAR = $(addsuffix .har,        $(TARS))
+LOGS = $(addsuffix .log,        $(TARS))
+SYMS = $(addsuffix _dec.sym,    $(TARS))
+BHAR = $(addsuffix _base.har,   $(TARS))
+MODS = $(addsuffix _mod.har,    $(FIXS))
+FHAR = $(addsuffix _fixup.har,  $(FIXS))
 
-.PRECIOUS: $(MTXT) $(MINP)
+.PRECIOUS: $(MTXT) $(MINP) $(BHAR) $(MHAR) $(MODS) $(FHAR)
 
 %_modhar.txt : ../%.json ../%_data.csv ../build_modhar_txt.py
 	../build_modhar_txt.py $(DSEL).json $*
 
-%.har : %_modhar.txt 
+%_base.har : %_modhar.txt 
 	@rm -f $*_modhar.log
 	modhar < $*_modhar.inp > $*_modhar.log
 
-har: $(MHAR)
+har: $(MHAR) imp.har
+
+$(FHAR) : $(BHAR) 
+	../fixup$(NPER).exe < ../fixup.sti
+
+imp.har : build_imp.exe ../build_imp.sti $(MHAR)
+	build_imp < ../build_imp.sti
+
+build_imp.exe : build_imp.inf
+	ltg.bat build_imp
+
+build_imp.inf : build_imp.tab
+	-tablo build_imp
 
 clean:
-	@rm -f $(LOGS) $(SYMS) $(MTXT) $(MINP) $(MHAR) *.log *~
+	@rm -f $(LOGS) $(SYMS) $(MTXT) $(MINP) *.har *.log *~
+	@rm -f *.axs *.axt *.exe *.inf *.min gf*fig
+
+defix :
+	rm -fv $(FHAR)
+
+ext.har : ext_fixup.har ; cp $< $@
+end.har : end_fixup.har ; cp $< $@ 
+int.har : int_fixup.har ; cp $< $@ 
+iot.har : iot_fixup.har ; cp $< $@
+
+exo.har : exo_base.har  ; cp $< $@ 
+kal.har : kal_base.har  ; cp $< $@
+mak.har : mak_base.har  ; cp $< $@
+par.har : par_base.har  ; cp $< $@
+

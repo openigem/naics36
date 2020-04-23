@@ -1,0 +1,926 @@
+  
+ <MODHAR   Version 6.0 - F90  February 1999>
+   This program accesses some of the routines in the GEMPACK software release
+ <GEMPACK Release 11.4.004   October 2016>
+  
+ Licence file: H:\binvol\gempack12\licen.gem
+  
+     -------------------------------------------------------
+    !            GEMPACK Software System Licence            !
+    !  Single-user Source-code Licence for GEMPACK on a PC  !
+    !                 Licence No.  GFS-1575                 !
+    !          Licence for Release 12.0 of GEMPACK          !
+    !                     Pete Wilcoxen                     !
+    !               Named User-Pete Wilcoxen                !
+     -------------------------------------------------------
+  
+  
+     << COPYRIGHT 1986-2001: CoPS/Impact and KPSOFT >>
+  
+  Current directory is: H:\wk\open\data\p31e
+  
+  
+  Full path name of running EXE is: H:\binvol\gempack12\modhar.exe
+  Fortran compiler = GF32  4.8.1 (rev3, built by mingw-builds project):
+  OPENMP number of threads: 4
+  Operating system is Windows 8
+  
+  
+  ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+  
+  
+                    MODHAR OPTIONS
+               ( --> indicates those in effect )
+  
+       BAT Run in batch              STI Take inputs from a Stored-input file
+       BPR Brief prompts             SIF Store inputs on a file
+       LOG Output to log file        ASI Add to incomplete Stored-input file
+                                     CSO Control screen output
+  
+  Select an option   :  <opt>      Deselect an option      : -<opt>
+  Help for an option : ?<opt>      Help on all options     : ??
+  Redisplay options  : /           Finish option selection : Carriage return
+  
+ Your selection >
+  
+  
+ bat
+ Running in batch
+ Your selection >
+  
+  
+  
+  
+  This program can be used it two ways.
+  
+  1. Usually it is used to modify some or all of the data on
+      on an existing Header Array file.
+       In this case, the existing file is not actually
+        changed, but a copy of it is made and modified.
+       Existing data can be modified and new data (read from
+        existing files and/or the terminal) can be added.
+  
+  2. It can be used to create a new Header Array file from
+      scratch. In this case the new data can be read from
+      existing files and/or the terminal.
+  
+  This program is easy to run interactively. It is partly
+   command-driven and partly menu-driven. Help is available.
+  
+  Is this based on an old HEADER ARRAY file?   [Y/n]
+  
+  
+ n
+  
+  NEW HEADER ARRAY FILE TO BE CREATED
+  -----------------------------------
+  
+  
+ kal_base.har
+ (Opened new header file 'kal_base.har'.)
+  
+  Available tasks are:
+  
+  Command               Meaning
+     ah            ADD one or more arrays from HEADER array file
+     ds            DEFINE SETS for adding arrays from text file
+     at            ADD one or more arrays from TEXT file
+     da            DELETE one or more ARRAYS from old file
+     ra            RESTORE one or more deleted ARRAYS on old file
+     mw            MODIFY data from the old file and WRITE it on the new file
+     aw            ADD new data and WRITE it on the new file
+     ex            EXIT, saving the new header array file
+     q             QUIT, without saving the new header array file
+     lh            LIST the HEADERS, their status and size of associated arrays
+     oh            show ONE HEADER, its status and size of associated array
+     ch            CHANGE a HEADER name
+     eln           EXAMINE a LONG NAME
+     cln           CHANGE the LONG NAME associated with a header
+     ?             HELP
+  
+  
+  > Next Command:  (or '?' for help)
+  
+  
+ at
+  
+  TEXT FILE CONTAINING THE NEW DATA TO BE ADDED
+  ---------------------------------------------
+  
+  Input the full name (INCLUDING suffix) of this file.
+  
+  
+ kal_modhar.txt
+ (Opened, as text, existing file 'kal_modhar.txt'.)
+  
+  !  (There is no CREATION information on this file.)
+  
+  From this file, do you wish to add
+     [A]      ALL of the data arrays on the file
+  
+     [s]      Some of the arrays (Process arrays one by one)
+                        (XXX to skip, XXQ to exit)
+     [n]      NONE of the arrays.
+  
+  Please enter your choice. ([A] is the default.)
+  
+  
+ a
+  
+  Coefficient = kal_version (time).
+  No sets defined for coefficients.
+  
+  (Read real matrix of size: 31.)
+  Longname 'kal_version'
+  
+  Header found on the text file 'K001'.
+  
+ (Written real array, size 31, header "K001".)
+  
+  Header 'K001' transferred to the new file.
+  Longname 'kal_version'
+  
+  Coefficient = kalp (nind,time).
+  No sets defined for coefficients.
+  
+  (Read real matrix of size: 36x31.)
+  Longname 'kalp'
+  
+  Header found on the text file 'K002'.
+  
+ (Written real array, size 36x31, header "K002".)
+  
+  Header 'K002' transferred to the new file.
+  Longname 'kalp'
+  
+  Coefficient = kalf_o (s_o,nind,time).
+  No sets defined for coefficients.
+  
+  (Read real matrix of size: 4x36x31.)
+  Longname 'kalf_o'
+  
+  Header found on the text file 'K003'.
+  
+ (Written real array, size 4x36x31, header "K003".)
+  
+  Header 'K003' transferred to the new file.
+  Longname 'kalf_o'
+  
+  Coefficient = kalf_ene (s_e,nind,time).
+  No sets defined for coefficients.
+  
+  (Read real matrix of size: 2x36x31.)
+  Longname 'kalf_ene'
+  
+  Header found on the text file 'K004'.
+  
+ (Written real array, size 2x36x31, header "K004".)
+  
+  Header 'K004' transferred to the new file.
+  Longname 'kalf_ene'
+  
+  Coefficient = kalf_mat (s_m,nind,time).
+  No sets defined for coefficients.
+  
+  (Read real matrix of size: 4x36x31.)
+  Longname 'kalf_mat'
+  
+  Header found on the text file 'K005'.
+  
+ (Written real array, size 4x36x31, header "K005".)
+  
+  Header 'K005' transferred to the new file.
+  Longname 'kalf_mat'
+  
+  Coefficient = kalf_ff (s_ff,nind,time).
+  No sets defined for coefficients.
+  
+  (Read real matrix of size: 3x36x31.)
+  Longname 'kalf_ff'
+  
+  Header found on the text file 'K006'.
+  
+ (Written real array, size 3x36x31, header "K006".)
+  
+  Header 'K006' transferred to the new file.
+  Longname 'kalf_ff'
+  
+  Coefficient = kalf_oil (s_oil,nind,time).
+  No sets defined for coefficients.
+  
+  (Read real matrix of size: 2x36x31.)
+  Longname 'kalf_oil'
+  
+  Header found on the text file 'K007'.
+  
+ (Written real array, size 2x36x31, header "K007".)
+  
+  Header 'K007' transferred to the new file.
+  Longname 'kalf_oil'
+  
+  Coefficient = kalf_gas (s_gas,nind,time).
+  No sets defined for coefficients.
+  
+  (Read real matrix of size: 2x36x31.)
+  Longname 'kalf_gas'
+  
+  Header found on the text file 'K008'.
+  
+ (Written real array, size 2x36x31, header "K008".)
+  
+  Header 'K008' transferred to the new file.
+  Longname 'kalf_gas'
+  
+  Coefficient = kalf_ma (s_ma,nind,time).
+  No sets defined for coefficients.
+  
+  (Read real matrix of size: 4x36x31.)
+  Longname 'kalf_ma'
+  
+  Header found on the text file 'K009'.
+  
+ (Written real array, size 4x36x31, header "K009".)
+  
+  Header 'K009' transferred to the new file.
+  Longname 'kalf_ma'
+  
+  Coefficient = kalf_mm (s_mm,nind,time).
+  No sets defined for coefficients.
+  
+  (Read real matrix of size: 4x36x31.)
+  Longname 'kalf_mm'
+  
+  Header found on the text file 'K010'.
+  
+ (Written real array, size 4x36x31, header "K010".)
+  
+  Header 'K010' transferred to the new file.
+  Longname 'kalf_mm'
+  
+  Coefficient = kalf_mn (s_mn,nind,time).
+  No sets defined for coefficients.
+  
+  (Read real matrix of size: 4x36x31.)
+  Longname 'kalf_mn'
+  
+  Header found on the text file 'K011'.
+  
+ (Written real array, size 4x36x31, header "K011".)
+  
+  Header 'K011' transferred to the new file.
+  Longname 'kalf_mn'
+  
+  Coefficient = kalf_ms (s_ms,nind,time).
+  No sets defined for coefficients.
+  
+  (Read real matrix of size: 3x36x31.)
+  Longname 'kalf_ms'
+  
+  Header found on the text file 'K012'.
+  
+ (Written real array, size 3x36x31, header "K012".)
+  
+  Header 'K012' transferred to the new file.
+  Longname 'kalf_ms'
+  
+  Coefficient = kalf_eq (s_eq,nind,time).
+  No sets defined for coefficients.
+  
+  (Read real matrix of size: 4x36x31.)
+  Longname 'kalf_eq'
+  
+  Header found on the text file 'K013'.
+  
+ (Written real array, size 4x36x31, header "K013".)
+  
+  Header 'K013' transferred to the new file.
+  Longname 'kalf_eq'
+  
+  Coefficient = kalf_tr (s_tr,nind,time).
+  No sets defined for coefficients.
+  
+  (Read real matrix of size: 2x36x31.)
+  Longname 'kalf_tr'
+  
+  Header found on the text file 'K014'.
+  
+ (Written real array, size 2x36x31, header "K014".)
+  
+  Header 'K014' transferred to the new file.
+  Longname 'kalf_tr'
+  
+  Coefficient = kalf_tt (s_tt,nind,time).
+  No sets defined for coefficients.
+  
+  (Read real matrix of size: 3x36x31.)
+  Longname 'kalf_tt'
+  
+  Header found on the text file 'K015'.
+  
+ (Written real array, size 3x36x31, header "K015".)
+  
+  Header 'K015' transferred to the new file.
+  Longname 'kalf_tt'
+  
+  Coefficient = kalf_sv (s_sv,nind,time).
+  No sets defined for coefficients.
+  
+  (Read real matrix of size: 3x36x31.)
+  Longname 'kalf_sv'
+  
+  Header found on the text file 'K016'.
+  
+ (Written real array, size 3x36x31, header "K016".)
+  
+  Header 'K016' transferred to the new file.
+  Longname 'kalf_sv'
+  
+  Coefficient = kalf_bl (s_bl,nind,time).
+  No sets defined for coefficients.
+  
+  (Read real matrix of size: 3x36x31.)
+  Longname 'kalf_bl'
+  
+  Header found on the text file 'K017'.
+  
+ (Written real array, size 3x36x31, header "K017".)
+  
+  Header 'K017' transferred to the new file.
+  Longname 'kalf_bl'
+  
+  Coefficient = kalf_ob (s_ob,nind,time).
+  No sets defined for coefficients.
+  
+  (Read real matrix of size: 3x36x31.)
+  Longname 'kalf_ob'
+  
+  Header found on the text file 'K018'.
+  
+ (Written real array, size 3x36x31, header "K018".)
+  
+  Header 'K018' transferred to the new file.
+  Longname 'kalf_ob'
+  
+  Coefficient = kalf_os (s_os,nind,time).
+  No sets defined for coefficients.
+  
+  (Read real matrix of size: 4x36x31.)
+  Longname 'kalf_os'
+  
+  Header found on the text file 'K019'.
+  
+ (Written real array, size 4x36x31, header "K019".)
+  
+  Header 'K019' transferred to the new file.
+  Longname 'kalf_os'
+  
+  Coefficient = kali_fixed (s_fixed,time).
+  No sets defined for coefficients.
+  
+  (Read real matrix of size: 2x31.)
+  Longname 'kali_fixed'
+  
+  Header found on the text file 'K020'.
+  
+ (Written real array, size 2x31, header "K020".)
+  
+  Header 'K020' transferred to the new file.
+  Longname 'kali_fixed'
+  
+  Coefficient = kali_long (s_long,time).
+  No sets defined for coefficients.
+  
+  (Read real matrix of size: 3x31.)
+  Longname 'kali_long'
+  
+  Header found on the text file 'K021'.
+  
+ (Written real array, size 3x31, header "K021".)
+  
+  Header 'K021' transferred to the new file.
+  Longname 'kali_long'
+  
+  Coefficient = kali_short (s_short,time).
+  No sets defined for coefficients.
+  
+  (Read real matrix of size: 2x31.)
+  Longname 'kali_short'
+  
+  Header found on the text file 'K022'.
+  
+ (Written real array, size 2x31, header "K022".)
+  
+  Header 'K022' transferred to the new file.
+  Longname 'kali_short'
+  
+  Coefficient = kali_eit (s_eit,time).
+  No sets defined for coefficients.
+  
+  (Read real matrix of size: 3x31.)
+  Longname 'kali_eit'
+  
+  Header found on the text file 'K023'.
+  
+ (Written real array, size 3x31, header "K023".)
+  
+  Header 'K023' transferred to the new file.
+  Longname 'kali_eit'
+  
+  Coefficient = kali_ttsvc (s_ttsvc,time).
+  No sets defined for coefficients.
+  
+  (Read real matrix of size: 3x31.)
+  Longname 'kali_ttsvc'
+  
+  Header found on the text file 'K024'.
+  
+ (Written real array, size 3x31, header "K024".)
+  
+  Header 'K024' transferred to the new file.
+  Longname 'kali_ttsvc'
+  
+  Coefficient = kali_mach (s_mach,time).
+  No sets defined for coefficients.
+  
+  (Read real matrix of size: 3x31.)
+  Longname 'kali_mach'
+  
+  Header found on the text file 'K025'.
+  
+ (Written real array, size 3x31, header "K025".)
+  
+  Header 'K025' transferred to the new file.
+  Longname 'kali_mach'
+  
+  Coefficient = kali_it (s_it,time).
+  No sets defined for coefficients.
+  
+  (Read real matrix of size: 3x31.)
+  Longname 'kali_it'
+  
+  Header found on the text file 'K026'.
+  
+ (Written real array, size 3x31, header "K026".)
+  
+  Header 'K026' transferred to the new file.
+  Longname 'kali_it'
+  
+  Coefficient = kali_trnsp (s_trnsp,time).
+  No sets defined for coefficients.
+  
+  (Read real matrix of size: 2x31.)
+  Longname 'kali_trnsp'
+  
+  Header found on the text file 'K027'.
+  
+ (Written real array, size 2x31, header "K027".)
+  
+  Header 'K027' transferred to the new file.
+  Longname 'kali_trnsp'
+  
+  Coefficient = kali_trd (s_trd,time).
+  No sets defined for coefficients.
+  
+  (Read real matrix of size: 2x31.)
+  Longname 'kali_trd'
+  
+  Header found on the text file 'K028'.
+  
+ (Written real array, size 2x31, header "K028".)
+  
+  Header 'K028' transferred to the new file.
+  Longname 'kali_trd'
+  
+  Coefficient = kali_serv (s_serv,time).
+  No sets defined for coefficients.
+  
+  (Read real matrix of size: 2x31.)
+  Longname 'kali_serv'
+  
+  Header found on the text file 'K029'.
+  
+ (Written real array, size 2x31, header "K029".)
+  
+  Header 'K029' transferred to the new file.
+  Longname 'kali_serv'
+  
+  Coefficient = kali_frawm (s_frawm,time).
+  No sets defined for coefficients.
+  
+  (Read real matrix of size: 2x31.)
+  Longname 'kali_frawm'
+  
+  Header found on the text file 'K030'.
+  
+ (Written real array, size 2x31, header "K030".)
+  
+  Header 'K030' transferred to the new file.
+  Longname 'kali_frawm'
+  
+  Coefficient = kali_mserv (s_mserv,time).
+  No sets defined for coefficients.
+  
+  (Read real matrix of size: 3x31.)
+  Longname 'kali_mserv'
+  
+  Header found on the text file 'K031'.
+  
+ (Written real array, size 3x31, header "K031".)
+  
+  Header 'K031' transferred to the new file.
+  Longname 'kali_mserv'
+  
+  Coefficient = kali_mrawm (s_mrawm,time).
+  No sets defined for coefficients.
+  
+  (Read real matrix of size: 2x31.)
+  Longname 'kali_mrawm'
+  
+  Header found on the text file 'K032'.
+  
+ (Written real array, size 2x31, header "K032".)
+  
+  Header 'K032' transferred to the new file.
+  Longname 'kali_mrawm'
+  
+  Coefficient = kali_furn (s_furn,time).
+  No sets defined for coefficients.
+  
+  (Read real matrix of size: 3x31.)
+  Longname 'kali_furn'
+  
+  Header found on the text file 'K033'.
+  
+ (Written real array, size 3x31, header "K033".)
+  
+  Header 'K033' transferred to the new file.
+  Longname 'kali_furn'
+  
+  Coefficient = kali_rawm (s_rawm,time).
+  No sets defined for coefficients.
+  
+  (Read real matrix of size: 3x31.)
+  Longname 'kali_rawm'
+  
+  Header found on the text file 'K034'.
+  
+ (Written real array, size 3x31, header "K034".)
+  
+  Header 'K034' transferred to the new file.
+  Longname 'kali_rawm'
+  
+  Coefficient = kalh_f (s_f,time).
+  No sets defined for coefficients.
+  
+  (Read real matrix of size: 4x31.)
+  Longname 'kalh_f'
+  
+  Header found on the text file 'K035'.
+  
+ (Written real array, size 4x31, header "K035".)
+  
+  Header 'K035' transferred to the new file.
+  Longname 'kalh_f'
+  
+  Coefficient = kalh_nd (s_nd,time).
+  No sets defined for coefficients.
+  
+  (Read real matrix of size: 4x31.)
+  Longname 'kalh_nd'
+  
+  Header found on the text file 'K036'.
+  
+ (Written real array, size 4x31, header "K036".)
+  
+  Header 'K036' transferred to the new file.
+  Longname 'kalh_nd'
+  
+  Coefficient = kalh_ks (s_ks,time).
+  No sets defined for coefficients.
+  
+  (Read real matrix of size: 2x31.)
+  Longname 'kalh_ks'
+  
+  Header found on the text file 'K037'.
+  
+ (Written real array, size 2x31, header "K037".)
+  
+  Header 'K037' transferred to the new file.
+  Longname 'kalh_ks'
+  
+  Coefficient = kalh_cs (s_cs,time).
+  No sets defined for coefficients.
+  
+  (Read real matrix of size: 4x31.)
+  Longname 'kalh_cs'
+  
+  Header found on the text file 'K038'.
+  
+ (Written real array, size 4x31, header "K038".)
+  
+  Header 'K038' transferred to the new file.
+  Longname 'kalh_cs'
+  
+  Coefficient = kalh_en (s_en,time).
+  No sets defined for coefficients.
+  
+  (Read real matrix of size: 2x31.)
+  Longname 'kalh_en'
+  
+  Header found on the text file 'K039'.
+  
+ (Written real array, size 2x31, header "K039".)
+  
+  Header 'K039' transferred to the new file.
+  Longname 'kalh_en'
+  
+  Coefficient = kalh_cg (s_cg,time).
+  No sets defined for coefficients.
+  
+  (Read real matrix of size: 4x31.)
+  Longname 'kalh_cg'
+  
+  Header found on the text file 'K040'.
+  
+ (Written real array, size 4x31, header "K040".)
+  
+  Header 'K040' transferred to the new file.
+  Longname 'kalh_cg'
+  
+  Coefficient = kalh_md (s_md,time).
+  No sets defined for coefficients.
+  
+  (Read real matrix of size: 2x31.)
+  Longname 'kalh_md'
+  
+  Header found on the text file 'K041'.
+  
+ (Written real array, size 2x31, header "K041".)
+  
+  Header 'K041' transferred to the new file.
+  Longname 'kalh_md'
+  
+  Coefficient = kalh_fb (s_fb,time).
+  No sets defined for coefficients.
+  
+  (Read real matrix of size: 3x31.)
+  Longname 'kalh_fb'
+  
+  Header found on the text file 'K042'.
+  
+ (Written real array, size 3x31, header "K042".)
+  
+  Header 'K042' transferred to the new file.
+  Longname 'kalh_fb'
+  
+  Coefficient = kalh_ho (s_ho,time).
+  No sets defined for coefficients.
+  
+  (Read real matrix of size: 4x31.)
+  Longname 'kalh_ho'
+  
+  Header found on the text file 'K043'.
+  
+ (Written real array, size 4x31, header "K043".)
+  
+  Header 'K043' transferred to the new file.
+  Longname 'kalh_ho'
+  
+  Coefficient = kalh_rc (s_rc,time).
+  No sets defined for coefficients.
+  
+  (Read real matrix of size: 3x31.)
+  Longname 'kalh_rc'
+  
+  Header found on the text file 'K044'.
+  
+ (Written real array, size 3x31, header "K044".)
+  
+  Header 'K044' transferred to the new file.
+  Longname 'kalh_rc'
+  
+  Coefficient = kalh_hpg (s_hpg,time).
+  No sets defined for coefficients.
+  
+  (Read real matrix of size: 2x31.)
+  Longname 'kalh_hpg'
+  
+  Header found on the text file 'K045'.
+  
+ (Written real array, size 2x31, header "K045".)
+  
+  Header 'K045' transferred to the new file.
+  Longname 'kalh_hpg'
+  
+  Coefficient = kalh_edn (s_edn,time).
+  No sets defined for coefficients.
+  
+  (Read real matrix of size: 2x31.)
+  Longname 'kalh_edn'
+  
+  Header found on the text file 'K046'.
+  
+ (Written real array, size 2x31, header "K046".)
+  
+  Header 'K046' transferred to the new file.
+  Longname 'kalh_edn'
+  
+  Coefficient = kalh_ups (s_ups,time).
+  No sets defined for coefficients.
+  
+  (Read real matrix of size: 3x31.)
+  Longname 'kalh_ups'
+  
+  Header found on the text file 'K047'.
+  
+ (Written real array, size 3x31, header "K047".)
+  
+  Header 'K047' transferred to the new file.
+  Longname 'kalh_ups'
+  
+  Coefficient = kalh_trc (s_trc,time).
+  No sets defined for coefficients.
+  
+  (Read real matrix of size: 4x31.)
+  Longname 'kalh_trc'
+  
+  Header found on the text file 'K048'.
+  
+ (Written real array, size 4x31, header "K048".)
+  
+  Header 'K048' transferred to the new file.
+  Longname 'kalh_trc'
+  
+  Coefficient = kalh_rcs (s_rcs,time).
+  No sets defined for coefficients.
+  
+  (Read real matrix of size: 3x31.)
+  Longname 'kalh_rcs'
+  
+  Header found on the text file 'K049'.
+  
+ (Written real array, size 3x31, header "K049".)
+  
+  Header 'K049' transferred to the new file.
+  Longname 'kalh_rcs'
+  
+  Coefficient = kalh_trv (s_trv,time).
+  No sets defined for coefficients.
+  
+  (Read real matrix of size: 2x31.)
+  Longname 'kalh_trv'
+  
+  Header found on the text file 'K050'.
+  
+ (Written real array, size 2x31, header "K050".)
+  
+  Header 'K050' transferred to the new file.
+  Longname 'kalh_trv'
+  
+  Coefficient = kalh_ens (s_ens,time).
+  No sets defined for coefficients.
+  
+  (Read real matrix of size: 2x31.)
+  Longname 'kalh_ens'
+  
+  Header found on the text file 'K051'.
+  
+ (Written real array, size 2x31, header "K051".)
+  
+  Header 'K051' transferred to the new file.
+  Longname 'kalh_ens'
+  
+  Coefficient = kalh_hps (s_hps,time).
+  No sets defined for coefficients.
+  
+  (Read real matrix of size: 3x31.)
+  Longname 'kalh_hps'
+  
+  Header found on the text file 'K052'.
+  
+ (Written real array, size 3x31, header "K052".)
+  
+  Header 'K052' transferred to the new file.
+  Longname 'kalh_hps'
+  
+  Coefficient = kalh_cmm (s_cmm,time).
+  No sets defined for coefficients.
+  
+  (Read real matrix of size: 2x31.)
+  Longname 'kalh_cmm'
+  
+  Header found on the text file 'K053'.
+  
+ (Written real array, size 2x31, header "K053".)
+  
+  Header 'K053' transferred to the new file.
+  Longname 'kalh_cmm'
+  
+  Coefficient = kalm_imp (ncom,time).
+  No sets defined for coefficients.
+  
+  (Read real matrix of size: 36x31.)
+  Longname 'kalm_imp'
+  
+  Header found on the text file 'K054'.
+  
+ (Written real array, size 36x31, header "K054".)
+  
+  Header 'K054' transferred to the new file.
+  Longname 'kalm_imp'
+  
+  Coefficient = kalx_exp (ncom,time).
+  No sets defined for coefficients.
+  
+  (Read real matrix of size: 36x31.)
+  Longname 'kalx_exp'
+  
+  Header found on the text file 'K055'.
+  
+ (Written real array, size 36x31, header "K055".)
+  
+  Header 'K055' transferred to the new file.
+  Longname 'kalx_exp'
+  Last array on file has been read. Transfer completed.
+  TRANSFERRED A TOTAL OF 55 ARRAYS TO THE NEW FILE.
+  
+  > Next Command:  (or '?' for help)
+  
+  
+ ex
+  Since an old file was not used, there are no arrays to transfer..
+  NO    HEADER    STATUS    DATA  <-------------- SIZE -------------->     SIZE
+       OLD  NEW             TYPE        OLD                   NEW        CHANGE?
+  
+  
+    1 (TF) K001 ON NEW FILE real  31                   31                   no
+    2 (TF) K002 ON NEW FILE real  36x31                36x31                no
+    3 (TF) K003 ON NEW FILE real  4x36x31              4x36x31              no
+    4 (TF) K004 ON NEW FILE real  2x36x31              2x36x31              no
+    5 (TF) K005 ON NEW FILE real  4x36x31              4x36x31              no
+    6 (TF) K006 ON NEW FILE real  3x36x31              3x36x31              no
+    7 (TF) K007 ON NEW FILE real  2x36x31              2x36x31              no
+    8 (TF) K008 ON NEW FILE real  2x36x31              2x36x31              no
+    9 (TF) K009 ON NEW FILE real  4x36x31              4x36x31              no
+   10 (TF) K010 ON NEW FILE real  4x36x31              4x36x31              no
+   11 (TF) K011 ON NEW FILE real  4x36x31              4x36x31              no
+   12 (TF) K012 ON NEW FILE real  3x36x31              3x36x31              no
+   13 (TF) K013 ON NEW FILE real  4x36x31              4x36x31              no
+   14 (TF) K014 ON NEW FILE real  2x36x31              2x36x31              no
+   15 (TF) K015 ON NEW FILE real  3x36x31              3x36x31              no
+   16 (TF) K016 ON NEW FILE real  3x36x31              3x36x31              no
+   17 (TF) K017 ON NEW FILE real  3x36x31              3x36x31              no
+   18 (TF) K018 ON NEW FILE real  3x36x31              3x36x31              no
+   19 (TF) K019 ON NEW FILE real  4x36x31              4x36x31              no
+   20 (TF) K020 ON NEW FILE real  2x31                 2x31                 no
+   21 (TF) K021 ON NEW FILE real  3x31                 3x31                 no
+   22 (TF) K022 ON NEW FILE real  2x31                 2x31                 no
+   23 (TF) K023 ON NEW FILE real  3x31                 3x31                 no
+   24 (TF) K024 ON NEW FILE real  3x31                 3x31                 no
+   25 (TF) K025 ON NEW FILE real  3x31                 3x31                 no
+   26 (TF) K026 ON NEW FILE real  3x31                 3x31                 no
+   27 (TF) K027 ON NEW FILE real  2x31                 2x31                 no
+   28 (TF) K028 ON NEW FILE real  2x31                 2x31                 no
+   29 (TF) K029 ON NEW FILE real  2x31                 2x31                 no
+   30 (TF) K030 ON NEW FILE real  2x31                 2x31                 no
+   31 (TF) K031 ON NEW FILE real  3x31                 3x31                 no
+   32 (TF) K032 ON NEW FILE real  2x31                 2x31                 no
+   33 (TF) K033 ON NEW FILE real  3x31                 3x31                 no
+   34 (TF) K034 ON NEW FILE real  3x31                 3x31                 no
+   35 (TF) K035 ON NEW FILE real  4x31                 4x31                 no
+   36 (TF) K036 ON NEW FILE real  4x31                 4x31                 no
+   37 (TF) K037 ON NEW FILE real  2x31                 2x31                 no
+   38 (TF) K038 ON NEW FILE real  4x31                 4x31                 no
+   39 (TF) K039 ON NEW FILE real  2x31                 2x31                 no
+   40 (TF) K040 ON NEW FILE real  4x31                 4x31                 no
+   41 (TF) K041 ON NEW FILE real  2x31                 2x31                 no
+   42 (TF) K042 ON NEW FILE real  3x31                 3x31                 no
+   43 (TF) K043 ON NEW FILE real  4x31                 4x31                 no
+   44 (TF) K044 ON NEW FILE real  3x31                 3x31                 no
+   45 (TF) K045 ON NEW FILE real  2x31                 2x31                 no
+   46 (TF) K046 ON NEW FILE real  2x31                 2x31                 no
+   47 (TF) K047 ON NEW FILE real  3x31                 3x31                 no
+   48 (TF) K048 ON NEW FILE real  4x31                 4x31                 no
+   49 (TF) K049 ON NEW FILE real  3x31                 3x31                 no
+   50 (TF) K050 ON NEW FILE real  2x31                 2x31                 no
+   51 (TF) K051 ON NEW FILE real  2x31                 2x31                 no
+   52 (TF) K052 ON NEW FILE real  3x31                 3x31                 no
+   53 (TF) K053 ON NEW FILE real  2x31                 2x31                 no
+   54 (TF) K054 ON NEW FILE real  36x31                36x31                no
+   55 (TF) K055 ON NEW FILE real  36x31                36x31                no
+  
+  
+  HISTORY OF THIS RUN OF THE PROGRAM
+  
+  Type in your name,
+    or    -   to ignore any old history,
+          =   to take just any old history (no new),
+          0   to have no history on the new file.
+  
+  
+ 0
+ (New Header Array file is 'kal_base.har'.)
+  
+  (The program has completed without error.)
+  Total elapsed time is:  1 seconds.
+  

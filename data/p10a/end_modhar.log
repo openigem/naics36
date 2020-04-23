@@ -17,7 +17,7 @@
   
      << COPYRIGHT 1986-2001: CoPS/Impact and KPSOFT >>
   
-  Current directory is: H:\wk\igem\open\pub\data\p10a
+  Current directory is: H:\wk\open\data\p10a
   
   
   Full path name of running EXE is: H:\binvol\gempack12\modhar.exe
@@ -76,8 +76,8 @@
   -----------------------------------
   
   
- end.har
- (Opened new header file 'end.har'.)
+ end_base.har
+ (Opened new header file 'end_base.har'.)
   
   Available tasks are:
   
@@ -2168,109 +2168,109 @@
   Header 'N157' transferred to the new file.
   Longname 'pgg'
   
-  Coefficient = gov_transdom (time).
+  Coefficient = end_gov_tran (time).
   No sets defined for coefficients.
   
   (Read real matrix of size: 10.)
-  Longname 'gov_transdom'
+  Longname 'end_gov_transdom'
   
   Header found on the text file 'N158'.
   
  (Written real array, size 10, header "N158".)
   
   Header 'N158' transferred to the new file.
-  Longname 'gov_transdom'
+  Longname 'end_gov_transdom'
   
-  Coefficient = gov_transabr (time).
+  Coefficient = end_gov_tran (time).
   No sets defined for coefficients.
   
   (Read real matrix of size: 10.)
-  Longname 'gov_transabr'
+  Longname 'end_gov_transabr'
   
   Header found on the text file 'N159'.
   
  (Written real array, size 10, header "N159".)
   
   Header 'N159' transferred to the new file.
-  Longname 'gov_transabr'
+  Longname 'end_gov_transabr'
   
-  Coefficient = rev_nontax (time).
+  Coefficient = end_rev_nont (time).
   No sets defined for coefficients.
   
   (Read real matrix of size: 10.)
-  Longname 'rev_nontax'
+  Longname 'end_rev_nontax'
   
   Header found on the text file 'N160'.
   
  (Written real array, size 10, header "N160".)
   
   Header 'N160' transferred to the new file.
-  Longname 'rev_nontax'
+  Longname 'end_rev_nontax'
   
-  Coefficient = trans_abroad (time).
+  Coefficient = end_trans_ab (time).
   No sets defined for coefficients.
   
   (Read real matrix of size: 10.)
-  Longname 'trans_abroad'
+  Longname 'end_trans_abr'
   
   Header found on the text file 'N161'.
   
  (Written real array, size 10, header "N161".)
   
   Header 'N161' transferred to the new file.
-  Longname 'trans_abroad'
+  Longname 'end_trans_abr'
   
-  Coefficient = gov_from_ss (time).
+  Coefficient = end_gov_from (time).
   No sets defined for coefficients.
   
   (Read real matrix of size: 10.)
-  Longname 'gov_from_ss'
+  Longname 'end_gov_from_ss'
   
   Header found on the text file 'N162'.
   
  (Written real array, size 10, header "N162".)
   
   Header 'N162' transferred to the new file.
-  Longname 'gov_from_ss'
+  Longname 'end_gov_from_ss'
   
-  Coefficient = gov_interest (time).
+  Coefficient = end_gov_inte (time).
   No sets defined for coefficients.
   
   (Read real matrix of size: 10.)
-  Longname 'gov_interest'
+  Longname 'end_gov_interest'
   
   Header found on the text file 'N163'.
   
  (Written real array, size 10, header "N163".)
   
   Header 'N163' transferred to the new file.
-  Longname 'gov_interest'
+  Longname 'end_gov_interest'
   
-  Coefficient = gov_int_abr (time).
+  Coefficient = end_gov_int_ (time).
   No sets defined for coefficients.
   
   (Read real matrix of size: 10.)
-  Longname 'gov_int_abr'
+  Longname 'end_gov_int_abr'
   
   Header found on the text file 'N164'.
   
  (Written real array, size 10, header "N164".)
   
   Header 'N164' transferred to the new file.
-  Longname 'gov_int_abr'
+  Longname 'end_gov_int_abr'
   
-  Coefficient = gov_int_ss (time).
+  Coefficient = end_gov_int_ (time).
   No sets defined for coefficients.
   
   (Read real matrix of size: 10.)
-  Longname 'gov_int_ss'
+  Longname 'end_gov_int_ss'
   
   Header found on the text file 'N165'.
   
  (Written real array, size 10, header "N165".)
   
   Header 'N165' transferred to the new file.
-  Longname 'gov_int_ss'
+  Longname 'end_gov_int_ss'
   
   Coefficient = row_interest (time).
   No sets defined for coefficients.
@@ -2473,7 +2473,7 @@
   
   
  0
- (New Header Array file is 'end.har'.)
+ (New Header Array file is 'end_base.har'.)
   
   (The program has completed without error.)
   Total elapsed time is:  1 seconds.

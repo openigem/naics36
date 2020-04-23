@@ -155,12 +155,12 @@ variable pd_exp N154;
 variable pd_imp N155;
 variable pd_gdp N156;
 variable pgg N157;
-variable gov_transdom N158;
-variable gov_transabr N159;
-variable rev_nontax N160;
-variable trans_abroad N161;
-variable gov_from_ss N162;
-variable gov_interest N163;
-variable gov_int_abr N164;
-variable gov_int_ss N165;
+variable end_gov_transdom N158; // name too long
+variable end_gov_transabr N159; // name too long
+variable end_rev_nontax N160; // name too long
+variable end_trans_abr N161; // name too long
+variable end_gov_from_ss N162; // name too long
+variable end_gov_interest N163; // name too long
+variable end_gov_int_abr N164; // name too long
+variable end_gov_int_ss N165; // name too long
 variable row_interest N166;

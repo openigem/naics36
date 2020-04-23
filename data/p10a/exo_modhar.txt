@@ -75,7 +75,7 @@
 0.75493568
 ! time=9 data, year is 2060
 0.75493568
-36 10 header "X004"
+36 10 col_order header "X004"
    longname "exo_pf"
    coefficient exo_pf(ncom,time)
    ;
@@ -473,7 +473,7 @@
 1.1398937
 ! time=9 data, year is 2060
 1.1398937
-37 10 header "X006"
+37 10 col_order header "X006"
    longname "pk_scale"
    coefficient pk_scale(nind_c,time)
    ;
@@ -857,7 +857,7 @@
 0.84343708
 0.95109946
 0.80229932
-36 10 header "X007"
+36 10 col_order header "X007"
    longname "pl_scale"
    coefficient pl_scale(nind,time)
    ;
@@ -1279,7 +1279,7 @@
 0.023242954
 ! time=9 data, year is 2060
 0.023242954
-36 10 header "X010"
+36 10 col_order header "X010"
    longname "gov_share"
    coefficient gov_share(ncom,time)
    ;
@@ -1725,7 +1725,7 @@
 0.12673028
 ! time=9 data, year is 2060
 0.12673028
-36 10 header "X014"
+36 10 col_order header "X014"
    longname "inven_share"
    coefficient inven_share(ncom,time)
    ;
@@ -2123,7 +2123,7 @@
 1.5159808000000001
 ! time=9 data, year is 2060
 1.4862858
-11 10 header "X016"
+11 10 col_order header "X016"
    longname "income_share"
    coefficient income_share(nattr,time)
    ;
@@ -16771,7 +16771,7 @@
 0.0
 0.0
 0.0
-4 10 header "X023"
+4 10 col_order header "X023"
    longname "dv_hh"
    coefficient dv_hh(tfac_h,time)
    ;
@@ -17018,8 +17018,8 @@
 ! time=9 data, year is 2060
 0.0
 10 header "X032"
-   longname "xg_interest"
-   coefficient xg_interest(time)
+   longname "gov_interest"
+   coefficient gov_interest(time)
    ;
 ! time=0 data, year is 2020
 342.08267
@@ -17042,8 +17042,8 @@
 ! time=9 data, year is 2060
 849.9201699999999
 10 header "X033"
-   longname "xgintabroad"
-   coefficient xgintabroad(time)
+   longname "gov_int_abr"
+   coefficient gov_int_abr(time)
    ;
 ! time=0 data, year is 2020
 220.65953
@@ -17066,8 +17066,8 @@
 ! time=9 data, year is 2060
 280.38707999999997
 10 header "X034"
-   longname "xg_int_ss"
-   coefficient xg_int_ss(time)
+   longname "gov_int_ss"
+   coefficient gov_int_ss(time)
    ;
 ! time=0 data, year is 2020
 100.41473
@@ -17593,7 +17593,7 @@
 0.010912825
 ! time=9 data, year is 2060
 0.010912825
-36 10 header "X056"
+36 10 col_order header "X056"
    longname "tax_sales"
    coefficient tax_sales(nind,time)
    ;
@@ -18015,7 +18015,7 @@
 0.14870535
 ! time=9 data, year is 2060
 0.14870535
-36 10 header "X059"
+36 10 col_order header "X059"
    longname "tariff"
    coefficient tariff(ncom,time)
    ;
@@ -18389,7 +18389,7 @@
 0.0
 0.0
 0.0
-36 10 header "X060"
+36 10 col_order header "X060"
    longname "row_tariff"
    coefficient row_tariff(ncom,time)
    ;
@@ -18787,7 +18787,7 @@
 0.0
 ! time=9 data, year is 2060
 0.0
-36 10 header "X062"
+36 10 col_order header "X062"
    longname "tax_unit"
    coefficient tax_unit(nind,time)
    ;
@@ -19161,7 +19161,7 @@
 0.0
 0.0
 0.0
-20 10 header "X063"
+20 10 col_order header "X063"
    longname "tax_extern_v"
    coefficient tax_extern_v(nxtr,time)
    ;
@@ -19375,7 +19375,7 @@
 0.0
 0.0
 0.0
-20 10 header "X064"
+20 10 col_order header "X064"
    longname "tax_ext_u"
    coefficient tax_ext_u(nxtr,time)
    ;
@@ -19781,7 +19781,7 @@
 0.0
 ! time=9 data, year is 2060
 0.0
-36 10 header "X073"
+36 10 col_order header "X073"
    longname "tech_shock"
    coefficient tech_shock(nind,time)
    ;
@@ -20275,7 +20275,7 @@
 1.0
 ! time=9 data, year is 2060
 1.0
-37 10 header "X079"
+37 10 col_order header "X079"
    longname "con_shk_qty"
    coefficient con_shk_qty(ncom_k,time)
    ;
@@ -20852,8 +20852,8 @@
 ! time=9 data, year is 2060
 1.0
 10 header "X088"
-   longname "xg_transfer"
-   coefficient xg_transfer(time)
+   longname "gov_transdom"
+   coefficient gov_transdom(time)
    ;
 ! time=0 data, year is 2020
 683.55267
@@ -20876,8 +20876,8 @@
 ! time=9 data, year is 2060
 1334.243
 10 header "X089"
-   longname "xgtoforeign"
-   coefficient xgtoforeign(time)
+   longname "gov_transabr"
+   coefficient gov_transabr(time)
    ;
 ! time=0 data, year is 2020
 50.443188
@@ -20900,8 +20900,8 @@
 ! time=9 data, year is 2060
 84.427452
 10 header "X090"
-   longname "exorevnontax"
-   coefficient exorevnontax(time)
+   longname "rev_nontax"
+   coefficient rev_nontax(time)
    ;
 ! time=0 data, year is 2020
 97.479424
@@ -20924,8 +20924,8 @@
 ! time=9 data, year is 2060
 230.60771
 10 header "X091"
-   longname "exotransabro"
-   coefficient exotransabro(time)
+   longname "transfer_abr"
+   coefficient transfer_abr(time)
    ;
 ! time=0 data, year is 2020
 80.061653
@@ -20948,8 +20948,8 @@
 ! time=9 data, year is 2060
 137.04291
 10 header "X092"
-   longname "xg_from_ss"
-   coefficient xg_from_ss(time)
+   longname "gov_from_ss"
+   coefficient gov_from_ss(time)
    ;
 ! time=0 data, year is 2020
 22.602210999999997

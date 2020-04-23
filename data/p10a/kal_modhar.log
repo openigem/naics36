@@ -17,7 +17,7 @@
   
      << COPYRIGHT 1986-2001: CoPS/Impact and KPSOFT >>
   
-  Current directory is: H:\wk\igem\open\pub\data\p10a
+  Current directory is: H:\wk\open\data\p10a
   
   
   Full path name of running EXE is: H:\binvol\gempack12\modhar.exe
@@ -76,8 +76,8 @@
   -----------------------------------
   
   
- kal.har
- (Opened new header file 'kal.har'.)
+ kal_base.har
+ (Opened new header file 'kal_base.har'.)
   
   Available tasks are:
   
@@ -919,8 +919,8 @@
   
   
  0
- (New Header Array file is 'kal.har'.)
+ (New Header Array file is 'kal_base.har'.)
   
   (The program has completed without error.)
-  Total elapsed time is: less than one second.
+  Total elapsed time is:  1 seconds.
   

@@ -1176,42 +1176,50 @@
         }, 
         {
             "header": "N158", 
-            "name": "gov_transdom", 
+            "longname": true, 
+            "name": "end_gov_transdom", 
             "sets": ""
         }, 
         {
             "header": "N159", 
-            "name": "gov_transabr", 
+            "longname": true, 
+            "name": "end_gov_transabr", 
             "sets": ""
         }, 
         {
             "header": "N160", 
-            "name": "rev_nontax", 
+            "longname": true, 
+            "name": "end_rev_nontax", 
             "sets": ""
         }, 
         {
             "header": "N161", 
-            "name": "trans_abroad", 
+            "longname": true, 
+            "name": "end_trans_abr", 
             "sets": ""
         }, 
         {
             "header": "N162", 
-            "name": "gov_from_ss", 
+            "longname": true, 
+            "name": "end_gov_from_ss", 
             "sets": ""
         }, 
         {
             "header": "N163", 
-            "name": "gov_interest", 
+            "longname": true, 
+            "name": "end_gov_interest", 
             "sets": ""
         }, 
         {
             "header": "N164", 
-            "name": "gov_int_abr", 
+            "longname": true, 
+            "name": "end_gov_int_abr", 
             "sets": ""
         }, 
         {
             "header": "N165", 
-            "name": "gov_int_ss", 
+            "longname": true, 
+            "name": "end_gov_int_ss", 
             "sets": ""
         }, 
         {

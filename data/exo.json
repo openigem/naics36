@@ -398,17 +398,17 @@
         }, 
         {
             "header": "X032", 
-            "name": "xg_interest", 
+            "name": "gov_interest", 
             "sets": ""
         }, 
         {
             "header": "X033", 
-            "name": "xgintabroad", 
+            "name": "gov_int_abr", 
             "sets": ""
         }, 
         {
             "header": "X034", 
-            "name": "xg_int_ss", 
+            "name": "gov_int_ss", 
             "sets": ""
         }, 
         {
@@ -694,27 +694,27 @@
         }, 
         {
             "header": "X088", 
-            "name": "xg_transfer", 
+            "name": "gov_transdom", 
             "sets": ""
         }, 
         {
             "header": "X089", 
-            "name": "xgtoforeign", 
+            "name": "gov_transabr", 
             "sets": ""
         }, 
         {
             "header": "X090", 
-            "name": "exorevnontax", 
+            "name": "rev_nontax", 
             "sets": ""
         }, 
         {
             "header": "X091", 
-            "name": "exotransabro", 
+            "name": "transfer_abr", 
             "sets": ""
         }, 
         {
             "header": "X092", 
-            "name": "xg_from_ss", 
+            "name": "gov_from_ss", 
             "sets": ""
         }, 
         {

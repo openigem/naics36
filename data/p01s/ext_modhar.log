@@ -1,0 +1,170 @@
+  
+ <MODHAR   Version 6.0 - F90  February 1999>
+   This program accesses some of the routines in the GEMPACK software release
+ <GEMPACK Release 11.4.004   October 2016>
+  
+ Licence file: H:\binvol\gempack12\licen.gem
+  
+     -------------------------------------------------------
+    !            GEMPACK Software System Licence            !
+    !  Single-user Source-code Licence for GEMPACK on a PC  !
+    !                 Licence No.  GFS-1575                 !
+    !          Licence for Release 12.0 of GEMPACK          !
+    !                     Pete Wilcoxen                     !
+    !               Named User-Pete Wilcoxen                !
+     -------------------------------------------------------
+  
+  
+     << COPYRIGHT 1986-2001: CoPS/Impact and KPSOFT >>
+  
+  Current directory is: H:\wk\open\data\p01s
+  
+  
+  Full path name of running EXE is: H:\binvol\gempack12\modhar.exe
+  Fortran compiler = GF32  4.8.1 (rev3, built by mingw-builds project):
+  OPENMP number of threads: 4
+  Operating system is Windows 8
+  
+  
+  ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+  
+  
+                    MODHAR OPTIONS
+               ( --> indicates those in effect )
+  
+       BAT Run in batch              STI Take inputs from a Stored-input file
+       BPR Brief prompts             SIF Store inputs on a file
+       LOG Output to log file        ASI Add to incomplete Stored-input file
+                                     CSO Control screen output
+  
+  Select an option   :  <opt>      Deselect an option      : -<opt>
+  Help for an option : ?<opt>      Help on all options     : ??
+  Redisplay options  : /           Finish option selection : Carriage return
+  
+ Your selection >
+  
+  
+ bat
+ Running in batch
+ Your selection >
+  
+  
+  
+  
+  This program can be used it two ways.
+  
+  1. Usually it is used to modify some or all of the data on
+      on an existing Header Array file.
+       In this case, the existing file is not actually
+        changed, but a copy of it is made and modified.
+       Existing data can be modified and new data (read from
+        existing files and/or the terminal) can be added.
+  
+  2. It can be used to create a new Header Array file from
+      scratch. In this case the new data can be read from
+      existing files and/or the terminal.
+  
+  This program is easy to run interactively. It is partly
+   command-driven and partly menu-driven. Help is available.
+  
+  Is this based on an old HEADER ARRAY file?   [Y/n]
+  
+  
+ n
+  
+  NEW HEADER ARRAY FILE TO BE CREATED
+  -----------------------------------
+  
+  
+ ext_base.har
+ (Opened new header file 'ext_base.har'.)
+  
+  Available tasks are:
+  
+  Command               Meaning
+     ah            ADD one or more arrays from HEADER array file
+     ds            DEFINE SETS for adding arrays from text file
+     at            ADD one or more arrays from TEXT file
+     da            DELETE one or more ARRAYS from old file
+     ra            RESTORE one or more deleted ARRAYS on old file
+     mw            MODIFY data from the old file and WRITE it on the new file
+     aw            ADD new data and WRITE it on the new file
+     ex            EXIT, saving the new header array file
+     q             QUIT, without saving the new header array file
+     lh            LIST the HEADERS, their status and size of associated arrays
+     oh            show ONE HEADER, its status and size of associated array
+     ch            CHANGE a HEADER name
+     eln           EXAMINE a LONG NAME
+     cln           CHANGE the LONG NAME associated with a header
+     ?             HELP
+  
+  
+  > Next Command:  (or '?' for help)
+  
+  
+ at
+  
+  TEXT FILE CONTAINING THE NEW DATA TO BE ADDED
+  ---------------------------------------------
+  
+  Input the full name (INCLUDING suffix) of this file.
+  
+  
+ ext_modhar.txt
+ (Opened, as text, existing file 'ext_modhar.txt'.)
+  
+  !  (There is no CREATION information on this file.)
+  
+  From this file, do you wish to add
+     [A]      ALL of the data arrays on the file
+  
+     [s]      Some of the arrays (Process arrays one by one)
+                        (XXX to skip, XXQ to exit)
+     [n]      NONE of the arrays.
+  
+  Please enter your choice. ([A] is the default.)
+  
+  
+ a
+  
+  Coefficient = pb (ncom,nbuy,time).
+  No sets defined for coefficients.
+  
+  (Read real matrix of size: 36x39x1.)
+  Longname 'pb'
+  
+  Header found on the text file 'T001'.
+  
+ (Written real array, size 36x39, header "T001".)
+  
+  Header 'T001' transferred to the new file.
+  Longname 'pb'
+  Last array on file has been read. Transfer completed.
+  TRANSFERRED A TOTAL OF 1 ARRAYS TO THE NEW FILE.
+  
+  > Next Command:  (or '?' for help)
+  
+  
+ ex
+  Since an old file was not used, there are no arrays to transfer..
+  NO    HEADER    STATUS    DATA  <-------------- SIZE -------------->     SIZE
+       OLD  NEW             TYPE        OLD                   NEW        CHANGE?
+  
+  
+    1 (TF) T001 ON NEW FILE real  36x39                36x39                no
+  
+  
+  HISTORY OF THIS RUN OF THE PROGRAM
+  
+  Type in your name,
+    or    -   to ignore any old history,
+          =   to take just any old history (no new),
+          0   to have no history on the new file.
+  
+  
+ 0
+ (New Header Array file is 'ext_base.har'.)
+  
+  (The program has completed without error.)
+  Total elapsed time is: less than one second.
+  

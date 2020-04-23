@@ -28,8 +28,8 @@
 ! time=9 data, year is 2060
 205.0
 36 36 10 header "M002"
-   longname "make_rowshr"
-   coefficient make_rowshr(nind,ncom,time)
+   longname "make_row"
+   coefficient make_row(nind,ncom,time)
    ;
 ! time=0 data, year is 2020
 0.9961707000000001

@@ -164,13 +164,16 @@ for name in names:
     if len(set_list) > 0:
         set_sizes = [str(len(model.getset(s).elements)) for s in set_list]
 
+    by_col = ''
     if kind == 'variable':
         if len(set_list) == 0:
             set_sizes = [str(nyrs)]
         else:
+            if len(set_list) == 1:
+               by_col = ' col_order' 
             set_sizes.append(str(nyrs))
 
-    mfh.write(' '.join(set_sizes) + ' header "' + obj.header + '"\n')
+    mfh.write(' '.join(set_sizes) + by_col + ' header "' + obj.header + '"\n')
     mfh.write('   longname "' + obj.name + '"\n')
     mfh.write('   coefficient ' + coeff_decl + '\n')
     mfh.write('   ;\n')
@@ -245,7 +248,7 @@ ifh.writelines([
     'bat\n',
     '\n',
     'n\n',
-    stem + '.har\n',
+    stem + '_base.har\n',
     'at\n',
     modhar_txt + '\n',
     'a\n',

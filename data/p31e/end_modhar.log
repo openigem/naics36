@@ -1,0 +1,2480 @@
+  
+ <MODHAR   Version 6.0 - F90  February 1999>
+   This program accesses some of the routines in the GEMPACK software release
+ <GEMPACK Release 11.4.004   October 2016>
+  
+ Licence file: H:\binvol\gempack12\licen.gem
+  
+     -------------------------------------------------------
+    !            GEMPACK Software System Licence            !
+    !  Single-user Source-code Licence for GEMPACK on a PC  !
+    !                 Licence No.  GFS-1575                 !
+    !          Licence for Release 12.0 of GEMPACK          !
+    !                     Pete Wilcoxen                     !
+    !               Named User-Pete Wilcoxen                !
+     -------------------------------------------------------
+  
+  
+     << COPYRIGHT 1986-2001: CoPS/Impact and KPSOFT >>
+  
+  Current directory is: H:\wk\open\data\p31e
+  
+  
+  Full path name of running EXE is: H:\binvol\gempack12\modhar.exe
+  Fortran compiler = GF32  4.8.1 (rev3, built by mingw-builds project):
+  OPENMP number of threads: 4
+  Operating system is Windows 8
+  
+  
+  ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+  
+  
+                    MODHAR OPTIONS
+               ( --> indicates those in effect )
+  
+       BAT Run in batch              STI Take inputs from a Stored-input file
+       BPR Brief prompts             SIF Store inputs on a file
+       LOG Output to log file        ASI Add to incomplete Stored-input file
+                                     CSO Control screen output
+  
+  Select an option   :  <opt>      Deselect an option      : -<opt>
+  Help for an option : ?<opt>      Help on all options     : ??
+  Redisplay options  : /           Finish option selection : Carriage return
+  
+ Your selection >
+  
+  
+ bat
+ Running in batch
+ Your selection >
+  
+  
+  
+  
+  This program can be used it two ways.
+  
+  1. Usually it is used to modify some or all of the data on
+      on an existing Header Array file.
+       In this case, the existing file is not actually
+        changed, but a copy of it is made and modified.
+       Existing data can be modified and new data (read from
+        existing files and/or the terminal) can be added.
+  
+  2. It can be used to create a new Header Array file from
+      scratch. In this case the new data can be read from
+      existing files and/or the terminal.
+  
+  This program is easy to run interactively. It is partly
+   command-driven and partly menu-driven. Help is available.
+  
+  Is this based on an old HEADER ARRAY file?   [Y/n]
+  
+  
+ n
+  
+  NEW HEADER ARRAY FILE TO BE CREATED
+  -----------------------------------
+  
+  
+ end_base.har
+ (Opened new header file 'end_base.har'.)
+  
+  Available tasks are:
+  
+  Command               Meaning
+     ah            ADD one or more arrays from HEADER array file
+     ds            DEFINE SETS for adding arrays from text file
+     at            ADD one or more arrays from TEXT file
+     da            DELETE one or more ARRAYS from old file
+     ra            RESTORE one or more deleted ARRAYS on old file
+     mw            MODIFY data from the old file and WRITE it on the new file
+     aw            ADD new data and WRITE it on the new file
+     ex            EXIT, saving the new header array file
+     q             QUIT, without saving the new header array file
+     lh            LIST the HEADERS, their status and size of associated arrays
+     oh            show ONE HEADER, its status and size of associated array
+     ch            CHANGE a HEADER name
+     eln           EXAMINE a LONG NAME
+     cln           CHANGE the LONG NAME associated with a header
+     ?             HELP
+  
+  
+  > Next Command:  (or '?' for help)
+  
+  
+ at
+  
+  TEXT FILE CONTAINING THE NEW DATA TO BE ADDED
+  ---------------------------------------------
+  
+  Input the full name (INCLUDING suffix) of this file.
+  
+  
+ end_modhar.txt
+ (Opened, as text, existing file 'end_modhar.txt'.)
+  
+  !  (There is no CREATION information on this file.)
+  
+  From this file, do you wish to add
+     [A]      ALL of the data arrays on the file
+  
+     [s]      Some of the arrays (Process arrays one by one)
+                        (XXX to skip, XXQ to exit)
+     [n]      NONE of the arrays.
+  
+  Please enter your choice. ([A] is the default.)
+  
+  
+ a
+  
+  Coefficient = flag_raw (time).
+  No sets defined for coefficients.
+  
+  (Read real matrix of size: 31.)
+  Longname 'flag_raw'
+  
+  Header found on the text file 'N001'.
+  
+ (Written real array, size 31, header "N001".)
+  
+  Header 'N001' transferred to the new file.
+  Longname 'flag_raw'
+  
+  Coefficient = flagnowalras (time).
+  No sets defined for coefficients.
+  
+  (Read real matrix of size: 31.)
+  Longname 'flagnowalras'
+  
+  Header found on the text file 'N002'.
+  
+ (Written real array, size 31, header "N002".)
+  
+  Header 'N002' transferred to the new file.
+  Longname 'flagnowalras'
+  
+  Coefficient = flagigemvers (time).
+  No sets defined for coefficients.
+  
+  (Read real matrix of size: 31.)
+  Longname 'flagigemvers'
+  
+  Header found on the text file 'N003'.
+  
+ (Written real array, size 31, header "N003".)
+  
+  Header 'N003' transferred to the new file.
+  Longname 'flagigemvers'
+  
+  Coefficient = end_baseyear (time).
+  No sets defined for coefficients.
+  
+  (Read real matrix of size: 31.)
+  Longname 'end_baseyear'
+  
+  Header found on the text file 'N004'.
+  
+ (Written real array, size 31, header "N004".)
+  
+  Header 'N004' transferred to the new file.
+  Longname 'end_baseyear'
+  
+  Coefficient = end_capmodel (time).
+  No sets defined for coefficients.
+  
+  (Read real matrix of size: 31.)
+  Longname 'end_capmodel'
+  
+  Header found on the text file 'N005'.
+  
+ (Written real array, size 31, header "N005".)
+  
+  Header 'N005' transferred to the new file.
+  Longname 'end_capmodel'
+  
+  Coefficient = endtechmodel (time).
+  No sets defined for coefficients.
+  
+  (Read real matrix of size: 31.)
+  Longname 'endtechmodel'
+  
+  Header found on the text file 'N006'.
+  
+ (Written real array, size 31, header "N006".)
+  
+  Header 'N006' transferred to the new file.
+  Longname 'endtechmodel'
+  
+  Coefficient = end_t (time).
+  No sets defined for coefficients.
+  
+  (Read real matrix of size: 31.)
+  Longname 'end_t'
+  
+  Header found on the text file 'N007'.
+  
+ (Written real array, size 31, header "N007".)
+  
+  Header 'N007' transferred to the new file.
+  Longname 'end_t'
+  
+  Coefficient = pr_fc (time).
+  No sets defined for coefficients.
+  
+  (Read real matrix of size: 31.)
+  Longname 'pr_fc'
+  
+  Header found on the text file 'N008'.
+  
+ (Written real array, size 31, header "N008".)
+  
+  Header 'N008' transferred to the new file.
+  Longname 'pr_fc'
+  
+  Coefficient = con_expend (time).
+  No sets defined for coefficients.
+  
+  (Read real matrix of size: 31.)
+  Longname 'con_expend'
+  
+  Header found on the text file 'N009'.
+  
+ (Written real array, size 31, header "N009".)
+  
+  Header 'N009' transferred to the new file.
+  Longname 'con_expend'
+  
+  Coefficient = con_shk_xpnd (time).
+  No sets defined for coefficients.
+  
+  (Read real matrix of size: 31.)
+  Longname 'con_shk_xpnd'
+  
+  Header found on the text file 'N010'.
+  
+ (Written real array, size 31, header "N010".)
+  
+  Header 'N010' transferred to the new file.
+  Longname 'con_shk_xpnd'
+  
+  Coefficient = leisure (time).
+  No sets defined for coefficients.
+  
+  (Read real matrix of size: 31.)
+  Longname 'leisure'
+  
+  Header found on the text file 'N011'.
+  
+ (Written real array, size 31, header "N011".)
+  
+  Header 'N011' transferred to the new file.
+  Longname 'leisure'
+  
+  Coefficient = log_pcon (nipa_c,time).
+  No sets defined for coefficients.
+  
+  (Read real matrix of size: 36x31.)
+  Longname 'log_pcon'
+  
+  Header found on the text file 'N012'.
+  
+ (Written real array, size 36x31, header "N012".)
+  
+  Header 'N012' transferred to the new file.
+  Longname 'log_pcon'
+  
+  Coefficient = con (ncom_k,time).
+  No sets defined for coefficients.
+  
+  (Read real matrix of size: 37x31.)
+  Longname 'con'
+  
+  Header found on the text file 'N013'.
+  
+ (Written real array, size 37x31, header "N013".)
+  
+  Header 'N013' transferred to the new file.
+  Longname 'con'
+  
+  Coefficient = pr_con (ncom_k,time).
+  No sets defined for coefficients.
+  
+  (Read real matrix of size: 37x31.)
+  Longname 'pr_con'
+  
+  Header found on the text file 'N014'.
+  
+ (Written real array, size 37x31, header "N014".)
+  
+  Header 'N014' transferred to the new file.
+  Longname 'pr_con'
+  
+  Coefficient = con_shk_val (ncom_k,time).
+  No sets defined for coefficients.
+  
+  (Read real matrix of size: 37x31.)
+  Longname 'con_shk_val'
+  
+  Header found on the text file 'N015'.
+  
+ (Written real array, size 37x31, header "N015".)
+  
+  Header 'N015' transferred to the new file.
+  Longname 'con_shk_val'
+  
+  Coefficient = con_share (nipa_c,time).
+  No sets defined for coefficients.
+  
+  (Read real matrix of size: 36x31.)
+  Longname 'con_share'
+  
+  Header found on the text file 'N016'.
+  
+ (Written real array, size 36x31, header "N016".)
+  
+  Header 'N016' transferred to the new file.
+  Longname 'con_share'
+  
+  Coefficient = pr_leisure (time).
+  No sets defined for coefficients.
+  
+  (Read real matrix of size: 31.)
+  Longname 'pr_leisure'
+  
+  Header found on the text file 'N017'.
+  
+ (Written real array, size 31, header "N017".)
+  
+  Header 'N017' transferred to the new file.
+  Longname 'pr_leisure'
+  
+  Coefficient = cshare (time).
+  No sets defined for coefficients.
+  
+  (Read real matrix of size: 31.)
+  Longname 'cshare'
+  
+  Header found on the text file 'N018'.
+  
+ (Written real array, size 31, header "N018".)
+  
+  Header 'N018' transferred to the new file.
+  Longname 'cshare'
+  
+  Coefficient = pcon (ntot_h,time).
+  No sets defined for coefficients.
+  
+  (Read real matrix of size: 56x31.)
+  Longname 'pcon'
+  
+  Header found on the text file 'N019'.
+  
+ (Written real array, size 56x31, header "N019".)
+  
+  Header 'N019' transferred to the new file.
+  Longname 'pcon'
+  
+  Coefficient = pii (time).
+  No sets defined for coefficients.
+  
+  (Read real matrix of size: 31.)
+  Longname 'pii'
+  
+  Header found on the text file 'N020'.
+  
+ (Written real array, size 31, header "N020".)
+  
+  Header 'N020' transferred to the new file.
+  Longname 'pii'
+  
+  Coefficient = inv_expend (time).
+  No sets defined for coefficients.
+  
+  (Read real matrix of size: 31.)
+  Longname 'inv_expend'
+  
+  Header found on the text file 'N021'.
+  
+ (Written real array, size 31, header "N021".)
+  
+  Header 'N021' transferred to the new file.
+  Longname 'inv_expend'
+  
+  Coefficient = inv_total (time).
+  No sets defined for coefficients.
+  
+  (Read real matrix of size: 31.)
+  Longname 'inv_total'
+  
+  Header found on the text file 'N022'.
+  
+ (Written real array, size 31, header "N022".)
+  
+  Header 'N022' transferred to the new file.
+  Longname 'inv_total'
+  
+  Coefficient = inv (ncom,time).
+  No sets defined for coefficients.
+  
+  (Read real matrix of size: 36x31.)
+  Longname 'inv'
+  
+  Header found on the text file 'N023'.
+  
+ (Written real array, size 36x31, header "N023".)
+  
+  Header 'N023' transferred to the new file.
+  Longname 'inv'
+  
+  Coefficient = fixed_inv (time).
+  No sets defined for coefficients.
+  
+  (Read real matrix of size: 31.)
+  Longname 'fixed_inv'
+  
+  Header found on the text file 'N024'.
+  
+ (Written real array, size 31, header "N024".)
+  
+  Header 'N024' transferred to the new file.
+  Longname 'fixed_inv'
+  
+  Coefficient = inven_inv (time).
+  No sets defined for coefficients.
+  
+  (Read real matrix of size: 31.)
+  Longname 'inven_inv'
+  
+  Header found on the text file 'N025'.
+  
+ (Written real array, size 31, header "N025".)
+  
+  Header 'N025' transferred to the new file.
+  Longname 'inven_inv'
+  
+  Coefficient = inv_qty (time).
+  No sets defined for coefficients.
+  
+  (Read real matrix of size: 31.)
+  Longname 'inv_qty'
+  
+  Header found on the text file 'N026'.
+  
+ (Written real array, size 31, header "N026".)
+  
+  Header 'N026' transferred to the new file.
+  Longname 'inv_qty'
+  
+  Coefficient = gov_expend (time).
+  No sets defined for coefficients.
+  
+  (Read real matrix of size: 31.)
+  Longname 'gov_expend'
+  
+  Header found on the text file 'N027'.
+  
+ (Written real array, size 31, header "N027".)
+  
+  Header 'N027' transferred to the new file.
+  Longname 'gov_expend'
+  
+  Coefficient = gov_real (time).
+  No sets defined for coefficients.
+  
+  (Read real matrix of size: 31.)
+  Longname 'gov_real'
+  
+  Header found on the text file 'N028'.
+  
+ (Written real array, size 31, header "N028".)
+  
+  Header 'N028' transferred to the new file.
+  Longname 'gov_real'
+  
+  Coefficient = gov (ncom,time).
+  No sets defined for coefficients.
+  
+  (Read real matrix of size: 36x31.)
+  Longname 'gov'
+  
+  Header found on the text file 'N029'.
+  
+ (Written real array, size 36x31, header "N029".)
+  
+  Header 'N029' transferred to the new file.
+  Longname 'gov'
+  
+  Coefficient = imports (ncom,time).
+  No sets defined for coefficients.
+  
+  (Read real matrix of size: 36x31.)
+  Longname 'imports'
+  
+  Header found on the text file 'N030'.
+  
+ (Written real array, size 36x31, header "N030".)
+  
+  Header 'N030' transferred to the new file.
+  Longname 'imports'
+  
+  Coefficient = exports (ncom,time).
+  No sets defined for coefficients.
+  
+  (Read real matrix of size: 36x31.)
+  Longname 'exports'
+  
+  Header found on the text file 'N031'.
+  
+ (Written real array, size 36x31, header "N031".)
+  
+  Header 'N031' transferred to the new file.
+  Longname 'exports'
+  
+  Coefficient = dom_share (ncom,time).
+  No sets defined for coefficients.
+  
+  (Read real matrix of size: 36x31.)
+  Longname 'dom_share'
+  
+  Header found on the text file 'N032'.
+  
+ (Written real array, size 36x31, header "N032".)
+  
+  Header 'N032' transferred to the new file.
+  Longname 'dom_share'
+  
+  Coefficient = po (nind,time).
+  No sets defined for coefficients.
+  
+  (Read real matrix of size: 36x31.)
+  Longname 'po'
+  
+  Header found on the text file 'N033'.
+  
+ (Written real array, size 36x31, header "N033".)
+  
+  Header 'N033' transferred to the new file.
+  Longname 'po'
+  
+  Coefficient = pi (nind,time).
+  No sets defined for coefficients.
+  
+  (Read real matrix of size: 36x31.)
+  Longname 'pi'
+  
+  Header found on the text file 'N034'.
+  
+ (Written real array, size 36x31, header "N034".)
+  
+  Header 'N034' transferred to the new file.
+  Longname 'pi'
+  
+  Coefficient = pc (ncom,time).
+  No sets defined for coefficients.
+  
+  (Read real matrix of size: 36x31.)
+  Longname 'pc'
+  
+  Header found on the text file 'N035'.
+  
+ (Written real array, size 36x31, header "N035".)
+  
+  Header 'N035' transferred to the new file.
+  Longname 'pc'
+  
+  Coefficient = ps (ncom,time).
+  No sets defined for coefficients.
+  
+  (Read real matrix of size: 36x31.)
+  Longname 'ps'
+  
+  Header found on the text file 'N036'.
+  
+ (Written real array, size 36x31, header "N036".)
+  
+  Header 'N036' transferred to the new file.
+  Longname 'ps'
+  
+  Coefficient = vs (ncom,time).
+  No sets defined for coefficients.
+  
+  (Read real matrix of size: 36x31.)
+  Longname 'vs'
+  
+  Header found on the text file 'N037'.
+  
+ (Written real array, size 36x31, header "N037".)
+  
+  Header 'N037' transferred to the new file.
+  Longname 'vs'
+  
+  Coefficient = qs (ncom,time).
+  No sets defined for coefficients.
+  
+  (Read real matrix of size: 36x31.)
+  Longname 'qs'
+  
+  Header found on the text file 'N038'.
+  
+ (Written real array, size 36x31, header "N038".)
+  
+  Header 'N038' transferred to the new file.
+  Longname 'qs'
+  
+  Coefficient = qs_us (ncom,time).
+  No sets defined for coefficients.
+  
+  (Read real matrix of size: 36x31.)
+  Longname 'qs_us'
+  
+  Header found on the text file 'N039'.
+  
+ (Written real array, size 36x31, header "N039".)
+  
+  Header 'N039' transferred to the new file.
+  Longname 'qs_us'
+  
+  Coefficient = div_rate (time).
+  No sets defined for coefficients.
+  
+  (Read real matrix of size: 31.)
+  Longname 'div_rate'
+  
+  Header found on the text file 'N040'.
+  
+ (Written real array, size 31, header "N040".)
+  
+  Header 'N040' transferred to the new file.
+  Longname 'div_rate'
+  
+  Coefficient = cg_rate (time).
+  No sets defined for coefficients.
+  
+  (Read real matrix of size: 31.)
+  Longname 'cg_rate'
+  
+  Header found on the text file 'N041'.
+  
+ (Written real array, size 31, header "N041".)
+  
+  Header 'N041' transferred to the new file.
+  Longname 'cg_rate'
+  
+  Coefficient = r (time).
+  No sets defined for coefficients.
+  
+  (Read real matrix of size: 31.)
+  Longname 'r'
+  
+  Header found on the text file 'N042'.
+  
+ (Written real array, size 31, header "N042".)
+  
+  Header 'N042' transferred to the new file.
+  Longname 'r'
+  
+  Coefficient = income (time).
+  No sets defined for coefficients.
+  
+  (Read real matrix of size: 31.)
+  Longname 'income'
+  
+  Header found on the text file 'N043'.
+  
+ (Written real array, size 31, header "N043".)
+  
+  Header 'N043' transferred to the new file.
+  Longname 'income'
+  
+  Coefficient = save (time).
+  No sets defined for coefficients.
+  
+  (Read real matrix of size: 31.)
+  Longname 'save'
+  
+  Header found on the text file 'N044'.
+  
+ (Written real array, size 31, header "N044".)
+  
+  Header 'N044' transferred to the new file.
+  Longname 'save'
+  
+  Coefficient = pr_kap (nind_c,time).
+  No sets defined for coefficients.
+  
+  (Read real matrix of size: 37x31.)
+  Longname 'pr_kap'
+  
+  Header found on the text file 'N045'.
+  
+ (Written real array, size 37x31, header "N045".)
+  
+  Header 'N045' transferred to the new file.
+  Longname 'pr_kap'
+  
+  Coefficient = pr_lab (nind,time).
+  No sets defined for coefficients.
+  
+  (Read real matrix of size: 36x31.)
+  Longname 'pr_lab'
+  
+  Header found on the text file 'N046'.
+  
+ (Written real array, size 36x31, header "N046".)
+  
+  Header 'N046' transferred to the new file.
+  Longname 'pr_lab'
+  
+  Coefficient = pr_ene (nind,time).
+  No sets defined for coefficients.
+  
+  (Read real matrix of size: 36x31.)
+  Longname 'pr_ene'
+  
+  Header found on the text file 'N047'.
+  
+ (Written real array, size 36x31, header "N047".)
+  
+  Header 'N047' transferred to the new file.
+  Longname 'pr_ene'
+  
+  Coefficient = pr_mat (nind,time).
+  No sets defined for coefficients.
+  
+  (Read real matrix of size: 36x31.)
+  Longname 'pr_mat'
+  
+  Header found on the text file 'N048'.
+  
+ (Written real array, size 36x31, header "N048".)
+  
+  Header 'N048' transferred to the new file.
+  Longname 'pr_mat'
+  
+  Coefficient = kap (nind_c,time).
+  No sets defined for coefficients.
+  
+  (Read real matrix of size: 37x31.)
+  Longname 'kap'
+  
+  Header found on the text file 'N049'.
+  
+ (Written real array, size 37x31, header "N049".)
+  
+  Header 'N049' transferred to the new file.
+  Longname 'kap'
+  
+  Coefficient = lab (nind,time).
+  No sets defined for coefficients.
+  
+  (Read real matrix of size: 36x31.)
+  Longname 'lab'
+  
+  Header found on the text file 'N050'.
+  
+ (Written real array, size 36x31, header "N050".)
+  
+  Header 'N050' transferred to the new file.
+  Longname 'lab'
+  
+  Coefficient = ene (nind,time).
+  No sets defined for coefficients.
+  
+  (Read real matrix of size: 36x31.)
+  Longname 'ene'
+  
+  Header found on the text file 'N051'.
+  
+ (Written real array, size 36x31, header "N051".)
+  
+  Header 'N051' transferred to the new file.
+  Longname 'ene'
+  
+  Coefficient = mat (nind,time).
+  No sets defined for coefficients.
+  
+  (Read real matrix of size: 36x31.)
+  Longname 'mat'
+  
+  Header found on the text file 'N052'.
+  
+ (Written real array, size 36x31, header "N052".)
+  
+  Header 'N052' transferred to the new file.
+  Longname 'mat'
+  
+  Coefficient = share_kap (nind,time).
+  No sets defined for coefficients.
+  
+  (Read real matrix of size: 36x31.)
+  Longname 'share_kap'
+  
+  Header found on the text file 'N053'.
+  
+ (Written real array, size 36x31, header "N053".)
+  
+  Header 'N053' transferred to the new file.
+  Longname 'share_kap'
+  
+  Coefficient = share_lab (nind,time).
+  No sets defined for coefficients.
+  
+  (Read real matrix of size: 36x31.)
+  Longname 'share_lab'
+  
+  Header found on the text file 'N054'.
+  
+ (Written real array, size 36x31, header "N054".)
+  
+  Header 'N054' transferred to the new file.
+  Longname 'share_lab'
+  
+  Coefficient = share_ene (nind,time).
+  No sets defined for coefficients.
+  
+  (Read real matrix of size: 36x31.)
+  Longname 'share_ene'
+  
+  Header found on the text file 'N055'.
+  
+ (Written real array, size 36x31, header "N055".)
+  
+  Header 'N055' transferred to the new file.
+  Longname 'share_ene'
+  
+  Coefficient = share_mat (nind,time).
+  No sets defined for coefficients.
+  
+  (Read real matrix of size: 36x31.)
+  Longname 'share_mat'
+  
+  Header found on the text file 'N056'.
+  
+ (Written real array, size 36x31, header "N056".)
+  
+  Header 'N056' transferred to the new file.
+  Longname 'share_mat'
+  
+  Coefficient = ind_out (nind,time).
+  No sets defined for coefficients.
+  
+  (Read real matrix of size: 36x31.)
+  Longname 'ind_out'
+  
+  Header found on the text file 'N057'.
+  
+ (Written real array, size 36x31, header "N057".)
+  
+  Header 'N057' transferred to the new file.
+  Longname 'ind_out'
+  
+  Coefficient = pk_service (time).
+  No sets defined for coefficients.
+  
+  (Read real matrix of size: 31.)
+  Longname 'pk_service'
+  
+  Header found on the text file 'N058'.
+  
+ (Written real array, size 31, header "N058".)
+  
+  Header 'N058' transferred to the new file.
+  Longname 'pk_service'
+  
+  Coefficient = deprec (time).
+  No sets defined for coefficients.
+  
+  (Read real matrix of size: 31.)
+  Longname 'deprec'
+  
+  Header found on the text file 'N059'.
+  
+ (Written real array, size 31, header "N059".)
+  
+  Header 'N059' transferred to the new file.
+  Longname 'deprec'
+  
+  Coefficient = pk (time).
+  No sets defined for coefficients.
+  
+  (Read real matrix of size: 31.)
+  Longname 'pk'
+  
+  Header found on the text file 'N060'.
+  
+ (Written real array, size 31, header "N060".)
+  
+  Header 'N060' transferred to the new file.
+  Longname 'pk'
+  
+  Coefficient = kap_demand (time).
+  No sets defined for coefficients.
+  
+  (Read real matrix of size: 31.)
+  Longname 'kap_demand'
+  
+  Header found on the text file 'N061'.
+  
+ (Written real array, size 31, header "N061".)
+  
+  Header 'N061' transferred to the new file.
+  Longname 'kap_demand'
+  
+  Coefficient = lab_demand (time).
+  No sets defined for coefficients.
+  
+  (Read real matrix of size: 31.)
+  Longname 'lab_demand'
+  
+  Header found on the text file 'N062'.
+  
+ (Written real array, size 31, header "N062".)
+  
+  Header 'N062' transferred to the new file.
+  Longname 'lab_demand'
+  
+  Coefficient = kap_income (time).
+  No sets defined for coefficients.
+  
+  (Read real matrix of size: 31.)
+  Longname 'kap_income'
+  
+  Header found on the text file 'N063'.
+  
+ (Written real array, size 31, header "N063".)
+  
+  Header 'N063' transferred to the new file.
+  Longname 'kap_income'
+  
+  Coefficient = kap_inc_net (time).
+  No sets defined for coefficients.
+  
+  (Read real matrix of size: 31.)
+  Longname 'kap_inc_net'
+  
+  Header found on the text file 'N064'.
+  
+ (Written real array, size 31, header "N064".)
+  
+  Header 'N064' transferred to the new file.
+  Longname 'kap_inc_net'
+  
+  Coefficient = kap_taxable (time).
+  No sets defined for coefficients.
+  
+  (Read real matrix of size: 31.)
+  Longname 'kap_taxable'
+  
+  Header found on the text file 'N065'.
+  
+ (Written real array, size 31, header "N065".)
+  
+  Header 'N065' transferred to the new file.
+  Longname 'kap_taxable'
+  
+  Coefficient = lab_income (time).
+  No sets defined for coefficients.
+  
+  (Read real matrix of size: 31.)
+  Longname 'lab_income'
+  
+  Header found on the text file 'N066'.
+  
+ (Written real array, size 31, header "N066".)
+  
+  Header 'N066' transferred to the new file.
+  Longname 'lab_income'
+  
+  Coefficient = lab_inc_net (time).
+  No sets defined for coefficients.
+  
+  (Read real matrix of size: 31.)
+  Longname 'lab_inc_net'
+  
+  Header found on the text file 'N067'.
+  
+ (Written real array, size 31, header "N067".)
+  
+  Header 'N067' transferred to the new file.
+  Longname 'lab_inc_net'
+  
+  Coefficient = capgain (time).
+  No sets defined for coefficients.
+  
+  (Read real matrix of size: 31.)
+  Longname 'capgain'
+  
+  Header found on the text file 'N068'.
+  
+ (Written real array, size 31, header "N068".)
+  
+  Header 'N068' transferred to the new file.
+  Longname 'capgain'
+  
+  Coefficient = dividend (time).
+  No sets defined for coefficients.
+  
+  (Read real matrix of size: 31.)
+  Longname 'dividend'
+  
+  Header found on the text file 'N069'.
+  
+ (Written real array, size 31, header "N069".)
+  
+  Header 'N069' transferred to the new file.
+  Longname 'dividend'
+  
+  Coefficient = interest (time).
+  No sets defined for coefficients.
+  
+  (Read real matrix of size: 31.)
+  Longname 'interest'
+  
+  Header found on the text file 'N070'.
+  
+ (Written real array, size 31, header "N070".)
+  
+  Header 'N070' transferred to the new file.
+  Longname 'interest'
+  
+  Coefficient = finwealth (time).
+  No sets defined for coefficients.
+  
+  (Read real matrix of size: 31.)
+  Longname 'finwealth'
+  
+  Header found on the text file 'N071'.
+  
+ (Written real array, size 31, header "N071".)
+  
+  Header 'N071' transferred to the new file.
+  Longname 'finwealth'
+  
+  Coefficient = value_kap (time).
+  No sets defined for coefficients.
+  
+  (Read real matrix of size: 31.)
+  Longname 'value_kap'
+  
+  Header found on the text file 'N072'.
+  
+ (Written real array, size 31, header "N072".)
+  
+  Header 'N072' transferred to the new file.
+  Longname 'value_kap'
+  
+  Coefficient = exch (time).
+  No sets defined for coefficients.
+  
+  (Read real matrix of size: 31.)
+  Longname 'exch'
+  
+  Header found on the text file 'N073'.
+  
+ (Written real array, size 31, header "N073".)
+  
+  Header 'N073' transferred to the new file.
+  Longname 'exch'
+  
+  Coefficient = import_value (time).
+  No sets defined for coefficients.
+  
+  (Read real matrix of size: 31.)
+  Longname 'import_value'
+  
+  Header found on the text file 'N074'.
+  
+ (Written real array, size 31, header "N074".)
+  
+  Header 'N074' transferred to the new file.
+  Longname 'import_value'
+  
+  Coefficient = export_value (time).
+  No sets defined for coefficients.
+  
+  (Read real matrix of size: 31.)
+  Longname 'export_value'
+  
+  Header found on the text file 'N075'.
+  
+ (Written real array, size 31, header "N075".)
+  
+  Header 'N075' transferred to the new file.
+  Longname 'export_value'
+  
+  Coefficient = gov_int_adj (time).
+  No sets defined for coefficients.
+  
+  (Read real matrix of size: 31.)
+  Longname 'gov_int_adj'
+  
+  Header found on the text file 'N076'.
+  
+ (Written real array, size 31, header "N076".)
+  
+  Header 'N076' transferred to the new file.
+  Longname 'gov_int_adj'
+  
+  Coefficient = row_int_adj (time).
+  No sets defined for coefficients.
+  
+  (Read real matrix of size: 31.)
+  Longname 'row_int_adj'
+  
+  Header found on the text file 'N077'.
+  
+ (Written real array, size 31, header "N077".)
+  
+  Header 'N077' transferred to the new file.
+  Longname 'row_int_adj'
+  
+  Coefficient = gov_kap_inc (time).
+  No sets defined for coefficients.
+  
+  (Read real matrix of size: 31.)
+  Longname 'gov_kap_inc'
+  
+  Header found on the text file 'N078'.
+  
+ (Written real array, size 31, header "N078".)
+  
+  Header 'N078' transferred to the new file.
+  Longname 'gov_kap_inc'
+  
+  Coefficient = walras (time).
+  No sets defined for coefficients.
+  
+  (Read real matrix of size: 31.)
+  Longname 'walras'
+  
+  Header found on the text file 'N079'.
+  
+ (Written real array, size 31, header "N079".)
+  
+  Header 'N079' transferred to the new file.
+  Longname 'walras'
+  
+  Coefficient = pr_kap_oil (time).
+  No sets defined for coefficients.
+  
+  (Read real matrix of size: 31.)
+  Longname 'pr_kap_oil'
+  
+  Header found on the text file 'N080'.
+  
+ (Written real array, size 31, header "N080".)
+  
+  Header 'N080' transferred to the new file.
+  Longname 'pr_kap_oil'
+  
+  Coefficient = pr_kap_gas (time).
+  No sets defined for coefficients.
+  
+  (Read real matrix of size: 31.)
+  Longname 'pr_kap_gas'
+  
+  Header found on the text file 'N081'.
+  
+ (Written real array, size 31, header "N081".)
+  
+  Header 'N081' transferred to the new file.
+  Longname 'pr_kap_gas'
+  
+  Coefficient = com_out (ncom,time).
+  No sets defined for coefficients.
+  
+  (Read real matrix of size: 36x31.)
+  Longname 'com_out'
+  
+  Header found on the text file 'N082'.
+  
+ (Written real array, size 36x31, header "N082".)
+  
+  Header 'N082' transferred to the new file.
+  Longname 'com_out'
+  
+  Coefficient = com_qty (ncom,time).
+  No sets defined for coefficients.
+  
+  (Read real matrix of size: 36x31.)
+  Longname 'com_qty'
+  
+  Header found on the text file 'N083'.
+  
+ (Written real array, size 36x31, header "N083".)
+  
+  Header 'N083' transferred to the new file.
+  Longname 'com_qty'
+  
+  Coefficient = tech_change (nind,time).
+  No sets defined for coefficients.
+  
+  (Read real matrix of size: 36x31.)
+  Longname 'tech_change'
+  
+  Header found on the text file 'N084'.
+  
+ (Written real array, size 36x31, header "N084".)
+  
+  Header 'N084' transferred to the new file.
+  Longname 'tech_change'
+  
+  Coefficient = qty_extern (nxtr,time).
+  No sets defined for coefficients.
+  
+  (Read real matrix of size: 20x31.)
+  Longname 'qty_extern'
+  
+  Header found on the text file 'N085'.
+  
+ (Written real array, size 20x31, header "N085".)
+  
+  Header 'N085' transferred to the new file.
+  Longname 'qty_extern'
+  
+  Coefficient = tar_x_unit (ncom,time).
+  No sets defined for coefficients.
+  
+  (Read real matrix of size: 36x31.)
+  Longname 'tar_x_unit'
+  
+  Header found on the text file 'N086'.
+  
+ (Written real array, size 36x31, header "N086".)
+  
+  Header 'N086' transferred to the new file.
+  Longname 'tar_x_unit'
+  
+  Coefficient = tar_x_value (ncom,time).
+  No sets defined for coefficients.
+  
+  (Read real matrix of size: 36x31.)
+  Longname 'tar_x_value'
+  
+  Header found on the text file 'N087'.
+  
+ (Written real array, size 36x31, header "N087".)
+  
+  Header 'N087' transferred to the new file.
+  Longname 'tar_x_value'
+  
+  Coefficient = tax_x_unit (nind,time).
+  No sets defined for coefficients.
+  
+  (Read real matrix of size: 36x31.)
+  Longname 'tax_x_unit'
+  
+  Header found on the text file 'N088'.
+  
+ (Written real array, size 36x31, header "N088".)
+  
+  Header 'N088' transferred to the new file.
+  Longname 'tax_x_unit'
+  
+  Coefficient = tax_x_value (nind,time).
+  No sets defined for coefficients.
+  
+  (Read real matrix of size: 36x31.)
+  Longname 'tax_x_value'
+  
+  Header found on the text file 'N089'.
+  
+ (Written real array, size 36x31, header "N089".)
+  
+  Header 'N089' transferred to the new file.
+  Longname 'tax_x_value'
+  
+  Coefficient = tax_labor_z (time).
+  No sets defined for coefficients.
+  
+  (Read real matrix of size: 31.)
+  Longname 'tax_labor_z'
+  
+  Header found on the text file 'N090'.
+  
+ (Written real array, size 31, header "N090".)
+  
+  Header 'N090' transferred to the new file.
+  Longname 'tax_labor_z'
+  
+  Coefficient = pf (ncom,time).
+  No sets defined for coefficients.
+  
+  (Read real matrix of size: 36x31.)
+  Longname 'pf'
+  
+  Header found on the text file 'N091'.
+  
+ (Written real array, size 36x31, header "N091".)
+  
+  Header 'N091' transferred to the new file.
+  Longname 'pf'
+  
+  Coefficient = pr_land_f (ncom,time).
+  No sets defined for coefficients.
+  
+  (Read real matrix of size: 36x31.)
+  Longname 'pr_land_f'
+  
+  Header found on the text file 'N092'.
+  
+ (Written real array, size 36x31, header "N092".)
+  
+  Header 'N092' transferred to the new file.
+  Longname 'pr_land_f'
+  
+  Coefficient = trade_surp (time).
+  No sets defined for coefficients.
+  
+  (Read real matrix of size: 31.)
+  Longname 'trade_surp'
+  
+  Header found on the text file 'N093'.
+  
+ (Written real array, size 31, header "N093".)
+  
+  Header 'N093' transferred to the new file.
+  Longname 'trade_surp'
+  
+  Coefficient = trade_surpfc (time).
+  No sets defined for coefficients.
+  
+  (Read real matrix of size: 31.)
+  Longname 'trade_surpfc'
+  
+  Header found on the text file 'N094'.
+  
+ (Written real array, size 31, header "N094".)
+  
+  Header 'N094' transferred to the new file.
+  Longname 'trade_surpfc'
+  
+  Coefficient = exp_share (ncom,time).
+  No sets defined for coefficients.
+  
+  (Read real matrix of size: 36x31.)
+  Longname 'exp_share'
+  
+  Header found on the text file 'N095'.
+  
+ (Written real array, size 36x31, header "N095".)
+  
+  Header 'N095' transferred to the new file.
+  Longname 'exp_share'
+  
+  Coefficient = rev_shr_gdp (time).
+  No sets defined for coefficients.
+  
+  (Read real matrix of size: 31.)
+  Longname 'rev_shr_gdp'
+  
+  Header found on the text file 'N096'.
+  
+ (Written real array, size 31, header "N096".)
+  
+  Header 'N096' transferred to the new file.
+  Longname 'rev_shr_gdp'
+  
+  Coefficient = hours_adjust (time).
+  No sets defined for coefficients.
+  
+  (Read real matrix of size: 31.)
+  Longname 'hours_adjust'
+  
+  Header found on the text file 'N097'.
+  
+ (Written real array, size 31, header "N097".)
+  
+  Header 'N097' transferred to the new file.
+  Longname 'hours_adjust'
+  
+  Coefficient = rev_cap (time).
+  No sets defined for coefficients.
+  
+  (Read real matrix of size: 31.)
+  Longname 'rev_cap'
+  
+  Header found on the text file 'N098'.
+  
+ (Written real array, size 31, header "N098".)
+  
+  Header 'N098' transferred to the new file.
+  Longname 'rev_cap'
+  
+  Coefficient = rev_itc (time).
+  No sets defined for coefficients.
+  
+  (Read real matrix of size: 31.)
+  Longname 'rev_itc'
+  
+  Header found on the text file 'N099'.
+  
+ (Written real array, size 31, header "N099".)
+  
+  Header 'N099' transferred to the new file.
+  Longname 'rev_itc'
+  
+  Coefficient = rev_labor (time).
+  No sets defined for coefficients.
+  
+  (Read real matrix of size: 31.)
+  Longname 'rev_labor'
+  
+  Header found on the text file 'N100'.
+  
+ (Written real array, size 31, header "N100".)
+  
+  Header 'N100' transferred to the new file.
+  Longname 'rev_labor'
+  
+  Coefficient = rev_prop (time).
+  No sets defined for coefficients.
+  
+  (Read real matrix of size: 31.)
+  Longname 'rev_prop'
+  
+  Header found on the text file 'N101'.
+  
+ (Written real array, size 31, header "N101".)
+  
+  Header 'N101' transferred to the new file.
+  Longname 'rev_prop'
+  
+  Coefficient = rev_sales (time).
+  No sets defined for coefficients.
+  
+  (Read real matrix of size: 31.)
+  Longname 'rev_sales'
+  
+  Header found on the text file 'N102'.
+  
+ (Written real array, size 31, header "N102".)
+  
+  Header 'N102' transferred to the new file.
+  Longname 'rev_sales'
+  
+  Coefficient = rev_wealth (time).
+  No sets defined for coefficients.
+  
+  (Read real matrix of size: 31.)
+  Longname 'rev_wealth'
+  
+  Header found on the text file 'N103'.
+  
+ (Written real array, size 31, header "N103".)
+  
+  Header 'N103' transferred to the new file.
+  Longname 'rev_wealth'
+  
+  Coefficient = rev_tariff (time).
+  No sets defined for coefficients.
+  
+  (Read real matrix of size: 31.)
+  Longname 'rev_tariff'
+  
+  Header found on the text file 'N104'.
+  
+ (Written real array, size 31, header "N104".)
+  
+  Header 'N104' transferred to the new file.
+  Longname 'rev_tariff'
+  
+  Coefficient = rev_total (time).
+  No sets defined for coefficients.
+  
+  (Read real matrix of size: 31.)
+  Longname 'rev_total'
+  
+  Header found on the text file 'N105'.
+  
+ (Written real array, size 31, header "N105".)
+  
+  Header 'N105' transferred to the new file.
+  Longname 'rev_total'
+  
+  Coefficient = rev_unit (time).
+  No sets defined for coefficients.
+  
+  (Read real matrix of size: 31.)
+  Longname 'rev_unit'
+  
+  Header found on the text file 'N106'.
+  
+ (Written real array, size 31, header "N106".)
+  
+  Header 'N106' transferred to the new file.
+  Longname 'rev_unit'
+  
+  Coefficient = rev_extern (time).
+  No sets defined for coefficients.
+  
+  (Read real matrix of size: 31.)
+  Longname 'rev_extern'
+  
+  Header found on the text file 'N107'.
+  
+ (Written real array, size 31, header "N107".)
+  
+  Header 'N107' transferred to the new file.
+  Longname 'rev_extern'
+  
+  Coefficient = rev_cap_hh (time).
+  No sets defined for coefficients.
+  
+  (Read real matrix of size: 31.)
+  Longname 'rev_cap_hh'
+  
+  Header found on the text file 'N108'.
+  
+ (Written real array, size 31, header "N108".)
+  
+  Header 'N108' transferred to the new file.
+  Longname 'rev_cap_hh'
+  
+  Coefficient = rev_con (time).
+  No sets defined for coefficients.
+  
+  (Read real matrix of size: 31.)
+  Longname 'rev_con'
+  
+  Header found on the text file 'N109'.
+  
+ (Written real array, size 31, header "N109".)
+  
+  Header 'N109' transferred to the new file.
+  Longname 'rev_con'
+  
+  Coefficient = rev_con_gov (time).
+  No sets defined for coefficients.
+  
+  (Read real matrix of size: 31.)
+  Longname 'rev_con_gov'
+  
+  Header found on the text file 'N110'.
+  
+ (Written real array, size 31, header "N110".)
+  
+  Header 'N110' transferred to the new file.
+  Longname 'rev_con_gov'
+  
+  Coefficient = rev_hcap (time).
+  No sets defined for coefficients.
+  
+  (Read real matrix of size: 31.)
+  Longname 'rev_hcap'
+  
+  Header found on the text file 'N111'.
+  
+ (Written real array, size 31, header "N111".)
+  
+  Header 'N111' transferred to the new file.
+  Longname 'rev_hcap'
+  
+  Coefficient = rev_con_rbt (time).
+  No sets defined for coefficients.
+  
+  (Read real matrix of size: 31.)
+  Longname 'rev_con_rbt'
+  
+  Header found on the text file 'N112'.
+  
+ (Written real array, size 31, header "N112".)
+  
+  Header 'N112' transferred to the new file.
+  Longname 'rev_con_rbt'
+  
+  Coefficient = rev_gain_hh (time).
+  No sets defined for coefficients.
+  
+  (Read real matrix of size: 31.)
+  Longname 'rev_gain_hh'
+  
+  Header found on the text file 'N113'.
+  
+ (Written real array, size 31, header "N113".)
+  
+  Header 'N113' transferred to the new file.
+  Longname 'rev_gain_hh'
+  
+  Coefficient = rev_com_ext (time).
+  No sets defined for coefficients.
+  
+  (Read real matrix of size: 31.)
+  Longname 'rev_com_ext'
+  
+  Header found on the text file 'N114'.
+  
+ (Written real array, size 31, header "N114".)
+  
+  Header 'N114' transferred to the new file.
+  Longname 'rev_com_ext'
+  
+  Coefficient = tx_base_mid (time).
+  No sets defined for coefficients.
+  
+  (Read real matrix of size: 31.)
+  Longname 'tx_base_mid'
+  
+  Header found on the text file 'N115'.
+  
+ (Written real array, size 31, header "N115".)
+  
+  Header 'N115' transferred to the new file.
+  Longname 'tx_base_mid'
+  
+  Coefficient = tx_base_ptd (time).
+  No sets defined for coefficients.
+  
+  (Read real matrix of size: 31.)
+  Longname 'tx_base_ptd'
+  
+  Header found on the text file 'N116'.
+  
+ (Written real array, size 31, header "N116".)
+  
+  Header 'N116' transferred to the new file.
+  Longname 'tx_base_ptd'
+  
+  Coefficient = tx_base_cgh (time).
+  No sets defined for coefficients.
+  
+  (Read real matrix of size: 31.)
+  Longname 'tx_base_cgh'
+  
+  Header found on the text file 'N117'.
+  
+ (Written real array, size 31, header "N117".)
+  
+  Header 'N117' transferred to the new file.
+  Longname 'tx_base_cgh'
+  
+  Coefficient = tx_base_ade (time).
+  No sets defined for coefficients.
+  
+  (Read real matrix of size: 31.)
+  Longname 'tx_base_ade'
+  
+  Header found on the text file 'N118'.
+  
+ (Written real array, size 31, header "N118".)
+  
+  Header 'N118' transferred to the new file.
+  Longname 'tx_base_ade'
+  
+  Coefficient = tx_value_mid (time).
+  No sets defined for coefficients.
+  
+  (Read real matrix of size: 31.)
+  Longname 'tx_value_mid'
+  
+  Header found on the text file 'N119'.
+  
+ (Written real array, size 31, header "N119".)
+  
+  Header 'N119' transferred to the new file.
+  Longname 'tx_value_mid'
+  
+  Coefficient = tx_value_ptd (time).
+  No sets defined for coefficients.
+  
+  (Read real matrix of size: 31.)
+  Longname 'tx_value_ptd'
+  
+  Header found on the text file 'N120'.
+  
+ (Written real array, size 31, header "N120".)
+  
+  Header 'N120' transferred to the new file.
+  Longname 'tx_value_ptd'
+  
+  Coefficient = tx_value_cgh (time).
+  No sets defined for coefficients.
+  
+  (Read real matrix of size: 31.)
+  Longname 'tx_value_cgh'
+  
+  Header found on the text file 'N121'.
+  
+ (Written real array, size 31, header "N121".)
+  
+  Header 'N121' transferred to the new file.
+  Longname 'tx_value_cgh'
+  
+  Coefficient = tx_value_ade (time).
+  No sets defined for coefficients.
+  
+  (Read real matrix of size: 31.)
+  Longname 'tx_value_ade'
+  
+  Header found on the text file 'N122'.
+  
+ (Written real array, size 31, header "N122".)
+  
+  Header 'N122' transferred to the new file.
+  Longname 'tx_value_ade'
+  
+  Coefficient = txvalueephi (time).
+  No sets defined for coefficients.
+  
+  (Read real matrix of size: 31.)
+  Longname 'txvalueephi'
+  
+  Header found on the text file 'N123'.
+  
+ (Written real array, size 31, header "N123".)
+  
+  Header 'N123' transferred to the new file.
+  Longname 'txvalueephi'
+  
+  Coefficient = tax_labor_a (time).
+  No sets defined for coefficients.
+  
+  (Read real matrix of size: 31.)
+  Longname 'tax_labor_a'
+  
+  Header found on the text file 'N124'.
+  
+ (Written real array, size 31, header "N124".)
+  
+  Header 'N124' transferred to the new file.
+  Longname 'tax_labor_a'
+  
+  Coefficient = tax_labor_m (time).
+  No sets defined for coefficients.
+  
+  (Read real matrix of size: 31.)
+  Longname 'tax_labor_m'
+  
+  Header found on the text file 'N125'.
+  
+ (Written real array, size 31, header "N125".)
+  
+  Header 'N125' transferred to the new file.
+  Longname 'tax_labor_m'
+  
+  Coefficient = tax_cap (time).
+  No sets defined for coefficients.
+  
+  (Read real matrix of size: 31.)
+  Longname 'tax_cap'
+  
+  Header found on the text file 'N126'.
+  
+ (Written real array, size 31, header "N126".)
+  
+  Header 'N126' transferred to the new file.
+  Longname 'tax_cap'
+  
+  Coefficient = k (time).
+  No sets defined for coefficients.
+  
+  (Read real matrix of size: 31.)
+  Longname 'k'
+  
+  Header found on the text file 'N127'.
+  
+ (Written real array, size 31, header "N127".)
+  
+  Header 'N127' transferred to the new file.
+  Longname 'k'
+  
+  Coefficient = gov_debt (time).
+  No sets defined for coefficients.
+  
+  (Read real matrix of size: 31.)
+  Longname 'gov_debt'
+  
+  Header found on the text file 'N128'.
+  
+ (Written real array, size 31, header "N128".)
+  
+  Header 'N128' transferred to the new file.
+  Longname 'gov_debt'
+  
+  Coefficient = gov_debt_f (time).
+  No sets defined for coefficients.
+  
+  (Read real matrix of size: 31.)
+  Longname 'gov_debt_f'
+  
+  Header found on the text file 'N129'.
+  
+ (Written real array, size 31, header "N129".)
+  
+  Header 'N129' transferred to the new file.
+  Longname 'gov_debt_f'
+  
+  Coefficient = row_debt (time).
+  No sets defined for coefficients.
+  
+  (Read real matrix of size: 31.)
+  Longname 'row_debt'
+  
+  Header found on the text file 'N130'.
+  
+ (Written real array, size 31, header "N130".)
+  
+  Header 'N130' transferred to the new file.
+  Longname 'row_debt'
+  
+  Coefficient = full_con (time).
+  No sets defined for coefficients.
+  
+  (Read real matrix of size: 31.)
+  Longname 'full_con'
+  
+  Header found on the text file 'N131'.
+  
+ (Written real array, size 31, header "N131".)
+  
+  Header 'N131' transferred to the new file.
+  Longname 'full_con'
+  
+  Coefficient = agg_tech_lvl (time).
+  No sets defined for coefficients.
+  
+  (Read real matrix of size: 31.)
+  Longname 'agg_tech_lvl'
+  
+  Header found on the text file 'N132'.
+  
+ (Written real array, size 31, header "N132".)
+  
+  Header 'N132' transferred to the new file.
+  Longname 'agg_tech_lvl'
+  
+  Coefficient = nom_gnp (time).
+  No sets defined for coefficients.
+  
+  (Read real matrix of size: 31.)
+  Longname 'nom_gnp'
+  
+  Header found on the text file 'N133'.
+  
+ (Written real array, size 31, header "N133".)
+  
+  Header 'N133' transferred to the new file.
+  Longname 'nom_gnp'
+  
+  Coefficient = full_qty (time).
+  No sets defined for coefficients.
+  
+  (Read real matrix of size: 31.)
+  Longname 'full_qty'
+  
+  Header found on the text file 'N134'.
+  
+ (Written real array, size 31, header "N134".)
+  
+  Header 'N134' transferred to the new file.
+  Longname 'full_qty'
+  
+  Coefficient = grossout (nind,time).
+  No sets defined for coefficients.
+  
+  (Read real matrix of size: 36x31.)
+  Longname 'grossout'
+  
+  Header found on the text file 'N135'.
+  
+ (Written real array, size 36x31, header "N135".)
+  
+  Header 'N135' transferred to the new file.
+  Longname 'grossout'
+  
+  Coefficient = ind_qty (nind,time).
+  No sets defined for coefficients.
+  
+  (Read real matrix of size: 36x31.)
+  Longname 'ind_qty'
+  
+  Header found on the text file 'N136'.
+  
+ (Written real array, size 36x31, header "N136".)
+  
+  Header 'N136' transferred to the new file.
+  Longname 'ind_qty'
+  
+  Coefficient = imp_qty (ncom,time).
+  No sets defined for coefficients.
+  
+  (Read real matrix of size: 36x31.)
+  Longname 'imp_qty'
+  
+  Header found on the text file 'N137'.
+  
+ (Written real array, size 36x31, header "N137".)
+  
+  Header 'N137' transferred to the new file.
+  Longname 'imp_qty'
+  
+  Coefficient = ussurplusfc (time).
+  No sets defined for coefficients.
+  
+  (Read real matrix of size: 31.)
+  Longname 'ussurplusfc'
+  
+  Header found on the text file 'N138'.
+  
+ (Written real array, size 31, header "N138".)
+  
+  Header 'N138' transferred to the new file.
+  Longname 'ussurplusfc'
+  
+  Coefficient = us_surplus_r (time).
+  No sets defined for coefficients.
+  
+  (Read real matrix of size: 31.)
+  Longname 'us_surplus_r'
+  
+  Header found on the text file 'N139'.
+  
+ (Written real array, size 31, header "N139".)
+  
+  Header 'N139' transferred to the new file.
+  Longname 'us_surplus_r'
+  
+  Coefficient = govtransreal (time).
+  No sets defined for coefficients.
+  
+  (Read real matrix of size: 31.)
+  Longname 'govtransreal'
+  
+  Header found on the text file 'N140'.
+  
+ (Written real array, size 31, header "N140".)
+  
+  Header 'N140' transferred to the new file.
+  Longname 'govtransreal'
+  
+  Coefficient = govtransgdp (time).
+  No sets defined for coefficients.
+  
+  (Read real matrix of size: 31.)
+  Longname 'govtransgdp'
+  
+  Header found on the text file 'N141'.
+  
+ (Written real array, size 31, header "N141".)
+  
+  Header 'N141' transferred to the new file.
+  Longname 'govtransgdp'
+  
+  Coefficient = cur_gdp (time).
+  No sets defined for coefficients.
+  
+  (Read real matrix of size: 31.)
+  Longname 'cur_gdp'
+  
+  Header found on the text file 'N142'.
+  
+ (Written real array, size 31, header "N142".)
+  
+  Header 'N142' transferred to the new file.
+  Longname 'cur_gdp'
+  
+  Coefficient = cur_con (time).
+  No sets defined for coefficients.
+  
+  (Read real matrix of size: 31.)
+  Longname 'cur_con'
+  
+  Header found on the text file 'N143'.
+  
+ (Written real array, size 31, header "N143".)
+  
+  Header 'N143' transferred to the new file.
+  Longname 'cur_con'
+  
+  Coefficient = cur_inv (time).
+  No sets defined for coefficients.
+  
+  (Read real matrix of size: 31.)
+  Longname 'cur_inv'
+  
+  Header found on the text file 'N144'.
+  
+ (Written real array, size 31, header "N144".)
+  
+  Header 'N144' transferred to the new file.
+  Longname 'cur_inv'
+  
+  Coefficient = cur_gov (time).
+  No sets defined for coefficients.
+  
+  (Read real matrix of size: 31.)
+  Longname 'cur_gov'
+  
+  Header found on the text file 'N145'.
+  
+ (Written real array, size 31, header "N145".)
+  
+  Header 'N145' transferred to the new file.
+  Longname 'cur_gov'
+  
+  Coefficient = cur_exp (time).
+  No sets defined for coefficients.
+  
+  (Read real matrix of size: 31.)
+  Longname 'cur_exp'
+  
+  Header found on the text file 'N146'.
+  
+ (Written real array, size 31, header "N146".)
+  
+  Header 'N146' transferred to the new file.
+  Longname 'cur_exp'
+  
+  Coefficient = cur_imp (time).
+  No sets defined for coefficients.
+  
+  (Read real matrix of size: 31.)
+  Longname 'cur_imp'
+  
+  Header found on the text file 'N147'.
+  
+ (Written real array, size 31, header "N147".)
+  
+  Header 'N147' transferred to the new file.
+  Longname 'cur_imp'
+  
+  Coefficient = totgrosscap (nind_c,time).
+  No sets defined for coefficients.
+  
+  (Read real matrix of size: 37x31.)
+  Longname 'totgrosscap'
+  
+  Header found on the text file 'N148'.
+  
+ (Written real array, size 37x31, header "N148".)
+  
+  Header 'N148' transferred to the new file.
+  Longname 'totgrosscap'
+  
+  Coefficient = nom_gdp (time).
+  No sets defined for coefficients.
+  
+  (Read real matrix of size: 31.)
+  Longname 'nom_gdp'
+  
+  Header found on the text file 'N149'.
+  
+ (Written real array, size 31, header "N149".)
+  
+  Header 'N149' transferred to the new file.
+  Longname 'nom_gdp'
+  
+  Coefficient = def_gdp (time).
+  No sets defined for coefficients.
+  
+  (Read real matrix of size: 31.)
+  Longname 'def_gdp'
+  
+  Header found on the text file 'N150'.
+  
+ (Written real array, size 31, header "N150".)
+  
+  Header 'N150' transferred to the new file.
+  Longname 'def_gdp'
+  
+  Coefficient = pd_con (time).
+  No sets defined for coefficients.
+  
+  (Read real matrix of size: 31.)
+  Longname 'pd_con'
+  
+  Header found on the text file 'N151'.
+  
+ (Written real array, size 31, header "N151".)
+  
+  Header 'N151' transferred to the new file.
+  Longname 'pd_con'
+  
+  Coefficient = pd_inv (time).
+  No sets defined for coefficients.
+  
+  (Read real matrix of size: 31.)
+  Longname 'pd_inv'
+  
+  Header found on the text file 'N152'.
+  
+ (Written real array, size 31, header "N152".)
+  
+  Header 'N152' transferred to the new file.
+  Longname 'pd_inv'
+  
+  Coefficient = pd_gov (time).
+  No sets defined for coefficients.
+  
+  (Read real matrix of size: 31.)
+  Longname 'pd_gov'
+  
+  Header found on the text file 'N153'.
+  
+ (Written real array, size 31, header "N153".)
+  
+  Header 'N153' transferred to the new file.
+  Longname 'pd_gov'
+  
+  Coefficient = pd_exp (time).
+  No sets defined for coefficients.
+  
+  (Read real matrix of size: 31.)
+  Longname 'pd_exp'
+  
+  Header found on the text file 'N154'.
+  
+ (Written real array, size 31, header "N154".)
+  
+  Header 'N154' transferred to the new file.
+  Longname 'pd_exp'
+  
+  Coefficient = pd_imp (time).
+  No sets defined for coefficients.
+  
+  (Read real matrix of size: 31.)
+  Longname 'pd_imp'
+  
+  Header found on the text file 'N155'.
+  
+ (Written real array, size 31, header "N155".)
+  
+  Header 'N155' transferred to the new file.
+  Longname 'pd_imp'
+  
+  Coefficient = pd_gdp (time).
+  No sets defined for coefficients.
+  
+  (Read real matrix of size: 31.)
+  Longname 'pd_gdp'
+  
+  Header found on the text file 'N156'.
+  
+ (Written real array, size 31, header "N156".)
+  
+  Header 'N156' transferred to the new file.
+  Longname 'pd_gdp'
+  
+  Coefficient = pgg (time).
+  No sets defined for coefficients.
+  
+  (Read real matrix of size: 31.)
+  Longname 'pgg'
+  
+  Header found on the text file 'N157'.
+  
+ (Written real array, size 31, header "N157".)
+  
+  Header 'N157' transferred to the new file.
+  Longname 'pgg'
+  
+  Coefficient = end_gov_tran (time).
+  No sets defined for coefficients.
+  
+  (Read real matrix of size: 31.)
+  Longname 'end_gov_transdom'
+  
+  Header found on the text file 'N158'.
+  
+ (Written real array, size 31, header "N158".)
+  
+  Header 'N158' transferred to the new file.
+  Longname 'end_gov_transdom'
+  
+  Coefficient = end_gov_tran (time).
+  No sets defined for coefficients.
+  
+  (Read real matrix of size: 31.)
+  Longname 'end_gov_transabr'
+  
+  Header found on the text file 'N159'.
+  
+ (Written real array, size 31, header "N159".)
+  
+  Header 'N159' transferred to the new file.
+  Longname 'end_gov_transabr'
+  
+  Coefficient = end_rev_nont (time).
+  No sets defined for coefficients.
+  
+  (Read real matrix of size: 31.)
+  Longname 'end_rev_nontax'
+  
+  Header found on the text file 'N160'.
+  
+ (Written real array, size 31, header "N160".)
+  
+  Header 'N160' transferred to the new file.
+  Longname 'end_rev_nontax'
+  
+  Coefficient = end_trans_ab (time).
+  No sets defined for coefficients.
+  
+  (Read real matrix of size: 31.)
+  Longname 'end_trans_abr'
+  
+  Header found on the text file 'N161'.
+  
+ (Written real array, size 31, header "N161".)
+  
+  Header 'N161' transferred to the new file.
+  Longname 'end_trans_abr'
+  
+  Coefficient = end_gov_from (time).
+  No sets defined for coefficients.
+  
+  (Read real matrix of size: 31.)
+  Longname 'end_gov_from_ss'
+  
+  Header found on the text file 'N162'.
+  
+ (Written real array, size 31, header "N162".)
+  
+  Header 'N162' transferred to the new file.
+  Longname 'end_gov_from_ss'
+  
+  Coefficient = end_gov_inte (time).
+  No sets defined for coefficients.
+  
+  (Read real matrix of size: 31.)
+  Longname 'end_gov_interest'
+  
+  Header found on the text file 'N163'.
+  
+ (Written real array, size 31, header "N163".)
+  
+  Header 'N163' transferred to the new file.
+  Longname 'end_gov_interest'
+  
+  Coefficient = end_gov_int_ (time).
+  No sets defined for coefficients.
+  
+  (Read real matrix of size: 31.)
+  Longname 'end_gov_int_abr'
+  
+  Header found on the text file 'N164'.
+  
+ (Written real array, size 31, header "N164".)
+  
+  Header 'N164' transferred to the new file.
+  Longname 'end_gov_int_abr'
+  
+  Coefficient = end_gov_int_ (time).
+  No sets defined for coefficients.
+  
+  (Read real matrix of size: 31.)
+  Longname 'end_gov_int_ss'
+  
+  Header found on the text file 'N165'.
+  
+ (Written real array, size 31, header "N165".)
+  
+  Header 'N165' transferred to the new file.
+  Longname 'end_gov_int_ss'
+  
+  Coefficient = row_interest (time).
+  No sets defined for coefficients.
+  
+  (Read real matrix of size: 31.)
+  Longname 'row_interest'
+  
+  Header found on the text file 'N166'.
+  
+ (Written real array, size 31, header "N166".)
+  
+  Header 'N166' transferred to the new file.
+  Longname 'row_interest'
+  Last array on file has been read. Transfer completed.
+  TRANSFERRED A TOTAL OF 166 ARRAYS TO THE NEW FILE.
+  
+  > Next Command:  (or '?' for help)
+  
+  
+ ex
+  Since an old file was not used, there are no arrays to transfer..
+  NO    HEADER    STATUS    DATA  <-------------- SIZE -------------->     SIZE
+       OLD  NEW             TYPE        OLD                   NEW        CHANGE?
+  
+  
+    1 (TF) N001 ON NEW FILE real  31                   31                   no
+    2 (TF) N002 ON NEW FILE real  31                   31                   no
+    3 (TF) N003 ON NEW FILE real  31                   31                   no
+    4 (TF) N004 ON NEW FILE real  31                   31                   no
+    5 (TF) N005 ON NEW FILE real  31                   31                   no
+    6 (TF) N006 ON NEW FILE real  31                   31                   no
+    7 (TF) N007 ON NEW FILE real  31                   31                   no
+    8 (TF) N008 ON NEW FILE real  31                   31                   no
+    9 (TF) N009 ON NEW FILE real  31                   31                   no
+   10 (TF) N010 ON NEW FILE real  31                   31                   no
+   11 (TF) N011 ON NEW FILE real  31                   31                   no
+   12 (TF) N012 ON NEW FILE real  36x31                36x31                no
+   13 (TF) N013 ON NEW FILE real  37x31                37x31                no
+   14 (TF) N014 ON NEW FILE real  37x31                37x31                no
+   15 (TF) N015 ON NEW FILE real  37x31                37x31                no
+   16 (TF) N016 ON NEW FILE real  36x31                36x31                no
+   17 (TF) N017 ON NEW FILE real  31                   31                   no
+   18 (TF) N018 ON NEW FILE real  31                   31                   no
+   19 (TF) N019 ON NEW FILE real  56x31                56x31                no
+   20 (TF) N020 ON NEW FILE real  31                   31                   no
+   21 (TF) N021 ON NEW FILE real  31                   31                   no
+   22 (TF) N022 ON NEW FILE real  31                   31                   no
+   23 (TF) N023 ON NEW FILE real  36x31                36x31                no
+   24 (TF) N024 ON NEW FILE real  31                   31                   no
+   25 (TF) N025 ON NEW FILE real  31                   31                   no
+   26 (TF) N026 ON NEW FILE real  31                   31                   no
+   27 (TF) N027 ON NEW FILE real  31                   31                   no
+   28 (TF) N028 ON NEW FILE real  31                   31                   no
+   29 (TF) N029 ON NEW FILE real  36x31                36x31                no
+   30 (TF) N030 ON NEW FILE real  36x31                36x31                no
+   31 (TF) N031 ON NEW FILE real  36x31                36x31                no
+   32 (TF) N032 ON NEW FILE real  36x31                36x31                no
+   33 (TF) N033 ON NEW FILE real  36x31                36x31                no
+   34 (TF) N034 ON NEW FILE real  36x31                36x31                no
+   35 (TF) N035 ON NEW FILE real  36x31                36x31                no
+   36 (TF) N036 ON NEW FILE real  36x31                36x31                no
+   37 (TF) N037 ON NEW FILE real  36x31                36x31                no
+   38 (TF) N038 ON NEW FILE real  36x31                36x31                no
+   39 (TF) N039 ON NEW FILE real  36x31                36x31                no
+   40 (TF) N040 ON NEW FILE real  31                   31                   no
+   41 (TF) N041 ON NEW FILE real  31                   31                   no
+   42 (TF) N042 ON NEW FILE real  31                   31                   no
+   43 (TF) N043 ON NEW FILE real  31                   31                   no
+   44 (TF) N044 ON NEW FILE real  31                   31                   no
+   45 (TF) N045 ON NEW FILE real  37x31                37x31                no
+   46 (TF) N046 ON NEW FILE real  36x31                36x31                no
+   47 (TF) N047 ON NEW FILE real  36x31                36x31                no
+   48 (TF) N048 ON NEW FILE real  36x31                36x31                no
+   49 (TF) N049 ON NEW FILE real  37x31                37x31                no
+   50 (TF) N050 ON NEW FILE real  36x31                36x31                no
+   51 (TF) N051 ON NEW FILE real  36x31                36x31                no
+   52 (TF) N052 ON NEW FILE real  36x31                36x31                no
+   53 (TF) N053 ON NEW FILE real  36x31                36x31                no
+   54 (TF) N054 ON NEW FILE real  36x31                36x31                no
+   55 (TF) N055 ON NEW FILE real  36x31                36x31                no
+   56 (TF) N056 ON NEW FILE real  36x31                36x31                no
+   57 (TF) N057 ON NEW FILE real  36x31                36x31                no
+   58 (TF) N058 ON NEW FILE real  31                   31                   no
+   59 (TF) N059 ON NEW FILE real  31                   31                   no
+   60 (TF) N060 ON NEW FILE real  31                   31                   no
+   61 (TF) N061 ON NEW FILE real  31                   31                   no
+   62 (TF) N062 ON NEW FILE real  31                   31                   no
+   63 (TF) N063 ON NEW FILE real  31                   31                   no
+   64 (TF) N064 ON NEW FILE real  31                   31                   no
+   65 (TF) N065 ON NEW FILE real  31                   31                   no
+   66 (TF) N066 ON NEW FILE real  31                   31                   no
+   67 (TF) N067 ON NEW FILE real  31                   31                   no
+   68 (TF) N068 ON NEW FILE real  31                   31                   no
+   69 (TF) N069 ON NEW FILE real  31                   31                   no
+   70 (TF) N070 ON NEW FILE real  31                   31                   no
+   71 (TF) N071 ON NEW FILE real  31                   31                   no
+   72 (TF) N072 ON NEW FILE real  31                   31                   no
+   73 (TF) N073 ON NEW FILE real  31                   31                   no
+   74 (TF) N074 ON NEW FILE real  31                   31                   no
+   75 (TF) N075 ON NEW FILE real  31                   31                   no
+   76 (TF) N076 ON NEW FILE real  31                   31                   no
+   77 (TF) N077 ON NEW FILE real  31                   31                   no
+   78 (TF) N078 ON NEW FILE real  31                   31                   no
+   79 (TF) N079 ON NEW FILE real  31                   31                   no
+   80 (TF) N080 ON NEW FILE real  31                   31                   no
+   81 (TF) N081 ON NEW FILE real  31                   31                   no
+   82 (TF) N082 ON NEW FILE real  36x31                36x31                no
+   83 (TF) N083 ON NEW FILE real  36x31                36x31                no
+   84 (TF) N084 ON NEW FILE real  36x31                36x31                no
+   85 (TF) N085 ON NEW FILE real  20x31                20x31                no
+   86 (TF) N086 ON NEW FILE real  36x31                36x31                no
+   87 (TF) N087 ON NEW FILE real  36x31                36x31                no
+   88 (TF) N088 ON NEW FILE real  36x31                36x31                no
+   89 (TF) N089 ON NEW FILE real  36x31                36x31                no
+   90 (TF) N090 ON NEW FILE real  31                   31                   no
+   91 (TF) N091 ON NEW FILE real  36x31                36x31                no
+   92 (TF) N092 ON NEW FILE real  36x31                36x31                no
+   93 (TF) N093 ON NEW FILE real  31                   31                   no
+   94 (TF) N094 ON NEW FILE real  31                   31                   no
+   95 (TF) N095 ON NEW FILE real  36x31                36x31                no
+   96 (TF) N096 ON NEW FILE real  31                   31                   no
+   97 (TF) N097 ON NEW FILE real  31                   31                   no
+   98 (TF) N098 ON NEW FILE real  31                   31                   no
+   99 (TF) N099 ON NEW FILE real  31                   31                   no
+  100 (TF) N100 ON NEW FILE real  31                   31                   no
+  101 (TF) N101 ON NEW FILE real  31                   31                   no
+  102 (TF) N102 ON NEW FILE real  31                   31                   no
+  103 (TF) N103 ON NEW FILE real  31                   31                   no
+  104 (TF) N104 ON NEW FILE real  31                   31                   no
+  105 (TF) N105 ON NEW FILE real  31                   31                   no
+  106 (TF) N106 ON NEW FILE real  31                   31                   no
+  107 (TF) N107 ON NEW FILE real  31                   31                   no
+  108 (TF) N108 ON NEW FILE real  31                   31                   no
+  109 (TF) N109 ON NEW FILE real  31                   31                   no
+  110 (TF) N110 ON NEW FILE real  31                   31                   no
+  111 (TF) N111 ON NEW FILE real  31                   31                   no
+  112 (TF) N112 ON NEW FILE real  31                   31                   no
+  113 (TF) N113 ON NEW FILE real  31                   31                   no
+  114 (TF) N114 ON NEW FILE real  31                   31                   no
+  115 (TF) N115 ON NEW FILE real  31                   31                   no
+  116 (TF) N116 ON NEW FILE real  31                   31                   no
+  117 (TF) N117 ON NEW FILE real  31                   31                   no
+  118 (TF) N118 ON NEW FILE real  31                   31                   no
+  119 (TF) N119 ON NEW FILE real  31                   31                   no
+  120 (TF) N120 ON NEW FILE real  31                   31                   no
+  121 (TF) N121 ON NEW FILE real  31                   31                   no
+  122 (TF) N122 ON NEW FILE real  31                   31                   no
+  123 (TF) N123 ON NEW FILE real  31                   31                   no
+  124 (TF) N124 ON NEW FILE real  31                   31                   no
+  125 (TF) N125 ON NEW FILE real  31                   31                   no
+  126 (TF) N126 ON NEW FILE real  31                   31                   no
+  127 (TF) N127 ON NEW FILE real  31                   31                   no
+  128 (TF) N128 ON NEW FILE real  31                   31                   no
+  129 (TF) N129 ON NEW FILE real  31                   31                   no
+  130 (TF) N130 ON NEW FILE real  31                   31                   no
+  131 (TF) N131 ON NEW FILE real  31                   31                   no
+  132 (TF) N132 ON NEW FILE real  31                   31                   no
+  133 (TF) N133 ON NEW FILE real  31                   31                   no
+  134 (TF) N134 ON NEW FILE real  31                   31                   no
+  135 (TF) N135 ON NEW FILE real  36x31                36x31                no
+  136 (TF) N136 ON NEW FILE real  36x31                36x31                no
+  137 (TF) N137 ON NEW FILE real  36x31                36x31                no
+  138 (TF) N138 ON NEW FILE real  31                   31                   no
+  139 (TF) N139 ON NEW FILE real  31                   31                   no
+  140 (TF) N140 ON NEW FILE real  31                   31                   no
+  141 (TF) N141 ON NEW FILE real  31                   31                   no
+  142 (TF) N142 ON NEW FILE real  31                   31                   no
+  143 (TF) N143 ON NEW FILE real  31                   31                   no
+  144 (TF) N144 ON NEW FILE real  31                   31                   no
+  145 (TF) N145 ON NEW FILE real  31                   31                   no
+  146 (TF) N146 ON NEW FILE real  31                   31                   no
+  147 (TF) N147 ON NEW FILE real  31                   31                   no
+  148 (TF) N148 ON NEW FILE real  37x31                37x31                no
+  149 (TF) N149 ON NEW FILE real  31                   31                   no
+  150 (TF) N150 ON NEW FILE real  31                   31                   no
+  151 (TF) N151 ON NEW FILE real  31                   31                   no
+  152 (TF) N152 ON NEW FILE real  31                   31                   no
+  153 (TF) N153 ON NEW FILE real  31                   31                   no
+  154 (TF) N154 ON NEW FILE real  31                   31                   no
+  155 (TF) N155 ON NEW FILE real  31                   31                   no
+  156 (TF) N156 ON NEW FILE real  31                   31                   no
+  157 (TF) N157 ON NEW FILE real  31                   31                   no
+  158 (TF) N158 ON NEW FILE real  31                   31                   no
+  159 (TF) N159 ON NEW FILE real  31                   31                   no
+  160 (TF) N160 ON NEW FILE real  31                   31                   no
+  161 (TF) N161 ON NEW FILE real  31                   31                   no
+  162 (TF) N162 ON NEW FILE real  31                   31                   no
+  163 (TF) N163 ON NEW FILE real  31                   31                   no
+  164 (TF) N164 ON NEW FILE real  31                   31                   no
+  165 (TF) N165 ON NEW FILE real  31                   31                   no
+  166 (TF) N166 ON NEW FILE real  31                   31                   no
+  
+  
+  HISTORY OF THIS RUN OF THE PROGRAM
+  
+  Type in your name,
+    or    -   to ignore any old history,
+          =   to take just any old history (no new),
+          0   to have no history on the new file.
+  
+  
+ 0
+ (New Header Array file is 'end_base.har'.)
+  
+  (The program has completed without error.)
+  Total elapsed time is:  1 seconds.
+  

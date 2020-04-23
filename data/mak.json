@@ -93,7 +93,7 @@
         }, 
         {
             "header": "M002", 
-            "name": "make_rowshr", 
+            "name": "make_row", 
             "sets": [
                 "nind", 
                 "ncom"

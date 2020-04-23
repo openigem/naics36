@@ -17,7 +17,7 @@
   
      << COPYRIGHT 1986-2001: CoPS/Impact and KPSOFT >>
   
-  Current directory is: H:\wk\igem\open\pub\data\p10a
+  Current directory is: H:\wk\open\data\p10a
   
   
   Full path name of running EXE is: H:\binvol\gempack12\modhar.exe
@@ -76,8 +76,8 @@
   -----------------------------------
   
   
- mak.har
- (Opened new header file 'mak.har'.)
+ mak_base.har
+ (Opened new header file 'mak_base.har'.)
   
   Available tasks are:
   
@@ -140,18 +140,18 @@
   Header 'M001' transferred to the new file.
   Longname 'make_version'
   
-  Coefficient = make_rowshr (nind,ncom,time).
+  Coefficient = make_row (nind,ncom,time).
   No sets defined for coefficients.
   
   (Read real matrix of size: 36x36x10.)
-  Longname 'make_rowshr'
+  Longname 'make_row'
   
   Header found on the text file 'M002'.
   
  (Written real array, size 36x36x10, header "M002".)
   
   Header 'M002' transferred to the new file.
-  Longname 'make_rowshr'
+  Longname 'make_row'
   
   Coefficient = make_col (nind,ncom,time).
   No sets defined for coefficients.
@@ -191,7 +191,7 @@
   
   
  0
- (New Header Array file is 'mak.har'.)
+ (New Header Array file is 'mak_base.har'.)
   
   (The program has completed without error.)
   Total elapsed time is:  1 seconds.

@@ -1,0 +1,2096 @@
+  
+ <MODHAR   Version 6.0 - F90  February 1999>
+   This program accesses some of the routines in the GEMPACK software release
+ <GEMPACK Release 11.4.004   October 2016>
+  
+ Licence file: H:\binvol\gempack12\licen.gem
+  
+     -------------------------------------------------------
+    !            GEMPACK Software System Licence            !
+    !  Single-user Source-code Licence for GEMPACK on a PC  !
+    !                 Licence No.  GFS-1575                 !
+    !          Licence for Release 12.0 of GEMPACK          !
+    !                     Pete Wilcoxen                     !
+    !               Named User-Pete Wilcoxen                !
+     -------------------------------------------------------
+  
+  
+     << COPYRIGHT 1986-2001: CoPS/Impact and KPSOFT >>
+  
+  Current directory is: H:\wk\open\data\p01s
+  
+  
+  Full path name of running EXE is: H:\binvol\gempack12\modhar.exe
+  Fortran compiler = GF32  4.8.1 (rev3, built by mingw-builds project):
+  OPENMP number of threads: 4
+  Operating system is Windows 8
+  
+  
+  ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+  
+  
+                    MODHAR OPTIONS
+               ( --> indicates those in effect )
+  
+       BAT Run in batch              STI Take inputs from a Stored-input file
+       BPR Brief prompts             SIF Store inputs on a file
+       LOG Output to log file        ASI Add to incomplete Stored-input file
+                                     CSO Control screen output
+  
+  Select an option   :  <opt>      Deselect an option      : -<opt>
+  Help for an option : ?<opt>      Help on all options     : ??
+  Redisplay options  : /           Finish option selection : Carriage return
+  
+ Your selection >
+  
+  
+ bat
+ Running in batch
+ Your selection >
+  
+  
+  
+  
+  This program can be used it two ways.
+  
+  1. Usually it is used to modify some or all of the data on
+      on an existing Header Array file.
+       In this case, the existing file is not actually
+        changed, but a copy of it is made and modified.
+       Existing data can be modified and new data (read from
+        existing files and/or the terminal) can be added.
+  
+  2. It can be used to create a new Header Array file from
+      scratch. In this case the new data can be read from
+      existing files and/or the terminal.
+  
+  This program is easy to run interactively. It is partly
+   command-driven and partly menu-driven. Help is available.
+  
+  Is this based on an old HEADER ARRAY file?   [Y/n]
+  
+  
+ n
+  
+  NEW HEADER ARRAY FILE TO BE CREATED
+  -----------------------------------
+  
+  
+ par_base.har
+ (Opened new header file 'par_base.har'.)
+  
+  Available tasks are:
+  
+  Command               Meaning
+     ah            ADD one or more arrays from HEADER array file
+     ds            DEFINE SETS for adding arrays from text file
+     at            ADD one or more arrays from TEXT file
+     da            DELETE one or more ARRAYS from old file
+     ra            RESTORE one or more deleted ARRAYS on old file
+     mw            MODIFY data from the old file and WRITE it on the new file
+     aw            ADD new data and WRITE it on the new file
+     ex            EXIT, saving the new header array file
+     q             QUIT, without saving the new header array file
+     lh            LIST the HEADERS, their status and size of associated arrays
+     oh            show ONE HEADER, its status and size of associated array
+     ch            CHANGE a HEADER name
+     eln           EXAMINE a LONG NAME
+     cln           CHANGE the LONG NAME associated with a header
+     ?             HELP
+  
+  
+  > Next Command:  (or '?' for help)
+  
+  
+ at
+  
+  TEXT FILE CONTAINING THE NEW DATA TO BE ADDED
+  ---------------------------------------------
+  
+  Input the full name (INCLUDING suffix) of this file.
+  
+  
+ par_modhar.txt
+ (Opened, as text, existing file 'par_modhar.txt'.)
+  
+  !  (There is no CREATION information on this file.)
+  
+  From this file, do you wish to add
+     [A]      ALL of the data arrays on the file
+  
+     [s]      Some of the arrays (Process arrays one by one)
+                        (XXX to skip, XXQ to exit)
+     [n]      NONE of the arrays.
+  
+  Please enter your choice. ([A] is the default.)
+  
+  
+ a
+  
+  (Read real matrix of size: 1.)
+  Longname 'par_baseyear'
+  
+  Header found on the text file 'P001'.
+  
+ (Written real array, size 1, header "P001".)
+  
+  Header 'P001' transferred to the new file.
+  Longname 'par_baseyear'
+  
+  (Read real matrix of size: 1.)
+  Longname 'par_version'
+  
+  Header found on the text file 'P002'.
+  
+ (Written real array, size 1, header "P002".)
+  
+  Header 'P002' transferred to the new file.
+  Longname 'par_version'
+  
+  (Read real matrix of size: 1.)
+  Longname 'rho'
+  
+  Header found on the text file 'P003'.
+  
+ (Written real array, size 1, header "P003".)
+  
+  Header 'P003' transferred to the new file.
+  Longname 'rho'
+  
+  Coefficient = ah_f (s_f).
+  No sets defined for coefficients.
+  
+  (Read real matrix of size: 4.)
+  Longname 'ah_f'
+  
+  Header found on the text file 'P004'.
+  
+ (Written real array, size 4, header "P004".)
+  
+  Header 'P004' transferred to the new file.
+  Longname 'ah_f'
+  
+  Coefficient = ah_nd (s_nd).
+  No sets defined for coefficients.
+  
+  (Read real matrix of size: 4.)
+  Longname 'ah_nd'
+  
+  Header found on the text file 'P005'.
+  
+ (Written real array, size 4, header "P005".)
+  
+  Header 'P005' transferred to the new file.
+  Longname 'ah_nd'
+  
+  Coefficient = ah_ks (s_ks).
+  No sets defined for coefficients.
+  
+  (Read real matrix of size: 2.)
+  Longname 'ah_ks'
+  
+  Header found on the text file 'P006'.
+  
+ (Written real array, size 2, header "P006".)
+  
+  Header 'P006' transferred to the new file.
+  Longname 'ah_ks'
+  
+  Coefficient = ah_cs (s_cs).
+  No sets defined for coefficients.
+  
+  (Read real matrix of size: 4.)
+  Longname 'ah_cs'
+  
+  Header found on the text file 'P007'.
+  
+ (Written real array, size 4, header "P007".)
+  
+  Header 'P007' transferred to the new file.
+  Longname 'ah_cs'
+  
+  Coefficient = ah_en (s_en).
+  No sets defined for coefficients.
+  
+  (Read real matrix of size: 2.)
+  Longname 'ah_en'
+  
+  Header found on the text file 'P008'.
+  
+ (Written real array, size 2, header "P008".)
+  
+  Header 'P008' transferred to the new file.
+  Longname 'ah_en'
+  
+  Coefficient = ah_cg (s_cg).
+  No sets defined for coefficients.
+  
+  (Read real matrix of size: 4.)
+  Longname 'ah_cg'
+  
+  Header found on the text file 'P009'.
+  
+ (Written real array, size 4, header "P009".)
+  
+  Header 'P009' transferred to the new file.
+  Longname 'ah_cg'
+  
+  Coefficient = ah_md (s_md).
+  No sets defined for coefficients.
+  
+  (Read real matrix of size: 2.)
+  Longname 'ah_md'
+  
+  Header found on the text file 'P010'.
+  
+ (Written real array, size 2, header "P010".)
+  
+  Header 'P010' transferred to the new file.
+  Longname 'ah_md'
+  
+  Coefficient = ah_fb (s_fb).
+  No sets defined for coefficients.
+  
+  (Read real matrix of size: 3.)
+  Longname 'ah_fb'
+  
+  Header found on the text file 'P011'.
+  
+ (Written real array, size 3, header "P011".)
+  
+  Header 'P011' transferred to the new file.
+  Longname 'ah_fb'
+  
+  Coefficient = ah_ho (s_ho).
+  No sets defined for coefficients.
+  
+  (Read real matrix of size: 4.)
+  Longname 'ah_ho'
+  
+  Header found on the text file 'P012'.
+  
+ (Written real array, size 4, header "P012".)
+  
+  Header 'P012' transferred to the new file.
+  Longname 'ah_ho'
+  
+  Coefficient = ah_rc (s_rc).
+  No sets defined for coefficients.
+  
+  (Read real matrix of size: 3.)
+  Longname 'ah_rc'
+  
+  Header found on the text file 'P013'.
+  
+ (Written real array, size 3, header "P013".)
+  
+  Header 'P013' transferred to the new file.
+  Longname 'ah_rc'
+  
+  Coefficient = ah_hpg (s_hpg).
+  No sets defined for coefficients.
+  
+  (Read real matrix of size: 2.)
+  Longname 'ah_hpg'
+  
+  Header found on the text file 'P014'.
+  
+ (Written real array, size 2, header "P014".)
+  
+  Header 'P014' transferred to the new file.
+  Longname 'ah_hpg'
+  
+  Coefficient = ah_edn (s_edn).
+  No sets defined for coefficients.
+  
+  (Read real matrix of size: 2.)
+  Longname 'ah_edn'
+  
+  Header found on the text file 'P015'.
+  
+ (Written real array, size 2, header "P015".)
+  
+  Header 'P015' transferred to the new file.
+  Longname 'ah_edn'
+  
+  Coefficient = ah_ups (s_ups).
+  No sets defined for coefficients.
+  
+  (Read real matrix of size: 3.)
+  Longname 'ah_ups'
+  
+  Header found on the text file 'P016'.
+  
+ (Written real array, size 3, header "P016".)
+  
+  Header 'P016' transferred to the new file.
+  Longname 'ah_ups'
+  
+  Coefficient = ah_trc (s_trc).
+  No sets defined for coefficients.
+  
+  (Read real matrix of size: 4.)
+  Longname 'ah_trc'
+  
+  Header found on the text file 'P017'.
+  
+ (Written real array, size 4, header "P017".)
+  
+  Header 'P017' transferred to the new file.
+  Longname 'ah_trc'
+  
+  Coefficient = ah_rcs (s_rcs).
+  No sets defined for coefficients.
+  
+  (Read real matrix of size: 3.)
+  Longname 'ah_rcs'
+  
+  Header found on the text file 'P018'.
+  
+ (Written real array, size 3, header "P018".)
+  
+  Header 'P018' transferred to the new file.
+  Longname 'ah_rcs'
+  
+  Coefficient = ah_trv (s_trv).
+  No sets defined for coefficients.
+  
+  (Read real matrix of size: 2.)
+  Longname 'ah_trv'
+  
+  Header found on the text file 'P019'.
+  
+ (Written real array, size 2, header "P019".)
+  
+  Header 'P019' transferred to the new file.
+  Longname 'ah_trv'
+  
+  Coefficient = ah_ens (s_ens).
+  No sets defined for coefficients.
+  
+  (Read real matrix of size: 2.)
+  Longname 'ah_ens'
+  
+  Header found on the text file 'P020'.
+  
+ (Written real array, size 2, header "P020".)
+  
+  Header 'P020' transferred to the new file.
+  Longname 'ah_ens'
+  
+  Coefficient = ah_hps (s_hps).
+  No sets defined for coefficients.
+  
+  (Read real matrix of size: 3.)
+  Longname 'ah_hps'
+  
+  Header found on the text file 'P021'.
+  
+ (Written real array, size 3, header "P021".)
+  
+  Header 'P021' transferred to the new file.
+  Longname 'ah_hps'
+  
+  Coefficient = ah_cmm (s_cmm).
+  No sets defined for coefficients.
+  
+  (Read real matrix of size: 2.)
+  Longname 'ah_cmm'
+  
+  Header found on the text file 'P022'.
+  
+ (Written real array, size 2, header "P022".)
+  
+  Header 'P022' transferred to the new file.
+  Longname 'ah_cmm'
+  
+  Coefficient = bh_f (s_f,p_f).
+  No sets defined for coefficients.
+  
+  (Read real matrix of size: 4x4.)
+  Longname 'bh_f'
+  
+  Header found on the text file 'P023'.
+  
+ (Written real array, size 4x4, header "P023".)
+  
+  Header 'P023' transferred to the new file.
+  Longname 'bh_f'
+  
+  Coefficient = bh_nd (s_nd,p_nd).
+  No sets defined for coefficients.
+  
+  (Read real matrix of size: 4x4.)
+  Longname 'bh_nd'
+  
+  Header found on the text file 'P024'.
+  
+ (Written real array, size 4x4, header "P024".)
+  
+  Header 'P024' transferred to the new file.
+  Longname 'bh_nd'
+  
+  Coefficient = bh_ks (s_ks,p_ks).
+  No sets defined for coefficients.
+  
+  (Read real matrix of size: 2x2.)
+  Longname 'bh_ks'
+  
+  Header found on the text file 'P025'.
+  
+ (Written real array, size 2x2, header "P025".)
+  
+  Header 'P025' transferred to the new file.
+  Longname 'bh_ks'
+  
+  Coefficient = bh_cs (s_cs,p_cs).
+  No sets defined for coefficients.
+  
+  (Read real matrix of size: 4x4.)
+  Longname 'bh_cs'
+  
+  Header found on the text file 'P026'.
+  
+ (Written real array, size 4x4, header "P026".)
+  
+  Header 'P026' transferred to the new file.
+  Longname 'bh_cs'
+  
+  Coefficient = bh_en (s_en,p_en).
+  No sets defined for coefficients.
+  
+  (Read real matrix of size: 2x2.)
+  Longname 'bh_en'
+  
+  Header found on the text file 'P027'.
+  
+ (Written real array, size 2x2, header "P027".)
+  
+  Header 'P027' transferred to the new file.
+  Longname 'bh_en'
+  
+  Coefficient = bh_cg (s_cg,p_cg).
+  No sets defined for coefficients.
+  
+  (Read real matrix of size: 4x4.)
+  Longname 'bh_cg'
+  
+  Header found on the text file 'P028'.
+  
+ (Written real array, size 4x4, header "P028".)
+  
+  Header 'P028' transferred to the new file.
+  Longname 'bh_cg'
+  
+  Coefficient = bh_md (s_md,p_md).
+  No sets defined for coefficients.
+  
+  (Read real matrix of size: 2x2.)
+  Longname 'bh_md'
+  
+  Header found on the text file 'P029'.
+  
+ (Written real array, size 2x2, header "P029".)
+  
+  Header 'P029' transferred to the new file.
+  Longname 'bh_md'
+  
+  Coefficient = bh_fb (s_fb,p_fb).
+  No sets defined for coefficients.
+  
+  (Read real matrix of size: 3x3.)
+  Longname 'bh_fb'
+  
+  Header found on the text file 'P030'.
+  
+ (Written real array, size 3x3, header "P030".)
+  
+  Header 'P030' transferred to the new file.
+  Longname 'bh_fb'
+  
+  Coefficient = bh_ho (s_ho,p_ho).
+  No sets defined for coefficients.
+  
+  (Read real matrix of size: 4x4.)
+  Longname 'bh_ho'
+  
+  Header found on the text file 'P031'.
+  
+ (Written real array, size 4x4, header "P031".)
+  
+  Header 'P031' transferred to the new file.
+  Longname 'bh_ho'
+  
+  Coefficient = bh_rc (s_rc,p_rc).
+  No sets defined for coefficients.
+  
+  (Read real matrix of size: 3x3.)
+  Longname 'bh_rc'
+  
+  Header found on the text file 'P032'.
+  
+ (Written real array, size 3x3, header "P032".)
+  
+  Header 'P032' transferred to the new file.
+  Longname 'bh_rc'
+  
+  Coefficient = bh_hpg (s_hpg,p_hpg).
+  No sets defined for coefficients.
+  
+  (Read real matrix of size: 2x2.)
+  Longname 'bh_hpg'
+  
+  Header found on the text file 'P033'.
+  
+ (Written real array, size 2x2, header "P033".)
+  
+  Header 'P033' transferred to the new file.
+  Longname 'bh_hpg'
+  
+  Coefficient = bh_edn (s_edn,p_edn).
+  No sets defined for coefficients.
+  
+  (Read real matrix of size: 2x2.)
+  Longname 'bh_edn'
+  
+  Header found on the text file 'P034'.
+  
+ (Written real array, size 2x2, header "P034".)
+  
+  Header 'P034' transferred to the new file.
+  Longname 'bh_edn'
+  
+  Coefficient = bh_ups (s_ups,p_ups).
+  No sets defined for coefficients.
+  
+  (Read real matrix of size: 3x3.)
+  Longname 'bh_ups'
+  
+  Header found on the text file 'P035'.
+  
+ (Written real array, size 3x3, header "P035".)
+  
+  Header 'P035' transferred to the new file.
+  Longname 'bh_ups'
+  
+  Coefficient = bh_trc (s_trc,p_trc).
+  No sets defined for coefficients.
+  
+  (Read real matrix of size: 4x4.)
+  Longname 'bh_trc'
+  
+  Header found on the text file 'P036'.
+  
+ (Written real array, size 4x4, header "P036".)
+  
+  Header 'P036' transferred to the new file.
+  Longname 'bh_trc'
+  
+  Coefficient = bh_rcs (s_rcs,p_rcs).
+  No sets defined for coefficients.
+  
+  (Read real matrix of size: 3x3.)
+  Longname 'bh_rcs'
+  
+  Header found on the text file 'P037'.
+  
+ (Written real array, size 3x3, header "P037".)
+  
+  Header 'P037' transferred to the new file.
+  Longname 'bh_rcs'
+  
+  Coefficient = bh_trv (s_trv,p_trv).
+  No sets defined for coefficients.
+  
+  (Read real matrix of size: 2x2.)
+  Longname 'bh_trv'
+  
+  Header found on the text file 'P038'.
+  
+ (Written real array, size 2x2, header "P038".)
+  
+  Header 'P038' transferred to the new file.
+  Longname 'bh_trv'
+  
+  Coefficient = bh_ens (s_ens,p_ens).
+  No sets defined for coefficients.
+  
+  (Read real matrix of size: 2x2.)
+  Longname 'bh_ens'
+  
+  Header found on the text file 'P039'.
+  
+ (Written real array, size 2x2, header "P039".)
+  
+  Header 'P039' transferred to the new file.
+  Longname 'bh_ens'
+  
+  Coefficient = bh_hps (s_hps,p_hps).
+  No sets defined for coefficients.
+  
+  (Read real matrix of size: 3x3.)
+  Longname 'bh_hps'
+  
+  Header found on the text file 'P040'.
+  
+ (Written real array, size 3x3, header "P040".)
+  
+  Header 'P040' transferred to the new file.
+  Longname 'bh_hps'
+  
+  Coefficient = bh_cmm (s_cmm,p_cmm).
+  No sets defined for coefficients.
+  
+  (Read real matrix of size: 2x2.)
+  Longname 'bh_cmm'
+  
+  Header found on the text file 'P041'.
+  
+ (Written real array, size 2x2, header "P041".)
+  
+  Header 'P041' transferred to the new file.
+  Longname 'bh_cmm'
+  
+  Coefficient = bha_f (tfac_h,nattr).
+  No sets defined for coefficients.
+  
+  (Read real matrix of size: 4x11.)
+  Longname 'bha_f'
+  
+  Header found on the text file 'P042'.
+  
+ (Written real array, size 4x11, header "P042".)
+  
+  Header 'P042' transferred to the new file.
+  Longname 'bha_f'
+  
+  Coefficient = bhm_f (tfac_h).
+  No sets defined for coefficients.
+  
+  (Read real matrix of size: 4.)
+  Longname 'bhm_f'
+  
+  Header found on the text file 'P043'.
+  
+ (Written real array, size 4, header "P043".)
+  
+  Header 'P043' transferred to the new file.
+  Longname 'bhm_f'
+  
+  (Read real matrix of size: 1.)
+  Longname 'denom_rebase'
+  
+  Header found on the text file 'P044'.
+  
+ (Written real array, size 1, header "P044".)
+  
+  Header 'P044' transferred to the new file.
+  Longname 'denom_rebase'
+  
+  Coefficient = io_nipa (ncom_k,nipa_c).
+  No sets defined for coefficients.
+  
+  (Read real matrix of size: 37x36.)
+  Longname 'io_nipa'
+  
+  Header found on the text file 'P045'.
+  
+ (Written real array, size 37x36, header "P045".)
+  
+  Header 'P045' transferred to the new file.
+  Longname 'io_nipa'
+  
+  (Read real matrix of size: 1.)
+  Longname 'pfc_m0'
+  
+  Header found on the text file 'P046'.
+  
+ (Written real array, size 1, header "P046".)
+  
+  Header 'P046' transferred to the new file.
+  Longname 'pfc_m0'
+  
+  (Read real matrix of size: 1.)
+  Longname 'ai0'
+  
+  Header found on the text file 'P047'.
+  
+ (Written real array, size 1, header "P047".)
+  
+  Header 'P047' transferred to the new file.
+  Longname 'ai0'
+  
+  Coefficient = ai_fixed (s_fixed).
+  No sets defined for coefficients.
+  
+  (Read real matrix of size: 2.)
+  Longname 'ai_fixed'
+  
+  Header found on the text file 'P048'.
+  
+ (Written real array, size 2, header "P048".)
+  
+  Header 'P048' transferred to the new file.
+  Longname 'ai_fixed'
+  
+  Coefficient = ai_long (s_long).
+  No sets defined for coefficients.
+  
+  (Read real matrix of size: 3.)
+  Longname 'ai_long'
+  
+  Header found on the text file 'P049'.
+  
+ (Written real array, size 3, header "P049".)
+  
+  Header 'P049' transferred to the new file.
+  Longname 'ai_long'
+  
+  Coefficient = ai_short (s_short).
+  No sets defined for coefficients.
+  
+  (Read real matrix of size: 2.)
+  Longname 'ai_short'
+  
+  Header found on the text file 'P050'.
+  
+ (Written real array, size 2, header "P050".)
+  
+  Header 'P050' transferred to the new file.
+  Longname 'ai_short'
+  
+  Coefficient = ai_eit (s_eit).
+  No sets defined for coefficients.
+  
+  (Read real matrix of size: 3.)
+  Longname 'ai_eit'
+  
+  Header found on the text file 'P051'.
+  
+ (Written real array, size 3, header "P051".)
+  
+  Header 'P051' transferred to the new file.
+  Longname 'ai_eit'
+  
+  Coefficient = ai_ttsvc (s_ttsvc).
+  No sets defined for coefficients.
+  
+  (Read real matrix of size: 3.)
+  Longname 'ai_ttsvc'
+  
+  Header found on the text file 'P052'.
+  
+ (Written real array, size 3, header "P052".)
+  
+  Header 'P052' transferred to the new file.
+  Longname 'ai_ttsvc'
+  
+  Coefficient = ai_mach (s_mach).
+  No sets defined for coefficients.
+  
+  (Read real matrix of size: 3.)
+  Longname 'ai_mach'
+  
+  Header found on the text file 'P053'.
+  
+ (Written real array, size 3, header "P053".)
+  
+  Header 'P053' transferred to the new file.
+  Longname 'ai_mach'
+  
+  Coefficient = ai_it (s_it).
+  No sets defined for coefficients.
+  
+  (Read real matrix of size: 3.)
+  Longname 'ai_it'
+  
+  Header found on the text file 'P054'.
+  
+ (Written real array, size 3, header "P054".)
+  
+  Header 'P054' transferred to the new file.
+  Longname 'ai_it'
+  
+  Coefficient = ai_trnsp (s_trnsp).
+  No sets defined for coefficients.
+  
+  (Read real matrix of size: 2.)
+  Longname 'ai_trnsp'
+  
+  Header found on the text file 'P055'.
+  
+ (Written real array, size 2, header "P055".)
+  
+  Header 'P055' transferred to the new file.
+  Longname 'ai_trnsp'
+  
+  Coefficient = ai_trd (s_trd).
+  No sets defined for coefficients.
+  
+  (Read real matrix of size: 2.)
+  Longname 'ai_trd'
+  
+  Header found on the text file 'P056'.
+  
+ (Written real array, size 2, header "P056".)
+  
+  Header 'P056' transferred to the new file.
+  Longname 'ai_trd'
+  
+  Coefficient = ai_serv (s_serv).
+  No sets defined for coefficients.
+  
+  (Read real matrix of size: 2.)
+  Longname 'ai_serv'
+  
+  Header found on the text file 'P057'.
+  
+ (Written real array, size 2, header "P057".)
+  
+  Header 'P057' transferred to the new file.
+  Longname 'ai_serv'
+  
+  Coefficient = ai_frawm (s_frawm).
+  No sets defined for coefficients.
+  
+  (Read real matrix of size: 2.)
+  Longname 'ai_frawm'
+  
+  Header found on the text file 'P058'.
+  
+ (Written real array, size 2, header "P058".)
+  
+  Header 'P058' transferred to the new file.
+  Longname 'ai_frawm'
+  
+  Coefficient = ai_mserv (s_mserv).
+  No sets defined for coefficients.
+  
+  (Read real matrix of size: 3.)
+  Longname 'ai_mserv'
+  
+  Header found on the text file 'P059'.
+  
+ (Written real array, size 3, header "P059".)
+  
+  Header 'P059' transferred to the new file.
+  Longname 'ai_mserv'
+  
+  Coefficient = ai_mrawm (s_mrawm).
+  No sets defined for coefficients.
+  
+  (Read real matrix of size: 2.)
+  Longname 'ai_mrawm'
+  
+  Header found on the text file 'P060'.
+  
+ (Written real array, size 2, header "P060".)
+  
+  Header 'P060' transferred to the new file.
+  Longname 'ai_mrawm'
+  
+  Coefficient = ai_furn (s_furn).
+  No sets defined for coefficients.
+  
+  (Read real matrix of size: 3.)
+  Longname 'ai_furn'
+  
+  Header found on the text file 'P061'.
+  
+ (Written real array, size 3, header "P061".)
+  
+  Header 'P061' transferred to the new file.
+  Longname 'ai_furn'
+  
+  Coefficient = ai_rawm (s_rawm).
+  No sets defined for coefficients.
+  
+  (Read real matrix of size: 3.)
+  Longname 'ai_rawm'
+  
+  Header found on the text file 'P062'.
+  
+ (Written real array, size 3, header "P062".)
+  
+  Header 'P062' transferred to the new file.
+  Longname 'ai_rawm'
+  
+  Coefficient = bi_fixed (s_fixed,p_fixed).
+  No sets defined for coefficients.
+  
+  (Read real matrix of size: 2x2.)
+  Longname 'bi_fixed'
+  
+  Header found on the text file 'P063'.
+  
+ (Written real array, size 2x2, header "P063".)
+  
+  Header 'P063' transferred to the new file.
+  Longname 'bi_fixed'
+  
+  Coefficient = bi_long (s_long,p_long).
+  No sets defined for coefficients.
+  
+  (Read real matrix of size: 3x3.)
+  Longname 'bi_long'
+  
+  Header found on the text file 'P064'.
+  
+ (Written real array, size 3x3, header "P064".)
+  
+  Header 'P064' transferred to the new file.
+  Longname 'bi_long'
+  
+  Coefficient = bi_short (s_short,p_short).
+  No sets defined for coefficients.
+  
+  (Read real matrix of size: 2x2.)
+  Longname 'bi_short'
+  
+  Header found on the text file 'P065'.
+  
+ (Written real array, size 2x2, header "P065".)
+  
+  Header 'P065' transferred to the new file.
+  Longname 'bi_short'
+  
+  Coefficient = bi_eit (s_eit,p_eit).
+  No sets defined for coefficients.
+  
+  (Read real matrix of size: 3x3.)
+  Longname 'bi_eit'
+  
+  Header found on the text file 'P066'.
+  
+ (Written real array, size 3x3, header "P066".)
+  
+  Header 'P066' transferred to the new file.
+  Longname 'bi_eit'
+  
+  Coefficient = bi_ttsvc (s_ttsvc,p_ttsvc).
+  No sets defined for coefficients.
+  
+  (Read real matrix of size: 3x3.)
+  Longname 'bi_ttsvc'
+  
+  Header found on the text file 'P067'.
+  
+ (Written real array, size 3x3, header "P067".)
+  
+  Header 'P067' transferred to the new file.
+  Longname 'bi_ttsvc'
+  
+  Coefficient = bi_mach (s_mach,p_mach).
+  No sets defined for coefficients.
+  
+  (Read real matrix of size: 3x3.)
+  Longname 'bi_mach'
+  
+  Header found on the text file 'P068'.
+  
+ (Written real array, size 3x3, header "P068".)
+  
+  Header 'P068' transferred to the new file.
+  Longname 'bi_mach'
+  
+  Coefficient = bi_it (s_it,p_it).
+  No sets defined for coefficients.
+  
+  (Read real matrix of size: 3x3.)
+  Longname 'bi_it'
+  
+  Header found on the text file 'P069'.
+  
+ (Written real array, size 3x3, header "P069".)
+  
+  Header 'P069' transferred to the new file.
+  Longname 'bi_it'
+  
+  Coefficient = bi_trnsp (s_trnsp,p_trnsp).
+  No sets defined for coefficients.
+  
+  (Read real matrix of size: 2x2.)
+  Longname 'bi_trnsp'
+  
+  Header found on the text file 'P070'.
+  
+ (Written real array, size 2x2, header "P070".)
+  
+  Header 'P070' transferred to the new file.
+  Longname 'bi_trnsp'
+  
+  Coefficient = bi_trd (s_trd,p_trd).
+  No sets defined for coefficients.
+  
+  (Read real matrix of size: 2x2.)
+  Longname 'bi_trd'
+  
+  Header found on the text file 'P071'.
+  
+ (Written real array, size 2x2, header "P071".)
+  
+  Header 'P071' transferred to the new file.
+  Longname 'bi_trd'
+  
+  Coefficient = bi_serv (s_serv,p_serv).
+  No sets defined for coefficients.
+  
+  (Read real matrix of size: 2x2.)
+  Longname 'bi_serv'
+  
+  Header found on the text file 'P072'.
+  
+ (Written real array, size 2x2, header "P072".)
+  
+  Header 'P072' transferred to the new file.
+  Longname 'bi_serv'
+  
+  Coefficient = bi_frawm (s_frawm,p_frawm).
+  No sets defined for coefficients.
+  
+  (Read real matrix of size: 2x2.)
+  Longname 'bi_frawm'
+  
+  Header found on the text file 'P073'.
+  
+ (Written real array, size 2x2, header "P073".)
+  
+  Header 'P073' transferred to the new file.
+  Longname 'bi_frawm'
+  
+  Coefficient = bi_mserv (s_mserv,p_mserv).
+  No sets defined for coefficients.
+  
+  (Read real matrix of size: 3x3.)
+  Longname 'bi_mserv'
+  
+  Header found on the text file 'P074'.
+  
+ (Written real array, size 3x3, header "P074".)
+  
+  Header 'P074' transferred to the new file.
+  Longname 'bi_mserv'
+  
+  Coefficient = bi_mrawm (s_mrawm,p_mrawm).
+  No sets defined for coefficients.
+  
+  (Read real matrix of size: 2x2.)
+  Longname 'bi_mrawm'
+  
+  Header found on the text file 'P075'.
+  
+ (Written real array, size 2x2, header "P075".)
+  
+  Header 'P075' transferred to the new file.
+  Longname 'bi_mrawm'
+  
+  Coefficient = bi_furn (s_furn,p_furn).
+  No sets defined for coefficients.
+  
+  (Read real matrix of size: 3x3.)
+  Longname 'bi_furn'
+  
+  Header found on the text file 'P076'.
+  
+ (Written real array, size 3x3, header "P076".)
+  
+  Header 'P076' transferred to the new file.
+  Longname 'bi_furn'
+  
+  Coefficient = bi_rawm (s_rawm,p_rawm).
+  No sets defined for coefficients.
+  
+  (Read real matrix of size: 3x3.)
+  Longname 'bi_rawm'
+  
+  Header found on the text file 'P077'.
+  
+ (Written real array, size 3x3, header "P077".)
+  
+  Header 'P077' transferred to the new file.
+  Longname 'bi_rawm'
+  
+  Coefficient = ap0_o (nind).
+  No sets defined for coefficients.
+  
+  (Read real matrix of size: 36.)
+  Longname 'ap0_o'
+  
+  Header found on the text file 'P078'.
+  
+ (Written real array, size 36, header "P078".)
+  
+  Header 'P078' transferred to the new file.
+  Longname 'ap0_o'
+  
+  Coefficient = ap0_ene (nind).
+  No sets defined for coefficients.
+  
+  (Read real matrix of size: 36.)
+  Longname 'ap0_ene'
+  
+  Header found on the text file 'P079'.
+  
+ (Written real array, size 36, header "P079".)
+  
+  Header 'P079' transferred to the new file.
+  Longname 'ap0_ene'
+  
+  Coefficient = ap0_mat (nind).
+  No sets defined for coefficients.
+  
+  (Read real matrix of size: 36.)
+  Longname 'ap0_mat'
+  
+  Header found on the text file 'P080'.
+  
+ (Written real array, size 36, header "P080".)
+  
+  Header 'P080' transferred to the new file.
+  Longname 'ap0_mat'
+  
+  Coefficient = ap0_ff (nind).
+  No sets defined for coefficients.
+  
+  (Read real matrix of size: 36.)
+  Longname 'ap0_ff'
+  
+  Header found on the text file 'P081'.
+  
+ (Written real array, size 36, header "P081".)
+  
+  Header 'P081' transferred to the new file.
+  Longname 'ap0_ff'
+  
+  Coefficient = ap0_oil (nind).
+  No sets defined for coefficients.
+  
+  (Read real matrix of size: 36.)
+  Longname 'ap0_oil'
+  
+  Header found on the text file 'P082'.
+  
+ (Written real array, size 36, header "P082".)
+  
+  Header 'P082' transferred to the new file.
+  Longname 'ap0_oil'
+  
+  Coefficient = ap0_gas (nind).
+  No sets defined for coefficients.
+  
+  (Read real matrix of size: 36.)
+  Longname 'ap0_gas'
+  
+  Header found on the text file 'P083'.
+  
+ (Written real array, size 36, header "P083".)
+  
+  Header 'P083' transferred to the new file.
+  Longname 'ap0_gas'
+  
+  Coefficient = ap0_ma (nind).
+  No sets defined for coefficients.
+  
+  (Read real matrix of size: 36.)
+  Longname 'ap0_ma'
+  
+  Header found on the text file 'P084'.
+  
+ (Written real array, size 36, header "P084".)
+  
+  Header 'P084' transferred to the new file.
+  Longname 'ap0_ma'
+  
+  Coefficient = ap0_mm (nind).
+  No sets defined for coefficients.
+  
+  (Read real matrix of size: 36.)
+  Longname 'ap0_mm'
+  
+  Header found on the text file 'P085'.
+  
+ (Written real array, size 36, header "P085".)
+  
+  Header 'P085' transferred to the new file.
+  Longname 'ap0_mm'
+  
+  Coefficient = ap0_mn (nind).
+  No sets defined for coefficients.
+  
+  (Read real matrix of size: 36.)
+  Longname 'ap0_mn'
+  
+  Header found on the text file 'P086'.
+  
+ (Written real array, size 36, header "P086".)
+  
+  Header 'P086' transferred to the new file.
+  Longname 'ap0_mn'
+  
+  Coefficient = ap0_ms (nind).
+  No sets defined for coefficients.
+  
+  (Read real matrix of size: 36.)
+  Longname 'ap0_ms'
+  
+  Header found on the text file 'P087'.
+  
+ (Written real array, size 36, header "P087".)
+  
+  Header 'P087' transferred to the new file.
+  Longname 'ap0_ms'
+  
+  Coefficient = ap0_eq (nind).
+  No sets defined for coefficients.
+  
+  (Read real matrix of size: 36.)
+  Longname 'ap0_eq'
+  
+  Header found on the text file 'P088'.
+  
+ (Written real array, size 36, header "P088".)
+  
+  Header 'P088' transferred to the new file.
+  Longname 'ap0_eq'
+  
+  Coefficient = ap0_tr (nind).
+  No sets defined for coefficients.
+  
+  (Read real matrix of size: 36.)
+  Longname 'ap0_tr'
+  
+  Header found on the text file 'P089'.
+  
+ (Written real array, size 36, header "P089".)
+  
+  Header 'P089' transferred to the new file.
+  Longname 'ap0_tr'
+  
+  Coefficient = ap0_tt (nind).
+  No sets defined for coefficients.
+  
+  (Read real matrix of size: 36.)
+  Longname 'ap0_tt'
+  
+  Header found on the text file 'P090'.
+  
+ (Written real array, size 36, header "P090".)
+  
+  Header 'P090' transferred to the new file.
+  Longname 'ap0_tt'
+  
+  Coefficient = ap0_sv (nind).
+  No sets defined for coefficients.
+  
+  (Read real matrix of size: 36.)
+  Longname 'ap0_sv'
+  
+  Header found on the text file 'P091'.
+  
+ (Written real array, size 36, header "P091".)
+  
+  Header 'P091' transferred to the new file.
+  Longname 'ap0_sv'
+  
+  Coefficient = ap0_bl (nind).
+  No sets defined for coefficients.
+  
+  (Read real matrix of size: 36.)
+  Longname 'ap0_bl'
+  
+  Header found on the text file 'P092'.
+  
+ (Written real array, size 36, header "P092".)
+  
+  Header 'P092' transferred to the new file.
+  Longname 'ap0_bl'
+  
+  Coefficient = ap0_ob (nind).
+  No sets defined for coefficients.
+  
+  (Read real matrix of size: 36.)
+  Longname 'ap0_ob'
+  
+  Header found on the text file 'P093'.
+  
+ (Written real array, size 36, header "P093".)
+  
+  Header 'P093' transferred to the new file.
+  Longname 'ap0_ob'
+  
+  Coefficient = ap0_os (nind).
+  No sets defined for coefficients.
+  
+  (Read real matrix of size: 36.)
+  Longname 'ap0_os'
+  
+  Header found on the text file 'P094'.
+  
+ (Written real array, size 36, header "P094".)
+  
+  Header 'P094' transferred to the new file.
+  Longname 'ap0_os'
+  
+  Coefficient = ap_o (s_o,nind).
+  No sets defined for coefficients.
+  
+  (Read real matrix of size: 4x36.)
+  Longname 'ap_o'
+  
+  Header found on the text file 'P095'.
+  
+ (Written real array, size 4x36, header "P095".)
+  
+  Header 'P095' transferred to the new file.
+  Longname 'ap_o'
+  
+  Coefficient = ap_ene (s_e,nind).
+  No sets defined for coefficients.
+  
+  (Read real matrix of size: 2x36.)
+  Longname 'ap_ene'
+  
+  Header found on the text file 'P096'.
+  
+ (Written real array, size 2x36, header "P096".)
+  
+  Header 'P096' transferred to the new file.
+  Longname 'ap_ene'
+  
+  Coefficient = ap_mat (s_m,nind).
+  No sets defined for coefficients.
+  
+  (Read real matrix of size: 4x36.)
+  Longname 'ap_mat'
+  
+  Header found on the text file 'P097'.
+  
+ (Written real array, size 4x36, header "P097".)
+  
+  Header 'P097' transferred to the new file.
+  Longname 'ap_mat'
+  
+  Coefficient = ap_ff (s_ff,nind).
+  No sets defined for coefficients.
+  
+  (Read real matrix of size: 3x36.)
+  Longname 'ap_ff'
+  
+  Header found on the text file 'P098'.
+  
+ (Written real array, size 3x36, header "P098".)
+  
+  Header 'P098' transferred to the new file.
+  Longname 'ap_ff'
+  
+  Coefficient = ap_oil (s_oil,nind).
+  No sets defined for coefficients.
+  
+  (Read real matrix of size: 2x36.)
+  Longname 'ap_oil'
+  
+  Header found on the text file 'P099'.
+  
+ (Written real array, size 2x36, header "P099".)
+  
+  Header 'P099' transferred to the new file.
+  Longname 'ap_oil'
+  
+  Coefficient = ap_gas (s_gas,nind).
+  No sets defined for coefficients.
+  
+  (Read real matrix of size: 2x36.)
+  Longname 'ap_gas'
+  
+  Header found on the text file 'P100'.
+  
+ (Written real array, size 2x36, header "P100".)
+  
+  Header 'P100' transferred to the new file.
+  Longname 'ap_gas'
+  
+  Coefficient = ap_ma (s_ma,nind).
+  No sets defined for coefficients.
+  
+  (Read real matrix of size: 4x36.)
+  Longname 'ap_ma'
+  
+  Header found on the text file 'P101'.
+  
+ (Written real array, size 4x36, header "P101".)
+  
+  Header 'P101' transferred to the new file.
+  Longname 'ap_ma'
+  
+  Coefficient = ap_mm (s_mm,nind).
+  No sets defined for coefficients.
+  
+  (Read real matrix of size: 4x36.)
+  Longname 'ap_mm'
+  
+  Header found on the text file 'P102'.
+  
+ (Written real array, size 4x36, header "P102".)
+  
+  Header 'P102' transferred to the new file.
+  Longname 'ap_mm'
+  
+  Coefficient = ap_mn (s_mn,nind).
+  No sets defined for coefficients.
+  
+  (Read real matrix of size: 4x36.)
+  Longname 'ap_mn'
+  
+  Header found on the text file 'P103'.
+  
+ (Written real array, size 4x36, header "P103".)
+  
+  Header 'P103' transferred to the new file.
+  Longname 'ap_mn'
+  
+  Coefficient = ap_ms (s_ms,nind).
+  No sets defined for coefficients.
+  
+  (Read real matrix of size: 3x36.)
+  Longname 'ap_ms'
+  
+  Header found on the text file 'P104'.
+  
+ (Written real array, size 3x36, header "P104".)
+  
+  Header 'P104' transferred to the new file.
+  Longname 'ap_ms'
+  
+  Coefficient = ap_eq (s_eq,nind).
+  No sets defined for coefficients.
+  
+  (Read real matrix of size: 4x36.)
+  Longname 'ap_eq'
+  
+  Header found on the text file 'P105'.
+  
+ (Written real array, size 4x36, header "P105".)
+  
+  Header 'P105' transferred to the new file.
+  Longname 'ap_eq'
+  
+  Coefficient = ap_tr (s_tr,nind).
+  No sets defined for coefficients.
+  
+  (Read real matrix of size: 2x36.)
+  Longname 'ap_tr'
+  
+  Header found on the text file 'P106'.
+  
+ (Written real array, size 2x36, header "P106".)
+  
+  Header 'P106' transferred to the new file.
+  Longname 'ap_tr'
+  
+  Coefficient = ap_tt (s_tt,nind).
+  No sets defined for coefficients.
+  
+  (Read real matrix of size: 3x36.)
+  Longname 'ap_tt'
+  
+  Header found on the text file 'P107'.
+  
+ (Written real array, size 3x36, header "P107".)
+  
+  Header 'P107' transferred to the new file.
+  Longname 'ap_tt'
+  
+  Coefficient = ap_sv (s_sv,nind).
+  No sets defined for coefficients.
+  
+  (Read real matrix of size: 3x36.)
+  Longname 'ap_sv'
+  
+  Header found on the text file 'P108'.
+  
+ (Written real array, size 3x36, header "P108".)
+  
+  Header 'P108' transferred to the new file.
+  Longname 'ap_sv'
+  
+  Coefficient = ap_bl (s_bl,nind).
+  No sets defined for coefficients.
+  
+  (Read real matrix of size: 3x36.)
+  Longname 'ap_bl'
+  
+  Header found on the text file 'P109'.
+  
+ (Written real array, size 3x36, header "P109".)
+  
+  Header 'P109' transferred to the new file.
+  Longname 'ap_bl'
+  
+  Coefficient = ap_ob (s_ob,nind).
+  No sets defined for coefficients.
+  
+  (Read real matrix of size: 3x36.)
+  Longname 'ap_ob'
+  
+  Header found on the text file 'P110'.
+  
+ (Written real array, size 3x36, header "P110".)
+  
+  Header 'P110' transferred to the new file.
+  Longname 'ap_ob'
+  
+  Coefficient = ap_os (s_os,nind).
+  No sets defined for coefficients.
+  
+  (Read real matrix of size: 4x36.)
+  Longname 'ap_os'
+  
+  Header found on the text file 'P111'.
+  
+ (Written real array, size 4x36, header "P111".)
+  
+  Header 'P111' transferred to the new file.
+  Longname 'ap_os'
+  
+  Coefficient = bp_o (s_o,p_o,nind).
+  No sets defined for coefficients.
+  
+  (Read real matrix of size: 4x4x36.)
+  Longname 'bp_o'
+  
+  Header found on the text file 'P112'.
+  
+ (Written real array, size 4x4x36, header "P112".)
+  
+  Header 'P112' transferred to the new file.
+  Longname 'bp_o'
+  
+  Coefficient = bp_ene (s_e,p_e,nind).
+  No sets defined for coefficients.
+  
+  (Read real matrix of size: 2x2x36.)
+  Longname 'bp_ene'
+  
+  Header found on the text file 'P113'.
+  
+ (Written real array, size 2x2x36, header "P113".)
+  
+  Header 'P113' transferred to the new file.
+  Longname 'bp_ene'
+  
+  Coefficient = bp_mat (s_m,p_m,nind).
+  No sets defined for coefficients.
+  
+  (Read real matrix of size: 4x4x36.)
+  Longname 'bp_mat'
+  
+  Header found on the text file 'P114'.
+  
+ (Written real array, size 4x4x36, header "P114".)
+  
+  Header 'P114' transferred to the new file.
+  Longname 'bp_mat'
+  
+  Coefficient = bp_ff (s_ff,p_ff,nind).
+  No sets defined for coefficients.
+  
+  (Read real matrix of size: 3x3x36.)
+  Longname 'bp_ff'
+  
+  Header found on the text file 'P115'.
+  
+ (Written real array, size 3x3x36, header "P115".)
+  
+  Header 'P115' transferred to the new file.
+  Longname 'bp_ff'
+  
+  Coefficient = bp_oil (s_oil,p_oil,nind).
+  No sets defined for coefficients.
+  
+  (Read real matrix of size: 2x2x36.)
+  Longname 'bp_oil'
+  
+  Header found on the text file 'P116'.
+  
+ (Written real array, size 2x2x36, header "P116".)
+  
+  Header 'P116' transferred to the new file.
+  Longname 'bp_oil'
+  
+  Coefficient = bp_gas (s_gas,p_gas,nind).
+  No sets defined for coefficients.
+  
+  (Read real matrix of size: 2x2x36.)
+  Longname 'bp_gas'
+  
+  Header found on the text file 'P117'.
+  
+ (Written real array, size 2x2x36, header "P117".)
+  
+  Header 'P117' transferred to the new file.
+  Longname 'bp_gas'
+  
+  Coefficient = bp_ma (s_ma,p_ma,nind).
+  No sets defined for coefficients.
+  
+  (Read real matrix of size: 4x4x36.)
+  Longname 'bp_ma'
+  
+  Header found on the text file 'P118'.
+  
+ (Written real array, size 4x4x36, header "P118".)
+  
+  Header 'P118' transferred to the new file.
+  Longname 'bp_ma'
+  
+  Coefficient = bp_mm (s_mm,p_mm,nind).
+  No sets defined for coefficients.
+  
+  (Read real matrix of size: 4x4x36.)
+  Longname 'bp_mm'
+  
+  Header found on the text file 'P119'.
+  
+ (Written real array, size 4x4x36, header "P119".)
+  
+  Header 'P119' transferred to the new file.
+  Longname 'bp_mm'
+  
+  Coefficient = bp_mn (s_mn,p_mn,nind).
+  No sets defined for coefficients.
+  
+  (Read real matrix of size: 4x4x36.)
+  Longname 'bp_mn'
+  
+  Header found on the text file 'P120'.
+  
+ (Written real array, size 4x4x36, header "P120".)
+  
+  Header 'P120' transferred to the new file.
+  Longname 'bp_mn'
+  
+  Coefficient = bp_ms (s_ms,p_ms,nind).
+  No sets defined for coefficients.
+  
+  (Read real matrix of size: 3x3x36.)
+  Longname 'bp_ms'
+  
+  Header found on the text file 'P121'.
+  
+ (Written real array, size 3x3x36, header "P121".)
+  
+  Header 'P121' transferred to the new file.
+  Longname 'bp_ms'
+  
+  Coefficient = bp_eq (s_eq,p_eq,nind).
+  No sets defined for coefficients.
+  
+  (Read real matrix of size: 4x4x36.)
+  Longname 'bp_eq'
+  
+  Header found on the text file 'P122'.
+  
+ (Written real array, size 4x4x36, header "P122".)
+  
+  Header 'P122' transferred to the new file.
+  Longname 'bp_eq'
+  
+  Coefficient = bp_tr (s_tr,p_tr,nind).
+  No sets defined for coefficients.
+  
+  (Read real matrix of size: 2x2x36.)
+  Longname 'bp_tr'
+  
+  Header found on the text file 'P123'.
+  
+ (Written real array, size 2x2x36, header "P123".)
+  
+  Header 'P123' transferred to the new file.
+  Longname 'bp_tr'
+  
+  Coefficient = bp_tt (s_tt,p_tt,nind).
+  No sets defined for coefficients.
+  
+  (Read real matrix of size: 3x3x36.)
+  Longname 'bp_tt'
+  
+  Header found on the text file 'P124'.
+  
+ (Written real array, size 3x3x36, header "P124".)
+  
+  Header 'P124' transferred to the new file.
+  Longname 'bp_tt'
+  
+  Coefficient = bp_sv (s_sv,p_sv,nind).
+  No sets defined for coefficients.
+  
+  (Read real matrix of size: 3x3x36.)
+  Longname 'bp_sv'
+  
+  Header found on the text file 'P125'.
+  
+ (Written real array, size 3x3x36, header "P125".)
+  
+  Header 'P125' transferred to the new file.
+  Longname 'bp_sv'
+  
+  Coefficient = bp_bl (s_bl,p_bl,nind).
+  No sets defined for coefficients.
+  
+  (Read real matrix of size: 3x3x36.)
+  Longname 'bp_bl'
+  
+  Header found on the text file 'P126'.
+  
+ (Written real array, size 3x3x36, header "P126".)
+  
+  Header 'P126' transferred to the new file.
+  Longname 'bp_bl'
+  
+  Coefficient = bp_ob (s_ob,p_ob,nind).
+  No sets defined for coefficients.
+  
+  (Read real matrix of size: 3x3x36.)
+  Longname 'bp_ob'
+  
+  Header found on the text file 'P127'.
+  
+ (Written real array, size 3x3x36, header "P127".)
+  
+  Header 'P127' transferred to the new file.
+  Longname 'bp_ob'
+  
+  Coefficient = bp_os (s_os,p_os,nind).
+  No sets defined for coefficients.
+  
+  (Read real matrix of size: 4x4x36.)
+  Longname 'bp_os'
+  
+  Header found on the text file 'P128'.
+  
+ (Written real array, size 4x4x36, header "P128".)
+  
+  Header 'P128' transferred to the new file.
+  Longname 'bp_os'
+  
+  Coefficient = am_imp (ncom).
+  No sets defined for coefficients.
+  
+  (Read real matrix of size: 36.)
+  Longname 'am_imp'
+  
+  Header found on the text file 'P129'.
+  
+ (Written real array, size 36, header "P129".)
+  
+  Header 'P129' transferred to the new file.
+  Longname 'am_imp'
+  
+  Coefficient = bm_imp (ncom).
+  No sets defined for coefficients.
+  
+  (Read real matrix of size: 36.)
+  Longname 'bm_imp'
+  
+  Header found on the text file 'P130'.
+  
+ (Written real array, size 36, header "P130".)
+  
+  Header 'P130' transferred to the new file.
+  Longname 'bm_imp'
+  
+  (Read real matrix of size: 1.)
+  Longname 'delta'
+  
+  Header found on the text file 'P131'.
+  
+ (Written real array, size 1, header "P131".)
+  
+  Header 'P131' transferred to the new file.
+  Longname 'delta'
+  
+  Coefficient = ax_exp (ncom).
+  No sets defined for coefficients.
+  
+  (Read real matrix of size: 36.)
+  Longname 'ax_exp'
+  
+  Header found on the text file 'P132'.
+  
+ (Written real array, size 36, header "P132".)
+  
+  Header 'P132' transferred to the new file.
+  Longname 'ax_exp'
+  
+  Coefficient = bx_exp (ncom).
+  No sets defined for coefficients.
+  
+  (Read real matrix of size: 36.)
+  Longname 'bx_exp'
+  
+  Header found on the text file 'P133'.
+  
+ (Written real array, size 36, header "P133".)
+  
+  Header 'P133' transferred to the new file.
+  Longname 'bx_exp'
+  
+  (Read real matrix of size: 1.)
+  Longname 'pf_scale_l'
+  
+  Header found on the text file 'P134'.
+  
+ (Written real array, size 1, header "P134".)
+  
+  Header 'P134' transferred to the new file.
+  Longname 'pf_scale_l'
+  
+  (Read real matrix of size: 1.)
+  Longname 'pf_scale_k'
+  
+  Header found on the text file 'P135'.
+  
+ (Written real array, size 1, header "P135".)
+  
+  Header 'P135' transferred to the new file.
+  Longname 'pf_scale_k'
+  
+  (Read real matrix of size: 1.)
+  Longname 'pd_gdp_scale'
+  
+  Header found on the text file 'P136'.
+  
+ (Written real array, size 1, header "P136".)
+  
+  Header 'P136' transferred to the new file.
+  Longname 'pd_gdp_scale'
+  
+  (Read real matrix of size: 1.)
+  Longname 'pd_con_scale'
+  
+  Header found on the text file 'P137'.
+  
+ (Written real array, size 1, header "P137".)
+  
+  Header 'P137' transferred to the new file.
+  Longname 'pd_con_scale'
+  
+  (Read real matrix of size: 1.)
+  Longname 'pd_inv_scale'
+  
+  Header found on the text file 'P138'.
+  
+ (Written real array, size 1, header "P138".)
+  
+  Header 'P138' transferred to the new file.
+  Longname 'pd_inv_scale'
+  
+  (Read real matrix of size: 1.)
+  Longname 'pd_gov_scale'
+  
+  Header found on the text file 'P139'.
+  
+ (Written real array, size 1, header "P139".)
+  
+  Header 'P139' transferred to the new file.
+  Longname 'pd_gov_scale'
+  
+  (Read real matrix of size: 1.)
+  Longname 'pd_exp_scale'
+  
+  Header found on the text file 'P140'.
+  
+ (Written real array, size 1, header "P140".)
+  
+  Header 'P140' transferred to the new file.
+  Longname 'pd_exp_scale'
+  
+  (Read real matrix of size: 1.)
+  Longname 'pd_imp_scale'
+  
+  Header found on the text file 'P141'.
+  
+ (Written real array, size 1, header "P141".)
+  
+  Header 'P141' transferred to the new file.
+  Longname 'pd_imp_scale'
+  
+  (Read real matrix of size: 1.)
+  Longname 'pr_fc_scale'
+  
+  Header found on the text file 'P142'.
+  
+ (Written real array, size 1, header "P142".)
+  
+  Header 'P142' transferred to the new file.
+  Longname 'pr_fc_scale'
+  Last array on file has been read. Transfer completed.
+  TRANSFERRED A TOTAL OF 142 ARRAYS TO THE NEW FILE.
+  
+  > Next Command:  (or '?' for help)
+  
+  
+ ex
+  Since an old file was not used, there are no arrays to transfer..
+  NO    HEADER    STATUS    DATA  <-------------- SIZE -------------->     SIZE
+       OLD  NEW             TYPE        OLD                   NEW        CHANGE?
+  
+  
+    1 (TF) P001 ON NEW FILE real  1                    1                    no
+    2 (TF) P002 ON NEW FILE real  1                    1                    no
+    3 (TF) P003 ON NEW FILE real  1                    1                    no
+    4 (TF) P004 ON NEW FILE real  4                    4                    no
+    5 (TF) P005 ON NEW FILE real  4                    4                    no
+    6 (TF) P006 ON NEW FILE real  2                    2                    no
+    7 (TF) P007 ON NEW FILE real  4                    4                    no
+    8 (TF) P008 ON NEW FILE real  2                    2                    no
+    9 (TF) P009 ON NEW FILE real  4                    4                    no
+   10 (TF) P010 ON NEW FILE real  2                    2                    no
+   11 (TF) P011 ON NEW FILE real  3                    3                    no
+   12 (TF) P012 ON NEW FILE real  4                    4                    no
+   13 (TF) P013 ON NEW FILE real  3                    3                    no
+   14 (TF) P014 ON NEW FILE real  2                    2                    no
+   15 (TF) P015 ON NEW FILE real  2                    2                    no
+   16 (TF) P016 ON NEW FILE real  3                    3                    no
+   17 (TF) P017 ON NEW FILE real  4                    4                    no
+   18 (TF) P018 ON NEW FILE real  3                    3                    no
+   19 (TF) P019 ON NEW FILE real  2                    2                    no
+   20 (TF) P020 ON NEW FILE real  2                    2                    no
+   21 (TF) P021 ON NEW FILE real  3                    3                    no
+   22 (TF) P022 ON NEW FILE real  2                    2                    no
+   23 (TF) P023 ON NEW FILE real  4x4                  4x4                  no
+   24 (TF) P024 ON NEW FILE real  4x4                  4x4                  no
+   25 (TF) P025 ON NEW FILE real  2x2                  2x2                  no
+   26 (TF) P026 ON NEW FILE real  4x4                  4x4                  no
+   27 (TF) P027 ON NEW FILE real  2x2                  2x2                  no
+   28 (TF) P028 ON NEW FILE real  4x4                  4x4                  no
+   29 (TF) P029 ON NEW FILE real  2x2                  2x2                  no
+   30 (TF) P030 ON NEW FILE real  3x3                  3x3                  no
+   31 (TF) P031 ON NEW FILE real  4x4                  4x4                  no
+   32 (TF) P032 ON NEW FILE real  3x3                  3x3                  no
+   33 (TF) P033 ON NEW FILE real  2x2                  2x2                  no
+   34 (TF) P034 ON NEW FILE real  2x2                  2x2                  no
+   35 (TF) P035 ON NEW FILE real  3x3                  3x3                  no
+   36 (TF) P036 ON NEW FILE real  4x4                  4x4                  no
+   37 (TF) P037 ON NEW FILE real  3x3                  3x3                  no
+   38 (TF) P038 ON NEW FILE real  2x2                  2x2                  no
+   39 (TF) P039 ON NEW FILE real  2x2                  2x2                  no
+   40 (TF) P040 ON NEW FILE real  3x3                  3x3                  no
+   41 (TF) P041 ON NEW FILE real  2x2                  2x2                  no
+   42 (TF) P042 ON NEW FILE real  4x11                 4x11                 no
+   43 (TF) P043 ON NEW FILE real  4                    4                    no
+   44 (TF) P044 ON NEW FILE real  1                    1                    no
+   45 (TF) P045 ON NEW FILE real  37x36                37x36                no
+   46 (TF) P046 ON NEW FILE real  1                    1                    no
+   47 (TF) P047 ON NEW FILE real  1                    1                    no
+   48 (TF) P048 ON NEW FILE real  2                    2                    no
+   49 (TF) P049 ON NEW FILE real  3                    3                    no
+   50 (TF) P050 ON NEW FILE real  2                    2                    no
+   51 (TF) P051 ON NEW FILE real  3                    3                    no
+   52 (TF) P052 ON NEW FILE real  3                    3                    no
+   53 (TF) P053 ON NEW FILE real  3                    3                    no
+   54 (TF) P054 ON NEW FILE real  3                    3                    no
+   55 (TF) P055 ON NEW FILE real  2                    2                    no
+   56 (TF) P056 ON NEW FILE real  2                    2                    no
+   57 (TF) P057 ON NEW FILE real  2                    2                    no
+   58 (TF) P058 ON NEW FILE real  2                    2                    no
+   59 (TF) P059 ON NEW FILE real  3                    3                    no
+   60 (TF) P060 ON NEW FILE real  2                    2                    no
+   61 (TF) P061 ON NEW FILE real  3                    3                    no
+   62 (TF) P062 ON NEW FILE real  3                    3                    no
+   63 (TF) P063 ON NEW FILE real  2x2                  2x2                  no
+   64 (TF) P064 ON NEW FILE real  3x3                  3x3                  no
+   65 (TF) P065 ON NEW FILE real  2x2                  2x2                  no
+   66 (TF) P066 ON NEW FILE real  3x3                  3x3                  no
+   67 (TF) P067 ON NEW FILE real  3x3                  3x3                  no
+   68 (TF) P068 ON NEW FILE real  3x3                  3x3                  no
+   69 (TF) P069 ON NEW FILE real  3x3                  3x3                  no
+   70 (TF) P070 ON NEW FILE real  2x2                  2x2                  no
+   71 (TF) P071 ON NEW FILE real  2x2                  2x2                  no
+   72 (TF) P072 ON NEW FILE real  2x2                  2x2                  no
+   73 (TF) P073 ON NEW FILE real  2x2                  2x2                  no
+   74 (TF) P074 ON NEW FILE real  3x3                  3x3                  no
+   75 (TF) P075 ON NEW FILE real  2x2                  2x2                  no
+   76 (TF) P076 ON NEW FILE real  3x3                  3x3                  no
+   77 (TF) P077 ON NEW FILE real  3x3                  3x3                  no
+   78 (TF) P078 ON NEW FILE real  36                   36                   no
+   79 (TF) P079 ON NEW FILE real  36                   36                   no
+   80 (TF) P080 ON NEW FILE real  36                   36                   no
+   81 (TF) P081 ON NEW FILE real  36                   36                   no
+   82 (TF) P082 ON NEW FILE real  36                   36                   no
+   83 (TF) P083 ON NEW FILE real  36                   36                   no
+   84 (TF) P084 ON NEW FILE real  36                   36                   no
+   85 (TF) P085 ON NEW FILE real  36                   36                   no
+   86 (TF) P086 ON NEW FILE real  36                   36                   no
+   87 (TF) P087 ON NEW FILE real  36                   36                   no
+   88 (TF) P088 ON NEW FILE real  36                   36                   no
+   89 (TF) P089 ON NEW FILE real  36                   36                   no
+   90 (TF) P090 ON NEW FILE real  36                   36                   no
+   91 (TF) P091 ON NEW FILE real  36                   36                   no
+   92 (TF) P092 ON NEW FILE real  36                   36                   no
+   93 (TF) P093 ON NEW FILE real  36                   36                   no
+   94 (TF) P094 ON NEW FILE real  36                   36                   no
+   95 (TF) P095 ON NEW FILE real  4x36                 4x36                 no
+   96 (TF) P096 ON NEW FILE real  2x36                 2x36                 no
+   97 (TF) P097 ON NEW FILE real  4x36                 4x36                 no
+   98 (TF) P098 ON NEW FILE real  3x36                 3x36                 no
+   99 (TF) P099 ON NEW FILE real  2x36                 2x36                 no
+  100 (TF) P100 ON NEW FILE real  2x36                 2x36                 no
+  101 (TF) P101 ON NEW FILE real  4x36                 4x36                 no
+  102 (TF) P102 ON NEW FILE real  4x36                 4x36                 no
+  103 (TF) P103 ON NEW FILE real  4x36                 4x36                 no
+  104 (TF) P104 ON NEW FILE real  3x36                 3x36                 no
+  105 (TF) P105 ON NEW FILE real  4x36                 4x36                 no
+  106 (TF) P106 ON NEW FILE real  2x36                 2x36                 no
+  107 (TF) P107 ON NEW FILE real  3x36                 3x36                 no
+  108 (TF) P108 ON NEW FILE real  3x36                 3x36                 no
+  109 (TF) P109 ON NEW FILE real  3x36                 3x36                 no
+  110 (TF) P110 ON NEW FILE real  3x36                 3x36                 no
+  111 (TF) P111 ON NEW FILE real  4x36                 4x36                 no
+  112 (TF) P112 ON NEW FILE real  4x4x36               4x4x36               no
+  113 (TF) P113 ON NEW FILE real  2x2x36               2x2x36               no
+  114 (TF) P114 ON NEW FILE real  4x4x36               4x4x36               no
+  115 (TF) P115 ON NEW FILE real  3x3x36               3x3x36               no
+  116 (TF) P116 ON NEW FILE real  2x2x36               2x2x36               no
+  117 (TF) P117 ON NEW FILE real  2x2x36               2x2x36               no
+  118 (TF) P118 ON NEW FILE real  4x4x36               4x4x36               no
+  119 (TF) P119 ON NEW FILE real  4x4x36               4x4x36               no
+  120 (TF) P120 ON NEW FILE real  4x4x36               4x4x36               no
+  121 (TF) P121 ON NEW FILE real  3x3x36               3x3x36               no
+  122 (TF) P122 ON NEW FILE real  4x4x36               4x4x36               no
+  123 (TF) P123 ON NEW FILE real  2x2x36               2x2x36               no
+  124 (TF) P124 ON NEW FILE real  3x3x36               3x3x36               no
+  125 (TF) P125 ON NEW FILE real  3x3x36               3x3x36               no
+  126 (TF) P126 ON NEW FILE real  3x3x36               3x3x36               no
+  127 (TF) P127 ON NEW FILE real  3x3x36               3x3x36               no
+  128 (TF) P128 ON NEW FILE real  4x4x36               4x4x36               no
+  129 (TF) P129 ON NEW FILE real  36                   36                   no
+  130 (TF) P130 ON NEW FILE real  36                   36                   no
+  131 (TF) P131 ON NEW FILE real  1                    1                    no
+  132 (TF) P132 ON NEW FILE real  36                   36                   no
+  133 (TF) P133 ON NEW FILE real  36                   36                   no
+  134 (TF) P134 ON NEW FILE real  1                    1                    no
+  135 (TF) P135 ON NEW FILE real  1                    1                    no
+  136 (TF) P136 ON NEW FILE real  1                    1                    no
+  137 (TF) P137 ON NEW FILE real  1                    1                    no
+  138 (TF) P138 ON NEW FILE real  1                    1                    no
+  139 (TF) P139 ON NEW FILE real  1                    1                    no
+  140 (TF) P140 ON NEW FILE real  1                    1                    no
+  141 (TF) P141 ON NEW FILE real  1                    1                    no
+  142 (TF) P142 ON NEW FILE real  1                    1                    no
+  
+  
+  HISTORY OF THIS RUN OF THE PROGRAM
+  
+  Type in your name,
+    or    -   to ignore any old history,
+          =   to take just any old history (no new),
+          0   to have no history on the new file.
+  
+  
+ 0
+ (New Header Array file is 'par_base.har'.)
+  
+  (The program has completed without error.)
+  Total elapsed time is: less than one second.
+  

@@ -267,7 +267,7 @@
 27854.619
 ! time=9 data, year is 2060
 28892.862999999998
-36 10 header "N012"
+36 10 col_order header "N012"
    longname "log_pcon"
    coefficient log_pcon(nipa_c,time)
    ;
@@ -641,7 +641,7 @@
 -0.08861438199999999
 -0.25550625
 -0.33429429
-37 10 header "N013"
+37 10 col_order header "N013"
    longname "con"
    coefficient con(ncom_k,time)
    ;
@@ -1025,7 +1025,7 @@
 1747.3309
 20.613861
 2814.5078
-37 10 header "N014"
+37 10 col_order header "N014"
    longname "pr_con"
    coefficient pr_con(ncom_k,time)
    ;
@@ -1409,7 +1409,7 @@
 0.8704859
 0.81831133
 0.71584308
-37 10 header "N015"
+37 10 col_order header "N015"
    longname "con_shk_val"
    coefficient con_shk_val(ncom_k,time)
    ;
@@ -1793,7 +1793,7 @@
 0.0
 0.0
 0.0
-36 10 header "N016"
+36 10 col_order header "N016"
    longname "con_share"
    coefficient con_share(nipa_c,time)
    ;
@@ -2215,7 +2215,7 @@
 0.36751956
 ! time=9 data, year is 2060
 0.36689544
-56 10 header "N019"
+56 10 col_order header "N019"
    longname "pcon"
    coefficient pcon(ntot_h,time)
    ;
@@ -2861,7 +2861,7 @@
 5158.2153
 ! time=9 data, year is 2060
 5136.1133
-36 10 header "N023"
+36 10 col_order header "N023"
    longname "inv"
    coefficient inv(ncom,time)
    ;
@@ -3355,7 +3355,7 @@
 3111.2808
 ! time=9 data, year is 2060
 3105.9822
-36 10 header "N029"
+36 10 col_order header "N029"
    longname "gov"
    coefficient gov(ncom,time)
    ;
@@ -3729,7 +3729,7 @@
 149.86313
 0.007059530400000001
 1244.9026
-36 10 header "N030"
+36 10 col_order header "N030"
    longname "imports"
    coefficient imports(ncom,time)
    ;
@@ -4103,7 +4103,7 @@
 25.120737
 15.40099
 24.905434
-36 10 header "N031"
+36 10 col_order header "N031"
    longname "exports"
    coefficient exports(ncom,time)
    ;
@@ -4477,7 +4477,7 @@
 54.687454
 53.437439000000005
 2.7910627999999997
-36 10 header "N032"
+36 10 col_order header "N032"
    longname "dom_share"
    coefficient dom_share(ncom,time)
    ;
@@ -4851,7 +4851,7 @@
 0.98993826
 0.99317724
 0.98193091
-36 10 header "N033"
+36 10 col_order header "N033"
    longname "po"
    coefficient po(nind,time)
    ;
@@ -5225,7 +5225,7 @@
 1.006094
 0.86553466
 0.80946743
-36 10 header "N034"
+36 10 col_order header "N034"
    longname "pi"
    coefficient pi(nind,time)
    ;
@@ -5599,7 +5599,7 @@
 1.0117779
 0.91780394
 0.80946743
-36 10 header "N035"
+36 10 col_order header "N035"
    longname "pc"
    coefficient pc(ncom,time)
    ;
@@ -5973,7 +5973,7 @@
 1.011044
 0.86508381
 0.80996448
-36 10 header "N036"
+36 10 col_order header "N036"
    longname "ps"
    coefficient ps(ncom,time)
    ;
@@ -6347,7 +6347,7 @@
 1.017606
 0.8704859
 0.81831133
-36 10 header "N037"
+36 10 col_order header "N037"
    longname "vs"
    coefficient vs(ncom,time)
    ;
@@ -6721,7 +6721,7 @@
 2496.6592
 2257.2944
 1378.3447
-36 10 header "N038"
+36 10 col_order header "N038"
    longname "qs"
    coefficient qs(ncom,time)
    ;
@@ -7095,7 +7095,7 @@
 2453.4634
 2593.1431
 1684.3770000000002
-36 10 header "N039"
+36 10 col_order header "N039"
    longname "qs_us"
    coefficient qs_us(ncom,time)
    ;
@@ -7589,7 +7589,7 @@
 5240.8804
 ! time=9 data, year is 2060
 5146.6592
-37 10 header "N045"
+37 10 col_order header "N045"
    longname "pr_kap"
    coefficient pr_kap(nind_c,time)
    ;
@@ -7973,7 +7973,7 @@
 0.75254786
 0.84860843
 0.71584308
-36 10 header "N046"
+36 10 col_order header "N046"
    longname "pr_lab"
    coefficient pr_lab(nind,time)
    ;
@@ -8347,7 +8347,7 @@
 0.98471195
 0.96949053
 0.94556016
-36 10 header "N047"
+36 10 col_order header "N047"
    longname "pr_ene"
    coefficient pr_ene(nind,time)
    ;
@@ -8721,7 +8721,7 @@
 1.6060865
 1.4182006999999999
 1.6566911
-36 10 header "N048"
+36 10 col_order header "N048"
    longname "pr_mat"
    coefficient pr_mat(nind,time)
    ;
@@ -9095,7 +9095,7 @@
 0.79036552
 0.79294664
 0.74899334
-37 10 header "N049"
+37 10 col_order header "N049"
    longname "kap"
    coefficient kap(nind_c,time)
    ;
@@ -9479,7 +9479,7 @@
 292.74301
 388.19189
 3931.7385
-36 10 header "N050"
+36 10 col_order header "N050"
    longname "lab"
    coefficient lab(nind,time)
    ;
@@ -9853,7 +9853,7 @@
 1209.1538
 782.21411
 654.44849
-36 10 header "N051"
+36 10 col_order header "N051"
    longname "ene"
    coefficient ene(nind,time)
    ;
@@ -10227,7 +10227,7 @@
 30.253328000000003
 36.54211
 25.492539999999998
-36 10 header "N052"
+36 10 col_order header "N052"
    longname "mat"
    coefficient mat(nind,time)
    ;
@@ -10601,7 +10601,7 @@
 1121.3491
 1059.4962
 752.0708
-36 10 header "N053"
+36 10 col_order header "N053"
    longname "share_kap"
    coefficient share_kap(nind,time)
    ;
@@ -10975,7 +10975,7 @@
 0.14192165
 0.11777135
 0.21201488
-36 10 header "N054"
+36 10 col_order header "N054"
    longname "share_lab"
    coefficient share_lab(nind,time)
    ;
@@ -11349,7 +11349,7 @@
 0.48067304
 0.40540418
 0.39826962
-36 10 header "N055"
+36 10 col_order header "N055"
    longname "share_ene"
    coefficient share_ene(nind,time)
    ;
@@ -11723,7 +11723,7 @@
 0.019615578
 0.027704502000000002
 0.027181111
-36 10 header "N056"
+36 10 col_order header "N056"
    longname "share_mat"
    coefficient share_mat(nind,time)
    ;
@@ -12097,7 +12097,7 @@
 0.35778973
 0.44911999
 0.3625344
-36 10 header "N057"
+36 10 col_order header "N057"
    longname "ind_out"
    coefficient ind_out(nind,time)
    ;
@@ -13047,7 +13047,7 @@
 1.4816232
 ! time=9 data, year is 2060
 1.5005111999999998
-36 10 header "N082"
+36 10 col_order header "N082"
    longname "com_out"
    coefficient com_out(ncom,time)
    ;
@@ -13421,7 +13421,7 @@
 2471.5383
 2241.8936
 1353.4393
-36 10 header "N083"
+36 10 col_order header "N083"
    longname "com_qty"
    coefficient com_qty(ncom,time)
    ;
@@ -13795,7 +13795,7 @@
 2444.5408
 2591.5334
 1670.9861
-36 10 header "N084"
+36 10 col_order header "N084"
    longname "tech_change"
    coefficient tech_change(nind,time)
    ;
@@ -14169,7 +14169,7 @@
 0.31356815
 0.20465168
 0.078578278
-20 10 header "N085"
+20 10 col_order header "N085"
    longname "qty_extern"
    coefficient qty_extern(nxtr,time)
    ;
@@ -14383,7 +14383,7 @@
 0.0
 0.0
 0.0
-36 10 header "N086"
+36 10 col_order header "N086"
    longname "tar_x_unit"
    coefficient tar_x_unit(ncom,time)
    ;
@@ -14757,7 +14757,7 @@
 0.0
 0.0
 0.0
-36 10 header "N087"
+36 10 col_order header "N087"
    longname "tar_x_value"
    coefficient tar_x_value(ncom,time)
    ;
@@ -15131,7 +15131,7 @@
 0.0
 0.0
 0.0
-36 10 header "N088"
+36 10 col_order header "N088"
    longname "tax_x_unit"
    coefficient tax_x_unit(nind,time)
    ;
@@ -15505,7 +15505,7 @@
 0.0
 0.0
 0.0
-36 10 header "N089"
+36 10 col_order header "N089"
    longname "tax_x_value"
    coefficient tax_x_value(nind,time)
    ;
@@ -15903,7 +15903,7 @@
 4914.8579
 ! time=9 data, year is 2060
 4948.3398
-36 10 header "N091"
+36 10 col_order header "N091"
    longname "pf"
    coefficient pf(ncom,time)
    ;
@@ -16277,7 +16277,7 @@
 1.1484611
 1.1658383999999997
 0.90352935
-36 10 header "N092"
+36 10 col_order header "N092"
    longname "pr_land_f"
    coefficient pr_land_f(ncom,time)
    ;
@@ -16699,7 +16699,7 @@
 310.58102
 ! time=9 data, year is 2060
 349.70377
-36 10 header "N095"
+36 10 col_order header "N095"
    longname "exp_share"
    coefficient exp_share(ncom,time)
    ;
@@ -18009,7 +18009,7 @@
 37789.5
 ! time=9 data, year is 2060
 40012.875
-36 10 header "N135"
+36 10 col_order header "N135"
    longname "grossout"
    coefficient grossout(nind,time)
    ;
@@ -18383,7 +18383,7 @@
 2491.0796
 1983.5649
 1553.7726
-36 10 header "N136"
+36 10 col_order header "N136"
    longname "ind_qty"
    coefficient ind_qty(nind,time)
    ;
@@ -18757,7 +18757,7 @@
 2462.0815
 2161.2078
 1919.4998
-36 10 header "N137"
+36 10 col_order header "N137"
    longname "imp_qty"
    coefficient imp_qty(ncom,time)
    ;
@@ -19371,7 +19371,7 @@
 3978.8643
 ! time=9 data, year is 2060
 4044.1165
-37 10 header "N148"
+37 10 col_order header "N148"
    longname "totgrosscap"
    coefficient totgrosscap(nind_c,time)
    ;
@@ -19972,8 +19972,8 @@
 ! time=9 data, year is 2060
 0.84326011
 10 header "N158"
-   longname "gov_transdom"
-   coefficient gov_transdom(time)
+   longname "end_gov_transdom"
+   coefficient end_gov_transdom(time)
    ;
 ! time=0 data, year is 2020
 683.55267
@@ -19996,8 +19996,8 @@
 ! time=9 data, year is 2060
 1334.243
 10 header "N159"
-   longname "gov_transabr"
-   coefficient gov_transabr(time)
+   longname "end_gov_transabr"
+   coefficient end_gov_transabr(time)
    ;
 ! time=0 data, year is 2020
 50.443188
@@ -20020,8 +20020,8 @@
 ! time=9 data, year is 2060
 84.427452
 10 header "N160"
-   longname "rev_nontax"
-   coefficient rev_nontax(time)
+   longname "end_rev_nontax"
+   coefficient end_rev_nontax(time)
    ;
 ! time=0 data, year is 2020
 97.479424
@@ -20044,8 +20044,8 @@
 ! time=9 data, year is 2060
 230.60771
 10 header "N161"
-   longname "trans_abroad"
-   coefficient trans_abroad(time)
+   longname "end_trans_abr"
+   coefficient end_trans_abr(time)
    ;
 ! time=0 data, year is 2020
 80.061653
@@ -20068,8 +20068,8 @@
 ! time=9 data, year is 2060
 137.04291
 10 header "N162"
-   longname "gov_from_ss"
-   coefficient gov_from_ss(time)
+   longname "end_gov_from_ss"
+   coefficient end_gov_from_ss(time)
    ;
 ! time=0 data, year is 2020
 22.602210999999997
@@ -20092,8 +20092,8 @@
 ! time=9 data, year is 2060
 36.01704
 10 header "N163"
-   longname "gov_interest"
-   coefficient gov_interest(time)
+   longname "end_gov_interest"
+   coefficient end_gov_interest(time)
    ;
 ! time=0 data, year is 2020
 342.08267
@@ -20116,8 +20116,8 @@
 ! time=9 data, year is 2060
 849.9201699999999
 10 header "N164"
-   longname "gov_int_abr"
-   coefficient gov_int_abr(time)
+   longname "end_gov_int_abr"
+   coefficient end_gov_int_abr(time)
    ;
 ! time=0 data, year is 2020
 220.65953
@@ -20140,8 +20140,8 @@
 ! time=9 data, year is 2060
 280.38707999999997
 10 header "N165"
-   longname "gov_int_ss"
-   coefficient gov_int_ss(time)
+   longname "end_gov_int_ss"
+   coefficient end_gov_int_ss(time)
    ;
 ! time=0 data, year is 2020
 100.41473
