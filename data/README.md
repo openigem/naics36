@@ -10,6 +10,7 @@ each block. The start of each filename indicates the block as follows:
    end = endogenous variables
    exo = main block of exogenous variables
    ext = additional endogenous variables: pb
+   imp = implicit variables not saved by the previous model
    int = intermediate inputs: int_val and int_qty
    iot = Full IO table: io
    kal = exogenous Kalman terms
@@ -52,12 +53,19 @@ used are:
 
 Python code for the openigem module used by build_modhar_txt.py.
 
-## Subdirectory: p10a
+## Subdirectories p01s, p10a and p31e
 
-Working directory for building a set of GEMPACK header array files
-for a 10-period model. The dates of the periods are defined in the 
-p10a.json. The input information is read from the directory 
-above.
+Working directories for building sets of GEMPACK header array files
+for various intertemporal grids.:
+
++ `p01s` supports the 1-period steady state version of the model. The 
+    date of the steady state is defined in the file `p01s.json`.
+    
++ `p10a` supports the 10-period model with varying grid spacing. The 
+   dates of the periods are defined in the file `p10a.json`.
+   
++ `p31e` supports the 31-period model with even grid spacing. The 
+  periods are defined in `p31e.json`.
 
 ### Txt and Inp files
 
@@ -70,4 +78,3 @@ required.
 
 These are declarations for the corresponding variables or parameters.
 The GEMPACK header codes are included.
-
