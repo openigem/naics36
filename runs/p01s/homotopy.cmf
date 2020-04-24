@@ -161,7 +161,7 @@ exogenous  nyears_lag("p0");
 exogenous  agg_tech_lvl("p0");
 rest endogenous ;
 
-Verbal Description = ????????  ;
+Verbal Description = Diagnostic homotopy simulation  ;
 
 ! Insert shocks below
 shock c_homotopy = 1 ;
