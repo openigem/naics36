@@ -1,0 +1,46 @@
+// Forward differences involving variables from t+1
+// Implicitly defined over time_p0m1
+
+'Number of years to next period'
+nyears_lead = lead(year) - year ;
+
+'Capital accumulation'
+lead(k) = (1 - delta)^nyears_lead * k 
+        - (((1 - delta)^nyears_lead - 1)/delta) * inv_real ;
+
+'Accumulation of govt debt held domestically'
+lead(gov_debt) = gov_debt 
+               + (gov_for_nvst + gov_debt_cg + gov_debt_dsc - gov_surplus)*nyears_lead ;
+
+'Accumulation of govt debt held abroad'
+lead(gov_debt_f) = gov_debt_f - (gov_for_nvst + gov_debt_fcg)*nyears_lead ;			
+
+'Accumulation of economy-wide technology improvement' 
+lead(agg_tech_lvl) = (1 - agg_tech_chg)^nyears_lead * agg_tech_lvl ;
+
+'Accumulation of rest-of-world debt'
+lead(row_debt) = row_debt 
+               + (us_surplus + row_debt_cg + row_debt_dsc - gov_for_nvst)*nyears_lead ;		   
+
+// Backward differences involving variables from t-1
+// Implicitly defined over over time_p1m0
+
+'Number of years since last period'
+nyears_lag = year - lag(year) ;
+
+'Value of full consumption'
+full_con = (((1+r)/(1+rho+risk))^nyears_lag)*(hh_equiv/hh_equiv_lag)*lag(full_con) ;
+
+'Capital gain'
+capgain = (((pk - lag(pk))/nyears_lag)/pk - delta) * k_value ;
+
+'Price of capital services' 
+pk_service = ((1+r)^nyears_lag/(adjust_i*inv_exp_shk*adjust_pk*adjust_k*(1-tax_cap)) + tax_prop) * lag(pk)
+           - ((1-delta)/(adjust_i*inv_exp_shk*adjust_pk*adjust_k*(1-tax_cap))) * pk ;
+
+// Terminal conditions for backward differences
+// Explicitly defined over last
+
+'Full consumption'
+last: r = rho + risk ;
+

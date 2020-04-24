@@ -4,50 +4,76 @@
 
 //  NOTE: A given externality is either supply- or demand-driven, not both
 
-tax_labor_m = exo_tax_labm * tax_scale 'Marginal tax rate on labor'  ;
-tax_labor_a = exo_tax_laba * tax_scale 'Average tax rate on labor'  ;
-tax_cap = exo_tax_cap * tax_scale 'Average-marginal tax rate on capital  ;
+'Marginal tax rate on labor' 
+tax_labor_m = exo_tax_labm * tax_scale ;
+
+//tax_labor_m = exo_tax_labm * tax_scale 
+//    'Marginal tax rate on labor'  ;
+
+tax_labor_a = exo_tax_laba * tax_scale 
+    'Average tax rate on labor'  ;
+
+tax_cap = exo_tax_cap * tax_scale 
+    'Average-marginal tax rate on capital'  ;
 
 //  Supply-driven externality tax rates
 
-tax_ext_ind = sum(nxtr,tax_ext_u*prd_ext(ind,nxtr))  'Total externality tax on industry production'  ;
-tar_ext_com = sum(nxtr,tax_ext_u*imp_ext(com,nxtr))  'Total externality tariff on commodity import'  ;
+tax_ext_ind = sum(nxtr,tax_ext_u*prd_ext)  
+    'Total externality tax on industry production'  ;
+
+tar_ext_com = sum(nxtr,tax_ext_u*imp_ext)  
+    'Total externality tariff on commodity import'  ;
 
 //  Demand-driven externality tax rates
 
-tax_ext_com = sum(nxtr,tax_ext_u*com_ext(com,buy,nxtr))  'Total externality tax on commodity use'  ;
+tax_ext_com = sum(nxtr,tax_ext_u*com_ext)  
+    'Total externality tax on commodity use'  ;
 
 //  Compute agg_tech_lvl and industry capital and labor prices
-
-lead(agg_tech_lvl) = (1 - agg_tech_chg)^nyears_lead * agg_tech_lvl  'Economy-wide level of tech improvement'  ;
 
 pb(kap,indxoilgas) = pk_service*pk_scale(indxoilgas)  'Non-oil,gas industry-specific capital services prices' ;
 pb(kap,i02) = pr_kap_oil  'Capital services price, oil mining'  ;
 pb(kap,i03) = pr_kap_gas  'Capital services price, gas mining'  ;
-pb(lab,ind) = pr_hours*pl_scale(ind)/(1 - tax_labor_m) 'Industry-specific labor prices' ;
+pb(lab,ind) = pr_hours*pl_scale/(1 - tax_labor_m) 'Industry-specific labor prices' ;
+
 
 // Energy tier equations
 
 // Gas share and price equations
 
-shr_gas = ap_gas + kalf_gas + sum(pr_gas,bp_gas*ln(pb(pr_gas,ind))) 'gas input shares' ;
+ind: shr_gas = ap_gas 
+             + kalf_gas 
+             + sum(pr_gas,bp_gas*ln(pb(pr_gas))) 
+             'gas input shares' ;
 
-ln(pb(gas,ind)) = ap0_gas + sum(s_gas,(ap_gas + kalf_gas)*ln(pb(s_gas,ind)))
-                          + 0.5*sum(pr_gas,sum(s_gas,ln(pb(s_gas,ind))*bp_gas*ln(pb(pr_gas,ind)))) 'gas prices' ;
+ind: ln(pb(gas)) = ap0_gas 
+                 + sum(s_gas,(ap_gas + kalf_gas)*ln(pb(s_gas)))
+                 + 0.5*sum(pr_gas,sum(s_gas,ln(pb(s_gas))*bp_gas*ln(pb(pr_gas)))) 
+                 'gas prices' ;
 
 // Oil share and price equations
 
-shr_oil = ap_oil + kalf_oil + sum(pr_oil,bp_oil*ln(pb(pr_oil,ind))) 'oil input shares' ;
+ind: shr_oil = ap_oil 
+             + kalf_oil 
+             + sum(pr_oil,bp_oil*ln(pb(pr_oil))) 
+             'oil input shares' ;
 
-ln(pb(oil,ind)) = ap0_oil + sum(s_oil,(ap_oil + kalf_oil)*ln(pb(s_oil,ind)))
-                          + 0.5*sum(pr_oil,sum(s_oil,ln(pb(s_oil,ind))*bp_oil*ln(pb(pr_oil,ind)))) 'oil prices' ;
+ind: ln(pb(oil)) = ap0_oil 
+                 + sum(s_oil,(ap_oil + kalf_oil)*ln(pb(s_oil)))
+                 + 0.5*sum(pr_oil,sum(s_oil,ln(pb(s_oil))*bp_oil*ln(pb(pr_oil)))) 
+                 'oil prices' ;
    
 // Fossil fuel share and price equations
 
-shr_ff = ap_ff + kalf_ff + sum(pr_ff,bp_ff*ln(pb(pr_ff,ind))) 'ff input shares' ;
+ind: shr_ff = ap_ff 
+            + kalf_ff 
+            + sum(pr_ff,bp_ff*ln(pb(pr_ff))) 
+            'ff input shares' ;
 
-ln(pb(ff,ind)) = ap0_ff + sum(s_ff,(ap_ff + kalf_ff)*ln(pb(s_ff,ind)))
-                        + 0.5*sum(pr_ff,sum(s_ff,ln(pb(s_ff,ind))*bp_ff*ln(pb(pr_ff,ind)))) 'ff prices' ;
+ind: ln(pb(ff)) = ap0_ff 
+                + sum(s_ff,(ap_ff + kalf_ff)*ln(pb(s_ff)))
+                + 0.5*sum(pr_ff,sum(s_ff,ln(pb(s_ff))*bp_ff*ln(pb(pr_ff)))) 
+                'ff prices' ;
 
 // Energy share and price equations
 
@@ -161,7 +187,7 @@ pi = po*(1 + tax_sales) + tax_unit + tax_ext_ind  'Industry purchaser prices' ;
 
 //  Compute commodity prices as weighted averages of industry prices
 
-pc = sum(ind,po*make_col)  'Commodity prices from make table' ;
+pc = exp(sum(ind,ln(pi)*make_col))  'Commodity prices from make table' ;
 
 //  Compute commodity import prices to domestic buyers
 

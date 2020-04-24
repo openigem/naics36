@@ -1,33 +1,52 @@
 // IGEM's Investment Sub-model
 
-pr_inv(com) = pb(com,inv)  'Investment commodity prices, io'  ;
+com: pr_inv = pb(inv)  'Investment commodity prices, io'  ;
 
 // Equations - Tiers bottom-up shares and prices
 
 // Equations - Raw materials (rawm), Furnishings (furn), Mfg services (mserv), Trade (trd),
 //             Transportation equipment (trnsp), IT and communications equip (it)
 
-shr_rawm = ai_rawm + kali_rawm + sum(pr_rawm,bi_rawm*ln(pr_inv(pr_rawm))) 'rawm commodity shares' ;
+shr_rawm = ai_rawm 
+         + kali_rawm 
+         + sum(pr_rawm,bi_rawm*ln(pr_inv(pr_rawm))) 
+         'rawm commodity shares' ;
 
 ln(pr_inv(rawm)) = sum(s_rawm,(ai_rawm + kali_rawm)*ln(pr_inv(s_rawm)))
-                + 0.5*sum(pr_rawm,sum(s_rawm,ln(pr_inv(s_rawm))*bi_rawm*ln(pr_inv(pr_rawm)))) 'rawm price' ;
+                 + 0.5*sum(pr_rawm,sum(s_rawm,ln(pr_inv(s_rawm))*bi_rawm*ln(pr_inv(pr_rawm)))) 
+                 'rawm price' ;
 
-shr_furn = ai_furn + kali_furn + sum(pr_furn,bi_furn*ln(pr_inv(pr_furn))) 'furn commodity shares' ;
+shr_furn = ai_furn 
+         + kali_furn 
+         + sum(pr_furn,bi_furn*ln(pr_inv(pr_furn))) 
+         'furn commodity shares' ;
 
 ln(pr_inv(furn)) = sum(s_furn,(ai_furn + kali_furn)*ln(pr_inv(s_furn)))
-                + 0.5*sum(pr_furn,sum(s_furn,ln(pr_inv(s_furn))*bi_furn*ln(pr_inv(pr_furn)))) 'furn price' ;
+                 + 0.5*sum(pr_furn,sum(s_furn,ln(pr_inv(s_furn))*bi_furn*ln(pr_inv(pr_furn)))) 
+                 'furn price' ;
 
-shr_mserv = ai_mserv + kali_mserv + sum(pr_mserv,bi_mserv*ln(pr_inv(pr_mserv))) 'mserv commodity shares' ;
+shr_mserv = ai_mserv 
+          + kali_mserv 
+          + sum(pr_mserv,bi_mserv*ln(pr_inv(pr_mserv))) 
+          'mserv commodity shares' ;
 
 ln(pr_inv(mserv)) = sum(s_mserv,(ai_mserv + kali_mserv)*ln(pr_inv(s_mserv)))
-                 + 0.5*sum(pr_mserv,sum(s_mserv,ln(pr_inv(s_mserv))*bi_mserv*ln(pr_inv(pr_mserv)))) 'mserv price' ;		
+                  + 0.5*sum(pr_mserv,sum(s_mserv,ln(pr_inv(s_mserv))*bi_mserv*ln(pr_inv(pr_mserv)))) 
+                  'mserv price' ;		
 				 
-shr_trd = ai_trd + kali_trd + sum(pr_trd,bi_trd*ln(pr_inv(pr_trd))) 'trd commodity shares' ;
+shr_trd = ai_trd 
+        + kali_trd 
+        + sum(pr_trd,bi_trd*ln(pr_inv(pr_trd))) 
+        'trd commodity shares' ;
 
 ln(pr_inv(trd)) = sum(s_trd,(ai_trd + kali_trd)*ln(pr_inv(s_trd)))
-               + 0.5*sum(pr_trd,sum(s_trd,ln(pr_inv(s_trd))*bi_trd*ln(pr_inv(pr_trd)))) 'trd price' ;		
+                + 0.5*sum(pr_trd,sum(s_trd,ln(pr_inv(s_trd))*bi_trd*ln(pr_inv(pr_trd)))) 
+                'trd price' ;		
 				 
-shr_trnsp = ai_trnsp + kali_trnsp + sum(pr_trnsp,bi_trnsp*ln(pr_inv(pr_trnsp))) 'trnsp commodity shares' ;
+shr_trnsp = ai_trnsp 
+          + kali_trnsp 
+          + sum(pr_trnsp,bi_trnsp*ln(pr_inv(pr_trnsp))) 
+          'trnsp commodity shares' ;
 
 ln(pr_inv(trnsp)) = sum(s_trnsp,(ai_trnsp + kali_trnsp)*ln(pr_inv(s_trnsp)))
                  + 0.5*sum(pr_trnsp,sum(s_trnsp,ln(pr_inv(s_trnsp))*bi_trnsp*ln(pr_inv(pr_trnsp)))) 'trnsp price' ;
@@ -90,7 +109,7 @@ pii = exp(sum(s_fixed,(ai_fixed + kali_fixed)*ln(pr_inv(s_fixed)))
 pk = adjust_pk*pii*(1-tax_itc) 'Price of new capital stock'  ;
 
 inv_total = inv_expend/(1-tax_itc) 'Post-itc investment'  ;
-rev_itc = -tax_itc*inv_total       'Investment tax credit (negative)'  ;
+//-- rev_itc = -tax_itc*inv_total       'Investment tax credit (negative)'  ;
 inv_real = adjust_i*inv_total*inv_exp_shk/pii  'Post-itc investment quantity'  ;
 fixed_inv = inv_total*(1-inven_fract) 'Fixed portion of total investment'  ;
 inven_inv = inv_total- fixed_inv 'Inventory portion of total investment'  ;
@@ -152,6 +171,5 @@ inv_share(c36) = 0.0  ;
 //  Investment goods expenditues and quantities
 
 inv = inv_share*fixed_inv + inven_share*inven_inv 'Investment good expenditures'  ;
-inv_qty(com) = inv(com)/pr_inv(com) 'Investment good quantities'  ;
 
 

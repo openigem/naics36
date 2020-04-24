@@ -1,0 +1,20 @@
+// unused.sym
+//
+// Set unused variables to zero explicitly to keep system of equations
+// full rank. Alternatively, could make them exogenous but that is 
+// probably less clear.
+
+// Interindustry matrices are dimensioned over (ninp,nuses) but there 
+// won't be anything in the VA rows of the FD columns
+
+int_qty(va_rows,fd_cols) = 0 ;
+int_val(va_rows,fd_cols) = 0 ;
+
+// Buyer price pb dimensioned over (pro_inputs,buy) but some of the
+// elements are not used.
+
+pb(pro_tiers,cig_cols) = 0 ;
+pb(lab      ,cig_cols) = 0 ;
+pb(kap      ,gov     ) = 0 ;
+pb(kap      ,inv     ) = 0 ;
+

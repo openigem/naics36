@@ -21,11 +21,21 @@ pd_gdp = exp((con_expend*ln(pd_con)
 			 /nom_gdp)/pd_gdp_scale
 			 'Geometric price deflator for nom_gdp'  ;
 			 
+gov_real = gov_expend/pgg  'Real government purchases of goods and services'  ;
+
+export_real = pd_exp_scale*export_value/pd_exp	'Real exports of goods and services'  ;		 
+			 
+import_real = pd_imp_scale*import_value/pd_imp	'Real imports of goods and services'  ;				 
+				 
 nom_gnp = nom_gdp + row_interest - gov_int_abr + rev_tariff  'Nominal GDP'  ;
 
-income = lab_inc_net + kap_inc_net + gov_transdom + rev_con_rbt - rev_lump  'After-tax household income'  ;
+//-- income = lab_inc_net + kap_inc_net + gov_transdom + rev_con_rbt - rev_lump  'After-tax household income'  ;
+income = lab_inc_net + kap_inc_net + gov_transdom - rev_lump  'After-tax household income'  ;
 
-save = income - con_expend - transfer_abr - rev_nontax + rev_itc  'Household saving'  ;
+save = income - con_expend - transfer_abr - rev_nontax ; //-- + rev_itc  'Source of household saving'  ;
+//-- save_uses = inv_total + tax_con_totk*inv_expend*(con(kap)/(kap_income+rev_cap_hh)) + us_surplus - gov_surplus  'Uses of household saving'  ;
+save_uses = inv_total + tax_con_totk*inv_expend*(con(kap)/(kap_income)) + us_surplus - gov_surplus  'Uses of household saving'  ;
+save = save_uses  'Saving-investment balance'  ;
 
 			 
 

@@ -24,12 +24,7 @@ trade_surpfc = trade_surp/exch  'Trade surplus in foreign currency'  ;
 
 us_surplus = trade_surp
            + row_interest
-		   - gov_int_abr
-		   - gov_transabr
-//		   - transfer_abr
-		   'Current account surplus in domestic currency'  ;
-		   
-lead(row_debt) = row_debt + (us_surplus + row_debt_cg + row_debt_dsc - gov_for_nvst)*nyears_lead  'Rest-of-world debt'  ;		   
-
-
-
+		     - gov_int_abr
+		     - gov_transabr
+		     - transfer_abr
+		     'Current account surplus in domestic currency'  ;

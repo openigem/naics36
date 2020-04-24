@@ -157,7 +157,7 @@ parameter ah_nd(s_nd) 'Household shares at unit prices, nd' P005 ;
 parameter bh_nd(s_nd,pr_nd) 'Share price elasticities, nd' P024 ;
 
 // Parameter definitions - Full consumption (f) - Top tier alpha and beta effects
-//                         Non-durables (nd), Capital (ks), Consumer services (cs), Leisure (r)                                                                 
+//                         Non-durables (nd), Capital (ks), Consumer services (cs), Leisure (leis)                                                                 
 
 parameter ah_f(s_f) 'Household shares at unit prices, f' P004 ;
 parameter bh_f(s_f,pr_f) 'Share price elasticities, f' P023 ;
@@ -169,8 +169,8 @@ parameter denom_rebase  'Full consumption share denominator re-basing parameter'
 parameter pfc_m0  'Full consumption share normalization parameter' P046 ;
 
 parameter pr_fc_scale   'Full consumption price normalization scalar' P142 ;
-parameter pf_scale_k  'Scalar - Capital stock' P135 ;
-parameter pf_scale_l  'Scalar - Value of available hours' P134 ;
+// parameter pf_scale_k  'Scalar - Capital stock' P135 ;
+// parameter pf_scale_l  'Scalar - Value of available hours' P134 ;
 
 // INVESTMENT SUB-MODEL
 

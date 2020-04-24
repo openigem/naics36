@@ -1,0 +1,24 @@
+// 
+//  Set up a steady state version of the model
+//
+
+//  Use 1 period
+
+set time(p0) 'Time periods'  ;
+
+#include ../sets.sym
+#include ../variables.sym
+#include ../parameters.sym
+#include ../producer.sym
+#include ../household.sym
+#include ../investment.sym
+#include ../government.sym
+#include ../trade.sym
+#include ../factors.sym
+#include ../markets.sym
+#include ../nipa.sym
+#include ../unused.sym
+
+//  Include the steady state equations
+
+#include ../steady.sym

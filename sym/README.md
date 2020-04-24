@@ -1,10 +1,11 @@
 # Sym Code for OpenIGEM
 
-## Master file
+## Subdirectories and master model definition files
 
-The file below defines the full model. It pulls in the other sym files via include statements.
-
-    openigem.sym
+Each of the subdirectories contains a master file suitable for building
+a version of the model for a particular time grid. The master files are 
+all named `openigem.sym` and pull in other sym files as needed from the 
+current directory via include statements.
 
 ## Declarations 
 The following files contain declarations of sets, parameters,
@@ -21,14 +22,24 @@ functional blocks.
     factors.sym
     government.sym
     household.sym
+    inter.sym
     investment.sym
+    markets.sym
+    nipa.sym
+    openigem.sym
+    parameters.sym
     producer.sym
+    sets.sym
+    steady.sym
+    time01.sym
+    time10.sym
+    time31.sym
     trade.sym
+    unused.sym
+    variables.sym
 
-## Makefile
+## Makefile-sub
 
-The makefile in the directory is used for building the Tablo
-version of the model from the sym files. The Tablo version 
-itself is stored in a parallel directory. The makefile 
-also builds the HTML description of the model in the docs
-directory.
+This file contains the general procedure for building a version of 
+the model for a specified time grid. It is included by makefiles in 
+the subdirectories. 

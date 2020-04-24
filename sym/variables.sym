@@ -1,8 +1,8 @@
 //  IGEM Variables
 
 variable  year  'Calendar years' X041 ;
-variable  nyears_lead  'Leading number of intervening years' ZV01 ;
-variable  nyears_lag   'Lagged number of intervening years' ZV02 ;
+variable  nyears_lead  'Leading number of intervening years' A000 ;
+variable  nyears_lag   'Lagged number of intervening years' A001 ;
 
 // Price-related definitions
 
@@ -13,10 +13,10 @@ variable  po(ind)  'Industry producer prices' N033 ;
 variable  exo_pf(com)  'Commodity import prices, foreign currency, exogenous' X004 ;
  
 variable  pf(com)  'Commodity import prices, foreign currency' N091 ;
-variable  pfd(com) 'Commodity import prices, domestic currency' ZV03 ;
+variable  pfd(com) 'Commodity import prices, domestic currency' A002 ;
 variable  ps(com)  'Total commodity supply prices' N036 ;
 
-variable  pb(inputs,buy) 'Buyer prices with demand-driven externality taxes (if any)' T001 ;
+variable  pb(pro_inputs,buy) 'Buyer prices with demand-driven externality taxes (if any)' T001 ;
 
 variable  pr_con(ncom_k)  'Household commodity prices, io' N014 ;
 variable  pcon(ntoth)  'Household commodity prices including leisure and tiers, nipa' N019 ;
@@ -26,7 +26,7 @@ variable  pr_leisure  'Price of leisure' N017 ;
 variable  pr_fc  'Price of full consumption' N008 ;
 
 variable  pii  'Price of investment goods' N020 ;
-variable  pr_inv(inputs)  'Investment commodity prices, io' ZV04 ;
+variable  pr_inv(inv_inputs)  'Investment commodity prices, io' A003 ;
 variable  pk   'Price of new capital stock' N060 ;
 variable  pk_service  'Price of capital services' N058 ;
 variable  pr_kap_oil   'Price of capital services, oil mining' N080 ;
@@ -49,14 +49,14 @@ variable  imp_ext(com,nxtr)  'Externality coefficients from imports' X022 ;
 
 //  Demand-driven externality coefficients
 
-variable  com_ext(com,buy,nxtr)  'Externality coefficients from consumption' ZV05 ;
+variable  com_ext(com,buy,nxtr)  'Externality coefficients from consumption' B004 ;
 
 // Energy tier shares
 
-variable  shr_gas(s_gas,ind) 'Input shares, gas' ZV06 ;
-variable  shr_oil(s_oil,ind) 'Input shares, oil' ZV07 ;
-variable  shr_ff(s_ff,ind) 'Input shares, ff' ZV08 ;
-variable  shr_ene(s_ene,ind) 'Input shares, ene' ZV09 ;
+variable  shr_gas(s_gas,ind) 'Input shares, gas' A005 ;
+variable  shr_oil(s_oil,ind) 'Input shares, oil' A006 ;
+variable  shr_ff(s_ff,ind) 'Input shares, ff' A007 ;
+variable  shr_ene(s_ene,ind) 'Input shares, ene' A008 ;
 
 // Energy tier factor biases (exogenous)
 
@@ -67,10 +67,10 @@ variable  kalf_ene(s_ene,ind) 'Input biases, ene' K004 ;
 
 // Services tier shares
 
-variable  shr_bl(s_bl,ind) 'Input shares, bl' ZV10 ;
-variable  shr_ob(s_ob,ind) 'Input shares, ob' ZV11 ;
-variable  shr_os(s_os,ind) 'Input shares, os' ZV12 ;
-variable  shr_sv(s_sv,ind) 'Input shares, sv' ZV13 ;
+variable  shr_bl(s_bl,ind) 'Input shares, bl' A009 ;
+variable  shr_ob(s_ob,ind) 'Input shares, ob' A010 ;
+variable  shr_os(s_os,ind) 'Input shares, os' A011 ;
+variable  shr_sv(s_sv,ind) 'Input shares, sv' A012 ;
 
 // Services tier factor biases (exogenous)
 
@@ -81,10 +81,10 @@ variable  kalf_sv(s_sv,ind) 'Input biases, sv' K016 ;
 
 // Non-aggregate materials tier shares
 
-variable  shr_ma(s_ma,ind) 'Input shares, ma' ZV14 ;
-variable  shr_mn(s_mn,ind) 'Input shares, mn' ZV15 ;
-variable  shr_tr(s_tr,ind) 'Input shares, tr' ZV16 ;
-variable  shr_tt(s_tt,ind) 'Input shares, tt' ZV17 ;
+variable  shr_ma(s_ma,ind) 'Input shares, ma' A013 ;
+variable  shr_mn(s_mn,ind) 'Input shares, mn' A014 ;
+variable  shr_tr(s_tr,ind) 'Input shares, tr' A015 ;
+variable  shr_tt(s_tt,ind) 'Input shares, tt' A016 ;
 
 // Non-aggregate materials tier factor biases (exogenous)
 
@@ -95,10 +95,10 @@ variable  kalf_tt(s_tt,ind) 'Input biases, tt' K015 ;
 
 // Aggregate materials tier shares
 
-variable  shr_eq(s_eq,ind) 'Input shares, eq' ZV18 ;
-variable  shr_ms(s_ms,ind) 'Input shares, ms' ZV19 ;
-variable  shr_mm(s_mm,ind) 'Input shares, mm' ZV20 ;
-variable  shr_mat(s_mat,ind) 'Input shares, mat' ZV21 ;
+variable  shr_eq(s_eq,ind) 'Input shares, eq' A017 ;
+variable  shr_ms(s_ms,ind) 'Input shares, ms' A018 ;
+variable  shr_mm(s_mm,ind) 'Input shares, mm' A019 ;
+variable  shr_mat(s_mat,ind) 'Input shares, mat' A020 ;
 
 // Aggregate materials tier tier factor biases (exogenous)
 
@@ -109,15 +109,16 @@ variable  kalf_mat(s_mat,ind) 'Input biases, mat' K005 ;
 
 // Top tier klem shares
 
-variable  shr_o(s_o,ind) 'Input shares, klem in o' ZV22 ;
+variable  shr_o(s_o,ind) 'Input shares, klem in o' A021 ;
 
 // Top tier klem factor biases and industry TFP (exogenous)
 
 variable  kalf_o(s_o,ind) 'Input biases, klem in o' K003 ;
 variable  kalp(ind)  'Technical change (TFP, Total factor productivity), output' K002 ;
 
-// Make table
+// Make tables
 variable  make_col(ind,com)  'Make table of commodity output shares' M003 ;
+variable  make_row(ind,com)  'Make table of industry output shares' M002 ;
 
 // Technical change variables
 
@@ -133,10 +134,10 @@ variable  io(ninp,ind)  'Input-output coefficients in value terms' O001 ;
 
 // Household non-durables variables - Energy (en), Household and personal goods (hpg), Consumer goods (cg), Non-durables (nd)
 
-variable  shr_en(s_en)  'Household shares, en' ZV23 ;
-variable  shr_hpg(s_hpg)  'Household shares, hpg' ZV24 ;
-variable  shr_cg(s_cg)  'Household shares, cg' ZV25 ;
-variable  shr_nd(s_nd)  'Household shares, nd' ZV26 ;
+variable  shr_en(s_en)  'Household shares, en' A022 ;
+variable  shr_hpg(s_hpg)  'Household shares, hpg' A023 ;
+variable  shr_cg(s_cg)  'Household shares, cg' A024 ;
+variable  shr_nd(s_nd)  'Household shares, nd' A025 ;
 
 variable  kalh_en(s_en)  'Household biases, en' K039 ;
 variable  kalh_hpg(s_hpg)  'Household biases, hpg' K045 ;
@@ -146,10 +147,10 @@ variable  kalh_nd(s_nd)  'Household biases, nd' K036 ;
 // Household services variables - Communications (cmm), Household and personal services (hps),
 //                                Energy utilities (ens), Travel (trv)
 
-variable  shr_cmm(s_cmm)  'Household shares, cmm' ZV27 ;
-variable  shr_hps(s_hps)  'Household shares, hps' ZV28 ;
-variable  shr_ens(s_ens)  'Household shares, ens' ZV29 ;
-variable  shr_trv(s_trv)  'Household shares, trv' ZV30 ;
+variable  shr_cmm(s_cmm)  'Household shares, cmm' A026 ;
+variable  shr_hps(s_hps)  'Household shares, hps' A027 ;
+variable  shr_ens(s_ens)  'Household shares, ens' A028 ;
+variable  shr_trv(s_trv)  'Household shares, trv' A029 ;
 
 variable  kalh_cmm(s_cmm)  'Household biases, cmm' K053 ;
 variable  kalh_hps(s_hps)  'Household biases, hps' K052 ;
@@ -159,10 +160,10 @@ variable  kalh_trv(s_trv)  'Household biases, trv' K050 ;
 // Household services variables - Recreation services (rcs), Education and non-profits (edn),
 //                                Finance and business services (fb), Medical (md)
 
-variable  shr_rcs(s_rcs)  'Household shares, rcs' ZV31 ;
-variable  shr_edn(s_edn)  'Household shares, edn' ZV32 ;
-variable  shr_fb(s_fb)  'Household shares, fb' ZV33 ;
-variable  shr_md(s_md)  'Household shares, md' ZV34 ;
+variable  shr_rcs(s_rcs)  'Household shares, rcs' A030 ;
+variable  shr_edn(s_edn)  'Household shares, edn' A031 ;
+variable  shr_fb(s_fb)  'Household shares, fb' A032 ;
+variable  shr_md(s_md)  'Household shares, md' A033 ;
 
 variable  kalh_rcs(s_rcs)  'Household biases, rcs' K049 ;
 variable  kalh_edn(s_edn)  'Household biases, edn' K046 ;
@@ -172,11 +173,11 @@ variable  kalh_md(s_md)  'Household biases, md' K041 ;
 // Household services variables - Transportation and communication (trc), Utilities and personal services (ups),
 //                                Recreation, travel and meals (rc)), Household operation (ho), Consumer services (cs)
 
-variable  shr_trc(s_trc)  'Household shares, trc' ZV35 ;
-variable  shr_ups(s_ups)  'Household shares, ups' ZV36 ;
-variable  shr_rc(s_rc)  'Household shares, rc' ZV37 ;
-variable  shr_ho(s_ho)  'Household shares, ho' ZV38 ;
-variable  shr_cs(s_cs)  'Household shares, cs' ZV39 ;
+variable  shr_trc(s_trc)  'Household shares, trc' A034 ;
+variable  shr_ups(s_ups)  'Household shares, ups' A035 ;
+variable  shr_rc(s_rc)  'Household shares, rc' A036 ;
+variable  shr_ho(s_ho)  'Household shares, ho' A037 ;
+variable  shr_cs(s_cs)  'Household shares, cs' A038 ;
 
 variable  kalh_trc(s_trc)  'Household biases, trc' K048 ;
 variable  kalh_ups(s_ups)  'Household biases, ups' K047 ;
@@ -186,16 +187,16 @@ variable  kalh_cs(s_cs)  'Household biases, cs' K038 ;
 
 // Household capital services variables - Capital (ks)
 
-variable  shr_ks(s_ks)  'Household shares, ks' ZV40 ;
+variable  shr_ks(s_ks)  'Household shares, ks' A039 ;
 variable  kalh_ks(s_ks)  'Household biases, ks' K037 ;
 
-// Household full consumption variables - Top tier: nd, ks, cs, r in f
+// Household full consumption variables - Top tier: nd, ks, cs, leis in f
 
-variable  ab_shr_f(s_f)  'Full consumption shares - with only alpha and beta effects, f' ZV41 ;
-variable  cex_shr_f(s_f)  'Full consumption shares - with cex expenditure and demographic effects, f' ZV42 ;
-variable  shr_f(s_f)  'Full consumption shares - bridged cex-to-nipa' ZV43 ;
+variable  ab_shr_f(s_f)  'Full consumption shares - with only alpha and beta effects, f' A040 ;
+variable  cex_shr_f(s_f)  'Full consumption shares - with cex expenditure and demographic effects, f' A041 ;
+variable  shr_f(s_f)  'Full consumption shares - bridged cex-to-nipa' A042 ;
 
-variable  denom  'Full consumption share denominator' ZV44 ;
+variable  denom  'Full consumption share denominator' A043 ;
 
 variable  full_con  'Value of full consumption' N131 ;
 variable  full_qty  'Quantity of full consumption' N134 ;
@@ -211,7 +212,7 @@ variable  hh_equiv_lag  'Lagged hh_equiv' X052 ;
 variable  hours           'Total hours in household time endowment' X042 ;
 variable  hours_adjust  'Household time endowment after unemployment adjustment' N097 ;
 variable  unemp_scale 'Scalar unemployment adjustment' X026 ;
-variable  unemp_time  'Temporal unemployment adjustment' X025 ;
+// variable  unemp_time  'Temporal unemployment adjustment' X025 ;
 
 variable  leisure  'Leisure quantity' N011 ;
 variable  cshare   'Consumption share of full consumption' N018 ;
@@ -219,26 +220,26 @@ variable  con_expend  'Consumption expenditure' N009 ;
 variable  con_share(nipa)  'Commodity shares of consumption expenditure, nipa' N016 ;
 
 variable  con(ncom_k)  'Consumption expenditures by commodity, io' N013 ;
-variable  con_qty(ncom_k)  'Consumption quantities by commodity, io' ZV45 ;
+variable  con_qty(ncom_k)  'Consumption quantities by commodity, io' A044 ;
 
 // Consumer demand shocks - policy variables - io basis
 
-variable  con_shk_qty(ncom_k)  'Consumer demand shocks, io quantities' X079 ;
-variable  con_shk_val(ncom_k)  'Consumer demand shocks, io values' N015 ;
-variable  con_shk_xpnd    'Consumer demand shocks, total value' N010 ;
-variable  con_xpnd_net    'Net consumption expenditure' ZV46 ;
+//-- variable  con_shk_qty(ncom_k)  'Consumer demand shocks, io quantities' X079 ;
+//-- variable  con_shk_val(ncom_k)  'Consumer demand shocks, io values' N015 ;
+//-- variable  con_shk_xpnd    'Consumer demand shocks, total value' N010 ;
+variable  con_xpnd_net    'Net consumption expenditure' A045 ;
 
 // Investment variables - Shares and factor biases
 
 // Investment variables - Raw materials (rawm), Furnishings (furn), Mfg services (mserv), Trade (trd),
 //                        Transportation equipment (trnsp), IT and communications equip (it)
 
-variable  shr_rawm(s_rawm)  'Investment shares, rawm' ZV47 ;
-variable  shr_furn(s_furn)  'Investment shares, furn' ZV48 ;
-variable  shr_mserv(s_mserv)  'Investment shares, mserv' ZV49 ;
-variable  shr_trd(s_trd)  'Investment shares, trd' ZV50 ;
-variable  shr_trnsp(s_trnsp)  'Investment shares, trnsp' ZV51 ;
-variable  shr_it(s_it)  'Investment shares, it' ZV52 ;
+variable  shr_rawm(s_rawm)  'Investment shares, rawm' A046 ;
+variable  shr_furn(s_furn)  'Investment shares, furn' A047 ;
+variable  shr_mserv(s_mserv)  'Investment shares, mserv' A048 ;
+variable  shr_trd(s_trd)  'Investment shares, trd' A049 ;
+variable  shr_trnsp(s_trnsp)  'Investment shares, trnsp' A050 ;
+variable  shr_it(s_it)  'Investment shares, it' A051 ;
 
 variable  kali_rawm(s_rawm)  'Investment biases, rawm' K034 ;
 variable  kali_furn(s_furn)  'Investment biases, furn' K033 ;
@@ -250,12 +251,12 @@ variable  kali_it(s_it)  'Investment biases, it' K026 ;
 // Investment variables - Metals and rawm (mrawm), Furnishings and mrawm (frawm), Services (serv), Machinery (mach),
 //                        Trade, transport and services (ttsvc), Equipment (eit)
 
-variable  shr_mrawm(s_mrawm)  'Investment shares, mrawm' ZV53 ;
-variable  shr_frawm(s_frawm)  'Investment shares, frawm' ZV54 ;
-variable  shr_serv(s_serv)  'Investment shares, serv' ZV55 ;
-variable  shr_mach(s_mach)  'Investment shares, mach' ZV56 ;
-variable  shr_ttsvc(s_ttsvc)  'Investment shares, ttsvc' ZV57 ;
-variable  shr_eit(s_eit)  'Investment shares, eit' ZV58 ;
+variable  shr_mrawm(s_mrawm)  'Investment shares, mrawm' A052 ;
+variable  shr_frawm(s_frawm)  'Investment shares, frawm' A053 ;
+variable  shr_serv(s_serv)  'Investment shares, serv' A054 ;
+variable  shr_mach(s_mach)  'Investment shares, mach' A055 ;
+variable  shr_ttsvc(s_ttsvc)  'Investment shares, ttsvc' A056 ;
+variable  shr_eit(s_eit)  'Investment shares, eit' A057 ;
 
 variable  kali_mrawm(s_mrawm)  'Investment biases, mrawm' K032 ;
 variable  kali_frawm(s_frawm)  'Investment biases, frawm' K030 ;
@@ -266,9 +267,9 @@ variable  kali_eit(s_eit)  'Investment biases, eit' K023 ;
 
 // Investment variables - Short-lived capital (short), Long-lived capital (long), Fixed investnent (fixed)
 
-variable  shr_short(s_short)  'Investment shares, short' ZV59 ;
-variable  shr_long(s_long)  'Investment shares, long' ZV60 ;
-variable  shr_fixed(s_fixed)  'Investment shares, fixed' ZV61 ;
+variable  shr_short(s_short)  'Investment shares, short' A058 ;
+variable  shr_long(s_long)  'Investment shares, long' A059 ;
+variable  shr_fixed(s_fixed)  'Investment shares, fixed' A060 ;
 
 variable  kali_short(s_short)  'Investment biases, short' K022 ;
 variable  kali_long(s_long)  'Investment biases, long' K021 ;
@@ -278,16 +279,16 @@ variable  kali_fixed(s_fixed)  'Investment biases, fixed' K020 ;
 
 variable  inv_expend  'Pre-itc investment' N021 ;
 variable  inv_total   'Post-itc investnent' N022 ;
-variable  inv_real    'Post-itc investment quantity' ZV62 ;
+variable  inv_real    'Post-itc investment quantity' A061 ;
 variable  inv_shock   'Policy shock to the price of investment goods' X077 ;
 variable  inv_exp_shk    'Policy shock to investment expenditures' X078 ;
 variable  inven_fract      'Inventory fraction of post-itc investment' X009 ;
-variable  inv_share(com)   'Commodity shares of fixed investment' ZV63 ;
+variable  inv_share(com)   'Commodity shares of fixed investment' A062 ;
 variable  inven_share(com) 'Commodity shares of inventory investment' X014 ;
 variable  fixed_inv       'Fixed investment' N024 ;
 variable  inven_inv       'Inventory investment' N025 ;
 variable  inv(com)        'Investment goods expenditures' N023 ;
-variable  inv_qty(com)    'Investment goods quantities' N026 ;
+//variable  inv_qty    'Investment goods quantity' N026 ;
 
 
 // Government aggregates and shares  
@@ -297,7 +298,7 @@ variable  gov_expend     'Government ependiture on goods and services' N027 ;
 variable  gov_real       'Real government purchases of goods and services' N028 ;
 variable  gov_share(com) 'Commodity shares of government expenditure' X010 ;
 variable  gov(com)       'Value composition of government expenditure' N029 ;
-variable  gov_qty(com)   'Quantity composition of government spending' ZV64 ;
+variable  gov_qty(com)   'Quantity composition of government spending' A063 ;
 
 variable  gov_debt       'gov debt held domestically' N128 ;
 variable  gov_debt_cg    'capital gain on gov_debt' X039 ;
@@ -305,15 +306,15 @@ variable  gov_debt_dsc   'gov_debt discrepancy' X038 ;
 variable  gov_debt_f     'gov debt held abroad' N129 ;
 variable  gov_debt_fcg   'capital gain on gov_debt_f' X040 ;
 variable  gov_for_nvst   'gov foreign investment' X037 ;
-variable  gov_from_ss    'gov transfer from social insurance funds' N162 ;
-variable  gov_int_abr   'gov interest paid on gov debt held abroad' N164 ;
+variable  gov_from_ss    'gov transfer from social insurance funds' X092 ;
+variable  gov_int_abr   'gov interest paid on gov debt held abroad' X033 ;
 variable  gov_int_adj    'gov interest adjustment' N076 ;
-variable  gov_int_ss     'gov interest paid to social insurance funds' N165 ;
-variable  gov_interest   'gov interest paid on gov debt held domestically' N163 ;
+variable  gov_int_ss     'gov interest paid to social insurance funds' X034 ;
+variable  gov_interest   'gov interest paid on gov debt held domestically' X032 ;
 variable  gov_kap_inc    'gov enterprises capital income' N078 ;
 variable  gov_surplus    'Federal, state and local gov surplus' X035 ;
-variable  gov_transdom   'domestic gov transfers' N158 ;
-variable  gov_transabr   'gov transfers abroad' N159 ;
+variable  gov_transdom   'domestic gov transfers' X088 ;
+variable  gov_transabr   'gov transfers abroad' X089 ;
 
 //  Tax rates
 
@@ -326,7 +327,6 @@ variable  tax_labor_a  'Average tax rate on labor' N124 ;
 variable  tax_labor_z  'Zero-bracket labor tax' N090 ;
 variable  tax_cap      'Average-marginal tax rate on capital' N126 ;
 variable  tax_cap_hh   'Average-marginal tax rate on household capital' X066 ;
-variable  tax_gain_h   'Tax rate on household capital gains' X080 ;
 variable  tax_itc      'Investment tax credit' X065 ;
 variable  tax_prop     'Average-marginal tax rate on property' X055 ;
 variable  tax_wealth   'Average-marginal tax rate on wealth' X057 ;
@@ -346,12 +346,11 @@ variable  tax_unit(ind)  'Unit tax rate' X062 ;
 //  NOTE: A given externality is either supply- or demand-driven, not both
 
 variable  tax_ext_u(nxtr)  'Externality tax rate' X064 ;
-variable  tax_ext_ind(ind)  'Production tax rate from all externalities' ZV65 ;
-variable  tar_ext_com(com)  'Import tariff rate from all externalities' ZV66 ;
+variable  tax_ext_ind(ind)  'Production tax rate from all externalities' A064 ;
+variable  tar_ext_com(com)  'Import tariff rate from all externalities' A065 ;
 
-variable  tax_ext_com(com,buy)  'Consumption tax rate from all externalties' ZV67 ;
+variable  tax_ext_com(com,buy)  'Consumption tax rate from all externalties' A066 ;
 
-variable  tax_full(ind)  'Fully-burdened industry tax rate' ZV68 ;
 
 // Consumption taxes
 
@@ -359,30 +358,28 @@ variable  tax_con  'Consumption tax on all household expenditures' X067 ;
 variable  tax_con_good  'Consumption tax on only household goods and services' X068 ;
 variable  tax_con_kap  'Consumption tax on only household capital services' X069 ;
 variable  tax_con_gov  'Consumption tax on all government spending' X071 ;
-variable  tax_con_lab  'Consumption tax on labor' X070 ;
 variable  tax_con_xmpt  'Consumption tax exemption base' X072 ;
-variable  tax_con_totc  'Total consumption tax on goods and services' ZV69 ;
-variable  tax_con_totk  'Total consumption tax on capital services' ZV70 ;
+variable  tax_con_totc  'Total consumption tax on goods and services' A067 ;
+variable  tax_con_totk  'Total consumption tax on capital services' A068 ;
 
 //  Tax revenues
 
 variable  rev_cap  'Capital tax revenue' N098 ;
-variable  rev_cap_hh  'Capital tax revenue from households' N108 ;
+//-- variable  rev_cap_hh  'Capital tax revenue from households' N108 ;
 variable  rev_com_ext 'Externality tax revenue from demand-side commodity use' N114 ;
 variable  rev_con  'Consumption tax revenue' N109 ;
-variable  rev_con_gov  'Consumption tax revenue from government spending' N110 ;
-variable  rev_con_rbt  'Lump-sum rebate of consumption taxes' N112 ;
+//-- variable  rev_con_gov  'Consumption tax revenue from government spending' N110 ;
+//-- variable  rev_con_rbt  'Lump-sum rebate of consumption taxes' N112 ;
 variable  rev_extern  'Externality tax revenue from supply-side production and imports' N107 ;
-variable  rev_hcap  'Consumption tax revenue from household capital' N111 ;
-variable  rev_itc   'Loss in tax revenue from the invcestment tax credit (itc)' N099 ;
+//-- variable  rev_itc   'Loss in tax revenue from the invcestment tax credit (itc)' N099 ;
 variable  rev_labor 'Labor (wage) tax revenue' N100 ;
 variable  rev_lump  'Lump-sum tax revenue' X061 ;
-variable  rev_nontax  'Non-tax revenue' N160 ;
+variable  rev_nontax  'Non-tax revenue' X090 ;
 variable  rev_prop  'Property tax revenue' N101 ;
 variable  rev_sales  'Sales tax revenue' N102 ;
 variable  rev_tariff  'Tariff revenue' N104 ;
 variable  rev_total   'Total tax revenue' N105 ;
-variable  rev_unit    'Unit tax revenue' N106 ;
+//-- variable  rev_unit    'Unit tax revenue' N106 ;
 variable  rev_wealth  'Wealth tax revenue' N103 ;
 
 // Trade and rest-of-world (row) variables
@@ -392,11 +389,11 @@ variable  exch  'Direct exchange rate, USD/Foreign currency' N073 ;
 // Import aggregates and shares
 
 variable  kalm_imp(com)  'Import share bias' K054 ;
-variable  amk_imp(com)  'Import share constant' ZV71 ;
+variable  amk_imp(com)  'Import share constant' A069 ;
 
 variable  import_value    'Value of imported goods and services' N074 ;
-variable  import_real     'Real imports of goods and services' ZV72 ;
-variable  imp_share(com)  'Import share of total supply' ZV73 ;
+variable  import_real     'Real imports of goods and services' A070 ;
+variable  imp_share(com)  'Import share of total supply' A071 ;
 variable  dom_share(com)  'Domestic share of total supply' N032 ;
 variable  imports(com)    'Value composition of imports' N030 ;
 variable  imp_qty(com)    'Quantity composition of imports' N137 ;
@@ -406,10 +403,10 @@ variable  imp_qty(com)    'Quantity composition of imports' N137 ;
 variable  kalx_exp(com)   'Export share bias' K055 ;
 
 variable  export_value    'Value of exported goods and services' N075 ;
-variable  export_real     'Real exports of goods and services' ZV74 ;
+variable  export_real     'Real exports of goods and services' A072 ;
 variable  exp_share(com)  'Commodity shares of exports' N095 ;
 variable  exports(com)    'Value composition of exports' N031 ;
-variable  exp_qty(com)    'Quantity composition of exports' ZV75 ;
+variable  exp_qty(com)    'Quantity composition of exports' A073 ;
  
 variable  trade_surp     'Trade surplus in domestic currency' N093 ;
 variable  trade_surpfc  'Trade surplus in foreign currency' N094 ;
@@ -430,11 +427,18 @@ variable  ind_out(ind)  'Net values of domestic industry outputs' N057 ;
 variable  ind_qty(ind)  'Quantities of domestic industry outputs' N136 ;
 variable  grossout(ind) 'Gross values of domestic industry outputs' N135 ;
 
-variable  int_val(com,buy)  'Value of commodity purchases by buyers' I001 ;
-variable  int_qty(com,buy)  'Real commodity purchases by buyers' I002 ;
+variable  int_val(ninp,nuses)  'Value of commodity purchases by buyers' I001 ;
+variable  int_qty(ninp,nuses)  'Real commodity purchases by buyers' I002 ;
+
+variable  vqs(com)     'Values of total commodity supply' A074 ;
+variable  qs(com)      'Quantities of total commodity supply' N038 ;
+
+variable  vqd(com)     'Values of total commodity demand' A075 ;
+variable  qd(com)      'Quantities of total commodity demand' A076 ;
+variable  qd_us(com)   'Portion of qd consumed domestically' A077 ;
 
 variable  k  'Physical capital stock' N127 ;
-variable  k_value  'Value of physical capital stock' ZV76 ;
+variable  k_value  'Value of physical capital stock' A078 ;
 
 variable  kap(NIND_C) 'Quantities of capital services bought' N049 ;
 variable  kap_demand  'Total quantity of capital services demanded' N061 ;
@@ -459,7 +463,6 @@ variable  qty_extern(nxtr)  'Quantities of externalties' N085 ;
 //  Financial variables
 
 variable  r 'Interest rate' N042 ;
-variable  inf  'Inflation rate' X082 ;
 
 variable  capgain  'Value of capital gains' N068 ;
 variable  cg_rate  'Capital gains rate' N041 ;
@@ -474,11 +477,12 @@ variable  finwealth  'Value of financial wealth' N071 ;
 variable  income  'Value of household income' N043 ;
 variable  interest  'Value of interest earned' N070 ;
 
-variable  save  'Value of household saving' N044 ;
+variable  save       'Value of household saving, source' N044 ;
+variable  save_uses  'Value of household saving, uses' A079 ;
 
 variable  risk  'Risk premium' X024 ;
 
-variable  transfer_abr  'Personal transfers abroad' ZV77 ;
+variable  transfer_abr  'Personal transfers abroad' X091 ;
 
 //  Cobb-Douglas (geometric) price deflators and scalars
 

@@ -14,17 +14,26 @@ rev_labor = tax_labor_a * lab_income  'Labor tax revenue'  ;
 
 tax_labor_z = lab_income - rev_labor/tax_labor_m  'Zero bracket labor tax'  ;
 
+// leisure = (hours_adjust - lab_demand) / pj_scale  'Indirect labor supply = labor demand'  ;
+
 // Capital and capital services
 
-lead(k) = -(((1 - delta)^nyears_lead - 1)/delta) * inv_real + (1 - delta)^nyears_lead * k  'Capital accumulation'  ;
+kap(indxoilgas) = ind_out(indxoilgas) * io(kap,indxoilgas) / pb(kap,indxoilgas)  'Quantity of capital services demanded by industry'  ;
 
-kap(ind) = ind_out(ind) * io(kap,ind) / pb(kap,ind)  'Quantity of capital services demanded by industry'  ;
+kap(i02) = kap_oil  'Quantity of capital services demanded by oil mining'  ;
+kap(i03) = kap_gas  'Quantity of capital services demanded by gas mining'  ;
+
+pr_kap_oil = ind_out(i02) * io(kap,i02) / kap(i02)  'Price of capital services, oil mining'  ;
+pr_kap_gas = ind_out(i03) * io(kap,i03) / kap(i03)  'Price of capital services, gas mining'  ;
+
 kap(con) = con_qty(kap)  'Quantity of capital services demanded by households'  ;
 
 kap_demand = sum(nind_c,kap*pk_scale)  'Total quantity of capital services demanded'  ;
 
-rev_cap_hh = tax_cap_hh*pb(kap,con)*kap(con)/(1+tax_cap_hh)  'Tax revenue from household capital'  ;
-kap_income = sum(ind,kap(ind)*pb(kap,ind)) + con(kap) - rev_cap_hh  'Capital income, pre-tax net of household capital taxes'  ;
+k = kap_demand / adjust_k  'Capital supply = capital demand'  ;
+
+//-- rev_cap_hh = tax_cap_hh*pb(kap,con)*kap(con)/(1+tax_cap_hh)  'Tax revenue from household capital'  ;
+kap_income = sum(ind,kap(ind)*pb(kap,ind)) + con(kap) ; //-- - rev_cap_hh  'Capital income, pre-tax net of household capital taxes'  ;
 
 k_value = pk * k  'Value of the physical capital stock'  ;
 
@@ -39,7 +48,6 @@ div_rate = dividend / k_value             'Dividend rate'  ;
 
 gov_kap_inc = (1-tax_cap) * kap(i36) * pb(kap,i36)  'Government enterprises capital income'  ;
 
-capgain = (((pk - lag(pk))/nyears_lag)/pk - delta) * k_value  'Capital gain'  ;
 cg_rate = capgain / k_value  'Capital gain rate'  ;
 
 r = div_rate + cg_rate  'Interest rate from intertemporal arbitrage'  ;

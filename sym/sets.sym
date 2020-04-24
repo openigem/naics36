@@ -1,53 +1,79 @@
 //  IGEM Sets
 
-set time(p0,p1) 'Time periods'  ;
+//  Foundation sets other than time
 
-set NINP(c01,c02,c03,c04,c05,c06,c07,c08,c09,c10,
-         c11,c12,c13,c14,c15,c16,c17,c18,c19,c20,
-         c21,c22,c23,c24,c25,c26,c27,c28,c29,c30,
-         c31,c32,c33,c34,c35,c36,kap,lab) 'Com plus capital and labor' ;
-
-set NCOM_K = NINP - (lab) 'Commodities plus capital'; 
-
-set com = NCOM_K - (kap) 'IGEM Commodities'  ;
+set com(c01,c02,c03,c04,c05,c06,c07,c08,c09,c10,
+        c11,c12,c13,c14,c15,c16,c17,c18,c19,c20,
+        c21,c22,c23,c24,c25,c26,c27,c28,c29,c30,
+        c31,c32,c33,c34,c35,c36) 
+        'Commodities' ;
 
 set nipa(n01,n02,n03,n04,n05,n06,n07,n08,n09,n10,
          n11,n12,n13,n14,n15,n16,n17,n18,n19,n20,
          n21,n22,n23,n24,n25,n26,n27,n28,n29,n30,
-         n31,n32,n33,n34,n35,n36)  'NIPA Commodities' ;
+         n31,n32,n33,n34,n35,n36)  
+         'NIPA Commodities' ;
 
-set buy(i01,i02,i03,i04,i05,i06,i07,i08,i09,i10,
-         i11,i12,i13,i14,i15,i16,i17,i18,i19,i20,
-         i21,i22,i23,i24,i25,i26,i27,i28,i29,i30,
-         i31,i32,i33,i34,i35,i36,con,inv,gov)  'Domestic buyers'  ;
+set ind(i01,i02,i03,i04,i05,i06,i07,i08,i09,i10,
+        i11,i12,i13,i14,i15,i16,i17,i18,i19,i20,
+        i21,i22,i23,i24,i25,i26,i27,i28,i29,i30,
+        i31,i32,i33,i34,i35,i36)  
+        'Industries'  ;
+
+set NATTR(at01,at02,at03,at04,at05,
+          at06,at07,at08,at09,at10,at11)  
+          'Demographic attributes'  ;
+
+set NXTR(ex01,ex02,ex03,ex04,ex05,ex06,ex07,ex08,ex09,ex10,
+         ex11,ex12,ex13,ex14,ex15,ex16,ex17,ex18,ex19,ex20) 
+         'Externalities'  ;
+
+set va_rows(kap,lab) 'Value added rows' ;
+
+set fd_cols(con,inv,gov,xpt,mpt) 'Final demand columns' ;
+
+//  Derived sets
+
+set NINP = com + va_rows 'Commodities plus capital and labor' ;
+
+set NCOM_K = NINP - (lab) 'Commodities plus capital'; 
+
+set NUSES = ind + fd_cols 'Commodity transactions - interindustry and final demand' ;
+
+set buy = NUSES - (xpt,mpt) 'Domestic buyers'  ;
+
+set cig_cols = fd_cols(con,inv,gov) 'CIG in FD columns' ;
 
 set NIND_C = buy - (inv,gov) 'ind plus consumption'  ;
-set ind = NIND_C - (con) ; 
 
 set indxoilgas = ind - (i02,i03)  'IGEM Industries excluding Oil and Gas Mining'  ;
 
 set mvpote = com(c17,c18)  'Motor vehicles and parts, Other transportation equipment'  ;
-		 
-set NATTR(at1,at2,at3,at4,at5,at6,at7,at8,at9,at10,at11)  'Demographic attributes'  ;
-set NUSES = buy + (xpt,imp) 'Commodity transactions - interindustry and final demand' ;
-set NXTR(ex1 ,ex2 ,ex3 ,ex4 ,ex5 ,ex6 ,ex7 ,ex8 ,ex9 ,ex10,
-         ex11,ex12,ex13,ex14,ex15,ex16,ex17,ex18,ex19,ex20) 'Externalities'  ;
 
-set inputs = NINP + (os,ob,bl,tt,tr,mn,ma,gas,oil,sv,eq,ms,mm,ff,mat,ene,
-             rawm,furn,mserv,trd,trnsp,it,long,mrawm,frawm,serv,mach,ttsvc,eit,short)
-			 'Commodities and tiers for production, io, and investment, inv'  ;
+//  Production and investment tiers
 
-set nleis = nipa + (r)  'NIPA commodities plus leisure (r)'  ;
-set ntoth = nleis + (cmm,hps,ens,trv,rcs,edn,hpg,fb,md,en,ks,trc,ups,rc,ho,cg,cs,nd)  'Household commodities and tiers, nipa'  ;
+set pro_tiers(bl,ene,eq,ff,gas,ma,mat,mm,mn,ms,ob,oil,os,sv,tr,tt) 'production tiers' ;
+set inv_tiers(eit,frawm,furn,it,long,mach,mrawm,mserv,rawm,serv,short,trd,trnsp,ttsvc) 'inv tiers' ;
+
+set inputs = union( NINP, pro_tiers, inv_tiers );
+
+set pro_inputs = inputs - inv_tiers ;
+set inv_plusva = inputs - pro_tiers ;
+set inv_inputs = inv_plusva - (kap,lab);
+
+set nleis = nipa + (leis)  'NIPA commodities plus leisure (leis)'  ;
+
+set con_tiers(cmm,hps,ens,trv,rcs,edn,hpg,fb,md,en,ks,trc,ups,rc,ho,cg,cs,nd)  'Household tiers'  ;
+set ntoth = nleis + con_tiers 'Household commodities and tiers, nipa'  ;
 
 // Producer sub-model sets
 
 // Set definitions Gas, Oil, Fossil fuels and Energy
 
-set  inp_gas = inputs(c03,c07) 'Gas mining and Natural gas distribution' ;
-set  inp_oil = inputs(c02,c23) 'Oil mining and Petroleum and coal products' ;
-set  inp_ff  = inputs(c04,oil,gas) 'Coal mining and Oil and Gas aggregates' ;
-set  inp_ene = inputs(c06,ff) 'Electric utilities and Fossil fuels aggregate' ;
+set  inp_gas = pro_inputs(c03,c07) 'Gas mining and Natural gas distribution' ;
+set  inp_oil = pro_inputs(c02,c23) 'Oil mining and Petroleum and coal products' ;
+set  inp_ff  = pro_inputs(c04,oil,gas) 'Coal mining and Oil and Gas aggregates' ;
+set  inp_ene = pro_inputs(c06,ff) 'Electric utilities and Fossil fuels aggregate' ;
 
 set  s_gas = inp_gas 'Input shares, gas' ;
 set  pr_gas = inp_gas 'Input prices, gas' ;
@@ -64,10 +90,10 @@ set  pr_ene   = inp_ene 'Input prices, ene' ;
 // Set definitions Building services (bl), Other business services (ob),
 //                 Other services (os) and the Services aggregate (sv)  
 
-set  inp_bl = inputs(c08,c09,c31) 'Water and wastewater, Construction, Real estate and leasing' ;
-set  inp_ob = inputs(c28,c29,c30) 'Publishing et al, Software and IT, Finance and insurance' ;
-set  inp_os = inputs(c33,c34,c35,c36) 'Education, Health, Accommodation, Other government' ;
-set  inp_sv = inputs(bl,ob,os) 'Services' ;
+set  inp_bl = pro_inputs(c08,c09,c31) 'Water and wastewater, Construction, Real estate and leasing' ;
+set  inp_ob = pro_inputs(c28,c29,c30) 'Publishing et al, Software and IT, Finance and insurance' ;
+set  inp_os = pro_inputs(c33,c34,c35,c36) 'Education, Health, Accommodation, Other government' ;
+set  inp_sv = pro_inputs(bl,ob,os) 'Services' ;
 
 set  s_bl = inp_bl 'Input shares, bl' ;
 set  pr_bl = inp_bl 'Input prices, bl' ;
@@ -87,10 +113,10 @@ set  pr_sv = inp_sv 'Input prices, sv' ;
 //                 Transportation equipment (tr) and Trade and transportation(tt)
 //                   
 
-set  inp_ma = inputs(c01,c10,c20,c21) 'Agriculture, Wood and products, Food et al, Textiles et al' ;
-set  inp_mn = inputs(c11,c19,c22,c24) 'Non-metal minerals, Misc mfg, Printing, Chemicals et al' ;
+set  inp_ma = pro_inputs(c01,c10,c20,c21) 'Agriculture, Wood and products, Food et al, Textiles et al' ;
+set  inp_mn = pro_inputs(c11,c19,c22,c24) 'Non-metal minerals, Misc mfg, Printing, Chemicals et al' ;
 set  inp_tr = mvpote                  'Motor vehicles and parts, Other transportation equipment - inv_trnsp alias' ;
-set  inp_tt = inputs(c25,c26,c27)     'Wholesale and Retail trade, Transportation and warehousing' ;
+set  inp_tt = pro_inputs(c25,c26,c27)     'Wholesale and Retail trade, Transportation and warehousing' ;
 
 set  s_ma = inp_ma 'Input shares, ma' ;
 set  pr_ma = inp_ma 'input prices, ma' ;
@@ -109,10 +135,10 @@ set  pr_tt = inp_tt 'input prices, tt' ;
 // Set definitions Equipment (eq), Intermediates services (ms),
 //                 Metallic intermediates (mm) and aggregate Materials (mat)  
 
-set  inp_eq = inputs(c14,c15,c16,tr)  'Machinery, IT equip, Electrical equip, Transportation equip' ;
-set  inp_ms = inputs(c32,tt,sv)       'Business services, Trade and transportation, Other services aggregate' ;
-set  inp_mm = inputs(c05,c12,c13,eq)  'Non-energy mining, Primary and Fabricated metals, Equipment aggregate' ;
-set  inp_mat = inputs(ma,mm,mn,ms)    'Agriculture, Metrals, Non-metals and Services aggregates' ;
+set  inp_eq = pro_inputs(c14,c15,c16,tr)  'Machinery, IT equip, Electrical equip, Transportation equip' ;
+set  inp_ms = pro_inputs(c32,tt,sv)       'Business services, Trade and transportation, Other services aggregate' ;
+set  inp_mm = pro_inputs(c05,c12,c13,eq)  'Non-energy mining, Primary and Fabricated metals, Equipment aggregate' ;
+set  inp_mat = pro_inputs(ma,mm,mn,ms)    'Agriculture, Metrals, Non-metals and Services aggregates' ;
 
 set  s_eq = inp_eq 'Input shares, eq' ;
 set  pr_eq = inp_eq 'Input prices, eq' ;
@@ -129,7 +155,7 @@ set  pr_mat = inp_mat 'Input prices, mat' ;
 // Shares and price for top tier output (o) as a function of inputs (klem - capital, labor, energy, materials)
 //
 
-set  inp_o = inputs(kap,lab,ene,mat) 'Capital, labor, energy, materials, klem in output o'  ;
+set  inp_o = pro_inputs(kap,lab,ene,mat) 'Capital, labor, energy, materials, klem in output o'  ;
 
 set  s_o = inp_o 'Input shares, klem in o' ;
 set  pr_o = inp_o 'Input prices, klem in o' ;
@@ -226,7 +252,7 @@ set  pr_cs = hh_cs 'Household prices, cs' ;
 
 set  hh_ks =  ntoth(n10,n36)  'Rental, Household capital flow'  ;
 
-set  hh_f  =  ntoth(nd,ks,cs,r)  'Non-durable goods, Consumer capital services and Consumer services aggregates
+set  hh_f  =  ntoth(nd,ks,cs,leis)  'Non-durable goods, Consumer capital services and Consumer services aggregates
                                      plus leisure'  ;
 									 
 set  s_ks = hh_ks 'Household shares, ks' ;
@@ -242,13 +268,13 @@ set  pr_f = hh_f 'Household prices, f' ;
 //                   Transportation equipment (trnsp), IT and communications equipment (it), Long-lived capital (long)
 //                   NOTE: sets inp_tt and inv_trnsp are aliases
 
-set  inv_rawm = inputs(c10,c11,c12)  'Wood and paper, Non-metallic minerals, Primary metals'  ;
-set  inv_furn = inputs(c19,c21,c24)  'Misc mfg, Textiles, apparel and leather, Chemicals, rubber and plastic'  ;
-set  inv_mserv = inputs(c22,c34,c35)  'Printing and related, Health care and social assistance, Accommodation and other services'  ;
-set  inv_trd = inputs(c25,c26)  'Wholesale and Retail trade'  ;
+set  inv_rawm = inv_inputs(c10,c11,c12)  'Wood and paper, Non-metallic minerals, Primary metals'  ;
+set  inv_furn = inv_inputs(c19,c21,c24)  'Misc mfg, Textiles, apparel and leather, Chemicals, rubber and plastic'  ;
+set  inv_mserv = inv_inputs(c22,c34,c35)  'Printing and related, Health care and social assistance, Accommodation and other services'  ;
+set  inv_trd = inv_inputs(c25,c26)  'Wholesale and Retail trade'  ;
 set  inv_trnsp = mvpote  'Motor vehicle and parts, Other transportation equipment - inp_tr alias'  ;
-set  inv_it = inputs(c15,c28,c29) 'IT equipment, Publishing, Broadcasting and Telecommunications, Software and IT Services'  ;
-set  inv_long = inputs(c05,c09,c31) 'Non-energy mining and support, Construction, Real estate and leasing'  ;
+set  inv_it = inv_inputs(c15,c28,c29) 'IT equipment, Publishing, Broadcasting and Telecommunications, Software and IT Services'  ;
+set  inv_long = inv_inputs(c05,c09,c31) 'Non-energy mining and support, Construction, Real estate and leasing'  ;
 
 set  s_rawm = inv_rawm 'Investment shares, rawm' ;
 set  pr_rawm = inv_rawm 'Investment prices, rawm' ;
@@ -276,14 +302,14 @@ set  pr_long = inv_long 'Investment prices, long' ;
 //                   Machinery (mach), Trade, transportation and services (ttsvc), Equipment (eit),
 //                   Short-lived capital (short), Fixed investment (fixed)
 
-set  inv_mrawm = inputs(c13,rawm)  'Fabricated metals and Raw materials aggregate'  ;
-set  inv_frawm = inputs(mrawm,furn)  'Metals and raw materials and Furnishings aggregates'  ;
-set  inv_serv = inputs(c32,mserv)  'Business services and Manufacturing services aggregate'  ;
-set  inv_mach = inputs(c14,c16,frawm)  'Machinery, Electrical equipment and Furnishing and materials aggregate'  ;
-set  inv_ttsvc = inputs(c27,trd,serv)  'Transportation and warehousing and the Trade and Services aggregates'  ;
-set  inv_eit = inputs(mach,it,trnsp)  'The Machinery, IT and communications equipment and Transportation equipment aggregates'  ;
-set  inv_short = inputs(eit,ttsvc)  'The Equipment and Trade, transportation and services aggregates'  ;
-set  inv_fixed = inputs(long,short)  'Long- and Short-lived capital'  ;
+set  inv_mrawm = inv_inputs(c13,rawm)  'Fabricated metals and Raw materials aggregate'  ;
+set  inv_frawm = inv_inputs(mrawm,furn)  'Metals and raw materials and Furnishings aggregates'  ;
+set  inv_serv = inv_inputs(c32,mserv)  'Business services and Manufacturing services aggregate'  ;
+set  inv_mach = inv_inputs(c14,c16,frawm)  'Machinery, Electrical equipment and Furnishing and materials aggregate'  ;
+set  inv_ttsvc = inv_inputs(c27,trd,serv)  'Transportation and warehousing and the Trade and Services aggregates'  ;
+set  inv_eit = inv_inputs(mach,it,trnsp)  'The Machinery, IT and communications equipment and Transportation equipment aggregates'  ;
+set  inv_short = inv_inputs(eit,ttsvc)  'The Equipment and Trade, transportation and services aggregates'  ;
+set  inv_fixed = inv_inputs(long,short)  'Long- and Short-lived capital'  ;
 
 set  s_mrawm = inv_mrawm 'Investment shares, mrawm' ;
 set  pr_mrawm = inv_mrawm 'Investment prices, mrawm' ;

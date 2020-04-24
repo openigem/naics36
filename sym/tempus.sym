@@ -1,5 +1,0 @@
-// Set nyears leading and lagged
-
-nyears_lead = lead(year) - year   'Leading number of intervening years'  ;
-
-nyears_lag = year - lag(year)  'Lagged number of intervening years'  ;

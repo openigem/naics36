@@ -1,0 +1,25 @@
+// 
+//  Set up a version of the model with a small number of periods
+//
+
+//  Use 10 periods
+
+set time(p0,p1,p2,p3,p4,p5,p6,p7,p8,p9) 'Time periods'  ;
+set last = time(p9) 'Terminal period' ;
+
+#include ../sets.sym
+#include ../variables.sym
+#include ../parameters.sym
+#include ../producer.sym
+#include ../household.sym
+#include ../investment.sym
+#include ../government.sym
+#include ../trade.sym
+#include ../factors.sym
+#include ../markets.sym
+#include ../nipa.sym
+#include ../unused.sym
+
+//  Include the intertemporal and steady state equations
+
+#include ../inter.sym

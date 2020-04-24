@@ -1,0 +1,43 @@
+// Industry and Commodity Values, Quantities and Balances
+
+
+// Inputs to production
+
+ind_out = po * ind_qty   'Net values of domestic industry outputs'  ;
+grossout = pi * ind_qty  'Gross values of domestic industry outputs'  ;
+
+com_out = sum(ind,grossout*make_row)    'Values of domestic commodities'  ;
+com_qty = com_out/pc                    'Quantities of domestic commodities'  ;
+
+vqs = com_out + imports  'Values of total commodity supply'  ;
+qs  = com_qty + imp_qty  'Quantities of total commodity supply'  ;
+
+ene(ind) = shr_o(ene,ind)*ind_out(ind)/pb(ene,ind)  'Quantities of energy bought'  ;
+mat(ind) = shr_o(mat,ind)*ind_out(ind)/pb(mat,ind)  'Quantities of materials bought'  ;
+
+int_val(ninp,ind) = io(ninp,ind)*ind_out(ind)  'Values of intermediate inputs, capital and labor'  ;
+int_qty(ninp,ind) = int_val(ninp,ind)/pb(ninp,ind) 'Quantities of intermediate inputs, capital and labor'  ;
+
+qty_extern = sum(ind,prd_ext*ind_qty) + sum(com,imp_ext*imp_qty) + sum(com,sum(buy,com_ext(com,buy)*int_qty(com,buy)))
+            'Quantities of externalties'  ;
+
+int_val(com,con) = con(com)       'Commodity purchases by households'  ;
+int_val(com,inv) = inv(com)       'Commodity purchases for investment'  ;
+int_val(com,gov) = gov(com)       'Commodity purchases by governments'  ;
+int_val(com,xpt) = exports(com)   'Commodity exports'  ;
+int_val(com,mpt) = -imports(com)  'Commodity imports'  ;
+
+int_qty(com,con) = con_qty(com)       'Real commodity purchases by households'  ;
+int_qty(com,inv) = inv(com)/pr_inv(com)       'Real commodity purchases for investment'  ;
+int_qty(com,gov) = gov_qty(com)       'Real commodity purchases by governments'  ;
+int_qty(com,xpt) = exp_qty(com)       'Real commodity exports'  ;
+int_qty(com,mpt) = -imp_qty(com)      'Real commodity imports'  ;
+
+vqd(com) = sum(nuses,int_val(com,nuses))  'Values of total commodity demand'  ;
+qd(com)  = sum(nuses,int_qty(com,nuses))  'Quantities of total commodity demand'  ;
+
+qd_us(com) = qd(com) - int_qty(com,xpt) - inven_inv*inv_share(com)/pr_inv(com)  'Portion of qd consumed domestically'  ;
+
+// should be redundant: vqs = vqd  'Commodity suppy = demand value balance'  ;
+qs  =  qd  'Commodity suppy = demand quantity balance'  ;
+

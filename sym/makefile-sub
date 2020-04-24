@@ -1,0 +1,45 @@
+#
+#  Shared components of subdirectory builds. To be included
+#  in the makefile of a subdirectory after PER and DVER are set.
+#
+
+TEMPORAL = ../inter.sym
+ifeq '$(PER)$(DVER)' '01s'
+   TEMPORAL = ../steady.sym
+endif
+ifeq '$(PER)$(DVER)' '01a'
+   TEMPORAL = 
+endif
+
+PARTS = openigem.sym      \
+        ../factors.sym    \
+        ../government.sym \
+        ../household.sym  \
+        ../investment.sym \
+        ../markets.sym    \
+        ../nipa.sym       \
+        ../parameters.sym \
+        ../producer.sym   \
+        ../sets.sym       \
+        ../trade.sym      \
+        ../unused.sym     \
+        ../variables.sym  \
+        $(TEMPORAL)
+
+all : naics36.exe naics36.tab naics36.inf
+
+naics36.exe : naics36.inf
+	ltg.bat naics36 
+
+naics36.inf : naics36.tab
+	-tablo naics36 
+
+naics36.tab : $(PARTS)
+	sym -tablo openigem.sym $@
+
+clean :
+	@rm -f *-ceqexplen.har *-assert-arith* gfor*.fig *-cond.txt *~
+	@rm -f *.{inf,tb5,tbr,axs,axt,ext,exe,for,min,mnc}
+	@rm -f *.{e2k,exs,pwk,rdt,sl4,slc,swk}
+	@rm -f *.{cdk,tb0,tb7,tb8,tbc,tbe,tbm}
+	@rm -f parcomp* naics36.{inf,tab,lis}

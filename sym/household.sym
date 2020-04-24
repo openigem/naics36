@@ -4,35 +4,59 @@
 
 // Compute houesehold prices, io- and nipa-based
 
-pb(kap,con) = pk_service*pk_scale(con)*(1+tax_cap_hh)  'Household capital price, io'  ;
+'Household capital price, io'
+con: pb(kap) = pk_service*pk_scale*(1+tax_cap_hh) ;
 
-tax_con_totc = tax_con + tax_con_good  'Total consumption tax on goods and services'  ;
-tax_con_totk = tax_con + tax_con_kap   'Total consumption tax on capital services'  ;
-pr_con(com) = pb(com,con)*(1+tax_con_totc)  'Household commodity prices including consumption taxes, io'  ;
-pr_con(kap) = pb(kap,con)*(1+tax_con_totk)  'Household capital price including consumption taxes, io'  ;
+'Total consumption tax on goods and services' 
+tax_con_totc = tax_con + tax_con_good ;
 
-pcon(nipa) = sum(ncom_k,pr_con*io_nipa)  'Household prices - weighted-average conversions io to nipa'  ;
+'Total consumption tax on capital services'
+tax_con_totk = tax_con + tax_con_kap ;
 
-pr_leisure = pr_hours*pj_scale  'Household leisure price'  ;
-pcon(r) = pr_leisure  'Household leisure price'  ;
+'Household commodity prices including consumption taxes, io' 
+com: pr_con = pb(con)*(1+tax_con_totc) ;
+
+'Household capital price including consumption taxes, io' 
+kap: pr_con = pb(con)*(1+tax_con_totk) ;
+
+'Household prices - weighted-average conversions io to nipa' 
+pcon(nipa) = sum(ncom_k,pr_con*io_nipa);
+
+'Household leisure price' 
+pr_leisure = pr_hours*pj_scale ;
+
+'Household leisure price'
+pcon(leis) = pr_leisure ;
 
 // Equations - Tiers bottom-up shares and prices
 // Equations - Communications (cmm), Household and personal services (hps), Energy utilities (ens)
 
-shr_cmm = ah_cmm + kalh_cmm + sum(pr_cmm,bh_cmm*ln(pcon(pr_cmm))) 'cmm commodity shares' ;
+'cmm commodity shares'
+shr_cmm = ah_cmm 
+        + kalh_cmm 
+        + sum(pr_cmm,bh_cmm*ln(pcon(pr_cmm))) ;
 
+'cmm price'
 ln(pcon(cmm)) = sum(s_cmm,(ah_cmm + kalh_cmm)*ln(pcon(s_cmm)))
-                + 0.5*sum(pr_cmm,sum(s_cmm,ln(pcon(s_cmm))*bh_cmm*ln(pcon(pr_cmm)))) 'cmm price' ;
+              + 0.5*sum(pr_cmm,sum(s_cmm,ln(pcon(s_cmm))*bh_cmm*ln(pcon(pr_cmm)))) ;
 
-shr_hps = ah_hps + kalh_hps + sum(pr_hps,bh_hps*ln(pcon(pr_hps))) 'hps commodity shares' ;				
+shr_hps = ah_hps 
+        + kalh_hps 
+        + sum(pr_hps,bh_hps*ln(pcon(pr_hps))) 
+        'hps commodity shares' ;				
 				
 ln(pcon(hps)) = sum(s_hps,(ah_hps + kalh_hps)*ln(pcon(s_hps)))
-                + 0.5*sum(pr_hps,sum(s_hps,ln(pcon(s_hps))*bh_hps*ln(pcon(pr_hps)))) 'hps price' ;
+              + 0.5*sum(pr_hps,sum(s_hps,ln(pcon(s_hps))*bh_hps*ln(pcon(pr_hps)))) 
+              'hps price' ;
 
-shr_ens = ah_ens + kalh_ens + sum(pr_ens,bh_ens*ln(pcon(pr_ens))) 'ens commodity shares' ;				
+shr_ens = ah_ens 
+        + kalh_ens 
+        + sum(pr_ens,bh_ens*ln(pcon(pr_ens))) 
+        'ens commodity shares' ;				
 								
 ln(pcon(ens)) = sum(s_ens,(ah_ens + kalh_ens)*ln(pcon(s_ens)))
-                + 0.5*sum(pr_ens,sum(s_ens,ln(pcon(s_ens))*bh_ens*ln(pcon(pr_ens)))) 'ens price' ;
+              + 0.5*sum(pr_ens,sum(s_ens,ln(pcon(s_ens))*bh_ens*ln(pcon(pr_ens)))) 
+              'ens price' ;
 				
 // Equations - Travel (trv), Recreational services (rcs), Education (edn)
 
@@ -120,7 +144,7 @@ ln(pcon(nd)) = sum(s_nd,(ah_nd + kalh_nd)*ln(pcon(s_nd)))
                + 0.5*sum(pr_nd,sum(s_nd,ln(pcon(s_nd))*bh_nd*ln(pcon(pr_nd)))) 'nd price' ;
 				
 // Equation - Full consumption shares (f) - Top tier alpha and beta effects
-//            Non-durables (nd), Capital (ks), Consumer services (cs), Leisure (r)
+//            Non-durables (nd), Capital (ks), Consumer services (cs), Leisure (leis)
 
 ab_shr_f = ah_f + sum(pr_f,bh_f*ln(pcon(pr_f))) 'Full consumption shares - alpha and beta effects'  ;
 
@@ -141,11 +165,15 @@ shr_f = cex_shr_f + dv_hh  'Full consumption shares - nipa basis'  ;
 
 pr_fc = exp(sum(s_f,(ah_f-sum(pr_f,bh_f*ln(pfc_m0)))*ln(pcon(s_f)))
            + 0.5*sum(pr_f,sum(s_f,ln(pcon(s_f))*bh_f*ln(pcon(pr_f))))/denom)/pr_fc_scale  'Full consumption price'  ;
+
+//  Quantity of full consumption
+
+full_qty = full_con / pr_fc  'Quantity of full consumption'  ;
 		   
 //  Equations - Leisure and consumption
 
-leisure = shr_f(r)*full_con/pr_leisure  'Leisure quantity'  ;
-cshare = 1 - shr_f(r)  'Consumption share of full consumption'  ;
+leisure = shr_f(leis)*full_con/pr_leisure  'Leisure quantity'  ;
+cshare = 1 - shr_f(leis)  'Consumption share of full consumption'  ;
 con_expend = cshare*full_con  'Consumption expenditure'  ;
 
 //  Equations - Consumption shares: Non-durables		  		   
@@ -205,14 +233,14 @@ con_share(n35) = shr_ho(n35)*shr_cs(ho)*shr_f(cs)/cshare  'Owner maintenance'  ;
 
 // Equations - Policy shocks to consumer demands
 
-con_shk_val = con_shk_qty * pr_con  'Consumer demand shocks, io values'  ;
-con_shk_xpnd = sum(ncom_k,con_shk_val)  'Consumer demand shocks, total value'  ;
-con_xpnd_net = con_expend - con_shk_xpnd  'Net consumption expenditure'  ;
+//-- con_shk_val = con_shk_qty * pr_con  'Consumer demand shocks, io values'  ;
+//-- con_shk_xpnd = sum(ncom_k,con_shk_val)  'Consumer demand shocks, total value'  ;
+con_xpnd_net = con_expend ; //-- - con_shk_xpnd  'Net consumption expenditure'  ;
 
 // Equations - Consumption expenditures and quantities by commodity - io basis
 
-con(com) = (sum(nipa,io_nipa(com,nipa)*con_share(nipa)*con_xpnd_net) + con_shk_val(com))  'con, io commodity' ;
-con(kap) = (sum(nipa,io_nipa(kap,nipa)*con_share(nipa)*con_xpnd_net) + con_shk_val(kap))  'con, io capital' ;
+con(com) = (sum(nipa,io_nipa(com,nipa)*con_share(nipa)*con_xpnd_net)) ; //-- + con_shk_val(com))  'con, io commodity' ;
+con(kap) = (sum(nipa,io_nipa(kap,nipa)*con_share(nipa)*con_xpnd_net)) ; //-- + con_shk_val(kap))  'con, io capital' ;
 
 con_qty = con/pr_con 'con_qty, io quantities'  ;
 

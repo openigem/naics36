@@ -10,36 +10,54 @@ gov_qty(com) = gov(com)/(pb(com,gov)*(1+tax_con_gov))  'Quantities of commodity 
 
 rev_sales = sum(ind,tax_sales*ind_out)  'Sales and excise tax revenue'  ;
 
-rev_unit = sum(ind,tax_unit*ind_qty)  'Unit tax revenue'  ;
+//-- rev_unit = sum(ind,tax_unit*ind_qty)  'Unit tax revenue'  ;
 
 rev_tariff = sum(com,tariff*pf*exch*imp_qty)  'Revenues from tariffs on competing imports'  ;
 
-rev_con = sum(com,tax_con_totc*con/(1+tax_con_totc)) +  tax_con_totk*inv_expend*(con(kap)/(kap_income+rev_cap_hh))
+//-- rev_con = sum(com,tax_con_totc*con/(1+tax_con_totc)) +  tax_con_totk*inv_expend*(con(kap)/(kap_income+rev_cap_hh))
+//--          'Consumption tax revenue from goods, services and physical capital'  ;
+
+rev_con = sum(com,tax_con_totc*con/(1+tax_con_totc)) +  tax_con_totk*inv_expend*(con(kap)/(kap_income))
          'Consumption tax revenue from goods, services and physical capital'  ;
 
-rev_con_gov = tax_con_gov * (gov_expend/(1+tax_con_gov))  'Consumption tax revenue from government spending'  ;
+//-- rev_con_gov = tax_con_gov * (gov_expend/(1+tax_con_gov))  'Consumption tax revenue from government spending'  ;
 		 
-rev_con_rbt = tax_con*tax_con_xmpt  'Lump-sum consumption tax rebate'  ;
+//-- rev_con_rbt = tax_con*tax_con_xmpt  'Lump-sum consumption tax rebate'  ;
 
-rev_extern = sum(ind,tax_ext_ind*ind_qty) + sum(com,tar_ext_com*imp_qty) + sum(com,sum(buy,tax_ext_com*int_qty))  'Externality tax revenue'  ;
+rev_com_ext = sum(com,sum(buy,tax_ext_com(com,buy)*int_qty(com,buy)))  'Externality tax revenue from demand-side commodity use'  ;
+rev_extern = sum(ind,tax_ext_ind*ind_qty) + sum(com,tar_ext_com*imp_qty) 'Externality tax revenue from supply-side production and imports'  ;
+           
+//-- rev_total = rev_sales
+//--           + rev_unit
+//--           + rev_tariff
+//--           + rev_prop
+//--           + rev_cap
+//--           - rev_itc
+//--           + rev_cap_hh
+//--           + rev_wealth
+//--           + rev_labor
+//--           + rev_com_ext
+//--           + rev_extern 
+//--           + rev_con
+//--           + rev_con_gov
+//--           - rev_con_rbt
+//--           + rev_lump
+//--           + rev_nontax
+//--           'Total tax revenue'  ;
 
 rev_total = rev_sales
-          + rev_unit
           + rev_tariff
-		  + rev_prop
-		  + rev_cap
-		  - rev_itc
-		  + rev_cap_hh
-		  + rev_wealth
-		  + rev_labor
-		  + rev_extern
-		  + rev_con
-		  + rev_con_gov
-		  - rev_con_rbt
-		  + rev_lump
-		  + rev_nontax
-		  'Total tax revenue'  ;
-		  
+          + rev_prop
+          + rev_cap
+          + rev_wealth
+          + rev_labor
+          + rev_com_ext
+          + rev_extern 
+          + rev_con
+          + rev_lump
+          + rev_nontax
+          'Total tax revenue'  ;
+
 gov_surplus = rev_total
             - gov_expend
 			+ gov_kap_inc
@@ -50,9 +68,3 @@ gov_surplus = rev_total
 			- gov_transdom
 			- gov_transabr
 			'Federal, state and local gov surplus'  ;
-			
-lead(gov_debt) = gov_debt + (gov_for_nvst + gov_debt_cg + gov_debt_dsc - gov_surplus)*nyears_lead  'Govt debt held domestically'  ;
-
-lead(gov_debt_f) = gov_debt_f - (gov_for_nvst + gov_debt_fcg)*nyears_lead  'Govt debt held abroad'  ;			
-
-

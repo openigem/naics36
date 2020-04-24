@@ -1,0 +1,14 @@
+// Terminal conditions for the steady state model
+
+'Capital accumulation'
+delta * k = inv_real ;
+
+'Full consumption'
+r = rho + risk ;
+
+'Capital gain'
+capgain =  (- delta) * k_value ;
+
+'Price of capital services' 
+pk_service = pk* ( (r-delta)/(adjust_i*inv_exp_shk*adjust_pk*adjust_k*(1-tax_cap)) 
+                   + tax_prop ) ;
