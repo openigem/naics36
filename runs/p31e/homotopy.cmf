@@ -1,0 +1,177 @@
+auxiliary files = naics36;
+check-on-read elements = warn; ! Optional: very often needed
+cpu=yes ; ! Optional: Reports CPU times for various stages
+log file = yes;  ! Optional
+!  condensation information file = <cmf>-cond.txt; ! create file to debug and improve condensation
+!  structurally singular solve modified equations = yes ;
+start with mmnz = 5615166 ;
+
+! Input files:
+File param = par.har; ! 
+File impl = imp.har; ! 
+File endog = end.har; ! 
+File exog = exo.har; ! 
+File extra = ext.har; ! 
+File inter = int.har; ! 
+File iotable = iot.har; ! 
+File kalman = kal.har; ! 
+File make = mak.har; ! 
+! Updated files:
+Updated File impl = impl.UPD;
+Updated File endog = end.UPD;
+Updated File exog = exo.UPD;
+Updated File extra = ext.UPD;
+Updated File inter = int.UPD;
+Updated File iotable = iot.UPD;
+Updated File kalman = kal.UPD;
+Updated File make = mak.UPD;
+
+! Solution method
+method = Euler ;
+steps = 1 ;
+
+exogenous  year   ;
+exogenous  exo_pf ;
+exogenous  pr_hours   ;
+exogenous  pk_scale ;
+exogenous  pl_scale ;
+exogenous  pj_scale   ;
+exogenous  adjust_i   ;
+exogenous  adjust_k   ;
+exogenous  adjust_pk   ;
+exogenous  prd_ext ;
+exogenous  imp_ext ;
+exogenous  agg_tech_chg   ;
+exogenous  tech_shk_agg   ;
+exogenous  tech_shock ;
+exogenous  tech_shk_row   ;
+exogenous  income_dist   ;
+exogenous  income_share ;
+exogenous  dv_hh ;
+exogenous  hh_equiv       ;
+exogenous  hh_equiv_lag   ;
+exogenous  hours            ;
+exogenous  unemp_scale  ;
+! exogenous  con_shk_qty ;
+exogenous  inv_shock    ;
+exogenous  inv_exp_shk     ;
+exogenous  inven_fract       ;
+exogenous  inven_share ;
+exogenous  gov_share ;
+exogenous  gov_debt_cg     ;
+exogenous  gov_debt_dsc    ;
+exogenous  gov_debt_fcg    ;
+exogenous  gov_for_nvst    ;
+exogenous  gov_from_ss     ;
+exogenous  gov_int_abr    ;
+exogenous  gov_int_ss      ;
+exogenous  gov_interest    ;
+exogenous  gov_surplus     ;
+exogenous  gov_transdom    ;
+exogenous  gov_transabr    ;
+exogenous  exo_tax_labm   ;
+exogenous  exo_tax_laba   ;
+exogenous  exo_tax_cap       ;
+exogenous  tax_scale     ;
+exogenous  tax_cap_hh    ;
+exogenous  tax_itc       ;
+exogenous  tax_prop      ;
+exogenous  tax_wealth    ;
+exogenous  tax_sales ;
+exogenous  tariff ;
+exogenous  row_tariff ;
+exogenous  tax_unit ;
+exogenous  tax_ext_u ;
+exogenous  tax_con   ;
+exogenous  tax_con_good   ;
+exogenous  tax_con_kap   ;
+exogenous  tax_con_gov   ;
+exogenous  tax_con_xmpt   ;
+exogenous  rev_lump   ;
+exogenous  rev_nontax ;
+exogenous  us_surplus      ;
+exogenous  row_debt_cg   ;
+exogenous  row_debt_dsc   ;
+exogenous  kap_gas      ;
+exogenous  kap_oil      ;
+exogenous  risk   ;
+exogenous  transfer_abr   ;
+exogenous  kalf_gas ;
+exogenous  kalf_oil ;
+exogenous  kalf_ff ;
+exogenous  kalf_ene ;
+exogenous  kalf_bl ;
+exogenous  kalf_ob ;
+exogenous  kalf_os ;
+exogenous  kalf_sv ;
+exogenous  kalf_ma ;
+exogenous  kalf_mn ;
+exogenous  kalf_tr ;
+exogenous  kalf_tt ;
+exogenous  kalf_eq ;
+exogenous  kalf_ms ;
+exogenous  kalf_mm ;
+exogenous  kalf_mat ;
+exogenous  kalf_o ;
+exogenous  kalp ;
+exogenous  kalh_en ;
+exogenous  kalh_hpg ;
+exogenous  kalh_cg ;
+exogenous  kalh_nd ;
+exogenous  kalh_cmm ;
+exogenous  kalh_hps ;
+exogenous  kalh_ens ;
+exogenous  kalh_trv ;
+exogenous  kalh_rcs ;
+exogenous  kalh_edn ;
+exogenous  kalh_fb ;
+exogenous  kalh_md ;
+exogenous  kalh_trc ;
+exogenous  kalh_ups ;
+exogenous  kalh_rc ;
+exogenous  kalh_ho ;
+exogenous  kalh_cs ;
+exogenous  kalh_ks ;
+exogenous  kali_rawm ;
+exogenous  kali_furn ;
+exogenous  kali_mserv ;
+exogenous  kali_trd ;
+exogenous  kali_trnsp ;
+exogenous  kali_it ;
+exogenous  kali_mrawm ;
+exogenous  kali_frawm ;
+exogenous  kali_serv ;
+exogenous  kali_mach ;
+exogenous  kali_ttsvc ;
+exogenous  kali_eit ;
+exogenous  kali_short ;
+exogenous  kali_long ;
+exogenous  kali_fixed ;
+exogenous  kalm_imp ;
+exogenous  kalx_exp ;
+exogenous  com_ext ;
+exogenous  make_col ;
+exogenous  make_row ;
+exogenous  c_homotopy ;
+!
+! State variables in the initial year
+!
+exogenous nyears_lag("p0") ;
+exogenous agg_tech_lvl("p0") ;
+exogenous gov_debt("p0") ;
+exogenous gov_debt_f("p0") ;
+exogenous row_debt("p0") ;
+exogenous k("p0") ;
+exogenous capgain("p0") ;
+exogenous pk_service("p0") ;
+!
+! Variables requiring forward derivatives.
+!
+exogenous nyears_lead("p30") ;
+!
+rest endogenous ;
+
+Verbal Description = ????????  ;
+
+! Insert shocks below
+shock c_homotopy = 1 ;

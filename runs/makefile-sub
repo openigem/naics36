@@ -1,0 +1,47 @@
+#
+#  Shared components of subdirectory builds. To be included
+#  in the makefile of a subdirectory after PER, DVER, and 
+#  RUNS are set.
+#
+
+DTAB = ../../sym/p$(PER)$(DVER)/
+DDIR = ../../data/p$(PER)$(DVER)/
+
+DATA = end.har \
+       exo.har \
+		 ext.har \
+		 imp.har \
+		 int.har \
+		 iot.har \
+		 kal.har \
+		 mak.har \
+		 par.har 
+
+.SECONDARY :
+
+%.log : %.cmf naics36.exe $(DATA)
+	naics36 -cmf $*.cmf
+
+%.har :: $(DDIR)/%.har
+	cp $< $@
+
+all : $(addsuffix .log, $(RUNS) )
+
+naics36.exe : naics36.inf
+	ltg.bat naics36 
+
+naics36.inf : naics36.tab
+	-tablo naics36
+
+naics36.tab :: $(DTAB)/naics36.tab
+	@cp -v $< $@
+
+tidy :
+	@rm -f *-ceqexplen.har *-assert-arith* *-cond.txt gfort*fig *~
+
+clean :
+	@rm -f *-ceqexplen.har *-assert-arith* *-cond.txt *~
+	@rm -f *.{inf,tb5,tbr,axs,axt,ext,exe,for,min,mnc}
+	@rm -f *.{e2k,exs,pwk,rdt,sl4,slc,swk}
+	@rm -f *.{cdk,tb0,tb7,tb8,tbc,tbe,tbm}
+	@rm -f naics36.tab *.UPD *.fig *.log *.lis *.har

@@ -26,20 +26,8 @@ PARTS = openigem.sym      \
         ../variables.sym  \
         $(TEMPORAL)
 
-all : naics36.exe naics36.tab naics36.inf
-
-naics36.exe : naics36.inf
-	ltg.bat naics36 
-
-naics36.inf : naics36.tab
-	-tablo naics36 
-
 naics36.tab : $(PARTS)
 	sym -tablo openigem.sym $@
 
 clean :
-	@rm -f *-ceqexplen.har *-assert-arith* gfor*.fig *-cond.txt *~
-	@rm -f *.{inf,tb5,tbr,axs,axt,ext,exe,for,min,mnc}
-	@rm -f *.{e2k,exs,pwk,rdt,sl4,slc,swk}
-	@rm -f *.{cdk,tb0,tb7,tb8,tbc,tbe,tbm}
-	@rm -f parcomp* naics36.{inf,tab,lis}
+	@rm -f naics36.{tab,lis}
